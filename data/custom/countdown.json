@@ -1,0 +1,3089 @@
+[
+  {
+    "question": "Calculate 139 using all of these numbers: 36, 29, 95, 32, 4, 15.\nEach number may be used at most once.\n\nFinal answer format instructions:\n1. Provide your solution as a arithmetic expression (no '=' sign).\n2. Do not include the target number in the expression.\n3. Use '*' for multiplication.\n4. Use '/' for division.\n5. Do not include any other text or formatting.\n",
+    "answer": "15 - 4 + 95 + 36 - 32 + 29",
+    "metadata": {
+      "source_dataset": "countdown",
+      "source_index": 0,
+      "numbers": [
+        36,
+        29,
+        95,
+        32,
+        4,
+        15
+      ],
+      "target": 139,
+      "expression": "15 - 4 + 95 + 36 - 32 + 29",
+      "difficulty": {
+        "numbers": [
+          4,
+          6
+        ],
+        "target": [
+          100,
+          999
+        ],
+        "value": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Using all the numbers 74, 48, 56, 66, create an expression that equals 132.\nYou can only use each number once.\n\nFinal answer format instructions:\n1. Provide your solution as a arithmetic expression (no '=' sign).\n2. Do not include the target number in the expression.\n3. Use '*' for multiplication.\n4. Use '/' for division.\n5. Do not include any other text or formatting.\n",
+    "answer": "66 - 56 + 74 + 48",
+    "metadata": {
+      "source_dataset": "countdown",
+      "source_index": 1,
+      "numbers": [
+        74,
+        48,
+        56,
+        66
+      ],
+      "target": 132,
+      "expression": "66 - 56 + 74 + 48",
+      "difficulty": {
+        "numbers": [
+          4,
+          6
+        ],
+        "target": [
+          100,
+          999
+        ],
+        "value": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Using all the numbers 5, 41, 38, 81, 14, create an expression that equals 450.\nYou can only use each number once.\n\nFinal answer format instructions:\n1. Provide your solution as a arithmetic expression (no '=' sign).\n2. Do not include the target number in the expression.\n3. Use '*' for multiplication.\n4. Use '/' for division.\n5. Do not include any other text or formatting.\n",
+    "answer": "41*14 - 81 - 38 - 5",
+    "metadata": {
+      "source_dataset": "countdown",
+      "source_index": 2,
+      "numbers": [
+        5,
+        41,
+        38,
+        81,
+        14
+      ],
+      "target": 450,
+      "expression": "41*14 - 81 - 38 - 5",
+      "difficulty": {
+        "numbers": [
+          4,
+          6
+        ],
+        "target": [
+          100,
+          999
+        ],
+        "value": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Calculate 237 using all of these numbers: 95, 98, 92, 28, 20.\nEach number may be used at most once.\n\nFinal answer format instructions:\n1. Provide your solution as a arithmetic expression (no '=' sign).\n2. Do not include the target number in the expression.\n3. Use '*' for multiplication.\n4. Use '/' for division.\n5. Do not include any other text or formatting.\n",
+    "answer": "95 - 20 - 28 + 98 + 92",
+    "metadata": {
+      "source_dataset": "countdown",
+      "source_index": 3,
+      "numbers": [
+        95,
+        98,
+        92,
+        28,
+        20
+      ],
+      "target": 237,
+      "expression": "95 - 20 - 28 + 98 + 92",
+      "difficulty": {
+        "numbers": [
+          4,
+          6
+        ],
+        "target": [
+          100,
+          999
+        ],
+        "value": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Calculate 624 using all of these numbers: 72, 24, 48, 15.\nEach number may be used at most once.\n\nFinal answer format instructions:\n1. Provide your solution as a arithmetic expression (no '=' sign).\n2. Do not include the target number in the expression.\n3. Use '*' for multiplication.\n4. Use '/' for division.\n5. Do not include any other text or formatting.\n",
+    "answer": "15*48 - 72 - 24",
+    "metadata": {
+      "source_dataset": "countdown",
+      "source_index": 4,
+      "numbers": [
+        72,
+        24,
+        48,
+        15
+      ],
+      "target": 624,
+      "expression": "15*48 - 72 - 24",
+      "difficulty": {
+        "numbers": [
+          4,
+          6
+        ],
+        "target": [
+          100,
+          999
+        ],
+        "value": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Calculate 651 using all of these numbers: 17, 43, 31, 5, 94.\nEach number may be used at most once.\n\nFinal answer format instructions:\n1. Provide your solution as a arithmetic expression (no '=' sign).\n2. Do not include the target number in the expression.\n3. Use '*' for multiplication.\n4. Use '/' for division.\n5. Do not include any other text or formatting.\n",
+    "answer": "5*(31 + 94) - 17 + 43",
+    "metadata": {
+      "source_dataset": "countdown",
+      "source_index": 5,
+      "numbers": [
+        17,
+        43,
+        31,
+        5,
+        94
+      ],
+      "target": 651,
+      "expression": "5*(31 + 94) - 17 + 43",
+      "difficulty": {
+        "numbers": [
+          4,
+          6
+        ],
+        "target": [
+          100,
+          999
+        ],
+        "value": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Calculate 133 using all of these numbers: 89, 75, 84, 56, 94, 73.\nEach number may be used at most once.\n\nFinal answer format instructions:\n1. Provide your solution as a arithmetic expression (no '=' sign).\n2. Do not include the target number in the expression.\n3. Use '*' for multiplication.\n4. Use '/' for division.\n5. Do not include any other text or formatting.\n",
+    "answer": "84 - 75 - 94 + 89 + 56 + 73",
+    "metadata": {
+      "source_dataset": "countdown",
+      "source_index": 6,
+      "numbers": [
+        89,
+        75,
+        84,
+        56,
+        94,
+        73
+      ],
+      "target": 133,
+      "expression": "84 - 75 - 94 + 89 + 56 + 73",
+      "difficulty": {
+        "numbers": [
+          4,
+          6
+        ],
+        "target": [
+          100,
+          999
+        ],
+        "value": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Using all the numbers 85, 80, 79, 7, create an expression that equals 510.\nYou can only use each number once.\n\nFinal answer format instructions:\n1. Provide your solution as a arithmetic expression (no '=' sign).\n2. Do not include the target number in the expression.\n3. Use '*' for multiplication.\n4. Use '/' for division.\n5. Do not include any other text or formatting.\n",
+    "answer": "85*(79 - 80 + 7)",
+    "metadata": {
+      "source_dataset": "countdown",
+      "source_index": 7,
+      "numbers": [
+        85,
+        80,
+        79,
+        7
+      ],
+      "target": 510,
+      "expression": "85*(79 - 80 + 7)",
+      "difficulty": {
+        "numbers": [
+          4,
+          6
+        ],
+        "target": [
+          100,
+          999
+        ],
+        "value": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Find a way to make 391 using all of these numbers: 57, 90, 14, 56, 26.\nEach number can only be used once.\n\nFinal answer format instructions:\n1. Provide your solution as a arithmetic expression (no '=' sign).\n2. Do not include the target number in the expression.\n3. Use '*' for multiplication.\n4. Use '/' for division.\n5. Do not include any other text or formatting.\n",
+    "answer": "56*90/14 - 26 + 57",
+    "metadata": {
+      "source_dataset": "countdown",
+      "source_index": 8,
+      "numbers": [
+        57,
+        90,
+        14,
+        56,
+        26
+      ],
+      "target": 391,
+      "expression": "56*90/14 - 26 + 57",
+      "difficulty": {
+        "numbers": [
+          4,
+          6
+        ],
+        "target": [
+          100,
+          999
+        ],
+        "value": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Find a way to make 178 using all of these numbers: 90, 1, 52, 36.\nEach number can only be used once.\n\nFinal answer format instructions:\n1. Provide your solution as a arithmetic expression (no '=' sign).\n2. Do not include the target number in the expression.\n3. Use '*' for multiplication.\n4. Use '/' for division.\n5. Do not include any other text or formatting.\n",
+    "answer": "1*(36 + 52 + 90)",
+    "metadata": {
+      "source_dataset": "countdown",
+      "source_index": 9,
+      "numbers": [
+        90,
+        1,
+        52,
+        36
+      ],
+      "target": 178,
+      "expression": "1*(36 + 52 + 90)",
+      "difficulty": {
+        "numbers": [
+          4,
+          6
+        ],
+        "target": [
+          100,
+          999
+        ],
+        "value": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Calculate 253 using all of these numbers: 43, 76, 88, 73, 27.\nEach number may be used at most once.\n\nFinal answer format instructions:\n1. Provide your solution as a arithmetic expression (no '=' sign).\n2. Do not include the target number in the expression.\n3. Use '*' for multiplication.\n4. Use '/' for division.\n5. Do not include any other text or formatting.\n",
+    "answer": "43 - 27 + 76 + 73 + 88",
+    "metadata": {
+      "source_dataset": "countdown",
+      "source_index": 10,
+      "numbers": [
+        43,
+        76,
+        88,
+        73,
+        27
+      ],
+      "target": 253,
+      "expression": "43 - 27 + 76 + 73 + 88",
+      "difficulty": {
+        "numbers": [
+          4,
+          6
+        ],
+        "target": [
+          100,
+          999
+        ],
+        "value": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Find a way to make 185 using all of these numbers: 72, 18, 28, 30, 43, 23.\nEach number can only be used once.\n\nFinal answer format instructions:\n1. Provide your solution as a arithmetic expression (no '=' sign).\n2. Do not include the target number in the expression.\n3. Use '*' for multiplication.\n4. Use '/' for division.\n5. Do not include any other text or formatting.\n",
+    "answer": "28*(30 - 23) - 72 + 43 + 18",
+    "metadata": {
+      "source_dataset": "countdown",
+      "source_index": 11,
+      "numbers": [
+        72,
+        18,
+        28,
+        30,
+        43,
+        23
+      ],
+      "target": 185,
+      "expression": "28*(30 - 23) - 72 + 43 + 18",
+      "difficulty": {
+        "numbers": [
+          4,
+          6
+        ],
+        "target": [
+          100,
+          999
+        ],
+        "value": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Find a way to make 176 using all of these numbers: 55, 75, 12, 34.\nEach number can only be used once.\n\nFinal answer format instructions:\n1. Provide your solution as a arithmetic expression (no '=' sign).\n2. Do not include the target number in the expression.\n3. Use '*' for multiplication.\n4. Use '/' for division.\n5. Do not include any other text or formatting.\n",
+    "answer": "55 + 34 + 75 + 12",
+    "metadata": {
+      "source_dataset": "countdown",
+      "source_index": 12,
+      "numbers": [
+        55,
+        75,
+        12,
+        34
+      ],
+      "target": 176,
+      "expression": "55 + 34 + 75 + 12",
+      "difficulty": {
+        "numbers": [
+          4,
+          6
+        ],
+        "target": [
+          100,
+          999
+        ],
+        "value": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Calculate 148 using all of these numbers: 46, 34, 71, 16.\nEach number may be used at most once.\n\nFinal answer format instructions:\n1. Provide your solution as a arithmetic expression (no '=' sign).\n2. Do not include the target number in the expression.\n3. Use '*' for multiplication.\n4. Use '/' for division.\n5. Do not include any other text or formatting.\n",
+    "answer": "(34*71 - 46)/16",
+    "metadata": {
+      "source_dataset": "countdown",
+      "source_index": 13,
+      "numbers": [
+        46,
+        34,
+        71,
+        16
+      ],
+      "target": 148,
+      "expression": "(34*71 - 46)/16",
+      "difficulty": {
+        "numbers": [
+          4,
+          6
+        ],
+        "target": [
+          100,
+          999
+        ],
+        "value": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Calculate 358 using all of these numbers: 70, 74, 67, 86, 80, 19.\nEach number may be used at most once.\n\nFinal answer format instructions:\n1. Provide your solution as a arithmetic expression (no '=' sign).\n2. Do not include the target number in the expression.\n3. Use '*' for multiplication.\n4. Use '/' for division.\n5. Do not include any other text or formatting.\n",
+    "answer": "86 + 80 + 70 + 74 - 19 + 67",
+    "metadata": {
+      "source_dataset": "countdown",
+      "source_index": 14,
+      "numbers": [
+        70,
+        74,
+        67,
+        86,
+        80,
+        19
+      ],
+      "target": 358,
+      "expression": "86 + 80 + 70 + 74 - 19 + 67",
+      "difficulty": {
+        "numbers": [
+          4,
+          6
+        ],
+        "target": [
+          100,
+          999
+        ],
+        "value": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Calculate 588 using all of these numbers: 82, 38, 56, 49.\nEach number may be used at most once.\n\nFinal answer format instructions:\n1. Provide your solution as a arithmetic expression (no '=' sign).\n2. Do not include the target number in the expression.\n3. Use '*' for multiplication.\n4. Use '/' for division.\n5. Do not include any other text or formatting.\n",
+    "answer": "49*(38 + 56 - 82)",
+    "metadata": {
+      "source_dataset": "countdown",
+      "source_index": 15,
+      "numbers": [
+        82,
+        38,
+        56,
+        49
+      ],
+      "target": 588,
+      "expression": "49*(38 + 56 - 82)",
+      "difficulty": {
+        "numbers": [
+          4,
+          6
+        ],
+        "target": [
+          100,
+          999
+        ],
+        "value": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Using all the numbers 28, 61, 63, 14, 75, 2, create an expression that equals 117.\nYou can only use each number once.\n\nFinal answer format instructions:\n1. Provide your solution as a arithmetic expression (no '=' sign).\n2. Do not include the target number in the expression.\n3. Use '*' for multiplication.\n4. Use '/' for division.\n5. Do not include any other text or formatting.\n",
+    "answer": "75 + 14 - 2 + 63 + 28 - 61",
+    "metadata": {
+      "source_dataset": "countdown",
+      "source_index": 16,
+      "numbers": [
+        28,
+        61,
+        63,
+        14,
+        75,
+        2
+      ],
+      "target": 117,
+      "expression": "75 + 14 - 2 + 63 + 28 - 61",
+      "difficulty": {
+        "numbers": [
+          4,
+          6
+        ],
+        "target": [
+          100,
+          999
+        ],
+        "value": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Find a way to make 778 using all of these numbers: 39, 12, 33, 86.\nEach number can only be used once.\n\nFinal answer format instructions:\n1. Provide your solution as a arithmetic expression (no '=' sign).\n2. Do not include the target number in the expression.\n3. Use '*' for multiplication.\n4. Use '/' for division.\n5. Do not include any other text or formatting.\n",
+    "answer": "12*(33 + 39) - 86",
+    "metadata": {
+      "source_dataset": "countdown",
+      "source_index": 17,
+      "numbers": [
+        39,
+        12,
+        33,
+        86
+      ],
+      "target": 778,
+      "expression": "12*(33 + 39) - 86",
+      "difficulty": {
+        "numbers": [
+          4,
+          6
+        ],
+        "target": [
+          100,
+          999
+        ],
+        "value": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Calculate 259 using all of these numbers: 83, 12, 68, 49, 47.\nEach number may be used at most once.\n\nFinal answer format instructions:\n1. Provide your solution as a arithmetic expression (no '=' sign).\n2. Do not include the target number in the expression.\n3. Use '*' for multiplication.\n4. Use '/' for division.\n5. Do not include any other text or formatting.\n",
+    "answer": "47 + 49 + 12 + 68 + 83",
+    "metadata": {
+      "source_dataset": "countdown",
+      "source_index": 18,
+      "numbers": [
+        83,
+        12,
+        68,
+        49,
+        47
+      ],
+      "target": 259,
+      "expression": "47 + 49 + 12 + 68 + 83",
+      "difficulty": {
+        "numbers": [
+          4,
+          6
+        ],
+        "target": [
+          100,
+          999
+        ],
+        "value": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Using all the numbers 22, 43, 52, 9, 60, create an expression that equals 549.\nYou can only use each number once.\n\nFinal answer format instructions:\n1. Provide your solution as a arithmetic expression (no '=' sign).\n2. Do not include the target number in the expression.\n3. Use '*' for multiplication.\n4. Use '/' for division.\n5. Do not include any other text or formatting.\n",
+    "answer": "9*52 + 60 + 43 - 22",
+    "metadata": {
+      "source_dataset": "countdown",
+      "source_index": 19,
+      "numbers": [
+        22,
+        43,
+        52,
+        9,
+        60
+      ],
+      "target": 549,
+      "expression": "9*52 + 60 + 43 - 22",
+      "difficulty": {
+        "numbers": [
+          4,
+          6
+        ],
+        "target": [
+          100,
+          999
+        ],
+        "value": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Find a way to make 162 using all of these numbers: 86, 40, 60, 23, 9, 31.\nEach number can only be used once.\n\nFinal answer format instructions:\n1. Provide your solution as a arithmetic expression (no '=' sign).\n2. Do not include the target number in the expression.\n3. Use '*' for multiplication.\n4. Use '/' for division.\n5. Do not include any other text or formatting.\n",
+    "answer": "23*9 - 31 - 60 - 40 + 86",
+    "metadata": {
+      "source_dataset": "countdown",
+      "source_index": 20,
+      "numbers": [
+        86,
+        40,
+        60,
+        23,
+        9,
+        31
+      ],
+      "target": 162,
+      "expression": "23*9 - 31 - 60 - 40 + 86",
+      "difficulty": {
+        "numbers": [
+          4,
+          6
+        ],
+        "target": [
+          100,
+          999
+        ],
+        "value": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Calculate 174 using all of these numbers: 82, 63, 56, 90, 47.\nEach number may be used at most once.\n\nFinal answer format instructions:\n1. Provide your solution as a arithmetic expression (no '=' sign).\n2. Do not include the target number in the expression.\n3. Use '*' for multiplication.\n4. Use '/' for division.\n5. Do not include any other text or formatting.\n",
+    "answer": "56 - 82 + 47 + 63 + 90",
+    "metadata": {
+      "source_dataset": "countdown",
+      "source_index": 21,
+      "numbers": [
+        82,
+        63,
+        56,
+        90,
+        47
+      ],
+      "target": 174,
+      "expression": "56 - 82 + 47 + 63 + 90",
+      "difficulty": {
+        "numbers": [
+          4,
+          6
+        ],
+        "target": [
+          100,
+          999
+        ],
+        "value": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Using all the numbers 52, 79, 69, 16, 81, create an expression that equals 867.\nYou can only use each number once.\n\nFinal answer format instructions:\n1. Provide your solution as a arithmetic expression (no '=' sign).\n2. Do not include the target number in the expression.\n3. Use '*' for multiplication.\n4. Use '/' for division.\n5. Do not include any other text or formatting.\n",
+    "answer": "52*(16 + 81 - 79) - 69",
+    "metadata": {
+      "source_dataset": "countdown",
+      "source_index": 22,
+      "numbers": [
+        52,
+        79,
+        69,
+        16,
+        81
+      ],
+      "target": 867,
+      "expression": "52*(16 + 81 - 79) - 69",
+      "difficulty": {
+        "numbers": [
+          4,
+          6
+        ],
+        "target": [
+          100,
+          999
+        ],
+        "value": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Calculate 537 using all of these numbers: 51, 46, 36, 38, 21.\nEach number may be used at most once.\n\nFinal answer format instructions:\n1. Provide your solution as a arithmetic expression (no '=' sign).\n2. Do not include the target number in the expression.\n3. Use '*' for multiplication.\n4. Use '/' for division.\n5. Do not include any other text or formatting.\n",
+    "answer": "21*(38 - 46 + 36) - 51",
+    "metadata": {
+      "source_dataset": "countdown",
+      "source_index": 23,
+      "numbers": [
+        51,
+        46,
+        36,
+        38,
+        21
+      ],
+      "target": 537,
+      "expression": "21*(38 - 46 + 36) - 51",
+      "difficulty": {
+        "numbers": [
+          4,
+          6
+        ],
+        "target": [
+          100,
+          999
+        ],
+        "value": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Find a way to make 104 using all of these numbers: 40, 61, 37, 2.\nEach number can only be used once.\n\nFinal answer format instructions:\n1. Provide your solution as a arithmetic expression (no '=' sign).\n2. Do not include the target number in the expression.\n3. Use '*' for multiplication.\n4. Use '/' for division.\n5. Do not include any other text or formatting.\n",
+    "answer": "40*2 - 37 + 61",
+    "metadata": {
+      "source_dataset": "countdown",
+      "source_index": 24,
+      "numbers": [
+        40,
+        61,
+        37,
+        2
+      ],
+      "target": 104,
+      "expression": "40*2 - 37 + 61",
+      "difficulty": {
+        "numbers": [
+          4,
+          6
+        ],
+        "target": [
+          100,
+          999
+        ],
+        "value": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Calculate 561 using all of these numbers: 6, 86, 83, 23.\nEach number may be used at most once.\n\nFinal answer format instructions:\n1. Provide your solution as a arithmetic expression (no '=' sign).\n2. Do not include the target number in the expression.\n3. Use '*' for multiplication.\n4. Use '/' for division.\n5. Do not include any other text or formatting.\n",
+    "answer": "83*6 + 86 - 23",
+    "metadata": {
+      "source_dataset": "countdown",
+      "source_index": 25,
+      "numbers": [
+        6,
+        86,
+        83,
+        23
+      ],
+      "target": 561,
+      "expression": "83*6 + 86 - 23",
+      "difficulty": {
+        "numbers": [
+          4,
+          6
+        ],
+        "target": [
+          100,
+          999
+        ],
+        "value": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Find a way to make 100 using all of these numbers: 33, 53, 16, 54, 95, 23.\nEach number can only be used once.\n\nFinal answer format instructions:\n1. Provide your solution as a arithmetic expression (no '=' sign).\n2. Do not include the target number in the expression.\n3. Use '*' for multiplication.\n4. Use '/' for division.\n5. Do not include any other text or formatting.\n",
+    "answer": "53 + 16 + 95 - 33 - 54 + 23",
+    "metadata": {
+      "source_dataset": "countdown",
+      "source_index": 26,
+      "numbers": [
+        33,
+        53,
+        16,
+        54,
+        95,
+        23
+      ],
+      "target": 100,
+      "expression": "53 + 16 + 95 - 33 - 54 + 23",
+      "difficulty": {
+        "numbers": [
+          4,
+          6
+        ],
+        "target": [
+          100,
+          999
+        ],
+        "value": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Using all the numbers 22, 78, 13, 45, 5, 9, create an expression that equals 264.\nYou can only use each number once.\n\nFinal answer format instructions:\n1. Provide your solution as a arithmetic expression (no '=' sign).\n2. Do not include the target number in the expression.\n3. Use '*' for multiplication.\n4. Use '/' for division.\n5. Do not include any other text or formatting.\n",
+    "answer": "9*(5*13 - 22) - 78 - 45",
+    "metadata": {
+      "source_dataset": "countdown",
+      "source_index": 27,
+      "numbers": [
+        22,
+        78,
+        13,
+        45,
+        5,
+        9
+      ],
+      "target": 264,
+      "expression": "9*(5*13 - 22) - 78 - 45",
+      "difficulty": {
+        "numbers": [
+          4,
+          6
+        ],
+        "target": [
+          100,
+          999
+        ],
+        "value": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Using all the numbers 84, 10, 52, 65, create an expression that equals 672.\nYou can only use each number once.\n\nFinal answer format instructions:\n1. Provide your solution as a arithmetic expression (no '=' sign).\n2. Do not include the target number in the expression.\n3. Use '*' for multiplication.\n4. Use '/' for division.\n5. Do not include any other text or formatting.\n",
+    "answer": "52*84*10/65",
+    "metadata": {
+      "source_dataset": "countdown",
+      "source_index": 28,
+      "numbers": [
+        84,
+        10,
+        52,
+        65
+      ],
+      "target": 672,
+      "expression": "52*84*10/65",
+      "difficulty": {
+        "numbers": [
+          4,
+          6
+        ],
+        "target": [
+          100,
+          999
+        ],
+        "value": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Find a way to make 450 using all of these numbers: 51, 4, 9, 32, 13.\nEach number can only be used once.\n\nFinal answer format instructions:\n1. Provide your solution as a arithmetic expression (no '=' sign).\n2. Do not include the target number in the expression.\n3. Use '*' for multiplication.\n4. Use '/' for division.\n5. Do not include any other text or formatting.\n",
+    "answer": "9*(51 + 4) - 13 - 32",
+    "metadata": {
+      "source_dataset": "countdown",
+      "source_index": 29,
+      "numbers": [
+        51,
+        4,
+        9,
+        32,
+        13
+      ],
+      "target": 450,
+      "expression": "9*(51 + 4) - 13 - 32",
+      "difficulty": {
+        "numbers": [
+          4,
+          6
+        ],
+        "target": [
+          100,
+          999
+        ],
+        "value": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Find a way to make 498 using all of these numbers: 7, 83, 85, 2.\nEach number can only be used once.\n\nFinal answer format instructions:\n1. Provide your solution as a arithmetic expression (no '=' sign).\n2. Do not include the target number in the expression.\n3. Use '*' for multiplication.\n4. Use '/' for division.\n5. Do not include any other text or formatting.\n",
+    "answer": "7*(85 - 2) - 83",
+    "metadata": {
+      "source_dataset": "countdown",
+      "source_index": 30,
+      "numbers": [
+        7,
+        83,
+        85,
+        2
+      ],
+      "target": 498,
+      "expression": "7*(85 - 2) - 83",
+      "difficulty": {
+        "numbers": [
+          4,
+          6
+        ],
+        "target": [
+          100,
+          999
+        ],
+        "value": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Find a way to make 688 using all of these numbers: 77, 92, 26, 34, 73.\nEach number can only be used once.\n\nFinal answer format instructions:\n1. Provide your solution as a arithmetic expression (no '=' sign).\n2. Do not include the target number in the expression.\n3. Use '*' for multiplication.\n4. Use '/' for division.\n5. Do not include any other text or formatting.\n",
+    "answer": "26*(34 + 73 - 77) - 92",
+    "metadata": {
+      "source_dataset": "countdown",
+      "source_index": 31,
+      "numbers": [
+        77,
+        92,
+        26,
+        34,
+        73
+      ],
+      "target": 688,
+      "expression": "26*(34 + 73 - 77) - 92",
+      "difficulty": {
+        "numbers": [
+          4,
+          6
+        ],
+        "target": [
+          100,
+          999
+        ],
+        "value": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Calculate 147 using all of these numbers: 94, 90, 80, 81, 81, 72.\nEach number may be used at most once.\n\nFinal answer format instructions:\n1. Provide your solution as a arithmetic expression (no '=' sign).\n2. Do not include the target number in the expression.\n3. Use '*' for multiplication.\n4. Use '/' for division.\n5. Do not include any other text or formatting.\n",
+    "answer": "80*(90 + 72)/81 + 81 - 94",
+    "metadata": {
+      "source_dataset": "countdown",
+      "source_index": 32,
+      "numbers": [
+        94,
+        90,
+        80,
+        81,
+        81,
+        72
+      ],
+      "target": 147,
+      "expression": "80*(90 + 72)/81 + 81 - 94",
+      "difficulty": {
+        "numbers": [
+          4,
+          6
+        ],
+        "target": [
+          100,
+          999
+        ],
+        "value": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Using all the numbers 64, 77, 19, 39, 26, create an expression that equals 109.\nYou can only use each number once.\n\nFinal answer format instructions:\n1. Provide your solution as a arithmetic expression (no '=' sign).\n2. Do not include the target number in the expression.\n3. Use '*' for multiplication.\n4. Use '/' for division.\n5. Do not include any other text or formatting.\n",
+    "answer": "26 - 19 - 39 + 64 + 77",
+    "metadata": {
+      "source_dataset": "countdown",
+      "source_index": 33,
+      "numbers": [
+        64,
+        77,
+        19,
+        39,
+        26
+      ],
+      "target": 109,
+      "expression": "26 - 19 - 39 + 64 + 77",
+      "difficulty": {
+        "numbers": [
+          4,
+          6
+        ],
+        "target": [
+          100,
+          999
+        ],
+        "value": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Using all the numbers 7, 60, 39, 50, 26, create an expression that equals 161.\nYou can only use each number once.\n\nFinal answer format instructions:\n1. Provide your solution as a arithmetic expression (no '=' sign).\n2. Do not include the target number in the expression.\n3. Use '*' for multiplication.\n4. Use '/' for division.\n5. Do not include any other text or formatting.\n",
+    "answer": "7*(60 - 50 - 26 + 39)",
+    "metadata": {
+      "source_dataset": "countdown",
+      "source_index": 34,
+      "numbers": [
+        7,
+        60,
+        39,
+        50,
+        26
+      ],
+      "target": 161,
+      "expression": "7*(60 - 50 - 26 + 39)",
+      "difficulty": {
+        "numbers": [
+          4,
+          6
+        ],
+        "target": [
+          100,
+          999
+        ],
+        "value": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Calculate 103 using all of these numbers: 61, 27, 29, 69, 25.\nEach number may be used at most once.\n\nFinal answer format instructions:\n1. Provide your solution as a arithmetic expression (no '=' sign).\n2. Do not include the target number in the expression.\n3. Use '*' for multiplication.\n4. Use '/' for division.\n5. Do not include any other text or formatting.\n",
+    "answer": "69 + 61 + 27 - 29 - 25",
+    "metadata": {
+      "source_dataset": "countdown",
+      "source_index": 35,
+      "numbers": [
+        61,
+        27,
+        29,
+        69,
+        25
+      ],
+      "target": 103,
+      "expression": "69 + 61 + 27 - 29 - 25",
+      "difficulty": {
+        "numbers": [
+          4,
+          6
+        ],
+        "target": [
+          100,
+          999
+        ],
+        "value": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Calculate 327 using all of these numbers: 39, 13, 86, 94.\nEach number may be used at most once.\n\nFinal answer format instructions:\n1. Provide your solution as a arithmetic expression (no '=' sign).\n2. Do not include the target number in the expression.\n3. Use '*' for multiplication.\n4. Use '/' for division.\n5. Do not include any other text or formatting.\n",
+    "answer": "13*39 - 86 - 94",
+    "metadata": {
+      "source_dataset": "countdown",
+      "source_index": 36,
+      "numbers": [
+        39,
+        13,
+        86,
+        94
+      ],
+      "target": 327,
+      "expression": "13*39 - 86 - 94",
+      "difficulty": {
+        "numbers": [
+          4,
+          6
+        ],
+        "target": [
+          100,
+          999
+        ],
+        "value": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Find a way to make 809 using all of these numbers: 5, 23, 35, 9.\nEach number can only be used once.\n\nFinal answer format instructions:\n1. Provide your solution as a arithmetic expression (no '=' sign).\n2. Do not include the target number in the expression.\n3. Use '*' for multiplication.\n4. Use '/' for division.\n5. Do not include any other text or formatting.\n",
+    "answer": "35*23 + 9 - 5",
+    "metadata": {
+      "source_dataset": "countdown",
+      "source_index": 37,
+      "numbers": [
+        5,
+        23,
+        35,
+        9
+      ],
+      "target": 809,
+      "expression": "35*23 + 9 - 5",
+      "difficulty": {
+        "numbers": [
+          4,
+          6
+        ],
+        "target": [
+          100,
+          999
+        ],
+        "value": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Calculate 863 using all of these numbers: 48, 4, 41, 75, 4.\nEach number may be used at most once.\n\nFinal answer format instructions:\n1. Provide your solution as a arithmetic expression (no '=' sign).\n2. Do not include the target number in the expression.\n3. Use '*' for multiplication.\n4. Use '/' for division.\n5. Do not include any other text or formatting.\n",
+    "answer": "48*75/4 + 4 - 41",
+    "metadata": {
+      "source_dataset": "countdown",
+      "source_index": 38,
+      "numbers": [
+        48,
+        4,
+        41,
+        75,
+        4
+      ],
+      "target": 863,
+      "expression": "48*75/4 + 4 - 41",
+      "difficulty": {
+        "numbers": [
+          4,
+          6
+        ],
+        "target": [
+          100,
+          999
+        ],
+        "value": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Calculate 935 using all of these numbers: 92, 32, 88, 33, 8, 10.\nEach number may be used at most once.\n\nFinal answer format instructions:\n1. Provide your solution as a arithmetic expression (no '=' sign).\n2. Do not include the target number in the expression.\n3. Use '*' for multiplication.\n4. Use '/' for division.\n5. Do not include any other text or formatting.\n",
+    "answer": "92*10 - 32 - 33 - 8 + 88",
+    "metadata": {
+      "source_dataset": "countdown",
+      "source_index": 39,
+      "numbers": [
+        92,
+        32,
+        88,
+        33,
+        8,
+        10
+      ],
+      "target": 935,
+      "expression": "92*10 - 32 - 33 - 8 + 88",
+      "difficulty": {
+        "numbers": [
+          4,
+          6
+        ],
+        "target": [
+          100,
+          999
+        ],
+        "value": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Calculate 642 using all of these numbers: 89, 32, 15, 39.\nEach number may be used at most once.\n\nFinal answer format instructions:\n1. Provide your solution as a arithmetic expression (no '=' sign).\n2. Do not include the target number in the expression.\n3. Use '*' for multiplication.\n4. Use '/' for division.\n5. Do not include any other text or formatting.\n",
+    "answer": "39*15 + 89 - 32",
+    "metadata": {
+      "source_dataset": "countdown",
+      "source_index": 40,
+      "numbers": [
+        89,
+        32,
+        15,
+        39
+      ],
+      "target": 642,
+      "expression": "39*15 + 89 - 32",
+      "difficulty": {
+        "numbers": [
+          4,
+          6
+        ],
+        "target": [
+          100,
+          999
+        ],
+        "value": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Calculate 238 using all of these numbers: 91, 81, 22, 58, 30.\nEach number may be used at most once.\n\nFinal answer format instructions:\n1. Provide your solution as a arithmetic expression (no '=' sign).\n2. Do not include the target number in the expression.\n3. Use '*' for multiplication.\n4. Use '/' for division.\n5. Do not include any other text or formatting.\n",
+    "answer": "81 + 91 + 30 + 58 - 22",
+    "metadata": {
+      "source_dataset": "countdown",
+      "source_index": 41,
+      "numbers": [
+        91,
+        81,
+        22,
+        58,
+        30
+      ],
+      "target": 238,
+      "expression": "81 + 91 + 30 + 58 - 22",
+      "difficulty": {
+        "numbers": [
+          4,
+          6
+        ],
+        "target": [
+          100,
+          999
+        ],
+        "value": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Using all the numbers 69, 48, 24, 34, 69, 21, create an expression that equals 127.\nYou can only use each number once.\n\nFinal answer format instructions:\n1. Provide your solution as a arithmetic expression (no '=' sign).\n2. Do not include the target number in the expression.\n3. Use '*' for multiplication.\n4. Use '/' for division.\n5. Do not include any other text or formatting.\n",
+    "answer": "48 + 69 + (21*34 - 24)/69",
+    "metadata": {
+      "source_dataset": "countdown",
+      "source_index": 42,
+      "numbers": [
+        69,
+        48,
+        24,
+        34,
+        69,
+        21
+      ],
+      "target": 127,
+      "expression": "48 + 69 + (21*34 - 24)/69",
+      "difficulty": {
+        "numbers": [
+          4,
+          6
+        ],
+        "target": [
+          100,
+          999
+        ],
+        "value": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Calculate 134 using all of these numbers: 56, 78, 1, 1.\nEach number may be used at most once.\n\nFinal answer format instructions:\n1. Provide your solution as a arithmetic expression (no '=' sign).\n2. Do not include the target number in the expression.\n3. Use '*' for multiplication.\n4. Use '/' for division.\n5. Do not include any other text or formatting.\n",
+    "answer": "(78 + 56)/(1*1)",
+    "metadata": {
+      "source_dataset": "countdown",
+      "source_index": 43,
+      "numbers": [
+        56,
+        78,
+        1,
+        1
+      ],
+      "target": 134,
+      "expression": "(78 + 56)/(1*1)",
+      "difficulty": {
+        "numbers": [
+          4,
+          6
+        ],
+        "target": [
+          100,
+          999
+        ],
+        "value": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Using all the numbers 13, 23, 2, 95, create an expression that equals 129.\nYou can only use each number once.\n\nFinal answer format instructions:\n1. Provide your solution as a arithmetic expression (no '=' sign).\n2. Do not include the target number in the expression.\n3. Use '*' for multiplication.\n4. Use '/' for division.\n5. Do not include any other text or formatting.\n",
+    "answer": "95 - 2 + 23 + 13",
+    "metadata": {
+      "source_dataset": "countdown",
+      "source_index": 44,
+      "numbers": [
+        13,
+        23,
+        2,
+        95
+      ],
+      "target": 129,
+      "expression": "95 - 2 + 23 + 13",
+      "difficulty": {
+        "numbers": [
+          4,
+          6
+        ],
+        "target": [
+          100,
+          999
+        ],
+        "value": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Find a way to make 364 using all of these numbers: 16, 2, 2, 91.\nEach number can only be used once.\n\nFinal answer format instructions:\n1. Provide your solution as a arithmetic expression (no '=' sign).\n2. Do not include the target number in the expression.\n3. Use '*' for multiplication.\n4. Use '/' for division.\n5. Do not include any other text or formatting.\n",
+    "answer": "91*16/(2*2)",
+    "metadata": {
+      "source_dataset": "countdown",
+      "source_index": 45,
+      "numbers": [
+        16,
+        2,
+        2,
+        91
+      ],
+      "target": 364,
+      "expression": "91*16/(2*2)",
+      "difficulty": {
+        "numbers": [
+          4,
+          6
+        ],
+        "target": [
+          100,
+          999
+        ],
+        "value": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Find a way to make 814 using all of these numbers: 2, 2, 24, 43, 25.\nEach number can only be used once.\n\nFinal answer format instructions:\n1. Provide your solution as a arithmetic expression (no '=' sign).\n2. Do not include the target number in the expression.\n3. Use '*' for multiplication.\n4. Use '/' for division.\n5. Do not include any other text or formatting.\n",
+    "answer": "24*(25 + 43)/2 - 2",
+    "metadata": {
+      "source_dataset": "countdown",
+      "source_index": 46,
+      "numbers": [
+        2,
+        2,
+        24,
+        43,
+        25
+      ],
+      "target": 814,
+      "expression": "24*(25 + 43)/2 - 2",
+      "difficulty": {
+        "numbers": [
+          4,
+          6
+        ],
+        "target": [
+          100,
+          999
+        ],
+        "value": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Calculate 684 using all of these numbers: 18, 39, 75, 40.\nEach number may be used at most once.\n\nFinal answer format instructions:\n1. Provide your solution as a arithmetic expression (no '=' sign).\n2. Do not include the target number in the expression.\n3. Use '*' for multiplication.\n4. Use '/' for division.\n5. Do not include any other text or formatting.\n",
+    "answer": "18*40 + 39 - 75",
+    "metadata": {
+      "source_dataset": "countdown",
+      "source_index": 47,
+      "numbers": [
+        18,
+        39,
+        75,
+        40
+      ],
+      "target": 684,
+      "expression": "18*40 + 39 - 75",
+      "difficulty": {
+        "numbers": [
+          4,
+          6
+        ],
+        "target": [
+          100,
+          999
+        ],
+        "value": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Using all the numbers 24, 99, 68, 70, create an expression that equals 261.\nYou can only use each number once.\n\nFinal answer format instructions:\n1. Provide your solution as a arithmetic expression (no '=' sign).\n2. Do not include the target number in the expression.\n3. Use '*' for multiplication.\n4. Use '/' for division.\n5. Do not include any other text or formatting.\n",
+    "answer": "70 + 99 + 68 + 24",
+    "metadata": {
+      "source_dataset": "countdown",
+      "source_index": 48,
+      "numbers": [
+        24,
+        99,
+        68,
+        70
+      ],
+      "target": 261,
+      "expression": "70 + 99 + 68 + 24",
+      "difficulty": {
+        "numbers": [
+          4,
+          6
+        ],
+        "target": [
+          100,
+          999
+        ],
+        "value": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Using all the numbers 42, 41, 65, 36, create an expression that equals 869.\nYou can only use each number once.\n\nFinal answer format instructions:\n1. Provide your solution as a arithmetic expression (no '=' sign).\n2. Do not include the target number in the expression.\n3. Use '*' for multiplication.\n4. Use '/' for division.\n5. Do not include any other text or formatting.\n",
+    "answer": "36*(65 - 42) + 41",
+    "metadata": {
+      "source_dataset": "countdown",
+      "source_index": 49,
+      "numbers": [
+        42,
+        41,
+        65,
+        36
+      ],
+      "target": 869,
+      "expression": "36*(65 - 42) + 41",
+      "difficulty": {
+        "numbers": [
+          4,
+          6
+        ],
+        "target": [
+          100,
+          999
+        ],
+        "value": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Find a way to make 189 using all of these numbers: 74, 44, 81, 86, 8.\nEach number can only be used once.\n\nFinal answer format instructions:\n1. Provide your solution as a arithmetic expression (no '=' sign).\n2. Do not include the target number in the expression.\n3. Use '*' for multiplication.\n4. Use '/' for division.\n5. Do not include any other text or formatting.\n",
+    "answer": "74 + 86 + 81 - 44 - 8",
+    "metadata": {
+      "source_dataset": "countdown",
+      "source_index": 50,
+      "numbers": [
+        74,
+        44,
+        81,
+        86,
+        8
+      ],
+      "target": 189,
+      "expression": "74 + 86 + 81 - 44 - 8",
+      "difficulty": {
+        "numbers": [
+          4,
+          6
+        ],
+        "target": [
+          100,
+          999
+        ],
+        "value": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Using all the numbers 16, 5, 75, 80, 21, create an expression that equals 635.\nYou can only use each number once.\n\nFinal answer format instructions:\n1. Provide your solution as a arithmetic expression (no '=' sign).\n2. Do not include the target number in the expression.\n3. Use '*' for multiplication.\n4. Use '/' for division.\n5. Do not include any other text or formatting.\n",
+    "answer": "75*(16 + 21)/5 + 80",
+    "metadata": {
+      "source_dataset": "countdown",
+      "source_index": 51,
+      "numbers": [
+        16,
+        5,
+        75,
+        80,
+        21
+      ],
+      "target": 635,
+      "expression": "75*(16 + 21)/5 + 80",
+      "difficulty": {
+        "numbers": [
+          4,
+          6
+        ],
+        "target": [
+          100,
+          999
+        ],
+        "value": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Calculate 277 using all of these numbers: 39, 3, 56, 24, 3, 36.\nEach number may be used at most once.\n\nFinal answer format instructions:\n1. Provide your solution as a arithmetic expression (no '=' sign).\n2. Do not include the target number in the expression.\n3. Use '*' for multiplication.\n4. Use '/' for division.\n5. Do not include any other text or formatting.\n",
+    "answer": "56*(24/3 + 36 - 39) - 3",
+    "metadata": {
+      "source_dataset": "countdown",
+      "source_index": 52,
+      "numbers": [
+        39,
+        3,
+        56,
+        24,
+        3,
+        36
+      ],
+      "target": 277,
+      "expression": "56*(24/3 + 36 - 39) - 3",
+      "difficulty": {
+        "numbers": [
+          4,
+          6
+        ],
+        "target": [
+          100,
+          999
+        ],
+        "value": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Calculate 601 using all of these numbers: 92, 15, 100, 24, 5, 83.\nEach number may be used at most once.\n\nFinal answer format instructions:\n1. Provide your solution as a arithmetic expression (no '=' sign).\n2. Do not include the target number in the expression.\n3. Use '*' for multiplication.\n4. Use '/' for division.\n5. Do not include any other text or formatting.\n",
+    "answer": "-100 + (92*(24 + 15) - 83)/5",
+    "metadata": {
+      "source_dataset": "countdown",
+      "source_index": 53,
+      "numbers": [
+        92,
+        15,
+        100,
+        24,
+        5,
+        83
+      ],
+      "target": 601,
+      "expression": "-100 + (92*(24 + 15) - 83)/5",
+      "difficulty": {
+        "numbers": [
+          4,
+          6
+        ],
+        "target": [
+          100,
+          999
+        ],
+        "value": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Calculate 216 using all of these numbers: 57, 8, 16, 22, 65.\nEach number may be used at most once.\n\nFinal answer format instructions:\n1. Provide your solution as a arithmetic expression (no '=' sign).\n2. Do not include the target number in the expression.\n3. Use '*' for multiplication.\n4. Use '/' for division.\n5. Do not include any other text or formatting.\n",
+    "answer": "16*(22 - 8) + 57 - 65",
+    "metadata": {
+      "source_dataset": "countdown",
+      "source_index": 54,
+      "numbers": [
+        57,
+        8,
+        16,
+        22,
+        65
+      ],
+      "target": 216,
+      "expression": "16*(22 - 8) + 57 - 65",
+      "difficulty": {
+        "numbers": [
+          4,
+          6
+        ],
+        "target": [
+          100,
+          999
+        ],
+        "value": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Using all the numbers 74, 55, 48, 7, create an expression that equals 184.\nYou can only use each number once.\n\nFinal answer format instructions:\n1. Provide your solution as a arithmetic expression (no '=' sign).\n2. Do not include the target number in the expression.\n3. Use '*' for multiplication.\n4. Use '/' for division.\n5. Do not include any other text or formatting.\n",
+    "answer": "55 + 48 + 7 + 74",
+    "metadata": {
+      "source_dataset": "countdown",
+      "source_index": 55,
+      "numbers": [
+        74,
+        55,
+        48,
+        7
+      ],
+      "target": 184,
+      "expression": "55 + 48 + 7 + 74",
+      "difficulty": {
+        "numbers": [
+          4,
+          6
+        ],
+        "target": [
+          100,
+          999
+        ],
+        "value": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Find a way to make 608 using all of these numbers: 54, 46, 6, 8, 74.\nEach number can only be used once.\n\nFinal answer format instructions:\n1. Provide your solution as a arithmetic expression (no '=' sign).\n2. Do not include the target number in the expression.\n3. Use '*' for multiplication.\n4. Use '/' for division.\n5. Do not include any other text or formatting.\n",
+    "answer": "8*(74 - 6 - 46 + 54)",
+    "metadata": {
+      "source_dataset": "countdown",
+      "source_index": 56,
+      "numbers": [
+        54,
+        46,
+        6,
+        8,
+        74
+      ],
+      "target": 608,
+      "expression": "8*(74 - 6 - 46 + 54)",
+      "difficulty": {
+        "numbers": [
+          4,
+          6
+        ],
+        "target": [
+          100,
+          999
+        ],
+        "value": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Using all the numbers 96, 65, 77, 23, 57, create an expression that equals 204.\nYou can only use each number once.\n\nFinal answer format instructions:\n1. Provide your solution as a arithmetic expression (no '=' sign).\n2. Do not include the target number in the expression.\n3. Use '*' for multiplication.\n4. Use '/' for division.\n5. Do not include any other text or formatting.\n",
+    "answer": "96 - 57 + 77 + 23 + 65",
+    "metadata": {
+      "source_dataset": "countdown",
+      "source_index": 57,
+      "numbers": [
+        96,
+        65,
+        77,
+        23,
+        57
+      ],
+      "target": 204,
+      "expression": "96 - 57 + 77 + 23 + 65",
+      "difficulty": {
+        "numbers": [
+          4,
+          6
+        ],
+        "target": [
+          100,
+          999
+        ],
+        "value": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Calculate 624 using all of these numbers: 52, 98, 8, 13.\nEach number may be used at most once.\n\nFinal answer format instructions:\n1. Provide your solution as a arithmetic expression (no '=' sign).\n2. Do not include the target number in the expression.\n3. Use '*' for multiplication.\n4. Use '/' for division.\n5. Do not include any other text or formatting.\n",
+    "answer": "52*98/8 - 13",
+    "metadata": {
+      "source_dataset": "countdown",
+      "source_index": 58,
+      "numbers": [
+        52,
+        98,
+        8,
+        13
+      ],
+      "target": 624,
+      "expression": "52*98/8 - 13",
+      "difficulty": {
+        "numbers": [
+          4,
+          6
+        ],
+        "target": [
+          100,
+          999
+        ],
+        "value": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Calculate 165 using all of these numbers: 61, 94, 88, 84, 47, 73.\nEach number may be used at most once.\n\nFinal answer format instructions:\n1. Provide your solution as a arithmetic expression (no '=' sign).\n2. Do not include the target number in the expression.\n3. Use '*' for multiplication.\n4. Use '/' for division.\n5. Do not include any other text or formatting.\n",
+    "answer": "88 - 94 - 47 + 84 + 73 + 61",
+    "metadata": {
+      "source_dataset": "countdown",
+      "source_index": 59,
+      "numbers": [
+        61,
+        94,
+        88,
+        84,
+        47,
+        73
+      ],
+      "target": 165,
+      "expression": "88 - 94 - 47 + 84 + 73 + 61",
+      "difficulty": {
+        "numbers": [
+          4,
+          6
+        ],
+        "target": [
+          100,
+          999
+        ],
+        "value": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Calculate 124 using all of these numbers: 47, 76, 10, 27.\nEach number may be used at most once.\n\nFinal answer format instructions:\n1. Provide your solution as a arithmetic expression (no '=' sign).\n2. Do not include the target number in the expression.\n3. Use '*' for multiplication.\n4. Use '/' for division.\n5. Do not include any other text or formatting.\n",
+    "answer": "10*(47 - 27) - 76",
+    "metadata": {
+      "source_dataset": "countdown",
+      "source_index": 60,
+      "numbers": [
+        47,
+        76,
+        10,
+        27
+      ],
+      "target": 124,
+      "expression": "10*(47 - 27) - 76",
+      "difficulty": {
+        "numbers": [
+          4,
+          6
+        ],
+        "target": [
+          100,
+          999
+        ],
+        "value": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Find a way to make 134 using all of these numbers: 97, 25, 25, 28, 68, 59.\nEach number can only be used once.\n\nFinal answer format instructions:\n1. Provide your solution as a arithmetic expression (no '=' sign).\n2. Do not include the target number in the expression.\n3. Use '*' for multiplication.\n4. Use '/' for division.\n5. Do not include any other text or formatting.\n",
+    "answer": "25 + (28*97 + 68 - 59)/25",
+    "metadata": {
+      "source_dataset": "countdown",
+      "source_index": 61,
+      "numbers": [
+        97,
+        25,
+        25,
+        28,
+        68,
+        59
+      ],
+      "target": 134,
+      "expression": "25 + (28*97 + 68 - 59)/25",
+      "difficulty": {
+        "numbers": [
+          4,
+          6
+        ],
+        "target": [
+          100,
+          999
+        ],
+        "value": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Find a way to make 563 using all of these numbers: 75, 83, 8, 26.\nEach number can only be used once.\n\nFinal answer format instructions:\n1. Provide your solution as a arithmetic expression (no '=' sign).\n2. Do not include the target number in the expression.\n3. Use '*' for multiplication.\n4. Use '/' for division.\n5. Do not include any other text or formatting.\n",
+    "answer": "83*8 - 26 - 75",
+    "metadata": {
+      "source_dataset": "countdown",
+      "source_index": 62,
+      "numbers": [
+        75,
+        83,
+        8,
+        26
+      ],
+      "target": 563,
+      "expression": "83*8 - 26 - 75",
+      "difficulty": {
+        "numbers": [
+          4,
+          6
+        ],
+        "target": [
+          100,
+          999
+        ],
+        "value": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Calculate 164 using all of these numbers: 4, 32, 47, 10, 73, 90.\nEach number may be used at most once.\n\nFinal answer format instructions:\n1. Provide your solution as a arithmetic expression (no '=' sign).\n2. Do not include the target number in the expression.\n3. Use '*' for multiplication.\n4. Use '/' for division.\n5. Do not include any other text or formatting.\n",
+    "answer": "73 - 32 - 10 + 90 - 4 + 47",
+    "metadata": {
+      "source_dataset": "countdown",
+      "source_index": 63,
+      "numbers": [
+        4,
+        32,
+        47,
+        10,
+        73,
+        90
+      ],
+      "target": 164,
+      "expression": "73 - 32 - 10 + 90 - 4 + 47",
+      "difficulty": {
+        "numbers": [
+          4,
+          6
+        ],
+        "target": [
+          100,
+          999
+        ],
+        "value": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Find a way to make 121 using all of these numbers: 62, 8, 61, 3, 72, 68.\nEach number can only be used once.\n\nFinal answer format instructions:\n1. Provide your solution as a arithmetic expression (no '=' sign).\n2. Do not include the target number in the expression.\n3. Use '*' for multiplication.\n4. Use '/' for division.\n5. Do not include any other text or formatting.\n",
+    "answer": "62*3 + 72 - 68 - 61 - 8",
+    "metadata": {
+      "source_dataset": "countdown",
+      "source_index": 64,
+      "numbers": [
+        62,
+        8,
+        61,
+        3,
+        72,
+        68
+      ],
+      "target": 121,
+      "expression": "62*3 + 72 - 68 - 61 - 8",
+      "difficulty": {
+        "numbers": [
+          4,
+          6
+        ],
+        "target": [
+          100,
+          999
+        ],
+        "value": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Calculate 455 using all of these numbers: 94, 100, 51, 6.\nEach number may be used at most once.\n\nFinal answer format instructions:\n1. Provide your solution as a arithmetic expression (no '=' sign).\n2. Do not include the target number in the expression.\n3. Use '*' for multiplication.\n4. Use '/' for division.\n5. Do not include any other text or formatting.\n",
+    "answer": "100*6 - 51 - 94",
+    "metadata": {
+      "source_dataset": "countdown",
+      "source_index": 65,
+      "numbers": [
+        94,
+        100,
+        51,
+        6
+      ],
+      "target": 455,
+      "expression": "100*6 - 51 - 94",
+      "difficulty": {
+        "numbers": [
+          4,
+          6
+        ],
+        "target": [
+          100,
+          999
+        ],
+        "value": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Using all the numbers 11, 50, 92, 85, create an expression that equals 977.\nYou can only use each number once.\n\nFinal answer format instructions:\n1. Provide your solution as a arithmetic expression (no '=' sign).\n2. Do not include the target number in the expression.\n3. Use '*' for multiplication.\n4. Use '/' for division.\n5. Do not include any other text or formatting.\n",
+    "answer": "92*11 - 85 + 50",
+    "metadata": {
+      "source_dataset": "countdown",
+      "source_index": 66,
+      "numbers": [
+        11,
+        50,
+        92,
+        85
+      ],
+      "target": 977,
+      "expression": "92*11 - 85 + 50",
+      "difficulty": {
+        "numbers": [
+          4,
+          6
+        ],
+        "target": [
+          100,
+          999
+        ],
+        "value": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Using all the numbers 50, 82, 35, 16, 16, create an expression that equals 490.\nYou can only use each number once.\n\nFinal answer format instructions:\n1. Provide your solution as a arithmetic expression (no '=' sign).\n2. Do not include the target number in the expression.\n3. Use '*' for multiplication.\n4. Use '/' for division.\n5. Do not include any other text or formatting.\n",
+    "answer": "35*(16 + (50 - 82)/16)",
+    "metadata": {
+      "source_dataset": "countdown",
+      "source_index": 67,
+      "numbers": [
+        50,
+        82,
+        35,
+        16,
+        16
+      ],
+      "target": 490,
+      "expression": "35*(16 + (50 - 82)/16)",
+      "difficulty": {
+        "numbers": [
+          4,
+          6
+        ],
+        "target": [
+          100,
+          999
+        ],
+        "value": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Using all the numbers 63, 26, 52, 60, 28, create an expression that equals 889.\nYou can only use each number once.\n\nFinal answer format instructions:\n1. Provide your solution as a arithmetic expression (no '=' sign).\n2. Do not include the target number in the expression.\n3. Use '*' for multiplication.\n4. Use '/' for division.\n5. Do not include any other text or formatting.\n",
+    "answer": "28*(60 - 52 + 26) - 63",
+    "metadata": {
+      "source_dataset": "countdown",
+      "source_index": 68,
+      "numbers": [
+        63,
+        26,
+        52,
+        60,
+        28
+      ],
+      "target": 889,
+      "expression": "28*(60 - 52 + 26) - 63",
+      "difficulty": {
+        "numbers": [
+          4,
+          6
+        ],
+        "target": [
+          100,
+          999
+        ],
+        "value": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Calculate 541 using all of these numbers: 28, 59, 44, 13.\nEach number may be used at most once.\n\nFinal answer format instructions:\n1. Provide your solution as a arithmetic expression (no '=' sign).\n2. Do not include the target number in the expression.\n3. Use '*' for multiplication.\n4. Use '/' for division.\n5. Do not include any other text or formatting.\n",
+    "answer": "13*44 - 59 + 28",
+    "metadata": {
+      "source_dataset": "countdown",
+      "source_index": 69,
+      "numbers": [
+        28,
+        59,
+        44,
+        13
+      ],
+      "target": 541,
+      "expression": "13*44 - 59 + 28",
+      "difficulty": {
+        "numbers": [
+          4,
+          6
+        ],
+        "target": [
+          100,
+          999
+        ],
+        "value": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Calculate 751 using all of these numbers: 75, 90, 80, 39, 86.\nEach number may be used at most once.\n\nFinal answer format instructions:\n1. Provide your solution as a arithmetic expression (no '=' sign).\n2. Do not include the target number in the expression.\n3. Use '*' for multiplication.\n4. Use '/' for division.\n5. Do not include any other text or formatting.\n",
+    "answer": "80*(86 - 75) - 39 - 90",
+    "metadata": {
+      "source_dataset": "countdown",
+      "source_index": 70,
+      "numbers": [
+        75,
+        90,
+        80,
+        39,
+        86
+      ],
+      "target": 751,
+      "expression": "80*(86 - 75) - 39 - 90",
+      "difficulty": {
+        "numbers": [
+          4,
+          6
+        ],
+        "target": [
+          100,
+          999
+        ],
+        "value": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Using all the numbers 23, 58, 5, 5, create an expression that equals 262.\nYou can only use each number once.\n\nFinal answer format instructions:\n1. Provide your solution as a arithmetic expression (no '=' sign).\n2. Do not include the target number in the expression.\n3. Use '*' for multiplication.\n4. Use '/' for division.\n5. Do not include any other text or formatting.\n",
+    "answer": "5*58 - 23 - 5",
+    "metadata": {
+      "source_dataset": "countdown",
+      "source_index": 71,
+      "numbers": [
+        23,
+        58,
+        5,
+        5
+      ],
+      "target": 262,
+      "expression": "5*58 - 23 - 5",
+      "difficulty": {
+        "numbers": [
+          4,
+          6
+        ],
+        "target": [
+          100,
+          999
+        ],
+        "value": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Find a way to make 312 using all of these numbers: 39, 13, 73, 88.\nEach number can only be used once.\n\nFinal answer format instructions:\n1. Provide your solution as a arithmetic expression (no '=' sign).\n2. Do not include the target number in the expression.\n3. Use '*' for multiplication.\n4. Use '/' for division.\n5. Do not include any other text or formatting.\n",
+    "answer": "13*(73 + 39 - 88)",
+    "metadata": {
+      "source_dataset": "countdown",
+      "source_index": 72,
+      "numbers": [
+        39,
+        13,
+        73,
+        88
+      ],
+      "target": 312,
+      "expression": "13*(73 + 39 - 88)",
+      "difficulty": {
+        "numbers": [
+          4,
+          6
+        ],
+        "target": [
+          100,
+          999
+        ],
+        "value": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Find a way to make 667 using all of these numbers: 78, 54, 85, 11, 8.\nEach number can only be used once.\n\nFinal answer format instructions:\n1. Provide your solution as a arithmetic expression (no '=' sign).\n2. Do not include the target number in the expression.\n3. Use '*' for multiplication.\n4. Use '/' for division.\n5. Do not include any other text or formatting.\n",
+    "answer": "8*85 + 11 + 54 - 78",
+    "metadata": {
+      "source_dataset": "countdown",
+      "source_index": 73,
+      "numbers": [
+        78,
+        54,
+        85,
+        11,
+        8
+      ],
+      "target": 667,
+      "expression": "8*85 + 11 + 54 - 78",
+      "difficulty": {
+        "numbers": [
+          4,
+          6
+        ],
+        "target": [
+          100,
+          999
+        ],
+        "value": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Find a way to make 157 using all of these numbers: 62, 37, 46, 53, 30, 41.\nEach number can only be used once.\n\nFinal answer format instructions:\n1. Provide your solution as a arithmetic expression (no '=' sign).\n2. Do not include the target number in the expression.\n3. Use '*' for multiplication.\n4. Use '/' for division.\n5. Do not include any other text or formatting.\n",
+    "answer": "30*(41 - 37) + 46 - 62 + 53",
+    "metadata": {
+      "source_dataset": "countdown",
+      "source_index": 74,
+      "numbers": [
+        62,
+        37,
+        46,
+        53,
+        30,
+        41
+      ],
+      "target": 157,
+      "expression": "30*(41 - 37) + 46 - 62 + 53",
+      "difficulty": {
+        "numbers": [
+          4,
+          6
+        ],
+        "target": [
+          100,
+          999
+        ],
+        "value": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Find a way to make 112 using all of these numbers: 30, 44, 15, 23.\nEach number can only be used once.\n\nFinal answer format instructions:\n1. Provide your solution as a arithmetic expression (no '=' sign).\n2. Do not include the target number in the expression.\n3. Use '*' for multiplication.\n4. Use '/' for division.\n5. Do not include any other text or formatting.\n",
+    "answer": "30 + 23 + 44 + 15",
+    "metadata": {
+      "source_dataset": "countdown",
+      "source_index": 75,
+      "numbers": [
+        30,
+        44,
+        15,
+        23
+      ],
+      "target": 112,
+      "expression": "30 + 23 + 44 + 15",
+      "difficulty": {
+        "numbers": [
+          4,
+          6
+        ],
+        "target": [
+          100,
+          999
+        ],
+        "value": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Find a way to make 163 using all of these numbers: 100, 35, 1, 98, 1, 1.\nEach number can only be used once.\n\nFinal answer format instructions:\n1. Provide your solution as a arithmetic expression (no '=' sign).\n2. Do not include the target number in the expression.\n3. Use '*' for multiplication.\n4. Use '/' for division.\n5. Do not include any other text or formatting.\n",
+    "answer": "(1*(98 + 100) - 35)/(1*1)",
+    "metadata": {
+      "source_dataset": "countdown",
+      "source_index": 76,
+      "numbers": [
+        100,
+        35,
+        1,
+        98,
+        1,
+        1
+      ],
+      "target": 163,
+      "expression": "(1*(98 + 100) - 35)/(1*1)",
+      "difficulty": {
+        "numbers": [
+          4,
+          6
+        ],
+        "target": [
+          100,
+          999
+        ],
+        "value": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Find a way to make 654 using all of these numbers: 3, 3, 61, 36, 75.\nEach number can only be used once.\n\nFinal answer format instructions:\n1. Provide your solution as a arithmetic expression (no '=' sign).\n2. Do not include the target number in the expression.\n3. Use '*' for multiplication.\n4. Use '/' for division.\n5. Do not include any other text or formatting.\n",
+    "answer": "36*61/3 - 75 - 3",
+    "metadata": {
+      "source_dataset": "countdown",
+      "source_index": 77,
+      "numbers": [
+        3,
+        3,
+        61,
+        36,
+        75
+      ],
+      "target": 654,
+      "expression": "36*61/3 - 75 - 3",
+      "difficulty": {
+        "numbers": [
+          4,
+          6
+        ],
+        "target": [
+          100,
+          999
+        ],
+        "value": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Using all the numbers 65, 95, 66, 55, 27, 15, create an expression that equals 137.\nYou can only use each number once.\n\nFinal answer format instructions:\n1. Provide your solution as a arithmetic expression (no '=' sign).\n2. Do not include the target number in the expression.\n3. Use '*' for multiplication.\n4. Use '/' for division.\n5. Do not include any other text or formatting.\n",
+    "answer": "65 - 66 + 95 + 15 + 55 - 27",
+    "metadata": {
+      "source_dataset": "countdown",
+      "source_index": 78,
+      "numbers": [
+        65,
+        95,
+        66,
+        55,
+        27,
+        15
+      ],
+      "target": 137,
+      "expression": "65 - 66 + 95 + 15 + 55 - 27",
+      "difficulty": {
+        "numbers": [
+          4,
+          6
+        ],
+        "target": [
+          100,
+          999
+        ],
+        "value": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Calculate 153 using all of these numbers: 95, 59, 47, 48.\nEach number may be used at most once.\n\nFinal answer format instructions:\n1. Provide your solution as a arithmetic expression (no '=' sign).\n2. Do not include the target number in the expression.\n3. Use '*' for multiplication.\n4. Use '/' for division.\n5. Do not include any other text or formatting.\n",
+    "answer": "59 + 47 - 48 + 95",
+    "metadata": {
+      "source_dataset": "countdown",
+      "source_index": 79,
+      "numbers": [
+        95,
+        59,
+        47,
+        48
+      ],
+      "target": 153,
+      "expression": "59 + 47 - 48 + 95",
+      "difficulty": {
+        "numbers": [
+          4,
+          6
+        ],
+        "target": [
+          100,
+          999
+        ],
+        "value": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Using all the numbers 10, 43, 99, 100, 36, 10, create an expression that equals 190.\nYou can only use each number once.\n\nFinal answer format instructions:\n1. Provide your solution as a arithmetic expression (no '=' sign).\n2. Do not include the target number in the expression.\n3. Use '*' for multiplication.\n4. Use '/' for division.\n5. Do not include any other text or formatting.\n",
+    "answer": "100*(99 - 43 - 36)/10 - 10",
+    "metadata": {
+      "source_dataset": "countdown",
+      "source_index": 80,
+      "numbers": [
+        10,
+        43,
+        99,
+        100,
+        36,
+        10
+      ],
+      "target": 190,
+      "expression": "100*(99 - 43 - 36)/10 - 10",
+      "difficulty": {
+        "numbers": [
+          4,
+          6
+        ],
+        "target": [
+          100,
+          999
+        ],
+        "value": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Find a way to make 572 using all of these numbers: 35, 12, 99, 53.\nEach number can only be used once.\n\nFinal answer format instructions:\n1. Provide your solution as a arithmetic expression (no '=' sign).\n2. Do not include the target number in the expression.\n3. Use '*' for multiplication.\n4. Use '/' for division.\n5. Do not include any other text or formatting.\n",
+    "answer": "35*12 + 99 + 53",
+    "metadata": {
+      "source_dataset": "countdown",
+      "source_index": 81,
+      "numbers": [
+        35,
+        12,
+        99,
+        53
+      ],
+      "target": 572,
+      "expression": "35*12 + 99 + 53",
+      "difficulty": {
+        "numbers": [
+          4,
+          6
+        ],
+        "target": [
+          100,
+          999
+        ],
+        "value": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Find a way to make 132 using all of these numbers: 95, 82, 82, 82, 46.\nEach number can only be used once.\n\nFinal answer format instructions:\n1. Provide your solution as a arithmetic expression (no '=' sign).\n2. Do not include the target number in the expression.\n3. Use '*' for multiplication.\n4. Use '/' for division.\n5. Do not include any other text or formatting.\n",
+    "answer": "82/82 + 82 + 95 - 46",
+    "metadata": {
+      "source_dataset": "countdown",
+      "source_index": 82,
+      "numbers": [
+        95,
+        82,
+        82,
+        82,
+        46
+      ],
+      "target": 132,
+      "expression": "82/82 + 82 + 95 - 46",
+      "difficulty": {
+        "numbers": [
+          4,
+          6
+        ],
+        "target": [
+          100,
+          999
+        ],
+        "value": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Calculate 116 using all of these numbers: 78, 40, 79, 81.\nEach number may be used at most once.\n\nFinal answer format instructions:\n1. Provide your solution as a arithmetic expression (no '=' sign).\n2. Do not include the target number in the expression.\n3. Use '*' for multiplication.\n4. Use '/' for division.\n5. Do not include any other text or formatting.\n",
+    "answer": "78 + 40 + 79 - 81",
+    "metadata": {
+      "source_dataset": "countdown",
+      "source_index": 83,
+      "numbers": [
+        78,
+        40,
+        79,
+        81
+      ],
+      "target": 116,
+      "expression": "78 + 40 + 79 - 81",
+      "difficulty": {
+        "numbers": [
+          4,
+          6
+        ],
+        "target": [
+          100,
+          999
+        ],
+        "value": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Using all the numbers 100, 59, 82, 76, 18, 58, create an expression that equals 986.\nYou can only use each number once.\n\nFinal answer format instructions:\n1. Provide your solution as a arithmetic expression (no '=' sign).\n2. Do not include the target number in the expression.\n3. Use '*' for multiplication.\n4. Use '/' for division.\n5. Do not include any other text or formatting.\n",
+    "answer": "58*(76 - 18 + 100 - 82 - 59)",
+    "metadata": {
+      "source_dataset": "countdown",
+      "source_index": 84,
+      "numbers": [
+        100,
+        59,
+        82,
+        76,
+        18,
+        58
+      ],
+      "target": 986,
+      "expression": "58*(76 - 18 + 100 - 82 - 59)",
+      "difficulty": {
+        "numbers": [
+          4,
+          6
+        ],
+        "target": [
+          100,
+          999
+        ],
+        "value": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Find a way to make 254 using all of these numbers: 23, 94, 61, 3.\nEach number can only be used once.\n\nFinal answer format instructions:\n1. Provide your solution as a arithmetic expression (no '=' sign).\n2. Do not include the target number in the expression.\n3. Use '*' for multiplication.\n4. Use '/' for division.\n5. Do not include any other text or formatting.\n",
+    "answer": "3*61 - 23 + 94",
+    "metadata": {
+      "source_dataset": "countdown",
+      "source_index": 85,
+      "numbers": [
+        23,
+        94,
+        61,
+        3
+      ],
+      "target": 254,
+      "expression": "3*61 - 23 + 94",
+      "difficulty": {
+        "numbers": [
+          4,
+          6
+        ],
+        "target": [
+          100,
+          999
+        ],
+        "value": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Find a way to make 583 using all of these numbers: 59, 74, 35, 58.\nEach number can only be used once.\n\nFinal answer format instructions:\n1. Provide your solution as a arithmetic expression (no '=' sign).\n2. Do not include the target number in the expression.\n3. Use '*' for multiplication.\n4. Use '/' for division.\n5. Do not include any other text or formatting.\n",
+    "answer": "35*(74 - 59) + 58",
+    "metadata": {
+      "source_dataset": "countdown",
+      "source_index": 86,
+      "numbers": [
+        59,
+        74,
+        35,
+        58
+      ],
+      "target": 583,
+      "expression": "35*(74 - 59) + 58",
+      "difficulty": {
+        "numbers": [
+          4,
+          6
+        ],
+        "target": [
+          100,
+          999
+        ],
+        "value": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Calculate 761 using all of these numbers: 14, 38, 71, 13, 62, 100.\nEach number may be used at most once.\n\nFinal answer format instructions:\n1. Provide your solution as a arithmetic expression (no '=' sign).\n2. Do not include the target number in the expression.\n3. Use '*' for multiplication.\n4. Use '/' for division.\n5. Do not include any other text or formatting.\n",
+    "answer": "38*(14 + 71 - 62) - 100 - 13",
+    "metadata": {
+      "source_dataset": "countdown",
+      "source_index": 87,
+      "numbers": [
+        14,
+        38,
+        71,
+        13,
+        62,
+        100
+      ],
+      "target": 761,
+      "expression": "38*(14 + 71 - 62) - 100 - 13",
+      "difficulty": {
+        "numbers": [
+          4,
+          6
+        ],
+        "target": [
+          100,
+          999
+        ],
+        "value": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Using all the numbers 50, 60, 99, 12, 87, 96, create an expression that equals 112.\nYou can only use each number once.\n\nFinal answer format instructions:\n1. Provide your solution as a arithmetic expression (no '=' sign).\n2. Do not include the target number in the expression.\n3. Use '*' for multiplication.\n4. Use '/' for division.\n5. Do not include any other text or formatting.\n",
+    "answer": "60 + 87 + 12 - 50 + 99 - 96",
+    "metadata": {
+      "source_dataset": "countdown",
+      "source_index": 88,
+      "numbers": [
+        50,
+        60,
+        99,
+        12,
+        87,
+        96
+      ],
+      "target": 112,
+      "expression": "60 + 87 + 12 - 50 + 99 - 96",
+      "difficulty": {
+        "numbers": [
+          4,
+          6
+        ],
+        "target": [
+          100,
+          999
+        ],
+        "value": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Calculate 380 using all of these numbers: 56, 83, 20, 12, 34.\nEach number may be used at most once.\n\nFinal answer format instructions:\n1. Provide your solution as a arithmetic expression (no '=' sign).\n2. Do not include the target number in the expression.\n3. Use '*' for multiplication.\n4. Use '/' for division.\n5. Do not include any other text or formatting.\n",
+    "answer": "20*(34 + 56 - 83 + 12)",
+    "metadata": {
+      "source_dataset": "countdown",
+      "source_index": 89,
+      "numbers": [
+        56,
+        83,
+        20,
+        12,
+        34
+      ],
+      "target": 380,
+      "expression": "20*(34 + 56 - 83 + 12)",
+      "difficulty": {
+        "numbers": [
+          4,
+          6
+        ],
+        "target": [
+          100,
+          999
+        ],
+        "value": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Using all the numbers 45, 76, 8, 41, 75, create an expression that equals 324.\nYou can only use each number once.\n\nFinal answer format instructions:\n1. Provide your solution as a arithmetic expression (no '=' sign).\n2. Do not include the target number in the expression.\n3. Use '*' for multiplication.\n4. Use '/' for division.\n5. Do not include any other text or formatting.\n",
+    "answer": "41*(76 - 75 + 8) - 45",
+    "metadata": {
+      "source_dataset": "countdown",
+      "source_index": 90,
+      "numbers": [
+        45,
+        76,
+        8,
+        41,
+        75
+      ],
+      "target": 324,
+      "expression": "41*(76 - 75 + 8) - 45",
+      "difficulty": {
+        "numbers": [
+          4,
+          6
+        ],
+        "target": [
+          100,
+          999
+        ],
+        "value": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Using all the numbers 77, 36, 51, 30, 55, create an expression that equals 999.\nYou can only use each number once.\n\nFinal answer format instructions:\n1. Provide your solution as a arithmetic expression (no '=' sign).\n2. Do not include the target number in the expression.\n3. Use '*' for multiplication.\n4. Use '/' for division.\n5. Do not include any other text or formatting.\n",
+    "answer": "36*30 - 77 + 51 - 55",
+    "metadata": {
+      "source_dataset": "countdown",
+      "source_index": 91,
+      "numbers": [
+        77,
+        36,
+        51,
+        30,
+        55
+      ],
+      "target": 999,
+      "expression": "36*30 - 77 + 51 - 55",
+      "difficulty": {
+        "numbers": [
+          4,
+          6
+        ],
+        "target": [
+          100,
+          999
+        ],
+        "value": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Using all the numbers 24, 25, 80, 48, 51, create an expression that equals 132.\nYou can only use each number once.\n\nFinal answer format instructions:\n1. Provide your solution as a arithmetic expression (no '=' sign).\n2. Do not include the target number in the expression.\n3. Use '*' for multiplication.\n4. Use '/' for division.\n5. Do not include any other text or formatting.\n",
+    "answer": "51 + 24 + 25 - 48 + 80",
+    "metadata": {
+      "source_dataset": "countdown",
+      "source_index": 92,
+      "numbers": [
+        24,
+        25,
+        80,
+        48,
+        51
+      ],
+      "target": 132,
+      "expression": "51 + 24 + 25 - 48 + 80",
+      "difficulty": {
+        "numbers": [
+          4,
+          6
+        ],
+        "target": [
+          100,
+          999
+        ],
+        "value": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Using all the numbers 68, 43, 31, 20, 62, 36, create an expression that equals 507.\nYou can only use each number once.\n\nFinal answer format instructions:\n1. Provide your solution as a arithmetic expression (no '=' sign).\n2. Do not include the target number in the expression.\n3. Use '*' for multiplication.\n4. Use '/' for division.\n5. Do not include any other text or formatting.\n",
+    "answer": "20*(31 + 62 - 68) + 43 - 36",
+    "metadata": {
+      "source_dataset": "countdown",
+      "source_index": 93,
+      "numbers": [
+        68,
+        43,
+        31,
+        20,
+        62,
+        36
+      ],
+      "target": 507,
+      "expression": "20*(31 + 62 - 68) + 43 - 36",
+      "difficulty": {
+        "numbers": [
+          4,
+          6
+        ],
+        "target": [
+          100,
+          999
+        ],
+        "value": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Find a way to make 138 using all of these numbers: 83, 26, 41, 48, 62, 3.\nEach number can only be used once.\n\nFinal answer format instructions:\n1. Provide your solution as a arithmetic expression (no '=' sign).\n2. Do not include the target number in the expression.\n3. Use '*' for multiplication.\n4. Use '/' for division.\n5. Do not include any other text or formatting.\n",
+    "answer": "48*3 + 41 + 62 - 83 - 26",
+    "metadata": {
+      "source_dataset": "countdown",
+      "source_index": 94,
+      "numbers": [
+        83,
+        26,
+        41,
+        48,
+        62,
+        3
+      ],
+      "target": 138,
+      "expression": "48*3 + 41 + 62 - 83 - 26",
+      "difficulty": {
+        "numbers": [
+          4,
+          6
+        ],
+        "target": [
+          100,
+          999
+        ],
+        "value": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Calculate 434 using all of these numbers: 42, 70, 77, 6.\nEach number may be used at most once.\n\nFinal answer format instructions:\n1. Provide your solution as a arithmetic expression (no '=' sign).\n2. Do not include the target number in the expression.\n3. Use '*' for multiplication.\n4. Use '/' for division.\n5. Do not include any other text or formatting.\n",
+    "answer": "6*77 + 42 - 70",
+    "metadata": {
+      "source_dataset": "countdown",
+      "source_index": 95,
+      "numbers": [
+        42,
+        70,
+        77,
+        6
+      ],
+      "target": 434,
+      "expression": "6*77 + 42 - 70",
+      "difficulty": {
+        "numbers": [
+          4,
+          6
+        ],
+        "target": [
+          100,
+          999
+        ],
+        "value": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Using all the numbers 19, 24, 57, 22, create an expression that equals 421.\nYou can only use each number once.\n\nFinal answer format instructions:\n1. Provide your solution as a arithmetic expression (no '=' sign).\n2. Do not include the target number in the expression.\n3. Use '*' for multiplication.\n4. Use '/' for division.\n5. Do not include any other text or formatting.\n",
+    "answer": "24*19 - 57 + 22",
+    "metadata": {
+      "source_dataset": "countdown",
+      "source_index": 96,
+      "numbers": [
+        19,
+        24,
+        57,
+        22
+      ],
+      "target": 421,
+      "expression": "24*19 - 57 + 22",
+      "difficulty": {
+        "numbers": [
+          4,
+          6
+        ],
+        "target": [
+          100,
+          999
+        ],
+        "value": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Find a way to make 307 using all of these numbers: 72, 39, 100, 96.\nEach number can only be used once.\n\nFinal answer format instructions:\n1. Provide your solution as a arithmetic expression (no '=' sign).\n2. Do not include the target number in the expression.\n3. Use '*' for multiplication.\n4. Use '/' for division.\n5. Do not include any other text or formatting.\n",
+    "answer": "100 + 96 + 72 + 39",
+    "metadata": {
+      "source_dataset": "countdown",
+      "source_index": 97,
+      "numbers": [
+        72,
+        39,
+        100,
+        96
+      ],
+      "target": 307,
+      "expression": "100 + 96 + 72 + 39",
+      "difficulty": {
+        "numbers": [
+          4,
+          6
+        ],
+        "target": [
+          100,
+          999
+        ],
+        "value": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Calculate 105 using all of these numbers: 4, 69, 3, 35.\nEach number may be used at most once.\n\nFinal answer format instructions:\n1. Provide your solution as a arithmetic expression (no '=' sign).\n2. Do not include the target number in the expression.\n3. Use '*' for multiplication.\n4. Use '/' for division.\n5. Do not include any other text or formatting.\n",
+    "answer": "4 + 35 - 3 + 69",
+    "metadata": {
+      "source_dataset": "countdown",
+      "source_index": 98,
+      "numbers": [
+        4,
+        69,
+        3,
+        35
+      ],
+      "target": 105,
+      "expression": "4 + 35 - 3 + 69",
+      "difficulty": {
+        "numbers": [
+          4,
+          6
+        ],
+        "target": [
+          100,
+          999
+        ],
+        "value": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Calculate 863 using all of these numbers: 52, 51, 26, 11, 73, 11.\nEach number may be used at most once.\n\nFinal answer format instructions:\n1. Provide your solution as a arithmetic expression (no '=' sign).\n2. Do not include the target number in the expression.\n3. Use '*' for multiplication.\n4. Use '/' for division.\n5. Do not include any other text or formatting.\n",
+    "answer": "52*(11 + (26 + 51)/11) - 73",
+    "metadata": {
+      "source_dataset": "countdown",
+      "source_index": 99,
+      "numbers": [
+        52,
+        51,
+        26,
+        11,
+        73,
+        11
+      ],
+      "target": 863,
+      "expression": "52*(11 + (26 + 51)/11) - 73",
+      "difficulty": {
+        "numbers": [
+          4,
+          6
+        ],
+        "target": [
+          100,
+          999
+        ],
+        "value": [
+          1,
+          100
+        ]
+      }
+    }
+  }
+]

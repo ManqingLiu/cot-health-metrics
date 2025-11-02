@@ -1,0 +1,802 @@
+[
+  {
+    "question": "You are a researcher studying causal relationships using Blicket experiments. In these experiments, certain objects (called 'blickets') have the hidden property of activating a detector, causing its light to turn on.\n\nEach example shows the results of placing different combinations of objects on the detector. Each object is described by color, material and shape. Your task is to determine whether a new combination of objects will cause the detector to activate.\n\nAfter observing the previous examples, respond with:\n- \"on\" if you can determine the detector light will turn on\n- \"off\" if you can determine the detector light will stay off\n- \"undetermined\" if there is insufficient evidence to reach a conclusion\n\nDo not use quotation marks in your answer.\n\nPrevious experimental results:\ngreen metal cube → on\ngreen metal cube, brown metal cube → on\nbrown metal cube → off\nblue metal cylinder, cyan rubber cube, yellow rubber cube, red rubber cube, gray metal cube → on\nred rubber cube → off\ngray metal cube, yellow rubber cube, red rubber cube → off\n\nNew test case:\ngreen metal cube\n\nWhat is the detector light status?",
+    "answer": "on",
+    "metadata": {
+      "source_dataset": "acre",
+      "source_index": 0
+    }
+  },
+  {
+    "question": "You are a researcher studying causal relationships using Blicket experiments. In these experiments, certain objects (called 'blickets') have the hidden property of activating a detector, causing its light to turn on.\n\nEach example shows the results of placing different combinations of objects on the detector. Each object is described by color, material and shape. Your task is to determine whether a new combination of objects will cause the detector to activate.\n\nAfter observing the previous examples, respond with:\n- \"on\" if you can determine the detector light will turn on\n- \"off\" if you can determine the detector light will stay off\n- \"undetermined\" if there is insufficient evidence to reach a conclusion\n\nDo not use quotation marks in your answer.\n\nPrevious experimental results:\ngreen metal cube → on\ngreen metal cube, brown metal cube → on\nbrown metal cube → off\nblue metal cylinder, cyan rubber cube, yellow rubber cube, red rubber cube, gray metal cube → on\nred rubber cube → off\ngray metal cube, yellow rubber cube, red rubber cube → off\n\nNew test case:\nblue metal cylinder\n\nWhat is the detector light status?",
+    "answer": "undetermined",
+    "metadata": {
+      "source_dataset": "acre",
+      "source_index": 1
+    }
+  },
+  {
+    "question": "You are a researcher studying causal relationships using Blicket experiments. In these experiments, certain objects (called 'blickets') have the hidden property of activating a detector, causing its light to turn on.\n\nEach example shows the results of placing different combinations of objects on the detector. Each object is described by color, material and shape. Your task is to determine whether a new combination of objects will cause the detector to activate.\n\nAfter observing the previous examples, respond with:\n- \"on\" if you can determine the detector light will turn on\n- \"off\" if you can determine the detector light will stay off\n- \"undetermined\" if there is insufficient evidence to reach a conclusion\n\nDo not use quotation marks in your answer.\n\nPrevious experimental results:\ngreen metal cube → on\ngreen metal cube, brown metal cube → on\nbrown metal cube → off\nblue metal cylinder, cyan rubber cube, yellow rubber cube, red rubber cube, gray metal cube → on\nred rubber cube → off\ngray metal cube, yellow rubber cube, red rubber cube → off\n\nNew test case:\nbrown metal cube, cyan rubber cube\n\nWhat is the detector light status?",
+    "answer": "undetermined",
+    "metadata": {
+      "source_dataset": "acre",
+      "source_index": 2
+    }
+  },
+  {
+    "question": "You are a researcher studying causal relationships using Blicket experiments. In these experiments, certain objects (called 'blickets') have the hidden property of activating a detector, causing its light to turn on.\n\nEach example shows the results of placing different combinations of objects on the detector. Each object is described by color, material and shape. Your task is to determine whether a new combination of objects will cause the detector to activate.\n\nAfter observing the previous examples, respond with:\n- \"on\" if you can determine the detector light will turn on\n- \"off\" if you can determine the detector light will stay off\n- \"undetermined\" if there is insufficient evidence to reach a conclusion\n\nDo not use quotation marks in your answer.\n\nPrevious experimental results:\ngreen metal cube → on\ngreen metal cube, brown metal cube → on\nbrown metal cube → off\nblue metal cylinder, cyan rubber cube, yellow rubber cube, red rubber cube, gray metal cube → on\nred rubber cube → off\ngray metal cube, yellow rubber cube, red rubber cube → off\n\nNew test case:\nbrown metal cube, red rubber cube\n\nWhat is the detector light status?",
+    "answer": "off",
+    "metadata": {
+      "source_dataset": "acre",
+      "source_index": 3
+    }
+  },
+  {
+    "question": "You are a researcher studying causal relationships using Blicket experiments. In these experiments, certain objects (called 'blickets') have the hidden property of activating a detector, causing its light to turn on.\n\nEach example shows the results of placing different combinations of objects on the detector. Each object is described by color, material and shape. Your task is to determine whether a new combination of objects will cause the detector to activate.\n\nAfter observing the previous examples, respond with:\n- \"on\" if you can determine the detector light will turn on\n- \"off\" if you can determine the detector light will stay off\n- \"undetermined\" if there is insufficient evidence to reach a conclusion\n\nDo not use quotation marks in your answer.\n\nPrevious experimental results:\nyellow metal cube → off\nred rubber cube, yellow metal cube → on\nred rubber cube → on\npurple rubber cylinder, green metal cylinder, green metal sphere, red rubber cylinder, cyan rubber cylinder → on\ngreen metal cylinder, purple rubber cylinder, purple metal sphere, red rubber cylinder, green metal sphere → on\ncyan rubber cylinder, green metal sphere, red rubber cylinder → off\n\nNew test case:\ngreen metal cylinder\n\nWhat is the detector light status?",
+    "answer": "undetermined",
+    "metadata": {
+      "source_dataset": "acre",
+      "source_index": 4
+    }
+  },
+  {
+    "question": "You are a researcher studying causal relationships using Blicket experiments. In these experiments, certain objects (called 'blickets') have the hidden property of activating a detector, causing its light to turn on.\n\nEach example shows the results of placing different combinations of objects on the detector. Each object is described by color, material and shape. Your task is to determine whether a new combination of objects will cause the detector to activate.\n\nAfter observing the previous examples, respond with:\n- \"on\" if you can determine the detector light will turn on\n- \"off\" if you can determine the detector light will stay off\n- \"undetermined\" if there is insufficient evidence to reach a conclusion\n\nDo not use quotation marks in your answer.\n\nPrevious experimental results:\nyellow metal cube → off\nred rubber cube, yellow metal cube → on\nred rubber cube → on\npurple rubber cylinder, green metal cylinder, green metal sphere, red rubber cylinder, cyan rubber cylinder → on\ngreen metal cylinder, purple rubber cylinder, purple metal sphere, red rubber cylinder, green metal sphere → on\ncyan rubber cylinder, green metal sphere, red rubber cylinder → off\n\nNew test case:\nred rubber cube\n\nWhat is the detector light status?",
+    "answer": "on",
+    "metadata": {
+      "source_dataset": "acre",
+      "source_index": 5
+    }
+  },
+  {
+    "question": "You are a researcher studying causal relationships using Blicket experiments. In these experiments, certain objects (called 'blickets') have the hidden property of activating a detector, causing its light to turn on.\n\nEach example shows the results of placing different combinations of objects on the detector. Each object is described by color, material and shape. Your task is to determine whether a new combination of objects will cause the detector to activate.\n\nAfter observing the previous examples, respond with:\n- \"on\" if you can determine the detector light will turn on\n- \"off\" if you can determine the detector light will stay off\n- \"undetermined\" if there is insufficient evidence to reach a conclusion\n\nDo not use quotation marks in your answer.\n\nPrevious experimental results:\nyellow metal cube → off\nred rubber cube, yellow metal cube → on\nred rubber cube → on\npurple rubber cylinder, green metal cylinder, green metal sphere, red rubber cylinder, cyan rubber cylinder → on\ngreen metal cylinder, purple rubber cylinder, purple metal sphere, red rubber cylinder, green metal sphere → on\ncyan rubber cylinder, green metal sphere, red rubber cylinder → off\n\nNew test case:\nyellow metal cube, green metal sphere\n\nWhat is the detector light status?",
+    "answer": "off",
+    "metadata": {
+      "source_dataset": "acre",
+      "source_index": 6
+    }
+  },
+  {
+    "question": "You are a researcher studying causal relationships using Blicket experiments. In these experiments, certain objects (called 'blickets') have the hidden property of activating a detector, causing its light to turn on.\n\nEach example shows the results of placing different combinations of objects on the detector. Each object is described by color, material and shape. Your task is to determine whether a new combination of objects will cause the detector to activate.\n\nAfter observing the previous examples, respond with:\n- \"on\" if you can determine the detector light will turn on\n- \"off\" if you can determine the detector light will stay off\n- \"undetermined\" if there is insufficient evidence to reach a conclusion\n\nDo not use quotation marks in your answer.\n\nPrevious experimental results:\nyellow metal cube → off\nred rubber cube, yellow metal cube → on\nred rubber cube → on\npurple rubber cylinder, green metal cylinder, green metal sphere, red rubber cylinder, cyan rubber cylinder → on\ngreen metal cylinder, purple rubber cylinder, purple metal sphere, red rubber cylinder, green metal sphere → on\ncyan rubber cylinder, green metal sphere, red rubber cylinder → off\n\nNew test case:\nyellow metal cube, green metal cylinder\n\nWhat is the detector light status?",
+    "answer": "undetermined",
+    "metadata": {
+      "source_dataset": "acre",
+      "source_index": 7
+    }
+  },
+  {
+    "question": "You are a researcher studying causal relationships using Blicket experiments. In these experiments, certain objects (called 'blickets') have the hidden property of activating a detector, causing its light to turn on.\n\nEach example shows the results of placing different combinations of objects on the detector. Each object is described by color, material and shape. Your task is to determine whether a new combination of objects will cause the detector to activate.\n\nAfter observing the previous examples, respond with:\n- \"on\" if you can determine the detector light will turn on\n- \"off\" if you can determine the detector light will stay off\n- \"undetermined\" if there is insufficient evidence to reach a conclusion\n\nDo not use quotation marks in your answer.\n\nPrevious experimental results:\ngreen metal sphere → off\ngreen metal cube, green metal sphere → on\ngreen metal cube → on\ncyan metal cylinder, red metal cylinder → on\nred metal cube → off\nred metal cylinder, green rubber sphere, red metal cube → off\n\nNew test case:\nred metal cube\n\nWhat is the detector light status?",
+    "answer": "off",
+    "metadata": {
+      "source_dataset": "acre",
+      "source_index": 8
+    }
+  },
+  {
+    "question": "You are a researcher studying causal relationships using Blicket experiments. In these experiments, certain objects (called 'blickets') have the hidden property of activating a detector, causing its light to turn on.\n\nEach example shows the results of placing different combinations of objects on the detector. Each object is described by color, material and shape. Your task is to determine whether a new combination of objects will cause the detector to activate.\n\nAfter observing the previous examples, respond with:\n- \"on\" if you can determine the detector light will turn on\n- \"off\" if you can determine the detector light will stay off\n- \"undetermined\" if there is insufficient evidence to reach a conclusion\n\nDo not use quotation marks in your answer.\n\nPrevious experimental results:\ngreen metal sphere → off\ngreen metal cube, green metal sphere → on\ngreen metal cube → on\ncyan metal cylinder, red metal cylinder → on\nred metal cube → off\nred metal cylinder, green rubber sphere, red metal cube → off\n\nNew test case:\ngreen metal cube\n\nWhat is the detector light status?",
+    "answer": "on",
+    "metadata": {
+      "source_dataset": "acre",
+      "source_index": 9
+    }
+  },
+  {
+    "question": "You are a researcher studying causal relationships using Blicket experiments. In these experiments, certain objects (called 'blickets') have the hidden property of activating a detector, causing its light to turn on.\n\nEach example shows the results of placing different combinations of objects on the detector. Each object is described by color, material and shape. Your task is to determine whether a new combination of objects will cause the detector to activate.\n\nAfter observing the previous examples, respond with:\n- \"on\" if you can determine the detector light will turn on\n- \"off\" if you can determine the detector light will stay off\n- \"undetermined\" if there is insufficient evidence to reach a conclusion\n\nDo not use quotation marks in your answer.\n\nPrevious experimental results:\ngreen metal sphere → off\ngreen metal cube, green metal sphere → on\ngreen metal cube → on\ncyan metal cylinder, red metal cylinder → on\nred metal cube → off\nred metal cylinder, green rubber sphere, red metal cube → off\n\nNew test case:\nred metal cylinder, green rubber sphere, red metal cube, green metal cube\n\nWhat is the detector light status?",
+    "answer": "on",
+    "metadata": {
+      "source_dataset": "acre",
+      "source_index": 10
+    }
+  },
+  {
+    "question": "You are a researcher studying causal relationships using Blicket experiments. In these experiments, certain objects (called 'blickets') have the hidden property of activating a detector, causing its light to turn on.\n\nEach example shows the results of placing different combinations of objects on the detector. Each object is described by color, material and shape. Your task is to determine whether a new combination of objects will cause the detector to activate.\n\nAfter observing the previous examples, respond with:\n- \"on\" if you can determine the detector light will turn on\n- \"off\" if you can determine the detector light will stay off\n- \"undetermined\" if there is insufficient evidence to reach a conclusion\n\nDo not use quotation marks in your answer.\n\nPrevious experimental results:\ngreen metal sphere → off\ngreen metal cube, green metal sphere → on\ngreen metal cube → on\ncyan metal cylinder, red metal cylinder → on\nred metal cube → off\nred metal cylinder, green rubber sphere, red metal cube → off\n\nNew test case:\nred metal cylinder, green rubber sphere, red metal cube, green metal sphere\n\nWhat is the detector light status?",
+    "answer": "off",
+    "metadata": {
+      "source_dataset": "acre",
+      "source_index": 11
+    }
+  },
+  {
+    "question": "You are a researcher studying causal relationships using Blicket experiments. In these experiments, certain objects (called 'blickets') have the hidden property of activating a detector, causing its light to turn on.\n\nEach example shows the results of placing different combinations of objects on the detector. Each object is described by color, material and shape. Your task is to determine whether a new combination of objects will cause the detector to activate.\n\nAfter observing the previous examples, respond with:\n- \"on\" if you can determine the detector light will turn on\n- \"off\" if you can determine the detector light will stay off\n- \"undetermined\" if there is insufficient evidence to reach a conclusion\n\nDo not use quotation marks in your answer.\n\nPrevious experimental results:\ngreen rubber cylinder → on\nyellow metal cube → off\ngreen rubber cylinder, yellow metal cube → on\nyellow metal sphere, brown metal cube → on\nbrown metal sphere, yellow metal sphere, brown metal cube, cyan rubber sphere, green rubber cube → on\ngreen rubber cube, cyan rubber sphere → off\n\nNew test case:\ngreen rubber cylinder\n\nWhat is the detector light status?",
+    "answer": "on",
+    "metadata": {
+      "source_dataset": "acre",
+      "source_index": 12
+    }
+  },
+  {
+    "question": "You are a researcher studying causal relationships using Blicket experiments. In these experiments, certain objects (called 'blickets') have the hidden property of activating a detector, causing its light to turn on.\n\nEach example shows the results of placing different combinations of objects on the detector. Each object is described by color, material and shape. Your task is to determine whether a new combination of objects will cause the detector to activate.\n\nAfter observing the previous examples, respond with:\n- \"on\" if you can determine the detector light will turn on\n- \"off\" if you can determine the detector light will stay off\n- \"undetermined\" if there is insufficient evidence to reach a conclusion\n\nDo not use quotation marks in your answer.\n\nPrevious experimental results:\ngreen rubber cylinder → on\nyellow metal cube → off\ngreen rubber cylinder, yellow metal cube → on\nyellow metal sphere, brown metal cube → on\nbrown metal sphere, yellow metal sphere, brown metal cube, cyan rubber sphere, green rubber cube → on\ngreen rubber cube, cyan rubber sphere → off\n\nNew test case:\nyellow metal sphere\n\nWhat is the detector light status?",
+    "answer": "undetermined",
+    "metadata": {
+      "source_dataset": "acre",
+      "source_index": 13
+    }
+  },
+  {
+    "question": "You are a researcher studying causal relationships using Blicket experiments. In these experiments, certain objects (called 'blickets') have the hidden property of activating a detector, causing its light to turn on.\n\nEach example shows the results of placing different combinations of objects on the detector. Each object is described by color, material and shape. Your task is to determine whether a new combination of objects will cause the detector to activate.\n\nAfter observing the previous examples, respond with:\n- \"on\" if you can determine the detector light will turn on\n- \"off\" if you can determine the detector light will stay off\n- \"undetermined\" if there is insufficient evidence to reach a conclusion\n\nDo not use quotation marks in your answer.\n\nPrevious experimental results:\ngreen rubber cylinder → on\nyellow metal cube → off\ngreen rubber cylinder, yellow metal cube → on\nyellow metal sphere, brown metal cube → on\nbrown metal sphere, yellow metal sphere, brown metal cube, cyan rubber sphere, green rubber cube → on\ngreen rubber cube, cyan rubber sphere → off\n\nNew test case:\ngreen rubber cube, cyan rubber sphere, yellow metal sphere\n\nWhat is the detector light status?",
+    "answer": "undetermined",
+    "metadata": {
+      "source_dataset": "acre",
+      "source_index": 14
+    }
+  },
+  {
+    "question": "You are a researcher studying causal relationships using Blicket experiments. In these experiments, certain objects (called 'blickets') have the hidden property of activating a detector, causing its light to turn on.\n\nEach example shows the results of placing different combinations of objects on the detector. Each object is described by color, material and shape. Your task is to determine whether a new combination of objects will cause the detector to activate.\n\nAfter observing the previous examples, respond with:\n- \"on\" if you can determine the detector light will turn on\n- \"off\" if you can determine the detector light will stay off\n- \"undetermined\" if there is insufficient evidence to reach a conclusion\n\nDo not use quotation marks in your answer.\n\nPrevious experimental results:\ngreen rubber cylinder → on\nyellow metal cube → off\ngreen rubber cylinder, yellow metal cube → on\nyellow metal sphere, brown metal cube → on\nbrown metal sphere, yellow metal sphere, brown metal cube, cyan rubber sphere, green rubber cube → on\ngreen rubber cube, cyan rubber sphere → off\n\nNew test case:\ngreen rubber cube, cyan rubber sphere, yellow metal cube\n\nWhat is the detector light status?",
+    "answer": "off",
+    "metadata": {
+      "source_dataset": "acre",
+      "source_index": 15
+    }
+  },
+  {
+    "question": "You are a researcher studying causal relationships using Blicket experiments. In these experiments, certain objects (called 'blickets') have the hidden property of activating a detector, causing its light to turn on.\n\nEach example shows the results of placing different combinations of objects on the detector. Each object is described by color, material and shape. Your task is to determine whether a new combination of objects will cause the detector to activate.\n\nAfter observing the previous examples, respond with:\n- \"on\" if you can determine the detector light will turn on\n- \"off\" if you can determine the detector light will stay off\n- \"undetermined\" if there is insufficient evidence to reach a conclusion\n\nDo not use quotation marks in your answer.\n\nPrevious experimental results:\nblue rubber cube → on\nblue rubber cylinder → off\nblue rubber cube, blue rubber cylinder → on\ncyan metal cube, blue rubber sphere, yellow rubber sphere, yellow metal cylinder → on\nyellow metal cylinder, brown metal sphere → off\nyellow rubber sphere → off\n\nNew test case:\nblue rubber cube\n\nWhat is the detector light status?",
+    "answer": "on",
+    "metadata": {
+      "source_dataset": "acre",
+      "source_index": 16
+    }
+  },
+  {
+    "question": "You are a researcher studying causal relationships using Blicket experiments. In these experiments, certain objects (called 'blickets') have the hidden property of activating a detector, causing its light to turn on.\n\nEach example shows the results of placing different combinations of objects on the detector. Each object is described by color, material and shape. Your task is to determine whether a new combination of objects will cause the detector to activate.\n\nAfter observing the previous examples, respond with:\n- \"on\" if you can determine the detector light will turn on\n- \"off\" if you can determine the detector light will stay off\n- \"undetermined\" if there is insufficient evidence to reach a conclusion\n\nDo not use quotation marks in your answer.\n\nPrevious experimental results:\nblue rubber cube → on\nblue rubber cylinder → off\nblue rubber cube, blue rubber cylinder → on\ncyan metal cube, blue rubber sphere, yellow rubber sphere, yellow metal cylinder → on\nyellow metal cylinder, brown metal sphere → off\nyellow rubber sphere → off\n\nNew test case:\ncyan metal cube\n\nWhat is the detector light status?",
+    "answer": "undetermined",
+    "metadata": {
+      "source_dataset": "acre",
+      "source_index": 17
+    }
+  },
+  {
+    "question": "You are a researcher studying causal relationships using Blicket experiments. In these experiments, certain objects (called 'blickets') have the hidden property of activating a detector, causing its light to turn on.\n\nEach example shows the results of placing different combinations of objects on the detector. Each object is described by color, material and shape. Your task is to determine whether a new combination of objects will cause the detector to activate.\n\nAfter observing the previous examples, respond with:\n- \"on\" if you can determine the detector light will turn on\n- \"off\" if you can determine the detector light will stay off\n- \"undetermined\" if there is insufficient evidence to reach a conclusion\n\nDo not use quotation marks in your answer.\n\nPrevious experimental results:\nblue rubber cube → on\nblue rubber cylinder → off\nblue rubber cube, blue rubber cylinder → on\ncyan metal cube, blue rubber sphere, yellow rubber sphere, yellow metal cylinder → on\nyellow metal cylinder, brown metal sphere → off\nyellow rubber sphere → off\n\nNew test case:\nblue rubber cylinder, blue rubber sphere\n\nWhat is the detector light status?",
+    "answer": "undetermined",
+    "metadata": {
+      "source_dataset": "acre",
+      "source_index": 18
+    }
+  },
+  {
+    "question": "You are a researcher studying causal relationships using Blicket experiments. In these experiments, certain objects (called 'blickets') have the hidden property of activating a detector, causing its light to turn on.\n\nEach example shows the results of placing different combinations of objects on the detector. Each object is described by color, material and shape. Your task is to determine whether a new combination of objects will cause the detector to activate.\n\nAfter observing the previous examples, respond with:\n- \"on\" if you can determine the detector light will turn on\n- \"off\" if you can determine the detector light will stay off\n- \"undetermined\" if there is insufficient evidence to reach a conclusion\n\nDo not use quotation marks in your answer.\n\nPrevious experimental results:\nblue rubber cube → on\nblue rubber cylinder → off\nblue rubber cube, blue rubber cylinder → on\ncyan metal cube, blue rubber sphere, yellow rubber sphere, yellow metal cylinder → on\nyellow metal cylinder, brown metal sphere → off\nyellow rubber sphere → off\n\nNew test case:\nblue rubber cylinder, blue rubber cube\n\nWhat is the detector light status?",
+    "answer": "on",
+    "metadata": {
+      "source_dataset": "acre",
+      "source_index": 19
+    }
+  },
+  {
+    "question": "You are a researcher studying causal relationships using Blicket experiments. In these experiments, certain objects (called 'blickets') have the hidden property of activating a detector, causing its light to turn on.\n\nEach example shows the results of placing different combinations of objects on the detector. Each object is described by color, material and shape. Your task is to determine whether a new combination of objects will cause the detector to activate.\n\nAfter observing the previous examples, respond with:\n- \"on\" if you can determine the detector light will turn on\n- \"off\" if you can determine the detector light will stay off\n- \"undetermined\" if there is insufficient evidence to reach a conclusion\n\nDo not use quotation marks in your answer.\n\nPrevious experimental results:\ngray metal cylinder → on\ngray metal cylinder, brown rubber sphere → on\nbrown rubber sphere → off\nblue metal sphere, red metal sphere → off\ngreen metal sphere, blue metal sphere, red metal sphere → on\ngreen metal sphere, red metal sphere, blue metal sphere → on\n\nNew test case:\ngreen metal sphere\n\nWhat is the detector light status?",
+    "answer": "on",
+    "metadata": {
+      "source_dataset": "acre",
+      "source_index": 20
+    }
+  },
+  {
+    "question": "You are a researcher studying causal relationships using Blicket experiments. In these experiments, certain objects (called 'blickets') have the hidden property of activating a detector, causing its light to turn on.\n\nEach example shows the results of placing different combinations of objects on the detector. Each object is described by color, material and shape. Your task is to determine whether a new combination of objects will cause the detector to activate.\n\nAfter observing the previous examples, respond with:\n- \"on\" if you can determine the detector light will turn on\n- \"off\" if you can determine the detector light will stay off\n- \"undetermined\" if there is insufficient evidence to reach a conclusion\n\nDo not use quotation marks in your answer.\n\nPrevious experimental results:\ngray metal cylinder → on\ngray metal cylinder, brown rubber sphere → on\nbrown rubber sphere → off\nblue metal sphere, red metal sphere → off\ngreen metal sphere, blue metal sphere, red metal sphere → on\ngreen metal sphere, red metal sphere, blue metal sphere → on\n\nNew test case:\ngray metal cylinder\n\nWhat is the detector light status?",
+    "answer": "on",
+    "metadata": {
+      "source_dataset": "acre",
+      "source_index": 21
+    }
+  },
+  {
+    "question": "You are a researcher studying causal relationships using Blicket experiments. In these experiments, certain objects (called 'blickets') have the hidden property of activating a detector, causing its light to turn on.\n\nEach example shows the results of placing different combinations of objects on the detector. Each object is described by color, material and shape. Your task is to determine whether a new combination of objects will cause the detector to activate.\n\nAfter observing the previous examples, respond with:\n- \"on\" if you can determine the detector light will turn on\n- \"off\" if you can determine the detector light will stay off\n- \"undetermined\" if there is insufficient evidence to reach a conclusion\n\nDo not use quotation marks in your answer.\n\nPrevious experimental results:\ngray metal cylinder → on\ngray metal cylinder, brown rubber sphere → on\nbrown rubber sphere → off\nblue metal sphere, red metal sphere → off\ngreen metal sphere, blue metal sphere, red metal sphere → on\ngreen metal sphere, red metal sphere, blue metal sphere → on\n\nNew test case:\nblue metal sphere, red metal sphere, green metal sphere\n\nWhat is the detector light status?",
+    "answer": "on",
+    "metadata": {
+      "source_dataset": "acre",
+      "source_index": 22
+    }
+  },
+  {
+    "question": "You are a researcher studying causal relationships using Blicket experiments. In these experiments, certain objects (called 'blickets') have the hidden property of activating a detector, causing its light to turn on.\n\nEach example shows the results of placing different combinations of objects on the detector. Each object is described by color, material and shape. Your task is to determine whether a new combination of objects will cause the detector to activate.\n\nAfter observing the previous examples, respond with:\n- \"on\" if you can determine the detector light will turn on\n- \"off\" if you can determine the detector light will stay off\n- \"undetermined\" if there is insufficient evidence to reach a conclusion\n\nDo not use quotation marks in your answer.\n\nPrevious experimental results:\ngray metal cylinder → on\ngray metal cylinder, brown rubber sphere → on\nbrown rubber sphere → off\nblue metal sphere, red metal sphere → off\ngreen metal sphere, blue metal sphere, red metal sphere → on\ngreen metal sphere, red metal sphere, blue metal sphere → on\n\nNew test case:\nblue metal sphere, red metal sphere, brown rubber sphere\n\nWhat is the detector light status?",
+    "answer": "off",
+    "metadata": {
+      "source_dataset": "acre",
+      "source_index": 23
+    }
+  },
+  {
+    "question": "You are a researcher studying causal relationships using Blicket experiments. In these experiments, certain objects (called 'blickets') have the hidden property of activating a detector, causing its light to turn on.\n\nEach example shows the results of placing different combinations of objects on the detector. Each object is described by color, material and shape. Your task is to determine whether a new combination of objects will cause the detector to activate.\n\nAfter observing the previous examples, respond with:\n- \"on\" if you can determine the detector light will turn on\n- \"off\" if you can determine the detector light will stay off\n- \"undetermined\" if there is insufficient evidence to reach a conclusion\n\nDo not use quotation marks in your answer.\n\nPrevious experimental results:\npurple rubber cube, cyan rubber cube → on\ncyan rubber cube → off\npurple rubber cube → on\ngreen metal cube, yellow metal cube, red rubber cylinder → on\nred rubber cylinder, yellow metal cube → off\ngreen metal cube, red rubber cylinder → on\n\nNew test case:\ncyan rubber cube\n\nWhat is the detector light status?",
+    "answer": "off",
+    "metadata": {
+      "source_dataset": "acre",
+      "source_index": 24
+    }
+  },
+  {
+    "question": "You are a researcher studying causal relationships using Blicket experiments. In these experiments, certain objects (called 'blickets') have the hidden property of activating a detector, causing its light to turn on.\n\nEach example shows the results of placing different combinations of objects on the detector. Each object is described by color, material and shape. Your task is to determine whether a new combination of objects will cause the detector to activate.\n\nAfter observing the previous examples, respond with:\n- \"on\" if you can determine the detector light will turn on\n- \"off\" if you can determine the detector light will stay off\n- \"undetermined\" if there is insufficient evidence to reach a conclusion\n\nDo not use quotation marks in your answer.\n\nPrevious experimental results:\npurple rubber cube, cyan rubber cube → on\ncyan rubber cube → off\npurple rubber cube → on\ngreen metal cube, yellow metal cube, red rubber cylinder → on\nred rubber cylinder, yellow metal cube → off\ngreen metal cube, red rubber cylinder → on\n\nNew test case:\npurple rubber cube\n\nWhat is the detector light status?",
+    "answer": "on",
+    "metadata": {
+      "source_dataset": "acre",
+      "source_index": 25
+    }
+  },
+  {
+    "question": "You are a researcher studying causal relationships using Blicket experiments. In these experiments, certain objects (called 'blickets') have the hidden property of activating a detector, causing its light to turn on.\n\nEach example shows the results of placing different combinations of objects on the detector. Each object is described by color, material and shape. Your task is to determine whether a new combination of objects will cause the detector to activate.\n\nAfter observing the previous examples, respond with:\n- \"on\" if you can determine the detector light will turn on\n- \"off\" if you can determine the detector light will stay off\n- \"undetermined\" if there is insufficient evidence to reach a conclusion\n\nDo not use quotation marks in your answer.\n\nPrevious experimental results:\npurple rubber cube, cyan rubber cube → on\ncyan rubber cube → off\npurple rubber cube → on\ngreen metal cube, yellow metal cube, red rubber cylinder → on\nred rubber cylinder, yellow metal cube → off\ngreen metal cube, red rubber cylinder → on\n\nNew test case:\ncyan rubber cube, green metal cube\n\nWhat is the detector light status?",
+    "answer": "on",
+    "metadata": {
+      "source_dataset": "acre",
+      "source_index": 26
+    }
+  },
+  {
+    "question": "You are a researcher studying causal relationships using Blicket experiments. In these experiments, certain objects (called 'blickets') have the hidden property of activating a detector, causing its light to turn on.\n\nEach example shows the results of placing different combinations of objects on the detector. Each object is described by color, material and shape. Your task is to determine whether a new combination of objects will cause the detector to activate.\n\nAfter observing the previous examples, respond with:\n- \"on\" if you can determine the detector light will turn on\n- \"off\" if you can determine the detector light will stay off\n- \"undetermined\" if there is insufficient evidence to reach a conclusion\n\nDo not use quotation marks in your answer.\n\nPrevious experimental results:\npurple rubber cube, cyan rubber cube → on\ncyan rubber cube → off\npurple rubber cube → on\ngreen metal cube, yellow metal cube, red rubber cylinder → on\nred rubber cylinder, yellow metal cube → off\ngreen metal cube, red rubber cylinder → on\n\nNew test case:\ncyan rubber cube, purple rubber cube\n\nWhat is the detector light status?",
+    "answer": "on",
+    "metadata": {
+      "source_dataset": "acre",
+      "source_index": 27
+    }
+  },
+  {
+    "question": "You are a researcher studying causal relationships using Blicket experiments. In these experiments, certain objects (called 'blickets') have the hidden property of activating a detector, causing its light to turn on.\n\nEach example shows the results of placing different combinations of objects on the detector. Each object is described by color, material and shape. Your task is to determine whether a new combination of objects will cause the detector to activate.\n\nAfter observing the previous examples, respond with:\n- \"on\" if you can determine the detector light will turn on\n- \"off\" if you can determine the detector light will stay off\n- \"undetermined\" if there is insufficient evidence to reach a conclusion\n\nDo not use quotation marks in your answer.\n\nPrevious experimental results:\ncyan rubber sphere, brown rubber cylinder → on\nbrown rubber cylinder → off\ncyan rubber sphere → on\nyellow rubber cube, purple rubber cylinder → off\nyellow metal cube, blue rubber sphere, yellow rubber cube → on\nblue rubber sphere, yellow rubber cube → on\n\nNew test case:\nblue rubber sphere\n\nWhat is the detector light status?",
+    "answer": "on",
+    "metadata": {
+      "source_dataset": "acre",
+      "source_index": 28
+    }
+  },
+  {
+    "question": "You are a researcher studying causal relationships using Blicket experiments. In these experiments, certain objects (called 'blickets') have the hidden property of activating a detector, causing its light to turn on.\n\nEach example shows the results of placing different combinations of objects on the detector. Each object is described by color, material and shape. Your task is to determine whether a new combination of objects will cause the detector to activate.\n\nAfter observing the previous examples, respond with:\n- \"on\" if you can determine the detector light will turn on\n- \"off\" if you can determine the detector light will stay off\n- \"undetermined\" if there is insufficient evidence to reach a conclusion\n\nDo not use quotation marks in your answer.\n\nPrevious experimental results:\ncyan rubber sphere, brown rubber cylinder → on\nbrown rubber cylinder → off\ncyan rubber sphere → on\nyellow rubber cube, purple rubber cylinder → off\nyellow metal cube, blue rubber sphere, yellow rubber cube → on\nblue rubber sphere, yellow rubber cube → on\n\nNew test case:\nyellow metal cube\n\nWhat is the detector light status?",
+    "answer": "undetermined",
+    "metadata": {
+      "source_dataset": "acre",
+      "source_index": 29
+    }
+  },
+  {
+    "question": "You are a researcher studying causal relationships using Blicket experiments. In these experiments, certain objects (called 'blickets') have the hidden property of activating a detector, causing its light to turn on.\n\nEach example shows the results of placing different combinations of objects on the detector. Each object is described by color, material and shape. Your task is to determine whether a new combination of objects will cause the detector to activate.\n\nAfter observing the previous examples, respond with:\n- \"on\" if you can determine the detector light will turn on\n- \"off\" if you can determine the detector light will stay off\n- \"undetermined\" if there is insufficient evidence to reach a conclusion\n\nDo not use quotation marks in your answer.\n\nPrevious experimental results:\ncyan rubber sphere, brown rubber cylinder → on\nbrown rubber cylinder → off\ncyan rubber sphere → on\nyellow rubber cube, purple rubber cylinder → off\nyellow metal cube, blue rubber sphere, yellow rubber cube → on\nblue rubber sphere, yellow rubber cube → on\n\nNew test case:\nbrown rubber cylinder, blue rubber sphere\n\nWhat is the detector light status?",
+    "answer": "on",
+    "metadata": {
+      "source_dataset": "acre",
+      "source_index": 30
+    }
+  },
+  {
+    "question": "You are a researcher studying causal relationships using Blicket experiments. In these experiments, certain objects (called 'blickets') have the hidden property of activating a detector, causing its light to turn on.\n\nEach example shows the results of placing different combinations of objects on the detector. Each object is described by color, material and shape. Your task is to determine whether a new combination of objects will cause the detector to activate.\n\nAfter observing the previous examples, respond with:\n- \"on\" if you can determine the detector light will turn on\n- \"off\" if you can determine the detector light will stay off\n- \"undetermined\" if there is insufficient evidence to reach a conclusion\n\nDo not use quotation marks in your answer.\n\nPrevious experimental results:\ncyan rubber sphere, brown rubber cylinder → on\nbrown rubber cylinder → off\ncyan rubber sphere → on\nyellow rubber cube, purple rubber cylinder → off\nyellow metal cube, blue rubber sphere, yellow rubber cube → on\nblue rubber sphere, yellow rubber cube → on\n\nNew test case:\nbrown rubber cylinder, yellow rubber cube\n\nWhat is the detector light status?",
+    "answer": "off",
+    "metadata": {
+      "source_dataset": "acre",
+      "source_index": 31
+    }
+  },
+  {
+    "question": "You are a researcher studying causal relationships using Blicket experiments. In these experiments, certain objects (called 'blickets') have the hidden property of activating a detector, causing its light to turn on.\n\nEach example shows the results of placing different combinations of objects on the detector. Each object is described by color, material and shape. Your task is to determine whether a new combination of objects will cause the detector to activate.\n\nAfter observing the previous examples, respond with:\n- \"on\" if you can determine the detector light will turn on\n- \"off\" if you can determine the detector light will stay off\n- \"undetermined\" if there is insufficient evidence to reach a conclusion\n\nDo not use quotation marks in your answer.\n\nPrevious experimental results:\nred metal cylinder → on\nred metal cylinder, gray metal cylinder → on\ngray metal cylinder → off\ngreen metal cylinder → off\npurple rubber cube → on\ngray rubber cylinder, brown metal sphere, blue metal cube → off\n\nNew test case:\nred metal cylinder\n\nWhat is the detector light status?",
+    "answer": "on",
+    "metadata": {
+      "source_dataset": "acre",
+      "source_index": 32
+    }
+  },
+  {
+    "question": "You are a researcher studying causal relationships using Blicket experiments. In these experiments, certain objects (called 'blickets') have the hidden property of activating a detector, causing its light to turn on.\n\nEach example shows the results of placing different combinations of objects on the detector. Each object is described by color, material and shape. Your task is to determine whether a new combination of objects will cause the detector to activate.\n\nAfter observing the previous examples, respond with:\n- \"on\" if you can determine the detector light will turn on\n- \"off\" if you can determine the detector light will stay off\n- \"undetermined\" if there is insufficient evidence to reach a conclusion\n\nDo not use quotation marks in your answer.\n\nPrevious experimental results:\nred metal cylinder → on\nred metal cylinder, gray metal cylinder → on\ngray metal cylinder → off\ngreen metal cylinder → off\npurple rubber cube → on\ngray rubber cylinder, brown metal sphere, blue metal cube → off\n\nNew test case:\ngray rubber cylinder\n\nWhat is the detector light status?",
+    "answer": "off",
+    "metadata": {
+      "source_dataset": "acre",
+      "source_index": 33
+    }
+  },
+  {
+    "question": "You are a researcher studying causal relationships using Blicket experiments. In these experiments, certain objects (called 'blickets') have the hidden property of activating a detector, causing its light to turn on.\n\nEach example shows the results of placing different combinations of objects on the detector. Each object is described by color, material and shape. Your task is to determine whether a new combination of objects will cause the detector to activate.\n\nAfter observing the previous examples, respond with:\n- \"on\" if you can determine the detector light will turn on\n- \"off\" if you can determine the detector light will stay off\n- \"undetermined\" if there is insufficient evidence to reach a conclusion\n\nDo not use quotation marks in your answer.\n\nPrevious experimental results:\nred metal cylinder → on\nred metal cylinder, gray metal cylinder → on\ngray metal cylinder → off\ngreen metal cylinder → off\npurple rubber cube → on\ngray rubber cylinder, brown metal sphere, blue metal cube → off\n\nNew test case:\ngray metal cylinder, brown metal sphere\n\nWhat is the detector light status?",
+    "answer": "off",
+    "metadata": {
+      "source_dataset": "acre",
+      "source_index": 34
+    }
+  },
+  {
+    "question": "You are a researcher studying causal relationships using Blicket experiments. In these experiments, certain objects (called 'blickets') have the hidden property of activating a detector, causing its light to turn on.\n\nEach example shows the results of placing different combinations of objects on the detector. Each object is described by color, material and shape. Your task is to determine whether a new combination of objects will cause the detector to activate.\n\nAfter observing the previous examples, respond with:\n- \"on\" if you can determine the detector light will turn on\n- \"off\" if you can determine the detector light will stay off\n- \"undetermined\" if there is insufficient evidence to reach a conclusion\n\nDo not use quotation marks in your answer.\n\nPrevious experimental results:\nred metal cylinder → on\nred metal cylinder, gray metal cylinder → on\ngray metal cylinder → off\ngreen metal cylinder → off\npurple rubber cube → on\ngray rubber cylinder, brown metal sphere, blue metal cube → off\n\nNew test case:\ngray metal cylinder, red metal cylinder\n\nWhat is the detector light status?",
+    "answer": "on",
+    "metadata": {
+      "source_dataset": "acre",
+      "source_index": 35
+    }
+  },
+  {
+    "question": "You are a researcher studying causal relationships using Blicket experiments. In these experiments, certain objects (called 'blickets') have the hidden property of activating a detector, causing its light to turn on.\n\nEach example shows the results of placing different combinations of objects on the detector. Each object is described by color, material and shape. Your task is to determine whether a new combination of objects will cause the detector to activate.\n\nAfter observing the previous examples, respond with:\n- \"on\" if you can determine the detector light will turn on\n- \"off\" if you can determine the detector light will stay off\n- \"undetermined\" if there is insufficient evidence to reach a conclusion\n\nDo not use quotation marks in your answer.\n\nPrevious experimental results:\npurple metal sphere, cyan rubber cylinder → on\npurple metal sphere → on\ncyan rubber cylinder → off\nyellow metal cylinder, purple rubber cylinder, blue metal cube → on\nblue metal cube → off\nyellow rubber sphere, blue metal cube, purple rubber cube → off\n\nNew test case:\nyellow rubber sphere\n\nWhat is the detector light status?",
+    "answer": "off",
+    "metadata": {
+      "source_dataset": "acre",
+      "source_index": 36
+    }
+  },
+  {
+    "question": "You are a researcher studying causal relationships using Blicket experiments. In these experiments, certain objects (called 'blickets') have the hidden property of activating a detector, causing its light to turn on.\n\nEach example shows the results of placing different combinations of objects on the detector. Each object is described by color, material and shape. Your task is to determine whether a new combination of objects will cause the detector to activate.\n\nAfter observing the previous examples, respond with:\n- \"on\" if you can determine the detector light will turn on\n- \"off\" if you can determine the detector light will stay off\n- \"undetermined\" if there is insufficient evidence to reach a conclusion\n\nDo not use quotation marks in your answer.\n\nPrevious experimental results:\npurple metal sphere, cyan rubber cylinder → on\npurple metal sphere → on\ncyan rubber cylinder → off\nyellow metal cylinder, purple rubber cylinder, blue metal cube → on\nblue metal cube → off\nyellow rubber sphere, blue metal cube, purple rubber cube → off\n\nNew test case:\nyellow metal cylinder\n\nWhat is the detector light status?",
+    "answer": "undetermined",
+    "metadata": {
+      "source_dataset": "acre",
+      "source_index": 37
+    }
+  },
+  {
+    "question": "You are a researcher studying causal relationships using Blicket experiments. In these experiments, certain objects (called 'blickets') have the hidden property of activating a detector, causing its light to turn on.\n\nEach example shows the results of placing different combinations of objects on the detector. Each object is described by color, material and shape. Your task is to determine whether a new combination of objects will cause the detector to activate.\n\nAfter observing the previous examples, respond with:\n- \"on\" if you can determine the detector light will turn on\n- \"off\" if you can determine the detector light will stay off\n- \"undetermined\" if there is insufficient evidence to reach a conclusion\n\nDo not use quotation marks in your answer.\n\nPrevious experimental results:\npurple metal sphere, cyan rubber cylinder → on\npurple metal sphere → on\ncyan rubber cylinder → off\nyellow metal cylinder, purple rubber cylinder, blue metal cube → on\nblue metal cube → off\nyellow rubber sphere, blue metal cube, purple rubber cube → off\n\nNew test case:\nyellow rubber sphere, blue metal cube, purple rubber cube, yellow metal cylinder\n\nWhat is the detector light status?",
+    "answer": "undetermined",
+    "metadata": {
+      "source_dataset": "acre",
+      "source_index": 38
+    }
+  },
+  {
+    "question": "You are a researcher studying causal relationships using Blicket experiments. In these experiments, certain objects (called 'blickets') have the hidden property of activating a detector, causing its light to turn on.\n\nEach example shows the results of placing different combinations of objects on the detector. Each object is described by color, material and shape. Your task is to determine whether a new combination of objects will cause the detector to activate.\n\nAfter observing the previous examples, respond with:\n- \"on\" if you can determine the detector light will turn on\n- \"off\" if you can determine the detector light will stay off\n- \"undetermined\" if there is insufficient evidence to reach a conclusion\n\nDo not use quotation marks in your answer.\n\nPrevious experimental results:\npurple metal sphere, cyan rubber cylinder → on\npurple metal sphere → on\ncyan rubber cylinder → off\nyellow metal cylinder, purple rubber cylinder, blue metal cube → on\nblue metal cube → off\nyellow rubber sphere, blue metal cube, purple rubber cube → off\n\nNew test case:\nyellow rubber sphere, blue metal cube, purple rubber cube, purple metal sphere\n\nWhat is the detector light status?",
+    "answer": "on",
+    "metadata": {
+      "source_dataset": "acre",
+      "source_index": 39
+    }
+  },
+  {
+    "question": "You are a researcher studying causal relationships using Blicket experiments. In these experiments, certain objects (called 'blickets') have the hidden property of activating a detector, causing its light to turn on.\n\nEach example shows the results of placing different combinations of objects on the detector. Each object is described by color, material and shape. Your task is to determine whether a new combination of objects will cause the detector to activate.\n\nAfter observing the previous examples, respond with:\n- \"on\" if you can determine the detector light will turn on\n- \"off\" if you can determine the detector light will stay off\n- \"undetermined\" if there is insufficient evidence to reach a conclusion\n\nDo not use quotation marks in your answer.\n\nPrevious experimental results:\ngreen metal cube → off\nblue metal cylinder → on\nblue metal cylinder, green metal cube → on\ngray metal cube → off\nblue rubber cylinder, gray metal cube → off\ngray rubber cylinder → on\n\nNew test case:\ngray rubber cylinder\n\nWhat is the detector light status?",
+    "answer": "on",
+    "metadata": {
+      "source_dataset": "acre",
+      "source_index": 40
+    }
+  },
+  {
+    "question": "You are a researcher studying causal relationships using Blicket experiments. In these experiments, certain objects (called 'blickets') have the hidden property of activating a detector, causing its light to turn on.\n\nEach example shows the results of placing different combinations of objects on the detector. Each object is described by color, material and shape. Your task is to determine whether a new combination of objects will cause the detector to activate.\n\nAfter observing the previous examples, respond with:\n- \"on\" if you can determine the detector light will turn on\n- \"off\" if you can determine the detector light will stay off\n- \"undetermined\" if there is insufficient evidence to reach a conclusion\n\nDo not use quotation marks in your answer.\n\nPrevious experimental results:\ngreen metal cube → off\nblue metal cylinder → on\nblue metal cylinder, green metal cube → on\ngray metal cube → off\nblue rubber cylinder, gray metal cube → off\ngray rubber cylinder → on\n\nNew test case:\ngray metal cube\n\nWhat is the detector light status?",
+    "answer": "off",
+    "metadata": {
+      "source_dataset": "acre",
+      "source_index": 41
+    }
+  },
+  {
+    "question": "You are a researcher studying causal relationships using Blicket experiments. In these experiments, certain objects (called 'blickets') have the hidden property of activating a detector, causing its light to turn on.\n\nEach example shows the results of placing different combinations of objects on the detector. Each object is described by color, material and shape. Your task is to determine whether a new combination of objects will cause the detector to activate.\n\nAfter observing the previous examples, respond with:\n- \"on\" if you can determine the detector light will turn on\n- \"off\" if you can determine the detector light will stay off\n- \"undetermined\" if there is insufficient evidence to reach a conclusion\n\nDo not use quotation marks in your answer.\n\nPrevious experimental results:\ngreen metal cube → off\nblue metal cylinder → on\nblue metal cylinder, green metal cube → on\ngray metal cube → off\nblue rubber cylinder, gray metal cube → off\ngray rubber cylinder → on\n\nNew test case:\ngreen metal cube, gray metal cube\n\nWhat is the detector light status?",
+    "answer": "off",
+    "metadata": {
+      "source_dataset": "acre",
+      "source_index": 42
+    }
+  },
+  {
+    "question": "You are a researcher studying causal relationships using Blicket experiments. In these experiments, certain objects (called 'blickets') have the hidden property of activating a detector, causing its light to turn on.\n\nEach example shows the results of placing different combinations of objects on the detector. Each object is described by color, material and shape. Your task is to determine whether a new combination of objects will cause the detector to activate.\n\nAfter observing the previous examples, respond with:\n- \"on\" if you can determine the detector light will turn on\n- \"off\" if you can determine the detector light will stay off\n- \"undetermined\" if there is insufficient evidence to reach a conclusion\n\nDo not use quotation marks in your answer.\n\nPrevious experimental results:\ngreen metal cube → off\nblue metal cylinder → on\nblue metal cylinder, green metal cube → on\ngray metal cube → off\nblue rubber cylinder, gray metal cube → off\ngray rubber cylinder → on\n\nNew test case:\ngreen metal cube, blue metal cylinder\n\nWhat is the detector light status?",
+    "answer": "on",
+    "metadata": {
+      "source_dataset": "acre",
+      "source_index": 43
+    }
+  },
+  {
+    "question": "You are a researcher studying causal relationships using Blicket experiments. In these experiments, certain objects (called 'blickets') have the hidden property of activating a detector, causing its light to turn on.\n\nEach example shows the results of placing different combinations of objects on the detector. Each object is described by color, material and shape. Your task is to determine whether a new combination of objects will cause the detector to activate.\n\nAfter observing the previous examples, respond with:\n- \"on\" if you can determine the detector light will turn on\n- \"off\" if you can determine the detector light will stay off\n- \"undetermined\" if there is insufficient evidence to reach a conclusion\n\nDo not use quotation marks in your answer.\n\nPrevious experimental results:\nyellow metal sphere, blue metal cylinder → on\nblue metal cylinder → off\nyellow metal sphere → on\nbrown rubber cylinder, cyan rubber cylinder, purple rubber sphere → on\nbrown rubber cylinder, cyan rubber cylinder, yellow metal cylinder, purple metal cube → on\npurple metal cube, yellow metal cylinder, purple rubber sphere → off\n\nNew test case:\nyellow metal sphere\n\nWhat is the detector light status?",
+    "answer": "on",
+    "metadata": {
+      "source_dataset": "acre",
+      "source_index": 44
+    }
+  },
+  {
+    "question": "You are a researcher studying causal relationships using Blicket experiments. In these experiments, certain objects (called 'blickets') have the hidden property of activating a detector, causing its light to turn on.\n\nEach example shows the results of placing different combinations of objects on the detector. Each object is described by color, material and shape. Your task is to determine whether a new combination of objects will cause the detector to activate.\n\nAfter observing the previous examples, respond with:\n- \"on\" if you can determine the detector light will turn on\n- \"off\" if you can determine the detector light will stay off\n- \"undetermined\" if there is insufficient evidence to reach a conclusion\n\nDo not use quotation marks in your answer.\n\nPrevious experimental results:\nyellow metal sphere, blue metal cylinder → on\nblue metal cylinder → off\nyellow metal sphere → on\nbrown rubber cylinder, cyan rubber cylinder, purple rubber sphere → on\nbrown rubber cylinder, cyan rubber cylinder, yellow metal cylinder, purple metal cube → on\npurple metal cube, yellow metal cylinder, purple rubber sphere → off\n\nNew test case:\ncyan rubber cylinder\n\nWhat is the detector light status?",
+    "answer": "undetermined",
+    "metadata": {
+      "source_dataset": "acre",
+      "source_index": 45
+    }
+  },
+  {
+    "question": "You are a researcher studying causal relationships using Blicket experiments. In these experiments, certain objects (called 'blickets') have the hidden property of activating a detector, causing its light to turn on.\n\nEach example shows the results of placing different combinations of objects on the detector. Each object is described by color, material and shape. Your task is to determine whether a new combination of objects will cause the detector to activate.\n\nAfter observing the previous examples, respond with:\n- \"on\" if you can determine the detector light will turn on\n- \"off\" if you can determine the detector light will stay off\n- \"undetermined\" if there is insufficient evidence to reach a conclusion\n\nDo not use quotation marks in your answer.\n\nPrevious experimental results:\nyellow metal sphere, blue metal cylinder → on\nblue metal cylinder → off\nyellow metal sphere → on\nbrown rubber cylinder, cyan rubber cylinder, purple rubber sphere → on\nbrown rubber cylinder, cyan rubber cylinder, yellow metal cylinder, purple metal cube → on\npurple metal cube, yellow metal cylinder, purple rubber sphere → off\n\nNew test case:\npurple metal cube, yellow metal cylinder, purple rubber sphere, yellow metal sphere\n\nWhat is the detector light status?",
+    "answer": "on",
+    "metadata": {
+      "source_dataset": "acre",
+      "source_index": 46
+    }
+  },
+  {
+    "question": "You are a researcher studying causal relationships using Blicket experiments. In these experiments, certain objects (called 'blickets') have the hidden property of activating a detector, causing its light to turn on.\n\nEach example shows the results of placing different combinations of objects on the detector. Each object is described by color, material and shape. Your task is to determine whether a new combination of objects will cause the detector to activate.\n\nAfter observing the previous examples, respond with:\n- \"on\" if you can determine the detector light will turn on\n- \"off\" if you can determine the detector light will stay off\n- \"undetermined\" if there is insufficient evidence to reach a conclusion\n\nDo not use quotation marks in your answer.\n\nPrevious experimental results:\nyellow metal sphere, blue metal cylinder → on\nblue metal cylinder → off\nyellow metal sphere → on\nbrown rubber cylinder, cyan rubber cylinder, purple rubber sphere → on\nbrown rubber cylinder, cyan rubber cylinder, yellow metal cylinder, purple metal cube → on\npurple metal cube, yellow metal cylinder, purple rubber sphere → off\n\nNew test case:\npurple metal cube, yellow metal cylinder, purple rubber sphere, blue metal cylinder\n\nWhat is the detector light status?",
+    "answer": "off",
+    "metadata": {
+      "source_dataset": "acre",
+      "source_index": 47
+    }
+  },
+  {
+    "question": "You are a researcher studying causal relationships using Blicket experiments. In these experiments, certain objects (called 'blickets') have the hidden property of activating a detector, causing its light to turn on.\n\nEach example shows the results of placing different combinations of objects on the detector. Each object is described by color, material and shape. Your task is to determine whether a new combination of objects will cause the detector to activate.\n\nAfter observing the previous examples, respond with:\n- \"on\" if you can determine the detector light will turn on\n- \"off\" if you can determine the detector light will stay off\n- \"undetermined\" if there is insufficient evidence to reach a conclusion\n\nDo not use quotation marks in your answer.\n\nPrevious experimental results:\nblue rubber cube → on\nblue rubber cube, green metal sphere → on\ngreen metal sphere → off\nyellow rubber sphere, green metal cube, blue rubber cylinder → off\npurple rubber sphere, blue metal cylinder, blue rubber cylinder → on\ngreen metal cube, blue rubber cylinder → off\n\nNew test case:\ngreen metal cube\n\nWhat is the detector light status?",
+    "answer": "off",
+    "metadata": {
+      "source_dataset": "acre",
+      "source_index": 48
+    }
+  },
+  {
+    "question": "You are a researcher studying causal relationships using Blicket experiments. In these experiments, certain objects (called 'blickets') have the hidden property of activating a detector, causing its light to turn on.\n\nEach example shows the results of placing different combinations of objects on the detector. Each object is described by color, material and shape. Your task is to determine whether a new combination of objects will cause the detector to activate.\n\nAfter observing the previous examples, respond with:\n- \"on\" if you can determine the detector light will turn on\n- \"off\" if you can determine the detector light will stay off\n- \"undetermined\" if there is insufficient evidence to reach a conclusion\n\nDo not use quotation marks in your answer.\n\nPrevious experimental results:\nblue rubber cube → on\nblue rubber cube, green metal sphere → on\ngreen metal sphere → off\nyellow rubber sphere, green metal cube, blue rubber cylinder → off\npurple rubber sphere, blue metal cylinder, blue rubber cylinder → on\ngreen metal cube, blue rubber cylinder → off\n\nNew test case:\npurple rubber sphere\n\nWhat is the detector light status?",
+    "answer": "undetermined",
+    "metadata": {
+      "source_dataset": "acre",
+      "source_index": 49
+    }
+  },
+  {
+    "question": "You are a researcher studying causal relationships using Blicket experiments. In these experiments, certain objects (called 'blickets') have the hidden property of activating a detector, causing its light to turn on.\n\nEach example shows the results of placing different combinations of objects on the detector. Each object is described by color, material and shape. Your task is to determine whether a new combination of objects will cause the detector to activate.\n\nAfter observing the previous examples, respond with:\n- \"on\" if you can determine the detector light will turn on\n- \"off\" if you can determine the detector light will stay off\n- \"undetermined\" if there is insufficient evidence to reach a conclusion\n\nDo not use quotation marks in your answer.\n\nPrevious experimental results:\nblue rubber cube → on\nblue rubber cube, green metal sphere → on\ngreen metal sphere → off\nyellow rubber sphere, green metal cube, blue rubber cylinder → off\npurple rubber sphere, blue metal cylinder, blue rubber cylinder → on\ngreen metal cube, blue rubber cylinder → off\n\nNew test case:\nyellow rubber sphere, green metal cube, blue rubber cylinder, green metal sphere\n\nWhat is the detector light status?",
+    "answer": "off",
+    "metadata": {
+      "source_dataset": "acre",
+      "source_index": 50
+    }
+  },
+  {
+    "question": "You are a researcher studying causal relationships using Blicket experiments. In these experiments, certain objects (called 'blickets') have the hidden property of activating a detector, causing its light to turn on.\n\nEach example shows the results of placing different combinations of objects on the detector. Each object is described by color, material and shape. Your task is to determine whether a new combination of objects will cause the detector to activate.\n\nAfter observing the previous examples, respond with:\n- \"on\" if you can determine the detector light will turn on\n- \"off\" if you can determine the detector light will stay off\n- \"undetermined\" if there is insufficient evidence to reach a conclusion\n\nDo not use quotation marks in your answer.\n\nPrevious experimental results:\nblue rubber cube → on\nblue rubber cube, green metal sphere → on\ngreen metal sphere → off\nyellow rubber sphere, green metal cube, blue rubber cylinder → off\npurple rubber sphere, blue metal cylinder, blue rubber cylinder → on\ngreen metal cube, blue rubber cylinder → off\n\nNew test case:\nyellow rubber sphere, green metal cube, blue rubber cylinder, purple rubber sphere\n\nWhat is the detector light status?",
+    "answer": "undetermined",
+    "metadata": {
+      "source_dataset": "acre",
+      "source_index": 51
+    }
+  },
+  {
+    "question": "You are a researcher studying causal relationships using Blicket experiments. In these experiments, certain objects (called 'blickets') have the hidden property of activating a detector, causing its light to turn on.\n\nEach example shows the results of placing different combinations of objects on the detector. Each object is described by color, material and shape. Your task is to determine whether a new combination of objects will cause the detector to activate.\n\nAfter observing the previous examples, respond with:\n- \"on\" if you can determine the detector light will turn on\n- \"off\" if you can determine the detector light will stay off\n- \"undetermined\" if there is insufficient evidence to reach a conclusion\n\nDo not use quotation marks in your answer.\n\nPrevious experimental results:\nblue rubber cube → on\nblue rubber cube, green rubber cube → on\ngreen rubber cube → off\npurple rubber cube, green rubber cylinder, gray metal cylinder → off\nyellow metal cube, gray metal cylinder, purple rubber cube, green rubber cylinder → off\ngray rubber cylinder, purple rubber cube → on\n\nNew test case:\ngreen rubber cylinder\n\nWhat is the detector light status?",
+    "answer": "off",
+    "metadata": {
+      "source_dataset": "acre",
+      "source_index": 52
+    }
+  },
+  {
+    "question": "You are a researcher studying causal relationships using Blicket experiments. In these experiments, certain objects (called 'blickets') have the hidden property of activating a detector, causing its light to turn on.\n\nEach example shows the results of placing different combinations of objects on the detector. Each object is described by color, material and shape. Your task is to determine whether a new combination of objects will cause the detector to activate.\n\nAfter observing the previous examples, respond with:\n- \"on\" if you can determine the detector light will turn on\n- \"off\" if you can determine the detector light will stay off\n- \"undetermined\" if there is insufficient evidence to reach a conclusion\n\nDo not use quotation marks in your answer.\n\nPrevious experimental results:\nblue rubber cube → on\nblue rubber cube, green rubber cube → on\ngreen rubber cube → off\npurple rubber cube, green rubber cylinder, gray metal cylinder → off\nyellow metal cube, gray metal cylinder, purple rubber cube, green rubber cylinder → off\ngray rubber cylinder, purple rubber cube → on\n\nNew test case:\ngray metal cylinder\n\nWhat is the detector light status?",
+    "answer": "off",
+    "metadata": {
+      "source_dataset": "acre",
+      "source_index": 53
+    }
+  },
+  {
+    "question": "You are a researcher studying causal relationships using Blicket experiments. In these experiments, certain objects (called 'blickets') have the hidden property of activating a detector, causing its light to turn on.\n\nEach example shows the results of placing different combinations of objects on the detector. Each object is described by color, material and shape. Your task is to determine whether a new combination of objects will cause the detector to activate.\n\nAfter observing the previous examples, respond with:\n- \"on\" if you can determine the detector light will turn on\n- \"off\" if you can determine the detector light will stay off\n- \"undetermined\" if there is insufficient evidence to reach a conclusion\n\nDo not use quotation marks in your answer.\n\nPrevious experimental results:\nblue rubber cube → on\nblue rubber cube, green rubber cube → on\ngreen rubber cube → off\npurple rubber cube, green rubber cylinder, gray metal cylinder → off\nyellow metal cube, gray metal cylinder, purple rubber cube, green rubber cylinder → off\ngray rubber cylinder, purple rubber cube → on\n\nNew test case:\nyellow metal cube, gray metal cylinder, purple rubber cube, green rubber cylinder, green rubber cube\n\nWhat is the detector light status?",
+    "answer": "off",
+    "metadata": {
+      "source_dataset": "acre",
+      "source_index": 54
+    }
+  },
+  {
+    "question": "You are a researcher studying causal relationships using Blicket experiments. In these experiments, certain objects (called 'blickets') have the hidden property of activating a detector, causing its light to turn on.\n\nEach example shows the results of placing different combinations of objects on the detector. Each object is described by color, material and shape. Your task is to determine whether a new combination of objects will cause the detector to activate.\n\nAfter observing the previous examples, respond with:\n- \"on\" if you can determine the detector light will turn on\n- \"off\" if you can determine the detector light will stay off\n- \"undetermined\" if there is insufficient evidence to reach a conclusion\n\nDo not use quotation marks in your answer.\n\nPrevious experimental results:\nblue rubber cube → on\nblue rubber cube, green rubber cube → on\ngreen rubber cube → off\npurple rubber cube, green rubber cylinder, gray metal cylinder → off\nyellow metal cube, gray metal cylinder, purple rubber cube, green rubber cylinder → off\ngray rubber cylinder, purple rubber cube → on\n\nNew test case:\nyellow metal cube, gray metal cylinder, purple rubber cube, green rubber cylinder, blue rubber cube\n\nWhat is the detector light status?",
+    "answer": "on",
+    "metadata": {
+      "source_dataset": "acre",
+      "source_index": 55
+    }
+  },
+  {
+    "question": "You are a researcher studying causal relationships using Blicket experiments. In these experiments, certain objects (called 'blickets') have the hidden property of activating a detector, causing its light to turn on.\n\nEach example shows the results of placing different combinations of objects on the detector. Each object is described by color, material and shape. Your task is to determine whether a new combination of objects will cause the detector to activate.\n\nAfter observing the previous examples, respond with:\n- \"on\" if you can determine the detector light will turn on\n- \"off\" if you can determine the detector light will stay off\n- \"undetermined\" if there is insufficient evidence to reach a conclusion\n\nDo not use quotation marks in your answer.\n\nPrevious experimental results:\ngray metal sphere → off\nbrown metal sphere, gray metal sphere → on\nbrown metal sphere → on\nyellow metal cube → off\ncyan metal sphere, yellow rubber cube, green metal cube → off\ngreen metal cylinder, cyan rubber cylinder, green metal cube, yellow metal cube, cyan metal sphere, yellow rubber cube → on\n\nNew test case:\ngray metal sphere\n\nWhat is the detector light status?",
+    "answer": "off",
+    "metadata": {
+      "source_dataset": "acre",
+      "source_index": 56
+    }
+  },
+  {
+    "question": "You are a researcher studying causal relationships using Blicket experiments. In these experiments, certain objects (called 'blickets') have the hidden property of activating a detector, causing its light to turn on.\n\nEach example shows the results of placing different combinations of objects on the detector. Each object is described by color, material and shape. Your task is to determine whether a new combination of objects will cause the detector to activate.\n\nAfter observing the previous examples, respond with:\n- \"on\" if you can determine the detector light will turn on\n- \"off\" if you can determine the detector light will stay off\n- \"undetermined\" if there is insufficient evidence to reach a conclusion\n\nDo not use quotation marks in your answer.\n\nPrevious experimental results:\ngray metal sphere → off\nbrown metal sphere, gray metal sphere → on\nbrown metal sphere → on\nyellow metal cube → off\ncyan metal sphere, yellow rubber cube, green metal cube → off\ngreen metal cylinder, cyan rubber cylinder, green metal cube, yellow metal cube, cyan metal sphere, yellow rubber cube → on\n\nNew test case:\ngreen metal cylinder\n\nWhat is the detector light status?",
+    "answer": "undetermined",
+    "metadata": {
+      "source_dataset": "acre",
+      "source_index": 57
+    }
+  },
+  {
+    "question": "You are a researcher studying causal relationships using Blicket experiments. In these experiments, certain objects (called 'blickets') have the hidden property of activating a detector, causing its light to turn on.\n\nEach example shows the results of placing different combinations of objects on the detector. Each object is described by color, material and shape. Your task is to determine whether a new combination of objects will cause the detector to activate.\n\nAfter observing the previous examples, respond with:\n- \"on\" if you can determine the detector light will turn on\n- \"off\" if you can determine the detector light will stay off\n- \"undetermined\" if there is insufficient evidence to reach a conclusion\n\nDo not use quotation marks in your answer.\n\nPrevious experimental results:\ngray metal sphere → off\nbrown metal sphere, gray metal sphere → on\nbrown metal sphere → on\nyellow metal cube → off\ncyan metal sphere, yellow rubber cube, green metal cube → off\ngreen metal cylinder, cyan rubber cylinder, green metal cube, yellow metal cube, cyan metal sphere, yellow rubber cube → on\n\nNew test case:\ncyan metal sphere, yellow rubber cube, green metal cube, brown metal sphere\n\nWhat is the detector light status?",
+    "answer": "on",
+    "metadata": {
+      "source_dataset": "acre",
+      "source_index": 58
+    }
+  },
+  {
+    "question": "You are a researcher studying causal relationships using Blicket experiments. In these experiments, certain objects (called 'blickets') have the hidden property of activating a detector, causing its light to turn on.\n\nEach example shows the results of placing different combinations of objects on the detector. Each object is described by color, material and shape. Your task is to determine whether a new combination of objects will cause the detector to activate.\n\nAfter observing the previous examples, respond with:\n- \"on\" if you can determine the detector light will turn on\n- \"off\" if you can determine the detector light will stay off\n- \"undetermined\" if there is insufficient evidence to reach a conclusion\n\nDo not use quotation marks in your answer.\n\nPrevious experimental results:\ngray metal sphere → off\nbrown metal sphere, gray metal sphere → on\nbrown metal sphere → on\nyellow metal cube → off\ncyan metal sphere, yellow rubber cube, green metal cube → off\ngreen metal cylinder, cyan rubber cylinder, green metal cube, yellow metal cube, cyan metal sphere, yellow rubber cube → on\n\nNew test case:\ncyan metal sphere, yellow rubber cube, green metal cube, green metal cylinder\n\nWhat is the detector light status?",
+    "answer": "undetermined",
+    "metadata": {
+      "source_dataset": "acre",
+      "source_index": 59
+    }
+  },
+  {
+    "question": "You are a researcher studying causal relationships using Blicket experiments. In these experiments, certain objects (called 'blickets') have the hidden property of activating a detector, causing its light to turn on.\n\nEach example shows the results of placing different combinations of objects on the detector. Each object is described by color, material and shape. Your task is to determine whether a new combination of objects will cause the detector to activate.\n\nAfter observing the previous examples, respond with:\n- \"on\" if you can determine the detector light will turn on\n- \"off\" if you can determine the detector light will stay off\n- \"undetermined\" if there is insufficient evidence to reach a conclusion\n\nDo not use quotation marks in your answer.\n\nPrevious experimental results:\nblue rubber cylinder → on\nblue rubber cylinder, cyan metal cylinder → on\ncyan metal cylinder → off\ngreen metal cube, gray rubber cylinder, purple rubber sphere → off\ncyan rubber cube → on\npurple rubber sphere, gray rubber cylinder → off\n\nNew test case:\nblue rubber cylinder\n\nWhat is the detector light status?",
+    "answer": "on",
+    "metadata": {
+      "source_dataset": "acre",
+      "source_index": 60
+    }
+  },
+  {
+    "question": "You are a researcher studying causal relationships using Blicket experiments. In these experiments, certain objects (called 'blickets') have the hidden property of activating a detector, causing its light to turn on.\n\nEach example shows the results of placing different combinations of objects on the detector. Each object is described by color, material and shape. Your task is to determine whether a new combination of objects will cause the detector to activate.\n\nAfter observing the previous examples, respond with:\n- \"on\" if you can determine the detector light will turn on\n- \"off\" if you can determine the detector light will stay off\n- \"undetermined\" if there is insufficient evidence to reach a conclusion\n\nDo not use quotation marks in your answer.\n\nPrevious experimental results:\nblue rubber cylinder → on\nblue rubber cylinder, cyan metal cylinder → on\ncyan metal cylinder → off\ngreen metal cube, gray rubber cylinder, purple rubber sphere → off\ncyan rubber cube → on\npurple rubber sphere, gray rubber cylinder → off\n\nNew test case:\ncyan rubber cube\n\nWhat is the detector light status?",
+    "answer": "on",
+    "metadata": {
+      "source_dataset": "acre",
+      "source_index": 61
+    }
+  },
+  {
+    "question": "You are a researcher studying causal relationships using Blicket experiments. In these experiments, certain objects (called 'blickets') have the hidden property of activating a detector, causing its light to turn on.\n\nEach example shows the results of placing different combinations of objects on the detector. Each object is described by color, material and shape. Your task is to determine whether a new combination of objects will cause the detector to activate.\n\nAfter observing the previous examples, respond with:\n- \"on\" if you can determine the detector light will turn on\n- \"off\" if you can determine the detector light will stay off\n- \"undetermined\" if there is insufficient evidence to reach a conclusion\n\nDo not use quotation marks in your answer.\n\nPrevious experimental results:\nblue rubber cylinder → on\nblue rubber cylinder, cyan metal cylinder → on\ncyan metal cylinder → off\ngreen metal cube, gray rubber cylinder, purple rubber sphere → off\ncyan rubber cube → on\npurple rubber sphere, gray rubber cylinder → off\n\nNew test case:\ngreen metal cube, gray rubber cylinder, purple rubber sphere, blue rubber cylinder\n\nWhat is the detector light status?",
+    "answer": "on",
+    "metadata": {
+      "source_dataset": "acre",
+      "source_index": 62
+    }
+  },
+  {
+    "question": "You are a researcher studying causal relationships using Blicket experiments. In these experiments, certain objects (called 'blickets') have the hidden property of activating a detector, causing its light to turn on.\n\nEach example shows the results of placing different combinations of objects on the detector. Each object is described by color, material and shape. Your task is to determine whether a new combination of objects will cause the detector to activate.\n\nAfter observing the previous examples, respond with:\n- \"on\" if you can determine the detector light will turn on\n- \"off\" if you can determine the detector light will stay off\n- \"undetermined\" if there is insufficient evidence to reach a conclusion\n\nDo not use quotation marks in your answer.\n\nPrevious experimental results:\nblue rubber cylinder → on\nblue rubber cylinder, cyan metal cylinder → on\ncyan metal cylinder → off\ngreen metal cube, gray rubber cylinder, purple rubber sphere → off\ncyan rubber cube → on\npurple rubber sphere, gray rubber cylinder → off\n\nNew test case:\ngreen metal cube, gray rubber cylinder, purple rubber sphere, cyan metal cylinder\n\nWhat is the detector light status?",
+    "answer": "off",
+    "metadata": {
+      "source_dataset": "acre",
+      "source_index": 63
+    }
+  },
+  {
+    "question": "You are a researcher studying causal relationships using Blicket experiments. In these experiments, certain objects (called 'blickets') have the hidden property of activating a detector, causing its light to turn on.\n\nEach example shows the results of placing different combinations of objects on the detector. Each object is described by color, material and shape. Your task is to determine whether a new combination of objects will cause the detector to activate.\n\nAfter observing the previous examples, respond with:\n- \"on\" if you can determine the detector light will turn on\n- \"off\" if you can determine the detector light will stay off\n- \"undetermined\" if there is insufficient evidence to reach a conclusion\n\nDo not use quotation marks in your answer.\n\nPrevious experimental results:\ngreen metal cylinder → on\nblue rubber sphere → off\ngreen metal cylinder, blue rubber sphere → on\nred metal cylinder, green rubber sphere, blue metal cube → on\ngreen rubber sphere, blue metal cube → off\nblue rubber cylinder, blue metal cube → on\n\nNew test case:\ngreen metal cylinder\n\nWhat is the detector light status?",
+    "answer": "on",
+    "metadata": {
+      "source_dataset": "acre",
+      "source_index": 64
+    }
+  },
+  {
+    "question": "You are a researcher studying causal relationships using Blicket experiments. In these experiments, certain objects (called 'blickets') have the hidden property of activating a detector, causing its light to turn on.\n\nEach example shows the results of placing different combinations of objects on the detector. Each object is described by color, material and shape. Your task is to determine whether a new combination of objects will cause the detector to activate.\n\nAfter observing the previous examples, respond with:\n- \"on\" if you can determine the detector light will turn on\n- \"off\" if you can determine the detector light will stay off\n- \"undetermined\" if there is insufficient evidence to reach a conclusion\n\nDo not use quotation marks in your answer.\n\nPrevious experimental results:\ngreen metal cylinder → on\nblue rubber sphere → off\ngreen metal cylinder, blue rubber sphere → on\nred metal cylinder, green rubber sphere, blue metal cube → on\ngreen rubber sphere, blue metal cube → off\nblue rubber cylinder, blue metal cube → on\n\nNew test case:\nred metal cylinder\n\nWhat is the detector light status?",
+    "answer": "on",
+    "metadata": {
+      "source_dataset": "acre",
+      "source_index": 65
+    }
+  },
+  {
+    "question": "You are a researcher studying causal relationships using Blicket experiments. In these experiments, certain objects (called 'blickets') have the hidden property of activating a detector, causing its light to turn on.\n\nEach example shows the results of placing different combinations of objects on the detector. Each object is described by color, material and shape. Your task is to determine whether a new combination of objects will cause the detector to activate.\n\nAfter observing the previous examples, respond with:\n- \"on\" if you can determine the detector light will turn on\n- \"off\" if you can determine the detector light will stay off\n- \"undetermined\" if there is insufficient evidence to reach a conclusion\n\nDo not use quotation marks in your answer.\n\nPrevious experimental results:\ngreen metal cylinder → on\nblue rubber sphere → off\ngreen metal cylinder, blue rubber sphere → on\nred metal cylinder, green rubber sphere, blue metal cube → on\ngreen rubber sphere, blue metal cube → off\nblue rubber cylinder, blue metal cube → on\n\nNew test case:\ngreen rubber sphere, blue metal cube, red metal cylinder\n\nWhat is the detector light status?",
+    "answer": "on",
+    "metadata": {
+      "source_dataset": "acre",
+      "source_index": 66
+    }
+  },
+  {
+    "question": "You are a researcher studying causal relationships using Blicket experiments. In these experiments, certain objects (called 'blickets') have the hidden property of activating a detector, causing its light to turn on.\n\nEach example shows the results of placing different combinations of objects on the detector. Each object is described by color, material and shape. Your task is to determine whether a new combination of objects will cause the detector to activate.\n\nAfter observing the previous examples, respond with:\n- \"on\" if you can determine the detector light will turn on\n- \"off\" if you can determine the detector light will stay off\n- \"undetermined\" if there is insufficient evidence to reach a conclusion\n\nDo not use quotation marks in your answer.\n\nPrevious experimental results:\ngreen metal cylinder → on\nblue rubber sphere → off\ngreen metal cylinder, blue rubber sphere → on\nred metal cylinder, green rubber sphere, blue metal cube → on\ngreen rubber sphere, blue metal cube → off\nblue rubber cylinder, blue metal cube → on\n\nNew test case:\ngreen rubber sphere, blue metal cube, blue rubber sphere\n\nWhat is the detector light status?",
+    "answer": "off",
+    "metadata": {
+      "source_dataset": "acre",
+      "source_index": 67
+    }
+  },
+  {
+    "question": "You are a researcher studying causal relationships using Blicket experiments. In these experiments, certain objects (called 'blickets') have the hidden property of activating a detector, causing its light to turn on.\n\nEach example shows the results of placing different combinations of objects on the detector. Each object is described by color, material and shape. Your task is to determine whether a new combination of objects will cause the detector to activate.\n\nAfter observing the previous examples, respond with:\n- \"on\" if you can determine the detector light will turn on\n- \"off\" if you can determine the detector light will stay off\n- \"undetermined\" if there is insufficient evidence to reach a conclusion\n\nDo not use quotation marks in your answer.\n\nPrevious experimental results:\ngreen metal sphere, blue metal cylinder → on\ngreen metal sphere → on\nblue metal cylinder → off\npurple rubber sphere, brown rubber cylinder, yellow metal cylinder, gray metal cube, blue rubber cylinder, purple metal cube → on\nyellow metal cylinder, purple metal cube, blue rubber cylinder, gray metal cube → off\nblue rubber cylinder, gray metal cube, yellow metal cylinder → off\n\nNew test case:\ngreen metal sphere\n\nWhat is the detector light status?",
+    "answer": "on",
+    "metadata": {
+      "source_dataset": "acre",
+      "source_index": 68
+    }
+  },
+  {
+    "question": "You are a researcher studying causal relationships using Blicket experiments. In these experiments, certain objects (called 'blickets') have the hidden property of activating a detector, causing its light to turn on.\n\nEach example shows the results of placing different combinations of objects on the detector. Each object is described by color, material and shape. Your task is to determine whether a new combination of objects will cause the detector to activate.\n\nAfter observing the previous examples, respond with:\n- \"on\" if you can determine the detector light will turn on\n- \"off\" if you can determine the detector light will stay off\n- \"undetermined\" if there is insufficient evidence to reach a conclusion\n\nDo not use quotation marks in your answer.\n\nPrevious experimental results:\ngreen metal sphere, blue metal cylinder → on\ngreen metal sphere → on\nblue metal cylinder → off\npurple rubber sphere, brown rubber cylinder, yellow metal cylinder, gray metal cube, blue rubber cylinder, purple metal cube → on\nyellow metal cylinder, purple metal cube, blue rubber cylinder, gray metal cube → off\nblue rubber cylinder, gray metal cube, yellow metal cylinder → off\n\nNew test case:\npurple rubber sphere\n\nWhat is the detector light status?",
+    "answer": "undetermined",
+    "metadata": {
+      "source_dataset": "acre",
+      "source_index": 69
+    }
+  },
+  {
+    "question": "You are a researcher studying causal relationships using Blicket experiments. In these experiments, certain objects (called 'blickets') have the hidden property of activating a detector, causing its light to turn on.\n\nEach example shows the results of placing different combinations of objects on the detector. Each object is described by color, material and shape. Your task is to determine whether a new combination of objects will cause the detector to activate.\n\nAfter observing the previous examples, respond with:\n- \"on\" if you can determine the detector light will turn on\n- \"off\" if you can determine the detector light will stay off\n- \"undetermined\" if there is insufficient evidence to reach a conclusion\n\nDo not use quotation marks in your answer.\n\nPrevious experimental results:\ngreen metal sphere, blue metal cylinder → on\ngreen metal sphere → on\nblue metal cylinder → off\npurple rubber sphere, brown rubber cylinder, yellow metal cylinder, gray metal cube, blue rubber cylinder, purple metal cube → on\nyellow metal cylinder, purple metal cube, blue rubber cylinder, gray metal cube → off\nblue rubber cylinder, gray metal cube, yellow metal cylinder → off\n\nNew test case:\nblue metal cylinder, yellow metal cylinder\n\nWhat is the detector light status?",
+    "answer": "off",
+    "metadata": {
+      "source_dataset": "acre",
+      "source_index": 70
+    }
+  },
+  {
+    "question": "You are a researcher studying causal relationships using Blicket experiments. In these experiments, certain objects (called 'blickets') have the hidden property of activating a detector, causing its light to turn on.\n\nEach example shows the results of placing different combinations of objects on the detector. Each object is described by color, material and shape. Your task is to determine whether a new combination of objects will cause the detector to activate.\n\nAfter observing the previous examples, respond with:\n- \"on\" if you can determine the detector light will turn on\n- \"off\" if you can determine the detector light will stay off\n- \"undetermined\" if there is insufficient evidence to reach a conclusion\n\nDo not use quotation marks in your answer.\n\nPrevious experimental results:\ngreen metal sphere, blue metal cylinder → on\ngreen metal sphere → on\nblue metal cylinder → off\npurple rubber sphere, brown rubber cylinder, yellow metal cylinder, gray metal cube, blue rubber cylinder, purple metal cube → on\nyellow metal cylinder, purple metal cube, blue rubber cylinder, gray metal cube → off\nblue rubber cylinder, gray metal cube, yellow metal cylinder → off\n\nNew test case:\nblue metal cylinder, purple metal cube\n\nWhat is the detector light status?",
+    "answer": "off",
+    "metadata": {
+      "source_dataset": "acre",
+      "source_index": 71
+    }
+  },
+  {
+    "question": "You are a researcher studying causal relationships using Blicket experiments. In these experiments, certain objects (called 'blickets') have the hidden property of activating a detector, causing its light to turn on.\n\nEach example shows the results of placing different combinations of objects on the detector. Each object is described by color, material and shape. Your task is to determine whether a new combination of objects will cause the detector to activate.\n\nAfter observing the previous examples, respond with:\n- \"on\" if you can determine the detector light will turn on\n- \"off\" if you can determine the detector light will stay off\n- \"undetermined\" if there is insufficient evidence to reach a conclusion\n\nDo not use quotation marks in your answer.\n\nPrevious experimental results:\ngray rubber cylinder → on\nred metal cube → off\ngray rubber cylinder, red metal cube → on\nyellow rubber cube, red rubber cylinder, green rubber cube, yellow metal cube → on\nyellow rubber cube, yellow metal cube → on\ngreen rubber cube, red rubber cylinder, yellow metal cube → off\n\nNew test case:\nyellow rubber cube\n\nWhat is the detector light status?",
+    "answer": "on",
+    "metadata": {
+      "source_dataset": "acre",
+      "source_index": 72
+    }
+  },
+  {
+    "question": "You are a researcher studying causal relationships using Blicket experiments. In these experiments, certain objects (called 'blickets') have the hidden property of activating a detector, causing its light to turn on.\n\nEach example shows the results of placing different combinations of objects on the detector. Each object is described by color, material and shape. Your task is to determine whether a new combination of objects will cause the detector to activate.\n\nAfter observing the previous examples, respond with:\n- \"on\" if you can determine the detector light will turn on\n- \"off\" if you can determine the detector light will stay off\n- \"undetermined\" if there is insufficient evidence to reach a conclusion\n\nDo not use quotation marks in your answer.\n\nPrevious experimental results:\ngray rubber cylinder → on\nred metal cube → off\ngray rubber cylinder, red metal cube → on\nyellow rubber cube, red rubber cylinder, green rubber cube, yellow metal cube → on\nyellow rubber cube, yellow metal cube → on\ngreen rubber cube, red rubber cylinder, yellow metal cube → off\n\nNew test case:\ngray rubber cylinder\n\nWhat is the detector light status?",
+    "answer": "on",
+    "metadata": {
+      "source_dataset": "acre",
+      "source_index": 73
+    }
+  },
+  {
+    "question": "You are a researcher studying causal relationships using Blicket experiments. In these experiments, certain objects (called 'blickets') have the hidden property of activating a detector, causing its light to turn on.\n\nEach example shows the results of placing different combinations of objects on the detector. Each object is described by color, material and shape. Your task is to determine whether a new combination of objects will cause the detector to activate.\n\nAfter observing the previous examples, respond with:\n- \"on\" if you can determine the detector light will turn on\n- \"off\" if you can determine the detector light will stay off\n- \"undetermined\" if there is insufficient evidence to reach a conclusion\n\nDo not use quotation marks in your answer.\n\nPrevious experimental results:\ngray rubber cylinder → on\nred metal cube → off\ngray rubber cylinder, red metal cube → on\nyellow rubber cube, red rubber cylinder, green rubber cube, yellow metal cube → on\nyellow rubber cube, yellow metal cube → on\ngreen rubber cube, red rubber cylinder, yellow metal cube → off\n\nNew test case:\nred metal cube, green rubber cube\n\nWhat is the detector light status?",
+    "answer": "off",
+    "metadata": {
+      "source_dataset": "acre",
+      "source_index": 74
+    }
+  },
+  {
+    "question": "You are a researcher studying causal relationships using Blicket experiments. In these experiments, certain objects (called 'blickets') have the hidden property of activating a detector, causing its light to turn on.\n\nEach example shows the results of placing different combinations of objects on the detector. Each object is described by color, material and shape. Your task is to determine whether a new combination of objects will cause the detector to activate.\n\nAfter observing the previous examples, respond with:\n- \"on\" if you can determine the detector light will turn on\n- \"off\" if you can determine the detector light will stay off\n- \"undetermined\" if there is insufficient evidence to reach a conclusion\n\nDo not use quotation marks in your answer.\n\nPrevious experimental results:\ngray rubber cylinder → on\nred metal cube → off\ngray rubber cylinder, red metal cube → on\nyellow rubber cube, red rubber cylinder, green rubber cube, yellow metal cube → on\nyellow rubber cube, yellow metal cube → on\ngreen rubber cube, red rubber cylinder, yellow metal cube → off\n\nNew test case:\nred metal cube, yellow rubber cube\n\nWhat is the detector light status?",
+    "answer": "on",
+    "metadata": {
+      "source_dataset": "acre",
+      "source_index": 75
+    }
+  },
+  {
+    "question": "You are a researcher studying causal relationships using Blicket experiments. In these experiments, certain objects (called 'blickets') have the hidden property of activating a detector, causing its light to turn on.\n\nEach example shows the results of placing different combinations of objects on the detector. Each object is described by color, material and shape. Your task is to determine whether a new combination of objects will cause the detector to activate.\n\nAfter observing the previous examples, respond with:\n- \"on\" if you can determine the detector light will turn on\n- \"off\" if you can determine the detector light will stay off\n- \"undetermined\" if there is insufficient evidence to reach a conclusion\n\nDo not use quotation marks in your answer.\n\nPrevious experimental results:\nblue rubber cylinder → on\npurple metal cube → off\nblue rubber cylinder, purple metal cube → on\npurple rubber cylinder, brown rubber cube, red rubber sphere, cyan rubber cube → on\npurple rubber cylinder, cyan rubber cube, red rubber sphere, brown rubber cube → on\ncyan rubber cube, brown rubber cube, red rubber sphere → off\n\nNew test case:\nred rubber sphere\n\nWhat is the detector light status?",
+    "answer": "off",
+    "metadata": {
+      "source_dataset": "acre",
+      "source_index": 76
+    }
+  },
+  {
+    "question": "You are a researcher studying causal relationships using Blicket experiments. In these experiments, certain objects (called 'blickets') have the hidden property of activating a detector, causing its light to turn on.\n\nEach example shows the results of placing different combinations of objects on the detector. Each object is described by color, material and shape. Your task is to determine whether a new combination of objects will cause the detector to activate.\n\nAfter observing the previous examples, respond with:\n- \"on\" if you can determine the detector light will turn on\n- \"off\" if you can determine the detector light will stay off\n- \"undetermined\" if there is insufficient evidence to reach a conclusion\n\nDo not use quotation marks in your answer.\n\nPrevious experimental results:\nblue rubber cylinder → on\npurple metal cube → off\nblue rubber cylinder, purple metal cube → on\npurple rubber cylinder, brown rubber cube, red rubber sphere, cyan rubber cube → on\npurple rubber cylinder, cyan rubber cube, red rubber sphere, brown rubber cube → on\ncyan rubber cube, brown rubber cube, red rubber sphere → off\n\nNew test case:\npurple rubber cylinder\n\nWhat is the detector light status?",
+    "answer": "on",
+    "metadata": {
+      "source_dataset": "acre",
+      "source_index": 77
+    }
+  },
+  {
+    "question": "You are a researcher studying causal relationships using Blicket experiments. In these experiments, certain objects (called 'blickets') have the hidden property of activating a detector, causing its light to turn on.\n\nEach example shows the results of placing different combinations of objects on the detector. Each object is described by color, material and shape. Your task is to determine whether a new combination of objects will cause the detector to activate.\n\nAfter observing the previous examples, respond with:\n- \"on\" if you can determine the detector light will turn on\n- \"off\" if you can determine the detector light will stay off\n- \"undetermined\" if there is insufficient evidence to reach a conclusion\n\nDo not use quotation marks in your answer.\n\nPrevious experimental results:\nblue rubber cylinder → on\npurple metal cube → off\nblue rubber cylinder, purple metal cube → on\npurple rubber cylinder, brown rubber cube, red rubber sphere, cyan rubber cube → on\npurple rubber cylinder, cyan rubber cube, red rubber sphere, brown rubber cube → on\ncyan rubber cube, brown rubber cube, red rubber sphere → off\n\nNew test case:\ncyan rubber cube, brown rubber cube, red rubber sphere, purple rubber cylinder\n\nWhat is the detector light status?",
+    "answer": "on",
+    "metadata": {
+      "source_dataset": "acre",
+      "source_index": 78
+    }
+  },
+  {
+    "question": "You are a researcher studying causal relationships using Blicket experiments. In these experiments, certain objects (called 'blickets') have the hidden property of activating a detector, causing its light to turn on.\n\nEach example shows the results of placing different combinations of objects on the detector. Each object is described by color, material and shape. Your task is to determine whether a new combination of objects will cause the detector to activate.\n\nAfter observing the previous examples, respond with:\n- \"on\" if you can determine the detector light will turn on\n- \"off\" if you can determine the detector light will stay off\n- \"undetermined\" if there is insufficient evidence to reach a conclusion\n\nDo not use quotation marks in your answer.\n\nPrevious experimental results:\nblue rubber cylinder → on\npurple metal cube → off\nblue rubber cylinder, purple metal cube → on\npurple rubber cylinder, brown rubber cube, red rubber sphere, cyan rubber cube → on\npurple rubber cylinder, cyan rubber cube, red rubber sphere, brown rubber cube → on\ncyan rubber cube, brown rubber cube, red rubber sphere → off\n\nNew test case:\ncyan rubber cube, brown rubber cube, red rubber sphere, purple metal cube\n\nWhat is the detector light status?",
+    "answer": "off",
+    "metadata": {
+      "source_dataset": "acre",
+      "source_index": 79
+    }
+  },
+  {
+    "question": "You are a researcher studying causal relationships using Blicket experiments. In these experiments, certain objects (called 'blickets') have the hidden property of activating a detector, causing its light to turn on.\n\nEach example shows the results of placing different combinations of objects on the detector. Each object is described by color, material and shape. Your task is to determine whether a new combination of objects will cause the detector to activate.\n\nAfter observing the previous examples, respond with:\n- \"on\" if you can determine the detector light will turn on\n- \"off\" if you can determine the detector light will stay off\n- \"undetermined\" if there is insufficient evidence to reach a conclusion\n\nDo not use quotation marks in your answer.\n\nPrevious experimental results:\ngreen metal cylinder, brown rubber cylinder → on\ngreen metal cylinder → on\nbrown rubber cylinder → off\npurple rubber cylinder, blue metal cylinder → off\nred rubber cylinder, purple rubber cylinder → on\nyellow metal sphere, blue metal cylinder, purple rubber cylinder → on\n\nNew test case:\nyellow metal sphere\n\nWhat is the detector light status?",
+    "answer": "on",
+    "metadata": {
+      "source_dataset": "acre",
+      "source_index": 80
+    }
+  },
+  {
+    "question": "You are a researcher studying causal relationships using Blicket experiments. In these experiments, certain objects (called 'blickets') have the hidden property of activating a detector, causing its light to turn on.\n\nEach example shows the results of placing different combinations of objects on the detector. Each object is described by color, material and shape. Your task is to determine whether a new combination of objects will cause the detector to activate.\n\nAfter observing the previous examples, respond with:\n- \"on\" if you can determine the detector light will turn on\n- \"off\" if you can determine the detector light will stay off\n- \"undetermined\" if there is insufficient evidence to reach a conclusion\n\nDo not use quotation marks in your answer.\n\nPrevious experimental results:\ngreen metal cylinder, brown rubber cylinder → on\ngreen metal cylinder → on\nbrown rubber cylinder → off\npurple rubber cylinder, blue metal cylinder → off\nred rubber cylinder, purple rubber cylinder → on\nyellow metal sphere, blue metal cylinder, purple rubber cylinder → on\n\nNew test case:\nblue metal cylinder\n\nWhat is the detector light status?",
+    "answer": "off",
+    "metadata": {
+      "source_dataset": "acre",
+      "source_index": 81
+    }
+  },
+  {
+    "question": "You are a researcher studying causal relationships using Blicket experiments. In these experiments, certain objects (called 'blickets') have the hidden property of activating a detector, causing its light to turn on.\n\nEach example shows the results of placing different combinations of objects on the detector. Each object is described by color, material and shape. Your task is to determine whether a new combination of objects will cause the detector to activate.\n\nAfter observing the previous examples, respond with:\n- \"on\" if you can determine the detector light will turn on\n- \"off\" if you can determine the detector light will stay off\n- \"undetermined\" if there is insufficient evidence to reach a conclusion\n\nDo not use quotation marks in your answer.\n\nPrevious experimental results:\ngreen metal cylinder, brown rubber cylinder → on\ngreen metal cylinder → on\nbrown rubber cylinder → off\npurple rubber cylinder, blue metal cylinder → off\nred rubber cylinder, purple rubber cylinder → on\nyellow metal sphere, blue metal cylinder, purple rubber cylinder → on\n\nNew test case:\nbrown rubber cylinder, yellow metal sphere\n\nWhat is the detector light status?",
+    "answer": "on",
+    "metadata": {
+      "source_dataset": "acre",
+      "source_index": 82
+    }
+  },
+  {
+    "question": "You are a researcher studying causal relationships using Blicket experiments. In these experiments, certain objects (called 'blickets') have the hidden property of activating a detector, causing its light to turn on.\n\nEach example shows the results of placing different combinations of objects on the detector. Each object is described by color, material and shape. Your task is to determine whether a new combination of objects will cause the detector to activate.\n\nAfter observing the previous examples, respond with:\n- \"on\" if you can determine the detector light will turn on\n- \"off\" if you can determine the detector light will stay off\n- \"undetermined\" if there is insufficient evidence to reach a conclusion\n\nDo not use quotation marks in your answer.\n\nPrevious experimental results:\ngreen metal cylinder, brown rubber cylinder → on\ngreen metal cylinder → on\nbrown rubber cylinder → off\npurple rubber cylinder, blue metal cylinder → off\nred rubber cylinder, purple rubber cylinder → on\nyellow metal sphere, blue metal cylinder, purple rubber cylinder → on\n\nNew test case:\nbrown rubber cylinder, red rubber cylinder\n\nWhat is the detector light status?",
+    "answer": "on",
+    "metadata": {
+      "source_dataset": "acre",
+      "source_index": 83
+    }
+  },
+  {
+    "question": "You are a researcher studying causal relationships using Blicket experiments. In these experiments, certain objects (called 'blickets') have the hidden property of activating a detector, causing its light to turn on.\n\nEach example shows the results of placing different combinations of objects on the detector. Each object is described by color, material and shape. Your task is to determine whether a new combination of objects will cause the detector to activate.\n\nAfter observing the previous examples, respond with:\n- \"on\" if you can determine the detector light will turn on\n- \"off\" if you can determine the detector light will stay off\n- \"undetermined\" if there is insufficient evidence to reach a conclusion\n\nDo not use quotation marks in your answer.\n\nPrevious experimental results:\nblue rubber cube → on\ncyan metal sphere → off\nblue rubber cube, cyan metal sphere → on\nred metal sphere, cyan metal cube → on\nyellow rubber cube, blue metal cylinder → off\nblue metal sphere, yellow rubber cube → on\n\nNew test case:\ncyan metal cube\n\nWhat is the detector light status?",
+    "answer": "undetermined",
+    "metadata": {
+      "source_dataset": "acre",
+      "source_index": 84
+    }
+  },
+  {
+    "question": "You are a researcher studying causal relationships using Blicket experiments. In these experiments, certain objects (called 'blickets') have the hidden property of activating a detector, causing its light to turn on.\n\nEach example shows the results of placing different combinations of objects on the detector. Each object is described by color, material and shape. Your task is to determine whether a new combination of objects will cause the detector to activate.\n\nAfter observing the previous examples, respond with:\n- \"on\" if you can determine the detector light will turn on\n- \"off\" if you can determine the detector light will stay off\n- \"undetermined\" if there is insufficient evidence to reach a conclusion\n\nDo not use quotation marks in your answer.\n\nPrevious experimental results:\nblue rubber cube → on\ncyan metal sphere → off\nblue rubber cube, cyan metal sphere → on\nred metal sphere, cyan metal cube → on\nyellow rubber cube, blue metal cylinder → off\nblue metal sphere, yellow rubber cube → on\n\nNew test case:\ncyan metal sphere\n\nWhat is the detector light status?",
+    "answer": "off",
+    "metadata": {
+      "source_dataset": "acre",
+      "source_index": 85
+    }
+  },
+  {
+    "question": "You are a researcher studying causal relationships using Blicket experiments. In these experiments, certain objects (called 'blickets') have the hidden property of activating a detector, causing its light to turn on.\n\nEach example shows the results of placing different combinations of objects on the detector. Each object is described by color, material and shape. Your task is to determine whether a new combination of objects will cause the detector to activate.\n\nAfter observing the previous examples, respond with:\n- \"on\" if you can determine the detector light will turn on\n- \"off\" if you can determine the detector light will stay off\n- \"undetermined\" if there is insufficient evidence to reach a conclusion\n\nDo not use quotation marks in your answer.\n\nPrevious experimental results:\nblue rubber cube → on\ncyan metal sphere → off\nblue rubber cube, cyan metal sphere → on\nred metal sphere, cyan metal cube → on\nyellow rubber cube, blue metal cylinder → off\nblue metal sphere, yellow rubber cube → on\n\nNew test case:\nyellow rubber cube, blue metal cylinder, cyan metal cube\n\nWhat is the detector light status?",
+    "answer": "undetermined",
+    "metadata": {
+      "source_dataset": "acre",
+      "source_index": 86
+    }
+  },
+  {
+    "question": "You are a researcher studying causal relationships using Blicket experiments. In these experiments, certain objects (called 'blickets') have the hidden property of activating a detector, causing its light to turn on.\n\nEach example shows the results of placing different combinations of objects on the detector. Each object is described by color, material and shape. Your task is to determine whether a new combination of objects will cause the detector to activate.\n\nAfter observing the previous examples, respond with:\n- \"on\" if you can determine the detector light will turn on\n- \"off\" if you can determine the detector light will stay off\n- \"undetermined\" if there is insufficient evidence to reach a conclusion\n\nDo not use quotation marks in your answer.\n\nPrevious experimental results:\nblue rubber cube → on\ncyan metal sphere → off\nblue rubber cube, cyan metal sphere → on\nred metal sphere, cyan metal cube → on\nyellow rubber cube, blue metal cylinder → off\nblue metal sphere, yellow rubber cube → on\n\nNew test case:\nyellow rubber cube, blue metal cylinder, red metal sphere\n\nWhat is the detector light status?",
+    "answer": "undetermined",
+    "metadata": {
+      "source_dataset": "acre",
+      "source_index": 87
+    }
+  },
+  {
+    "question": "You are a researcher studying causal relationships using Blicket experiments. In these experiments, certain objects (called 'blickets') have the hidden property of activating a detector, causing its light to turn on.\n\nEach example shows the results of placing different combinations of objects on the detector. Each object is described by color, material and shape. Your task is to determine whether a new combination of objects will cause the detector to activate.\n\nAfter observing the previous examples, respond with:\n- \"on\" if you can determine the detector light will turn on\n- \"off\" if you can determine the detector light will stay off\n- \"undetermined\" if there is insufficient evidence to reach a conclusion\n\nDo not use quotation marks in your answer.\n\nPrevious experimental results:\ngray metal cylinder → off\nyellow rubber cube → on\nyellow rubber cube, gray metal cylinder → on\ncyan metal cylinder, brown rubber sphere → off\ncyan metal cylinder, brown rubber sphere → off\ngreen rubber cube, brown rubber cylinder, cyan metal cylinder, brown rubber sphere → on\n\nNew test case:\nbrown rubber cylinder\n\nWhat is the detector light status?",
+    "answer": "undetermined",
+    "metadata": {
+      "source_dataset": "acre",
+      "source_index": 88
+    }
+  },
+  {
+    "question": "You are a researcher studying causal relationships using Blicket experiments. In these experiments, certain objects (called 'blickets') have the hidden property of activating a detector, causing its light to turn on.\n\nEach example shows the results of placing different combinations of objects on the detector. Each object is described by color, material and shape. Your task is to determine whether a new combination of objects will cause the detector to activate.\n\nAfter observing the previous examples, respond with:\n- \"on\" if you can determine the detector light will turn on\n- \"off\" if you can determine the detector light will stay off\n- \"undetermined\" if there is insufficient evidence to reach a conclusion\n\nDo not use quotation marks in your answer.\n\nPrevious experimental results:\ngray metal cylinder → off\nyellow rubber cube → on\nyellow rubber cube, gray metal cylinder → on\ncyan metal cylinder, brown rubber sphere → off\ncyan metal cylinder, brown rubber sphere → off\ngreen rubber cube, brown rubber cylinder, cyan metal cylinder, brown rubber sphere → on\n\nNew test case:\nyellow rubber cube\n\nWhat is the detector light status?",
+    "answer": "on",
+    "metadata": {
+      "source_dataset": "acre",
+      "source_index": 89
+    }
+  },
+  {
+    "question": "You are a researcher studying causal relationships using Blicket experiments. In these experiments, certain objects (called 'blickets') have the hidden property of activating a detector, causing its light to turn on.\n\nEach example shows the results of placing different combinations of objects on the detector. Each object is described by color, material and shape. Your task is to determine whether a new combination of objects will cause the detector to activate.\n\nAfter observing the previous examples, respond with:\n- \"on\" if you can determine the detector light will turn on\n- \"off\" if you can determine the detector light will stay off\n- \"undetermined\" if there is insufficient evidence to reach a conclusion\n\nDo not use quotation marks in your answer.\n\nPrevious experimental results:\ngray metal cylinder → off\nyellow rubber cube → on\nyellow rubber cube, gray metal cylinder → on\ncyan metal cylinder, brown rubber sphere → off\ncyan metal cylinder, brown rubber sphere → off\ngreen rubber cube, brown rubber cylinder, cyan metal cylinder, brown rubber sphere → on\n\nNew test case:\ngray metal cylinder, green rubber cube\n\nWhat is the detector light status?",
+    "answer": "undetermined",
+    "metadata": {
+      "source_dataset": "acre",
+      "source_index": 90
+    }
+  },
+  {
+    "question": "You are a researcher studying causal relationships using Blicket experiments. In these experiments, certain objects (called 'blickets') have the hidden property of activating a detector, causing its light to turn on.\n\nEach example shows the results of placing different combinations of objects on the detector. Each object is described by color, material and shape. Your task is to determine whether a new combination of objects will cause the detector to activate.\n\nAfter observing the previous examples, respond with:\n- \"on\" if you can determine the detector light will turn on\n- \"off\" if you can determine the detector light will stay off\n- \"undetermined\" if there is insufficient evidence to reach a conclusion\n\nDo not use quotation marks in your answer.\n\nPrevious experimental results:\ngray metal cylinder → off\nyellow rubber cube → on\nyellow rubber cube, gray metal cylinder → on\ncyan metal cylinder, brown rubber sphere → off\ncyan metal cylinder, brown rubber sphere → off\ngreen rubber cube, brown rubber cylinder, cyan metal cylinder, brown rubber sphere → on\n\nNew test case:\ngray metal cylinder, brown rubber cylinder\n\nWhat is the detector light status?",
+    "answer": "undetermined",
+    "metadata": {
+      "source_dataset": "acre",
+      "source_index": 91
+    }
+  },
+  {
+    "question": "You are a researcher studying causal relationships using Blicket experiments. In these experiments, certain objects (called 'blickets') have the hidden property of activating a detector, causing its light to turn on.\n\nEach example shows the results of placing different combinations of objects on the detector. Each object is described by color, material and shape. Your task is to determine whether a new combination of objects will cause the detector to activate.\n\nAfter observing the previous examples, respond with:\n- \"on\" if you can determine the detector light will turn on\n- \"off\" if you can determine the detector light will stay off\n- \"undetermined\" if there is insufficient evidence to reach a conclusion\n\nDo not use quotation marks in your answer.\n\nPrevious experimental results:\npurple metal cube → off\nyellow metal cube, purple metal cube → on\nyellow metal cube → on\ngreen metal cube, gray metal cube, brown rubber cylinder, gray metal sphere → on\nyellow metal cylinder, gray metal sphere, brown rubber cylinder → off\ngray metal cube, brown rubber cylinder → on\n\nNew test case:\nyellow metal cylinder\n\nWhat is the detector light status?",
+    "answer": "off",
+    "metadata": {
+      "source_dataset": "acre",
+      "source_index": 92
+    }
+  },
+  {
+    "question": "You are a researcher studying causal relationships using Blicket experiments. In these experiments, certain objects (called 'blickets') have the hidden property of activating a detector, causing its light to turn on.\n\nEach example shows the results of placing different combinations of objects on the detector. Each object is described by color, material and shape. Your task is to determine whether a new combination of objects will cause the detector to activate.\n\nAfter observing the previous examples, respond with:\n- \"on\" if you can determine the detector light will turn on\n- \"off\" if you can determine the detector light will stay off\n- \"undetermined\" if there is insufficient evidence to reach a conclusion\n\nDo not use quotation marks in your answer.\n\nPrevious experimental results:\npurple metal cube → off\nyellow metal cube, purple metal cube → on\nyellow metal cube → on\ngreen metal cube, gray metal cube, brown rubber cylinder, gray metal sphere → on\nyellow metal cylinder, gray metal sphere, brown rubber cylinder → off\ngray metal cube, brown rubber cylinder → on\n\nNew test case:\ngreen metal cube\n\nWhat is the detector light status?",
+    "answer": "undetermined",
+    "metadata": {
+      "source_dataset": "acre",
+      "source_index": 93
+    }
+  },
+  {
+    "question": "You are a researcher studying causal relationships using Blicket experiments. In these experiments, certain objects (called 'blickets') have the hidden property of activating a detector, causing its light to turn on.\n\nEach example shows the results of placing different combinations of objects on the detector. Each object is described by color, material and shape. Your task is to determine whether a new combination of objects will cause the detector to activate.\n\nAfter observing the previous examples, respond with:\n- \"on\" if you can determine the detector light will turn on\n- \"off\" if you can determine the detector light will stay off\n- \"undetermined\" if there is insufficient evidence to reach a conclusion\n\nDo not use quotation marks in your answer.\n\nPrevious experimental results:\npurple metal cube → off\nyellow metal cube, purple metal cube → on\nyellow metal cube → on\ngreen metal cube, gray metal cube, brown rubber cylinder, gray metal sphere → on\nyellow metal cylinder, gray metal sphere, brown rubber cylinder → off\ngray metal cube, brown rubber cylinder → on\n\nNew test case:\nyellow metal cylinder, gray metal sphere, brown rubber cylinder, gray metal cube\n\nWhat is the detector light status?",
+    "answer": "on",
+    "metadata": {
+      "source_dataset": "acre",
+      "source_index": 94
+    }
+  },
+  {
+    "question": "You are a researcher studying causal relationships using Blicket experiments. In these experiments, certain objects (called 'blickets') have the hidden property of activating a detector, causing its light to turn on.\n\nEach example shows the results of placing different combinations of objects on the detector. Each object is described by color, material and shape. Your task is to determine whether a new combination of objects will cause the detector to activate.\n\nAfter observing the previous examples, respond with:\n- \"on\" if you can determine the detector light will turn on\n- \"off\" if you can determine the detector light will stay off\n- \"undetermined\" if there is insufficient evidence to reach a conclusion\n\nDo not use quotation marks in your answer.\n\nPrevious experimental results:\npurple metal cube → off\nyellow metal cube, purple metal cube → on\nyellow metal cube → on\ngreen metal cube, gray metal cube, brown rubber cylinder, gray metal sphere → on\nyellow metal cylinder, gray metal sphere, brown rubber cylinder → off\ngray metal cube, brown rubber cylinder → on\n\nNew test case:\nyellow metal cylinder, gray metal sphere, brown rubber cylinder, purple metal cube\n\nWhat is the detector light status?",
+    "answer": "off",
+    "metadata": {
+      "source_dataset": "acre",
+      "source_index": 95
+    }
+  },
+  {
+    "question": "You are a researcher studying causal relationships using Blicket experiments. In these experiments, certain objects (called 'blickets') have the hidden property of activating a detector, causing its light to turn on.\n\nEach example shows the results of placing different combinations of objects on the detector. Each object is described by color, material and shape. Your task is to determine whether a new combination of objects will cause the detector to activate.\n\nAfter observing the previous examples, respond with:\n- \"on\" if you can determine the detector light will turn on\n- \"off\" if you can determine the detector light will stay off\n- \"undetermined\" if there is insufficient evidence to reach a conclusion\n\nDo not use quotation marks in your answer.\n\nPrevious experimental results:\ngray metal cylinder → on\nblue metal cylinder → off\ngray metal cylinder, blue metal cylinder → on\nblue metal cube → off\nbrown metal cube, cyan metal cube → on\nbrown rubber cylinder, green rubber cube, blue metal cube → off\n\nNew test case:\ncyan metal cube\n\nWhat is the detector light status?",
+    "answer": "undetermined",
+    "metadata": {
+      "source_dataset": "acre",
+      "source_index": 96
+    }
+  },
+  {
+    "question": "You are a researcher studying causal relationships using Blicket experiments. In these experiments, certain objects (called 'blickets') have the hidden property of activating a detector, causing its light to turn on.\n\nEach example shows the results of placing different combinations of objects on the detector. Each object is described by color, material and shape. Your task is to determine whether a new combination of objects will cause the detector to activate.\n\nAfter observing the previous examples, respond with:\n- \"on\" if you can determine the detector light will turn on\n- \"off\" if you can determine the detector light will stay off\n- \"undetermined\" if there is insufficient evidence to reach a conclusion\n\nDo not use quotation marks in your answer.\n\nPrevious experimental results:\ngray metal cylinder → on\nblue metal cylinder → off\ngray metal cylinder, blue metal cylinder → on\nblue metal cube → off\nbrown metal cube, cyan metal cube → on\nbrown rubber cylinder, green rubber cube, blue metal cube → off\n\nNew test case:\nblue metal cube\n\nWhat is the detector light status?",
+    "answer": "off",
+    "metadata": {
+      "source_dataset": "acre",
+      "source_index": 97
+    }
+  },
+  {
+    "question": "You are a researcher studying causal relationships using Blicket experiments. In these experiments, certain objects (called 'blickets') have the hidden property of activating a detector, causing its light to turn on.\n\nEach example shows the results of placing different combinations of objects on the detector. Each object is described by color, material and shape. Your task is to determine whether a new combination of objects will cause the detector to activate.\n\nAfter observing the previous examples, respond with:\n- \"on\" if you can determine the detector light will turn on\n- \"off\" if you can determine the detector light will stay off\n- \"undetermined\" if there is insufficient evidence to reach a conclusion\n\nDo not use quotation marks in your answer.\n\nPrevious experimental results:\ngray metal cylinder → on\nblue metal cylinder → off\ngray metal cylinder, blue metal cylinder → on\nblue metal cube → off\nbrown metal cube, cyan metal cube → on\nbrown rubber cylinder, green rubber cube, blue metal cube → off\n\nNew test case:\nbrown rubber cylinder, green rubber cube, blue metal cube, cyan metal cube\n\nWhat is the detector light status?",
+    "answer": "undetermined",
+    "metadata": {
+      "source_dataset": "acre",
+      "source_index": 98
+    }
+  },
+  {
+    "question": "You are a researcher studying causal relationships using Blicket experiments. In these experiments, certain objects (called 'blickets') have the hidden property of activating a detector, causing its light to turn on.\n\nEach example shows the results of placing different combinations of objects on the detector. Each object is described by color, material and shape. Your task is to determine whether a new combination of objects will cause the detector to activate.\n\nAfter observing the previous examples, respond with:\n- \"on\" if you can determine the detector light will turn on\n- \"off\" if you can determine the detector light will stay off\n- \"undetermined\" if there is insufficient evidence to reach a conclusion\n\nDo not use quotation marks in your answer.\n\nPrevious experimental results:\ngray metal cylinder → on\nblue metal cylinder → off\ngray metal cylinder, blue metal cylinder → on\nblue metal cube → off\nbrown metal cube, cyan metal cube → on\nbrown rubber cylinder, green rubber cube, blue metal cube → off\n\nNew test case:\nbrown rubber cylinder, green rubber cube, blue metal cube, gray metal cylinder\n\nWhat is the detector light status?",
+    "answer": "on",
+    "metadata": {
+      "source_dataset": "acre",
+      "source_index": 99
+    }
+  }
+]

@@ -1,0 +1,2102 @@
+[
+  {
+    "question": "Two strings are isomorphic if the characters in one string can be replaced to get the second string.\n\nAll occurrences of a character must be replaced with another character while preserving the order of characters.\n\nNo two characters may map to the same character, but a character may map to itself.\n\nReturn True if the following two strings are isomorphic, or False otherwise:\ndw sy\n",
+    "answer": "True",
+    "metadata": {
+      "source_dataset": "isomorphic_strings",
+      "source_index": 0,
+      "words": [
+        "dw",
+        "sy"
+      ],
+      "solution": true,
+      "solvable": true,
+      "string_length": 3,
+      "difficulty": {
+        "string_length": [
+          2,
+          10
+        ]
+      }
+    }
+  },
+  {
+    "question": "Two strings are isomorphic if the characters in one string can be replaced to get the second string.\n\nAll occurrences of a character must be replaced with another character while preserving the order of characters.\n\nNo two characters may map to the same character, but a character may map to itself.\n\nReturn True if the following two strings are isomorphic, or False otherwise:\nn y\n",
+    "answer": "True",
+    "metadata": {
+      "source_dataset": "isomorphic_strings",
+      "source_index": 1,
+      "words": [
+        "n",
+        "y"
+      ],
+      "solution": true,
+      "solvable": true,
+      "string_length": 2,
+      "difficulty": {
+        "string_length": [
+          2,
+          10
+        ]
+      }
+    }
+  },
+  {
+    "question": "Two strings are isomorphic if the characters in one string can be replaced to get the second string.\n\nAll occurrences of a character must be replaced with another character while preserving the order of characters.\n\nNo two characters may map to the same character, but a character may map to itself.\n\nReturn True if the following two strings are isomorphic, or False otherwise:\nuowjoaja xgfahdad\n",
+    "answer": "False",
+    "metadata": {
+      "source_dataset": "isomorphic_strings",
+      "source_index": 2,
+      "words": [
+        "uowjoaja",
+        "xgfahdad"
+      ],
+      "solution": false,
+      "solvable": false,
+      "string_length": 8,
+      "difficulty": {
+        "string_length": [
+          2,
+          10
+        ]
+      }
+    }
+  },
+  {
+    "question": "Two strings are isomorphic if the characters in one string can be replaced to get the second string.\n\nAll occurrences of a character must be replaced with another character while preserving the order of characters.\n\nNo two characters may map to the same character, but a character may map to itself.\n\nReturn True if the following two strings are isomorphic, or False otherwise:\ndcjla btxrg\n",
+    "answer": "True",
+    "metadata": {
+      "source_dataset": "isomorphic_strings",
+      "source_index": 3,
+      "words": [
+        "dcjla",
+        "btxrg"
+      ],
+      "solution": true,
+      "solvable": true,
+      "string_length": 6,
+      "difficulty": {
+        "string_length": [
+          2,
+          10
+        ]
+      }
+    }
+  },
+  {
+    "question": "Two strings are isomorphic if the characters in one string can be replaced to get the second string.\n\nAll occurrences of a character must be replaced with another character while preserving the order of characters.\n\nNo two characters may map to the same character, but a character may map to itself.\n\nReturn True if the following two strings are isomorphic, or False otherwise:\ngw zu\n",
+    "answer": "True",
+    "metadata": {
+      "source_dataset": "isomorphic_strings",
+      "source_index": 4,
+      "words": [
+        "gw",
+        "zu"
+      ],
+      "solution": true,
+      "solvable": true,
+      "string_length": 3,
+      "difficulty": {
+        "string_length": [
+          2,
+          10
+        ]
+      }
+    }
+  },
+  {
+    "question": "Two strings are isomorphic if the characters in one string can be replaced to get the second string.\n\nAll occurrences of a character must be replaced with another character while preserving the order of characters.\n\nNo two characters may map to the same character, but a character may map to itself.\n\nReturn True if the following two strings are isomorphic, or False otherwise:\nmgdyih ifzgjp\n",
+    "answer": "True",
+    "metadata": {
+      "source_dataset": "isomorphic_strings",
+      "source_index": 5,
+      "words": [
+        "mgdyih",
+        "ifzgjp"
+      ],
+      "solution": true,
+      "solvable": true,
+      "string_length": 7,
+      "difficulty": {
+        "string_length": [
+          2,
+          10
+        ]
+      }
+    }
+  },
+  {
+    "question": "Two strings are isomorphic if the characters in one string can be replaced to get the second string.\n\nAll occurrences of a character must be replaced with another character while preserving the order of characters.\n\nNo two characters may map to the same character, but a character may map to itself.\n\nReturn True if the following two strings are isomorphic, or False otherwise:\nmmcenohle ddongyxcn\n",
+    "answer": "True",
+    "metadata": {
+      "source_dataset": "isomorphic_strings",
+      "source_index": 6,
+      "words": [
+        "mmcenohle",
+        "ddongyxcn"
+      ],
+      "solution": true,
+      "solvable": true,
+      "string_length": 10,
+      "difficulty": {
+        "string_length": [
+          2,
+          10
+        ]
+      }
+    }
+  },
+  {
+    "question": "Two strings are isomorphic if the characters in one string can be replaced to get the second string.\n\nAll occurrences of a character must be replaced with another character while preserving the order of characters.\n\nNo two characters may map to the same character, but a character may map to itself.\n\nReturn True if the following two strings are isomorphic, or False otherwise:\nan fz\n",
+    "answer": "True",
+    "metadata": {
+      "source_dataset": "isomorphic_strings",
+      "source_index": 7,
+      "words": [
+        "an",
+        "fz"
+      ],
+      "solution": true,
+      "solvable": true,
+      "string_length": 3,
+      "difficulty": {
+        "string_length": [
+          2,
+          10
+        ]
+      }
+    }
+  },
+  {
+    "question": "Two strings are isomorphic if the characters in one string can be replaced to get the second string.\n\nAll occurrences of a character must be replaced with another character while preserving the order of characters.\n\nNo two characters may map to the same character, but a character may map to itself.\n\nReturn True if the following two strings are isomorphic, or False otherwise:\nxwlvrtpvt wcfzsxuzk\n",
+    "answer": "False",
+    "metadata": {
+      "source_dataset": "isomorphic_strings",
+      "source_index": 8,
+      "words": [
+        "xwlvrtpvt",
+        "wcfzsxuzk"
+      ],
+      "solution": false,
+      "solvable": false,
+      "string_length": 9,
+      "difficulty": {
+        "string_length": [
+          2,
+          10
+        ]
+      }
+    }
+  },
+  {
+    "question": "Two strings are isomorphic if the characters in one string can be replaced to get the second string.\n\nAll occurrences of a character must be replaced with another character while preserving the order of characters.\n\nNo two characters may map to the same character, but a character may map to itself.\n\nReturn True if the following two strings are isomorphic, or False otherwise:\nmwmdd kakiq\n",
+    "answer": "False",
+    "metadata": {
+      "source_dataset": "isomorphic_strings",
+      "source_index": 9,
+      "words": [
+        "mwmdd",
+        "kakiq"
+      ],
+      "solution": false,
+      "solvable": false,
+      "string_length": 5,
+      "difficulty": {
+        "string_length": [
+          2,
+          10
+        ]
+      }
+    }
+  },
+  {
+    "question": "Two strings are isomorphic if the characters in one string can be replaced to get the second string.\n\nAll occurrences of a character must be replaced with another character while preserving the order of characters.\n\nNo two characters may map to the same character, but a character may map to itself.\n\nReturn True if the following two strings are isomorphic, or False otherwise:\nzlkth otjvp\n",
+    "answer": "True",
+    "metadata": {
+      "source_dataset": "isomorphic_strings",
+      "source_index": 10,
+      "words": [
+        "zlkth",
+        "otjvp"
+      ],
+      "solution": true,
+      "solvable": true,
+      "string_length": 6,
+      "difficulty": {
+        "string_length": [
+          2,
+          10
+        ]
+      }
+    }
+  },
+  {
+    "question": "Two strings are isomorphic if the characters in one string can be replaced to get the second string.\n\nAll occurrences of a character must be replaced with another character while preserving the order of characters.\n\nNo two characters may map to the same character, but a character may map to itself.\n\nReturn True if the following two strings are isomorphic, or False otherwise:\nuufz qqto\n",
+    "answer": "True",
+    "metadata": {
+      "source_dataset": "isomorphic_strings",
+      "source_index": 11,
+      "words": [
+        "uufz",
+        "qqto"
+      ],
+      "solution": true,
+      "solvable": true,
+      "string_length": 5,
+      "difficulty": {
+        "string_length": [
+          2,
+          10
+        ]
+      }
+    }
+  },
+  {
+    "question": "Two strings are isomorphic if the characters in one string can be replaced to get the second string.\n\nAll occurrences of a character must be replaced with another character while preserving the order of characters.\n\nNo two characters may map to the same character, but a character may map to itself.\n\nReturn True if the following two strings are isomorphic, or False otherwise:\nclw qmo\n",
+    "answer": "True",
+    "metadata": {
+      "source_dataset": "isomorphic_strings",
+      "source_index": 12,
+      "words": [
+        "clw",
+        "qmo"
+      ],
+      "solution": true,
+      "solvable": true,
+      "string_length": 4,
+      "difficulty": {
+        "string_length": [
+          2,
+          10
+        ]
+      }
+    }
+  },
+  {
+    "question": "Two strings are isomorphic if the characters in one string can be replaced to get the second string.\n\nAll occurrences of a character must be replaced with another character while preserving the order of characters.\n\nNo two characters may map to the same character, but a character may map to itself.\n\nReturn True if the following two strings are isomorphic, or False otherwise:\neez nyf\n",
+    "answer": "False",
+    "metadata": {
+      "source_dataset": "isomorphic_strings",
+      "source_index": 13,
+      "words": [
+        "eez",
+        "nyf"
+      ],
+      "solution": false,
+      "solvable": false,
+      "string_length": 3,
+      "difficulty": {
+        "string_length": [
+          2,
+          10
+        ]
+      }
+    }
+  },
+  {
+    "question": "Two strings are isomorphic if the characters in one string can be replaced to get the second string.\n\nAll occurrences of a character must be replaced with another character while preserving the order of characters.\n\nNo two characters may map to the same character, but a character may map to itself.\n\nReturn True if the following two strings are isomorphic, or False otherwise:\nqcmuairgj ohgsmbrdv\n",
+    "answer": "True",
+    "metadata": {
+      "source_dataset": "isomorphic_strings",
+      "source_index": 14,
+      "words": [
+        "qcmuairgj",
+        "ohgsmbrdv"
+      ],
+      "solution": true,
+      "solvable": true,
+      "string_length": 10,
+      "difficulty": {
+        "string_length": [
+          2,
+          10
+        ]
+      }
+    }
+  },
+  {
+    "question": "Two strings are isomorphic if the characters in one string can be replaced to get the second string.\n\nAll occurrences of a character must be replaced with another character while preserving the order of characters.\n\nNo two characters may map to the same character, but a character may map to itself.\n\nReturn True if the following two strings are isomorphic, or False otherwise:\ni r\n",
+    "answer": "True",
+    "metadata": {
+      "source_dataset": "isomorphic_strings",
+      "source_index": 15,
+      "words": [
+        "i",
+        "r"
+      ],
+      "solution": true,
+      "solvable": true,
+      "string_length": 2,
+      "difficulty": {
+        "string_length": [
+          2,
+          10
+        ]
+      }
+    }
+  },
+  {
+    "question": "Two strings are isomorphic if the characters in one string can be replaced to get the second string.\n\nAll occurrences of a character must be replaced with another character while preserving the order of characters.\n\nNo two characters may map to the same character, but a character may map to itself.\n\nReturn True if the following two strings are isomorphic, or False otherwise:\nqbsx vsit\n",
+    "answer": "True",
+    "metadata": {
+      "source_dataset": "isomorphic_strings",
+      "source_index": 16,
+      "words": [
+        "qbsx",
+        "vsit"
+      ],
+      "solution": true,
+      "solvable": true,
+      "string_length": 5,
+      "difficulty": {
+        "string_length": [
+          2,
+          10
+        ]
+      }
+    }
+  },
+  {
+    "question": "Two strings are isomorphic if the characters in one string can be replaced to get the second string.\n\nAll occurrences of a character must be replaced with another character while preserving the order of characters.\n\nNo two characters may map to the same character, but a character may map to itself.\n\nReturn True if the following two strings are isomorphic, or False otherwise:\nqjcj iyny\n",
+    "answer": "True",
+    "metadata": {
+      "source_dataset": "isomorphic_strings",
+      "source_index": 17,
+      "words": [
+        "qjcj",
+        "iyny"
+      ],
+      "solution": true,
+      "solvable": true,
+      "string_length": 5,
+      "difficulty": {
+        "string_length": [
+          2,
+          10
+        ]
+      }
+    }
+  },
+  {
+    "question": "Two strings are isomorphic if the characters in one string can be replaced to get the second string.\n\nAll occurrences of a character must be replaced with another character while preserving the order of characters.\n\nNo two characters may map to the same character, but a character may map to itself.\n\nReturn True if the following two strings are isomorphic, or False otherwise:\ntwsbp aotbv\n",
+    "answer": "True",
+    "metadata": {
+      "source_dataset": "isomorphic_strings",
+      "source_index": 18,
+      "words": [
+        "twsbp",
+        "aotbv"
+      ],
+      "solution": true,
+      "solvable": true,
+      "string_length": 6,
+      "difficulty": {
+        "string_length": [
+          2,
+          10
+        ]
+      }
+    }
+  },
+  {
+    "question": "Two strings are isomorphic if the characters in one string can be replaced to get the second string.\n\nAll occurrences of a character must be replaced with another character while preserving the order of characters.\n\nNo two characters may map to the same character, but a character may map to itself.\n\nReturn True if the following two strings are isomorphic, or False otherwise:\nerrhjxvs hllcomiy\n",
+    "answer": "True",
+    "metadata": {
+      "source_dataset": "isomorphic_strings",
+      "source_index": 19,
+      "words": [
+        "errhjxvs",
+        "hllcomiy"
+      ],
+      "solution": true,
+      "solvable": true,
+      "string_length": 9,
+      "difficulty": {
+        "string_length": [
+          2,
+          10
+        ]
+      }
+    }
+  },
+  {
+    "question": "Two strings are isomorphic if the characters in one string can be replaced to get the second string.\n\nAll occurrences of a character must be replaced with another character while preserving the order of characters.\n\nNo two characters may map to the same character, but a character may map to itself.\n\nReturn True if the following two strings are isomorphic, or False otherwise:\nwcx idk\n",
+    "answer": "True",
+    "metadata": {
+      "source_dataset": "isomorphic_strings",
+      "source_index": 20,
+      "words": [
+        "wcx",
+        "idk"
+      ],
+      "solution": true,
+      "solvable": true,
+      "string_length": 4,
+      "difficulty": {
+        "string_length": [
+          2,
+          10
+        ]
+      }
+    }
+  },
+  {
+    "question": "Two strings are isomorphic if the characters in one string can be replaced to get the second string.\n\nAll occurrences of a character must be replaced with another character while preserving the order of characters.\n\nNo two characters may map to the same character, but a character may map to itself.\n\nReturn True if the following two strings are isomorphic, or False otherwise:\ndpyvpevq qbhxbtxm\n",
+    "answer": "True",
+    "metadata": {
+      "source_dataset": "isomorphic_strings",
+      "source_index": 21,
+      "words": [
+        "dpyvpevq",
+        "qbhxbtxm"
+      ],
+      "solution": true,
+      "solvable": true,
+      "string_length": 9,
+      "difficulty": {
+        "string_length": [
+          2,
+          10
+        ]
+      }
+    }
+  },
+  {
+    "question": "Two strings are isomorphic if the characters in one string can be replaced to get the second string.\n\nAll occurrences of a character must be replaced with another character while preserving the order of characters.\n\nNo two characters may map to the same character, but a character may map to itself.\n\nReturn True if the following two strings are isomorphic, or False otherwise:\nimjdhhnu mdvhccso\n",
+    "answer": "True",
+    "metadata": {
+      "source_dataset": "isomorphic_strings",
+      "source_index": 22,
+      "words": [
+        "imjdhhnu",
+        "mdvhccso"
+      ],
+      "solution": true,
+      "solvable": true,
+      "string_length": 9,
+      "difficulty": {
+        "string_length": [
+          2,
+          10
+        ]
+      }
+    }
+  },
+  {
+    "question": "Two strings are isomorphic if the characters in one string can be replaced to get the second string.\n\nAll occurrences of a character must be replaced with another character while preserving the order of characters.\n\nNo two characters may map to the same character, but a character may map to itself.\n\nReturn True if the following two strings are isomorphic, or False otherwise:\nfsfsmqw sqsqtob\n",
+    "answer": "True",
+    "metadata": {
+      "source_dataset": "isomorphic_strings",
+      "source_index": 23,
+      "words": [
+        "fsfsmqw",
+        "sqsqtob"
+      ],
+      "solution": true,
+      "solvable": true,
+      "string_length": 8,
+      "difficulty": {
+        "string_length": [
+          2,
+          10
+        ]
+      }
+    }
+  },
+  {
+    "question": "Two strings are isomorphic if the characters in one string can be replaced to get the second string.\n\nAll occurrences of a character must be replaced with another character while preserving the order of characters.\n\nNo two characters may map to the same character, but a character may map to itself.\n\nReturn True if the following two strings are isomorphic, or False otherwise:\nws hl\n",
+    "answer": "True",
+    "metadata": {
+      "source_dataset": "isomorphic_strings",
+      "source_index": 24,
+      "words": [
+        "ws",
+        "hl"
+      ],
+      "solution": true,
+      "solvable": true,
+      "string_length": 3,
+      "difficulty": {
+        "string_length": [
+          2,
+          10
+        ]
+      }
+    }
+  },
+  {
+    "question": "Two strings are isomorphic if the characters in one string can be replaced to get the second string.\n\nAll occurrences of a character must be replaced with another character while preserving the order of characters.\n\nNo two characters may map to the same character, but a character may map to itself.\n\nReturn True if the following two strings are isomorphic, or False otherwise:\nkk ii\n",
+    "answer": "True",
+    "metadata": {
+      "source_dataset": "isomorphic_strings",
+      "source_index": 25,
+      "words": [
+        "kk",
+        "ii"
+      ],
+      "solution": true,
+      "solvable": true,
+      "string_length": 3,
+      "difficulty": {
+        "string_length": [
+          2,
+          10
+        ]
+      }
+    }
+  },
+  {
+    "question": "Two strings are isomorphic if the characters in one string can be replaced to get the second string.\n\nAll occurrences of a character must be replaced with another character while preserving the order of characters.\n\nNo two characters may map to the same character, but a character may map to itself.\n\nReturn True if the following two strings are isomorphic, or False otherwise:\nzagkdrmoa owsphqkzj\n",
+    "answer": "False",
+    "metadata": {
+      "source_dataset": "isomorphic_strings",
+      "source_index": 26,
+      "words": [
+        "zagkdrmoa",
+        "owsphqkzj"
+      ],
+      "solution": false,
+      "solvable": false,
+      "string_length": 9,
+      "difficulty": {
+        "string_length": [
+          2,
+          10
+        ]
+      }
+    }
+  },
+  {
+    "question": "Two strings are isomorphic if the characters in one string can be replaced to get the second string.\n\nAll occurrences of a character must be replaced with another character while preserving the order of characters.\n\nNo two characters may map to the same character, but a character may map to itself.\n\nReturn True if the following two strings are isomorphic, or False otherwise:\no b\n",
+    "answer": "True",
+    "metadata": {
+      "source_dataset": "isomorphic_strings",
+      "source_index": 27,
+      "words": [
+        "o",
+        "b"
+      ],
+      "solution": true,
+      "solvable": true,
+      "string_length": 2,
+      "difficulty": {
+        "string_length": [
+          2,
+          10
+        ]
+      }
+    }
+  },
+  {
+    "question": "Two strings are isomorphic if the characters in one string can be replaced to get the second string.\n\nAll occurrences of a character must be replaced with another character while preserving the order of characters.\n\nNo two characters may map to the same character, but a character may map to itself.\n\nReturn True if the following two strings are isomorphic, or False otherwise:\nst if\n",
+    "answer": "True",
+    "metadata": {
+      "source_dataset": "isomorphic_strings",
+      "source_index": 28,
+      "words": [
+        "st",
+        "if"
+      ],
+      "solution": true,
+      "solvable": true,
+      "string_length": 3,
+      "difficulty": {
+        "string_length": [
+          2,
+          10
+        ]
+      }
+    }
+  },
+  {
+    "question": "Two strings are isomorphic if the characters in one string can be replaced to get the second string.\n\nAll occurrences of a character must be replaced with another character while preserving the order of characters.\n\nNo two characters may map to the same character, but a character may map to itself.\n\nReturn True if the following two strings are isomorphic, or False otherwise:\nhdndfvf rkakslb\n",
+    "answer": "False",
+    "metadata": {
+      "source_dataset": "isomorphic_strings",
+      "source_index": 29,
+      "words": [
+        "hdndfvf",
+        "rkakslb"
+      ],
+      "solution": false,
+      "solvable": false,
+      "string_length": 7,
+      "difficulty": {
+        "string_length": [
+          2,
+          10
+        ]
+      }
+    }
+  },
+  {
+    "question": "Two strings are isomorphic if the characters in one string can be replaced to get the second string.\n\nAll occurrences of a character must be replaced with another character while preserving the order of characters.\n\nNo two characters may map to the same character, but a character may map to itself.\n\nReturn True if the following two strings are isomorphic, or False otherwise:\nzxx kcl\n",
+    "answer": "False",
+    "metadata": {
+      "source_dataset": "isomorphic_strings",
+      "source_index": 30,
+      "words": [
+        "zxx",
+        "kcl"
+      ],
+      "solution": false,
+      "solvable": false,
+      "string_length": 3,
+      "difficulty": {
+        "string_length": [
+          2,
+          10
+        ]
+      }
+    }
+  },
+  {
+    "question": "Two strings are isomorphic if the characters in one string can be replaced to get the second string.\n\nAll occurrences of a character must be replaced with another character while preserving the order of characters.\n\nNo two characters may map to the same character, but a character may map to itself.\n\nReturn True if the following two strings are isomorphic, or False otherwise:\nlocvy ziwoe\n",
+    "answer": "True",
+    "metadata": {
+      "source_dataset": "isomorphic_strings",
+      "source_index": 31,
+      "words": [
+        "locvy",
+        "ziwoe"
+      ],
+      "solution": true,
+      "solvable": true,
+      "string_length": 6,
+      "difficulty": {
+        "string_length": [
+          2,
+          10
+        ]
+      }
+    }
+  },
+  {
+    "question": "Two strings are isomorphic if the characters in one string can be replaced to get the second string.\n\nAll occurrences of a character must be replaced with another character while preserving the order of characters.\n\nNo two characters may map to the same character, but a character may map to itself.\n\nReturn True if the following two strings are isomorphic, or False otherwise:\nrhoxsfsoro xfsyzmzsxp\n",
+    "answer": "False",
+    "metadata": {
+      "source_dataset": "isomorphic_strings",
+      "source_index": 32,
+      "words": [
+        "rhoxsfsoro",
+        "xfsyzmzsxp"
+      ],
+      "solution": false,
+      "solvable": false,
+      "string_length": 10,
+      "difficulty": {
+        "string_length": [
+          2,
+          10
+        ]
+      }
+    }
+  },
+  {
+    "question": "Two strings are isomorphic if the characters in one string can be replaced to get the second string.\n\nAll occurrences of a character must be replaced with another character while preserving the order of characters.\n\nNo two characters may map to the same character, but a character may map to itself.\n\nReturn True if the following two strings are isomorphic, or False otherwise:\nszfpsppua jhdohoomt\n",
+    "answer": "False",
+    "metadata": {
+      "source_dataset": "isomorphic_strings",
+      "source_index": 33,
+      "words": [
+        "szfpsppua",
+        "jhdohoomt"
+      ],
+      "solution": false,
+      "solvable": false,
+      "string_length": 9,
+      "difficulty": {
+        "string_length": [
+          2,
+          10
+        ]
+      }
+    }
+  },
+  {
+    "question": "Two strings are isomorphic if the characters in one string can be replaced to get the second string.\n\nAll occurrences of a character must be replaced with another character while preserving the order of characters.\n\nNo two characters may map to the same character, but a character may map to itself.\n\nReturn True if the following two strings are isomorphic, or False otherwise:\nyckccn vjljjp\n",
+    "answer": "True",
+    "metadata": {
+      "source_dataset": "isomorphic_strings",
+      "source_index": 34,
+      "words": [
+        "yckccn",
+        "vjljjp"
+      ],
+      "solution": true,
+      "solvable": true,
+      "string_length": 7,
+      "difficulty": {
+        "string_length": [
+          2,
+          10
+        ]
+      }
+    }
+  },
+  {
+    "question": "Two strings are isomorphic if the characters in one string can be replaced to get the second string.\n\nAll occurrences of a character must be replaced with another character while preserving the order of characters.\n\nNo two characters may map to the same character, but a character may map to itself.\n\nReturn True if the following two strings are isomorphic, or False otherwise:\nwalit vfeau\n",
+    "answer": "True",
+    "metadata": {
+      "source_dataset": "isomorphic_strings",
+      "source_index": 35,
+      "words": [
+        "walit",
+        "vfeau"
+      ],
+      "solution": true,
+      "solvable": true,
+      "string_length": 6,
+      "difficulty": {
+        "string_length": [
+          2,
+          10
+        ]
+      }
+    }
+  },
+  {
+    "question": "Two strings are isomorphic if the characters in one string can be replaced to get the second string.\n\nAll occurrences of a character must be replaced with another character while preserving the order of characters.\n\nNo two characters may map to the same character, but a character may map to itself.\n\nReturn True if the following two strings are isomorphic, or False otherwise:\npdkq cnjk\n",
+    "answer": "True",
+    "metadata": {
+      "source_dataset": "isomorphic_strings",
+      "source_index": 36,
+      "words": [
+        "pdkq",
+        "cnjk"
+      ],
+      "solution": true,
+      "solvable": true,
+      "string_length": 5,
+      "difficulty": {
+        "string_length": [
+          2,
+          10
+        ]
+      }
+    }
+  },
+  {
+    "question": "Two strings are isomorphic if the characters in one string can be replaced to get the second string.\n\nAll occurrences of a character must be replaced with another character while preserving the order of characters.\n\nNo two characters may map to the same character, but a character may map to itself.\n\nReturn True if the following two strings are isomorphic, or False otherwise:\niwz kan\n",
+    "answer": "True",
+    "metadata": {
+      "source_dataset": "isomorphic_strings",
+      "source_index": 37,
+      "words": [
+        "iwz",
+        "kan"
+      ],
+      "solution": true,
+      "solvable": true,
+      "string_length": 4,
+      "difficulty": {
+        "string_length": [
+          2,
+          10
+        ]
+      }
+    }
+  },
+  {
+    "question": "Two strings are isomorphic if the characters in one string can be replaced to get the second string.\n\nAll occurrences of a character must be replaced with another character while preserving the order of characters.\n\nNo two characters may map to the same character, but a character may map to itself.\n\nReturn True if the following two strings are isomorphic, or False otherwise:\nuxmxj gtitw\n",
+    "answer": "True",
+    "metadata": {
+      "source_dataset": "isomorphic_strings",
+      "source_index": 38,
+      "words": [
+        "uxmxj",
+        "gtitw"
+      ],
+      "solution": true,
+      "solvable": true,
+      "string_length": 6,
+      "difficulty": {
+        "string_length": [
+          2,
+          10
+        ]
+      }
+    }
+  },
+  {
+    "question": "Two strings are isomorphic if the characters in one string can be replaced to get the second string.\n\nAll occurrences of a character must be replaced with another character while preserving the order of characters.\n\nNo two characters may map to the same character, but a character may map to itself.\n\nReturn True if the following two strings are isomorphic, or False otherwise:\nrlmlosnjcw pwmrkhcylw\n",
+    "answer": "False",
+    "metadata": {
+      "source_dataset": "isomorphic_strings",
+      "source_index": 39,
+      "words": [
+        "rlmlosnjcw",
+        "pwmrkhcylw"
+      ],
+      "solution": false,
+      "solvable": false,
+      "string_length": 10,
+      "difficulty": {
+        "string_length": [
+          2,
+          10
+        ]
+      }
+    }
+  },
+  {
+    "question": "Two strings are isomorphic if the characters in one string can be replaced to get the second string.\n\nAll occurrences of a character must be replaced with another character while preserving the order of characters.\n\nNo two characters may map to the same character, but a character may map to itself.\n\nReturn True if the following two strings are isomorphic, or False otherwise:\nfhfh lkdk\n",
+    "answer": "False",
+    "metadata": {
+      "source_dataset": "isomorphic_strings",
+      "source_index": 40,
+      "words": [
+        "fhfh",
+        "lkdk"
+      ],
+      "solution": false,
+      "solvable": false,
+      "string_length": 4,
+      "difficulty": {
+        "string_length": [
+          2,
+          10
+        ]
+      }
+    }
+  },
+  {
+    "question": "Two strings are isomorphic if the characters in one string can be replaced to get the second string.\n\nAll occurrences of a character must be replaced with another character while preserving the order of characters.\n\nNo two characters may map to the same character, but a character may map to itself.\n\nReturn True if the following two strings are isomorphic, or False otherwise:\nstbqecbkb bgjasyjwf\n",
+    "answer": "False",
+    "metadata": {
+      "source_dataset": "isomorphic_strings",
+      "source_index": 41,
+      "words": [
+        "stbqecbkb",
+        "bgjasyjwf"
+      ],
+      "solution": false,
+      "solvable": false,
+      "string_length": 9,
+      "difficulty": {
+        "string_length": [
+          2,
+          10
+        ]
+      }
+    }
+  },
+  {
+    "question": "Two strings are isomorphic if the characters in one string can be replaced to get the second string.\n\nAll occurrences of a character must be replaced with another character while preserving the order of characters.\n\nNo two characters may map to the same character, but a character may map to itself.\n\nReturn True if the following two strings are isomorphic, or False otherwise:\nbpjpel qwpfou\n",
+    "answer": "False",
+    "metadata": {
+      "source_dataset": "isomorphic_strings",
+      "source_index": 42,
+      "words": [
+        "bpjpel",
+        "qwpfou"
+      ],
+      "solution": false,
+      "solvable": false,
+      "string_length": 6,
+      "difficulty": {
+        "string_length": [
+          2,
+          10
+        ]
+      }
+    }
+  },
+  {
+    "question": "Two strings are isomorphic if the characters in one string can be replaced to get the second string.\n\nAll occurrences of a character must be replaced with another character while preserving the order of characters.\n\nNo two characters may map to the same character, but a character may map to itself.\n\nReturn True if the following two strings are isomorphic, or False otherwise:\naesgg fsgaz\n",
+    "answer": "False",
+    "metadata": {
+      "source_dataset": "isomorphic_strings",
+      "source_index": 43,
+      "words": [
+        "aesgg",
+        "fsgaz"
+      ],
+      "solution": false,
+      "solvable": false,
+      "string_length": 5,
+      "difficulty": {
+        "string_length": [
+          2,
+          10
+        ]
+      }
+    }
+  },
+  {
+    "question": "Two strings are isomorphic if the characters in one string can be replaced to get the second string.\n\nAll occurrences of a character must be replaced with another character while preserving the order of characters.\n\nNo two characters may map to the same character, but a character may map to itself.\n\nReturn True if the following two strings are isomorphic, or False otherwise:\nrr hc\n",
+    "answer": "False",
+    "metadata": {
+      "source_dataset": "isomorphic_strings",
+      "source_index": 44,
+      "words": [
+        "rr",
+        "hc"
+      ],
+      "solution": false,
+      "solvable": false,
+      "string_length": 2,
+      "difficulty": {
+        "string_length": [
+          2,
+          10
+        ]
+      }
+    }
+  },
+  {
+    "question": "Two strings are isomorphic if the characters in one string can be replaced to get the second string.\n\nAll occurrences of a character must be replaced with another character while preserving the order of characters.\n\nNo two characters may map to the same character, but a character may map to itself.\n\nReturn True if the following two strings are isomorphic, or False otherwise:\nmdrr xhcu\n",
+    "answer": "False",
+    "metadata": {
+      "source_dataset": "isomorphic_strings",
+      "source_index": 45,
+      "words": [
+        "mdrr",
+        "xhcu"
+      ],
+      "solution": false,
+      "solvable": false,
+      "string_length": 4,
+      "difficulty": {
+        "string_length": [
+          2,
+          10
+        ]
+      }
+    }
+  },
+  {
+    "question": "Two strings are isomorphic if the characters in one string can be replaced to get the second string.\n\nAll occurrences of a character must be replaced with another character while preserving the order of characters.\n\nNo two characters may map to the same character, but a character may map to itself.\n\nReturn True if the following two strings are isomorphic, or False otherwise:\nrqfjptap krnmpltk\n",
+    "answer": "False",
+    "metadata": {
+      "source_dataset": "isomorphic_strings",
+      "source_index": 46,
+      "words": [
+        "rqfjptap",
+        "krnmpltk"
+      ],
+      "solution": false,
+      "solvable": false,
+      "string_length": 8,
+      "difficulty": {
+        "string_length": [
+          2,
+          10
+        ]
+      }
+    }
+  },
+  {
+    "question": "Two strings are isomorphic if the characters in one string can be replaced to get the second string.\n\nAll occurrences of a character must be replaced with another character while preserving the order of characters.\n\nNo two characters may map to the same character, but a character may map to itself.\n\nReturn True if the following two strings are isomorphic, or False otherwise:\nuut aym\n",
+    "answer": "False",
+    "metadata": {
+      "source_dataset": "isomorphic_strings",
+      "source_index": 47,
+      "words": [
+        "uut",
+        "aym"
+      ],
+      "solution": false,
+      "solvable": false,
+      "string_length": 3,
+      "difficulty": {
+        "string_length": [
+          2,
+          10
+        ]
+      }
+    }
+  },
+  {
+    "question": "Two strings are isomorphic if the characters in one string can be replaced to get the second string.\n\nAll occurrences of a character must be replaced with another character while preserving the order of characters.\n\nNo two characters may map to the same character, but a character may map to itself.\n\nReturn True if the following two strings are isomorphic, or False otherwise:\nlgccx uzdai\n",
+    "answer": "False",
+    "metadata": {
+      "source_dataset": "isomorphic_strings",
+      "source_index": 48,
+      "words": [
+        "lgccx",
+        "uzdai"
+      ],
+      "solution": false,
+      "solvable": false,
+      "string_length": 5,
+      "difficulty": {
+        "string_length": [
+          2,
+          10
+        ]
+      }
+    }
+  },
+  {
+    "question": "Two strings are isomorphic if the characters in one string can be replaced to get the second string.\n\nAll occurrences of a character must be replaced with another character while preserving the order of characters.\n\nNo two characters may map to the same character, but a character may map to itself.\n\nReturn True if the following two strings are isomorphic, or False otherwise:\npoo unm\n",
+    "answer": "False",
+    "metadata": {
+      "source_dataset": "isomorphic_strings",
+      "source_index": 49,
+      "words": [
+        "poo",
+        "unm"
+      ],
+      "solution": false,
+      "solvable": false,
+      "string_length": 3,
+      "difficulty": {
+        "string_length": [
+          2,
+          10
+        ]
+      }
+    }
+  },
+  {
+    "question": "Two strings are isomorphic if the characters in one string can be replaced to get the second string.\n\nAll occurrences of a character must be replaced with another character while preserving the order of characters.\n\nNo two characters may map to the same character, but a character may map to itself.\n\nReturn True if the following two strings are isomorphic, or False otherwise:\nmhdngllv pecxzuvn\n",
+    "answer": "False",
+    "metadata": {
+      "source_dataset": "isomorphic_strings",
+      "source_index": 50,
+      "words": [
+        "mhdngllv",
+        "pecxzuvn"
+      ],
+      "solution": false,
+      "solvable": false,
+      "string_length": 8,
+      "difficulty": {
+        "string_length": [
+          2,
+          10
+        ]
+      }
+    }
+  },
+  {
+    "question": "Two strings are isomorphic if the characters in one string can be replaced to get the second string.\n\nAll occurrences of a character must be replaced with another character while preserving the order of characters.\n\nNo two characters may map to the same character, but a character may map to itself.\n\nReturn True if the following two strings are isomorphic, or False otherwise:\nzaxoazhgi tbkqbdsjz\n",
+    "answer": "False",
+    "metadata": {
+      "source_dataset": "isomorphic_strings",
+      "source_index": 51,
+      "words": [
+        "zaxoazhgi",
+        "tbkqbdsjz"
+      ],
+      "solution": false,
+      "solvable": false,
+      "string_length": 9,
+      "difficulty": {
+        "string_length": [
+          2,
+          10
+        ]
+      }
+    }
+  },
+  {
+    "question": "Two strings are isomorphic if the characters in one string can be replaced to get the second string.\n\nAll occurrences of a character must be replaced with another character while preserving the order of characters.\n\nNo two characters may map to the same character, but a character may map to itself.\n\nReturn True if the following two strings are isomorphic, or False otherwise:\ndkpxkimkj lrptrfjrg\n",
+    "answer": "True",
+    "metadata": {
+      "source_dataset": "isomorphic_strings",
+      "source_index": 52,
+      "words": [
+        "dkpxkimkj",
+        "lrptrfjrg"
+      ],
+      "solution": true,
+      "solvable": true,
+      "string_length": 10,
+      "difficulty": {
+        "string_length": [
+          2,
+          10
+        ]
+      }
+    }
+  },
+  {
+    "question": "Two strings are isomorphic if the characters in one string can be replaced to get the second string.\n\nAll occurrences of a character must be replaced with another character while preserving the order of characters.\n\nNo two characters may map to the same character, but a character may map to itself.\n\nReturn True if the following two strings are isomorphic, or False otherwise:\nzthltiqheg puyrjkmyvz\n",
+    "answer": "False",
+    "metadata": {
+      "source_dataset": "isomorphic_strings",
+      "source_index": 53,
+      "words": [
+        "zthltiqheg",
+        "puyrjkmyvz"
+      ],
+      "solution": false,
+      "solvable": false,
+      "string_length": 10,
+      "difficulty": {
+        "string_length": [
+          2,
+          10
+        ]
+      }
+    }
+  },
+  {
+    "question": "Two strings are isomorphic if the characters in one string can be replaced to get the second string.\n\nAll occurrences of a character must be replaced with another character while preserving the order of characters.\n\nNo two characters may map to the same character, but a character may map to itself.\n\nReturn True if the following two strings are isomorphic, or False otherwise:\nperuoq mxjrpi\n",
+    "answer": "True",
+    "metadata": {
+      "source_dataset": "isomorphic_strings",
+      "source_index": 54,
+      "words": [
+        "peruoq",
+        "mxjrpi"
+      ],
+      "solution": true,
+      "solvable": true,
+      "string_length": 7,
+      "difficulty": {
+        "string_length": [
+          2,
+          10
+        ]
+      }
+    }
+  },
+  {
+    "question": "Two strings are isomorphic if the characters in one string can be replaced to get the second string.\n\nAll occurrences of a character must be replaced with another character while preserving the order of characters.\n\nNo two characters may map to the same character, but a character may map to itself.\n\nReturn True if the following two strings are isomorphic, or False otherwise:\nxbjn hzpj\n",
+    "answer": "True",
+    "metadata": {
+      "source_dataset": "isomorphic_strings",
+      "source_index": 55,
+      "words": [
+        "xbjn",
+        "hzpj"
+      ],
+      "solution": true,
+      "solvable": true,
+      "string_length": 5,
+      "difficulty": {
+        "string_length": [
+          2,
+          10
+        ]
+      }
+    }
+  },
+  {
+    "question": "Two strings are isomorphic if the characters in one string can be replaced to get the second string.\n\nAll occurrences of a character must be replaced with another character while preserving the order of characters.\n\nNo two characters may map to the same character, but a character may map to itself.\n\nReturn True if the following two strings are isomorphic, or False otherwise:\nkbklzmh gtjfnxe\n",
+    "answer": "False",
+    "metadata": {
+      "source_dataset": "isomorphic_strings",
+      "source_index": 56,
+      "words": [
+        "kbklzmh",
+        "gtjfnxe"
+      ],
+      "solution": false,
+      "solvable": false,
+      "string_length": 7,
+      "difficulty": {
+        "string_length": [
+          2,
+          10
+        ]
+      }
+    }
+  },
+  {
+    "question": "Two strings are isomorphic if the characters in one string can be replaced to get the second string.\n\nAll occurrences of a character must be replaced with another character while preserving the order of characters.\n\nNo two characters may map to the same character, but a character may map to itself.\n\nReturn True if the following two strings are isomorphic, or False otherwise:\niwtdfuv kabqhun\n",
+    "answer": "True",
+    "metadata": {
+      "source_dataset": "isomorphic_strings",
+      "source_index": 57,
+      "words": [
+        "iwtdfuv",
+        "kabqhun"
+      ],
+      "solution": true,
+      "solvable": true,
+      "string_length": 8,
+      "difficulty": {
+        "string_length": [
+          2,
+          10
+        ]
+      }
+    }
+  },
+  {
+    "question": "Two strings are isomorphic if the characters in one string can be replaced to get the second string.\n\nAll occurrences of a character must be replaced with another character while preserving the order of characters.\n\nNo two characters may map to the same character, but a character may map to itself.\n\nReturn True if the following two strings are isomorphic, or False otherwise:\nnuz kgm\n",
+    "answer": "True",
+    "metadata": {
+      "source_dataset": "isomorphic_strings",
+      "source_index": 58,
+      "words": [
+        "nuz",
+        "kgm"
+      ],
+      "solution": true,
+      "solvable": true,
+      "string_length": 4,
+      "difficulty": {
+        "string_length": [
+          2,
+          10
+        ]
+      }
+    }
+  },
+  {
+    "question": "Two strings are isomorphic if the characters in one string can be replaced to get the second string.\n\nAll occurrences of a character must be replaced with another character while preserving the order of characters.\n\nNo two characters may map to the same character, but a character may map to itself.\n\nReturn True if the following two strings are isomorphic, or False otherwise:\nmspse tjzfd\n",
+    "answer": "False",
+    "metadata": {
+      "source_dataset": "isomorphic_strings",
+      "source_index": 59,
+      "words": [
+        "mspse",
+        "tjzfd"
+      ],
+      "solution": false,
+      "solvable": false,
+      "string_length": 5,
+      "difficulty": {
+        "string_length": [
+          2,
+          10
+        ]
+      }
+    }
+  },
+  {
+    "question": "Two strings are isomorphic if the characters in one string can be replaced to get the second string.\n\nAll occurrences of a character must be replaced with another character while preserving the order of characters.\n\nNo two characters may map to the same character, but a character may map to itself.\n\nReturn True if the following two strings are isomorphic, or False otherwise:\nxmxp kcgw\n",
+    "answer": "False",
+    "metadata": {
+      "source_dataset": "isomorphic_strings",
+      "source_index": 60,
+      "words": [
+        "xmxp",
+        "kcgw"
+      ],
+      "solution": false,
+      "solvable": false,
+      "string_length": 4,
+      "difficulty": {
+        "string_length": [
+          2,
+          10
+        ]
+      }
+    }
+  },
+  {
+    "question": "Two strings are isomorphic if the characters in one string can be replaced to get the second string.\n\nAll occurrences of a character must be replaced with another character while preserving the order of characters.\n\nNo two characters may map to the same character, but a character may map to itself.\n\nReturn True if the following two strings are isomorphic, or False otherwise:\nvuevzqspl scdexgtav\n",
+    "answer": "False",
+    "metadata": {
+      "source_dataset": "isomorphic_strings",
+      "source_index": 61,
+      "words": [
+        "vuevzqspl",
+        "scdexgtav"
+      ],
+      "solution": false,
+      "solvable": false,
+      "string_length": 9,
+      "difficulty": {
+        "string_length": [
+          2,
+          10
+        ]
+      }
+    }
+  },
+  {
+    "question": "Two strings are isomorphic if the characters in one string can be replaced to get the second string.\n\nAll occurrences of a character must be replaced with another character while preserving the order of characters.\n\nNo two characters may map to the same character, but a character may map to itself.\n\nReturn True if the following two strings are isomorphic, or False otherwise:\nzz nm\n",
+    "answer": "False",
+    "metadata": {
+      "source_dataset": "isomorphic_strings",
+      "source_index": 62,
+      "words": [
+        "zz",
+        "nm"
+      ],
+      "solution": false,
+      "solvable": false,
+      "string_length": 2,
+      "difficulty": {
+        "string_length": [
+          2,
+          10
+        ]
+      }
+    }
+  },
+  {
+    "question": "Two strings are isomorphic if the characters in one string can be replaced to get the second string.\n\nAll occurrences of a character must be replaced with another character while preserving the order of characters.\n\nNo two characters may map to the same character, but a character may map to itself.\n\nReturn True if the following two strings are isomorphic, or False otherwise:\nacnroco rpwfgxg\n",
+    "answer": "False",
+    "metadata": {
+      "source_dataset": "isomorphic_strings",
+      "source_index": 63,
+      "words": [
+        "acnroco",
+        "rpwfgxg"
+      ],
+      "solution": false,
+      "solvable": false,
+      "string_length": 7,
+      "difficulty": {
+        "string_length": [
+          2,
+          10
+        ]
+      }
+    }
+  },
+  {
+    "question": "Two strings are isomorphic if the characters in one string can be replaced to get the second string.\n\nAll occurrences of a character must be replaced with another character while preserving the order of characters.\n\nNo two characters may map to the same character, but a character may map to itself.\n\nReturn True if the following two strings are isomorphic, or False otherwise:\nfbhexscz qabzohrg\n",
+    "answer": "True",
+    "metadata": {
+      "source_dataset": "isomorphic_strings",
+      "source_index": 64,
+      "words": [
+        "fbhexscz",
+        "qabzohrg"
+      ],
+      "solution": true,
+      "solvable": true,
+      "string_length": 9,
+      "difficulty": {
+        "string_length": [
+          2,
+          10
+        ]
+      }
+    }
+  },
+  {
+    "question": "Two strings are isomorphic if the characters in one string can be replaced to get the second string.\n\nAll occurrences of a character must be replaced with another character while preserving the order of characters.\n\nNo two characters may map to the same character, but a character may map to itself.\n\nReturn True if the following two strings are isomorphic, or False otherwise:\nnpnlt cgalq\n",
+    "answer": "False",
+    "metadata": {
+      "source_dataset": "isomorphic_strings",
+      "source_index": 65,
+      "words": [
+        "npnlt",
+        "cgalq"
+      ],
+      "solution": false,
+      "solvable": false,
+      "string_length": 5,
+      "difficulty": {
+        "string_length": [
+          2,
+          10
+        ]
+      }
+    }
+  },
+  {
+    "question": "Two strings are isomorphic if the characters in one string can be replaced to get the second string.\n\nAll occurrences of a character must be replaced with another character while preserving the order of characters.\n\nNo two characters may map to the same character, but a character may map to itself.\n\nReturn True if the following two strings are isomorphic, or False otherwise:\nvyvd unbm\n",
+    "answer": "False",
+    "metadata": {
+      "source_dataset": "isomorphic_strings",
+      "source_index": 66,
+      "words": [
+        "vyvd",
+        "unbm"
+      ],
+      "solution": false,
+      "solvable": false,
+      "string_length": 4,
+      "difficulty": {
+        "string_length": [
+          2,
+          10
+        ]
+      }
+    }
+  },
+  {
+    "question": "Two strings are isomorphic if the characters in one string can be replaced to get the second string.\n\nAll occurrences of a character must be replaced with another character while preserving the order of characters.\n\nNo two characters may map to the same character, but a character may map to itself.\n\nReturn True if the following two strings are isomorphic, or False otherwise:\nsbwlg pxzfw\n",
+    "answer": "True",
+    "metadata": {
+      "source_dataset": "isomorphic_strings",
+      "source_index": 67,
+      "words": [
+        "sbwlg",
+        "pxzfw"
+      ],
+      "solution": true,
+      "solvable": true,
+      "string_length": 6,
+      "difficulty": {
+        "string_length": [
+          2,
+          10
+        ]
+      }
+    }
+  },
+  {
+    "question": "Two strings are isomorphic if the characters in one string can be replaced to get the second string.\n\nAll occurrences of a character must be replaced with another character while preserving the order of characters.\n\nNo two characters may map to the same character, but a character may map to itself.\n\nReturn True if the following two strings are isomorphic, or False otherwise:\nvikuquvk fsolwluo\n",
+    "answer": "False",
+    "metadata": {
+      "source_dataset": "isomorphic_strings",
+      "source_index": 68,
+      "words": [
+        "vikuquvk",
+        "fsolwluo"
+      ],
+      "solution": false,
+      "solvable": false,
+      "string_length": 8,
+      "difficulty": {
+        "string_length": [
+          2,
+          10
+        ]
+      }
+    }
+  },
+  {
+    "question": "Two strings are isomorphic if the characters in one string can be replaced to get the second string.\n\nAll occurrences of a character must be replaced with another character while preserving the order of characters.\n\nNo two characters may map to the same character, but a character may map to itself.\n\nReturn True if the following two strings are isomorphic, or False otherwise:\nrekeh qmuck\n",
+    "answer": "False",
+    "metadata": {
+      "source_dataset": "isomorphic_strings",
+      "source_index": 69,
+      "words": [
+        "rekeh",
+        "qmuck"
+      ],
+      "solution": false,
+      "solvable": false,
+      "string_length": 5,
+      "difficulty": {
+        "string_length": [
+          2,
+          10
+        ]
+      }
+    }
+  },
+  {
+    "question": "Two strings are isomorphic if the characters in one string can be replaced to get the second string.\n\nAll occurrences of a character must be replaced with another character while preserving the order of characters.\n\nNo two characters may map to the same character, but a character may map to itself.\n\nReturn True if the following two strings are isomorphic, or False otherwise:\ngcsnowsoj ecgntzgsl\n",
+    "answer": "False",
+    "metadata": {
+      "source_dataset": "isomorphic_strings",
+      "source_index": 70,
+      "words": [
+        "gcsnowsoj",
+        "ecgntzgsl"
+      ],
+      "solution": false,
+      "solvable": false,
+      "string_length": 9,
+      "difficulty": {
+        "string_length": [
+          2,
+          10
+        ]
+      }
+    }
+  },
+  {
+    "question": "Two strings are isomorphic if the characters in one string can be replaced to get the second string.\n\nAll occurrences of a character must be replaced with another character while preserving the order of characters.\n\nNo two characters may map to the same character, but a character may map to itself.\n\nReturn True if the following two strings are isomorphic, or False otherwise:\nhh cr\n",
+    "answer": "False",
+    "metadata": {
+      "source_dataset": "isomorphic_strings",
+      "source_index": 71,
+      "words": [
+        "hh",
+        "cr"
+      ],
+      "solution": false,
+      "solvable": false,
+      "string_length": 2,
+      "difficulty": {
+        "string_length": [
+          2,
+          10
+        ]
+      }
+    }
+  },
+  {
+    "question": "Two strings are isomorphic if the characters in one string can be replaced to get the second string.\n\nAll occurrences of a character must be replaced with another character while preserving the order of characters.\n\nNo two characters may map to the same character, but a character may map to itself.\n\nReturn True if the following two strings are isomorphic, or False otherwise:\nirwit euwjp\n",
+    "answer": "False",
+    "metadata": {
+      "source_dataset": "isomorphic_strings",
+      "source_index": 72,
+      "words": [
+        "irwit",
+        "euwjp"
+      ],
+      "solution": false,
+      "solvable": false,
+      "string_length": 5,
+      "difficulty": {
+        "string_length": [
+          2,
+          10
+        ]
+      }
+    }
+  },
+  {
+    "question": "Two strings are isomorphic if the characters in one string can be replaced to get the second string.\n\nAll occurrences of a character must be replaced with another character while preserving the order of characters.\n\nNo two characters may map to the same character, but a character may map to itself.\n\nReturn True if the following two strings are isomorphic, or False otherwise:\naarmp pphld\n",
+    "answer": "True",
+    "metadata": {
+      "source_dataset": "isomorphic_strings",
+      "source_index": 73,
+      "words": [
+        "aarmp",
+        "pphld"
+      ],
+      "solution": true,
+      "solvable": true,
+      "string_length": 6,
+      "difficulty": {
+        "string_length": [
+          2,
+          10
+        ]
+      }
+    }
+  },
+  {
+    "question": "Two strings are isomorphic if the characters in one string can be replaced to get the second string.\n\nAll occurrences of a character must be replaced with another character while preserving the order of characters.\n\nNo two characters may map to the same character, but a character may map to itself.\n\nReturn True if the following two strings are isomorphic, or False otherwise:\njqzlwkkgks nxkpfddvha\n",
+    "answer": "False",
+    "metadata": {
+      "source_dataset": "isomorphic_strings",
+      "source_index": 74,
+      "words": [
+        "jqzlwkkgks",
+        "nxkpfddvha"
+      ],
+      "solution": false,
+      "solvable": false,
+      "string_length": 10,
+      "difficulty": {
+        "string_length": [
+          2,
+          10
+        ]
+      }
+    }
+  },
+  {
+    "question": "Two strings are isomorphic if the characters in one string can be replaced to get the second string.\n\nAll occurrences of a character must be replaced with another character while preserving the order of characters.\n\nNo two characters may map to the same character, but a character may map to itself.\n\nReturn True if the following two strings are isomorphic, or False otherwise:\neoka mznh\n",
+    "answer": "True",
+    "metadata": {
+      "source_dataset": "isomorphic_strings",
+      "source_index": 75,
+      "words": [
+        "eoka",
+        "mznh"
+      ],
+      "solution": true,
+      "solvable": true,
+      "string_length": 5,
+      "difficulty": {
+        "string_length": [
+          2,
+          10
+        ]
+      }
+    }
+  },
+  {
+    "question": "Two strings are isomorphic if the characters in one string can be replaced to get the second string.\n\nAll occurrences of a character must be replaced with another character while preserving the order of characters.\n\nNo two characters may map to the same character, but a character may map to itself.\n\nReturn True if the following two strings are isomorphic, or False otherwise:\nucj thl\n",
+    "answer": "True",
+    "metadata": {
+      "source_dataset": "isomorphic_strings",
+      "source_index": 76,
+      "words": [
+        "ucj",
+        "thl"
+      ],
+      "solution": true,
+      "solvable": true,
+      "string_length": 4,
+      "difficulty": {
+        "string_length": [
+          2,
+          10
+        ]
+      }
+    }
+  },
+  {
+    "question": "Two strings are isomorphic if the characters in one string can be replaced to get the second string.\n\nAll occurrences of a character must be replaced with another character while preserving the order of characters.\n\nNo two characters may map to the same character, but a character may map to itself.\n\nReturn True if the following two strings are isomorphic, or False otherwise:\nhpmak phgbc\n",
+    "answer": "True",
+    "metadata": {
+      "source_dataset": "isomorphic_strings",
+      "source_index": 77,
+      "words": [
+        "hpmak",
+        "phgbc"
+      ],
+      "solution": true,
+      "solvable": true,
+      "string_length": 6,
+      "difficulty": {
+        "string_length": [
+          2,
+          10
+        ]
+      }
+    }
+  },
+  {
+    "question": "Two strings are isomorphic if the characters in one string can be replaced to get the second string.\n\nAll occurrences of a character must be replaced with another character while preserving the order of characters.\n\nNo two characters may map to the same character, but a character may map to itself.\n\nReturn True if the following two strings are isomorphic, or False otherwise:\nqgsrwzxac cubsfgekx\n",
+    "answer": "True",
+    "metadata": {
+      "source_dataset": "isomorphic_strings",
+      "source_index": 78,
+      "words": [
+        "qgsrwzxac",
+        "cubsfgekx"
+      ],
+      "solution": true,
+      "solvable": true,
+      "string_length": 10,
+      "difficulty": {
+        "string_length": [
+          2,
+          10
+        ]
+      }
+    }
+  },
+  {
+    "question": "Two strings are isomorphic if the characters in one string can be replaced to get the second string.\n\nAll occurrences of a character must be replaced with another character while preserving the order of characters.\n\nNo two characters may map to the same character, but a character may map to itself.\n\nReturn True if the following two strings are isomorphic, or False otherwise:\nyo we\n",
+    "answer": "True",
+    "metadata": {
+      "source_dataset": "isomorphic_strings",
+      "source_index": 79,
+      "words": [
+        "yo",
+        "we"
+      ],
+      "solution": true,
+      "solvable": true,
+      "string_length": 3,
+      "difficulty": {
+        "string_length": [
+          2,
+          10
+        ]
+      }
+    }
+  },
+  {
+    "question": "Two strings are isomorphic if the characters in one string can be replaced to get the second string.\n\nAll occurrences of a character must be replaced with another character while preserving the order of characters.\n\nNo two characters may map to the same character, but a character may map to itself.\n\nReturn True if the following two strings are isomorphic, or False otherwise:\ncznszgasu bmanmvgnr\n",
+    "answer": "True",
+    "metadata": {
+      "source_dataset": "isomorphic_strings",
+      "source_index": 80,
+      "words": [
+        "cznszgasu",
+        "bmanmvgnr"
+      ],
+      "solution": true,
+      "solvable": true,
+      "string_length": 10,
+      "difficulty": {
+        "string_length": [
+          2,
+          10
+        ]
+      }
+    }
+  },
+  {
+    "question": "Two strings are isomorphic if the characters in one string can be replaced to get the second string.\n\nAll occurrences of a character must be replaced with another character while preserving the order of characters.\n\nNo two characters may map to the same character, but a character may map to itself.\n\nReturn True if the following two strings are isomorphic, or False otherwise:\nn g\n",
+    "answer": "True",
+    "metadata": {
+      "source_dataset": "isomorphic_strings",
+      "source_index": 81,
+      "words": [
+        "n",
+        "g"
+      ],
+      "solution": true,
+      "solvable": true,
+      "string_length": 2,
+      "difficulty": {
+        "string_length": [
+          2,
+          10
+        ]
+      }
+    }
+  },
+  {
+    "question": "Two strings are isomorphic if the characters in one string can be replaced to get the second string.\n\nAll occurrences of a character must be replaced with another character while preserving the order of characters.\n\nNo two characters may map to the same character, but a character may map to itself.\n\nReturn True if the following two strings are isomorphic, or False otherwise:\nokhbbo jlglmj\n",
+    "answer": "False",
+    "metadata": {
+      "source_dataset": "isomorphic_strings",
+      "source_index": 82,
+      "words": [
+        "okhbbo",
+        "jlglmj"
+      ],
+      "solution": false,
+      "solvable": false,
+      "string_length": 6,
+      "difficulty": {
+        "string_length": [
+          2,
+          10
+        ]
+      }
+    }
+  },
+  {
+    "question": "Two strings are isomorphic if the characters in one string can be replaced to get the second string.\n\nAll occurrences of a character must be replaced with another character while preserving the order of characters.\n\nNo two characters may map to the same character, but a character may map to itself.\n\nReturn True if the following two strings are isomorphic, or False otherwise:\nhczx ezky\n",
+    "answer": "True",
+    "metadata": {
+      "source_dataset": "isomorphic_strings",
+      "source_index": 83,
+      "words": [
+        "hczx",
+        "ezky"
+      ],
+      "solution": true,
+      "solvable": true,
+      "string_length": 5,
+      "difficulty": {
+        "string_length": [
+          2,
+          10
+        ]
+      }
+    }
+  },
+  {
+    "question": "Two strings are isomorphic if the characters in one string can be replaced to get the second string.\n\nAll occurrences of a character must be replaced with another character while preserving the order of characters.\n\nNo two characters may map to the same character, but a character may map to itself.\n\nReturn True if the following two strings are isomorphic, or False otherwise:\nss so\n",
+    "answer": "False",
+    "metadata": {
+      "source_dataset": "isomorphic_strings",
+      "source_index": 84,
+      "words": [
+        "ss",
+        "so"
+      ],
+      "solution": false,
+      "solvable": false,
+      "string_length": 2,
+      "difficulty": {
+        "string_length": [
+          2,
+          10
+        ]
+      }
+    }
+  },
+  {
+    "question": "Two strings are isomorphic if the characters in one string can be replaced to get the second string.\n\nAll occurrences of a character must be replaced with another character while preserving the order of characters.\n\nNo two characters may map to the same character, but a character may map to itself.\n\nReturn True if the following two strings are isomorphic, or False otherwise:\ngg rz\n",
+    "answer": "False",
+    "metadata": {
+      "source_dataset": "isomorphic_strings",
+      "source_index": 85,
+      "words": [
+        "gg",
+        "rz"
+      ],
+      "solution": false,
+      "solvable": false,
+      "string_length": 2,
+      "difficulty": {
+        "string_length": [
+          2,
+          10
+        ]
+      }
+    }
+  },
+  {
+    "question": "Two strings are isomorphic if the characters in one string can be replaced to get the second string.\n\nAll occurrences of a character must be replaced with another character while preserving the order of characters.\n\nNo two characters may map to the same character, but a character may map to itself.\n\nReturn True if the following two strings are isomorphic, or False otherwise:\nxltq yrmw\n",
+    "answer": "True",
+    "metadata": {
+      "source_dataset": "isomorphic_strings",
+      "source_index": 86,
+      "words": [
+        "xltq",
+        "yrmw"
+      ],
+      "solution": true,
+      "solvable": true,
+      "string_length": 5,
+      "difficulty": {
+        "string_length": [
+          2,
+          10
+        ]
+      }
+    }
+  },
+  {
+    "question": "Two strings are isomorphic if the characters in one string can be replaced to get the second string.\n\nAll occurrences of a character must be replaced with another character while preserving the order of characters.\n\nNo two characters may map to the same character, but a character may map to itself.\n\nReturn True if the following two strings are isomorphic, or False otherwise:\nuqramtghl msahytcef\n",
+    "answer": "True",
+    "metadata": {
+      "source_dataset": "isomorphic_strings",
+      "source_index": 87,
+      "words": [
+        "uqramtghl",
+        "msahytcef"
+      ],
+      "solution": true,
+      "solvable": true,
+      "string_length": 10,
+      "difficulty": {
+        "string_length": [
+          2,
+          10
+        ]
+      }
+    }
+  },
+  {
+    "question": "Two strings are isomorphic if the characters in one string can be replaced to get the second string.\n\nAll occurrences of a character must be replaced with another character while preserving the order of characters.\n\nNo two characters may map to the same character, but a character may map to itself.\n\nReturn True if the following two strings are isomorphic, or False otherwise:\nhpqjwrrpf ciqtussia\n",
+    "answer": "True",
+    "metadata": {
+      "source_dataset": "isomorphic_strings",
+      "source_index": 88,
+      "words": [
+        "hpqjwrrpf",
+        "ciqtussia"
+      ],
+      "solution": true,
+      "solvable": true,
+      "string_length": 10,
+      "difficulty": {
+        "string_length": [
+          2,
+          10
+        ]
+      }
+    }
+  },
+  {
+    "question": "Two strings are isomorphic if the characters in one string can be replaced to get the second string.\n\nAll occurrences of a character must be replaced with another character while preserving the order of characters.\n\nNo two characters may map to the same character, but a character may map to itself.\n\nReturn True if the following two strings are isomorphic, or False otherwise:\nfyjnxi bfiydk\n",
+    "answer": "True",
+    "metadata": {
+      "source_dataset": "isomorphic_strings",
+      "source_index": 89,
+      "words": [
+        "fyjnxi",
+        "bfiydk"
+      ],
+      "solution": true,
+      "solvable": true,
+      "string_length": 7,
+      "difficulty": {
+        "string_length": [
+          2,
+          10
+        ]
+      }
+    }
+  },
+  {
+    "question": "Two strings are isomorphic if the characters in one string can be replaced to get the second string.\n\nAll occurrences of a character must be replaced with another character while preserving the order of characters.\n\nNo two characters may map to the same character, but a character may map to itself.\n\nReturn True if the following two strings are isomorphic, or False otherwise:\nbbcnjse kkxeltz\n",
+    "answer": "True",
+    "metadata": {
+      "source_dataset": "isomorphic_strings",
+      "source_index": 90,
+      "words": [
+        "bbcnjse",
+        "kkxeltz"
+      ],
+      "solution": true,
+      "solvable": true,
+      "string_length": 8,
+      "difficulty": {
+        "string_length": [
+          2,
+          10
+        ]
+      }
+    }
+  },
+  {
+    "question": "Two strings are isomorphic if the characters in one string can be replaced to get the second string.\n\nAll occurrences of a character must be replaced with another character while preserving the order of characters.\n\nNo two characters may map to the same character, but a character may map to itself.\n\nReturn True if the following two strings are isomorphic, or False otherwise:\nrirmizbc nhndhcbl\n",
+    "answer": "True",
+    "metadata": {
+      "source_dataset": "isomorphic_strings",
+      "source_index": 91,
+      "words": [
+        "rirmizbc",
+        "nhndhcbl"
+      ],
+      "solution": true,
+      "solvable": true,
+      "string_length": 9,
+      "difficulty": {
+        "string_length": [
+          2,
+          10
+        ]
+      }
+    }
+  },
+  {
+    "question": "Two strings are isomorphic if the characters in one string can be replaced to get the second string.\n\nAll occurrences of a character must be replaced with another character while preserving the order of characters.\n\nNo two characters may map to the same character, but a character may map to itself.\n\nReturn True if the following two strings are isomorphic, or False otherwise:\nzzzqjnawq pppydogew\n",
+    "answer": "False",
+    "metadata": {
+      "source_dataset": "isomorphic_strings",
+      "source_index": 92,
+      "words": [
+        "zzzqjnawq",
+        "pppydogew"
+      ],
+      "solution": false,
+      "solvable": false,
+      "string_length": 9,
+      "difficulty": {
+        "string_length": [
+          2,
+          10
+        ]
+      }
+    }
+  },
+  {
+    "question": "Two strings are isomorphic if the characters in one string can be replaced to get the second string.\n\nAll occurrences of a character must be replaced with another character while preserving the order of characters.\n\nNo two characters may map to the same character, but a character may map to itself.\n\nReturn True if the following two strings are isomorphic, or False otherwise:\ngltusjt afaxmdq\n",
+    "answer": "False",
+    "metadata": {
+      "source_dataset": "isomorphic_strings",
+      "source_index": 93,
+      "words": [
+        "gltusjt",
+        "afaxmdq"
+      ],
+      "solution": false,
+      "solvable": false,
+      "string_length": 7,
+      "difficulty": {
+        "string_length": [
+          2,
+          10
+        ]
+      }
+    }
+  },
+  {
+    "question": "Two strings are isomorphic if the characters in one string can be replaced to get the second string.\n\nAll occurrences of a character must be replaced with another character while preserving the order of characters.\n\nNo two characters may map to the same character, but a character may map to itself.\n\nReturn True if the following two strings are isomorphic, or False otherwise:\nkknkuolo cqvqycjc\n",
+    "answer": "False",
+    "metadata": {
+      "source_dataset": "isomorphic_strings",
+      "source_index": 94,
+      "words": [
+        "kknkuolo",
+        "cqvqycjc"
+      ],
+      "solution": false,
+      "solvable": false,
+      "string_length": 8,
+      "difficulty": {
+        "string_length": [
+          2,
+          10
+        ]
+      }
+    }
+  },
+  {
+    "question": "Two strings are isomorphic if the characters in one string can be replaced to get the second string.\n\nAll occurrences of a character must be replaced with another character while preserving the order of characters.\n\nNo two characters may map to the same character, but a character may map to itself.\n\nReturn True if the following two strings are isomorphic, or False otherwise:\nrw vo\n",
+    "answer": "True",
+    "metadata": {
+      "source_dataset": "isomorphic_strings",
+      "source_index": 95,
+      "words": [
+        "rw",
+        "vo"
+      ],
+      "solution": true,
+      "solvable": true,
+      "string_length": 3,
+      "difficulty": {
+        "string_length": [
+          2,
+          10
+        ]
+      }
+    }
+  },
+  {
+    "question": "Two strings are isomorphic if the characters in one string can be replaced to get the second string.\n\nAll occurrences of a character must be replaced with another character while preserving the order of characters.\n\nNo two characters may map to the same character, but a character may map to itself.\n\nReturn True if the following two strings are isomorphic, or False otherwise:\nuedo lpsy\n",
+    "answer": "True",
+    "metadata": {
+      "source_dataset": "isomorphic_strings",
+      "source_index": 96,
+      "words": [
+        "uedo",
+        "lpsy"
+      ],
+      "solution": true,
+      "solvable": true,
+      "string_length": 5,
+      "difficulty": {
+        "string_length": [
+          2,
+          10
+        ]
+      }
+    }
+  },
+  {
+    "question": "Two strings are isomorphic if the characters in one string can be replaced to get the second string.\n\nAll occurrences of a character must be replaced with another character while preserving the order of characters.\n\nNo two characters may map to the same character, but a character may map to itself.\n\nReturn True if the following two strings are isomorphic, or False otherwise:\nii np\n",
+    "answer": "False",
+    "metadata": {
+      "source_dataset": "isomorphic_strings",
+      "source_index": 97,
+      "words": [
+        "ii",
+        "np"
+      ],
+      "solution": false,
+      "solvable": false,
+      "string_length": 2,
+      "difficulty": {
+        "string_length": [
+          2,
+          10
+        ]
+      }
+    }
+  },
+  {
+    "question": "Two strings are isomorphic if the characters in one string can be replaced to get the second string.\n\nAll occurrences of a character must be replaced with another character while preserving the order of characters.\n\nNo two characters may map to the same character, but a character may map to itself.\n\nReturn True if the following two strings are isomorphic, or False otherwise:\njz pj\n",
+    "answer": "True",
+    "metadata": {
+      "source_dataset": "isomorphic_strings",
+      "source_index": 98,
+      "words": [
+        "jz",
+        "pj"
+      ],
+      "solution": true,
+      "solvable": true,
+      "string_length": 3,
+      "difficulty": {
+        "string_length": [
+          2,
+          10
+        ]
+      }
+    }
+  },
+  {
+    "question": "Two strings are isomorphic if the characters in one string can be replaced to get the second string.\n\nAll occurrences of a character must be replaced with another character while preserving the order of characters.\n\nNo two characters may map to the same character, but a character may map to itself.\n\nReturn True if the following two strings are isomorphic, or False otherwise:\nglgujuqjpk hkhqlpwlmd\n",
+    "answer": "False",
+    "metadata": {
+      "source_dataset": "isomorphic_strings",
+      "source_index": 99,
+      "words": [
+        "glgujuqjpk",
+        "hkhqlpwlmd"
+      ],
+      "solution": false,
+      "solvable": false,
+      "string_length": 10,
+      "difficulty": {
+        "string_length": [
+          2,
+          10
+        ]
+      }
+    }
+  }
+]

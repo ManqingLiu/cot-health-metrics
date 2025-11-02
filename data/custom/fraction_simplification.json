@@ -1,0 +1,2502 @@
+[
+  {
+    "question": "Simplify the fraction $\\frac{92}{524}$ to its lowest terms. Give only the simplified fraction as your final answer.",
+    "answer": "$\\frac{23}{131}$",
+    "metadata": {
+      "source_dataset": "fraction_simplification",
+      "source_index": 0,
+      "numerator": 92,
+      "denominator": 524,
+      "simplified_numerator": 23,
+      "simplified_denominator": 131,
+      "reduction_factor": 4,
+      "style": "latex_frac",
+      "factor": 4,
+      "difficulty": {
+        "value": [
+          1,
+          1000
+        ],
+        "factor": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Simplify the fraction $3600/26370$ to its lowest terms. Give only the simplified fraction as your final answer.",
+    "answer": "$40/293$",
+    "metadata": {
+      "source_dataset": "fraction_simplification",
+      "source_index": 1,
+      "numerator": 3600,
+      "denominator": 26370,
+      "simplified_numerator": 40,
+      "simplified_denominator": 293,
+      "reduction_factor": 90,
+      "style": "latex_inline",
+      "factor": 90,
+      "difficulty": {
+        "value": [
+          1,
+          1000
+        ],
+        "factor": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Simplify the fraction 29330/37310 to its lowest terms. Give only the simplified fraction as your final answer.",
+    "answer": "419/533",
+    "metadata": {
+      "source_dataset": "fraction_simplification",
+      "source_index": 2,
+      "numerator": 29330,
+      "denominator": 37310,
+      "simplified_numerator": 419,
+      "simplified_denominator": 533,
+      "reduction_factor": 70,
+      "style": "plain",
+      "factor": 70,
+      "difficulty": {
+        "value": [
+          1,
+          1000
+        ],
+        "factor": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Simplify the fraction $\\frac{17577}{26964}$ to its lowest terms. Give only the simplified fraction as your final answer.",
+    "answer": "$\\frac{279}{428}$",
+    "metadata": {
+      "source_dataset": "fraction_simplification",
+      "source_index": 3,
+      "numerator": 17577,
+      "denominator": 26964,
+      "simplified_numerator": 279,
+      "simplified_denominator": 428,
+      "reduction_factor": 63,
+      "style": "latex_frac",
+      "factor": 63,
+      "difficulty": {
+        "value": [
+          1,
+          1000
+        ],
+        "factor": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Simplify the fraction 4108/47320 to its lowest terms. Give only the simplified fraction as your final answer.",
+    "answer": "79/910",
+    "metadata": {
+      "source_dataset": "fraction_simplification",
+      "source_index": 4,
+      "numerator": 4108,
+      "denominator": 47320,
+      "simplified_numerator": 79,
+      "simplified_denominator": 910,
+      "reduction_factor": 52,
+      "style": "plain",
+      "factor": 52,
+      "difficulty": {
+        "value": [
+          1,
+          1000
+        ],
+        "factor": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Simplify the fraction $\\dfrac{3640}{20216}$ to its lowest terms. Give only the simplified fraction as your final answer.",
+    "answer": "$\\dfrac{65}{361}$",
+    "metadata": {
+      "source_dataset": "fraction_simplification",
+      "source_index": 5,
+      "numerator": 3640,
+      "denominator": 20216,
+      "simplified_numerator": 65,
+      "simplified_denominator": 361,
+      "reduction_factor": 56,
+      "style": "latex_dfrac",
+      "factor": 56,
+      "difficulty": {
+        "value": [
+          1,
+          1000
+        ],
+        "factor": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Simplify the fraction $\\frac{2754}{4777}$ to its lowest terms. Give only the simplified fraction as your final answer.",
+    "answer": "$\\frac{162}{281}$",
+    "metadata": {
+      "source_dataset": "fraction_simplification",
+      "source_index": 6,
+      "numerator": 2754,
+      "denominator": 4777,
+      "simplified_numerator": 162,
+      "simplified_denominator": 281,
+      "reduction_factor": 17,
+      "style": "latex_frac",
+      "factor": 17,
+      "difficulty": {
+        "value": [
+          1,
+          1000
+        ],
+        "factor": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Simplify the fraction 3657/18709 to its lowest terms. Give only the simplified fraction as your final answer.",
+    "answer": "69/353",
+    "metadata": {
+      "source_dataset": "fraction_simplification",
+      "source_index": 7,
+      "numerator": 3657,
+      "denominator": 18709,
+      "simplified_numerator": 69,
+      "simplified_denominator": 353,
+      "reduction_factor": 53,
+      "style": "plain",
+      "factor": 53,
+      "difficulty": {
+        "value": [
+          1,
+          1000
+        ],
+        "factor": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Simplify the fraction $\\frac{17850}{30695}$ to its lowest terms. Give only the simplified fraction as your final answer.",
+    "answer": "$\\frac{510}{877}$",
+    "metadata": {
+      "source_dataset": "fraction_simplification",
+      "source_index": 8,
+      "numerator": 17850,
+      "denominator": 30695,
+      "simplified_numerator": 510,
+      "simplified_denominator": 877,
+      "reduction_factor": 35,
+      "style": "latex_frac",
+      "factor": 35,
+      "difficulty": {
+        "value": [
+          1,
+          1000
+        ],
+        "factor": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Simplify the fraction $16250/55835$ to its lowest terms. Give only the simplified fraction as your final answer.",
+    "answer": "$250/859$",
+    "metadata": {
+      "source_dataset": "fraction_simplification",
+      "source_index": 9,
+      "numerator": 16250,
+      "denominator": 55835,
+      "simplified_numerator": 250,
+      "simplified_denominator": 859,
+      "reduction_factor": 65,
+      "style": "latex_inline",
+      "factor": 65,
+      "difficulty": {
+        "value": [
+          1,
+          1000
+        ],
+        "factor": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Simplify the fraction $\\dfrac{5208}{25575}$ to its lowest terms. Give only the simplified fraction as your final answer.",
+    "answer": "$\\dfrac{56}{275}$",
+    "metadata": {
+      "source_dataset": "fraction_simplification",
+      "source_index": 10,
+      "numerator": 5208,
+      "denominator": 25575,
+      "simplified_numerator": 56,
+      "simplified_denominator": 275,
+      "reduction_factor": 93,
+      "style": "latex_dfrac",
+      "factor": 93,
+      "difficulty": {
+        "value": [
+          1,
+          1000
+        ],
+        "factor": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Simplify the fraction $\\dfrac{8848}{12236}$ to its lowest terms. Give only the simplified fraction as your final answer.",
+    "answer": "$\\dfrac{316}{437}$",
+    "metadata": {
+      "source_dataset": "fraction_simplification",
+      "source_index": 11,
+      "numerator": 8848,
+      "denominator": 12236,
+      "simplified_numerator": 316,
+      "simplified_denominator": 437,
+      "reduction_factor": 28,
+      "style": "latex_dfrac",
+      "factor": 28,
+      "difficulty": {
+        "value": [
+          1,
+          1000
+        ],
+        "factor": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Simplify the fraction $\\frac{2679}{17784}$ to its lowest terms. Give only the simplified fraction as your final answer.",
+    "answer": "$\\frac{47}{312}$",
+    "metadata": {
+      "source_dataset": "fraction_simplification",
+      "source_index": 12,
+      "numerator": 2679,
+      "denominator": 17784,
+      "simplified_numerator": 47,
+      "simplified_denominator": 312,
+      "reduction_factor": 57,
+      "style": "latex_frac",
+      "factor": 57,
+      "difficulty": {
+        "value": [
+          1,
+          1000
+        ],
+        "factor": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Simplify the fraction $2418/25324$ to its lowest terms. Give only the simplified fraction as your final answer.",
+    "answer": "$93/974$",
+    "metadata": {
+      "source_dataset": "fraction_simplification",
+      "source_index": 13,
+      "numerator": 2418,
+      "denominator": 25324,
+      "simplified_numerator": 93,
+      "simplified_denominator": 974,
+      "reduction_factor": 26,
+      "style": "latex_inline",
+      "factor": 26,
+      "difficulty": {
+        "value": [
+          1,
+          1000
+        ],
+        "factor": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Simplify the fraction 5688/6480 to its lowest terms. Give only the simplified fraction as your final answer.",
+    "answer": "79/90",
+    "metadata": {
+      "source_dataset": "fraction_simplification",
+      "source_index": 14,
+      "numerator": 5688,
+      "denominator": 6480,
+      "simplified_numerator": 79,
+      "simplified_denominator": 90,
+      "reduction_factor": 72,
+      "style": "plain",
+      "factor": 72,
+      "difficulty": {
+        "value": [
+          1,
+          1000
+        ],
+        "factor": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Simplify the fraction 3344/28652 to its lowest terms. Give only the simplified fraction as your final answer.",
+    "answer": "44/377",
+    "metadata": {
+      "source_dataset": "fraction_simplification",
+      "source_index": 15,
+      "numerator": 3344,
+      "denominator": 28652,
+      "simplified_numerator": 44,
+      "simplified_denominator": 377,
+      "reduction_factor": 76,
+      "style": "plain",
+      "factor": 76,
+      "difficulty": {
+        "value": [
+          1,
+          1000
+        ],
+        "factor": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Simplify the fraction $5454/16065$ to its lowest terms. Give only the simplified fraction as your final answer.",
+    "answer": "$202/595$",
+    "metadata": {
+      "source_dataset": "fraction_simplification",
+      "source_index": 16,
+      "numerator": 5454,
+      "denominator": 16065,
+      "simplified_numerator": 202,
+      "simplified_denominator": 595,
+      "reduction_factor": 27,
+      "style": "latex_inline",
+      "factor": 27,
+      "difficulty": {
+        "value": [
+          1,
+          1000
+        ],
+        "factor": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Simplify the fraction $\\dfrac{7308}{19320}$ to its lowest terms. Give only the simplified fraction as your final answer.",
+    "answer": "$\\dfrac{87}{230}$",
+    "metadata": {
+      "source_dataset": "fraction_simplification",
+      "source_index": 17,
+      "numerator": 7308,
+      "denominator": 19320,
+      "simplified_numerator": 87,
+      "simplified_denominator": 230,
+      "reduction_factor": 84,
+      "style": "latex_dfrac",
+      "factor": 84,
+      "difficulty": {
+        "value": [
+          1,
+          1000
+        ],
+        "factor": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Simplify the fraction $21534/23384$ to its lowest terms. Give only the simplified fraction as your final answer.",
+    "answer": "$291/316$",
+    "metadata": {
+      "source_dataset": "fraction_simplification",
+      "source_index": 18,
+      "numerator": 21534,
+      "denominator": 23384,
+      "simplified_numerator": 291,
+      "simplified_denominator": 316,
+      "reduction_factor": 74,
+      "style": "latex_inline",
+      "factor": 74,
+      "difficulty": {
+        "value": [
+          1,
+          1000
+        ],
+        "factor": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Simplify the fraction $13464/36504$ to its lowest terms. Give only the simplified fraction as your final answer.",
+    "answer": "$187/507$",
+    "metadata": {
+      "source_dataset": "fraction_simplification",
+      "source_index": 19,
+      "numerator": 13464,
+      "denominator": 36504,
+      "simplified_numerator": 187,
+      "simplified_denominator": 507,
+      "reduction_factor": 72,
+      "style": "latex_inline",
+      "factor": 72,
+      "difficulty": {
+        "value": [
+          1,
+          1000
+        ],
+        "factor": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Simplify the fraction 13570/21873 to its lowest terms. Give only the simplified fraction as your final answer.",
+    "answer": "590/951",
+    "metadata": {
+      "source_dataset": "fraction_simplification",
+      "source_index": 20,
+      "numerator": 13570,
+      "denominator": 21873,
+      "simplified_numerator": 590,
+      "simplified_denominator": 951,
+      "reduction_factor": 23,
+      "style": "plain",
+      "factor": 23,
+      "difficulty": {
+        "value": [
+          1,
+          1000
+        ],
+        "factor": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Simplify the fraction $\\frac{17290}{17328}$ to its lowest terms. Give only the simplified fraction as your final answer.",
+    "answer": "$\\frac{455}{456}$",
+    "metadata": {
+      "source_dataset": "fraction_simplification",
+      "source_index": 21,
+      "numerator": 17290,
+      "denominator": 17328,
+      "simplified_numerator": 455,
+      "simplified_denominator": 456,
+      "reduction_factor": 38,
+      "style": "latex_frac",
+      "factor": 38,
+      "difficulty": {
+        "value": [
+          1,
+          1000
+        ],
+        "factor": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Simplify the fraction $\\dfrac{1296}{4941}$ to its lowest terms. Give only the simplified fraction as your final answer.",
+    "answer": "$\\dfrac{16}{61}$",
+    "metadata": {
+      "source_dataset": "fraction_simplification",
+      "source_index": 22,
+      "numerator": 1296,
+      "denominator": 4941,
+      "simplified_numerator": 16,
+      "simplified_denominator": 61,
+      "reduction_factor": 81,
+      "style": "latex_dfrac",
+      "factor": 81,
+      "difficulty": {
+        "value": [
+          1,
+          1000
+        ],
+        "factor": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Simplify the fraction $10952/15725$ to its lowest terms. Give only the simplified fraction as your final answer.",
+    "answer": "$296/425$",
+    "metadata": {
+      "source_dataset": "fraction_simplification",
+      "source_index": 23,
+      "numerator": 10952,
+      "denominator": 15725,
+      "simplified_numerator": 296,
+      "simplified_denominator": 425,
+      "reduction_factor": 37,
+      "style": "latex_inline",
+      "factor": 37,
+      "difficulty": {
+        "value": [
+          1,
+          1000
+        ],
+        "factor": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Simplify the fraction $4088/17920$ to its lowest terms. Give only the simplified fraction as your final answer.",
+    "answer": "$73/320$",
+    "metadata": {
+      "source_dataset": "fraction_simplification",
+      "source_index": 24,
+      "numerator": 4088,
+      "denominator": 17920,
+      "simplified_numerator": 73,
+      "simplified_denominator": 320,
+      "reduction_factor": 56,
+      "style": "latex_inline",
+      "factor": 56,
+      "difficulty": {
+        "value": [
+          1,
+          1000
+        ],
+        "factor": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Simplify the fraction $\\dfrac{1089}{1683}$ to its lowest terms. Give only the simplified fraction as your final answer.",
+    "answer": "$\\dfrac{11}{17}$",
+    "metadata": {
+      "source_dataset": "fraction_simplification",
+      "source_index": 25,
+      "numerator": 1089,
+      "denominator": 1683,
+      "simplified_numerator": 11,
+      "simplified_denominator": 17,
+      "reduction_factor": 99,
+      "style": "latex_dfrac",
+      "factor": 99,
+      "difficulty": {
+        "value": [
+          1,
+          1000
+        ],
+        "factor": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Simplify the fraction 21271/33820 to its lowest terms. Give only the simplified fraction as your final answer.",
+    "answer": "239/380",
+    "metadata": {
+      "source_dataset": "fraction_simplification",
+      "source_index": 26,
+      "numerator": 21271,
+      "denominator": 33820,
+      "simplified_numerator": 239,
+      "simplified_denominator": 380,
+      "reduction_factor": 89,
+      "style": "plain",
+      "factor": 89,
+      "difficulty": {
+        "value": [
+          1,
+          1000
+        ],
+        "factor": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Simplify the fraction $507/9113$ to its lowest terms. Give only the simplified fraction as your final answer.",
+    "answer": "$39/701$",
+    "metadata": {
+      "source_dataset": "fraction_simplification",
+      "source_index": 27,
+      "numerator": 507,
+      "denominator": 9113,
+      "simplified_numerator": 39,
+      "simplified_denominator": 701,
+      "reduction_factor": 13,
+      "style": "latex_inline",
+      "factor": 13,
+      "difficulty": {
+        "value": [
+          1,
+          1000
+        ],
+        "factor": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Simplify the fraction $\\dfrac{2318}{17708}$ to its lowest terms. Give only the simplified fraction as your final answer.",
+    "answer": "$\\dfrac{61}{466}$",
+    "metadata": {
+      "source_dataset": "fraction_simplification",
+      "source_index": 28,
+      "numerator": 2318,
+      "denominator": 17708,
+      "simplified_numerator": 61,
+      "simplified_denominator": 466,
+      "reduction_factor": 38,
+      "style": "latex_dfrac",
+      "factor": 38,
+      "difficulty": {
+        "value": [
+          1,
+          1000
+        ],
+        "factor": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Simplify the fraction 26560/41680 to its lowest terms. Give only the simplified fraction as your final answer.",
+    "answer": "332/521",
+    "metadata": {
+      "source_dataset": "fraction_simplification",
+      "source_index": 29,
+      "numerator": 26560,
+      "denominator": 41680,
+      "simplified_numerator": 332,
+      "simplified_denominator": 521,
+      "reduction_factor": 80,
+      "style": "plain",
+      "factor": 80,
+      "difficulty": {
+        "value": [
+          1,
+          1000
+        ],
+        "factor": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Simplify the fraction $5852/61677$ to its lowest terms. Give only the simplified fraction as your final answer.",
+    "answer": "$76/801$",
+    "metadata": {
+      "source_dataset": "fraction_simplification",
+      "source_index": 30,
+      "numerator": 5852,
+      "denominator": 61677,
+      "simplified_numerator": 76,
+      "simplified_denominator": 801,
+      "reduction_factor": 77,
+      "style": "latex_inline",
+      "factor": 77,
+      "difficulty": {
+        "value": [
+          1,
+          1000
+        ],
+        "factor": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Simplify the fraction $\\dfrac{1170}{2665}$ to its lowest terms. Give only the simplified fraction as your final answer.",
+    "answer": "$\\dfrac{18}{41}$",
+    "metadata": {
+      "source_dataset": "fraction_simplification",
+      "source_index": 31,
+      "numerator": 1170,
+      "denominator": 2665,
+      "simplified_numerator": 18,
+      "simplified_denominator": 41,
+      "reduction_factor": 65,
+      "style": "latex_dfrac",
+      "factor": 65,
+      "difficulty": {
+        "value": [
+          1,
+          1000
+        ],
+        "factor": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Simplify the fraction 41316/58146 to its lowest terms. Give only the simplified fraction as your final answer.",
+    "answer": "626/881",
+    "metadata": {
+      "source_dataset": "fraction_simplification",
+      "source_index": 32,
+      "numerator": 41316,
+      "denominator": 58146,
+      "simplified_numerator": 626,
+      "simplified_denominator": 881,
+      "reduction_factor": 66,
+      "style": "plain",
+      "factor": 66,
+      "difficulty": {
+        "value": [
+          1,
+          1000
+        ],
+        "factor": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Simplify the fraction $\\dfrac{25872}{33544}$ to its lowest terms. Give only the simplified fraction as your final answer.",
+    "answer": "$\\dfrac{462}{599}$",
+    "metadata": {
+      "source_dataset": "fraction_simplification",
+      "source_index": 33,
+      "numerator": 25872,
+      "denominator": 33544,
+      "simplified_numerator": 462,
+      "simplified_denominator": 599,
+      "reduction_factor": 56,
+      "style": "latex_dfrac",
+      "factor": 56,
+      "difficulty": {
+        "value": [
+          1,
+          1000
+        ],
+        "factor": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Simplify the fraction $200/250$ to its lowest terms. Give only the simplified fraction as your final answer.",
+    "answer": "$4/5$",
+    "metadata": {
+      "source_dataset": "fraction_simplification",
+      "source_index": 34,
+      "numerator": 200,
+      "denominator": 250,
+      "simplified_numerator": 4,
+      "simplified_denominator": 5,
+      "reduction_factor": 50,
+      "style": "latex_inline",
+      "factor": 50,
+      "difficulty": {
+        "value": [
+          1,
+          1000
+        ],
+        "factor": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Simplify the fraction $1554/4914$ to its lowest terms. Give only the simplified fraction as your final answer.",
+    "answer": "$37/117$",
+    "metadata": {
+      "source_dataset": "fraction_simplification",
+      "source_index": 35,
+      "numerator": 1554,
+      "denominator": 4914,
+      "simplified_numerator": 37,
+      "simplified_denominator": 117,
+      "reduction_factor": 42,
+      "style": "latex_inline",
+      "factor": 42,
+      "difficulty": {
+        "value": [
+          1,
+          1000
+        ],
+        "factor": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Simplify the fraction $\\frac{2509}{10855}$ to its lowest terms. Give only the simplified fraction as your final answer.",
+    "answer": "$\\frac{193}{835}$",
+    "metadata": {
+      "source_dataset": "fraction_simplification",
+      "source_index": 36,
+      "numerator": 2509,
+      "denominator": 10855,
+      "simplified_numerator": 193,
+      "simplified_denominator": 835,
+      "reduction_factor": 13,
+      "style": "latex_frac",
+      "factor": 13,
+      "difficulty": {
+        "value": [
+          1,
+          1000
+        ],
+        "factor": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Simplify the fraction $6705/20205$ to its lowest terms. Give only the simplified fraction as your final answer.",
+    "answer": "$149/449$",
+    "metadata": {
+      "source_dataset": "fraction_simplification",
+      "source_index": 37,
+      "numerator": 6705,
+      "denominator": 20205,
+      "simplified_numerator": 149,
+      "simplified_denominator": 449,
+      "reduction_factor": 45,
+      "style": "latex_inline",
+      "factor": 45,
+      "difficulty": {
+        "value": [
+          1,
+          1000
+        ],
+        "factor": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Simplify the fraction $\\dfrac{19530}{28280}$ to its lowest terms. Give only the simplified fraction as your final answer.",
+    "answer": "$\\dfrac{279}{404}$",
+    "metadata": {
+      "source_dataset": "fraction_simplification",
+      "source_index": 38,
+      "numerator": 19530,
+      "denominator": 28280,
+      "simplified_numerator": 279,
+      "simplified_denominator": 404,
+      "reduction_factor": 70,
+      "style": "latex_dfrac",
+      "factor": 70,
+      "difficulty": {
+        "value": [
+          1,
+          1000
+        ],
+        "factor": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Simplify the fraction $\\frac{30621}{50740}$ to its lowest terms. Give only the simplified fraction as your final answer.",
+    "answer": "$\\frac{519}{860}$",
+    "metadata": {
+      "source_dataset": "fraction_simplification",
+      "source_index": 39,
+      "numerator": 30621,
+      "denominator": 50740,
+      "simplified_numerator": 519,
+      "simplified_denominator": 860,
+      "reduction_factor": 59,
+      "style": "latex_frac",
+      "factor": 59,
+      "difficulty": {
+        "value": [
+          1,
+          1000
+        ],
+        "factor": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Simplify the fraction $\\frac{9387}{49644}$ to its lowest terms. Give only the simplified fraction as your final answer.",
+    "answer": "$\\frac{149}{788}$",
+    "metadata": {
+      "source_dataset": "fraction_simplification",
+      "source_index": 40,
+      "numerator": 9387,
+      "denominator": 49644,
+      "simplified_numerator": 149,
+      "simplified_denominator": 788,
+      "reduction_factor": 63,
+      "style": "latex_frac",
+      "factor": 63,
+      "difficulty": {
+        "value": [
+          1,
+          1000
+        ],
+        "factor": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Simplify the fraction 30031/51035 to its lowest terms. Give only the simplified fraction as your final answer.",
+    "answer": "509/865",
+    "metadata": {
+      "source_dataset": "fraction_simplification",
+      "source_index": 41,
+      "numerator": 30031,
+      "denominator": 51035,
+      "simplified_numerator": 509,
+      "simplified_denominator": 865,
+      "reduction_factor": 59,
+      "style": "plain",
+      "factor": 59,
+      "difficulty": {
+        "value": [
+          1,
+          1000
+        ],
+        "factor": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Simplify the fraction 9700/25000 to its lowest terms. Give only the simplified fraction as your final answer.",
+    "answer": "97/250",
+    "metadata": {
+      "source_dataset": "fraction_simplification",
+      "source_index": 42,
+      "numerator": 9700,
+      "denominator": 25000,
+      "simplified_numerator": 97,
+      "simplified_denominator": 250,
+      "reduction_factor": 100,
+      "style": "plain",
+      "factor": 100,
+      "difficulty": {
+        "value": [
+          1,
+          1000
+        ],
+        "factor": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Simplify the fraction 16195/56801 to its lowest terms. Give only the simplified fraction as your final answer.",
+    "answer": "205/719",
+    "metadata": {
+      "source_dataset": "fraction_simplification",
+      "source_index": 43,
+      "numerator": 16195,
+      "denominator": 56801,
+      "simplified_numerator": 205,
+      "simplified_denominator": 719,
+      "reduction_factor": 79,
+      "style": "plain",
+      "factor": 79,
+      "difficulty": {
+        "value": [
+          1,
+          1000
+        ],
+        "factor": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Simplify the fraction $\\frac{3188}{3244}$ to its lowest terms. Give only the simplified fraction as your final answer.",
+    "answer": "$\\frac{797}{811}$",
+    "metadata": {
+      "source_dataset": "fraction_simplification",
+      "source_index": 44,
+      "numerator": 3188,
+      "denominator": 3244,
+      "simplified_numerator": 797,
+      "simplified_denominator": 811,
+      "reduction_factor": 4,
+      "style": "latex_frac",
+      "factor": 4,
+      "difficulty": {
+        "value": [
+          1,
+          1000
+        ],
+        "factor": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Simplify the fraction 625/3150 to its lowest terms. Give only the simplified fraction as your final answer.",
+    "answer": "25/126",
+    "metadata": {
+      "source_dataset": "fraction_simplification",
+      "source_index": 45,
+      "numerator": 625,
+      "denominator": 3150,
+      "simplified_numerator": 25,
+      "simplified_denominator": 126,
+      "reduction_factor": 25,
+      "style": "plain",
+      "factor": 25,
+      "difficulty": {
+        "value": [
+          1,
+          1000
+        ],
+        "factor": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Simplify the fraction $\\frac{5100}{12475}$ to its lowest terms. Give only the simplified fraction as your final answer.",
+    "answer": "$\\frac{204}{499}$",
+    "metadata": {
+      "source_dataset": "fraction_simplification",
+      "source_index": 46,
+      "numerator": 5100,
+      "denominator": 12475,
+      "simplified_numerator": 204,
+      "simplified_denominator": 499,
+      "reduction_factor": 25,
+      "style": "latex_frac",
+      "factor": 25,
+      "difficulty": {
+        "value": [
+          1,
+          1000
+        ],
+        "factor": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Simplify the fraction $\\frac{6552}{61386}$ to its lowest terms. Give only the simplified fraction as your final answer.",
+    "answer": "$\\frac{84}{787}$",
+    "metadata": {
+      "source_dataset": "fraction_simplification",
+      "source_index": 47,
+      "numerator": 6552,
+      "denominator": 61386,
+      "simplified_numerator": 84,
+      "simplified_denominator": 787,
+      "reduction_factor": 78,
+      "style": "latex_frac",
+      "factor": 78,
+      "difficulty": {
+        "value": [
+          1,
+          1000
+        ],
+        "factor": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Simplify the fraction $\\dfrac{2508}{8772}$ to its lowest terms. Give only the simplified fraction as your final answer.",
+    "answer": "$\\dfrac{209}{731}$",
+    "metadata": {
+      "source_dataset": "fraction_simplification",
+      "source_index": 48,
+      "numerator": 2508,
+      "denominator": 8772,
+      "simplified_numerator": 209,
+      "simplified_denominator": 731,
+      "reduction_factor": 12,
+      "style": "latex_dfrac",
+      "factor": 12,
+      "difficulty": {
+        "value": [
+          1,
+          1000
+        ],
+        "factor": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Simplify the fraction $1978/13915$ to its lowest terms. Give only the simplified fraction as your final answer.",
+    "answer": "$86/605$",
+    "metadata": {
+      "source_dataset": "fraction_simplification",
+      "source_index": 49,
+      "numerator": 1978,
+      "denominator": 13915,
+      "simplified_numerator": 86,
+      "simplified_denominator": 605,
+      "reduction_factor": 23,
+      "style": "latex_inline",
+      "factor": 23,
+      "difficulty": {
+        "value": [
+          1,
+          1000
+        ],
+        "factor": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Simplify the fraction $\\frac{31536}{38617}$ to its lowest terms. Give only the simplified fraction as your final answer.",
+    "answer": "$\\frac{432}{529}$",
+    "metadata": {
+      "source_dataset": "fraction_simplification",
+      "source_index": 50,
+      "numerator": 31536,
+      "denominator": 38617,
+      "simplified_numerator": 432,
+      "simplified_denominator": 529,
+      "reduction_factor": 73,
+      "style": "latex_frac",
+      "factor": 73,
+      "difficulty": {
+        "value": [
+          1,
+          1000
+        ],
+        "factor": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Simplify the fraction $\\frac{11136}{11968}$ to its lowest terms. Give only the simplified fraction as your final answer.",
+    "answer": "$\\frac{174}{187}$",
+    "metadata": {
+      "source_dataset": "fraction_simplification",
+      "source_index": 51,
+      "numerator": 11136,
+      "denominator": 11968,
+      "simplified_numerator": 174,
+      "simplified_denominator": 187,
+      "reduction_factor": 64,
+      "style": "latex_frac",
+      "factor": 64,
+      "difficulty": {
+        "value": [
+          1,
+          1000
+        ],
+        "factor": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Simplify the fraction $\\frac{2992}{8960}$ to its lowest terms. Give only the simplified fraction as your final answer.",
+    "answer": "$\\frac{187}{560}$",
+    "metadata": {
+      "source_dataset": "fraction_simplification",
+      "source_index": 52,
+      "numerator": 2992,
+      "denominator": 8960,
+      "simplified_numerator": 187,
+      "simplified_denominator": 560,
+      "reduction_factor": 16,
+      "style": "latex_frac",
+      "factor": 16,
+      "difficulty": {
+        "value": [
+          1,
+          1000
+        ],
+        "factor": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Simplify the fraction $35970/51414$ to its lowest terms. Give only the simplified fraction as your final answer.",
+    "answer": "$545/779$",
+    "metadata": {
+      "source_dataset": "fraction_simplification",
+      "source_index": 53,
+      "numerator": 35970,
+      "denominator": 51414,
+      "simplified_numerator": 545,
+      "simplified_denominator": 779,
+      "reduction_factor": 66,
+      "style": "latex_inline",
+      "factor": 66,
+      "difficulty": {
+        "value": [
+          1,
+          1000
+        ],
+        "factor": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Simplify the fraction $\\dfrac{1479}{1740}$ to its lowest terms. Give only the simplified fraction as your final answer.",
+    "answer": "$\\dfrac{17}{20}$",
+    "metadata": {
+      "source_dataset": "fraction_simplification",
+      "source_index": 54,
+      "numerator": 1479,
+      "denominator": 1740,
+      "simplified_numerator": 17,
+      "simplified_denominator": 20,
+      "reduction_factor": 87,
+      "style": "latex_dfrac",
+      "factor": 87,
+      "difficulty": {
+        "value": [
+          1,
+          1000
+        ],
+        "factor": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Simplify the fraction 240/528 to its lowest terms. Give only the simplified fraction as your final answer.",
+    "answer": "5/11",
+    "metadata": {
+      "source_dataset": "fraction_simplification",
+      "source_index": 55,
+      "numerator": 240,
+      "denominator": 528,
+      "simplified_numerator": 5,
+      "simplified_denominator": 11,
+      "reduction_factor": 48,
+      "style": "plain",
+      "factor": 48,
+      "difficulty": {
+        "value": [
+          1,
+          1000
+        ],
+        "factor": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Simplify the fraction $\\frac{2190}{3534}$ to its lowest terms. Give only the simplified fraction as your final answer.",
+    "answer": "$\\frac{365}{589}$",
+    "metadata": {
+      "source_dataset": "fraction_simplification",
+      "source_index": 56,
+      "numerator": 2190,
+      "denominator": 3534,
+      "simplified_numerator": 365,
+      "simplified_denominator": 589,
+      "reduction_factor": 6,
+      "style": "latex_frac",
+      "factor": 6,
+      "difficulty": {
+        "value": [
+          1,
+          1000
+        ],
+        "factor": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Simplify the fraction $1690/1794$ to its lowest terms. Give only the simplified fraction as your final answer.",
+    "answer": "$65/69$",
+    "metadata": {
+      "source_dataset": "fraction_simplification",
+      "source_index": 57,
+      "numerator": 1690,
+      "denominator": 1794,
+      "simplified_numerator": 65,
+      "simplified_denominator": 69,
+      "reduction_factor": 26,
+      "style": "latex_inline",
+      "factor": 26,
+      "difficulty": {
+        "value": [
+          1,
+          1000
+        ],
+        "factor": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Simplify the fraction $2950/9263$ to its lowest terms. Give only the simplified fraction as your final answer.",
+    "answer": "$50/157$",
+    "metadata": {
+      "source_dataset": "fraction_simplification",
+      "source_index": 58,
+      "numerator": 2950,
+      "denominator": 9263,
+      "simplified_numerator": 50,
+      "simplified_denominator": 157,
+      "reduction_factor": 59,
+      "style": "latex_inline",
+      "factor": 59,
+      "difficulty": {
+        "value": [
+          1,
+          1000
+        ],
+        "factor": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Simplify the fraction $\\frac{3725}{5425}$ to its lowest terms. Give only the simplified fraction as your final answer.",
+    "answer": "$\\frac{149}{217}$",
+    "metadata": {
+      "source_dataset": "fraction_simplification",
+      "source_index": 59,
+      "numerator": 3725,
+      "denominator": 5425,
+      "simplified_numerator": 149,
+      "simplified_denominator": 217,
+      "reduction_factor": 25,
+      "style": "latex_frac",
+      "factor": 25,
+      "difficulty": {
+        "value": [
+          1,
+          1000
+        ],
+        "factor": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Simplify the fraction $\\frac{12008}{54747}$ to its lowest terms. Give only the simplified fraction as your final answer.",
+    "answer": "$\\frac{152}{693}$",
+    "metadata": {
+      "source_dataset": "fraction_simplification",
+      "source_index": 60,
+      "numerator": 12008,
+      "denominator": 54747,
+      "simplified_numerator": 152,
+      "simplified_denominator": 693,
+      "reduction_factor": 79,
+      "style": "latex_frac",
+      "factor": 79,
+      "difficulty": {
+        "value": [
+          1,
+          1000
+        ],
+        "factor": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Simplify the fraction $3627/5673$ to its lowest terms. Give only the simplified fraction as your final answer.",
+    "answer": "$39/61$",
+    "metadata": {
+      "source_dataset": "fraction_simplification",
+      "source_index": 61,
+      "numerator": 3627,
+      "denominator": 5673,
+      "simplified_numerator": 39,
+      "simplified_denominator": 61,
+      "reduction_factor": 93,
+      "style": "latex_inline",
+      "factor": 93,
+      "difficulty": {
+        "value": [
+          1,
+          1000
+        ],
+        "factor": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Simplify the fraction $546/25558$ to its lowest terms. Give only the simplified fraction as your final answer.",
+    "answer": "$21/983$",
+    "metadata": {
+      "source_dataset": "fraction_simplification",
+      "source_index": 62,
+      "numerator": 546,
+      "denominator": 25558,
+      "simplified_numerator": 21,
+      "simplified_denominator": 983,
+      "reduction_factor": 26,
+      "style": "latex_inline",
+      "factor": 26,
+      "difficulty": {
+        "value": [
+          1,
+          1000
+        ],
+        "factor": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Simplify the fraction 4545/6750 to its lowest terms. Give only the simplified fraction as your final answer.",
+    "answer": "101/150",
+    "metadata": {
+      "source_dataset": "fraction_simplification",
+      "source_index": 63,
+      "numerator": 4545,
+      "denominator": 6750,
+      "simplified_numerator": 101,
+      "simplified_denominator": 150,
+      "reduction_factor": 45,
+      "style": "plain",
+      "factor": 45,
+      "difficulty": {
+        "value": [
+          1,
+          1000
+        ],
+        "factor": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Simplify the fraction 3472/4402 to its lowest terms. Give only the simplified fraction as your final answer.",
+    "answer": "56/71",
+    "metadata": {
+      "source_dataset": "fraction_simplification",
+      "source_index": 64,
+      "numerator": 3472,
+      "denominator": 4402,
+      "simplified_numerator": 56,
+      "simplified_denominator": 71,
+      "reduction_factor": 62,
+      "style": "plain",
+      "factor": 62,
+      "difficulty": {
+        "value": [
+          1,
+          1000
+        ],
+        "factor": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Simplify the fraction $\\dfrac{18975}{47625}$ to its lowest terms. Give only the simplified fraction as your final answer.",
+    "answer": "$\\dfrac{253}{635}$",
+    "metadata": {
+      "source_dataset": "fraction_simplification",
+      "source_index": 65,
+      "numerator": 18975,
+      "denominator": 47625,
+      "simplified_numerator": 253,
+      "simplified_denominator": 635,
+      "reduction_factor": 75,
+      "style": "latex_dfrac",
+      "factor": 75,
+      "difficulty": {
+        "value": [
+          1,
+          1000
+        ],
+        "factor": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Simplify the fraction $\\dfrac{1474}{8063}$ to its lowest terms. Give only the simplified fraction as your final answer.",
+    "answer": "$\\dfrac{134}{733}$",
+    "metadata": {
+      "source_dataset": "fraction_simplification",
+      "source_index": 66,
+      "numerator": 1474,
+      "denominator": 8063,
+      "simplified_numerator": 134,
+      "simplified_denominator": 733,
+      "reduction_factor": 11,
+      "style": "latex_dfrac",
+      "factor": 11,
+      "difficulty": {
+        "value": [
+          1,
+          1000
+        ],
+        "factor": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Simplify the fraction $\\dfrac{13865}{16933}$ to its lowest terms. Give only the simplified fraction as your final answer.",
+    "answer": "$\\dfrac{235}{287}$",
+    "metadata": {
+      "source_dataset": "fraction_simplification",
+      "source_index": 67,
+      "numerator": 13865,
+      "denominator": 16933,
+      "simplified_numerator": 235,
+      "simplified_denominator": 287,
+      "reduction_factor": 59,
+      "style": "latex_dfrac",
+      "factor": 59,
+      "difficulty": {
+        "value": [
+          1,
+          1000
+        ],
+        "factor": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Simplify the fraction $30646/73689$ to its lowest terms. Give only the simplified fraction as your final answer.",
+    "answer": "$398/957$",
+    "metadata": {
+      "source_dataset": "fraction_simplification",
+      "source_index": 68,
+      "numerator": 30646,
+      "denominator": 73689,
+      "simplified_numerator": 398,
+      "simplified_denominator": 957,
+      "reduction_factor": 77,
+      "style": "latex_inline",
+      "factor": 77,
+      "difficulty": {
+        "value": [
+          1,
+          1000
+        ],
+        "factor": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Simplify the fraction $\\frac{5936}{6804}$ to its lowest terms. Give only the simplified fraction as your final answer.",
+    "answer": "$\\frac{212}{243}$",
+    "metadata": {
+      "source_dataset": "fraction_simplification",
+      "source_index": 69,
+      "numerator": 5936,
+      "denominator": 6804,
+      "simplified_numerator": 212,
+      "simplified_denominator": 243,
+      "reduction_factor": 28,
+      "style": "latex_frac",
+      "factor": 28,
+      "difficulty": {
+        "value": [
+          1,
+          1000
+        ],
+        "factor": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Simplify the fraction $\\frac{42398}{73358}$ to its lowest terms. Give only the simplified fraction as your final answer.",
+    "answer": "$\\frac{493}{853}$",
+    "metadata": {
+      "source_dataset": "fraction_simplification",
+      "source_index": 70,
+      "numerator": 42398,
+      "denominator": 73358,
+      "simplified_numerator": 493,
+      "simplified_denominator": 853,
+      "reduction_factor": 86,
+      "style": "latex_frac",
+      "factor": 86,
+      "difficulty": {
+        "value": [
+          1,
+          1000
+        ],
+        "factor": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Simplify the fraction $\\frac{1488}{31155}$ to its lowest terms. Give only the simplified fraction as your final answer.",
+    "answer": "$\\frac{16}{335}$",
+    "metadata": {
+      "source_dataset": "fraction_simplification",
+      "source_index": 71,
+      "numerator": 1488,
+      "denominator": 31155,
+      "simplified_numerator": 16,
+      "simplified_denominator": 335,
+      "reduction_factor": 93,
+      "style": "latex_frac",
+      "factor": 93,
+      "difficulty": {
+        "value": [
+          1,
+          1000
+        ],
+        "factor": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Simplify the fraction $\\frac{3211}{7501}$ to its lowest terms. Give only the simplified fraction as your final answer.",
+    "answer": "$\\frac{247}{577}$",
+    "metadata": {
+      "source_dataset": "fraction_simplification",
+      "source_index": 72,
+      "numerator": 3211,
+      "denominator": 7501,
+      "simplified_numerator": 247,
+      "simplified_denominator": 577,
+      "reduction_factor": 13,
+      "style": "latex_frac",
+      "factor": 13,
+      "difficulty": {
+        "value": [
+          1,
+          1000
+        ],
+        "factor": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Simplify the fraction 2522/7956 to its lowest terms. Give only the simplified fraction as your final answer.",
+    "answer": "97/306",
+    "metadata": {
+      "source_dataset": "fraction_simplification",
+      "source_index": 73,
+      "numerator": 2522,
+      "denominator": 7956,
+      "simplified_numerator": 97,
+      "simplified_denominator": 306,
+      "reduction_factor": 26,
+      "style": "plain",
+      "factor": 26,
+      "difficulty": {
+        "value": [
+          1,
+          1000
+        ],
+        "factor": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Simplify the fraction $\\frac{29414}{32417}$ to its lowest terms. Give only the simplified fraction as your final answer.",
+    "answer": "$\\frac{382}{421}$",
+    "metadata": {
+      "source_dataset": "fraction_simplification",
+      "source_index": 74,
+      "numerator": 29414,
+      "denominator": 32417,
+      "simplified_numerator": 382,
+      "simplified_denominator": 421,
+      "reduction_factor": 77,
+      "style": "latex_frac",
+      "factor": 77,
+      "difficulty": {
+        "value": [
+          1,
+          1000
+        ],
+        "factor": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Simplify the fraction $682/902$ to its lowest terms. Give only the simplified fraction as your final answer.",
+    "answer": "$31/41$",
+    "metadata": {
+      "source_dataset": "fraction_simplification",
+      "source_index": 75,
+      "numerator": 682,
+      "denominator": 902,
+      "simplified_numerator": 31,
+      "simplified_denominator": 41,
+      "reduction_factor": 22,
+      "style": "latex_inline",
+      "factor": 22,
+      "difficulty": {
+        "value": [
+          1,
+          1000
+        ],
+        "factor": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Simplify the fraction $\\frac{192}{216}$ to its lowest terms. Give only the simplified fraction as your final answer.",
+    "answer": "$\\frac{8}{9}$",
+    "metadata": {
+      "source_dataset": "fraction_simplification",
+      "source_index": 76,
+      "numerator": 192,
+      "denominator": 216,
+      "simplified_numerator": 8,
+      "simplified_denominator": 9,
+      "reduction_factor": 24,
+      "style": "latex_frac",
+      "factor": 24,
+      "difficulty": {
+        "value": [
+          1,
+          1000
+        ],
+        "factor": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Simplify the fraction $\\dfrac{7032}{22776}$ to its lowest terms. Give only the simplified fraction as your final answer.",
+    "answer": "$\\dfrac{293}{949}$",
+    "metadata": {
+      "source_dataset": "fraction_simplification",
+      "source_index": 77,
+      "numerator": 7032,
+      "denominator": 22776,
+      "simplified_numerator": 293,
+      "simplified_denominator": 949,
+      "reduction_factor": 24,
+      "style": "latex_dfrac",
+      "factor": 24,
+      "difficulty": {
+        "value": [
+          1,
+          1000
+        ],
+        "factor": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Simplify the fraction $\\dfrac{3175}{6600}$ to its lowest terms. Give only the simplified fraction as your final answer.",
+    "answer": "$\\dfrac{127}{264}$",
+    "metadata": {
+      "source_dataset": "fraction_simplification",
+      "source_index": 78,
+      "numerator": 3175,
+      "denominator": 6600,
+      "simplified_numerator": 127,
+      "simplified_denominator": 264,
+      "reduction_factor": 25,
+      "style": "latex_dfrac",
+      "factor": 25,
+      "difficulty": {
+        "value": [
+          1,
+          1000
+        ],
+        "factor": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Simplify the fraction $\\dfrac{3375}{8400}$ to its lowest terms. Give only the simplified fraction as your final answer.",
+    "answer": "$\\dfrac{45}{112}$",
+    "metadata": {
+      "source_dataset": "fraction_simplification",
+      "source_index": 79,
+      "numerator": 3375,
+      "denominator": 8400,
+      "simplified_numerator": 45,
+      "simplified_denominator": 112,
+      "reduction_factor": 75,
+      "style": "latex_dfrac",
+      "factor": 75,
+      "difficulty": {
+        "value": [
+          1,
+          1000
+        ],
+        "factor": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Simplify the fraction $\\frac{16863}{40271}$ to its lowest terms. Give only the simplified fraction as your final answer.",
+    "answer": "$\\frac{219}{523}$",
+    "metadata": {
+      "source_dataset": "fraction_simplification",
+      "source_index": 80,
+      "numerator": 16863,
+      "denominator": 40271,
+      "simplified_numerator": 219,
+      "simplified_denominator": 523,
+      "reduction_factor": 77,
+      "style": "latex_frac",
+      "factor": 77,
+      "difficulty": {
+        "value": [
+          1,
+          1000
+        ],
+        "factor": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Simplify the fraction $\\dfrac{648}{3300}$ to its lowest terms. Give only the simplified fraction as your final answer.",
+    "answer": "$\\dfrac{54}{275}$",
+    "metadata": {
+      "source_dataset": "fraction_simplification",
+      "source_index": 81,
+      "numerator": 648,
+      "denominator": 3300,
+      "simplified_numerator": 54,
+      "simplified_denominator": 275,
+      "reduction_factor": 12,
+      "style": "latex_dfrac",
+      "factor": 12,
+      "difficulty": {
+        "value": [
+          1,
+          1000
+        ],
+        "factor": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Simplify the fraction 6745/23288 to its lowest terms. Give only the simplified fraction as your final answer.",
+    "answer": "95/328",
+    "metadata": {
+      "source_dataset": "fraction_simplification",
+      "source_index": 82,
+      "numerator": 6745,
+      "denominator": 23288,
+      "simplified_numerator": 95,
+      "simplified_denominator": 328,
+      "reduction_factor": 71,
+      "style": "plain",
+      "factor": 71,
+      "difficulty": {
+        "value": [
+          1,
+          1000
+        ],
+        "factor": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Simplify the fraction $\\frac{7221}{26738}$ to its lowest terms. Give only the simplified fraction as your final answer.",
+    "answer": "$\\frac{249}{922}$",
+    "metadata": {
+      "source_dataset": "fraction_simplification",
+      "source_index": 83,
+      "numerator": 7221,
+      "denominator": 26738,
+      "simplified_numerator": 249,
+      "simplified_denominator": 922,
+      "reduction_factor": 29,
+      "style": "latex_frac",
+      "factor": 29,
+      "difficulty": {
+        "value": [
+          1,
+          1000
+        ],
+        "factor": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Simplify the fraction $\\dfrac{4588}{43438}$ to its lowest terms. Give only the simplified fraction as your final answer.",
+    "answer": "$\\dfrac{62}{587}$",
+    "metadata": {
+      "source_dataset": "fraction_simplification",
+      "source_index": 84,
+      "numerator": 4588,
+      "denominator": 43438,
+      "simplified_numerator": 62,
+      "simplified_denominator": 587,
+      "reduction_factor": 74,
+      "style": "latex_dfrac",
+      "factor": 74,
+      "difficulty": {
+        "value": [
+          1,
+          1000
+        ],
+        "factor": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Simplify the fraction 3680/74800 to its lowest terms. Give only the simplified fraction as your final answer.",
+    "answer": "46/935",
+    "metadata": {
+      "source_dataset": "fraction_simplification",
+      "source_index": 85,
+      "numerator": 3680,
+      "denominator": 74800,
+      "simplified_numerator": 46,
+      "simplified_denominator": 935,
+      "reduction_factor": 80,
+      "style": "plain",
+      "factor": 80,
+      "difficulty": {
+        "value": [
+          1,
+          1000
+        ],
+        "factor": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Simplify the fraction $\\dfrac{8990}{9951}$ to its lowest terms. Give only the simplified fraction as your final answer.",
+    "answer": "$\\dfrac{290}{321}$",
+    "metadata": {
+      "source_dataset": "fraction_simplification",
+      "source_index": 86,
+      "numerator": 8990,
+      "denominator": 9951,
+      "simplified_numerator": 290,
+      "simplified_denominator": 321,
+      "reduction_factor": 31,
+      "style": "latex_dfrac",
+      "factor": 31,
+      "difficulty": {
+        "value": [
+          1,
+          1000
+        ],
+        "factor": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Simplify the fraction $\\frac{40267}{59563}$ to its lowest terms. Give only the simplified fraction as your final answer.",
+    "answer": "$\\frac{601}{889}$",
+    "metadata": {
+      "source_dataset": "fraction_simplification",
+      "source_index": 87,
+      "numerator": 40267,
+      "denominator": 59563,
+      "simplified_numerator": 601,
+      "simplified_denominator": 889,
+      "reduction_factor": 67,
+      "style": "latex_frac",
+      "factor": 67,
+      "difficulty": {
+        "value": [
+          1,
+          1000
+        ],
+        "factor": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Simplify the fraction $\\dfrac{15260}{18655}$ to its lowest terms. Give only the simplified fraction as your final answer.",
+    "answer": "$\\dfrac{436}{533}$",
+    "metadata": {
+      "source_dataset": "fraction_simplification",
+      "source_index": 88,
+      "numerator": 15260,
+      "denominator": 18655,
+      "simplified_numerator": 436,
+      "simplified_denominator": 533,
+      "reduction_factor": 35,
+      "style": "latex_dfrac",
+      "factor": 35,
+      "difficulty": {
+        "value": [
+          1,
+          1000
+        ],
+        "factor": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Simplify the fraction 16038/18909 to its lowest terms. Give only the simplified fraction as your final answer.",
+    "answer": "162/191",
+    "metadata": {
+      "source_dataset": "fraction_simplification",
+      "source_index": 89,
+      "numerator": 16038,
+      "denominator": 18909,
+      "simplified_numerator": 162,
+      "simplified_denominator": 191,
+      "reduction_factor": 99,
+      "style": "plain",
+      "factor": 99,
+      "difficulty": {
+        "value": [
+          1,
+          1000
+        ],
+        "factor": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Simplify the fraction 8480/22419 to its lowest terms. Give only the simplified fraction as your final answer.",
+    "answer": "160/423",
+    "metadata": {
+      "source_dataset": "fraction_simplification",
+      "source_index": 90,
+      "numerator": 8480,
+      "denominator": 22419,
+      "simplified_numerator": 160,
+      "simplified_denominator": 423,
+      "reduction_factor": 53,
+      "style": "plain",
+      "factor": 53,
+      "difficulty": {
+        "value": [
+          1,
+          1000
+        ],
+        "factor": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Simplify the fraction $\\frac{2046}{2852}$ to its lowest terms. Give only the simplified fraction as your final answer.",
+    "answer": "$\\frac{33}{46}$",
+    "metadata": {
+      "source_dataset": "fraction_simplification",
+      "source_index": 91,
+      "numerator": 2046,
+      "denominator": 2852,
+      "simplified_numerator": 33,
+      "simplified_denominator": 46,
+      "reduction_factor": 62,
+      "style": "latex_frac",
+      "factor": 62,
+      "difficulty": {
+        "value": [
+          1,
+          1000
+        ],
+        "factor": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Simplify the fraction $1612/1742$ to its lowest terms. Give only the simplified fraction as your final answer.",
+    "answer": "$62/67$",
+    "metadata": {
+      "source_dataset": "fraction_simplification",
+      "source_index": 92,
+      "numerator": 1612,
+      "denominator": 1742,
+      "simplified_numerator": 62,
+      "simplified_denominator": 67,
+      "reduction_factor": 26,
+      "style": "latex_inline",
+      "factor": 26,
+      "difficulty": {
+        "value": [
+          1,
+          1000
+        ],
+        "factor": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Simplify the fraction $\\frac{31023}{55566}$ to its lowest terms. Give only the simplified fraction as your final answer.",
+    "answer": "$\\frac{383}{686}$",
+    "metadata": {
+      "source_dataset": "fraction_simplification",
+      "source_index": 93,
+      "numerator": 31023,
+      "denominator": 55566,
+      "simplified_numerator": 383,
+      "simplified_denominator": 686,
+      "reduction_factor": 81,
+      "style": "latex_frac",
+      "factor": 81,
+      "difficulty": {
+        "value": [
+          1,
+          1000
+        ],
+        "factor": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Simplify the fraction 2992/4012 to its lowest terms. Give only the simplified fraction as your final answer.",
+    "answer": "44/59",
+    "metadata": {
+      "source_dataset": "fraction_simplification",
+      "source_index": 94,
+      "numerator": 2992,
+      "denominator": 4012,
+      "simplified_numerator": 44,
+      "simplified_denominator": 59,
+      "reduction_factor": 68,
+      "style": "plain",
+      "factor": 68,
+      "difficulty": {
+        "value": [
+          1,
+          1000
+        ],
+        "factor": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Simplify the fraction $\\frac{1325}{3286}$ to its lowest terms. Give only the simplified fraction as your final answer.",
+    "answer": "$\\frac{25}{62}$",
+    "metadata": {
+      "source_dataset": "fraction_simplification",
+      "source_index": 95,
+      "numerator": 1325,
+      "denominator": 3286,
+      "simplified_numerator": 25,
+      "simplified_denominator": 62,
+      "reduction_factor": 53,
+      "style": "latex_frac",
+      "factor": 53,
+      "difficulty": {
+        "value": [
+          1,
+          1000
+        ],
+        "factor": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Simplify the fraction $\\frac{11542}{22736}$ to its lowest terms. Give only the simplified fraction as your final answer.",
+    "answer": "$\\frac{199}{392}$",
+    "metadata": {
+      "source_dataset": "fraction_simplification",
+      "source_index": 96,
+      "numerator": 11542,
+      "denominator": 22736,
+      "simplified_numerator": 199,
+      "simplified_denominator": 392,
+      "reduction_factor": 58,
+      "style": "latex_frac",
+      "factor": 58,
+      "difficulty": {
+        "value": [
+          1,
+          1000
+        ],
+        "factor": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Simplify the fraction $\\frac{178}{87487}$ to its lowest terms. Give only the simplified fraction as your final answer.",
+    "answer": "$\\frac{2}{983}$",
+    "metadata": {
+      "source_dataset": "fraction_simplification",
+      "source_index": 97,
+      "numerator": 178,
+      "denominator": 87487,
+      "simplified_numerator": 2,
+      "simplified_denominator": 983,
+      "reduction_factor": 89,
+      "style": "latex_frac",
+      "factor": 89,
+      "difficulty": {
+        "value": [
+          1,
+          1000
+        ],
+        "factor": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Simplify the fraction 10283/11609 to its lowest terms. Give only the simplified fraction as your final answer.",
+    "answer": "791/893",
+    "metadata": {
+      "source_dataset": "fraction_simplification",
+      "source_index": 98,
+      "numerator": 10283,
+      "denominator": 11609,
+      "simplified_numerator": 791,
+      "simplified_denominator": 893,
+      "reduction_factor": 13,
+      "style": "plain",
+      "factor": 13,
+      "difficulty": {
+        "value": [
+          1,
+          1000
+        ],
+        "factor": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Simplify the fraction $\\dfrac{1060}{1596}$ to its lowest terms. Give only the simplified fraction as your final answer.",
+    "answer": "$\\dfrac{265}{399}$",
+    "metadata": {
+      "source_dataset": "fraction_simplification",
+      "source_index": 99,
+      "numerator": 1060,
+      "denominator": 1596,
+      "simplified_numerator": 265,
+      "simplified_denominator": 399,
+      "reduction_factor": 4,
+      "style": "latex_dfrac",
+      "factor": 4,
+      "difficulty": {
+        "value": [
+          1,
+          1000
+        ],
+        "factor": [
+          1,
+          100
+        ]
+      }
+    }
+  }
+]

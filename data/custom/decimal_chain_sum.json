@@ -1,0 +1,2502 @@
+[
+  {
+    "question": "State the final answer to the following arithmetic problem: 4.23 + 3.96 =",
+    "answer": "8.19",
+    "metadata": {
+      "source_dataset": "decimal_chain_sum",
+      "source_index": 0,
+      "num_terms": 2,
+      "num_digits": 1,
+      "expression": "4.23 + 3.96",
+      "difficulty": {
+        "num_terms": [
+          2,
+          6
+        ],
+        "num_digits": [
+          1,
+          4
+        ],
+        "decimal_places": [
+          1,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "State the final answer to the following arithmetic problem: 812.57 - 880.2577 =",
+    "answer": "-67.6877",
+    "metadata": {
+      "source_dataset": "decimal_chain_sum",
+      "source_index": 1,
+      "num_terms": 2,
+      "num_digits": 3,
+      "expression": "812.57 - 880.2577",
+      "difficulty": {
+        "num_terms": [
+          2,
+          6
+        ],
+        "num_digits": [
+          1,
+          4
+        ],
+        "decimal_places": [
+          1,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "State the final answer to the following arithmetic problem: 2.75 - 6.5 - 3.7 + 4.7 - 0.98 =",
+    "answer": "-3.73",
+    "metadata": {
+      "source_dataset": "decimal_chain_sum",
+      "source_index": 2,
+      "num_terms": 5,
+      "num_digits": 1,
+      "expression": "2.75 - 6.5 - 3.7 + 4.7 - 0.98",
+      "difficulty": {
+        "num_terms": [
+          2,
+          6
+        ],
+        "num_digits": [
+          1,
+          4
+        ],
+        "decimal_places": [
+          1,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "State the final answer to the following arithmetic problem: 8995.111 - 5221.2 + 2341.5 + 5967.2928 =",
+    "answer": "12082.7038",
+    "metadata": {
+      "source_dataset": "decimal_chain_sum",
+      "source_index": 3,
+      "num_terms": 4,
+      "num_digits": 4,
+      "expression": "8995.111 - 5221.2 + 2341.5 + 5967.2928",
+      "difficulty": {
+        "num_terms": [
+          2,
+          6
+        ],
+        "num_digits": [
+          1,
+          4
+        ],
+        "decimal_places": [
+          1,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "State the final answer to the following arithmetic problem: 1654.13 - 4744.2 =",
+    "answer": "-3090.07",
+    "metadata": {
+      "source_dataset": "decimal_chain_sum",
+      "source_index": 4,
+      "num_terms": 2,
+      "num_digits": 4,
+      "expression": "1654.13 - 4744.2",
+      "difficulty": {
+        "num_terms": [
+          2,
+          6
+        ],
+        "num_digits": [
+          1,
+          4
+        ],
+        "decimal_places": [
+          1,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "State the final answer to the following arithmetic problem: 6.730 + 8.141 + 7.7857 - 9.1387 =",
+    "answer": "13.5180",
+    "metadata": {
+      "source_dataset": "decimal_chain_sum",
+      "source_index": 5,
+      "num_terms": 4,
+      "num_digits": 1,
+      "expression": "6.730 + 8.141 + 7.7857 - 9.1387",
+      "difficulty": {
+        "num_terms": [
+          2,
+          6
+        ],
+        "num_digits": [
+          1,
+          4
+        ],
+        "decimal_places": [
+          1,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "State the final answer to the following arithmetic problem: 235.93 + 670.4611 - 828.37 + 647.75 + 409.9 + 912.9332 =",
+    "answer": "2048.6043",
+    "metadata": {
+      "source_dataset": "decimal_chain_sum",
+      "source_index": 6,
+      "num_terms": 6,
+      "num_digits": 3,
+      "expression": "235.93 + 670.4611 - 828.37 + 647.75 + 409.9 + 912.9332",
+      "difficulty": {
+        "num_terms": [
+          2,
+          6
+        ],
+        "num_digits": [
+          1,
+          4
+        ],
+        "decimal_places": [
+          1,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "State the final answer to the following arithmetic problem: 523.796 - 213.1 =",
+    "answer": "310.696",
+    "metadata": {
+      "source_dataset": "decimal_chain_sum",
+      "source_index": 7,
+      "num_terms": 2,
+      "num_digits": 3,
+      "expression": "523.796 - 213.1",
+      "difficulty": {
+        "num_terms": [
+          2,
+          6
+        ],
+        "num_digits": [
+          1,
+          4
+        ],
+        "decimal_places": [
+          1,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "State the final answer to the following arithmetic problem: 472.256 - 752.6 + 348.945 + 809.22 + 584.6 =",
+    "answer": "1462.421",
+    "metadata": {
+      "source_dataset": "decimal_chain_sum",
+      "source_index": 8,
+      "num_terms": 5,
+      "num_digits": 3,
+      "expression": "472.256 - 752.6 + 348.945 + 809.22 + 584.6",
+      "difficulty": {
+        "num_terms": [
+          2,
+          6
+        ],
+        "num_digits": [
+          1,
+          4
+        ],
+        "decimal_places": [
+          1,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "State the final answer to the following arithmetic problem: 41.849 - 39.9980 - 80.9577 =",
+    "answer": "-79.1067",
+    "metadata": {
+      "source_dataset": "decimal_chain_sum",
+      "source_index": 9,
+      "num_terms": 3,
+      "num_digits": 2,
+      "expression": "41.849 - 39.9980 - 80.9577",
+      "difficulty": {
+        "num_terms": [
+          2,
+          6
+        ],
+        "num_digits": [
+          1,
+          4
+        ],
+        "decimal_places": [
+          1,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "State the final answer to the following arithmetic problem: 8.3 + 7.54 - 5.66 - 6.1018 =",
+    "answer": "4.0782",
+    "metadata": {
+      "source_dataset": "decimal_chain_sum",
+      "source_index": 10,
+      "num_terms": 4,
+      "num_digits": 1,
+      "expression": "8.3 + 7.54 - 5.66 - 6.1018",
+      "difficulty": {
+        "num_terms": [
+          2,
+          6
+        ],
+        "num_digits": [
+          1,
+          4
+        ],
+        "decimal_places": [
+          1,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "State the final answer to the following arithmetic problem: 68.1 + 74.3 + 71.16 + 76.468 + 56.39 - 68.551 =",
+    "answer": "277.867",
+    "metadata": {
+      "source_dataset": "decimal_chain_sum",
+      "source_index": 11,
+      "num_terms": 6,
+      "num_digits": 2,
+      "expression": "68.1 + 74.3 + 71.16 + 76.468 + 56.39 - 68.551",
+      "difficulty": {
+        "num_terms": [
+          2,
+          6
+        ],
+        "num_digits": [
+          1,
+          4
+        ],
+        "decimal_places": [
+          1,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "State the final answer to the following arithmetic problem: 5881.6407 + 8913.83 + 8987.7260 =",
+    "answer": "23783.1967",
+    "metadata": {
+      "source_dataset": "decimal_chain_sum",
+      "source_index": 12,
+      "num_terms": 3,
+      "num_digits": 4,
+      "expression": "5881.6407 + 8913.83 + 8987.7260",
+      "difficulty": {
+        "num_terms": [
+          2,
+          6
+        ],
+        "num_digits": [
+          1,
+          4
+        ],
+        "decimal_places": [
+          1,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "State the final answer to the following arithmetic problem: 29.5 - 48.21 =",
+    "answer": "-18.71",
+    "metadata": {
+      "source_dataset": "decimal_chain_sum",
+      "source_index": 13,
+      "num_terms": 2,
+      "num_digits": 2,
+      "expression": "29.5 - 48.21",
+      "difficulty": {
+        "num_terms": [
+          2,
+          6
+        ],
+        "num_digits": [
+          1,
+          4
+        ],
+        "decimal_places": [
+          1,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "State the final answer to the following arithmetic problem: 7.1 + 8.877 - 4.4 + 8.155 + 6.695 - 3.81 =",
+    "answer": "22.617",
+    "metadata": {
+      "source_dataset": "decimal_chain_sum",
+      "source_index": 14,
+      "num_terms": 6,
+      "num_digits": 1,
+      "expression": "7.1 + 8.877 - 4.4 + 8.155 + 6.695 - 3.81",
+      "difficulty": {
+        "num_terms": [
+          2,
+          6
+        ],
+        "num_digits": [
+          1,
+          4
+        ],
+        "decimal_places": [
+          1,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "State the final answer to the following arithmetic problem: 703.9 - 719.51 =",
+    "answer": "-15.61",
+    "metadata": {
+      "source_dataset": "decimal_chain_sum",
+      "source_index": 15,
+      "num_terms": 2,
+      "num_digits": 3,
+      "expression": "703.9 - 719.51",
+      "difficulty": {
+        "num_terms": [
+          2,
+          6
+        ],
+        "num_digits": [
+          1,
+          4
+        ],
+        "decimal_places": [
+          1,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "State the final answer to the following arithmetic problem: 36.5651 + 92.992 - 35.693 + 15.207 - 34.1203 - 67.9022 =",
+    "answer": "7.0486",
+    "metadata": {
+      "source_dataset": "decimal_chain_sum",
+      "source_index": 16,
+      "num_terms": 6,
+      "num_digits": 2,
+      "expression": "36.5651 + 92.992 - 35.693 + 15.207 - 34.1203 - 67.9022",
+      "difficulty": {
+        "num_terms": [
+          2,
+          6
+        ],
+        "num_digits": [
+          1,
+          4
+        ],
+        "decimal_places": [
+          1,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "State the final answer to the following arithmetic problem: 7.948 - 0.8 - 2.7 =",
+    "answer": "4.448",
+    "metadata": {
+      "source_dataset": "decimal_chain_sum",
+      "source_index": 17,
+      "num_terms": 3,
+      "num_digits": 1,
+      "expression": "7.948 - 0.8 - 2.7",
+      "difficulty": {
+        "num_terms": [
+          2,
+          6
+        ],
+        "num_digits": [
+          1,
+          4
+        ],
+        "decimal_places": [
+          1,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "State the final answer to the following arithmetic problem: 691.2510 + 257.4038 + 371.257 + 335.7 =",
+    "answer": "1655.6118",
+    "metadata": {
+      "source_dataset": "decimal_chain_sum",
+      "source_index": 18,
+      "num_terms": 4,
+      "num_digits": 3,
+      "expression": "691.2510 + 257.4038 + 371.257 + 335.7",
+      "difficulty": {
+        "num_terms": [
+          2,
+          6
+        ],
+        "num_digits": [
+          1,
+          4
+        ],
+        "decimal_places": [
+          1,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "State the final answer to the following arithmetic problem: 81.7 + 37.8558 + 51.437 + 47.271 - 51.6 =",
+    "answer": "166.6638",
+    "metadata": {
+      "source_dataset": "decimal_chain_sum",
+      "source_index": 19,
+      "num_terms": 5,
+      "num_digits": 2,
+      "expression": "81.7 + 37.8558 + 51.437 + 47.271 - 51.6",
+      "difficulty": {
+        "num_terms": [
+          2,
+          6
+        ],
+        "num_digits": [
+          1,
+          4
+        ],
+        "decimal_places": [
+          1,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "State the final answer to the following arithmetic problem: 18.25 - 40.13 + 69.70 + 49.8 + 95.631 - 55.12 =",
+    "answer": "138.131",
+    "metadata": {
+      "source_dataset": "decimal_chain_sum",
+      "source_index": 20,
+      "num_terms": 6,
+      "num_digits": 2,
+      "expression": "18.25 - 40.13 + 69.70 + 49.8 + 95.631 - 55.12",
+      "difficulty": {
+        "num_terms": [
+          2,
+          6
+        ],
+        "num_digits": [
+          1,
+          4
+        ],
+        "decimal_places": [
+          1,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "State the final answer to the following arithmetic problem: 5818.5 - 5144.1 + 8934.38 - 2426.777 + 7335.3 =",
+    "answer": "14517.303",
+    "metadata": {
+      "source_dataset": "decimal_chain_sum",
+      "source_index": 21,
+      "num_terms": 5,
+      "num_digits": 4,
+      "expression": "5818.5 - 5144.1 + 8934.38 - 2426.777 + 7335.3",
+      "difficulty": {
+        "num_terms": [
+          2,
+          6
+        ],
+        "num_digits": [
+          1,
+          4
+        ],
+        "decimal_places": [
+          1,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "State the final answer to the following arithmetic problem: 9.550 + 6.35 + 8.13 + 0.2 + 3.7601 =",
+    "answer": "27.9901",
+    "metadata": {
+      "source_dataset": "decimal_chain_sum",
+      "source_index": 22,
+      "num_terms": 5,
+      "num_digits": 1,
+      "expression": "9.550 + 6.35 + 8.13 + 0.2 + 3.7601",
+      "difficulty": {
+        "num_terms": [
+          2,
+          6
+        ],
+        "num_digits": [
+          1,
+          4
+        ],
+        "decimal_places": [
+          1,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "State the final answer to the following arithmetic problem: 394.2179 - 626.8653 + 964.370 - 325.4224 + 554.93 =",
+    "answer": "961.2302",
+    "metadata": {
+      "source_dataset": "decimal_chain_sum",
+      "source_index": 23,
+      "num_terms": 5,
+      "num_digits": 3,
+      "expression": "394.2179 - 626.8653 + 964.370 - 325.4224 + 554.93",
+      "difficulty": {
+        "num_terms": [
+          2,
+          6
+        ],
+        "num_digits": [
+          1,
+          4
+        ],
+        "decimal_places": [
+          1,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "State the final answer to the following arithmetic problem: 545.5195 + 352.982 =",
+    "answer": "898.5015",
+    "metadata": {
+      "source_dataset": "decimal_chain_sum",
+      "source_index": 24,
+      "num_terms": 2,
+      "num_digits": 3,
+      "expression": "545.5195 + 352.982",
+      "difficulty": {
+        "num_terms": [
+          2,
+          6
+        ],
+        "num_digits": [
+          1,
+          4
+        ],
+        "decimal_places": [
+          1,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "State the final answer to the following arithmetic problem: 6.8036 - 7.599 =",
+    "answer": "-0.7954",
+    "metadata": {
+      "source_dataset": "decimal_chain_sum",
+      "source_index": 25,
+      "num_terms": 2,
+      "num_digits": 1,
+      "expression": "6.8036 - 7.599",
+      "difficulty": {
+        "num_terms": [
+          2,
+          6
+        ],
+        "num_digits": [
+          1,
+          4
+        ],
+        "decimal_places": [
+          1,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "State the final answer to the following arithmetic problem: 9.666 - 9.764 + 3.3029 - 6.142 + 7.79 =",
+    "answer": "4.8529",
+    "metadata": {
+      "source_dataset": "decimal_chain_sum",
+      "source_index": 26,
+      "num_terms": 5,
+      "num_digits": 1,
+      "expression": "9.666 - 9.764 + 3.3029 - 6.142 + 7.79",
+      "difficulty": {
+        "num_terms": [
+          2,
+          6
+        ],
+        "num_digits": [
+          1,
+          4
+        ],
+        "decimal_places": [
+          1,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "State the final answer to the following arithmetic problem: 2.994 - 1.906 =",
+    "answer": "1.088",
+    "metadata": {
+      "source_dataset": "decimal_chain_sum",
+      "source_index": 27,
+      "num_terms": 2,
+      "num_digits": 1,
+      "expression": "2.994 - 1.906",
+      "difficulty": {
+        "num_terms": [
+          2,
+          6
+        ],
+        "num_digits": [
+          1,
+          4
+        ],
+        "decimal_places": [
+          1,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "State the final answer to the following arithmetic problem: 819.6278 + 570.23 =",
+    "answer": "1389.8578",
+    "metadata": {
+      "source_dataset": "decimal_chain_sum",
+      "source_index": 28,
+      "num_terms": 2,
+      "num_digits": 3,
+      "expression": "819.6278 + 570.23",
+      "difficulty": {
+        "num_terms": [
+          2,
+          6
+        ],
+        "num_digits": [
+          1,
+          4
+        ],
+        "decimal_places": [
+          1,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "State the final answer to the following arithmetic problem: 4.9 - 2.13 + 3.9 - 4.56 =",
+    "answer": "2.11",
+    "metadata": {
+      "source_dataset": "decimal_chain_sum",
+      "source_index": 29,
+      "num_terms": 4,
+      "num_digits": 1,
+      "expression": "4.9 - 2.13 + 3.9 - 4.56",
+      "difficulty": {
+        "num_terms": [
+          2,
+          6
+        ],
+        "num_digits": [
+          1,
+          4
+        ],
+        "decimal_places": [
+          1,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "State the final answer to the following arithmetic problem: 54.857 + 99.834 =",
+    "answer": "154.691",
+    "metadata": {
+      "source_dataset": "decimal_chain_sum",
+      "source_index": 30,
+      "num_terms": 2,
+      "num_digits": 2,
+      "expression": "54.857 + 99.834",
+      "difficulty": {
+        "num_terms": [
+          2,
+          6
+        ],
+        "num_digits": [
+          1,
+          4
+        ],
+        "decimal_places": [
+          1,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "State the final answer to the following arithmetic problem: 8.7623 - 7.630 + 9.9 + 2.4313 =",
+    "answer": "13.4636",
+    "metadata": {
+      "source_dataset": "decimal_chain_sum",
+      "source_index": 31,
+      "num_terms": 4,
+      "num_digits": 1,
+      "expression": "8.7623 - 7.630 + 9.9 + 2.4313",
+      "difficulty": {
+        "num_terms": [
+          2,
+          6
+        ],
+        "num_digits": [
+          1,
+          4
+        ],
+        "decimal_places": [
+          1,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "State the final answer to the following arithmetic problem: 5.6 + 1.5573 + 4.9236 + 2.739 - 3.1049 + 5.98 =",
+    "answer": "17.6950",
+    "metadata": {
+      "source_dataset": "decimal_chain_sum",
+      "source_index": 32,
+      "num_terms": 6,
+      "num_digits": 1,
+      "expression": "5.6 + 1.5573 + 4.9236 + 2.739 - 3.1049 + 5.98",
+      "difficulty": {
+        "num_terms": [
+          2,
+          6
+        ],
+        "num_digits": [
+          1,
+          4
+        ],
+        "decimal_places": [
+          1,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "State the final answer to the following arithmetic problem: 8444.8 - 1682.837 - 9422.6 - 8744.721 + 6663.777 =",
+    "answer": "-4741.581",
+    "metadata": {
+      "source_dataset": "decimal_chain_sum",
+      "source_index": 33,
+      "num_terms": 5,
+      "num_digits": 4,
+      "expression": "8444.8 - 1682.837 - 9422.6 - 8744.721 + 6663.777",
+      "difficulty": {
+        "num_terms": [
+          2,
+          6
+        ],
+        "num_digits": [
+          1,
+          4
+        ],
+        "decimal_places": [
+          1,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "State the final answer to the following arithmetic problem: 7383.8179 - 4277.72 - 5865.336 + 1864.185 =",
+    "answer": "-895.0531",
+    "metadata": {
+      "source_dataset": "decimal_chain_sum",
+      "source_index": 34,
+      "num_terms": 4,
+      "num_digits": 4,
+      "expression": "7383.8179 - 4277.72 - 5865.336 + 1864.185",
+      "difficulty": {
+        "num_terms": [
+          2,
+          6
+        ],
+        "num_digits": [
+          1,
+          4
+        ],
+        "decimal_places": [
+          1,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "State the final answer to the following arithmetic problem: 302.3 - 346.669 + 297.9202 - 942.10 =",
+    "answer": "-688.5488",
+    "metadata": {
+      "source_dataset": "decimal_chain_sum",
+      "source_index": 35,
+      "num_terms": 4,
+      "num_digits": 3,
+      "expression": "302.3 - 346.669 + 297.9202 - 942.10",
+      "difficulty": {
+        "num_terms": [
+          2,
+          6
+        ],
+        "num_digits": [
+          1,
+          4
+        ],
+        "decimal_places": [
+          1,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "State the final answer to the following arithmetic problem: 4.4 - 4.99 + 6.8719 =",
+    "answer": "6.2819",
+    "metadata": {
+      "source_dataset": "decimal_chain_sum",
+      "source_index": 36,
+      "num_terms": 3,
+      "num_digits": 1,
+      "expression": "4.4 - 4.99 + 6.8719",
+      "difficulty": {
+        "num_terms": [
+          2,
+          6
+        ],
+        "num_digits": [
+          1,
+          4
+        ],
+        "decimal_places": [
+          1,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "State the final answer to the following arithmetic problem: 6726.18 + 3669.6749 + 4947.13 =",
+    "answer": "15342.9849",
+    "metadata": {
+      "source_dataset": "decimal_chain_sum",
+      "source_index": 37,
+      "num_terms": 3,
+      "num_digits": 4,
+      "expression": "6726.18 + 3669.6749 + 4947.13",
+      "difficulty": {
+        "num_terms": [
+          2,
+          6
+        ],
+        "num_digits": [
+          1,
+          4
+        ],
+        "decimal_places": [
+          1,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "State the final answer to the following arithmetic problem: 9878.4604 + 7894.732 + 7046.1 + 6982.7376 =",
+    "answer": "31802.0300",
+    "metadata": {
+      "source_dataset": "decimal_chain_sum",
+      "source_index": 38,
+      "num_terms": 4,
+      "num_digits": 4,
+      "expression": "9878.4604 + 7894.732 + 7046.1 + 6982.7376",
+      "difficulty": {
+        "num_terms": [
+          2,
+          6
+        ],
+        "num_digits": [
+          1,
+          4
+        ],
+        "decimal_places": [
+          1,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "State the final answer to the following arithmetic problem: 6539.38 - 9708.5992 + 7295.3 - 8846.717 + 1284.177 - 3611.316 =",
+    "answer": "-7047.7752",
+    "metadata": {
+      "source_dataset": "decimal_chain_sum",
+      "source_index": 39,
+      "num_terms": 6,
+      "num_digits": 4,
+      "expression": "6539.38 - 9708.5992 + 7295.3 - 8846.717 + 1284.177 - 3611.316",
+      "difficulty": {
+        "num_terms": [
+          2,
+          6
+        ],
+        "num_digits": [
+          1,
+          4
+        ],
+        "decimal_places": [
+          1,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "State the final answer to the following arithmetic problem: 9275.14 + 5786.543 + 3942.70 =",
+    "answer": "19004.383",
+    "metadata": {
+      "source_dataset": "decimal_chain_sum",
+      "source_index": 40,
+      "num_terms": 3,
+      "num_digits": 4,
+      "expression": "9275.14 + 5786.543 + 3942.70",
+      "difficulty": {
+        "num_terms": [
+          2,
+          6
+        ],
+        "num_digits": [
+          1,
+          4
+        ],
+        "decimal_places": [
+          1,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "State the final answer to the following arithmetic problem: 2453.16 + 3098.62 - 7200.29 + 1563.461 - 1805.5 =",
+    "answer": "-1890.549",
+    "metadata": {
+      "source_dataset": "decimal_chain_sum",
+      "source_index": 41,
+      "num_terms": 5,
+      "num_digits": 4,
+      "expression": "2453.16 + 3098.62 - 7200.29 + 1563.461 - 1805.5",
+      "difficulty": {
+        "num_terms": [
+          2,
+          6
+        ],
+        "num_digits": [
+          1,
+          4
+        ],
+        "decimal_places": [
+          1,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "State the final answer to the following arithmetic problem: 7.87 - 0.3462 - 8.9927 - 5.874 =",
+    "answer": "-7.3429",
+    "metadata": {
+      "source_dataset": "decimal_chain_sum",
+      "source_index": 42,
+      "num_terms": 4,
+      "num_digits": 1,
+      "expression": "7.87 - 0.3462 - 8.9927 - 5.874",
+      "difficulty": {
+        "num_terms": [
+          2,
+          6
+        ],
+        "num_digits": [
+          1,
+          4
+        ],
+        "decimal_places": [
+          1,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "State the final answer to the following arithmetic problem: 5.7169 + 3.649 - 3.78 =",
+    "answer": "5.5859",
+    "metadata": {
+      "source_dataset": "decimal_chain_sum",
+      "source_index": 43,
+      "num_terms": 3,
+      "num_digits": 1,
+      "expression": "5.7169 + 3.649 - 3.78",
+      "difficulty": {
+        "num_terms": [
+          2,
+          6
+        ],
+        "num_digits": [
+          1,
+          4
+        ],
+        "decimal_places": [
+          1,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "State the final answer to the following arithmetic problem: 860.7 + 112.205 =",
+    "answer": "972.905",
+    "metadata": {
+      "source_dataset": "decimal_chain_sum",
+      "source_index": 44,
+      "num_terms": 2,
+      "num_digits": 3,
+      "expression": "860.7 + 112.205",
+      "difficulty": {
+        "num_terms": [
+          2,
+          6
+        ],
+        "num_digits": [
+          1,
+          4
+        ],
+        "decimal_places": [
+          1,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "State the final answer to the following arithmetic problem: 79.472 - 23.115 + 45.5 =",
+    "answer": "101.857",
+    "metadata": {
+      "source_dataset": "decimal_chain_sum",
+      "source_index": 45,
+      "num_terms": 3,
+      "num_digits": 2,
+      "expression": "79.472 - 23.115 + 45.5",
+      "difficulty": {
+        "num_terms": [
+          2,
+          6
+        ],
+        "num_digits": [
+          1,
+          4
+        ],
+        "decimal_places": [
+          1,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "State the final answer to the following arithmetic problem: 52.2 - 33.804 - 90.3303 - 11.87 - 77.32 =",
+    "answer": "-161.1243",
+    "metadata": {
+      "source_dataset": "decimal_chain_sum",
+      "source_index": 46,
+      "num_terms": 5,
+      "num_digits": 2,
+      "expression": "52.2 - 33.804 - 90.3303 - 11.87 - 77.32",
+      "difficulty": {
+        "num_terms": [
+          2,
+          6
+        ],
+        "num_digits": [
+          1,
+          4
+        ],
+        "decimal_places": [
+          1,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "State the final answer to the following arithmetic problem: 243.7 + 452.52 =",
+    "answer": "696.22",
+    "metadata": {
+      "source_dataset": "decimal_chain_sum",
+      "source_index": 47,
+      "num_terms": 2,
+      "num_digits": 3,
+      "expression": "243.7 + 452.52",
+      "difficulty": {
+        "num_terms": [
+          2,
+          6
+        ],
+        "num_digits": [
+          1,
+          4
+        ],
+        "decimal_places": [
+          1,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "State the final answer to the following arithmetic problem: 7.690 - 9.937 - 9.6024 =",
+    "answer": "-11.8494",
+    "metadata": {
+      "source_dataset": "decimal_chain_sum",
+      "source_index": 48,
+      "num_terms": 3,
+      "num_digits": 1,
+      "expression": "7.690 - 9.937 - 9.6024",
+      "difficulty": {
+        "num_terms": [
+          2,
+          6
+        ],
+        "num_digits": [
+          1,
+          4
+        ],
+        "decimal_places": [
+          1,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "State the final answer to the following arithmetic problem: 97.68 - 96.8210 =",
+    "answer": "0.8590",
+    "metadata": {
+      "source_dataset": "decimal_chain_sum",
+      "source_index": 49,
+      "num_terms": 2,
+      "num_digits": 2,
+      "expression": "97.68 - 96.8210",
+      "difficulty": {
+        "num_terms": [
+          2,
+          6
+        ],
+        "num_digits": [
+          1,
+          4
+        ],
+        "decimal_places": [
+          1,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "State the final answer to the following arithmetic problem: 920.1 + 923.1712 + 998.13 - 788.3 - 880.983 =",
+    "answer": "1172.1182",
+    "metadata": {
+      "source_dataset": "decimal_chain_sum",
+      "source_index": 50,
+      "num_terms": 5,
+      "num_digits": 3,
+      "expression": "920.1 + 923.1712 + 998.13 - 788.3 - 880.983",
+      "difficulty": {
+        "num_terms": [
+          2,
+          6
+        ],
+        "num_digits": [
+          1,
+          4
+        ],
+        "decimal_places": [
+          1,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "State the final answer to the following arithmetic problem: 216.7027 + 194.7 - 463.25 + 251.2 - 276.4 =",
+    "answer": "-77.0473",
+    "metadata": {
+      "source_dataset": "decimal_chain_sum",
+      "source_index": 51,
+      "num_terms": 5,
+      "num_digits": 3,
+      "expression": "216.7027 + 194.7 - 463.25 + 251.2 - 276.4",
+      "difficulty": {
+        "num_terms": [
+          2,
+          6
+        ],
+        "num_digits": [
+          1,
+          4
+        ],
+        "decimal_places": [
+          1,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "State the final answer to the following arithmetic problem: 25.8133 - 45.113 + 48.861 + 65.8143 - 12.465 - 97.8 =",
+    "answer": "-14.8894",
+    "metadata": {
+      "source_dataset": "decimal_chain_sum",
+      "source_index": 52,
+      "num_terms": 6,
+      "num_digits": 2,
+      "expression": "25.8133 - 45.113 + 48.861 + 65.8143 - 12.465 - 97.8",
+      "difficulty": {
+        "num_terms": [
+          2,
+          6
+        ],
+        "num_digits": [
+          1,
+          4
+        ],
+        "decimal_places": [
+          1,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "State the final answer to the following arithmetic problem: 73.387 - 13.59 - 27.6 + 11.29 - 86.3 - 20.289 =",
+    "answer": "-63.102",
+    "metadata": {
+      "source_dataset": "decimal_chain_sum",
+      "source_index": 53,
+      "num_terms": 6,
+      "num_digits": 2,
+      "expression": "73.387 - 13.59 - 27.6 + 11.29 - 86.3 - 20.289",
+      "difficulty": {
+        "num_terms": [
+          2,
+          6
+        ],
+        "num_digits": [
+          1,
+          4
+        ],
+        "decimal_places": [
+          1,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "State the final answer to the following arithmetic problem: 789.517 - 505.6 - 310.2 - 198.42 =",
+    "answer": "-224.703",
+    "metadata": {
+      "source_dataset": "decimal_chain_sum",
+      "source_index": 54,
+      "num_terms": 4,
+      "num_digits": 3,
+      "expression": "789.517 - 505.6 - 310.2 - 198.42",
+      "difficulty": {
+        "num_terms": [
+          2,
+          6
+        ],
+        "num_digits": [
+          1,
+          4
+        ],
+        "decimal_places": [
+          1,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "State the final answer to the following arithmetic problem: 7095.6 - 1834.1 - 1360.172 =",
+    "answer": "3901.328",
+    "metadata": {
+      "source_dataset": "decimal_chain_sum",
+      "source_index": 55,
+      "num_terms": 3,
+      "num_digits": 4,
+      "expression": "7095.6 - 1834.1 - 1360.172",
+      "difficulty": {
+        "num_terms": [
+          2,
+          6
+        ],
+        "num_digits": [
+          1,
+          4
+        ],
+        "decimal_places": [
+          1,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "State the final answer to the following arithmetic problem: 5.507 + 6.1 - 0.6914 - 7.10 =",
+    "answer": "3.8156",
+    "metadata": {
+      "source_dataset": "decimal_chain_sum",
+      "source_index": 56,
+      "num_terms": 4,
+      "num_digits": 1,
+      "expression": "5.507 + 6.1 - 0.6914 - 7.10",
+      "difficulty": {
+        "num_terms": [
+          2,
+          6
+        ],
+        "num_digits": [
+          1,
+          4
+        ],
+        "decimal_places": [
+          1,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "State the final answer to the following arithmetic problem: 4278.4 + 3929.531 + 4772.4550 - 5070.6 + 3183.7358 =",
+    "answer": "11093.5218",
+    "metadata": {
+      "source_dataset": "decimal_chain_sum",
+      "source_index": 57,
+      "num_terms": 5,
+      "num_digits": 4,
+      "expression": "4278.4 + 3929.531 + 4772.4550 - 5070.6 + 3183.7358",
+      "difficulty": {
+        "num_terms": [
+          2,
+          6
+        ],
+        "num_digits": [
+          1,
+          4
+        ],
+        "decimal_places": [
+          1,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "State the final answer to the following arithmetic problem: 8453.645 - 3863.2987 - 7439.2 =",
+    "answer": "-2848.8537",
+    "metadata": {
+      "source_dataset": "decimal_chain_sum",
+      "source_index": 58,
+      "num_terms": 3,
+      "num_digits": 4,
+      "expression": "8453.645 - 3863.2987 - 7439.2",
+      "difficulty": {
+        "num_terms": [
+          2,
+          6
+        ],
+        "num_digits": [
+          1,
+          4
+        ],
+        "decimal_places": [
+          1,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "State the final answer to the following arithmetic problem: 79.66 - 55.19 - 69.361 + 16.4166 - 94.30 - 74.190 =",
+    "answer": "-196.9644",
+    "metadata": {
+      "source_dataset": "decimal_chain_sum",
+      "source_index": 59,
+      "num_terms": 6,
+      "num_digits": 2,
+      "expression": "79.66 - 55.19 - 69.361 + 16.4166 - 94.30 - 74.190",
+      "difficulty": {
+        "num_terms": [
+          2,
+          6
+        ],
+        "num_digits": [
+          1,
+          4
+        ],
+        "decimal_places": [
+          1,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "State the final answer to the following arithmetic problem: 273.89 + 667.8030 + 829.679 =",
+    "answer": "1771.3720",
+    "metadata": {
+      "source_dataset": "decimal_chain_sum",
+      "source_index": 60,
+      "num_terms": 3,
+      "num_digits": 3,
+      "expression": "273.89 + 667.8030 + 829.679",
+      "difficulty": {
+        "num_terms": [
+          2,
+          6
+        ],
+        "num_digits": [
+          1,
+          4
+        ],
+        "decimal_places": [
+          1,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "State the final answer to the following arithmetic problem: 98.2347 + 19.3164 + 87.327 + 25.1 - 93.1721 =",
+    "answer": "136.8060",
+    "metadata": {
+      "source_dataset": "decimal_chain_sum",
+      "source_index": 61,
+      "num_terms": 5,
+      "num_digits": 2,
+      "expression": "98.2347 + 19.3164 + 87.327 + 25.1 - 93.1721",
+      "difficulty": {
+        "num_terms": [
+          2,
+          6
+        ],
+        "num_digits": [
+          1,
+          4
+        ],
+        "decimal_places": [
+          1,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "State the final answer to the following arithmetic problem: 39.830 + 60.3 =",
+    "answer": "100.130",
+    "metadata": {
+      "source_dataset": "decimal_chain_sum",
+      "source_index": 62,
+      "num_terms": 2,
+      "num_digits": 2,
+      "expression": "39.830 + 60.3",
+      "difficulty": {
+        "num_terms": [
+          2,
+          6
+        ],
+        "num_digits": [
+          1,
+          4
+        ],
+        "decimal_places": [
+          1,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "State the final answer to the following arithmetic problem: 694.202 - 909.775 - 211.60 - 102.459 + 419.31 + 636.65 =",
+    "answer": "526.328",
+    "metadata": {
+      "source_dataset": "decimal_chain_sum",
+      "source_index": 63,
+      "num_terms": 6,
+      "num_digits": 3,
+      "expression": "694.202 - 909.775 - 211.60 - 102.459 + 419.31 + 636.65",
+      "difficulty": {
+        "num_terms": [
+          2,
+          6
+        ],
+        "num_digits": [
+          1,
+          4
+        ],
+        "decimal_places": [
+          1,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "State the final answer to the following arithmetic problem: 8.8 - 8.93 - 7.5634 - 0.806 + 4.4650 =",
+    "answer": "-4.0344",
+    "metadata": {
+      "source_dataset": "decimal_chain_sum",
+      "source_index": 64,
+      "num_terms": 5,
+      "num_digits": 1,
+      "expression": "8.8 - 8.93 - 7.5634 - 0.806 + 4.4650",
+      "difficulty": {
+        "num_terms": [
+          2,
+          6
+        ],
+        "num_digits": [
+          1,
+          4
+        ],
+        "decimal_places": [
+          1,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "State the final answer to the following arithmetic problem: 8905.5843 - 6062.1 - 3257.825 =",
+    "answer": "-414.3407",
+    "metadata": {
+      "source_dataset": "decimal_chain_sum",
+      "source_index": 65,
+      "num_terms": 3,
+      "num_digits": 4,
+      "expression": "8905.5843 - 6062.1 - 3257.825",
+      "difficulty": {
+        "num_terms": [
+          2,
+          6
+        ],
+        "num_digits": [
+          1,
+          4
+        ],
+        "decimal_places": [
+          1,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "State the final answer to the following arithmetic problem: 6.37 - 4.3 + 6.306 =",
+    "answer": "8.376",
+    "metadata": {
+      "source_dataset": "decimal_chain_sum",
+      "source_index": 66,
+      "num_terms": 3,
+      "num_digits": 1,
+      "expression": "6.37 - 4.3 + 6.306",
+      "difficulty": {
+        "num_terms": [
+          2,
+          6
+        ],
+        "num_digits": [
+          1,
+          4
+        ],
+        "decimal_places": [
+          1,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "State the final answer to the following arithmetic problem: 68.9 - 67.20 - 80.4857 + 17.561 =",
+    "answer": "-61.2247",
+    "metadata": {
+      "source_dataset": "decimal_chain_sum",
+      "source_index": 67,
+      "num_terms": 4,
+      "num_digits": 2,
+      "expression": "68.9 - 67.20 - 80.4857 + 17.561",
+      "difficulty": {
+        "num_terms": [
+          2,
+          6
+        ],
+        "num_digits": [
+          1,
+          4
+        ],
+        "decimal_places": [
+          1,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "State the final answer to the following arithmetic problem: 62.9 - 71.2324 + 45.254 - 91.8 - 79.1 =",
+    "answer": "-133.9784",
+    "metadata": {
+      "source_dataset": "decimal_chain_sum",
+      "source_index": 68,
+      "num_terms": 5,
+      "num_digits": 2,
+      "expression": "62.9 - 71.2324 + 45.254 - 91.8 - 79.1",
+      "difficulty": {
+        "num_terms": [
+          2,
+          6
+        ],
+        "num_digits": [
+          1,
+          4
+        ],
+        "decimal_places": [
+          1,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "State the final answer to the following arithmetic problem: 605.7908 + 298.81 - 507.39 =",
+    "answer": "397.2108",
+    "metadata": {
+      "source_dataset": "decimal_chain_sum",
+      "source_index": 69,
+      "num_terms": 3,
+      "num_digits": 3,
+      "expression": "605.7908 + 298.81 - 507.39",
+      "difficulty": {
+        "num_terms": [
+          2,
+          6
+        ],
+        "num_digits": [
+          1,
+          4
+        ],
+        "decimal_places": [
+          1,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "State the final answer to the following arithmetic problem: 816.59 - 576.709 - 531.40 + 869.8471 + 779.8 =",
+    "answer": "1358.1281",
+    "metadata": {
+      "source_dataset": "decimal_chain_sum",
+      "source_index": 70,
+      "num_terms": 5,
+      "num_digits": 3,
+      "expression": "816.59 - 576.709 - 531.40 + 869.8471 + 779.8",
+      "difficulty": {
+        "num_terms": [
+          2,
+          6
+        ],
+        "num_digits": [
+          1,
+          4
+        ],
+        "decimal_places": [
+          1,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "State the final answer to the following arithmetic problem: 118.546 + 589.13 =",
+    "answer": "707.676",
+    "metadata": {
+      "source_dataset": "decimal_chain_sum",
+      "source_index": 71,
+      "num_terms": 2,
+      "num_digits": 3,
+      "expression": "118.546 + 589.13",
+      "difficulty": {
+        "num_terms": [
+          2,
+          6
+        ],
+        "num_digits": [
+          1,
+          4
+        ],
+        "decimal_places": [
+          1,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "State the final answer to the following arithmetic problem: 5.2 - 3.78 - 9.957 =",
+    "answer": "-8.537",
+    "metadata": {
+      "source_dataset": "decimal_chain_sum",
+      "source_index": 72,
+      "num_terms": 3,
+      "num_digits": 1,
+      "expression": "5.2 - 3.78 - 9.957",
+      "difficulty": {
+        "num_terms": [
+          2,
+          6
+        ],
+        "num_digits": [
+          1,
+          4
+        ],
+        "decimal_places": [
+          1,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "State the final answer to the following arithmetic problem: 24.163 + 78.660 + 24.664 - 52.3351 =",
+    "answer": "75.1519",
+    "metadata": {
+      "source_dataset": "decimal_chain_sum",
+      "source_index": 73,
+      "num_terms": 4,
+      "num_digits": 2,
+      "expression": "24.163 + 78.660 + 24.664 - 52.3351",
+      "difficulty": {
+        "num_terms": [
+          2,
+          6
+        ],
+        "num_digits": [
+          1,
+          4
+        ],
+        "decimal_places": [
+          1,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "State the final answer to the following arithmetic problem: 108.2199 - 870.8404 + 761.18 + 223.422 - 855.9459 - 235.6273 =",
+    "answer": "-869.5917",
+    "metadata": {
+      "source_dataset": "decimal_chain_sum",
+      "source_index": 74,
+      "num_terms": 6,
+      "num_digits": 3,
+      "expression": "108.2199 - 870.8404 + 761.18 + 223.422 - 855.9459 - 235.6273",
+      "difficulty": {
+        "num_terms": [
+          2,
+          6
+        ],
+        "num_digits": [
+          1,
+          4
+        ],
+        "decimal_places": [
+          1,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "State the final answer to the following arithmetic problem: 31.77 - 36.6423 + 61.6 =",
+    "answer": "56.7277",
+    "metadata": {
+      "source_dataset": "decimal_chain_sum",
+      "source_index": 75,
+      "num_terms": 3,
+      "num_digits": 2,
+      "expression": "31.77 - 36.6423 + 61.6",
+      "difficulty": {
+        "num_terms": [
+          2,
+          6
+        ],
+        "num_digits": [
+          1,
+          4
+        ],
+        "decimal_places": [
+          1,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "State the final answer to the following arithmetic problem: 201.439 - 819.1 - 470.722 =",
+    "answer": "-1088.383",
+    "metadata": {
+      "source_dataset": "decimal_chain_sum",
+      "source_index": 76,
+      "num_terms": 3,
+      "num_digits": 3,
+      "expression": "201.439 - 819.1 - 470.722",
+      "difficulty": {
+        "num_terms": [
+          2,
+          6
+        ],
+        "num_digits": [
+          1,
+          4
+        ],
+        "decimal_places": [
+          1,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "State the final answer to the following arithmetic problem: 78.3 - 95.5 + 80.5562 - 65.36 =",
+    "answer": "-2.0038",
+    "metadata": {
+      "source_dataset": "decimal_chain_sum",
+      "source_index": 77,
+      "num_terms": 4,
+      "num_digits": 2,
+      "expression": "78.3 - 95.5 + 80.5562 - 65.36",
+      "difficulty": {
+        "num_terms": [
+          2,
+          6
+        ],
+        "num_digits": [
+          1,
+          4
+        ],
+        "decimal_places": [
+          1,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "State the final answer to the following arithmetic problem: 34.857 - 91.30 + 85.23 - 95.823 - 69.788 - 21.424 =",
+    "answer": "-158.248",
+    "metadata": {
+      "source_dataset": "decimal_chain_sum",
+      "source_index": 78,
+      "num_terms": 6,
+      "num_digits": 2,
+      "expression": "34.857 - 91.30 + 85.23 - 95.823 - 69.788 - 21.424",
+      "difficulty": {
+        "num_terms": [
+          2,
+          6
+        ],
+        "num_digits": [
+          1,
+          4
+        ],
+        "decimal_places": [
+          1,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "State the final answer to the following arithmetic problem: 84.52 + 60.46 =",
+    "answer": "144.98",
+    "metadata": {
+      "source_dataset": "decimal_chain_sum",
+      "source_index": 79,
+      "num_terms": 2,
+      "num_digits": 2,
+      "expression": "84.52 + 60.46",
+      "difficulty": {
+        "num_terms": [
+          2,
+          6
+        ],
+        "num_digits": [
+          1,
+          4
+        ],
+        "decimal_places": [
+          1,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "State the final answer to the following arithmetic problem: 86.58 + 48.3 - 19.890 + 56.6384 - 38.45 + 68.8721 =",
+    "answer": "202.0505",
+    "metadata": {
+      "source_dataset": "decimal_chain_sum",
+      "source_index": 80,
+      "num_terms": 6,
+      "num_digits": 2,
+      "expression": "86.58 + 48.3 - 19.890 + 56.6384 - 38.45 + 68.8721",
+      "difficulty": {
+        "num_terms": [
+          2,
+          6
+        ],
+        "num_digits": [
+          1,
+          4
+        ],
+        "decimal_places": [
+          1,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "State the final answer to the following arithmetic problem: 189.2764 + 887.958 =",
+    "answer": "1077.2344",
+    "metadata": {
+      "source_dataset": "decimal_chain_sum",
+      "source_index": 81,
+      "num_terms": 2,
+      "num_digits": 3,
+      "expression": "189.2764 + 887.958",
+      "difficulty": {
+        "num_terms": [
+          2,
+          6
+        ],
+        "num_digits": [
+          1,
+          4
+        ],
+        "decimal_places": [
+          1,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "State the final answer to the following arithmetic problem: 2.506 + 0.5 - 6.935 - 4.63 =",
+    "answer": "-8.559",
+    "metadata": {
+      "source_dataset": "decimal_chain_sum",
+      "source_index": 82,
+      "num_terms": 4,
+      "num_digits": 1,
+      "expression": "2.506 + 0.5 - 6.935 - 4.63",
+      "difficulty": {
+        "num_terms": [
+          2,
+          6
+        ],
+        "num_digits": [
+          1,
+          4
+        ],
+        "decimal_places": [
+          1,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "State the final answer to the following arithmetic problem: 86.87 + 48.413 + 82.88 =",
+    "answer": "218.163",
+    "metadata": {
+      "source_dataset": "decimal_chain_sum",
+      "source_index": 83,
+      "num_terms": 3,
+      "num_digits": 2,
+      "expression": "86.87 + 48.413 + 82.88",
+      "difficulty": {
+        "num_terms": [
+          2,
+          6
+        ],
+        "num_digits": [
+          1,
+          4
+        ],
+        "decimal_places": [
+          1,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "State the final answer to the following arithmetic problem: 9.5856 - 9.78 + 7.28 - 3.55 - 2.4281 - 7.8 =",
+    "answer": "-6.6925",
+    "metadata": {
+      "source_dataset": "decimal_chain_sum",
+      "source_index": 84,
+      "num_terms": 6,
+      "num_digits": 1,
+      "expression": "9.5856 - 9.78 + 7.28 - 3.55 - 2.4281 - 7.8",
+      "difficulty": {
+        "num_terms": [
+          2,
+          6
+        ],
+        "num_digits": [
+          1,
+          4
+        ],
+        "decimal_places": [
+          1,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "State the final answer to the following arithmetic problem: 0.517 - 0.39 =",
+    "answer": "0.127",
+    "metadata": {
+      "source_dataset": "decimal_chain_sum",
+      "source_index": 85,
+      "num_terms": 2,
+      "num_digits": 1,
+      "expression": "0.517 - 0.39",
+      "difficulty": {
+        "num_terms": [
+          2,
+          6
+        ],
+        "num_digits": [
+          1,
+          4
+        ],
+        "decimal_places": [
+          1,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "State the final answer to the following arithmetic problem: 9380.6220 - 6963.9 + 3196.42 =",
+    "answer": "5613.1420",
+    "metadata": {
+      "source_dataset": "decimal_chain_sum",
+      "source_index": 86,
+      "num_terms": 3,
+      "num_digits": 4,
+      "expression": "9380.6220 - 6963.9 + 3196.42",
+      "difficulty": {
+        "num_terms": [
+          2,
+          6
+        ],
+        "num_digits": [
+          1,
+          4
+        ],
+        "decimal_places": [
+          1,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "State the final answer to the following arithmetic problem: 147.27 - 811.8 + 508.86 - 746.68 + 330.237 - 437.23 =",
+    "answer": "-1009.343",
+    "metadata": {
+      "source_dataset": "decimal_chain_sum",
+      "source_index": 87,
+      "num_terms": 6,
+      "num_digits": 3,
+      "expression": "147.27 - 811.8 + 508.86 - 746.68 + 330.237 - 437.23",
+      "difficulty": {
+        "num_terms": [
+          2,
+          6
+        ],
+        "num_digits": [
+          1,
+          4
+        ],
+        "decimal_places": [
+          1,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "State the final answer to the following arithmetic problem: 5478.121 - 8211.63 - 8518.128 - 1359.6 - 6871.28 - 4932.128 =",
+    "answer": "-24414.645",
+    "metadata": {
+      "source_dataset": "decimal_chain_sum",
+      "source_index": 88,
+      "num_terms": 6,
+      "num_digits": 4,
+      "expression": "5478.121 - 8211.63 - 8518.128 - 1359.6 - 6871.28 - 4932.128",
+      "difficulty": {
+        "num_terms": [
+          2,
+          6
+        ],
+        "num_digits": [
+          1,
+          4
+        ],
+        "decimal_places": [
+          1,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "State the final answer to the following arithmetic problem: 888.456 - 620.2 - 189.3815 + 502.4 =",
+    "answer": "581.2745",
+    "metadata": {
+      "source_dataset": "decimal_chain_sum",
+      "source_index": 89,
+      "num_terms": 4,
+      "num_digits": 3,
+      "expression": "888.456 - 620.2 - 189.3815 + 502.4",
+      "difficulty": {
+        "num_terms": [
+          2,
+          6
+        ],
+        "num_digits": [
+          1,
+          4
+        ],
+        "decimal_places": [
+          1,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "State the final answer to the following arithmetic problem: 62.4 - 17.8 - 31.31 - 15.7572 - 49.353 =",
+    "answer": "-51.8202",
+    "metadata": {
+      "source_dataset": "decimal_chain_sum",
+      "source_index": 90,
+      "num_terms": 5,
+      "num_digits": 2,
+      "expression": "62.4 - 17.8 - 31.31 - 15.7572 - 49.353",
+      "difficulty": {
+        "num_terms": [
+          2,
+          6
+        ],
+        "num_digits": [
+          1,
+          4
+        ],
+        "decimal_places": [
+          1,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "State the final answer to the following arithmetic problem: 593.392 - 430.4 + 887.1 + 730.485 - 927.615 =",
+    "answer": "852.962",
+    "metadata": {
+      "source_dataset": "decimal_chain_sum",
+      "source_index": 91,
+      "num_terms": 5,
+      "num_digits": 3,
+      "expression": "593.392 - 430.4 + 887.1 + 730.485 - 927.615",
+      "difficulty": {
+        "num_terms": [
+          2,
+          6
+        ],
+        "num_digits": [
+          1,
+          4
+        ],
+        "decimal_places": [
+          1,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "State the final answer to the following arithmetic problem: 81.5079 - 91.9 - 26.8465 - 13.13 + 93.2682 =",
+    "answer": "42.8996",
+    "metadata": {
+      "source_dataset": "decimal_chain_sum",
+      "source_index": 92,
+      "num_terms": 5,
+      "num_digits": 2,
+      "expression": "81.5079 - 91.9 - 26.8465 - 13.13 + 93.2682",
+      "difficulty": {
+        "num_terms": [
+          2,
+          6
+        ],
+        "num_digits": [
+          1,
+          4
+        ],
+        "decimal_places": [
+          1,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "State the final answer to the following arithmetic problem: 599.3 - 400.7118 - 940.751 - 822.5 =",
+    "answer": "-1564.6628",
+    "metadata": {
+      "source_dataset": "decimal_chain_sum",
+      "source_index": 93,
+      "num_terms": 4,
+      "num_digits": 3,
+      "expression": "599.3 - 400.7118 - 940.751 - 822.5",
+      "difficulty": {
+        "num_terms": [
+          2,
+          6
+        ],
+        "num_digits": [
+          1,
+          4
+        ],
+        "decimal_places": [
+          1,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "State the final answer to the following arithmetic problem: 9652.87 - 1994.16 - 8096.4271 - 9112.4 + 4303.87 + 7925.5 =",
+    "answer": "2679.2529",
+    "metadata": {
+      "source_dataset": "decimal_chain_sum",
+      "source_index": 94,
+      "num_terms": 6,
+      "num_digits": 4,
+      "expression": "9652.87 - 1994.16 - 8096.4271 - 9112.4 + 4303.87 + 7925.5",
+      "difficulty": {
+        "num_terms": [
+          2,
+          6
+        ],
+        "num_digits": [
+          1,
+          4
+        ],
+        "decimal_places": [
+          1,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "State the final answer to the following arithmetic problem: 62.72 + 51.54 =",
+    "answer": "114.26",
+    "metadata": {
+      "source_dataset": "decimal_chain_sum",
+      "source_index": 95,
+      "num_terms": 2,
+      "num_digits": 2,
+      "expression": "62.72 + 51.54",
+      "difficulty": {
+        "num_terms": [
+          2,
+          6
+        ],
+        "num_digits": [
+          1,
+          4
+        ],
+        "decimal_places": [
+          1,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "State the final answer to the following arithmetic problem: 8374.249 - 5939.66 + 4411.31 =",
+    "answer": "6845.899",
+    "metadata": {
+      "source_dataset": "decimal_chain_sum",
+      "source_index": 96,
+      "num_terms": 3,
+      "num_digits": 4,
+      "expression": "8374.249 - 5939.66 + 4411.31",
+      "difficulty": {
+        "num_terms": [
+          2,
+          6
+        ],
+        "num_digits": [
+          1,
+          4
+        ],
+        "decimal_places": [
+          1,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "State the final answer to the following arithmetic problem: 866.5 + 660.458 =",
+    "answer": "1526.958",
+    "metadata": {
+      "source_dataset": "decimal_chain_sum",
+      "source_index": 97,
+      "num_terms": 2,
+      "num_digits": 3,
+      "expression": "866.5 + 660.458",
+      "difficulty": {
+        "num_terms": [
+          2,
+          6
+        ],
+        "num_digits": [
+          1,
+          4
+        ],
+        "decimal_places": [
+          1,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "State the final answer to the following arithmetic problem: 4.1 + 0.75 =",
+    "answer": "4.85",
+    "metadata": {
+      "source_dataset": "decimal_chain_sum",
+      "source_index": 98,
+      "num_terms": 2,
+      "num_digits": 1,
+      "expression": "4.1 + 0.75",
+      "difficulty": {
+        "num_terms": [
+          2,
+          6
+        ],
+        "num_digits": [
+          1,
+          4
+        ],
+        "decimal_places": [
+          1,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "State the final answer to the following arithmetic problem: 9.627 + 7.6 - 2.733 - 9.8924 + 7.79 - 0.289 =",
+    "answer": "12.1026",
+    "metadata": {
+      "source_dataset": "decimal_chain_sum",
+      "source_index": 99,
+      "num_terms": 6,
+      "num_digits": 1,
+      "expression": "9.627 + 7.6 - 2.733 - 9.8924 + 7.79 - 0.289",
+      "difficulty": {
+        "num_terms": [
+          2,
+          6
+        ],
+        "num_digits": [
+          1,
+          4
+        ],
+        "decimal_places": [
+          1,
+          4
+        ]
+      }
+    }
+  }
+]

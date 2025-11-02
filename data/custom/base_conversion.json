@@ -1,0 +1,2302 @@
+[
+  {
+    "question": "Your task is to convert a number between two different bases.\n\nIf the target base is > 10, use lowercase letters a-z for digits above 9.\n\nNow, convert the base-3 number 220020 to binary\n",
+    "answer": "1010001110",
+    "metadata": {
+      "source_dataset": "base_conversion",
+      "source_index": 0,
+      "decimal_value": 654,
+      "source_base": 3,
+      "target_base": 2,
+      "source_repr": "220020",
+      "target_repr": "1010001110",
+      "difficulty": {
+        "base": [
+          2,
+          16
+        ],
+        "value": [
+          0,
+          1000
+        ]
+      }
+    }
+  },
+  {
+    "question": "Your task is to convert a number between two different bases.\n\nIf the target base is > 10, use lowercase letters a-z for digits above 9.\n\nNow, convert the base-6 number 103 to base-13\n",
+    "answer": "30",
+    "metadata": {
+      "source_dataset": "base_conversion",
+      "source_index": 1,
+      "decimal_value": 39,
+      "source_base": 6,
+      "target_base": 13,
+      "source_repr": "103",
+      "target_repr": "30",
+      "difficulty": {
+        "base": [
+          2,
+          16
+        ],
+        "value": [
+          0,
+          1000
+        ]
+      }
+    }
+  },
+  {
+    "question": "Your task is to convert a number between two different bases.\n\nIf the target base is > 10, use lowercase letters a-z for digits above 9.\n\nNow, convert the base-10 number 418 to base-13\n",
+    "answer": "262",
+    "metadata": {
+      "source_dataset": "base_conversion",
+      "source_index": 2,
+      "decimal_value": 418,
+      "source_base": 10,
+      "target_base": 13,
+      "source_repr": "418",
+      "target_repr": "262",
+      "difficulty": {
+        "base": [
+          2,
+          16
+        ],
+        "value": [
+          0,
+          1000
+        ]
+      }
+    }
+  },
+  {
+    "question": "Your task is to convert a number between two different bases.\n\nIf the target base is > 10, use lowercase letters a-z for digits above 9.\n\nNow, convert the base-8 number 426 to base-9\n",
+    "answer": "338",
+    "metadata": {
+      "source_dataset": "base_conversion",
+      "source_index": 3,
+      "decimal_value": 278,
+      "source_base": 8,
+      "target_base": 9,
+      "source_repr": "426",
+      "target_repr": "338",
+      "difficulty": {
+        "base": [
+          2,
+          16
+        ],
+        "value": [
+          0,
+          1000
+        ]
+      }
+    }
+  },
+  {
+    "question": "Your task is to convert a number between two different bases.\n\nIf the target base is > 10, use lowercase letters a-z for digits above 9.\n\nNow, convert the base-3 number 1020200 to base-8\n",
+    "answer": "1615",
+    "metadata": {
+      "source_dataset": "base_conversion",
+      "source_index": 4,
+      "decimal_value": 909,
+      "source_base": 3,
+      "target_base": 8,
+      "source_repr": "1020200",
+      "target_repr": "1615",
+      "difficulty": {
+        "base": [
+          2,
+          16
+        ],
+        "value": [
+          0,
+          1000
+        ]
+      }
+    }
+  },
+  {
+    "question": "Your task is to convert a number between two different bases.\n\nIf the target base is > 10, use lowercase letters a-z for digits above 9.\n\nNow, convert the base-3 number 111100 to base-8\n",
+    "answer": "550",
+    "metadata": {
+      "source_dataset": "base_conversion",
+      "source_index": 5,
+      "decimal_value": 360,
+      "source_base": 3,
+      "target_base": 8,
+      "source_repr": "111100",
+      "target_repr": "550",
+      "difficulty": {
+        "base": [
+          2,
+          16
+        ],
+        "value": [
+          0,
+          1000
+        ]
+      }
+    }
+  },
+  {
+    "question": "Your task is to convert a number between two different bases.\n\nIf the target base is > 10, use lowercase letters a-z for digits above 9.\n\nNow, convert the base-7 number 1431 to base-4\n",
+    "answer": "20301",
+    "metadata": {
+      "source_dataset": "base_conversion",
+      "source_index": 6,
+      "decimal_value": 561,
+      "source_base": 7,
+      "target_base": 4,
+      "source_repr": "1431",
+      "target_repr": "20301",
+      "difficulty": {
+        "base": [
+          2,
+          16
+        ],
+        "value": [
+          0,
+          1000
+        ]
+      }
+    }
+  },
+  {
+    "question": "Your task is to convert a number between two different bases.\n\nIf the target base is > 10, use lowercase letters a-z for digits above 9.\n\nNow, convert the base-7 number 125 to base-8\n",
+    "answer": "104",
+    "metadata": {
+      "source_dataset": "base_conversion",
+      "source_index": 7,
+      "decimal_value": 68,
+      "source_base": 7,
+      "target_base": 8,
+      "source_repr": "125",
+      "target_repr": "104",
+      "difficulty": {
+        "base": [
+          2,
+          16
+        ],
+        "value": [
+          0,
+          1000
+        ]
+      }
+    }
+  },
+  {
+    "question": "Your task is to convert a number between two different bases.\n\nIf the target base is > 10, use lowercase letters a-z for digits above 9.\n\nNow, convert the base-15 number 23e to base-6\n",
+    "answer": "2205",
+    "metadata": {
+      "source_dataset": "base_conversion",
+      "source_index": 8,
+      "decimal_value": 509,
+      "source_base": 15,
+      "target_base": 6,
+      "source_repr": "23e",
+      "target_repr": "2205",
+      "difficulty": {
+        "base": [
+          2,
+          16
+        ],
+        "value": [
+          0,
+          1000
+        ]
+      }
+    }
+  },
+  {
+    "question": "Your task is to convert a number between two different bases.\n\nIf the target base is > 10, use lowercase letters a-z for digits above 9.\n\nNow, convert the base-15 number 119 to base-10\n",
+    "answer": "249",
+    "metadata": {
+      "source_dataset": "base_conversion",
+      "source_index": 9,
+      "decimal_value": 249,
+      "source_base": 15,
+      "target_base": 10,
+      "source_repr": "119",
+      "target_repr": "249",
+      "difficulty": {
+        "base": [
+          2,
+          16
+        ],
+        "value": [
+          0,
+          1000
+        ]
+      }
+    }
+  },
+  {
+    "question": "Your task is to convert a number between two different bases.\n\nIf the target base is > 10, use lowercase letters a-z for digits above 9.\n\nNow, convert the binary number 100010010 to hexadecimal\n",
+    "answer": "112",
+    "metadata": {
+      "source_dataset": "base_conversion",
+      "source_index": 10,
+      "decimal_value": 274,
+      "source_base": 2,
+      "target_base": 16,
+      "source_repr": "100010010",
+      "target_repr": "112",
+      "difficulty": {
+        "base": [
+          2,
+          16
+        ],
+        "value": [
+          0,
+          1000
+        ]
+      }
+    }
+  },
+  {
+    "question": "Your task is to convert a number between two different bases.\n\nIf the target base is > 10, use lowercase letters a-z for digits above 9.\n\nNow, convert the base-15 number 2c1 to hexadecimal\n",
+    "answer": "277",
+    "metadata": {
+      "source_dataset": "base_conversion",
+      "source_index": 11,
+      "decimal_value": 631,
+      "source_base": 15,
+      "target_base": 16,
+      "source_repr": "2c1",
+      "target_repr": "277",
+      "difficulty": {
+        "base": [
+          2,
+          16
+        ],
+        "value": [
+          0,
+          1000
+        ]
+      }
+    }
+  },
+  {
+    "question": "Your task is to convert a number between two different bases.\n\nIf the target base is > 10, use lowercase letters a-z for digits above 9.\n\nNow, convert the base-4 number 32213 to base-9\n",
+    "answer": "1248",
+    "metadata": {
+      "source_dataset": "base_conversion",
+      "source_index": 12,
+      "decimal_value": 935,
+      "source_base": 4,
+      "target_base": 9,
+      "source_repr": "32213",
+      "target_repr": "1248",
+      "difficulty": {
+        "base": [
+          2,
+          16
+        ],
+        "value": [
+          0,
+          1000
+        ]
+      }
+    }
+  },
+  {
+    "question": "Your task is to convert a number between two different bases.\n\nIf the target base is > 10, use lowercase letters a-z for digits above 9.\n\nNow, convert the base-5 number 332 to base-4\n",
+    "answer": "1130",
+    "metadata": {
+      "source_dataset": "base_conversion",
+      "source_index": 13,
+      "decimal_value": 92,
+      "source_base": 5,
+      "target_base": 4,
+      "source_repr": "332",
+      "target_repr": "1130",
+      "difficulty": {
+        "base": [
+          2,
+          16
+        ],
+        "value": [
+          0,
+          1000
+        ]
+      }
+    }
+  },
+  {
+    "question": "Your task is to convert a number between two different bases.\n\nIf the target base is > 10, use lowercase letters a-z for digits above 9.\n\nNow, convert the base-15 number 45e to base-10\n",
+    "answer": "989",
+    "metadata": {
+      "source_dataset": "base_conversion",
+      "source_index": 14,
+      "decimal_value": 989,
+      "source_base": 15,
+      "target_base": 10,
+      "source_repr": "45e",
+      "target_repr": "989",
+      "difficulty": {
+        "base": [
+          2,
+          16
+        ],
+        "value": [
+          0,
+          1000
+        ]
+      }
+    }
+  },
+  {
+    "question": "Your task is to convert a number between two different bases.\n\nIf the target base is > 10, use lowercase letters a-z for digits above 9.\n\nNow, convert the base-7 number 61 to base-11\n",
+    "answer": "3a",
+    "metadata": {
+      "source_dataset": "base_conversion",
+      "source_index": 15,
+      "decimal_value": 43,
+      "source_base": 7,
+      "target_base": 11,
+      "source_repr": "61",
+      "target_repr": "3a",
+      "difficulty": {
+        "base": [
+          2,
+          16
+        ],
+        "value": [
+          0,
+          1000
+        ]
+      }
+    }
+  },
+  {
+    "question": "Your task is to convert a number between two different bases.\n\nIf the target base is > 10, use lowercase letters a-z for digits above 9.\n\nNow, convert the base-5 number 4334 to base-13\n",
+    "answer": "369",
+    "metadata": {
+      "source_dataset": "base_conversion",
+      "source_index": 16,
+      "decimal_value": 594,
+      "source_base": 5,
+      "target_base": 13,
+      "source_repr": "4334",
+      "target_repr": "369",
+      "difficulty": {
+        "base": [
+          2,
+          16
+        ],
+        "value": [
+          0,
+          1000
+        ]
+      }
+    }
+  },
+  {
+    "question": "Your task is to convert a number between two different bases.\n\nIf the target base is > 10, use lowercase letters a-z for digits above 9.\n\nNow, convert the base-3 number 22111 to hexadecimal\n",
+    "answer": "e5",
+    "metadata": {
+      "source_dataset": "base_conversion",
+      "source_index": 17,
+      "decimal_value": 229,
+      "source_base": 3,
+      "target_base": 16,
+      "source_repr": "22111",
+      "target_repr": "e5",
+      "difficulty": {
+        "base": [
+          2,
+          16
+        ],
+        "value": [
+          0,
+          1000
+        ]
+      }
+    }
+  },
+  {
+    "question": "Your task is to convert a number between two different bases.\n\nIf the target base is > 10, use lowercase letters a-z for digits above 9.\n\nNow, convert the base-6 number 1243 to base-11\n",
+    "answer": "267",
+    "metadata": {
+      "source_dataset": "base_conversion",
+      "source_index": 18,
+      "decimal_value": 315,
+      "source_base": 6,
+      "target_base": 11,
+      "source_repr": "1243",
+      "target_repr": "267",
+      "difficulty": {
+        "base": [
+          2,
+          16
+        ],
+        "value": [
+          0,
+          1000
+        ]
+      }
+    }
+  },
+  {
+    "question": "Your task is to convert a number between two different bases.\n\nIf the target base is > 10, use lowercase letters a-z for digits above 9.\n\nNow, convert the base-4 number 13322 to base-10\n",
+    "answer": "506",
+    "metadata": {
+      "source_dataset": "base_conversion",
+      "source_index": 19,
+      "decimal_value": 506,
+      "source_base": 4,
+      "target_base": 10,
+      "source_repr": "13322",
+      "target_repr": "506",
+      "difficulty": {
+        "base": [
+          2,
+          16
+        ],
+        "value": [
+          0,
+          1000
+        ]
+      }
+    }
+  },
+  {
+    "question": "Your task is to convert a number between two different bases.\n\nIf the target base is > 10, use lowercase letters a-z for digits above 9.\n\nNow, convert the base-11 number 794 to base-4\n",
+    "answer": "32312",
+    "metadata": {
+      "source_dataset": "base_conversion",
+      "source_index": 20,
+      "decimal_value": 950,
+      "source_base": 11,
+      "target_base": 4,
+      "source_repr": "794",
+      "target_repr": "32312",
+      "difficulty": {
+        "base": [
+          2,
+          16
+        ],
+        "value": [
+          0,
+          1000
+        ]
+      }
+    }
+  },
+  {
+    "question": "Your task is to convert a number between two different bases.\n\nIf the target base is > 10, use lowercase letters a-z for digits above 9.\n\nNow, convert the base-9 number 555 to base-6\n",
+    "answer": "2035",
+    "metadata": {
+      "source_dataset": "base_conversion",
+      "source_index": 21,
+      "decimal_value": 455,
+      "source_base": 9,
+      "target_base": 6,
+      "source_repr": "555",
+      "target_repr": "2035",
+      "difficulty": {
+        "base": [
+          2,
+          16
+        ],
+        "value": [
+          0,
+          1000
+        ]
+      }
+    }
+  },
+  {
+    "question": "Your task is to convert a number between two different bases.\n\nIf the target base is > 10, use lowercase letters a-z for digits above 9.\n\nNow, convert the base-3 number 200001 to base-12\n",
+    "answer": "347",
+    "metadata": {
+      "source_dataset": "base_conversion",
+      "source_index": 22,
+      "decimal_value": 487,
+      "source_base": 3,
+      "target_base": 12,
+      "source_repr": "200001",
+      "target_repr": "347",
+      "difficulty": {
+        "base": [
+          2,
+          16
+        ],
+        "value": [
+          0,
+          1000
+        ]
+      }
+    }
+  },
+  {
+    "question": "Your task is to convert a number between two different bases.\n\nIf the target base is > 10, use lowercase letters a-z for digits above 9.\n\nNow, convert the base-6 number 1544 to base-10\n",
+    "answer": "424",
+    "metadata": {
+      "source_dataset": "base_conversion",
+      "source_index": 23,
+      "decimal_value": 424,
+      "source_base": 6,
+      "target_base": 10,
+      "source_repr": "1544",
+      "target_repr": "424",
+      "difficulty": {
+        "base": [
+          2,
+          16
+        ],
+        "value": [
+          0,
+          1000
+        ]
+      }
+    }
+  },
+  {
+    "question": "Your task is to convert a number between two different bases.\n\nIf the target base is > 10, use lowercase letters a-z for digits above 9.\n\nNow, convert the base-6 number 200 to base-8\n",
+    "answer": "110",
+    "metadata": {
+      "source_dataset": "base_conversion",
+      "source_index": 24,
+      "decimal_value": 72,
+      "source_base": 6,
+      "target_base": 8,
+      "source_repr": "200",
+      "target_repr": "110",
+      "difficulty": {
+        "base": [
+          2,
+          16
+        ],
+        "value": [
+          0,
+          1000
+        ]
+      }
+    }
+  },
+  {
+    "question": "Your task is to convert a number between two different bases.\n\nIf the target base is > 10, use lowercase letters a-z for digits above 9.\n\nNow, convert the base-3 number 2211 to base-14\n",
+    "answer": "56",
+    "metadata": {
+      "source_dataset": "base_conversion",
+      "source_index": 25,
+      "decimal_value": 76,
+      "source_base": 3,
+      "target_base": 14,
+      "source_repr": "2211",
+      "target_repr": "56",
+      "difficulty": {
+        "base": [
+          2,
+          16
+        ],
+        "value": [
+          0,
+          1000
+        ]
+      }
+    }
+  },
+  {
+    "question": "Your task is to convert a number between two different bases.\n\nIf the target base is > 10, use lowercase letters a-z for digits above 9.\n\nNow, convert the base-9 number 1033 to base-13\n",
+    "answer": "465",
+    "metadata": {
+      "source_dataset": "base_conversion",
+      "source_index": 26,
+      "decimal_value": 759,
+      "source_base": 9,
+      "target_base": 13,
+      "source_repr": "1033",
+      "target_repr": "465",
+      "difficulty": {
+        "base": [
+          2,
+          16
+        ],
+        "value": [
+          0,
+          1000
+        ]
+      }
+    }
+  },
+  {
+    "question": "Your task is to convert a number between two different bases.\n\nIf the target base is > 10, use lowercase letters a-z for digits above 9.\n\nNow, convert the binary number 1010111100 to base-3\n",
+    "answer": "221221",
+    "metadata": {
+      "source_dataset": "base_conversion",
+      "source_index": 27,
+      "decimal_value": 700,
+      "source_base": 2,
+      "target_base": 3,
+      "source_repr": "1010111100",
+      "target_repr": "221221",
+      "difficulty": {
+        "base": [
+          2,
+          16
+        ],
+        "value": [
+          0,
+          1000
+        ]
+      }
+    }
+  },
+  {
+    "question": "Your task is to convert a number between two different bases.\n\nIf the target base is > 10, use lowercase letters a-z for digits above 9.\n\nNow, convert the base-3 number 1021111 to base-6\n",
+    "answer": "4151",
+    "metadata": {
+      "source_dataset": "base_conversion",
+      "source_index": 28,
+      "decimal_value": 931,
+      "source_base": 3,
+      "target_base": 6,
+      "source_repr": "1021111",
+      "target_repr": "4151",
+      "difficulty": {
+        "base": [
+          2,
+          16
+        ],
+        "value": [
+          0,
+          1000
+        ]
+      }
+    }
+  },
+  {
+    "question": "Your task is to convert a number between two different bases.\n\nIf the target base is > 10, use lowercase letters a-z for digits above 9.\n\nNow, convert the base-10 number 331 to base-11\n",
+    "answer": "281",
+    "metadata": {
+      "source_dataset": "base_conversion",
+      "source_index": 29,
+      "decimal_value": 331,
+      "source_base": 10,
+      "target_base": 11,
+      "source_repr": "331",
+      "target_repr": "281",
+      "difficulty": {
+        "base": [
+          2,
+          16
+        ],
+        "value": [
+          0,
+          1000
+        ]
+      }
+    }
+  },
+  {
+    "question": "Your task is to convert a number between two different bases.\n\nIf the target base is > 10, use lowercase letters a-z for digits above 9.\n\nNow, convert the base-14 number 55 to base-11\n",
+    "answer": "69",
+    "metadata": {
+      "source_dataset": "base_conversion",
+      "source_index": 30,
+      "decimal_value": 75,
+      "source_base": 14,
+      "target_base": 11,
+      "source_repr": "55",
+      "target_repr": "69",
+      "difficulty": {
+        "base": [
+          2,
+          16
+        ],
+        "value": [
+          0,
+          1000
+        ]
+      }
+    }
+  },
+  {
+    "question": "Your task is to convert a number between two different bases.\n\nIf the target base is > 10, use lowercase letters a-z for digits above 9.\n\nNow, convert the base-3 number 101121 to base-10\n",
+    "answer": "286",
+    "metadata": {
+      "source_dataset": "base_conversion",
+      "source_index": 31,
+      "decimal_value": 286,
+      "source_base": 3,
+      "target_base": 10,
+      "source_repr": "101121",
+      "target_repr": "286",
+      "difficulty": {
+        "base": [
+          2,
+          16
+        ],
+        "value": [
+          0,
+          1000
+        ]
+      }
+    }
+  },
+  {
+    "question": "Your task is to convert a number between two different bases.\n\nIf the target base is > 10, use lowercase letters a-z for digits above 9.\n\nNow, convert the base-11 number 730 to base-10\n",
+    "answer": "880",
+    "metadata": {
+      "source_dataset": "base_conversion",
+      "source_index": 32,
+      "decimal_value": 880,
+      "source_base": 11,
+      "target_base": 10,
+      "source_repr": "730",
+      "target_repr": "880",
+      "difficulty": {
+        "base": [
+          2,
+          16
+        ],
+        "value": [
+          0,
+          1000
+        ]
+      }
+    }
+  },
+  {
+    "question": "Your task is to convert a number between two different bases.\n\nIf the target base is > 10, use lowercase letters a-z for digits above 9.\n\nNow, convert the base-11 number 38a to base-8\n",
+    "answer": "715",
+    "metadata": {
+      "source_dataset": "base_conversion",
+      "source_index": 33,
+      "decimal_value": 461,
+      "source_base": 11,
+      "target_base": 8,
+      "source_repr": "38a",
+      "target_repr": "715",
+      "difficulty": {
+        "base": [
+          2,
+          16
+        ],
+        "value": [
+          0,
+          1000
+        ]
+      }
+    }
+  },
+  {
+    "question": "Your task is to convert a number between two different bases.\n\nIf the target base is > 10, use lowercase letters a-z for digits above 9.\n\nNow, convert the base-9 number 461 to base-8\n",
+    "answer": "573",
+    "metadata": {
+      "source_dataset": "base_conversion",
+      "source_index": 34,
+      "decimal_value": 379,
+      "source_base": 9,
+      "target_base": 8,
+      "source_repr": "461",
+      "target_repr": "573",
+      "difficulty": {
+        "base": [
+          2,
+          16
+        ],
+        "value": [
+          0,
+          1000
+        ]
+      }
+    }
+  },
+  {
+    "question": "Your task is to convert a number between two different bases.\n\nIf the target base is > 10, use lowercase letters a-z for digits above 9.\n\nNow, convert the base-6 number 3442 to base-7\n",
+    "answer": "2246",
+    "metadata": {
+      "source_dataset": "base_conversion",
+      "source_index": 35,
+      "decimal_value": 818,
+      "source_base": 6,
+      "target_base": 7,
+      "source_repr": "3442",
+      "target_repr": "2246",
+      "difficulty": {
+        "base": [
+          2,
+          16
+        ],
+        "value": [
+          0,
+          1000
+        ]
+      }
+    }
+  },
+  {
+    "question": "Your task is to convert a number between two different bases.\n\nIf the target base is > 10, use lowercase letters a-z for digits above 9.\n\nNow, convert the base-5 number 11314 to base-3\n",
+    "answer": "1010220",
+    "metadata": {
+      "source_dataset": "base_conversion",
+      "source_index": 36,
+      "decimal_value": 834,
+      "source_base": 5,
+      "target_base": 3,
+      "source_repr": "11314",
+      "target_repr": "1010220",
+      "difficulty": {
+        "base": [
+          2,
+          16
+        ],
+        "value": [
+          0,
+          1000
+        ]
+      }
+    }
+  },
+  {
+    "question": "Your task is to convert a number between two different bases.\n\nIf the target base is > 10, use lowercase letters a-z for digits above 9.\n\nNow, convert the base-9 number 174 to base-7\n",
+    "answer": "301",
+    "metadata": {
+      "source_dataset": "base_conversion",
+      "source_index": 37,
+      "decimal_value": 148,
+      "source_base": 9,
+      "target_base": 7,
+      "source_repr": "174",
+      "target_repr": "301",
+      "difficulty": {
+        "base": [
+          2,
+          16
+        ],
+        "value": [
+          0,
+          1000
+        ]
+      }
+    }
+  },
+  {
+    "question": "Your task is to convert a number between two different bases.\n\nIf the target base is > 10, use lowercase letters a-z for digits above 9.\n\nNow, convert the base-8 number 426 to base-10\n",
+    "answer": "278",
+    "metadata": {
+      "source_dataset": "base_conversion",
+      "source_index": 38,
+      "decimal_value": 278,
+      "source_base": 8,
+      "target_base": 10,
+      "source_repr": "426",
+      "target_repr": "278",
+      "difficulty": {
+        "base": [
+          2,
+          16
+        ],
+        "value": [
+          0,
+          1000
+        ]
+      }
+    }
+  },
+  {
+    "question": "Your task is to convert a number between two different bases.\n\nIf the target base is > 10, use lowercase letters a-z for digits above 9.\n\nNow, convert the base-15 number 248 to base-9\n",
+    "answer": "635",
+    "metadata": {
+      "source_dataset": "base_conversion",
+      "source_index": 39,
+      "decimal_value": 518,
+      "source_base": 15,
+      "target_base": 9,
+      "source_repr": "248",
+      "target_repr": "635",
+      "difficulty": {
+        "base": [
+          2,
+          16
+        ],
+        "value": [
+          0,
+          1000
+        ]
+      }
+    }
+  },
+  {
+    "question": "Your task is to convert a number between two different bases.\n\nIf the target base is > 10, use lowercase letters a-z for digits above 9.\n\nNow, convert the base-14 number a8 to base-9\n",
+    "answer": "174",
+    "metadata": {
+      "source_dataset": "base_conversion",
+      "source_index": 40,
+      "decimal_value": 148,
+      "source_base": 14,
+      "target_base": 9,
+      "source_repr": "a8",
+      "target_repr": "174",
+      "difficulty": {
+        "base": [
+          2,
+          16
+        ],
+        "value": [
+          0,
+          1000
+        ]
+      }
+    }
+  },
+  {
+    "question": "Your task is to convert a number between two different bases.\n\nIf the target base is > 10, use lowercase letters a-z for digits above 9.\n\nNow, convert the base-15 number 23d to base-9\n",
+    "answer": "624",
+    "metadata": {
+      "source_dataset": "base_conversion",
+      "source_index": 41,
+      "decimal_value": 508,
+      "source_base": 15,
+      "target_base": 9,
+      "source_repr": "23d",
+      "target_repr": "624",
+      "difficulty": {
+        "base": [
+          2,
+          16
+        ],
+        "value": [
+          0,
+          1000
+        ]
+      }
+    }
+  },
+  {
+    "question": "Your task is to convert a number between two different bases.\n\nIf the target base is > 10, use lowercase letters a-z for digits above 9.\n\nNow, convert the base-6 number 3245 to hexadecimal\n",
+    "answer": "2ed",
+    "metadata": {
+      "source_dataset": "base_conversion",
+      "source_index": 42,
+      "decimal_value": 749,
+      "source_base": 6,
+      "target_base": 16,
+      "source_repr": "3245",
+      "target_repr": "2ed",
+      "difficulty": {
+        "base": [
+          2,
+          16
+        ],
+        "value": [
+          0,
+          1000
+        ]
+      }
+    }
+  },
+  {
+    "question": "Your task is to convert a number between two different bases.\n\nIf the target base is > 10, use lowercase letters a-z for digits above 9.\n\nNow, convert the base-13 number 129 to base-11\n",
+    "answer": "176",
+    "metadata": {
+      "source_dataset": "base_conversion",
+      "source_index": 43,
+      "decimal_value": 204,
+      "source_base": 13,
+      "target_base": 11,
+      "source_repr": "129",
+      "target_repr": "176",
+      "difficulty": {
+        "base": [
+          2,
+          16
+        ],
+        "value": [
+          0,
+          1000
+        ]
+      }
+    }
+  },
+  {
+    "question": "Your task is to convert a number between two different bases.\n\nIf the target base is > 10, use lowercase letters a-z for digits above 9.\n\nNow, convert the base-14 number 41c to binary\n",
+    "answer": "1100101010",
+    "metadata": {
+      "source_dataset": "base_conversion",
+      "source_index": 44,
+      "decimal_value": 810,
+      "source_base": 14,
+      "target_base": 2,
+      "source_repr": "41c",
+      "target_repr": "1100101010",
+      "difficulty": {
+        "base": [
+          2,
+          16
+        ],
+        "value": [
+          0,
+          1000
+        ]
+      }
+    }
+  },
+  {
+    "question": "Your task is to convert a number between two different bases.\n\nIf the target base is > 10, use lowercase letters a-z for digits above 9.\n\nNow, convert the base-13 number b6 to base-5\n",
+    "answer": "1044",
+    "metadata": {
+      "source_dataset": "base_conversion",
+      "source_index": 45,
+      "decimal_value": 149,
+      "source_base": 13,
+      "target_base": 5,
+      "source_repr": "b6",
+      "target_repr": "1044",
+      "difficulty": {
+        "base": [
+          2,
+          16
+        ],
+        "value": [
+          0,
+          1000
+        ]
+      }
+    }
+  },
+  {
+    "question": "Your task is to convert a number between two different bases.\n\nIf the target base is > 10, use lowercase letters a-z for digits above 9.\n\nNow, convert the base-5 number 3112 to base-7\n",
+    "answer": "1121",
+    "metadata": {
+      "source_dataset": "base_conversion",
+      "source_index": 46,
+      "decimal_value": 407,
+      "source_base": 5,
+      "target_base": 7,
+      "source_repr": "3112",
+      "target_repr": "1121",
+      "difficulty": {
+        "base": [
+          2,
+          16
+        ],
+        "value": [
+          0,
+          1000
+        ]
+      }
+    }
+  },
+  {
+    "question": "Your task is to convert a number between two different bases.\n\nIf the target base is > 10, use lowercase letters a-z for digits above 9.\n\nNow, convert the base-14 number 5d to base-11\n",
+    "answer": "76",
+    "metadata": {
+      "source_dataset": "base_conversion",
+      "source_index": 47,
+      "decimal_value": 83,
+      "source_base": 14,
+      "target_base": 11,
+      "source_repr": "5d",
+      "target_repr": "76",
+      "difficulty": {
+        "base": [
+          2,
+          16
+        ],
+        "value": [
+          0,
+          1000
+        ]
+      }
+    }
+  },
+  {
+    "question": "Your task is to convert a number between two different bases.\n\nIf the target base is > 10, use lowercase letters a-z for digits above 9.\n\nNow, convert the base-13 number 130 to base-3\n",
+    "answer": "21201",
+    "metadata": {
+      "source_dataset": "base_conversion",
+      "source_index": 48,
+      "decimal_value": 208,
+      "source_base": 13,
+      "target_base": 3,
+      "source_repr": "130",
+      "target_repr": "21201",
+      "difficulty": {
+        "base": [
+          2,
+          16
+        ],
+        "value": [
+          0,
+          1000
+        ]
+      }
+    }
+  },
+  {
+    "question": "Your task is to convert a number between two different bases.\n\nIf the target base is > 10, use lowercase letters a-z for digits above 9.\n\nNow, convert the base-11 number 78 to base-4\n",
+    "answer": "1111",
+    "metadata": {
+      "source_dataset": "base_conversion",
+      "source_index": 49,
+      "decimal_value": 85,
+      "source_base": 11,
+      "target_base": 4,
+      "source_repr": "78",
+      "target_repr": "1111",
+      "difficulty": {
+        "base": [
+          2,
+          16
+        ],
+        "value": [
+          0,
+          1000
+        ]
+      }
+    }
+  },
+  {
+    "question": "Your task is to convert a number between two different bases.\n\nIf the target base is > 10, use lowercase letters a-z for digits above 9.\n\nNow, convert the base-10 number 431 to base-11\n",
+    "answer": "362",
+    "metadata": {
+      "source_dataset": "base_conversion",
+      "source_index": 50,
+      "decimal_value": 431,
+      "source_base": 10,
+      "target_base": 11,
+      "source_repr": "431",
+      "target_repr": "362",
+      "difficulty": {
+        "base": [
+          2,
+          16
+        ],
+        "value": [
+          0,
+          1000
+        ]
+      }
+    }
+  },
+  {
+    "question": "Your task is to convert a number between two different bases.\n\nIf the target base is > 10, use lowercase letters a-z for digits above 9.\n\nNow, convert the base-15 number 424 to base-9\n",
+    "answer": "1247",
+    "metadata": {
+      "source_dataset": "base_conversion",
+      "source_index": 51,
+      "decimal_value": 934,
+      "source_base": 15,
+      "target_base": 9,
+      "source_repr": "424",
+      "target_repr": "1247",
+      "difficulty": {
+        "base": [
+          2,
+          16
+        ],
+        "value": [
+          0,
+          1000
+        ]
+      }
+    }
+  },
+  {
+    "question": "Your task is to convert a number between two different bases.\n\nIf the target base is > 10, use lowercase letters a-z for digits above 9.\n\nNow, convert the base-4 number 20233 to base-3\n",
+    "answer": "202201",
+    "metadata": {
+      "source_dataset": "base_conversion",
+      "source_index": 52,
+      "decimal_value": 559,
+      "source_base": 4,
+      "target_base": 3,
+      "source_repr": "20233",
+      "target_repr": "202201",
+      "difficulty": {
+        "base": [
+          2,
+          16
+        ],
+        "value": [
+          0,
+          1000
+        ]
+      }
+    }
+  },
+  {
+    "question": "Your task is to convert a number between two different bases.\n\nIf the target base is > 10, use lowercase letters a-z for digits above 9.\n\nNow, convert the base-10 number 778 to base-13\n",
+    "answer": "47b",
+    "metadata": {
+      "source_dataset": "base_conversion",
+      "source_index": 53,
+      "decimal_value": 778,
+      "source_base": 10,
+      "target_base": 13,
+      "source_repr": "778",
+      "target_repr": "47b",
+      "difficulty": {
+        "base": [
+          2,
+          16
+        ],
+        "value": [
+          0,
+          1000
+        ]
+      }
+    }
+  },
+  {
+    "question": "Your task is to convert a number between two different bases.\n\nIf the target base is > 10, use lowercase letters a-z for digits above 9.\n\nNow, convert the base-7 number 1051 to hexadecimal\n",
+    "answer": "17b",
+    "metadata": {
+      "source_dataset": "base_conversion",
+      "source_index": 54,
+      "decimal_value": 379,
+      "source_base": 7,
+      "target_base": 16,
+      "source_repr": "1051",
+      "target_repr": "17b",
+      "difficulty": {
+        "base": [
+          2,
+          16
+        ],
+        "value": [
+          0,
+          1000
+        ]
+      }
+    }
+  },
+  {
+    "question": "Your task is to convert a number between two different bases.\n\nIf the target base is > 10, use lowercase letters a-z for digits above 9.\n\nNow, convert the base-8 number 307 to base-14\n",
+    "answer": "103",
+    "metadata": {
+      "source_dataset": "base_conversion",
+      "source_index": 55,
+      "decimal_value": 199,
+      "source_base": 8,
+      "target_base": 14,
+      "source_repr": "307",
+      "target_repr": "103",
+      "difficulty": {
+        "base": [
+          2,
+          16
+        ],
+        "value": [
+          0,
+          1000
+        ]
+      }
+    }
+  },
+  {
+    "question": "Your task is to convert a number between two different bases.\n\nIf the target base is > 10, use lowercase letters a-z for digits above 9.\n\nNow, convert the base-11 number 301 to base-15\n",
+    "answer": "194",
+    "metadata": {
+      "source_dataset": "base_conversion",
+      "source_index": 56,
+      "decimal_value": 364,
+      "source_base": 11,
+      "target_base": 15,
+      "source_repr": "301",
+      "target_repr": "194",
+      "difficulty": {
+        "base": [
+          2,
+          16
+        ],
+        "value": [
+          0,
+          1000
+        ]
+      }
+    }
+  },
+  {
+    "question": "Your task is to convert a number between two different bases.\n\nIf the target base is > 10, use lowercase letters a-z for digits above 9.\n\nNow, convert the base-8 number 635 to base-5\n",
+    "answer": "3123",
+    "metadata": {
+      "source_dataset": "base_conversion",
+      "source_index": 57,
+      "decimal_value": 413,
+      "source_base": 8,
+      "target_base": 5,
+      "source_repr": "635",
+      "target_repr": "3123",
+      "difficulty": {
+        "base": [
+          2,
+          16
+        ],
+        "value": [
+          0,
+          1000
+        ]
+      }
+    }
+  },
+  {
+    "question": "Your task is to convert a number between two different bases.\n\nIf the target base is > 10, use lowercase letters a-z for digits above 9.\n\nNow, convert the base-9 number 175 to base-14\n",
+    "answer": "a9",
+    "metadata": {
+      "source_dataset": "base_conversion",
+      "source_index": 58,
+      "decimal_value": 149,
+      "source_base": 9,
+      "target_base": 14,
+      "source_repr": "175",
+      "target_repr": "a9",
+      "difficulty": {
+        "base": [
+          2,
+          16
+        ],
+        "value": [
+          0,
+          1000
+        ]
+      }
+    }
+  },
+  {
+    "question": "Your task is to convert a number between two different bases.\n\nIf the target base is > 10, use lowercase letters a-z for digits above 9.\n\nNow, convert the base-15 number 29a to base-5\n",
+    "answer": "4340",
+    "metadata": {
+      "source_dataset": "base_conversion",
+      "source_index": 59,
+      "decimal_value": 595,
+      "source_base": 15,
+      "target_base": 5,
+      "source_repr": "29a",
+      "target_repr": "4340",
+      "difficulty": {
+        "base": [
+          2,
+          16
+        ],
+        "value": [
+          0,
+          1000
+        ]
+      }
+    }
+  },
+  {
+    "question": "Your task is to convert a number between two different bases.\n\nIf the target base is > 10, use lowercase letters a-z for digits above 9.\n\nNow, convert the base-12 number 107 to base-11\n",
+    "answer": "128",
+    "metadata": {
+      "source_dataset": "base_conversion",
+      "source_index": 60,
+      "decimal_value": 151,
+      "source_base": 12,
+      "target_base": 11,
+      "source_repr": "107",
+      "target_repr": "128",
+      "difficulty": {
+        "base": [
+          2,
+          16
+        ],
+        "value": [
+          0,
+          1000
+        ]
+      }
+    }
+  },
+  {
+    "question": "Your task is to convert a number between two different bases.\n\nIf the target base is > 10, use lowercase letters a-z for digits above 9.\n\nNow, convert the base-9 number 1002 to hexadecimal\n",
+    "answer": "2db",
+    "metadata": {
+      "source_dataset": "base_conversion",
+      "source_index": 61,
+      "decimal_value": 731,
+      "source_base": 9,
+      "target_base": 16,
+      "source_repr": "1002",
+      "target_repr": "2db",
+      "difficulty": {
+        "base": [
+          2,
+          16
+        ],
+        "value": [
+          0,
+          1000
+        ]
+      }
+    }
+  },
+  {
+    "question": "Your task is to convert a number between two different bases.\n\nIf the target base is > 10, use lowercase letters a-z for digits above 9.\n\nNow, convert the binary number 1111010110 to base-15\n",
+    "answer": "457",
+    "metadata": {
+      "source_dataset": "base_conversion",
+      "source_index": 62,
+      "decimal_value": 982,
+      "source_base": 2,
+      "target_base": 15,
+      "source_repr": "1111010110",
+      "target_repr": "457",
+      "difficulty": {
+        "base": [
+          2,
+          16
+        ],
+        "value": [
+          0,
+          1000
+        ]
+      }
+    }
+  },
+  {
+    "question": "Your task is to convert a number between two different bases.\n\nIf the target base is > 10, use lowercase letters a-z for digits above 9.\n\nNow, convert the base-11 number 748 to base-7\n",
+    "answer": "2423",
+    "metadata": {
+      "source_dataset": "base_conversion",
+      "source_index": 63,
+      "decimal_value": 899,
+      "source_base": 11,
+      "target_base": 7,
+      "source_repr": "748",
+      "target_repr": "2423",
+      "difficulty": {
+        "base": [
+          2,
+          16
+        ],
+        "value": [
+          0,
+          1000
+        ]
+      }
+    }
+  },
+  {
+    "question": "Your task is to convert a number between two different bases.\n\nIf the target base is > 10, use lowercase letters a-z for digits above 9.\n\nNow, convert the hexadecimal number 2d7 to base-9\n",
+    "answer": "887",
+    "metadata": {
+      "source_dataset": "base_conversion",
+      "source_index": 64,
+      "decimal_value": 727,
+      "source_base": 16,
+      "target_base": 9,
+      "source_repr": "2d7",
+      "target_repr": "887",
+      "difficulty": {
+        "base": [
+          2,
+          16
+        ],
+        "value": [
+          0,
+          1000
+        ]
+      }
+    }
+  },
+  {
+    "question": "Your task is to convert a number between two different bases.\n\nIf the target base is > 10, use lowercase letters a-z for digits above 9.\n\nNow, convert the base-11 number 20a to base-14\n",
+    "answer": "140",
+    "metadata": {
+      "source_dataset": "base_conversion",
+      "source_index": 65,
+      "decimal_value": 252,
+      "source_base": 11,
+      "target_base": 14,
+      "source_repr": "20a",
+      "target_repr": "140",
+      "difficulty": {
+        "base": [
+          2,
+          16
+        ],
+        "value": [
+          0,
+          1000
+        ]
+      }
+    }
+  },
+  {
+    "question": "Your task is to convert a number between two different bases.\n\nIf the target base is > 10, use lowercase letters a-z for digits above 9.\n\nNow, convert the base-13 number a3 to base-15\n",
+    "answer": "8d",
+    "metadata": {
+      "source_dataset": "base_conversion",
+      "source_index": 66,
+      "decimal_value": 133,
+      "source_base": 13,
+      "target_base": 15,
+      "source_repr": "a3",
+      "target_repr": "8d",
+      "difficulty": {
+        "base": [
+          2,
+          16
+        ],
+        "value": [
+          0,
+          1000
+        ]
+      }
+    }
+  },
+  {
+    "question": "Your task is to convert a number between two different bases.\n\nIf the target base is > 10, use lowercase letters a-z for digits above 9.\n\nNow, convert the base-5 number 2121 to base-9\n",
+    "answer": "347",
+    "metadata": {
+      "source_dataset": "base_conversion",
+      "source_index": 67,
+      "decimal_value": 286,
+      "source_base": 5,
+      "target_base": 9,
+      "source_repr": "2121",
+      "target_repr": "347",
+      "difficulty": {
+        "base": [
+          2,
+          16
+        ],
+        "value": [
+          0,
+          1000
+        ]
+      }
+    }
+  },
+  {
+    "question": "Your task is to convert a number between two different bases.\n\nIf the target base is > 10, use lowercase letters a-z for digits above 9.\n\nNow, convert the base-8 number 1674 to base-14\n",
+    "answer": "4c4",
+    "metadata": {
+      "source_dataset": "base_conversion",
+      "source_index": 68,
+      "decimal_value": 956,
+      "source_base": 8,
+      "target_base": 14,
+      "source_repr": "1674",
+      "target_repr": "4c4",
+      "difficulty": {
+        "base": [
+          2,
+          16
+        ],
+        "value": [
+          0,
+          1000
+        ]
+      }
+    }
+  },
+  {
+    "question": "Your task is to convert a number between two different bases.\n\nIf the target base is > 10, use lowercase letters a-z for digits above 9.\n\nNow, convert the base-5 number 11342 to hexadecimal\n",
+    "answer": "34f",
+    "metadata": {
+      "source_dataset": "base_conversion",
+      "source_index": 69,
+      "decimal_value": 847,
+      "source_base": 5,
+      "target_base": 16,
+      "source_repr": "11342",
+      "target_repr": "34f",
+      "difficulty": {
+        "base": [
+          2,
+          16
+        ],
+        "value": [
+          0,
+          1000
+        ]
+      }
+    }
+  },
+  {
+    "question": "Your task is to convert a number between two different bases.\n\nIf the target base is > 10, use lowercase letters a-z for digits above 9.\n\nNow, convert the base-15 number 22c to base-12\n",
+    "answer": "350",
+    "metadata": {
+      "source_dataset": "base_conversion",
+      "source_index": 70,
+      "decimal_value": 492,
+      "source_base": 15,
+      "target_base": 12,
+      "source_repr": "22c",
+      "target_repr": "350",
+      "difficulty": {
+        "base": [
+          2,
+          16
+        ],
+        "value": [
+          0,
+          1000
+        ]
+      }
+    }
+  },
+  {
+    "question": "Your task is to convert a number between two different bases.\n\nIf the target base is > 10, use lowercase letters a-z for digits above 9.\n\nNow, convert the base-12 number 27 to base-15\n",
+    "answer": "21",
+    "metadata": {
+      "source_dataset": "base_conversion",
+      "source_index": 71,
+      "decimal_value": 31,
+      "source_base": 12,
+      "target_base": 15,
+      "source_repr": "27",
+      "target_repr": "21",
+      "difficulty": {
+        "base": [
+          2,
+          16
+        ],
+        "value": [
+          0,
+          1000
+        ]
+      }
+    }
+  },
+  {
+    "question": "Your task is to convert a number between two different bases.\n\nIf the target base is > 10, use lowercase letters a-z for digits above 9.\n\nNow, convert the base-11 number 204 to base-3\n",
+    "answer": "100010",
+    "metadata": {
+      "source_dataset": "base_conversion",
+      "source_index": 72,
+      "decimal_value": 246,
+      "source_base": 11,
+      "target_base": 3,
+      "source_repr": "204",
+      "target_repr": "100010",
+      "difficulty": {
+        "base": [
+          2,
+          16
+        ],
+        "value": [
+          0,
+          1000
+        ]
+      }
+    }
+  },
+  {
+    "question": "Your task is to convert a number between two different bases.\n\nIf the target base is > 10, use lowercase letters a-z for digits above 9.\n\nNow, convert the base-6 number 4125 to base-5\n",
+    "answer": "12132",
+    "metadata": {
+      "source_dataset": "base_conversion",
+      "source_index": 73,
+      "decimal_value": 917,
+      "source_base": 6,
+      "target_base": 5,
+      "source_repr": "4125",
+      "target_repr": "12132",
+      "difficulty": {
+        "base": [
+          2,
+          16
+        ],
+        "value": [
+          0,
+          1000
+        ]
+      }
+    }
+  },
+  {
+    "question": "Your task is to convert a number between two different bases.\n\nIf the target base is > 10, use lowercase letters a-z for digits above 9.\n\nNow, convert the base-13 number 4c9 to base-11\n",
+    "answer": "6a5",
+    "metadata": {
+      "source_dataset": "base_conversion",
+      "source_index": 74,
+      "decimal_value": 841,
+      "source_base": 13,
+      "target_base": 11,
+      "source_repr": "4c9",
+      "target_repr": "6a5",
+      "difficulty": {
+        "base": [
+          2,
+          16
+        ],
+        "value": [
+          0,
+          1000
+        ]
+      }
+    }
+  },
+  {
+    "question": "Your task is to convert a number between two different bases.\n\nIf the target base is > 10, use lowercase letters a-z for digits above 9.\n\nNow, convert the base-4 number 3311 to base-5\n",
+    "answer": "1440",
+    "metadata": {
+      "source_dataset": "base_conversion",
+      "source_index": 75,
+      "decimal_value": 245,
+      "source_base": 4,
+      "target_base": 5,
+      "source_repr": "3311",
+      "target_repr": "1440",
+      "difficulty": {
+        "base": [
+          2,
+          16
+        ],
+        "value": [
+          0,
+          1000
+        ]
+      }
+    }
+  },
+  {
+    "question": "Your task is to convert a number between two different bases.\n\nIf the target base is > 10, use lowercase letters a-z for digits above 9.\n\nNow, convert the base-12 number 508 to base-4\n",
+    "answer": "23120",
+    "metadata": {
+      "source_dataset": "base_conversion",
+      "source_index": 76,
+      "decimal_value": 728,
+      "source_base": 12,
+      "target_base": 4,
+      "source_repr": "508",
+      "target_repr": "23120",
+      "difficulty": {
+        "base": [
+          2,
+          16
+        ],
+        "value": [
+          0,
+          1000
+        ]
+      }
+    }
+  },
+  {
+    "question": "Your task is to convert a number between two different bases.\n\nIf the target base is > 10, use lowercase letters a-z for digits above 9.\n\nNow, convert the base-6 number 4220 to base-4\n",
+    "answer": "32310",
+    "metadata": {
+      "source_dataset": "base_conversion",
+      "source_index": 77,
+      "decimal_value": 948,
+      "source_base": 6,
+      "target_base": 4,
+      "source_repr": "4220",
+      "target_repr": "32310",
+      "difficulty": {
+        "base": [
+          2,
+          16
+        ],
+        "value": [
+          0,
+          1000
+        ]
+      }
+    }
+  },
+  {
+    "question": "Your task is to convert a number between two different bases.\n\nIf the target base is > 10, use lowercase letters a-z for digits above 9.\n\nNow, convert the base-5 number 4102 to hexadecimal\n",
+    "answer": "20f",
+    "metadata": {
+      "source_dataset": "base_conversion",
+      "source_index": 78,
+      "decimal_value": 527,
+      "source_base": 5,
+      "target_base": 16,
+      "source_repr": "4102",
+      "target_repr": "20f",
+      "difficulty": {
+        "base": [
+          2,
+          16
+        ],
+        "value": [
+          0,
+          1000
+        ]
+      }
+    }
+  },
+  {
+    "question": "Your task is to convert a number between two different bases.\n\nIf the target base is > 10, use lowercase letters a-z for digits above 9.\n\nNow, convert the base-5 number 324 to base-11\n",
+    "answer": "81",
+    "metadata": {
+      "source_dataset": "base_conversion",
+      "source_index": 79,
+      "decimal_value": 89,
+      "source_base": 5,
+      "target_base": 11,
+      "source_repr": "324",
+      "target_repr": "81",
+      "difficulty": {
+        "base": [
+          2,
+          16
+        ],
+        "value": [
+          0,
+          1000
+        ]
+      }
+    }
+  },
+  {
+    "question": "Your task is to convert a number between two different bases.\n\nIf the target base is > 10, use lowercase letters a-z for digits above 9.\n\nNow, convert the base-5 number 4042 to base-11\n",
+    "answer": "435",
+    "metadata": {
+      "source_dataset": "base_conversion",
+      "source_index": 80,
+      "decimal_value": 522,
+      "source_base": 5,
+      "target_base": 11,
+      "source_repr": "4042",
+      "target_repr": "435",
+      "difficulty": {
+        "base": [
+          2,
+          16
+        ],
+        "value": [
+          0,
+          1000
+        ]
+      }
+    }
+  },
+  {
+    "question": "Your task is to convert a number between two different bases.\n\nIf the target base is > 10, use lowercase letters a-z for digits above 9.\n\nNow, convert the base-6 number 125 to base-3\n",
+    "answer": "1222",
+    "metadata": {
+      "source_dataset": "base_conversion",
+      "source_index": 81,
+      "decimal_value": 53,
+      "source_base": 6,
+      "target_base": 3,
+      "source_repr": "125",
+      "target_repr": "1222",
+      "difficulty": {
+        "base": [
+          2,
+          16
+        ],
+        "value": [
+          0,
+          1000
+        ]
+      }
+    }
+  },
+  {
+    "question": "Your task is to convert a number between two different bases.\n\nIf the target base is > 10, use lowercase letters a-z for digits above 9.\n\nNow, convert the base-6 number 4315 to base-10\n",
+    "answer": "983",
+    "metadata": {
+      "source_dataset": "base_conversion",
+      "source_index": 82,
+      "decimal_value": 983,
+      "source_base": 6,
+      "target_base": 10,
+      "source_repr": "4315",
+      "target_repr": "983",
+      "difficulty": {
+        "base": [
+          2,
+          16
+        ],
+        "value": [
+          0,
+          1000
+        ]
+      }
+    }
+  },
+  {
+    "question": "Your task is to convert a number between two different bases.\n\nIf the target base is > 10, use lowercase letters a-z for digits above 9.\n\nNow, convert the base-5 number 12141 to base-15\n",
+    "answer": "416",
+    "metadata": {
+      "source_dataset": "base_conversion",
+      "source_index": 83,
+      "decimal_value": 921,
+      "source_base": 5,
+      "target_base": 15,
+      "source_repr": "12141",
+      "target_repr": "416",
+      "difficulty": {
+        "base": [
+          2,
+          16
+        ],
+        "value": [
+          0,
+          1000
+        ]
+      }
+    }
+  },
+  {
+    "question": "Your task is to convert a number between two different bases.\n\nIf the target base is > 10, use lowercase letters a-z for digits above 9.\n\nNow, convert the binary number 1001001010 to base-11\n",
+    "answer": "493",
+    "metadata": {
+      "source_dataset": "base_conversion",
+      "source_index": 84,
+      "decimal_value": 586,
+      "source_base": 2,
+      "target_base": 11,
+      "source_repr": "1001001010",
+      "target_repr": "493",
+      "difficulty": {
+        "base": [
+          2,
+          16
+        ],
+        "value": [
+          0,
+          1000
+        ]
+      }
+    }
+  },
+  {
+    "question": "Your task is to convert a number between two different bases.\n\nIf the target base is > 10, use lowercase letters a-z for digits above 9.\n\nNow, convert the hexadecimal number 2d to base-11\n",
+    "answer": "41",
+    "metadata": {
+      "source_dataset": "base_conversion",
+      "source_index": 85,
+      "decimal_value": 45,
+      "source_base": 16,
+      "target_base": 11,
+      "source_repr": "2d",
+      "target_repr": "41",
+      "difficulty": {
+        "base": [
+          2,
+          16
+        ],
+        "value": [
+          0,
+          1000
+        ]
+      }
+    }
+  },
+  {
+    "question": "Your task is to convert a number between two different bases.\n\nIf the target base is > 10, use lowercase letters a-z for digits above 9.\n\nNow, convert the base-15 number 442 to base-5\n",
+    "answer": "12322",
+    "metadata": {
+      "source_dataset": "base_conversion",
+      "source_index": 86,
+      "decimal_value": 962,
+      "source_base": 15,
+      "target_base": 5,
+      "source_repr": "442",
+      "target_repr": "12322",
+      "difficulty": {
+        "base": [
+          2,
+          16
+        ],
+        "value": [
+          0,
+          1000
+        ]
+      }
+    }
+  },
+  {
+    "question": "Your task is to convert a number between two different bases.\n\nIf the target base is > 10, use lowercase letters a-z for digits above 9.\n\nNow, convert the base-15 number 2a0 to base-14\n",
+    "answer": "30c",
+    "metadata": {
+      "source_dataset": "base_conversion",
+      "source_index": 87,
+      "decimal_value": 600,
+      "source_base": 15,
+      "target_base": 14,
+      "source_repr": "2a0",
+      "target_repr": "30c",
+      "difficulty": {
+        "base": [
+          2,
+          16
+        ],
+        "value": [
+          0,
+          1000
+        ]
+      }
+    }
+  },
+  {
+    "question": "Your task is to convert a number between two different bases.\n\nIf the target base is > 10, use lowercase letters a-z for digits above 9.\n\nNow, convert the base-8 number 1024 to base-6\n",
+    "answer": "2244",
+    "metadata": {
+      "source_dataset": "base_conversion",
+      "source_index": 88,
+      "decimal_value": 532,
+      "source_base": 8,
+      "target_base": 6,
+      "source_repr": "1024",
+      "target_repr": "2244",
+      "difficulty": {
+        "base": [
+          2,
+          16
+        ],
+        "value": [
+          0,
+          1000
+        ]
+      }
+    }
+  },
+  {
+    "question": "Your task is to convert a number between two different bases.\n\nIf the target base is > 10, use lowercase letters a-z for digits above 9.\n\nNow, convert the base-7 number 641 to base-14\n",
+    "answer": "191",
+    "metadata": {
+      "source_dataset": "base_conversion",
+      "source_index": 89,
+      "decimal_value": 323,
+      "source_base": 7,
+      "target_base": 14,
+      "source_repr": "641",
+      "target_repr": "191",
+      "difficulty": {
+        "base": [
+          2,
+          16
+        ],
+        "value": [
+          0,
+          1000
+        ]
+      }
+    }
+  },
+  {
+    "question": "Your task is to convert a number between two different bases.\n\nIf the target base is > 10, use lowercase letters a-z for digits above 9.\n\nNow, convert the base-4 number 12212 to base-8\n",
+    "answer": "646",
+    "metadata": {
+      "source_dataset": "base_conversion",
+      "source_index": 90,
+      "decimal_value": 422,
+      "source_base": 4,
+      "target_base": 8,
+      "source_repr": "12212",
+      "target_repr": "646",
+      "difficulty": {
+        "base": [
+          2,
+          16
+        ],
+        "value": [
+          0,
+          1000
+        ]
+      }
+    }
+  },
+  {
+    "question": "Your task is to convert a number between two different bases.\n\nIf the target base is > 10, use lowercase letters a-z for digits above 9.\n\nNow, convert the base-7 number 1321 to base-9\n",
+    "answer": "621",
+    "metadata": {
+      "source_dataset": "base_conversion",
+      "source_index": 91,
+      "decimal_value": 505,
+      "source_base": 7,
+      "target_base": 9,
+      "source_repr": "1321",
+      "target_repr": "621",
+      "difficulty": {
+        "base": [
+          2,
+          16
+        ],
+        "value": [
+          0,
+          1000
+        ]
+      }
+    }
+  },
+  {
+    "question": "Your task is to convert a number between two different bases.\n\nIf the target base is > 10, use lowercase letters a-z for digits above 9.\n\nNow, convert the base-10 number 495 to base-5\n",
+    "answer": "3440",
+    "metadata": {
+      "source_dataset": "base_conversion",
+      "source_index": 92,
+      "decimal_value": 495,
+      "source_base": 10,
+      "target_base": 5,
+      "source_repr": "495",
+      "target_repr": "3440",
+      "difficulty": {
+        "base": [
+          2,
+          16
+        ],
+        "value": [
+          0,
+          1000
+        ]
+      }
+    }
+  },
+  {
+    "question": "Your task is to convert a number between two different bases.\n\nIf the target base is > 10, use lowercase letters a-z for digits above 9.\n\nNow, convert the base-7 number 1666 to base-12\n",
+    "answer": "491",
+    "metadata": {
+      "source_dataset": "base_conversion",
+      "source_index": 93,
+      "decimal_value": 685,
+      "source_base": 7,
+      "target_base": 12,
+      "source_repr": "1666",
+      "target_repr": "491",
+      "difficulty": {
+        "base": [
+          2,
+          16
+        ],
+        "value": [
+          0,
+          1000
+        ]
+      }
+    }
+  },
+  {
+    "question": "Your task is to convert a number between two different bases.\n\nIf the target base is > 10, use lowercase letters a-z for digits above 9.\n\nNow, convert the base-8 number 1115 to base-10\n",
+    "answer": "589",
+    "metadata": {
+      "source_dataset": "base_conversion",
+      "source_index": 94,
+      "decimal_value": 589,
+      "source_base": 8,
+      "target_base": 10,
+      "source_repr": "1115",
+      "target_repr": "589",
+      "difficulty": {
+        "base": [
+          2,
+          16
+        ],
+        "value": [
+          0,
+          1000
+        ]
+      }
+    }
+  },
+  {
+    "question": "Your task is to convert a number between two different bases.\n\nIf the target base is > 10, use lowercase letters a-z for digits above 9.\n\nNow, convert the base-4 number 1022 to base-8\n",
+    "answer": "112",
+    "metadata": {
+      "source_dataset": "base_conversion",
+      "source_index": 95,
+      "decimal_value": 74,
+      "source_base": 4,
+      "target_base": 8,
+      "source_repr": "1022",
+      "target_repr": "112",
+      "difficulty": {
+        "base": [
+          2,
+          16
+        ],
+        "value": [
+          0,
+          1000
+        ]
+      }
+    }
+  },
+  {
+    "question": "Your task is to convert a number between two different bases.\n\nIf the target base is > 10, use lowercase letters a-z for digits above 9.\n\nNow, convert the base-8 number 306 to base-9\n",
+    "answer": "240",
+    "metadata": {
+      "source_dataset": "base_conversion",
+      "source_index": 96,
+      "decimal_value": 198,
+      "source_base": 8,
+      "target_base": 9,
+      "source_repr": "306",
+      "target_repr": "240",
+      "difficulty": {
+        "base": [
+          2,
+          16
+        ],
+        "value": [
+          0,
+          1000
+        ]
+      }
+    }
+  },
+  {
+    "question": "Your task is to convert a number between two different bases.\n\nIf the target base is > 10, use lowercase letters a-z for digits above 9.\n\nNow, convert the base-13 number 1 to base-11\n",
+    "answer": "1",
+    "metadata": {
+      "source_dataset": "base_conversion",
+      "source_index": 97,
+      "decimal_value": 1,
+      "source_base": 13,
+      "target_base": 11,
+      "source_repr": "1",
+      "target_repr": "1",
+      "difficulty": {
+        "base": [
+          2,
+          16
+        ],
+        "value": [
+          0,
+          1000
+        ]
+      }
+    }
+  },
+  {
+    "question": "Your task is to convert a number between two different bases.\n\nIf the target base is > 10, use lowercase letters a-z for digits above 9.\n\nNow, convert the base-15 number 37a to base-3\n",
+    "answer": "1002021",
+    "metadata": {
+      "source_dataset": "base_conversion",
+      "source_index": 98,
+      "decimal_value": 790,
+      "source_base": 15,
+      "target_base": 3,
+      "source_repr": "37a",
+      "target_repr": "1002021",
+      "difficulty": {
+        "base": [
+          2,
+          16
+        ],
+        "value": [
+          0,
+          1000
+        ]
+      }
+    }
+  },
+  {
+    "question": "Your task is to convert a number between two different bases.\n\nIf the target base is > 10, use lowercase letters a-z for digits above 9.\n\nNow, convert the base-14 number 29b to binary\n",
+    "answer": "1000010001",
+    "metadata": {
+      "source_dataset": "base_conversion",
+      "source_index": 99,
+      "decimal_value": 529,
+      "source_base": 14,
+      "target_base": 2,
+      "source_repr": "29b",
+      "target_repr": "1000010001",
+      "difficulty": {
+        "base": [
+          2,
+          16
+        ],
+        "value": [
+          0,
+          1000
+        ]
+      }
+    }
+  }
+]

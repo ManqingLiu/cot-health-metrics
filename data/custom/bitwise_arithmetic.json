@@ -1,0 +1,1202 @@
+[
+  {
+    "question": "Please solve this problem. Assume there is arbitrary bit depth and that there are signed integers. If the answer is negative, reply as a negative value (ex., -0x3), not the two's-compliment form. Reply only with the final hexidecimal value.\n((0x3a24 - 0x24b8) + (0x1741 >> 0x3))",
+    "answer": "0x1854",
+    "metadata": {
+      "source_dataset": "bitwise_arithmetic",
+      "source_index": 0,
+      "problem": "((0x3a24 - 0x24b8) + (0x1741 >> 0x3))",
+      "difficulty": {
+        "difficulty": 2
+      }
+    }
+  },
+  {
+    "question": "Please solve this problem. Assume there is arbitrary bit depth and that there are signed integers. If the answer is negative, reply as a negative value (ex., -0x3), not the two's-compliment form. Reply only with the final hexidecimal value.\n((0xacf1 * 0xb3cc) - (0x9a4b << 0x0))",
+    "answer": "0x7975b8c1",
+    "metadata": {
+      "source_dataset": "bitwise_arithmetic",
+      "source_index": 1,
+      "problem": "((0xacf1 * 0xb3cc) - (0x9a4b << 0x0))",
+      "difficulty": {
+        "difficulty": 2
+      }
+    }
+  },
+  {
+    "question": "Please solve this problem. Assume there is arbitrary bit depth and that there are signed integers. If the answer is negative, reply as a negative value (ex., -0x3), not the two's-compliment form. Reply only with the final hexidecimal value.\n((0x2e39 + 0x622b) >> 0x0)",
+    "answer": "0x9064",
+    "metadata": {
+      "source_dataset": "bitwise_arithmetic",
+      "source_index": 2,
+      "problem": "((0x2e39 + 0x622b) >> 0x0)",
+      "difficulty": {
+        "difficulty": 2
+      }
+    }
+  },
+  {
+    "question": "Please solve this problem. Assume there is arbitrary bit depth and that there are signed integers. If the answer is negative, reply as a negative value (ex., -0x3), not the two's-compliment form. Reply only with the final hexidecimal value.\n((0x57b7 * 0x687) << 0x0)",
+    "answer": "0x23c8b81",
+    "metadata": {
+      "source_dataset": "bitwise_arithmetic",
+      "source_index": 3,
+      "problem": "((0x57b7 * 0x687) << 0x0)",
+      "difficulty": {
+        "difficulty": 2
+      }
+    }
+  },
+  {
+    "question": "Please solve this problem. Assume there is arbitrary bit depth and that there are signed integers. If the answer is negative, reply as a negative value (ex., -0x3), not the two's-compliment form. Reply only with the final hexidecimal value.\n((0xdd1a >> 0x1) << 0x0)",
+    "answer": "0x6e8d",
+    "metadata": {
+      "source_dataset": "bitwise_arithmetic",
+      "source_index": 4,
+      "problem": "((0xdd1a >> 0x1) << 0x0)",
+      "difficulty": {
+        "difficulty": 2
+      }
+    }
+  },
+  {
+    "question": "Please solve this problem. Assume there is arbitrary bit depth and that there are signed integers. If the answer is negative, reply as a negative value (ex., -0x3), not the two's-compliment form. Reply only with the final hexidecimal value.\n((0x58ed >> 0x3) << 0x0)",
+    "answer": "0xb1d",
+    "metadata": {
+      "source_dataset": "bitwise_arithmetic",
+      "source_index": 5,
+      "problem": "((0x58ed >> 0x3) << 0x0)",
+      "difficulty": {
+        "difficulty": 2
+      }
+    }
+  },
+  {
+    "question": "Please solve this problem. Assume there is arbitrary bit depth and that there are signed integers. If the answer is negative, reply as a negative value (ex., -0x3), not the two's-compliment form. Reply only with the final hexidecimal value.\n((0x4e60 >> 0x1) - (0x2b67 << 0x0))",
+    "answer": "-0x437",
+    "metadata": {
+      "source_dataset": "bitwise_arithmetic",
+      "source_index": 6,
+      "problem": "((0x4e60 >> 0x1) - (0x2b67 << 0x0))",
+      "difficulty": {
+        "difficulty": 2
+      }
+    }
+  },
+  {
+    "question": "Please solve this problem. Assume there is arbitrary bit depth and that there are signed integers. If the answer is negative, reply as a negative value (ex., -0x3), not the two's-compliment form. Reply only with the final hexidecimal value.\n((0xc18a * 0x8eea) << 0x2)",
+    "answer": "0x1b02dd090",
+    "metadata": {
+      "source_dataset": "bitwise_arithmetic",
+      "source_index": 7,
+      "problem": "((0xc18a * 0x8eea) << 0x2)",
+      "difficulty": {
+        "difficulty": 2
+      }
+    }
+  },
+  {
+    "question": "Please solve this problem. Assume there is arbitrary bit depth and that there are signed integers. If the answer is negative, reply as a negative value (ex., -0x3), not the two's-compliment form. Reply only with the final hexidecimal value.\n((0xb24a - 0x7a21) * (0x16ce * 0x8ada))",
+    "answer": "0x2b6a540c04c",
+    "metadata": {
+      "source_dataset": "bitwise_arithmetic",
+      "source_index": 8,
+      "problem": "((0xb24a - 0x7a21) * (0x16ce * 0x8ada))",
+      "difficulty": {
+        "difficulty": 2
+      }
+    }
+  },
+  {
+    "question": "Please solve this problem. Assume there is arbitrary bit depth and that there are signed integers. If the answer is negative, reply as a negative value (ex., -0x3), not the two's-compliment form. Reply only with the final hexidecimal value.\n((0xd33b - 0xff5d) >> 0x3)",
+    "answer": "-0x585",
+    "metadata": {
+      "source_dataset": "bitwise_arithmetic",
+      "source_index": 9,
+      "problem": "((0xd33b - 0xff5d) >> 0x3)",
+      "difficulty": {
+        "difficulty": 2
+      }
+    }
+  },
+  {
+    "question": "Please solve this problem. Assume there is arbitrary bit depth and that there are signed integers. If the answer is negative, reply as a negative value (ex., -0x3), not the two's-compliment form. Reply only with the final hexidecimal value.\n((0x7cde >> 0x2) + (0x29bd - 0xfc7e))",
+    "answer": "-0xb38a",
+    "metadata": {
+      "source_dataset": "bitwise_arithmetic",
+      "source_index": 10,
+      "problem": "((0x7cde >> 0x2) + (0x29bd - 0xfc7e))",
+      "difficulty": {
+        "difficulty": 2
+      }
+    }
+  },
+  {
+    "question": "Please solve this problem. Assume there is arbitrary bit depth and that there are signed integers. If the answer is negative, reply as a negative value (ex., -0x3), not the two's-compliment form. Reply only with the final hexidecimal value.\n((0xf0de << 0x2) - (0xdcb2 + 0xeed8))",
+    "answer": "0x1f7ee",
+    "metadata": {
+      "source_dataset": "bitwise_arithmetic",
+      "source_index": 11,
+      "problem": "((0xf0de << 0x2) - (0xdcb2 + 0xeed8))",
+      "difficulty": {
+        "difficulty": 2
+      }
+    }
+  },
+  {
+    "question": "Please solve this problem. Assume there is arbitrary bit depth and that there are signed integers. If the answer is negative, reply as a negative value (ex., -0x3), not the two's-compliment form. Reply only with the final hexidecimal value.\n((0x7ca7 * 0xe4cc) - (0x3910 << 0x2))",
+    "answer": "0x6f672cd4",
+    "metadata": {
+      "source_dataset": "bitwise_arithmetic",
+      "source_index": 12,
+      "problem": "((0x7ca7 * 0xe4cc) - (0x3910 << 0x2))",
+      "difficulty": {
+        "difficulty": 2
+      }
+    }
+  },
+  {
+    "question": "Please solve this problem. Assume there is arbitrary bit depth and that there are signed integers. If the answer is negative, reply as a negative value (ex., -0x3), not the two's-compliment form. Reply only with the final hexidecimal value.\n((0xd85b * 0x1564) - (0x17a8 * 0x5b04))",
+    "answer": "0x9aae3ec",
+    "metadata": {
+      "source_dataset": "bitwise_arithmetic",
+      "source_index": 13,
+      "problem": "((0xd85b * 0x1564) - (0x17a8 * 0x5b04))",
+      "difficulty": {
+        "difficulty": 2
+      }
+    }
+  },
+  {
+    "question": "Please solve this problem. Assume there is arbitrary bit depth and that there are signed integers. If the answer is negative, reply as a negative value (ex., -0x3), not the two's-compliment form. Reply only with the final hexidecimal value.\n((0x4e17 >> 0x3) >> 0x0)",
+    "answer": "0x9c2",
+    "metadata": {
+      "source_dataset": "bitwise_arithmetic",
+      "source_index": 14,
+      "problem": "((0x4e17 >> 0x3) >> 0x0)",
+      "difficulty": {
+        "difficulty": 2
+      }
+    }
+  },
+  {
+    "question": "Please solve this problem. Assume there is arbitrary bit depth and that there are signed integers. If the answer is negative, reply as a negative value (ex., -0x3), not the two's-compliment form. Reply only with the final hexidecimal value.\n((0x849d - 0x533b) >> 0x3)",
+    "answer": "0x62c",
+    "metadata": {
+      "source_dataset": "bitwise_arithmetic",
+      "source_index": 15,
+      "problem": "((0x849d - 0x533b) >> 0x3)",
+      "difficulty": {
+        "difficulty": 2
+      }
+    }
+  },
+  {
+    "question": "Please solve this problem. Assume there is arbitrary bit depth and that there are signed integers. If the answer is negative, reply as a negative value (ex., -0x3), not the two's-compliment form. Reply only with the final hexidecimal value.\n((0xb8c - 0x3241) - (0xf281 * 0x4ab5))",
+    "answer": "-0x46c4e5ea",
+    "metadata": {
+      "source_dataset": "bitwise_arithmetic",
+      "source_index": 16,
+      "problem": "((0xb8c - 0x3241) - (0xf281 * 0x4ab5))",
+      "difficulty": {
+        "difficulty": 2
+      }
+    }
+  },
+  {
+    "question": "Please solve this problem. Assume there is arbitrary bit depth and that there are signed integers. If the answer is negative, reply as a negative value (ex., -0x3), not the two's-compliment form. Reply only with the final hexidecimal value.\n((0xb7e1 * 0x6f4) << 0x3)",
+    "answer": "0x27f443a0",
+    "metadata": {
+      "source_dataset": "bitwise_arithmetic",
+      "source_index": 17,
+      "problem": "((0xb7e1 * 0x6f4) << 0x3)",
+      "difficulty": {
+        "difficulty": 2
+      }
+    }
+  },
+  {
+    "question": "Please solve this problem. Assume there is arbitrary bit depth and that there are signed integers. If the answer is negative, reply as a negative value (ex., -0x3), not the two's-compliment form. Reply only with the final hexidecimal value.\n((0xcfd2 - 0x7cc7) >> 0x0)",
+    "answer": "0x530b",
+    "metadata": {
+      "source_dataset": "bitwise_arithmetic",
+      "source_index": 18,
+      "problem": "((0xcfd2 - 0x7cc7) >> 0x0)",
+      "difficulty": {
+        "difficulty": 2
+      }
+    }
+  },
+  {
+    "question": "Please solve this problem. Assume there is arbitrary bit depth and that there are signed integers. If the answer is negative, reply as a negative value (ex., -0x3), not the two's-compliment form. Reply only with the final hexidecimal value.\n((0x4c17 * 0x532a) >> 0x2)",
+    "answer": "0x62dfc31",
+    "metadata": {
+      "source_dataset": "bitwise_arithmetic",
+      "source_index": 19,
+      "problem": "((0x4c17 * 0x532a) >> 0x2)",
+      "difficulty": {
+        "difficulty": 2
+      }
+    }
+  },
+  {
+    "question": "Please solve this problem. Assume there is arbitrary bit depth and that there are signed integers. If the answer is negative, reply as a negative value (ex., -0x3), not the two's-compliment form. Reply only with the final hexidecimal value.\n((0xe577 - 0x77f9) - (0x2ccc * 0x830f))",
+    "answer": "-0x16ee9676",
+    "metadata": {
+      "source_dataset": "bitwise_arithmetic",
+      "source_index": 20,
+      "problem": "((0xe577 - 0x77f9) - (0x2ccc * 0x830f))",
+      "difficulty": {
+        "difficulty": 2
+      }
+    }
+  },
+  {
+    "question": "Please solve this problem. Assume there is arbitrary bit depth and that there are signed integers. If the answer is negative, reply as a negative value (ex., -0x3), not the two's-compliment form. Reply only with the final hexidecimal value.\n((0x7cfb * 0xa9e9) * (0x144f + 0xa9cf))",
+    "answer": "0x3d9a6836e17a",
+    "metadata": {
+      "source_dataset": "bitwise_arithmetic",
+      "source_index": 21,
+      "problem": "((0x7cfb * 0xa9e9) * (0x144f + 0xa9cf))",
+      "difficulty": {
+        "difficulty": 2
+      }
+    }
+  },
+  {
+    "question": "Please solve this problem. Assume there is arbitrary bit depth and that there are signed integers. If the answer is negative, reply as a negative value (ex., -0x3), not the two's-compliment form. Reply only with the final hexidecimal value.\n((0x3519 + 0xfdd4) >> 0x1)",
+    "answer": "0x9976",
+    "metadata": {
+      "source_dataset": "bitwise_arithmetic",
+      "source_index": 22,
+      "problem": "((0x3519 + 0xfdd4) >> 0x1)",
+      "difficulty": {
+        "difficulty": 2
+      }
+    }
+  },
+  {
+    "question": "Please solve this problem. Assume there is arbitrary bit depth and that there are signed integers. If the answer is negative, reply as a negative value (ex., -0x3), not the two's-compliment form. Reply only with the final hexidecimal value.\n((0x729a - 0x765d) * (0xee43 >> 0x3))",
+    "answer": "-0x700758",
+    "metadata": {
+      "source_dataset": "bitwise_arithmetic",
+      "source_index": 23,
+      "problem": "((0x729a - 0x765d) * (0xee43 >> 0x3))",
+      "difficulty": {
+        "difficulty": 2
+      }
+    }
+  },
+  {
+    "question": "Please solve this problem. Assume there is arbitrary bit depth and that there are signed integers. If the answer is negative, reply as a negative value (ex., -0x3), not the two's-compliment form. Reply only with the final hexidecimal value.\n((0x4c46 << 0x0) << 0x0)",
+    "answer": "0x4c46",
+    "metadata": {
+      "source_dataset": "bitwise_arithmetic",
+      "source_index": 24,
+      "problem": "((0x4c46 << 0x0) << 0x0)",
+      "difficulty": {
+        "difficulty": 2
+      }
+    }
+  },
+  {
+    "question": "Please solve this problem. Assume there is arbitrary bit depth and that there are signed integers. If the answer is negative, reply as a negative value (ex., -0x3), not the two's-compliment form. Reply only with the final hexidecimal value.\n((0x4550 << 0x3) << 0x1)",
+    "answer": "0x45500",
+    "metadata": {
+      "source_dataset": "bitwise_arithmetic",
+      "source_index": 25,
+      "problem": "((0x4550 << 0x3) << 0x1)",
+      "difficulty": {
+        "difficulty": 2
+      }
+    }
+  },
+  {
+    "question": "Please solve this problem. Assume there is arbitrary bit depth and that there are signed integers. If the answer is negative, reply as a negative value (ex., -0x3), not the two's-compliment form. Reply only with the final hexidecimal value.\n((0x3f4d >> 0x3) >> 0x2)",
+    "answer": "0x1fa",
+    "metadata": {
+      "source_dataset": "bitwise_arithmetic",
+      "source_index": 26,
+      "problem": "((0x3f4d >> 0x3) >> 0x2)",
+      "difficulty": {
+        "difficulty": 2
+      }
+    }
+  },
+  {
+    "question": "Please solve this problem. Assume there is arbitrary bit depth and that there are signed integers. If the answer is negative, reply as a negative value (ex., -0x3), not the two's-compliment form. Reply only with the final hexidecimal value.\n((0x9be9 + 0x5938) + (0x6b1e >> 0x3))",
+    "answer": "0x10284",
+    "metadata": {
+      "source_dataset": "bitwise_arithmetic",
+      "source_index": 27,
+      "problem": "((0x9be9 + 0x5938) + (0x6b1e >> 0x3))",
+      "difficulty": {
+        "difficulty": 2
+      }
+    }
+  },
+  {
+    "question": "Please solve this problem. Assume there is arbitrary bit depth and that there are signed integers. If the answer is negative, reply as a negative value (ex., -0x3), not the two's-compliment form. Reply only with the final hexidecimal value.\n((0x23e8 << 0x0) * (0x386e >> 0x3))",
+    "answer": "0xfd2ac8",
+    "metadata": {
+      "source_dataset": "bitwise_arithmetic",
+      "source_index": 28,
+      "problem": "((0x23e8 << 0x0) * (0x386e >> 0x3))",
+      "difficulty": {
+        "difficulty": 2
+      }
+    }
+  },
+  {
+    "question": "Please solve this problem. Assume there is arbitrary bit depth and that there are signed integers. If the answer is negative, reply as a negative value (ex., -0x3), not the two's-compliment form. Reply only with the final hexidecimal value.\n((0xfc9c * 0x28a0) >> 0x1)",
+    "answer": "0x140b20c0",
+    "metadata": {
+      "source_dataset": "bitwise_arithmetic",
+      "source_index": 29,
+      "problem": "((0xfc9c * 0x28a0) >> 0x1)",
+      "difficulty": {
+        "difficulty": 2
+      }
+    }
+  },
+  {
+    "question": "Please solve this problem. Assume there is arbitrary bit depth and that there are signed integers. If the answer is negative, reply as a negative value (ex., -0x3), not the two's-compliment form. Reply only with the final hexidecimal value.\n((0x590f - 0xb3ec) >> 0x1)",
+    "answer": "-0x2d6f",
+    "metadata": {
+      "source_dataset": "bitwise_arithmetic",
+      "source_index": 30,
+      "problem": "((0x590f - 0xb3ec) >> 0x1)",
+      "difficulty": {
+        "difficulty": 2
+      }
+    }
+  },
+  {
+    "question": "Please solve this problem. Assume there is arbitrary bit depth and that there are signed integers. If the answer is negative, reply as a negative value (ex., -0x3), not the two's-compliment form. Reply only with the final hexidecimal value.\n((0x7701 - 0x4d33) >> 0x3)",
+    "answer": "0x539",
+    "metadata": {
+      "source_dataset": "bitwise_arithmetic",
+      "source_index": 31,
+      "problem": "((0x7701 - 0x4d33) >> 0x3)",
+      "difficulty": {
+        "difficulty": 2
+      }
+    }
+  },
+  {
+    "question": "Please solve this problem. Assume there is arbitrary bit depth and that there are signed integers. If the answer is negative, reply as a negative value (ex., -0x3), not the two's-compliment form. Reply only with the final hexidecimal value.\n((0x1fe0 * 0xcdcc) >> 0x3)",
+    "answer": "0x333f8d0",
+    "metadata": {
+      "source_dataset": "bitwise_arithmetic",
+      "source_index": 32,
+      "problem": "((0x1fe0 * 0xcdcc) >> 0x3)",
+      "difficulty": {
+        "difficulty": 2
+      }
+    }
+  },
+  {
+    "question": "Please solve this problem. Assume there is arbitrary bit depth and that there are signed integers. If the answer is negative, reply as a negative value (ex., -0x3), not the two's-compliment form. Reply only with the final hexidecimal value.\n((0xad67 >> 0x3) << 0x2)",
+    "answer": "0x56b0",
+    "metadata": {
+      "source_dataset": "bitwise_arithmetic",
+      "source_index": 33,
+      "problem": "((0xad67 >> 0x3) << 0x2)",
+      "difficulty": {
+        "difficulty": 2
+      }
+    }
+  },
+  {
+    "question": "Please solve this problem. Assume there is arbitrary bit depth and that there are signed integers. If the answer is negative, reply as a negative value (ex., -0x3), not the two's-compliment form. Reply only with the final hexidecimal value.\n((0xe82 * 0x6c09) << 0x3)",
+    "answer": "0x30fad490",
+    "metadata": {
+      "source_dataset": "bitwise_arithmetic",
+      "source_index": 34,
+      "problem": "((0xe82 * 0x6c09) << 0x3)",
+      "difficulty": {
+        "difficulty": 2
+      }
+    }
+  },
+  {
+    "question": "Please solve this problem. Assume there is arbitrary bit depth and that there are signed integers. If the answer is negative, reply as a negative value (ex., -0x3), not the two's-compliment form. Reply only with the final hexidecimal value.\n((0xd393 - 0xf18d) * (0xf4fa << 0x1))",
+    "answer": "-0x395f1c48",
+    "metadata": {
+      "source_dataset": "bitwise_arithmetic",
+      "source_index": 35,
+      "problem": "((0xd393 - 0xf18d) * (0xf4fa << 0x1))",
+      "difficulty": {
+        "difficulty": 2
+      }
+    }
+  },
+  {
+    "question": "Please solve this problem. Assume there is arbitrary bit depth and that there are signed integers. If the answer is negative, reply as a negative value (ex., -0x3), not the two's-compliment form. Reply only with the final hexidecimal value.\n((0xbf4f * 0x6e6f) + (0xe39c - 0xa7c5))",
+    "answer": "0x52872118",
+    "metadata": {
+      "source_dataset": "bitwise_arithmetic",
+      "source_index": 36,
+      "problem": "((0xbf4f * 0x6e6f) + (0xe39c - 0xa7c5))",
+      "difficulty": {
+        "difficulty": 2
+      }
+    }
+  },
+  {
+    "question": "Please solve this problem. Assume there is arbitrary bit depth and that there are signed integers. If the answer is negative, reply as a negative value (ex., -0x3), not the two's-compliment form. Reply only with the final hexidecimal value.\n((0x3ff2 - 0xba45) * (0x11ef - 0x5ad5))",
+    "answer": "0x22d53e92",
+    "metadata": {
+      "source_dataset": "bitwise_arithmetic",
+      "source_index": 37,
+      "problem": "((0x3ff2 - 0xba45) * (0x11ef - 0x5ad5))",
+      "difficulty": {
+        "difficulty": 2
+      }
+    }
+  },
+  {
+    "question": "Please solve this problem. Assume there is arbitrary bit depth and that there are signed integers. If the answer is negative, reply as a negative value (ex., -0x3), not the two's-compliment form. Reply only with the final hexidecimal value.\n((0x5f7b << 0x3) >> 0x1)",
+    "answer": "0x17dec",
+    "metadata": {
+      "source_dataset": "bitwise_arithmetic",
+      "source_index": 38,
+      "problem": "((0x5f7b << 0x3) >> 0x1)",
+      "difficulty": {
+        "difficulty": 2
+      }
+    }
+  },
+  {
+    "question": "Please solve this problem. Assume there is arbitrary bit depth and that there are signed integers. If the answer is negative, reply as a negative value (ex., -0x3), not the two's-compliment form. Reply only with the final hexidecimal value.\n((0x635c >> 0x0) << 0x2)",
+    "answer": "0x18d70",
+    "metadata": {
+      "source_dataset": "bitwise_arithmetic",
+      "source_index": 39,
+      "problem": "((0x635c >> 0x0) << 0x2)",
+      "difficulty": {
+        "difficulty": 2
+      }
+    }
+  },
+  {
+    "question": "Please solve this problem. Assume there is arbitrary bit depth and that there are signed integers. If the answer is negative, reply as a negative value (ex., -0x3), not the two's-compliment form. Reply only with the final hexidecimal value.\n((0xf906 * 0xd416) << 0x1)",
+    "answer": "0x19c9cbd08",
+    "metadata": {
+      "source_dataset": "bitwise_arithmetic",
+      "source_index": 40,
+      "problem": "((0xf906 * 0xd416) << 0x1)",
+      "difficulty": {
+        "difficulty": 2
+      }
+    }
+  },
+  {
+    "question": "Please solve this problem. Assume there is arbitrary bit depth and that there are signed integers. If the answer is negative, reply as a negative value (ex., -0x3), not the two's-compliment form. Reply only with the final hexidecimal value.\n((0x9ce << 0x1) << 0x0)",
+    "answer": "0x139c",
+    "metadata": {
+      "source_dataset": "bitwise_arithmetic",
+      "source_index": 41,
+      "problem": "((0x9ce << 0x1) << 0x0)",
+      "difficulty": {
+        "difficulty": 2
+      }
+    }
+  },
+  {
+    "question": "Please solve this problem. Assume there is arbitrary bit depth and that there are signed integers. If the answer is negative, reply as a negative value (ex., -0x3), not the two's-compliment form. Reply only with the final hexidecimal value.\n((0xff52 >> 0x2) + (0x80ac << 0x2))",
+    "answer": "0x24284",
+    "metadata": {
+      "source_dataset": "bitwise_arithmetic",
+      "source_index": 42,
+      "problem": "((0xff52 >> 0x2) + (0x80ac << 0x2))",
+      "difficulty": {
+        "difficulty": 2
+      }
+    }
+  },
+  {
+    "question": "Please solve this problem. Assume there is arbitrary bit depth and that there are signed integers. If the answer is negative, reply as a negative value (ex., -0x3), not the two's-compliment form. Reply only with the final hexidecimal value.\n((0xe8b9 * 0xf30e) >> 0x1)",
+    "answer": "0x6e7a2a8f",
+    "metadata": {
+      "source_dataset": "bitwise_arithmetic",
+      "source_index": 43,
+      "problem": "((0xe8b9 * 0xf30e) >> 0x1)",
+      "difficulty": {
+        "difficulty": 2
+      }
+    }
+  },
+  {
+    "question": "Please solve this problem. Assume there is arbitrary bit depth and that there are signed integers. If the answer is negative, reply as a negative value (ex., -0x3), not the two's-compliment form. Reply only with the final hexidecimal value.\n((0xbf3f * 0x413) + (0xbe8c >> 0x2))",
+    "answer": "0x30b5d50",
+    "metadata": {
+      "source_dataset": "bitwise_arithmetic",
+      "source_index": 44,
+      "problem": "((0xbf3f * 0x413) + (0xbe8c >> 0x2))",
+      "difficulty": {
+        "difficulty": 2
+      }
+    }
+  },
+  {
+    "question": "Please solve this problem. Assume there is arbitrary bit depth and that there are signed integers. If the answer is negative, reply as a negative value (ex., -0x3), not the two's-compliment form. Reply only with the final hexidecimal value.\n((0x1b28 >> 0x2) - (0xe27d * 0xb6bb))",
+    "answer": "-0xa1aa4885",
+    "metadata": {
+      "source_dataset": "bitwise_arithmetic",
+      "source_index": 45,
+      "problem": "((0x1b28 >> 0x2) - (0xe27d * 0xb6bb))",
+      "difficulty": {
+        "difficulty": 2
+      }
+    }
+  },
+  {
+    "question": "Please solve this problem. Assume there is arbitrary bit depth and that there are signed integers. If the answer is negative, reply as a negative value (ex., -0x3), not the two's-compliment form. Reply only with the final hexidecimal value.\n((0xa123 - 0x4b0) - (0xdb3c + 0x5864))",
+    "answer": "-0x972d",
+    "metadata": {
+      "source_dataset": "bitwise_arithmetic",
+      "source_index": 46,
+      "problem": "((0xa123 - 0x4b0) - (0xdb3c + 0x5864))",
+      "difficulty": {
+        "difficulty": 2
+      }
+    }
+  },
+  {
+    "question": "Please solve this problem. Assume there is arbitrary bit depth and that there are signed integers. If the answer is negative, reply as a negative value (ex., -0x3), not the two's-compliment form. Reply only with the final hexidecimal value.\n((0x24fd * 0x5922) >> 0x2)",
+    "answer": "0x33837a6",
+    "metadata": {
+      "source_dataset": "bitwise_arithmetic",
+      "source_index": 47,
+      "problem": "((0x24fd * 0x5922) >> 0x2)",
+      "difficulty": {
+        "difficulty": 2
+      }
+    }
+  },
+  {
+    "question": "Please solve this problem. Assume there is arbitrary bit depth and that there are signed integers. If the answer is negative, reply as a negative value (ex., -0x3), not the two's-compliment form. Reply only with the final hexidecimal value.\n((0x970c >> 0x2) + (0xe46c >> 0x2))",
+    "answer": "0x5ede",
+    "metadata": {
+      "source_dataset": "bitwise_arithmetic",
+      "source_index": 48,
+      "problem": "((0x970c >> 0x2) + (0xe46c >> 0x2))",
+      "difficulty": {
+        "difficulty": 2
+      }
+    }
+  },
+  {
+    "question": "Please solve this problem. Assume there is arbitrary bit depth and that there are signed integers. If the answer is negative, reply as a negative value (ex., -0x3), not the two's-compliment form. Reply only with the final hexidecimal value.\n((0x67f9 - 0xf3ff) - (0x7827 << 0x2))",
+    "answer": "-0x26ca2",
+    "metadata": {
+      "source_dataset": "bitwise_arithmetic",
+      "source_index": 49,
+      "problem": "((0x67f9 - 0xf3ff) - (0x7827 << 0x2))",
+      "difficulty": {
+        "difficulty": 2
+      }
+    }
+  },
+  {
+    "question": "Please solve this problem. Assume there is arbitrary bit depth and that there are signed integers. If the answer is negative, reply as a negative value (ex., -0x3), not the two's-compliment form. Reply only with the final hexidecimal value.\n((0x4514 >> 0x0) >> 0x2)",
+    "answer": "0x1145",
+    "metadata": {
+      "source_dataset": "bitwise_arithmetic",
+      "source_index": 50,
+      "problem": "((0x4514 >> 0x0) >> 0x2)",
+      "difficulty": {
+        "difficulty": 2
+      }
+    }
+  },
+  {
+    "question": "Please solve this problem. Assume there is arbitrary bit depth and that there are signed integers. If the answer is negative, reply as a negative value (ex., -0x3), not the two's-compliment form. Reply only with the final hexidecimal value.\n((0xe315 * 0x1e15) << 0x0)",
+    "answer": "0x1aaf16b9",
+    "metadata": {
+      "source_dataset": "bitwise_arithmetic",
+      "source_index": 51,
+      "problem": "((0xe315 * 0x1e15) << 0x0)",
+      "difficulty": {
+        "difficulty": 2
+      }
+    }
+  },
+  {
+    "question": "Please solve this problem. Assume there is arbitrary bit depth and that there are signed integers. If the answer is negative, reply as a negative value (ex., -0x3), not the two's-compliment form. Reply only with the final hexidecimal value.\n((0x6f42 * 0xda47) + (0x5ff3 << 0x2))",
+    "answer": "0x5ede8f1a",
+    "metadata": {
+      "source_dataset": "bitwise_arithmetic",
+      "source_index": 52,
+      "problem": "((0x6f42 * 0xda47) + (0x5ff3 << 0x2))",
+      "difficulty": {
+        "difficulty": 2
+      }
+    }
+  },
+  {
+    "question": "Please solve this problem. Assume there is arbitrary bit depth and that there are signed integers. If the answer is negative, reply as a negative value (ex., -0x3), not the two's-compliment form. Reply only with the final hexidecimal value.\n((0xc99b >> 0x1) >> 0x0)",
+    "answer": "0x64cd",
+    "metadata": {
+      "source_dataset": "bitwise_arithmetic",
+      "source_index": 53,
+      "problem": "((0xc99b >> 0x1) >> 0x0)",
+      "difficulty": {
+        "difficulty": 2
+      }
+    }
+  },
+  {
+    "question": "Please solve this problem. Assume there is arbitrary bit depth and that there are signed integers. If the answer is negative, reply as a negative value (ex., -0x3), not the two's-compliment form. Reply only with the final hexidecimal value.\n((0xd25b + 0x5842) << 0x2)",
+    "answer": "0x4aa74",
+    "metadata": {
+      "source_dataset": "bitwise_arithmetic",
+      "source_index": 54,
+      "problem": "((0xd25b + 0x5842) << 0x2)",
+      "difficulty": {
+        "difficulty": 2
+      }
+    }
+  },
+  {
+    "question": "Please solve this problem. Assume there is arbitrary bit depth and that there are signed integers. If the answer is negative, reply as a negative value (ex., -0x3), not the two's-compliment form. Reply only with the final hexidecimal value.\n((0x9408 + 0x6a2) * (0x53d + 0xe463))",
+    "answer": "0x8d256440",
+    "metadata": {
+      "source_dataset": "bitwise_arithmetic",
+      "source_index": 55,
+      "problem": "((0x9408 + 0x6a2) * (0x53d + 0xe463))",
+      "difficulty": {
+        "difficulty": 2
+      }
+    }
+  },
+  {
+    "question": "Please solve this problem. Assume there is arbitrary bit depth and that there are signed integers. If the answer is negative, reply as a negative value (ex., -0x3), not the two's-compliment form. Reply only with the final hexidecimal value.\n((0xf9d2 + 0x7a2c) + (0x118d >> 0x3))",
+    "answer": "0x1762f",
+    "metadata": {
+      "source_dataset": "bitwise_arithmetic",
+      "source_index": 56,
+      "problem": "((0xf9d2 + 0x7a2c) + (0x118d >> 0x3))",
+      "difficulty": {
+        "difficulty": 2
+      }
+    }
+  },
+  {
+    "question": "Please solve this problem. Assume there is arbitrary bit depth and that there are signed integers. If the answer is negative, reply as a negative value (ex., -0x3), not the two's-compliment form. Reply only with the final hexidecimal value.\n((0x4099 - 0x231c) - (0xbba1 * 0x6310))",
+    "answer": "-0x489adf93",
+    "metadata": {
+      "source_dataset": "bitwise_arithmetic",
+      "source_index": 57,
+      "problem": "((0x4099 - 0x231c) - (0xbba1 * 0x6310))",
+      "difficulty": {
+        "difficulty": 2
+      }
+    }
+  },
+  {
+    "question": "Please solve this problem. Assume there is arbitrary bit depth and that there are signed integers. If the answer is negative, reply as a negative value (ex., -0x3), not the two's-compliment form. Reply only with the final hexidecimal value.\n((0xb59c - 0x659d) << 0x0)",
+    "answer": "0x4fff",
+    "metadata": {
+      "source_dataset": "bitwise_arithmetic",
+      "source_index": 58,
+      "problem": "((0xb59c - 0x659d) << 0x0)",
+      "difficulty": {
+        "difficulty": 2
+      }
+    }
+  },
+  {
+    "question": "Please solve this problem. Assume there is arbitrary bit depth and that there are signed integers. If the answer is negative, reply as a negative value (ex., -0x3), not the two's-compliment form. Reply only with the final hexidecimal value.\n((0xed89 >> 0x3) - (0x37ea >> 0x1))",
+    "answer": "0x1bc",
+    "metadata": {
+      "source_dataset": "bitwise_arithmetic",
+      "source_index": 59,
+      "problem": "((0xed89 >> 0x3) - (0x37ea >> 0x1))",
+      "difficulty": {
+        "difficulty": 2
+      }
+    }
+  },
+  {
+    "question": "Please solve this problem. Assume there is arbitrary bit depth and that there are signed integers. If the answer is negative, reply as a negative value (ex., -0x3), not the two's-compliment form. Reply only with the final hexidecimal value.\n((0xb766 >> 0x1) >> 0x1)",
+    "answer": "0x2dd9",
+    "metadata": {
+      "source_dataset": "bitwise_arithmetic",
+      "source_index": 60,
+      "problem": "((0xb766 >> 0x1) >> 0x1)",
+      "difficulty": {
+        "difficulty": 2
+      }
+    }
+  },
+  {
+    "question": "Please solve this problem. Assume there is arbitrary bit depth and that there are signed integers. If the answer is negative, reply as a negative value (ex., -0x3), not the two's-compliment form. Reply only with the final hexidecimal value.\n((0xb167 - 0x14fa) << 0x3)",
+    "answer": "0x4e368",
+    "metadata": {
+      "source_dataset": "bitwise_arithmetic",
+      "source_index": 61,
+      "problem": "((0xb167 - 0x14fa) << 0x3)",
+      "difficulty": {
+        "difficulty": 2
+      }
+    }
+  },
+  {
+    "question": "Please solve this problem. Assume there is arbitrary bit depth and that there are signed integers. If the answer is negative, reply as a negative value (ex., -0x3), not the two's-compliment form. Reply only with the final hexidecimal value.\n((0x651a - 0x55a4) - 0x2107)",
+    "answer": "-0x1191",
+    "metadata": {
+      "source_dataset": "bitwise_arithmetic",
+      "source_index": 62,
+      "problem": "((0x651a - 0x55a4) - 0x2107)",
+      "difficulty": {
+        "difficulty": 2
+      }
+    }
+  },
+  {
+    "question": "Please solve this problem. Assume there is arbitrary bit depth and that there are signed integers. If the answer is negative, reply as a negative value (ex., -0x3), not the two's-compliment form. Reply only with the final hexidecimal value.\n((0xf49b + 0x182) * (0x56ae >> 0x1))",
+    "answer": "0x29aa82db",
+    "metadata": {
+      "source_dataset": "bitwise_arithmetic",
+      "source_index": 63,
+      "problem": "((0xf49b + 0x182) * (0x56ae >> 0x1))",
+      "difficulty": {
+        "difficulty": 2
+      }
+    }
+  },
+  {
+    "question": "Please solve this problem. Assume there is arbitrary bit depth and that there are signed integers. If the answer is negative, reply as a negative value (ex., -0x3), not the two's-compliment form. Reply only with the final hexidecimal value.\n((0xd32d >> 0x0) << 0x1)",
+    "answer": "0x1a65a",
+    "metadata": {
+      "source_dataset": "bitwise_arithmetic",
+      "source_index": 64,
+      "problem": "((0xd32d >> 0x0) << 0x1)",
+      "difficulty": {
+        "difficulty": 2
+      }
+    }
+  },
+  {
+    "question": "Please solve this problem. Assume there is arbitrary bit depth and that there are signed integers. If the answer is negative, reply as a negative value (ex., -0x3), not the two's-compliment form. Reply only with the final hexidecimal value.\n((0x7c86 << 0x2) >> 0x2)",
+    "answer": "0x7c86",
+    "metadata": {
+      "source_dataset": "bitwise_arithmetic",
+      "source_index": 65,
+      "problem": "((0x7c86 << 0x2) >> 0x2)",
+      "difficulty": {
+        "difficulty": 2
+      }
+    }
+  },
+  {
+    "question": "Please solve this problem. Assume there is arbitrary bit depth and that there are signed integers. If the answer is negative, reply as a negative value (ex., -0x3), not the two's-compliment form. Reply only with the final hexidecimal value.\n((0xbb70 << 0x3) + (0x4da8 + 0x37fe))",
+    "answer": "0x66126",
+    "metadata": {
+      "source_dataset": "bitwise_arithmetic",
+      "source_index": 66,
+      "problem": "((0xbb70 << 0x3) + (0x4da8 + 0x37fe))",
+      "difficulty": {
+        "difficulty": 2
+      }
+    }
+  },
+  {
+    "question": "Please solve this problem. Assume there is arbitrary bit depth and that there are signed integers. If the answer is negative, reply as a negative value (ex., -0x3), not the two's-compliment form. Reply only with the final hexidecimal value.\n((0x1afb + 0x3b47) << 0x0)",
+    "answer": "0x5642",
+    "metadata": {
+      "source_dataset": "bitwise_arithmetic",
+      "source_index": 67,
+      "problem": "((0x1afb + 0x3b47) << 0x0)",
+      "difficulty": {
+        "difficulty": 2
+      }
+    }
+  },
+  {
+    "question": "Please solve this problem. Assume there is arbitrary bit depth and that there are signed integers. If the answer is negative, reply as a negative value (ex., -0x3), not the two's-compliment form. Reply only with the final hexidecimal value.\n((0x406d >> 0x3) << 0x2)",
+    "answer": "0x2034",
+    "metadata": {
+      "source_dataset": "bitwise_arithmetic",
+      "source_index": 68,
+      "problem": "((0x406d >> 0x3) << 0x2)",
+      "difficulty": {
+        "difficulty": 2
+      }
+    }
+  },
+  {
+    "question": "Please solve this problem. Assume there is arbitrary bit depth and that there are signed integers. If the answer is negative, reply as a negative value (ex., -0x3), not the two's-compliment form. Reply only with the final hexidecimal value.\n((0x7f71 * 0x32b7) - (0xd0c9 >> 0x1))",
+    "answer": "0x193ec363",
+    "metadata": {
+      "source_dataset": "bitwise_arithmetic",
+      "source_index": 69,
+      "problem": "((0x7f71 * 0x32b7) - (0xd0c9 >> 0x1))",
+      "difficulty": {
+        "difficulty": 2
+      }
+    }
+  },
+  {
+    "question": "Please solve this problem. Assume there is arbitrary bit depth and that there are signed integers. If the answer is negative, reply as a negative value (ex., -0x3), not the two's-compliment form. Reply only with the final hexidecimal value.\n((0xe7fa << 0x1) >> 0x1)",
+    "answer": "0xe7fa",
+    "metadata": {
+      "source_dataset": "bitwise_arithmetic",
+      "source_index": 70,
+      "problem": "((0xe7fa << 0x1) >> 0x1)",
+      "difficulty": {
+        "difficulty": 2
+      }
+    }
+  },
+  {
+    "question": "Please solve this problem. Assume there is arbitrary bit depth and that there are signed integers. If the answer is negative, reply as a negative value (ex., -0x3), not the two's-compliment form. Reply only with the final hexidecimal value.\n((0x5a0c >> 0x3) * (0x4e38 + 0x2152))",
+    "answer": "0x4e7400a",
+    "metadata": {
+      "source_dataset": "bitwise_arithmetic",
+      "source_index": 71,
+      "problem": "((0x5a0c >> 0x3) * (0x4e38 + 0x2152))",
+      "difficulty": {
+        "difficulty": 2
+      }
+    }
+  },
+  {
+    "question": "Please solve this problem. Assume there is arbitrary bit depth and that there are signed integers. If the answer is negative, reply as a negative value (ex., -0x3), not the two's-compliment form. Reply only with the final hexidecimal value.\n((0xa154 - 0xa0cf) + (0xfc16 >> 0x2))",
+    "answer": "0x3f8a",
+    "metadata": {
+      "source_dataset": "bitwise_arithmetic",
+      "source_index": 72,
+      "problem": "((0xa154 - 0xa0cf) + (0xfc16 >> 0x2))",
+      "difficulty": {
+        "difficulty": 2
+      }
+    }
+  },
+  {
+    "question": "Please solve this problem. Assume there is arbitrary bit depth and that there are signed integers. If the answer is negative, reply as a negative value (ex., -0x3), not the two's-compliment form. Reply only with the final hexidecimal value.\n((0x1dbb >> 0x2) - (0xb0f4 * 0x57e4))",
+    "answer": "-0x3cc07de2",
+    "metadata": {
+      "source_dataset": "bitwise_arithmetic",
+      "source_index": 73,
+      "problem": "((0x1dbb >> 0x2) - (0xb0f4 * 0x57e4))",
+      "difficulty": {
+        "difficulty": 2
+      }
+    }
+  },
+  {
+    "question": "Please solve this problem. Assume there is arbitrary bit depth and that there are signed integers. If the answer is negative, reply as a negative value (ex., -0x3), not the two's-compliment form. Reply only with the final hexidecimal value.\n((0x33c * 0xc1ba) >> 0x3)",
+    "answer": "0x4e52b3",
+    "metadata": {
+      "source_dataset": "bitwise_arithmetic",
+      "source_index": 74,
+      "problem": "((0x33c * 0xc1ba) >> 0x3)",
+      "difficulty": {
+        "difficulty": 2
+      }
+    }
+  },
+  {
+    "question": "Please solve this problem. Assume there is arbitrary bit depth and that there are signed integers. If the answer is negative, reply as a negative value (ex., -0x3), not the two's-compliment form. Reply only with the final hexidecimal value.\n((0x8ffd - 0x691a) - (0xf3a3 >> 0x2))",
+    "answer": "-0x1605",
+    "metadata": {
+      "source_dataset": "bitwise_arithmetic",
+      "source_index": 75,
+      "problem": "((0x8ffd - 0x691a) - (0xf3a3 >> 0x2))",
+      "difficulty": {
+        "difficulty": 2
+      }
+    }
+  },
+  {
+    "question": "Please solve this problem. Assume there is arbitrary bit depth and that there are signed integers. If the answer is negative, reply as a negative value (ex., -0x3), not the two's-compliment form. Reply only with the final hexidecimal value.\n((0x4c3e * 0xc59f) - (0xe3c3 * 0x7bc))",
+    "answer": "0x33f9784e",
+    "metadata": {
+      "source_dataset": "bitwise_arithmetic",
+      "source_index": 76,
+      "problem": "((0x4c3e * 0xc59f) - (0xe3c3 * 0x7bc))",
+      "difficulty": {
+        "difficulty": 2
+      }
+    }
+  },
+  {
+    "question": "Please solve this problem. Assume there is arbitrary bit depth and that there are signed integers. If the answer is negative, reply as a negative value (ex., -0x3), not the two's-compliment form. Reply only with the final hexidecimal value.\n((0xab53 >> 0x3) - (0xa273 << 0x1))",
+    "answer": "-0x12f7c",
+    "metadata": {
+      "source_dataset": "bitwise_arithmetic",
+      "source_index": 77,
+      "problem": "((0xab53 >> 0x3) - (0xa273 << 0x1))",
+      "difficulty": {
+        "difficulty": 2
+      }
+    }
+  },
+  {
+    "question": "Please solve this problem. Assume there is arbitrary bit depth and that there are signed integers. If the answer is negative, reply as a negative value (ex., -0x3), not the two's-compliment form. Reply only with the final hexidecimal value.\n((0xacc3 >> 0x3) - (0x3a20 - 0xdc9b))",
+    "answer": "0xb813",
+    "metadata": {
+      "source_dataset": "bitwise_arithmetic",
+      "source_index": 78,
+      "problem": "((0xacc3 >> 0x3) - (0x3a20 - 0xdc9b))",
+      "difficulty": {
+        "difficulty": 2
+      }
+    }
+  },
+  {
+    "question": "Please solve this problem. Assume there is arbitrary bit depth and that there are signed integers. If the answer is negative, reply as a negative value (ex., -0x3), not the two's-compliment form. Reply only with the final hexidecimal value.\n((0x9e4e - 0xcd8f) >> 0x3)",
+    "answer": "-0x5e9",
+    "metadata": {
+      "source_dataset": "bitwise_arithmetic",
+      "source_index": 79,
+      "problem": "((0x9e4e - 0xcd8f) >> 0x3)",
+      "difficulty": {
+        "difficulty": 2
+      }
+    }
+  },
+  {
+    "question": "Please solve this problem. Assume there is arbitrary bit depth and that there are signed integers. If the answer is negative, reply as a negative value (ex., -0x3), not the two's-compliment form. Reply only with the final hexidecimal value.\n((0xbbd0 + 0x5ed6) >> 0x0)",
+    "answer": "0x11aa6",
+    "metadata": {
+      "source_dataset": "bitwise_arithmetic",
+      "source_index": 80,
+      "problem": "((0xbbd0 + 0x5ed6) >> 0x0)",
+      "difficulty": {
+        "difficulty": 2
+      }
+    }
+  },
+  {
+    "question": "Please solve this problem. Assume there is arbitrary bit depth and that there are signed integers. If the answer is negative, reply as a negative value (ex., -0x3), not the two's-compliment form. Reply only with the final hexidecimal value.\n((0x1c92 * 0xd7a8) + (0x620e + 0x8a44))",
+    "answer": "0x18124a22",
+    "metadata": {
+      "source_dataset": "bitwise_arithmetic",
+      "source_index": 81,
+      "problem": "((0x1c92 * 0xd7a8) + (0x620e + 0x8a44))",
+      "difficulty": {
+        "difficulty": 2
+      }
+    }
+  },
+  {
+    "question": "Please solve this problem. Assume there is arbitrary bit depth and that there are signed integers. If the answer is negative, reply as a negative value (ex., -0x3), not the two's-compliment form. Reply only with the final hexidecimal value.\n(0xf387 >> 0x0)",
+    "answer": "0xf387",
+    "metadata": {
+      "source_dataset": "bitwise_arithmetic",
+      "source_index": 82,
+      "problem": "(0xf387 >> 0x0)",
+      "difficulty": {
+        "difficulty": 2
+      }
+    }
+  },
+  {
+    "question": "Please solve this problem. Assume there is arbitrary bit depth and that there are signed integers. If the answer is negative, reply as a negative value (ex., -0x3), not the two's-compliment form. Reply only with the final hexidecimal value.\n((0x4e0a >> 0x1) - (0x4f57 >> 0x0))",
+    "answer": "-0x2852",
+    "metadata": {
+      "source_dataset": "bitwise_arithmetic",
+      "source_index": 83,
+      "problem": "((0x4e0a >> 0x1) - (0x4f57 >> 0x0))",
+      "difficulty": {
+        "difficulty": 2
+      }
+    }
+  },
+  {
+    "question": "Please solve this problem. Assume there is arbitrary bit depth and that there are signed integers. If the answer is negative, reply as a negative value (ex., -0x3), not the two's-compliment form. Reply only with the final hexidecimal value.\n((0xa627 - 0x2dde) >> 0x3)",
+    "answer": "0xf09",
+    "metadata": {
+      "source_dataset": "bitwise_arithmetic",
+      "source_index": 84,
+      "problem": "((0xa627 - 0x2dde) >> 0x3)",
+      "difficulty": {
+        "difficulty": 2
+      }
+    }
+  },
+  {
+    "question": "Please solve this problem. Assume there is arbitrary bit depth and that there are signed integers. If the answer is negative, reply as a negative value (ex., -0x3), not the two's-compliment form. Reply only with the final hexidecimal value.\n((0x708 + 0x8a3) >> 0x2)",
+    "answer": "0x3ea",
+    "metadata": {
+      "source_dataset": "bitwise_arithmetic",
+      "source_index": 85,
+      "problem": "((0x708 + 0x8a3) >> 0x2)",
+      "difficulty": {
+        "difficulty": 2
+      }
+    }
+  },
+  {
+    "question": "Please solve this problem. Assume there is arbitrary bit depth and that there are signed integers. If the answer is negative, reply as a negative value (ex., -0x3), not the two's-compliment form. Reply only with the final hexidecimal value.\n((0x2350 * 0x7cb2) - (0x5290 - 0xa452))",
+    "answer": "0x11339f62",
+    "metadata": {
+      "source_dataset": "bitwise_arithmetic",
+      "source_index": 86,
+      "problem": "((0x2350 * 0x7cb2) - (0x5290 - 0xa452))",
+      "difficulty": {
+        "difficulty": 2
+      }
+    }
+  },
+  {
+    "question": "Please solve this problem. Assume there is arbitrary bit depth and that there are signed integers. If the answer is negative, reply as a negative value (ex., -0x3), not the two's-compliment form. Reply only with the final hexidecimal value.\n((0xa280 << 0x2) >> 0x1)",
+    "answer": "0x14500",
+    "metadata": {
+      "source_dataset": "bitwise_arithmetic",
+      "source_index": 87,
+      "problem": "((0xa280 << 0x2) >> 0x1)",
+      "difficulty": {
+        "difficulty": 2
+      }
+    }
+  },
+  {
+    "question": "Please solve this problem. Assume there is arbitrary bit depth and that there are signed integers. If the answer is negative, reply as a negative value (ex., -0x3), not the two's-compliment form. Reply only with the final hexidecimal value.\n((0xa6b1 << 0x0) * (0x57a0 >> 0x2))",
+    "answer": "0xe439568",
+    "metadata": {
+      "source_dataset": "bitwise_arithmetic",
+      "source_index": 88,
+      "problem": "((0xa6b1 << 0x0) * (0x57a0 >> 0x2))",
+      "difficulty": {
+        "difficulty": 2
+      }
+    }
+  },
+  {
+    "question": "Please solve this problem. Assume there is arbitrary bit depth and that there are signed integers. If the answer is negative, reply as a negative value (ex., -0x3), not the two's-compliment form. Reply only with the final hexidecimal value.\n((0x558 * 0x64f6) >> 0x0)",
+    "answer": "0x21b8290",
+    "metadata": {
+      "source_dataset": "bitwise_arithmetic",
+      "source_index": 89,
+      "problem": "((0x558 * 0x64f6) >> 0x0)",
+      "difficulty": {
+        "difficulty": 2
+      }
+    }
+  },
+  {
+    "question": "Please solve this problem. Assume there is arbitrary bit depth and that there are signed integers. If the answer is negative, reply as a negative value (ex., -0x3), not the two's-compliment form. Reply only with the final hexidecimal value.\n((0xe6e9 - 0xb9f) << 0x2)",
+    "answer": "0x36d28",
+    "metadata": {
+      "source_dataset": "bitwise_arithmetic",
+      "source_index": 90,
+      "problem": "((0xe6e9 - 0xb9f) << 0x2)",
+      "difficulty": {
+        "difficulty": 2
+      }
+    }
+  },
+  {
+    "question": "Please solve this problem. Assume there is arbitrary bit depth and that there are signed integers. If the answer is negative, reply as a negative value (ex., -0x3), not the two's-compliment form. Reply only with the final hexidecimal value.\n((0xcfeb >> 0x2) << 0x0)",
+    "answer": "0x33fa",
+    "metadata": {
+      "source_dataset": "bitwise_arithmetic",
+      "source_index": 91,
+      "problem": "((0xcfeb >> 0x2) << 0x0)",
+      "difficulty": {
+        "difficulty": 2
+      }
+    }
+  },
+  {
+    "question": "Please solve this problem. Assume there is arbitrary bit depth and that there are signed integers. If the answer is negative, reply as a negative value (ex., -0x3), not the two's-compliment form. Reply only with the final hexidecimal value.\n((0xea3a >> 0x1) - (0x1d46 << 0x3))",
+    "answer": "-0x7513",
+    "metadata": {
+      "source_dataset": "bitwise_arithmetic",
+      "source_index": 92,
+      "problem": "((0xea3a >> 0x1) - (0x1d46 << 0x3))",
+      "difficulty": {
+        "difficulty": 2
+      }
+    }
+  },
+  {
+    "question": "Please solve this problem. Assume there is arbitrary bit depth and that there are signed integers. If the answer is negative, reply as a negative value (ex., -0x3), not the two's-compliment form. Reply only with the final hexidecimal value.\n((0xd326 * 0xb5b0) >> 0x1)",
+    "answer": "0x4aed8410",
+    "metadata": {
+      "source_dataset": "bitwise_arithmetic",
+      "source_index": 93,
+      "problem": "((0xd326 * 0xb5b0) >> 0x1)",
+      "difficulty": {
+        "difficulty": 2
+      }
+    }
+  },
+  {
+    "question": "Please solve this problem. Assume there is arbitrary bit depth and that there are signed integers. If the answer is negative, reply as a negative value (ex., -0x3), not the two's-compliment form. Reply only with the final hexidecimal value.\n((0xc4a9 << 0x3) >> 0x0)",
+    "answer": "0x62548",
+    "metadata": {
+      "source_dataset": "bitwise_arithmetic",
+      "source_index": 94,
+      "problem": "((0xc4a9 << 0x3) >> 0x0)",
+      "difficulty": {
+        "difficulty": 2
+      }
+    }
+  },
+  {
+    "question": "Please solve this problem. Assume there is arbitrary bit depth and that there are signed integers. If the answer is negative, reply as a negative value (ex., -0x3), not the two's-compliment form. Reply only with the final hexidecimal value.\n((0x3c1d - 0x7e04) << 0x3)",
+    "answer": "-0x20f38",
+    "metadata": {
+      "source_dataset": "bitwise_arithmetic",
+      "source_index": 95,
+      "problem": "((0x3c1d - 0x7e04) << 0x3)",
+      "difficulty": {
+        "difficulty": 2
+      }
+    }
+  },
+  {
+    "question": "Please solve this problem. Assume there is arbitrary bit depth and that there are signed integers. If the answer is negative, reply as a negative value (ex., -0x3), not the two's-compliment form. Reply only with the final hexidecimal value.\n((0x364f * 0x86b6) << 0x3)",
+    "answer": "0xe49fb150",
+    "metadata": {
+      "source_dataset": "bitwise_arithmetic",
+      "source_index": 96,
+      "problem": "((0x364f * 0x86b6) << 0x3)",
+      "difficulty": {
+        "difficulty": 2
+      }
+    }
+  },
+  {
+    "question": "Please solve this problem. Assume there is arbitrary bit depth and that there are signed integers. If the answer is negative, reply as a negative value (ex., -0x3), not the two's-compliment form. Reply only with the final hexidecimal value.\n0xb2ea",
+    "answer": "0xb2ea",
+    "metadata": {
+      "source_dataset": "bitwise_arithmetic",
+      "source_index": 97,
+      "problem": "0xb2ea",
+      "difficulty": {
+        "difficulty": 2
+      }
+    }
+  },
+  {
+    "question": "Please solve this problem. Assume there is arbitrary bit depth and that there are signed integers. If the answer is negative, reply as a negative value (ex., -0x3), not the two's-compliment form. Reply only with the final hexidecimal value.\n((0x891e + 0xbc57) + (0x4da - 0x84d3))",
+    "answer": "0xc57c",
+    "metadata": {
+      "source_dataset": "bitwise_arithmetic",
+      "source_index": 98,
+      "problem": "((0x891e + 0xbc57) + (0x4da - 0x84d3))",
+      "difficulty": {
+        "difficulty": 2
+      }
+    }
+  },
+  {
+    "question": "Please solve this problem. Assume there is arbitrary bit depth and that there are signed integers. If the answer is negative, reply as a negative value (ex., -0x3), not the two's-compliment form. Reply only with the final hexidecimal value.\n((0x2e67 << 0x3) + 0x45d9)",
+    "answer": "0x1b911",
+    "metadata": {
+      "source_dataset": "bitwise_arithmetic",
+      "source_index": 99,
+      "problem": "((0x2e67 << 0x3) + 0x45d9)",
+      "difficulty": {
+        "difficulty": 2
+      }
+    }
+  }
+]

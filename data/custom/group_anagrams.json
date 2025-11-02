@@ -1,0 +1,6162 @@
+[
+  {
+    "question": "An anagram is a word formed by rearranging the letters of a different word, using all the original letters exactly once.\n\nYour job is to group the anagrams together. You can return the answer in any order.\n\nThe output is a list of lists of strings, where each outer list contains a group of anagrams, e.g. [[\"eat\", \"tea\"], [\"tan\", \"nat\"]].\n\nGroup the following list of words into anagrams:\n[\"ditas\", \"adits\", \"staid\", \"plastinoid\", \"palinodist\", \"cytomere\", \"merocyte\"]\n",
+    "answer": "[[\"adits\", \"ditas\", \"staid\"], [\"cytomere\", \"merocyte\"], [\"palinodist\", \"plastinoid\"]]",
+    "metadata": {
+      "source_dataset": "group_anagrams",
+      "source_index": 0,
+      "words": [
+        "ditas",
+        "adits",
+        "staid",
+        "plastinoid",
+        "palinodist",
+        "cytomere",
+        "merocyte"
+      ],
+      "solution": [
+        [
+          "adits",
+          "ditas",
+          "staid"
+        ],
+        [
+          "cytomere",
+          "merocyte"
+        ],
+        [
+          "palinodist",
+          "plastinoid"
+        ]
+      ],
+      "anagram_groups": 3,
+      "difficulty": {
+        "anagram_groups": [
+          2,
+          10
+        ],
+        "words_per_group": [
+          2,
+          5
+        ]
+      }
+    }
+  },
+  {
+    "question": "An anagram is a word formed by rearranging the letters of a different word, using all the original letters exactly once.\n\nYour job is to group the anagrams together. You can return the answer in any order.\n\nThe output is a list of lists of strings, where each outer list contains a group of anagrams, e.g. [[\"eat\", \"tea\"], [\"tan\", \"nat\"]].\n\nGroup the following list of words into anagrams:\n[\"escrod\", \"decors\", \"scored\", \"semitaur\", \"muriates\"]\n",
+    "answer": "[[\"decors\", \"escrod\", \"scored\"], [\"muriates\", \"semitaur\"]]",
+    "metadata": {
+      "source_dataset": "group_anagrams",
+      "source_index": 1,
+      "words": [
+        "escrod",
+        "decors",
+        "scored",
+        "semitaur",
+        "muriates"
+      ],
+      "solution": [
+        [
+          "decors",
+          "escrod",
+          "scored"
+        ],
+        [
+          "muriates",
+          "semitaur"
+        ]
+      ],
+      "anagram_groups": 2,
+      "difficulty": {
+        "anagram_groups": [
+          2,
+          10
+        ],
+        "words_per_group": [
+          2,
+          5
+        ]
+      }
+    }
+  },
+  {
+    "question": "An anagram is a word formed by rearranging the letters of a different word, using all the original letters exactly once.\n\nYour job is to group the anagrams together. You can return the answer in any order.\n\nThe output is a list of lists of strings, where each outer list contains a group of anagrams, e.g. [[\"eat\", \"tea\"], [\"tan\", \"nat\"]].\n\nGroup the following list of words into anagrams:\n[\"granitite\", \"iterating\", \"helium\", \"humlie\", \"nizam\", \"nazim\", \"striplings\", \"slipstring\", \"rearrest\", \"arrester\", \"bf\", \"fb\", \"tadpolism\", \"diplomats\", \"cunan\", \"canun\"]\n",
+    "answer": "[[\"arrester\", \"rearrest\"], [\"bf\", \"fb\"], [\"canun\", \"cunan\"], [\"diplomats\", \"tadpolism\"], [\"granitite\", \"iterating\"], [\"helium\", \"humlie\"], [\"nazim\", \"nizam\"], [\"slipstring\", \"striplings\"]]",
+    "metadata": {
+      "source_dataset": "group_anagrams",
+      "source_index": 2,
+      "words": [
+        "granitite",
+        "iterating",
+        "helium",
+        "humlie",
+        "nizam",
+        "nazim",
+        "striplings",
+        "slipstring",
+        "rearrest",
+        "arrester",
+        "bf",
+        "fb",
+        "tadpolism",
+        "diplomats",
+        "cunan",
+        "canun"
+      ],
+      "solution": [
+        [
+          "arrester",
+          "rearrest"
+        ],
+        [
+          "bf",
+          "fb"
+        ],
+        [
+          "canun",
+          "cunan"
+        ],
+        [
+          "diplomats",
+          "tadpolism"
+        ],
+        [
+          "granitite",
+          "iterating"
+        ],
+        [
+          "helium",
+          "humlie"
+        ],
+        [
+          "nazim",
+          "nizam"
+        ],
+        [
+          "slipstring",
+          "striplings"
+        ]
+      ],
+      "anagram_groups": 8,
+      "difficulty": {
+        "anagram_groups": [
+          2,
+          10
+        ],
+        "words_per_group": [
+          2,
+          5
+        ]
+      }
+    }
+  },
+  {
+    "question": "An anagram is a word formed by rearranging the letters of a different word, using all the original letters exactly once.\n\nYour job is to group the anagrams together. You can return the answer in any order.\n\nThe output is a list of lists of strings, where each outer list contains a group of anagrams, e.g. [[\"eat\", \"tea\"], [\"tan\", \"nat\"]].\n\nGroup the following list of words into anagrams:\n[\"eldern\", \"lender\", \"fp\", \"pf\", \"cohere\", \"cheero\", \"anglican\", \"canaling\", \"converters\", \"reconverts\", \"wandy\", \"dawny\"]\n",
+    "answer": "[[\"anglican\", \"canaling\"], [\"cheero\", \"cohere\"], [\"converters\", \"reconverts\"], [\"dawny\", \"wandy\"], [\"eldern\", \"lender\"], [\"fp\", \"pf\"]]",
+    "metadata": {
+      "source_dataset": "group_anagrams",
+      "source_index": 3,
+      "words": [
+        "eldern",
+        "lender",
+        "fp",
+        "pf",
+        "cohere",
+        "cheero",
+        "anglican",
+        "canaling",
+        "converters",
+        "reconverts",
+        "wandy",
+        "dawny"
+      ],
+      "solution": [
+        [
+          "anglican",
+          "canaling"
+        ],
+        [
+          "cheero",
+          "cohere"
+        ],
+        [
+          "converters",
+          "reconverts"
+        ],
+        [
+          "dawny",
+          "wandy"
+        ],
+        [
+          "eldern",
+          "lender"
+        ],
+        [
+          "fp",
+          "pf"
+        ]
+      ],
+      "anagram_groups": 6,
+      "difficulty": {
+        "anagram_groups": [
+          2,
+          10
+        ],
+        "words_per_group": [
+          2,
+          5
+        ]
+      }
+    }
+  },
+  {
+    "question": "An anagram is a word formed by rearranging the letters of a different word, using all the original letters exactly once.\n\nYour job is to group the anagrams together. You can return the answer in any order.\n\nThe output is a list of lists of strings, where each outer list contains a group of anagrams, e.g. [[\"eat\", \"tea\"], [\"tan\", \"nat\"]].\n\nGroup the following list of words into anagrams:\n[\"drapers\", \"sparred\", \"ahmet\", \"mathe\", \"interplead\", \"peridental\"]\n",
+    "answer": "[[\"ahmet\", \"mathe\"], [\"drapers\", \"sparred\"], [\"interplead\", \"peridental\"]]",
+    "metadata": {
+      "source_dataset": "group_anagrams",
+      "source_index": 4,
+      "words": [
+        "drapers",
+        "sparred",
+        "ahmet",
+        "mathe",
+        "interplead",
+        "peridental"
+      ],
+      "solution": [
+        [
+          "ahmet",
+          "mathe"
+        ],
+        [
+          "drapers",
+          "sparred"
+        ],
+        [
+          "interplead",
+          "peridental"
+        ]
+      ],
+      "anagram_groups": 3,
+      "difficulty": {
+        "anagram_groups": [
+          2,
+          10
+        ],
+        "words_per_group": [
+          2,
+          5
+        ]
+      }
+    }
+  },
+  {
+    "question": "An anagram is a word formed by rearranging the letters of a different word, using all the original letters exactly once.\n\nYour job is to group the anagrams together. You can return the answer in any order.\n\nThe output is a list of lists of strings, where each outer list contains a group of anagrams, e.g. [[\"eat\", \"tea\"], [\"tan\", \"nat\"]].\n\nGroup the following list of words into anagrams:\n[\"unmail\", \"lumina\", \"alumin\", \"alumni\", \"endothecia\", \"theodicean\", \"shipholder\", \"holdership\", \"mestees\", \"esteems\", \"semiprivate\", \"imperatives\", \"deduces\", \"seduced\", \"depeche\", \"cheeped\"]\n",
+    "answer": "[[\"alumin\", \"alumni\", \"lumina\", \"unmail\"], [\"cheeped\", \"depeche\"], [\"deduces\", \"seduced\"], [\"endothecia\", \"theodicean\"], [\"esteems\", \"mestees\"], [\"holdership\", \"shipholder\"], [\"imperatives\", \"semiprivate\"]]",
+    "metadata": {
+      "source_dataset": "group_anagrams",
+      "source_index": 5,
+      "words": [
+        "unmail",
+        "lumina",
+        "alumin",
+        "alumni",
+        "endothecia",
+        "theodicean",
+        "shipholder",
+        "holdership",
+        "mestees",
+        "esteems",
+        "semiprivate",
+        "imperatives",
+        "deduces",
+        "seduced",
+        "depeche",
+        "cheeped"
+      ],
+      "solution": [
+        [
+          "alumin",
+          "alumni",
+          "lumina",
+          "unmail"
+        ],
+        [
+          "cheeped",
+          "depeche"
+        ],
+        [
+          "deduces",
+          "seduced"
+        ],
+        [
+          "endothecia",
+          "theodicean"
+        ],
+        [
+          "esteems",
+          "mestees"
+        ],
+        [
+          "holdership",
+          "shipholder"
+        ],
+        [
+          "imperatives",
+          "semiprivate"
+        ]
+      ],
+      "anagram_groups": 7,
+      "difficulty": {
+        "anagram_groups": [
+          2,
+          10
+        ],
+        "words_per_group": [
+          2,
+          5
+        ]
+      }
+    }
+  },
+  {
+    "question": "An anagram is a word formed by rearranging the letters of a different word, using all the original letters exactly once.\n\nYour job is to group the anagrams together. You can return the answer in any order.\n\nThe output is a list of lists of strings, where each outer list contains a group of anagrams, e.g. [[\"eat\", \"tea\"], [\"tan\", \"nat\"]].\n\nGroup the following list of words into anagrams:\n[\"cp\", \"pc\", \"natalist\", \"atlantis\", \"horseless\", \"shoreless\", \"nonenergic\", \"nongeneric\", \"harateen\", \"theraean\", \"contoid\", \"odontic\", \"tampering\", \"premating\", \"gerundive\", \"ungrieved\", \"eslabon\", \"bonsela\", \"sonable\", \"soleness\", \"noseless\"]\n",
+    "answer": "[[\"atlantis\", \"natalist\"], [\"bonsela\", \"eslabon\", \"sonable\"], [\"contoid\", \"odontic\"], [\"cp\", \"pc\"], [\"gerundive\", \"ungrieved\"], [\"harateen\", \"theraean\"], [\"horseless\", \"shoreless\"], [\"nonenergic\", \"nongeneric\"], [\"noseless\", \"soleness\"], [\"premating\", \"tampering\"]]",
+    "metadata": {
+      "source_dataset": "group_anagrams",
+      "source_index": 6,
+      "words": [
+        "cp",
+        "pc",
+        "natalist",
+        "atlantis",
+        "horseless",
+        "shoreless",
+        "nonenergic",
+        "nongeneric",
+        "harateen",
+        "theraean",
+        "contoid",
+        "odontic",
+        "tampering",
+        "premating",
+        "gerundive",
+        "ungrieved",
+        "eslabon",
+        "bonsela",
+        "sonable",
+        "soleness",
+        "noseless"
+      ],
+      "solution": [
+        [
+          "atlantis",
+          "natalist"
+        ],
+        [
+          "bonsela",
+          "eslabon",
+          "sonable"
+        ],
+        [
+          "contoid",
+          "odontic"
+        ],
+        [
+          "cp",
+          "pc"
+        ],
+        [
+          "gerundive",
+          "ungrieved"
+        ],
+        [
+          "harateen",
+          "theraean"
+        ],
+        [
+          "horseless",
+          "shoreless"
+        ],
+        [
+          "nonenergic",
+          "nongeneric"
+        ],
+        [
+          "noseless",
+          "soleness"
+        ],
+        [
+          "premating",
+          "tampering"
+        ]
+      ],
+      "anagram_groups": 10,
+      "difficulty": {
+        "anagram_groups": [
+          2,
+          10
+        ],
+        "words_per_group": [
+          2,
+          5
+        ]
+      }
+    }
+  },
+  {
+    "question": "An anagram is a word formed by rearranging the letters of a different word, using all the original letters exactly once.\n\nYour job is to group the anagrams together. You can return the answer in any order.\n\nThe output is a list of lists of strings, where each outer list contains a group of anagrams, e.g. [[\"eat\", \"tea\"], [\"tan\", \"nat\"]].\n\nGroup the following list of words into anagrams:\n[\"dees\", \"seed\", \"eductions\", \"seduction\", \"argentine\", \"tangerine\"]\n",
+    "answer": "[[\"argentine\", \"tangerine\"], [\"dees\", \"seed\"], [\"eductions\", \"seduction\"]]",
+    "metadata": {
+      "source_dataset": "group_anagrams",
+      "source_index": 7,
+      "words": [
+        "dees",
+        "seed",
+        "eductions",
+        "seduction",
+        "argentine",
+        "tangerine"
+      ],
+      "solution": [
+        [
+          "argentine",
+          "tangerine"
+        ],
+        [
+          "dees",
+          "seed"
+        ],
+        [
+          "eductions",
+          "seduction"
+        ]
+      ],
+      "anagram_groups": 3,
+      "difficulty": {
+        "anagram_groups": [
+          2,
+          10
+        ],
+        "words_per_group": [
+          2,
+          5
+        ]
+      }
+    }
+  },
+  {
+    "question": "An anagram is a word formed by rearranging the letters of a different word, using all the original letters exactly once.\n\nYour job is to group the anagrams together. You can return the answer in any order.\n\nThe output is a list of lists of strings, where each outer list contains a group of anagrams, e.g. [[\"eat\", \"tea\"], [\"tan\", \"nat\"]].\n\nGroup the following list of words into anagrams:\n[\"shouted\", \"southed\", \"chorions\", \"isochron\", \"desex\", \"dexes\", \"sexed\", \"lilts\", \"tills\", \"still\", \"thein\", \"thine\", \"velicate\", \"celative\", \"muratorian\", \"mortuarian\", \"fester\", \"freest\", \"tapery\", \"tepary\", \"pratey\", \"petary\"]\n",
+    "answer": "[[\"celative\", \"velicate\"], [\"chorions\", \"isochron\"], [\"desex\", \"dexes\", \"sexed\"], [\"fester\", \"freest\"], [\"lilts\", \"still\", \"tills\"], [\"mortuarian\", \"muratorian\"], [\"petary\", \"pratey\", \"tapery\", \"tepary\"], [\"shouted\", \"southed\"], [\"thein\", \"thine\"]]",
+    "metadata": {
+      "source_dataset": "group_anagrams",
+      "source_index": 8,
+      "words": [
+        "shouted",
+        "southed",
+        "chorions",
+        "isochron",
+        "desex",
+        "dexes",
+        "sexed",
+        "lilts",
+        "tills",
+        "still",
+        "thein",
+        "thine",
+        "velicate",
+        "celative",
+        "muratorian",
+        "mortuarian",
+        "fester",
+        "freest",
+        "tapery",
+        "tepary",
+        "pratey",
+        "petary"
+      ],
+      "solution": [
+        [
+          "celative",
+          "velicate"
+        ],
+        [
+          "chorions",
+          "isochron"
+        ],
+        [
+          "desex",
+          "dexes",
+          "sexed"
+        ],
+        [
+          "fester",
+          "freest"
+        ],
+        [
+          "lilts",
+          "still",
+          "tills"
+        ],
+        [
+          "mortuarian",
+          "muratorian"
+        ],
+        [
+          "petary",
+          "pratey",
+          "tapery",
+          "tepary"
+        ],
+        [
+          "shouted",
+          "southed"
+        ],
+        [
+          "thein",
+          "thine"
+        ]
+      ],
+      "anagram_groups": 9,
+      "difficulty": {
+        "anagram_groups": [
+          2,
+          10
+        ],
+        "words_per_group": [
+          2,
+          5
+        ]
+      }
+    }
+  },
+  {
+    "question": "An anagram is a word formed by rearranging the letters of a different word, using all the original letters exactly once.\n\nYour job is to group the anagrams together. You can return the answer in any order.\n\nThe output is a list of lists of strings, where each outer list contains a group of anagrams, e.g. [[\"eat\", \"tea\"], [\"tan\", \"nat\"]].\n\nGroup the following list of words into anagrams:\n[\"surbases\", \"rubasses\", \"seeings\", \"genesis\", \"trichinosis\", \"histrionics\", \"beagle\", \"glebae\", \"ceps\", \"psec\", \"spec\"]\n",
+    "answer": "[[\"beagle\", \"glebae\"], [\"ceps\", \"psec\", \"spec\"], [\"genesis\", \"seeings\"], [\"histrionics\", \"trichinosis\"], [\"rubasses\", \"surbases\"]]",
+    "metadata": {
+      "source_dataset": "group_anagrams",
+      "source_index": 9,
+      "words": [
+        "surbases",
+        "rubasses",
+        "seeings",
+        "genesis",
+        "trichinosis",
+        "histrionics",
+        "beagle",
+        "glebae",
+        "ceps",
+        "psec",
+        "spec"
+      ],
+      "solution": [
+        [
+          "beagle",
+          "glebae"
+        ],
+        [
+          "ceps",
+          "psec",
+          "spec"
+        ],
+        [
+          "genesis",
+          "seeings"
+        ],
+        [
+          "histrionics",
+          "trichinosis"
+        ],
+        [
+          "rubasses",
+          "surbases"
+        ]
+      ],
+      "anagram_groups": 5,
+      "difficulty": {
+        "anagram_groups": [
+          2,
+          10
+        ],
+        "words_per_group": [
+          2,
+          5
+        ]
+      }
+    }
+  },
+  {
+    "question": "An anagram is a word formed by rearranging the letters of a different word, using all the original letters exactly once.\n\nYour job is to group the anagrams together. You can return the answer in any order.\n\nThe output is a list of lists of strings, where each outer list contains a group of anagrams, e.g. [[\"eat\", \"tea\"], [\"tan\", \"nat\"]].\n\nGroup the following list of words into anagrams:\n[\"pialyn\", \"alypin\", \"plainy\", \"unsubtracted\", \"subtruncated\", \"prosecutory\", \"orycteropus\", \"legendist\", \"glistened\", \"fondu\", \"found\", \"shyster\", \"thyrses\"]\n",
+    "answer": "[[\"alypin\", \"pialyn\", \"plainy\"], [\"fondu\", \"found\"], [\"glistened\", \"legendist\"], [\"orycteropus\", \"prosecutory\"], [\"shyster\", \"thyrses\"], [\"subtruncated\", \"unsubtracted\"]]",
+    "metadata": {
+      "source_dataset": "group_anagrams",
+      "source_index": 10,
+      "words": [
+        "pialyn",
+        "alypin",
+        "plainy",
+        "unsubtracted",
+        "subtruncated",
+        "prosecutory",
+        "orycteropus",
+        "legendist",
+        "glistened",
+        "fondu",
+        "found",
+        "shyster",
+        "thyrses"
+      ],
+      "solution": [
+        [
+          "alypin",
+          "pialyn",
+          "plainy"
+        ],
+        [
+          "fondu",
+          "found"
+        ],
+        [
+          "glistened",
+          "legendist"
+        ],
+        [
+          "orycteropus",
+          "prosecutory"
+        ],
+        [
+          "shyster",
+          "thyrses"
+        ],
+        [
+          "subtruncated",
+          "unsubtracted"
+        ]
+      ],
+      "anagram_groups": 6,
+      "difficulty": {
+        "anagram_groups": [
+          2,
+          10
+        ],
+        "words_per_group": [
+          2,
+          5
+        ]
+      }
+    }
+  },
+  {
+    "question": "An anagram is a word formed by rearranging the letters of a different word, using all the original letters exactly once.\n\nYour job is to group the anagrams together. You can return the answer in any order.\n\nThe output is a list of lists of strings, where each outer list contains a group of anagrams, e.g. [[\"eat\", \"tea\"], [\"tan\", \"nat\"]].\n\nGroup the following list of words into anagrams:\n[\"theine\", \"ethine\", \"generated\", \"greatened\", \"unoffensiveness\", \"noneffusiveness\", \"fluorated\", \"outflared\", \"ramona\", \"oarman\", \"romana\"]\n",
+    "answer": "[[\"ethine\", \"theine\"], [\"fluorated\", \"outflared\"], [\"generated\", \"greatened\"], [\"noneffusiveness\", \"unoffensiveness\"], [\"oarman\", \"ramona\", \"romana\"]]",
+    "metadata": {
+      "source_dataset": "group_anagrams",
+      "source_index": 11,
+      "words": [
+        "theine",
+        "ethine",
+        "generated",
+        "greatened",
+        "unoffensiveness",
+        "noneffusiveness",
+        "fluorated",
+        "outflared",
+        "ramona",
+        "oarman",
+        "romana"
+      ],
+      "solution": [
+        [
+          "ethine",
+          "theine"
+        ],
+        [
+          "fluorated",
+          "outflared"
+        ],
+        [
+          "generated",
+          "greatened"
+        ],
+        [
+          "noneffusiveness",
+          "unoffensiveness"
+        ],
+        [
+          "oarman",
+          "ramona",
+          "romana"
+        ]
+      ],
+      "anagram_groups": 5,
+      "difficulty": {
+        "anagram_groups": [
+          2,
+          10
+        ],
+        "words_per_group": [
+          2,
+          5
+        ]
+      }
+    }
+  },
+  {
+    "question": "An anagram is a word formed by rearranging the letters of a different word, using all the original letters exactly once.\n\nYour job is to group the anagrams together. You can return the answer in any order.\n\nThe output is a list of lists of strings, where each outer list contains a group of anagrams, e.g. [[\"eat\", \"tea\"], [\"tan\", \"nat\"]].\n\nGroup the following list of words into anagrams:\n[\"eternities\", \"entireties\", \"ophis\", \"hopis\", \"conformer\", \"reconform\", \"mf\", \"fm\"]\n",
+    "answer": "[[\"conformer\", \"reconform\"], [\"entireties\", \"eternities\"], [\"fm\", \"mf\"], [\"hopis\", \"ophis\"]]",
+    "metadata": {
+      "source_dataset": "group_anagrams",
+      "source_index": 12,
+      "words": [
+        "eternities",
+        "entireties",
+        "ophis",
+        "hopis",
+        "conformer",
+        "reconform",
+        "mf",
+        "fm"
+      ],
+      "solution": [
+        [
+          "conformer",
+          "reconform"
+        ],
+        [
+          "entireties",
+          "eternities"
+        ],
+        [
+          "fm",
+          "mf"
+        ],
+        [
+          "hopis",
+          "ophis"
+        ]
+      ],
+      "anagram_groups": 4,
+      "difficulty": {
+        "anagram_groups": [
+          2,
+          10
+        ],
+        "words_per_group": [
+          2,
+          5
+        ]
+      }
+    }
+  },
+  {
+    "question": "An anagram is a word formed by rearranging the letters of a different word, using all the original letters exactly once.\n\nYour job is to group the anagrams together. You can return the answer in any order.\n\nThe output is a list of lists of strings, where each outer list contains a group of anagrams, e.g. [[\"eat\", \"tea\"], [\"tan\", \"nat\"]].\n\nGroup the following list of words into anagrams:\n[\"bouffon\", \"buffoon\", \"balanites\", \"basaltine\", \"stainable\", \"pactolian\", \"placation\", \"pactional\"]\n",
+    "answer": "[[\"balanites\", \"basaltine\", \"stainable\"], [\"bouffon\", \"buffoon\"], [\"pactional\", \"pactolian\", \"placation\"]]",
+    "metadata": {
+      "source_dataset": "group_anagrams",
+      "source_index": 13,
+      "words": [
+        "bouffon",
+        "buffoon",
+        "balanites",
+        "basaltine",
+        "stainable",
+        "pactolian",
+        "placation",
+        "pactional"
+      ],
+      "solution": [
+        [
+          "balanites",
+          "basaltine",
+          "stainable"
+        ],
+        [
+          "bouffon",
+          "buffoon"
+        ],
+        [
+          "pactional",
+          "pactolian",
+          "placation"
+        ]
+      ],
+      "anagram_groups": 3,
+      "difficulty": {
+        "anagram_groups": [
+          2,
+          10
+        ],
+        "words_per_group": [
+          2,
+          5
+        ]
+      }
+    }
+  },
+  {
+    "question": "An anagram is a word formed by rearranging the letters of a different word, using all the original letters exactly once.\n\nYour job is to group the anagrams together. You can return the answer in any order.\n\nThe output is a list of lists of strings, where each outer list contains a group of anagrams, e.g. [[\"eat\", \"tea\"], [\"tan\", \"nat\"]].\n\nGroup the following list of words into anagrams:\n[\"care\", \"crea\", \"sulfamide\", \"feudalism\", \"lurries\", \"surlier\", \"sprig\", \"grips\", \"constrainers\", \"contrariness\", \"petrolist\", \"portliest\", \"hematolin\", \"maholtine\", \"elogy\", \"goyle\", \"nexus\", \"unsex\", \"carminette\", \"remittance\"]\n",
+    "answer": "[[\"care\", \"crea\"], [\"carminette\", \"remittance\"], [\"constrainers\", \"contrariness\"], [\"elogy\", \"goyle\"], [\"feudalism\", \"sulfamide\"], [\"grips\", \"sprig\"], [\"hematolin\", \"maholtine\"], [\"lurries\", \"surlier\"], [\"nexus\", \"unsex\"], [\"petrolist\", \"portliest\"]]",
+    "metadata": {
+      "source_dataset": "group_anagrams",
+      "source_index": 14,
+      "words": [
+        "care",
+        "crea",
+        "sulfamide",
+        "feudalism",
+        "lurries",
+        "surlier",
+        "sprig",
+        "grips",
+        "constrainers",
+        "contrariness",
+        "petrolist",
+        "portliest",
+        "hematolin",
+        "maholtine",
+        "elogy",
+        "goyle",
+        "nexus",
+        "unsex",
+        "carminette",
+        "remittance"
+      ],
+      "solution": [
+        [
+          "care",
+          "crea"
+        ],
+        [
+          "carminette",
+          "remittance"
+        ],
+        [
+          "constrainers",
+          "contrariness"
+        ],
+        [
+          "elogy",
+          "goyle"
+        ],
+        [
+          "feudalism",
+          "sulfamide"
+        ],
+        [
+          "grips",
+          "sprig"
+        ],
+        [
+          "hematolin",
+          "maholtine"
+        ],
+        [
+          "lurries",
+          "surlier"
+        ],
+        [
+          "nexus",
+          "unsex"
+        ],
+        [
+          "petrolist",
+          "portliest"
+        ]
+      ],
+      "anagram_groups": 10,
+      "difficulty": {
+        "anagram_groups": [
+          2,
+          10
+        ],
+        "words_per_group": [
+          2,
+          5
+        ]
+      }
+    }
+  },
+  {
+    "question": "An anagram is a word formed by rearranging the letters of a different word, using all the original letters exactly once.\n\nYour job is to group the anagrams together. You can return the answer in any order.\n\nThe output is a list of lists of strings, where each outer list contains a group of anagrams, e.g. [[\"eat\", \"tea\"], [\"tan\", \"nat\"]].\n\nGroup the following list of words into anagrams:\n[\"detruss\", \"dusters\", \"inwritten\", \"intertwin\"]\n",
+    "answer": "[[\"detruss\", \"dusters\"], [\"intertwin\", \"inwritten\"]]",
+    "metadata": {
+      "source_dataset": "group_anagrams",
+      "source_index": 15,
+      "words": [
+        "detruss",
+        "dusters",
+        "inwritten",
+        "intertwin"
+      ],
+      "solution": [
+        [
+          "detruss",
+          "dusters"
+        ],
+        [
+          "intertwin",
+          "inwritten"
+        ]
+      ],
+      "anagram_groups": 2,
+      "difficulty": {
+        "anagram_groups": [
+          2,
+          10
+        ],
+        "words_per_group": [
+          2,
+          5
+        ]
+      }
+    }
+  },
+  {
+    "question": "An anagram is a word formed by rearranging the letters of a different word, using all the original letters exactly once.\n\nYour job is to group the anagrams together. You can return the answer in any order.\n\nThe output is a list of lists of strings, where each outer list contains a group of anagrams, e.g. [[\"eat\", \"tea\"], [\"tan\", \"nat\"]].\n\nGroup the following list of words into anagrams:\n[\"housebug\", \"bughouse\", \"rowens\", \"resown\", \"worsen\", \"owners\", \"listwork\", \"slitwork\", \"bridelace\", \"calibered\", \"kai\", \"aik\"]\n",
+    "answer": "[[\"aik\", \"kai\"], [\"bridelace\", \"calibered\"], [\"bughouse\", \"housebug\"], [\"listwork\", \"slitwork\"], [\"owners\", \"resown\", \"rowens\", \"worsen\"]]",
+    "metadata": {
+      "source_dataset": "group_anagrams",
+      "source_index": 16,
+      "words": [
+        "housebug",
+        "bughouse",
+        "rowens",
+        "resown",
+        "worsen",
+        "owners",
+        "listwork",
+        "slitwork",
+        "bridelace",
+        "calibered",
+        "kai",
+        "aik"
+      ],
+      "solution": [
+        [
+          "aik",
+          "kai"
+        ],
+        [
+          "bridelace",
+          "calibered"
+        ],
+        [
+          "bughouse",
+          "housebug"
+        ],
+        [
+          "listwork",
+          "slitwork"
+        ],
+        [
+          "owners",
+          "resown",
+          "rowens",
+          "worsen"
+        ]
+      ],
+      "anagram_groups": 5,
+      "difficulty": {
+        "anagram_groups": [
+          2,
+          10
+        ],
+        "words_per_group": [
+          2,
+          5
+        ]
+      }
+    }
+  },
+  {
+    "question": "An anagram is a word formed by rearranging the letters of a different word, using all the original letters exactly once.\n\nYour job is to group the anagrams together. You can return the answer in any order.\n\nThe output is a list of lists of strings, where each outer list contains a group of anagrams, e.g. [[\"eat\", \"tea\"], [\"tan\", \"nat\"]].\n\nGroup the following list of words into anagrams:\n[\"anisopod\", \"isopodan\", \"toxicol\", \"loxotic\", \"everglade\", \"leveraged\", \"adeline\", \"delaine\", \"aliened\", \"aubrietas\", \"aubretias\"]\n",
+    "answer": "[[\"adeline\", \"aliened\", \"delaine\"], [\"anisopod\", \"isopodan\"], [\"aubretias\", \"aubrietas\"], [\"everglade\", \"leveraged\"], [\"loxotic\", \"toxicol\"]]",
+    "metadata": {
+      "source_dataset": "group_anagrams",
+      "source_index": 17,
+      "words": [
+        "anisopod",
+        "isopodan",
+        "toxicol",
+        "loxotic",
+        "everglade",
+        "leveraged",
+        "adeline",
+        "delaine",
+        "aliened",
+        "aubrietas",
+        "aubretias"
+      ],
+      "solution": [
+        [
+          "adeline",
+          "aliened",
+          "delaine"
+        ],
+        [
+          "anisopod",
+          "isopodan"
+        ],
+        [
+          "aubretias",
+          "aubrietas"
+        ],
+        [
+          "everglade",
+          "leveraged"
+        ],
+        [
+          "loxotic",
+          "toxicol"
+        ]
+      ],
+      "anagram_groups": 5,
+      "difficulty": {
+        "anagram_groups": [
+          2,
+          10
+        ],
+        "words_per_group": [
+          2,
+          5
+        ]
+      }
+    }
+  },
+  {
+    "question": "An anagram is a word formed by rearranging the letters of a different word, using all the original letters exactly once.\n\nYour job is to group the anagrams together. You can return the answer in any order.\n\nThe output is a list of lists of strings, where each outer list contains a group of anagrams, e.g. [[\"eat\", \"tea\"], [\"tan\", \"nat\"]].\n\nGroup the following list of words into anagrams:\n[\"discouple\", \"clupeoids\", \"infarction\", \"infraction\", \"draba\", \"barad\", \"chordal\", \"dorlach\", \"racers\", \"screar\", \"carers\", \"radiators\", \"sartoriad\"]\n",
+    "answer": "[[\"barad\", \"draba\"], [\"carers\", \"racers\", \"screar\"], [\"chordal\", \"dorlach\"], [\"clupeoids\", \"discouple\"], [\"infarction\", \"infraction\"], [\"radiators\", \"sartoriad\"]]",
+    "metadata": {
+      "source_dataset": "group_anagrams",
+      "source_index": 18,
+      "words": [
+        "discouple",
+        "clupeoids",
+        "infarction",
+        "infraction",
+        "draba",
+        "barad",
+        "chordal",
+        "dorlach",
+        "racers",
+        "screar",
+        "carers",
+        "radiators",
+        "sartoriad"
+      ],
+      "solution": [
+        [
+          "barad",
+          "draba"
+        ],
+        [
+          "carers",
+          "racers",
+          "screar"
+        ],
+        [
+          "chordal",
+          "dorlach"
+        ],
+        [
+          "clupeoids",
+          "discouple"
+        ],
+        [
+          "infarction",
+          "infraction"
+        ],
+        [
+          "radiators",
+          "sartoriad"
+        ]
+      ],
+      "anagram_groups": 6,
+      "difficulty": {
+        "anagram_groups": [
+          2,
+          10
+        ],
+        "words_per_group": [
+          2,
+          5
+        ]
+      }
+    }
+  },
+  {
+    "question": "An anagram is a word formed by rearranging the letters of a different word, using all the original letters exactly once.\n\nYour job is to group the anagrams together. You can return the answer in any order.\n\nThe output is a list of lists of strings, where each outer list contains a group of anagrams, e.g. [[\"eat\", \"tea\"], [\"tan\", \"nat\"]].\n\nGroup the following list of words into anagrams:\n[\"brontides\", \"stonebird\", \"horotelic\", \"ochrolite\", \"lackers\", \"calkers\", \"slacker\", \"rarely\", \"rearly\", \"unhearsed\", \"unsheared\", \"criey\", \"ricey\", \"scomfit\", \"comfits\", \"pergamic\", \"crimpage\", \"unrip\", \"purin\"]\n",
+    "answer": "[[\"brontides\", \"stonebird\"], [\"calkers\", \"lackers\", \"slacker\"], [\"comfits\", \"scomfit\"], [\"criey\", \"ricey\"], [\"crimpage\", \"pergamic\"], [\"horotelic\", \"ochrolite\"], [\"purin\", \"unrip\"], [\"rarely\", \"rearly\"], [\"unhearsed\", \"unsheared\"]]",
+    "metadata": {
+      "source_dataset": "group_anagrams",
+      "source_index": 19,
+      "words": [
+        "brontides",
+        "stonebird",
+        "horotelic",
+        "ochrolite",
+        "lackers",
+        "calkers",
+        "slacker",
+        "rarely",
+        "rearly",
+        "unhearsed",
+        "unsheared",
+        "criey",
+        "ricey",
+        "scomfit",
+        "comfits",
+        "pergamic",
+        "crimpage",
+        "unrip",
+        "purin"
+      ],
+      "solution": [
+        [
+          "brontides",
+          "stonebird"
+        ],
+        [
+          "calkers",
+          "lackers",
+          "slacker"
+        ],
+        [
+          "comfits",
+          "scomfit"
+        ],
+        [
+          "criey",
+          "ricey"
+        ],
+        [
+          "crimpage",
+          "pergamic"
+        ],
+        [
+          "horotelic",
+          "ochrolite"
+        ],
+        [
+          "purin",
+          "unrip"
+        ],
+        [
+          "rarely",
+          "rearly"
+        ],
+        [
+          "unhearsed",
+          "unsheared"
+        ]
+      ],
+      "anagram_groups": 9,
+      "difficulty": {
+        "anagram_groups": [
+          2,
+          10
+        ],
+        "words_per_group": [
+          2,
+          5
+        ]
+      }
+    }
+  },
+  {
+    "question": "An anagram is a word formed by rearranging the letters of a different word, using all the original letters exactly once.\n\nYour job is to group the anagrams together. You can return the answer in any order.\n\nThe output is a list of lists of strings, where each outer list contains a group of anagrams, e.g. [[\"eat\", \"tea\"], [\"tan\", \"nat\"]].\n\nGroup the following list of words into anagrams:\n[\"verbatim\", \"ambivert\", \"redictation\", \"tinoceratid\", \"cerastes\", \"cateress\", \"tylosis\", \"tossily\"]\n",
+    "answer": "[[\"ambivert\", \"verbatim\"], [\"cateress\", \"cerastes\"], [\"redictation\", \"tinoceratid\"], [\"tossily\", \"tylosis\"]]",
+    "metadata": {
+      "source_dataset": "group_anagrams",
+      "source_index": 20,
+      "words": [
+        "verbatim",
+        "ambivert",
+        "redictation",
+        "tinoceratid",
+        "cerastes",
+        "cateress",
+        "tylosis",
+        "tossily"
+      ],
+      "solution": [
+        [
+          "ambivert",
+          "verbatim"
+        ],
+        [
+          "cateress",
+          "cerastes"
+        ],
+        [
+          "redictation",
+          "tinoceratid"
+        ],
+        [
+          "tossily",
+          "tylosis"
+        ]
+      ],
+      "anagram_groups": 4,
+      "difficulty": {
+        "anagram_groups": [
+          2,
+          10
+        ],
+        "words_per_group": [
+          2,
+          5
+        ]
+      }
+    }
+  },
+  {
+    "question": "An anagram is a word formed by rearranging the letters of a different word, using all the original letters exactly once.\n\nYour job is to group the anagrams together. You can return the answer in any order.\n\nThe output is a list of lists of strings, where each outer list contains a group of anagrams, e.g. [[\"eat\", \"tea\"], [\"tan\", \"nat\"]].\n\nGroup the following list of words into anagrams:\n[\"epistatic\", \"pistacite\", \"commissioned\", \"decommission\", \"unportrayed\", \"unpredatory\", \"chandelle\", \"chanelled\", \"footpad\", \"padfoot\", \"noma\", \"oman\", \"noam\", \"innodate\", \"antinode\", \"anointed\", \"distater\", \"tardiest\", \"striated\", \"shapka\", \"pashka\"]\n",
+    "answer": "[[\"anointed\", \"antinode\", \"innodate\"], [\"chandelle\", \"chanelled\"], [\"commissioned\", \"decommission\"], [\"distater\", \"striated\", \"tardiest\"], [\"epistatic\", \"pistacite\"], [\"footpad\", \"padfoot\"], [\"noam\", \"noma\", \"oman\"], [\"pashka\", \"shapka\"], [\"unportrayed\", \"unpredatory\"]]",
+    "metadata": {
+      "source_dataset": "group_anagrams",
+      "source_index": 21,
+      "words": [
+        "epistatic",
+        "pistacite",
+        "commissioned",
+        "decommission",
+        "unportrayed",
+        "unpredatory",
+        "chandelle",
+        "chanelled",
+        "footpad",
+        "padfoot",
+        "noma",
+        "oman",
+        "noam",
+        "innodate",
+        "antinode",
+        "anointed",
+        "distater",
+        "tardiest",
+        "striated",
+        "shapka",
+        "pashka"
+      ],
+      "solution": [
+        [
+          "anointed",
+          "antinode",
+          "innodate"
+        ],
+        [
+          "chandelle",
+          "chanelled"
+        ],
+        [
+          "commissioned",
+          "decommission"
+        ],
+        [
+          "distater",
+          "striated",
+          "tardiest"
+        ],
+        [
+          "epistatic",
+          "pistacite"
+        ],
+        [
+          "footpad",
+          "padfoot"
+        ],
+        [
+          "noam",
+          "noma",
+          "oman"
+        ],
+        [
+          "pashka",
+          "shapka"
+        ],
+        [
+          "unportrayed",
+          "unpredatory"
+        ]
+      ],
+      "anagram_groups": 9,
+      "difficulty": {
+        "anagram_groups": [
+          2,
+          10
+        ],
+        "words_per_group": [
+          2,
+          5
+        ]
+      }
+    }
+  },
+  {
+    "question": "An anagram is a word formed by rearranging the letters of a different word, using all the original letters exactly once.\n\nYour job is to group the anagrams together. You can return the answer in any order.\n\nThe output is a list of lists of strings, where each outer list contains a group of anagrams, e.g. [[\"eat\", \"tea\"], [\"tan\", \"nat\"]].\n\nGroup the following list of words into anagrams:\n[\"taplash\", \"asphalt\", \"spathal\", \"melam\", \"lemma\", \"kirve\", \"kiver\", \"duali\", \"dulia\", \"harpists\", \"tsarship\", \"starship\", \"wonnot\", \"wonton\", \"mowha\", \"mohwa\", \"caupo\", \"acoup\", \"bucrnia\", \"rubican\", \"brucina\"]\n",
+    "answer": "[[\"acoup\", \"caupo\"], [\"asphalt\", \"spathal\", \"taplash\"], [\"brucina\", \"bucrnia\", \"rubican\"], [\"duali\", \"dulia\"], [\"harpists\", \"starship\", \"tsarship\"], [\"kirve\", \"kiver\"], [\"lemma\", \"melam\"], [\"mohwa\", \"mowha\"], [\"wonnot\", \"wonton\"]]",
+    "metadata": {
+      "source_dataset": "group_anagrams",
+      "source_index": 22,
+      "words": [
+        "taplash",
+        "asphalt",
+        "spathal",
+        "melam",
+        "lemma",
+        "kirve",
+        "kiver",
+        "duali",
+        "dulia",
+        "harpists",
+        "tsarship",
+        "starship",
+        "wonnot",
+        "wonton",
+        "mowha",
+        "mohwa",
+        "caupo",
+        "acoup",
+        "bucrnia",
+        "rubican",
+        "brucina"
+      ],
+      "solution": [
+        [
+          "acoup",
+          "caupo"
+        ],
+        [
+          "asphalt",
+          "spathal",
+          "taplash"
+        ],
+        [
+          "brucina",
+          "bucrnia",
+          "rubican"
+        ],
+        [
+          "duali",
+          "dulia"
+        ],
+        [
+          "harpists",
+          "starship",
+          "tsarship"
+        ],
+        [
+          "kirve",
+          "kiver"
+        ],
+        [
+          "lemma",
+          "melam"
+        ],
+        [
+          "mohwa",
+          "mowha"
+        ],
+        [
+          "wonnot",
+          "wonton"
+        ]
+      ],
+      "anagram_groups": 9,
+      "difficulty": {
+        "anagram_groups": [
+          2,
+          10
+        ],
+        "words_per_group": [
+          2,
+          5
+        ]
+      }
+    }
+  },
+  {
+    "question": "An anagram is a word formed by rearranging the letters of a different word, using all the original letters exactly once.\n\nYour job is to group the anagrams together. You can return the answer in any order.\n\nThe output is a list of lists of strings, where each outer list contains a group of anagrams, e.g. [[\"eat\", \"tea\"], [\"tan\", \"nat\"]].\n\nGroup the following list of words into anagrams:\n[\"sycones\", \"coyness\", \"cogniser\", \"coresign\", \"coreigns\", \"glumose\", \"lugsome\", \"stanitsa\", \"satanist\", \"mistrace\", \"camister\", \"camerist\", \"poietic\", \"epiotic\", \"rouse\", \"euros\", \"roues\", \"woodhack\", \"hackwood\"]\n",
+    "answer": "[[\"camerist\", \"camister\", \"mistrace\"], [\"cogniser\", \"coreigns\", \"coresign\"], [\"coyness\", \"sycones\"], [\"epiotic\", \"poietic\"], [\"euros\", \"roues\", \"rouse\"], [\"glumose\", \"lugsome\"], [\"hackwood\", \"woodhack\"], [\"satanist\", \"stanitsa\"]]",
+    "metadata": {
+      "source_dataset": "group_anagrams",
+      "source_index": 23,
+      "words": [
+        "sycones",
+        "coyness",
+        "cogniser",
+        "coresign",
+        "coreigns",
+        "glumose",
+        "lugsome",
+        "stanitsa",
+        "satanist",
+        "mistrace",
+        "camister",
+        "camerist",
+        "poietic",
+        "epiotic",
+        "rouse",
+        "euros",
+        "roues",
+        "woodhack",
+        "hackwood"
+      ],
+      "solution": [
+        [
+          "camerist",
+          "camister",
+          "mistrace"
+        ],
+        [
+          "cogniser",
+          "coreigns",
+          "coresign"
+        ],
+        [
+          "coyness",
+          "sycones"
+        ],
+        [
+          "epiotic",
+          "poietic"
+        ],
+        [
+          "euros",
+          "roues",
+          "rouse"
+        ],
+        [
+          "glumose",
+          "lugsome"
+        ],
+        [
+          "hackwood",
+          "woodhack"
+        ],
+        [
+          "satanist",
+          "stanitsa"
+        ]
+      ],
+      "anagram_groups": 8,
+      "difficulty": {
+        "anagram_groups": [
+          2,
+          10
+        ],
+        "words_per_group": [
+          2,
+          5
+        ]
+      }
+    }
+  },
+  {
+    "question": "An anagram is a word formed by rearranging the letters of a different word, using all the original letters exactly once.\n\nYour job is to group the anagrams together. You can return the answer in any order.\n\nThe output is a list of lists of strings, where each outer list contains a group of anagrams, e.g. [[\"eat\", \"tea\"], [\"tan\", \"nat\"]].\n\nGroup the following list of words into anagrams:\n[\"crouches\", \"couchers\", \"nonrebel\", \"ennobler\", \"resiance\", \"cerasein\", \"increase\"]\n",
+    "answer": "[[\"cerasein\", \"increase\", \"resiance\"], [\"couchers\", \"crouches\"], [\"ennobler\", \"nonrebel\"]]",
+    "metadata": {
+      "source_dataset": "group_anagrams",
+      "source_index": 24,
+      "words": [
+        "crouches",
+        "couchers",
+        "nonrebel",
+        "ennobler",
+        "resiance",
+        "cerasein",
+        "increase"
+      ],
+      "solution": [
+        [
+          "cerasein",
+          "increase",
+          "resiance"
+        ],
+        [
+          "couchers",
+          "crouches"
+        ],
+        [
+          "ennobler",
+          "nonrebel"
+        ]
+      ],
+      "anagram_groups": 3,
+      "difficulty": {
+        "anagram_groups": [
+          2,
+          10
+        ],
+        "words_per_group": [
+          2,
+          5
+        ]
+      }
+    }
+  },
+  {
+    "question": "An anagram is a word formed by rearranging the letters of a different word, using all the original letters exactly once.\n\nYour job is to group the anagrams together. You can return the answer in any order.\n\nThe output is a list of lists of strings, where each outer list contains a group of anagrams, e.g. [[\"eat\", \"tea\"], [\"tan\", \"nat\"]].\n\nGroup the following list of words into anagrams:\n[\"asseour\", \"arouses\", \"prev\", \"perv\", \"wined\", \"dwine\", \"edwin\"]\n",
+    "answer": "[[\"arouses\", \"asseour\"], [\"dwine\", \"edwin\", \"wined\"], [\"perv\", \"prev\"]]",
+    "metadata": {
+      "source_dataset": "group_anagrams",
+      "source_index": 25,
+      "words": [
+        "asseour",
+        "arouses",
+        "prev",
+        "perv",
+        "wined",
+        "dwine",
+        "edwin"
+      ],
+      "solution": [
+        [
+          "arouses",
+          "asseour"
+        ],
+        [
+          "dwine",
+          "edwin",
+          "wined"
+        ],
+        [
+          "perv",
+          "prev"
+        ]
+      ],
+      "anagram_groups": 3,
+      "difficulty": {
+        "anagram_groups": [
+          2,
+          10
+        ],
+        "words_per_group": [
+          2,
+          5
+        ]
+      }
+    }
+  },
+  {
+    "question": "An anagram is a word formed by rearranging the letters of a different word, using all the original letters exactly once.\n\nYour job is to group the anagrams together. You can return the answer in any order.\n\nThe output is a list of lists of strings, where each outer list contains a group of anagrams, e.g. [[\"eat\", \"tea\"], [\"tan\", \"nat\"]].\n\nGroup the following list of words into anagrams:\n[\"nomological\", \"monological\", \"predelay\", \"replayed\", \"parleyed\", \"restretch\", \"stretcher\", \"unpooled\", \"unlooped\", \"gein\", \"gien\", \"arginine\", \"nigerian\", \"makars\", \"karmas\", \"inhales\", \"leanish\", \"cenchrus\", \"crunches\"]\n",
+    "answer": "[[\"arginine\", \"nigerian\"], [\"cenchrus\", \"crunches\"], [\"gein\", \"gien\"], [\"inhales\", \"leanish\"], [\"karmas\", \"makars\"], [\"monological\", \"nomological\"], [\"parleyed\", \"predelay\", \"replayed\"], [\"restretch\", \"stretcher\"], [\"unlooped\", \"unpooled\"]]",
+    "metadata": {
+      "source_dataset": "group_anagrams",
+      "source_index": 26,
+      "words": [
+        "nomological",
+        "monological",
+        "predelay",
+        "replayed",
+        "parleyed",
+        "restretch",
+        "stretcher",
+        "unpooled",
+        "unlooped",
+        "gein",
+        "gien",
+        "arginine",
+        "nigerian",
+        "makars",
+        "karmas",
+        "inhales",
+        "leanish",
+        "cenchrus",
+        "crunches"
+      ],
+      "solution": [
+        [
+          "arginine",
+          "nigerian"
+        ],
+        [
+          "cenchrus",
+          "crunches"
+        ],
+        [
+          "gein",
+          "gien"
+        ],
+        [
+          "inhales",
+          "leanish"
+        ],
+        [
+          "karmas",
+          "makars"
+        ],
+        [
+          "monological",
+          "nomological"
+        ],
+        [
+          "parleyed",
+          "predelay",
+          "replayed"
+        ],
+        [
+          "restretch",
+          "stretcher"
+        ],
+        [
+          "unlooped",
+          "unpooled"
+        ]
+      ],
+      "anagram_groups": 9,
+      "difficulty": {
+        "anagram_groups": [
+          2,
+          10
+        ],
+        "words_per_group": [
+          2,
+          5
+        ]
+      }
+    }
+  },
+  {
+    "question": "An anagram is a word formed by rearranging the letters of a different word, using all the original letters exactly once.\n\nYour job is to group the anagrams together. You can return the answer in any order.\n\nThe output is a list of lists of strings, where each outer list contains a group of anagrams, e.g. [[\"eat\", \"tea\"], [\"tan\", \"nat\"]].\n\nGroup the following list of words into anagrams:\n[\"antlike\", \"atinkle\", \"salpoid\", \"psaloid\"]\n",
+    "answer": "[[\"antlike\", \"atinkle\"], [\"psaloid\", \"salpoid\"]]",
+    "metadata": {
+      "source_dataset": "group_anagrams",
+      "source_index": 27,
+      "words": [
+        "antlike",
+        "atinkle",
+        "salpoid",
+        "psaloid"
+      ],
+      "solution": [
+        [
+          "antlike",
+          "atinkle"
+        ],
+        [
+          "psaloid",
+          "salpoid"
+        ]
+      ],
+      "anagram_groups": 2,
+      "difficulty": {
+        "anagram_groups": [
+          2,
+          10
+        ],
+        "words_per_group": [
+          2,
+          5
+        ]
+      }
+    }
+  },
+  {
+    "question": "An anagram is a word formed by rearranging the letters of a different word, using all the original letters exactly once.\n\nYour job is to group the anagrams together. You can return the answer in any order.\n\nThe output is a list of lists of strings, where each outer list contains a group of anagrams, e.g. [[\"eat\", \"tea\"], [\"tan\", \"nat\"]].\n\nGroup the following list of words into anagrams:\n[\"commissioned\", \"decommission\", \"neogenesis\", \"noegenesis\", \"queeve\", \"eveque\"]\n",
+    "answer": "[[\"commissioned\", \"decommission\"], [\"eveque\", \"queeve\"], [\"neogenesis\", \"noegenesis\"]]",
+    "metadata": {
+      "source_dataset": "group_anagrams",
+      "source_index": 28,
+      "words": [
+        "commissioned",
+        "decommission",
+        "neogenesis",
+        "noegenesis",
+        "queeve",
+        "eveque"
+      ],
+      "solution": [
+        [
+          "commissioned",
+          "decommission"
+        ],
+        [
+          "eveque",
+          "queeve"
+        ],
+        [
+          "neogenesis",
+          "noegenesis"
+        ]
+      ],
+      "anagram_groups": 3,
+      "difficulty": {
+        "anagram_groups": [
+          2,
+          10
+        ],
+        "words_per_group": [
+          2,
+          5
+        ]
+      }
+    }
+  },
+  {
+    "question": "An anagram is a word formed by rearranging the letters of a different word, using all the original letters exactly once.\n\nYour job is to group the anagrams together. You can return the answer in any order.\n\nThe output is a list of lists of strings, where each outer list contains a group of anagrams, e.g. [[\"eat\", \"tea\"], [\"tan\", \"nat\"]].\n\nGroup the following list of words into anagrams:\n[\"sporogeny\", \"gynospore\", \"lamellae\", \"malellae\", \"reptatorial\", \"proletariat\", \"madecase\", \"academes\", \"chrome\", \"chomer\", \"barcoo\", \"baroco\", \"showering\", \"reshowing\"]\n",
+    "answer": "[[\"academes\", \"madecase\"], [\"barcoo\", \"baroco\"], [\"chomer\", \"chrome\"], [\"gynospore\", \"sporogeny\"], [\"lamellae\", \"malellae\"], [\"proletariat\", \"reptatorial\"], [\"reshowing\", \"showering\"]]",
+    "metadata": {
+      "source_dataset": "group_anagrams",
+      "source_index": 29,
+      "words": [
+        "sporogeny",
+        "gynospore",
+        "lamellae",
+        "malellae",
+        "reptatorial",
+        "proletariat",
+        "madecase",
+        "academes",
+        "chrome",
+        "chomer",
+        "barcoo",
+        "baroco",
+        "showering",
+        "reshowing"
+      ],
+      "solution": [
+        [
+          "academes",
+          "madecase"
+        ],
+        [
+          "barcoo",
+          "baroco"
+        ],
+        [
+          "chomer",
+          "chrome"
+        ],
+        [
+          "gynospore",
+          "sporogeny"
+        ],
+        [
+          "lamellae",
+          "malellae"
+        ],
+        [
+          "proletariat",
+          "reptatorial"
+        ],
+        [
+          "reshowing",
+          "showering"
+        ]
+      ],
+      "anagram_groups": 7,
+      "difficulty": {
+        "anagram_groups": [
+          2,
+          10
+        ],
+        "words_per_group": [
+          2,
+          5
+        ]
+      }
+    }
+  },
+  {
+    "question": "An anagram is a word formed by rearranging the letters of a different word, using all the original letters exactly once.\n\nYour job is to group the anagrams together. You can return the answer in any order.\n\nThe output is a list of lists of strings, where each outer list contains a group of anagrams, e.g. [[\"eat\", \"tea\"], [\"tan\", \"nat\"]].\n\nGroup the following list of words into anagrams:\n[\"ponerid\", \"poinder\", \"ionomers\", \"moonrise\", \"shipowner\", \"ownership\"]\n",
+    "answer": "[[\"ionomers\", \"moonrise\"], [\"ownership\", \"shipowner\"], [\"poinder\", \"ponerid\"]]",
+    "metadata": {
+      "source_dataset": "group_anagrams",
+      "source_index": 30,
+      "words": [
+        "ponerid",
+        "poinder",
+        "ionomers",
+        "moonrise",
+        "shipowner",
+        "ownership"
+      ],
+      "solution": [
+        [
+          "ionomers",
+          "moonrise"
+        ],
+        [
+          "ownership",
+          "shipowner"
+        ],
+        [
+          "poinder",
+          "ponerid"
+        ]
+      ],
+      "anagram_groups": 3,
+      "difficulty": {
+        "anagram_groups": [
+          2,
+          10
+        ],
+        "words_per_group": [
+          2,
+          5
+        ]
+      }
+    }
+  },
+  {
+    "question": "An anagram is a word formed by rearranging the letters of a different word, using all the original letters exactly once.\n\nYour job is to group the anagrams together. You can return the answer in any order.\n\nThe output is a list of lists of strings, where each outer list contains a group of anagrams, e.g. [[\"eat\", \"tea\"], [\"tan\", \"nat\"]].\n\nGroup the following list of words into anagrams:\n[\"ashery\", \"hayers\", \"generation\", \"renegation\", \"flyover\", \"overfly\", \"ideist\", \"teiids\", \"tidies\", \"obiter\", \"orbite\", \"bitore\", \"excreta\", \"exacter\"]\n",
+    "answer": "[[\"ashery\", \"hayers\"], [\"bitore\", \"obiter\", \"orbite\"], [\"exacter\", \"excreta\"], [\"flyover\", \"overfly\"], [\"generation\", \"renegation\"], [\"ideist\", \"teiids\", \"tidies\"]]",
+    "metadata": {
+      "source_dataset": "group_anagrams",
+      "source_index": 31,
+      "words": [
+        "ashery",
+        "hayers",
+        "generation",
+        "renegation",
+        "flyover",
+        "overfly",
+        "ideist",
+        "teiids",
+        "tidies",
+        "obiter",
+        "orbite",
+        "bitore",
+        "excreta",
+        "exacter"
+      ],
+      "solution": [
+        [
+          "ashery",
+          "hayers"
+        ],
+        [
+          "bitore",
+          "obiter",
+          "orbite"
+        ],
+        [
+          "exacter",
+          "excreta"
+        ],
+        [
+          "flyover",
+          "overfly"
+        ],
+        [
+          "generation",
+          "renegation"
+        ],
+        [
+          "ideist",
+          "teiids",
+          "tidies"
+        ]
+      ],
+      "anagram_groups": 6,
+      "difficulty": {
+        "anagram_groups": [
+          2,
+          10
+        ],
+        "words_per_group": [
+          2,
+          5
+        ]
+      }
+    }
+  },
+  {
+    "question": "An anagram is a word formed by rearranging the letters of a different word, using all the original letters exactly once.\n\nYour job is to group the anagrams together. You can return the answer in any order.\n\nThe output is a list of lists of strings, where each outer list contains a group of anagrams, e.g. [[\"eat\", \"tea\"], [\"tan\", \"nat\"]].\n\nGroup the following list of words into anagrams:\n[\"spignel\", \"spingel\", \"kra\", \"ark\", \"romance\", \"cremona\", \"ascebc\", \"ebcasc\", \"spoored\", \"prosode\", \"corrida\", \"ricardo\", \"brisk\", \"birks\", \"stract\", \"tracts\", \"tusseh\", \"tushes\", \"shutes\", \"calipers\", \"spiracle\"]\n",
+    "answer": "[[\"ark\", \"kra\"], [\"ascebc\", \"ebcasc\"], [\"birks\", \"brisk\"], [\"calipers\", \"spiracle\"], [\"corrida\", \"ricardo\"], [\"cremona\", \"romance\"], [\"prosode\", \"spoored\"], [\"shutes\", \"tushes\", \"tusseh\"], [\"spignel\", \"spingel\"], [\"stract\", \"tracts\"]]",
+    "metadata": {
+      "source_dataset": "group_anagrams",
+      "source_index": 32,
+      "words": [
+        "spignel",
+        "spingel",
+        "kra",
+        "ark",
+        "romance",
+        "cremona",
+        "ascebc",
+        "ebcasc",
+        "spoored",
+        "prosode",
+        "corrida",
+        "ricardo",
+        "brisk",
+        "birks",
+        "stract",
+        "tracts",
+        "tusseh",
+        "tushes",
+        "shutes",
+        "calipers",
+        "spiracle"
+      ],
+      "solution": [
+        [
+          "ark",
+          "kra"
+        ],
+        [
+          "ascebc",
+          "ebcasc"
+        ],
+        [
+          "birks",
+          "brisk"
+        ],
+        [
+          "calipers",
+          "spiracle"
+        ],
+        [
+          "corrida",
+          "ricardo"
+        ],
+        [
+          "cremona",
+          "romance"
+        ],
+        [
+          "prosode",
+          "spoored"
+        ],
+        [
+          "shutes",
+          "tushes",
+          "tusseh"
+        ],
+        [
+          "spignel",
+          "spingel"
+        ],
+        [
+          "stract",
+          "tracts"
+        ]
+      ],
+      "anagram_groups": 10,
+      "difficulty": {
+        "anagram_groups": [
+          2,
+          10
+        ],
+        "words_per_group": [
+          2,
+          5
+        ]
+      }
+    }
+  },
+  {
+    "question": "An anagram is a word formed by rearranging the letters of a different word, using all the original letters exactly once.\n\nYour job is to group the anagrams together. You can return the answer in any order.\n\nThe output is a list of lists of strings, where each outer list contains a group of anagrams, e.g. [[\"eat\", \"tea\"], [\"tan\", \"nat\"]].\n\nGroup the following list of words into anagrams:\n[\"unstrict\", \"instruct\", \"ensient\", \"intense\", \"sennite\", \"sentine\", \"markets\", \"estmark\", \"ailuro\", \"ourali\", \"sour\", \"ours\", \"rous\", \"petroleur\", \"poulterer\", \"uglier\", \"guiler\", \"reguli\", \"gluier\", \"ligure\", \"merosthenic\", \"microsthene\", \"surreal\", \"serrula\"]\n",
+    "answer": "[[\"ailuro\", \"ourali\"], [\"ensient\", \"intense\", \"sennite\", \"sentine\"], [\"estmark\", \"markets\"], [\"gluier\", \"guiler\", \"ligure\", \"reguli\", \"uglier\"], [\"instruct\", \"unstrict\"], [\"merosthenic\", \"microsthene\"], [\"ours\", \"rous\", \"sour\"], [\"petroleur\", \"poulterer\"], [\"serrula\", \"surreal\"]]",
+    "metadata": {
+      "source_dataset": "group_anagrams",
+      "source_index": 33,
+      "words": [
+        "unstrict",
+        "instruct",
+        "ensient",
+        "intense",
+        "sennite",
+        "sentine",
+        "markets",
+        "estmark",
+        "ailuro",
+        "ourali",
+        "sour",
+        "ours",
+        "rous",
+        "petroleur",
+        "poulterer",
+        "uglier",
+        "guiler",
+        "reguli",
+        "gluier",
+        "ligure",
+        "merosthenic",
+        "microsthene",
+        "surreal",
+        "serrula"
+      ],
+      "solution": [
+        [
+          "ailuro",
+          "ourali"
+        ],
+        [
+          "ensient",
+          "intense",
+          "sennite",
+          "sentine"
+        ],
+        [
+          "estmark",
+          "markets"
+        ],
+        [
+          "gluier",
+          "guiler",
+          "ligure",
+          "reguli",
+          "uglier"
+        ],
+        [
+          "instruct",
+          "unstrict"
+        ],
+        [
+          "merosthenic",
+          "microsthene"
+        ],
+        [
+          "ours",
+          "rous",
+          "sour"
+        ],
+        [
+          "petroleur",
+          "poulterer"
+        ],
+        [
+          "serrula",
+          "surreal"
+        ]
+      ],
+      "anagram_groups": 9,
+      "difficulty": {
+        "anagram_groups": [
+          2,
+          10
+        ],
+        "words_per_group": [
+          2,
+          5
+        ]
+      }
+    }
+  },
+  {
+    "question": "An anagram is a word formed by rearranging the letters of a different word, using all the original letters exactly once.\n\nYour job is to group the anagrams together. You can return the answer in any order.\n\nThe output is a list of lists of strings, where each outer list contains a group of anagrams, e.g. [[\"eat\", \"tea\"], [\"tan\", \"nat\"]].\n\nGroup the following list of words into anagrams:\n[\"tex\", \"ext\", \"godding\", \"dodging\", \"upbreak\", \"breakup\", \"unmemoried\", \"unmemoired\", \"connected\", \"condecent\", \"logarithms\", \"algorithms\", \"electric\", \"lectrice\"]\n",
+    "answer": "[[\"algorithms\", \"logarithms\"], [\"breakup\", \"upbreak\"], [\"condecent\", \"connected\"], [\"dodging\", \"godding\"], [\"electric\", \"lectrice\"], [\"ext\", \"tex\"], [\"unmemoired\", \"unmemoried\"]]",
+    "metadata": {
+      "source_dataset": "group_anagrams",
+      "source_index": 34,
+      "words": [
+        "tex",
+        "ext",
+        "godding",
+        "dodging",
+        "upbreak",
+        "breakup",
+        "unmemoried",
+        "unmemoired",
+        "connected",
+        "condecent",
+        "logarithms",
+        "algorithms",
+        "electric",
+        "lectrice"
+      ],
+      "solution": [
+        [
+          "algorithms",
+          "logarithms"
+        ],
+        [
+          "breakup",
+          "upbreak"
+        ],
+        [
+          "condecent",
+          "connected"
+        ],
+        [
+          "dodging",
+          "godding"
+        ],
+        [
+          "electric",
+          "lectrice"
+        ],
+        [
+          "ext",
+          "tex"
+        ],
+        [
+          "unmemoired",
+          "unmemoried"
+        ]
+      ],
+      "anagram_groups": 7,
+      "difficulty": {
+        "anagram_groups": [
+          2,
+          10
+        ],
+        "words_per_group": [
+          2,
+          5
+        ]
+      }
+    }
+  },
+  {
+    "question": "An anagram is a word formed by rearranging the letters of a different word, using all the original letters exactly once.\n\nYour job is to group the anagrams together. You can return the answer in any order.\n\nThe output is a list of lists of strings, where each outer list contains a group of anagrams, e.g. [[\"eat\", \"tea\"], [\"tan\", \"nat\"]].\n\nGroup the following list of words into anagrams:\n[\"uncoif\", \"cuinfo\", \"browse\", \"bowers\", \"bowser\", \"clava\", \"caval\", \"shopbook\", \"bookshop\", \"silverer\", \"resilver\", \"sliverer\", \"revilers\", \"armor\", \"morra\", \"maror\"]\n",
+    "answer": "[[\"armor\", \"maror\", \"morra\"], [\"bookshop\", \"shopbook\"], [\"bowers\", \"bowser\", \"browse\"], [\"caval\", \"clava\"], [\"cuinfo\", \"uncoif\"], [\"resilver\", \"revilers\", \"silverer\", \"sliverer\"]]",
+    "metadata": {
+      "source_dataset": "group_anagrams",
+      "source_index": 35,
+      "words": [
+        "uncoif",
+        "cuinfo",
+        "browse",
+        "bowers",
+        "bowser",
+        "clava",
+        "caval",
+        "shopbook",
+        "bookshop",
+        "silverer",
+        "resilver",
+        "sliverer",
+        "revilers",
+        "armor",
+        "morra",
+        "maror"
+      ],
+      "solution": [
+        [
+          "armor",
+          "maror",
+          "morra"
+        ],
+        [
+          "bookshop",
+          "shopbook"
+        ],
+        [
+          "bowers",
+          "bowser",
+          "browse"
+        ],
+        [
+          "caval",
+          "clava"
+        ],
+        [
+          "cuinfo",
+          "uncoif"
+        ],
+        [
+          "resilver",
+          "revilers",
+          "silverer",
+          "sliverer"
+        ]
+      ],
+      "anagram_groups": 6,
+      "difficulty": {
+        "anagram_groups": [
+          2,
+          10
+        ],
+        "words_per_group": [
+          2,
+          5
+        ]
+      }
+    }
+  },
+  {
+    "question": "An anagram is a word formed by rearranging the letters of a different word, using all the original letters exactly once.\n\nYour job is to group the anagrams together. You can return the answer in any order.\n\nThe output is a list of lists of strings, where each outer list contains a group of anagrams, e.g. [[\"eat\", \"tea\"], [\"tan\", \"nat\"]].\n\nGroup the following list of words into anagrams:\n[\"tanproof\", \"antproof\", \"converser\", \"conserver\", \"sneaksman\", \"masskanne\", \"outlive\", \"ovulite\", \"stylate\", \"stately\"]\n",
+    "answer": "[[\"antproof\", \"tanproof\"], [\"conserver\", \"converser\"], [\"masskanne\", \"sneaksman\"], [\"outlive\", \"ovulite\"], [\"stately\", \"stylate\"]]",
+    "metadata": {
+      "source_dataset": "group_anagrams",
+      "source_index": 36,
+      "words": [
+        "tanproof",
+        "antproof",
+        "converser",
+        "conserver",
+        "sneaksman",
+        "masskanne",
+        "outlive",
+        "ovulite",
+        "stylate",
+        "stately"
+      ],
+      "solution": [
+        [
+          "antproof",
+          "tanproof"
+        ],
+        [
+          "conserver",
+          "converser"
+        ],
+        [
+          "masskanne",
+          "sneaksman"
+        ],
+        [
+          "outlive",
+          "ovulite"
+        ],
+        [
+          "stately",
+          "stylate"
+        ]
+      ],
+      "anagram_groups": 5,
+      "difficulty": {
+        "anagram_groups": [
+          2,
+          10
+        ],
+        "words_per_group": [
+          2,
+          5
+        ]
+      }
+    }
+  },
+  {
+    "question": "An anagram is a word formed by rearranging the letters of a different word, using all the original letters exactly once.\n\nYour job is to group the anagrams together. You can return the answer in any order.\n\nThe output is a list of lists of strings, where each outer list contains a group of anagrams, e.g. [[\"eat\", \"tea\"], [\"tan\", \"nat\"]].\n\nGroup the following list of words into anagrams:\n[\"ensuing\", \"gunnies\", \"delapse\", \"elapsed\", \"sepaled\", \"iridous\", \"isuroid\", \"beatille\", \"etabelli\"]\n",
+    "answer": "[[\"beatille\", \"etabelli\"], [\"delapse\", \"elapsed\", \"sepaled\"], [\"ensuing\", \"gunnies\"], [\"iridous\", \"isuroid\"]]",
+    "metadata": {
+      "source_dataset": "group_anagrams",
+      "source_index": 37,
+      "words": [
+        "ensuing",
+        "gunnies",
+        "delapse",
+        "elapsed",
+        "sepaled",
+        "iridous",
+        "isuroid",
+        "beatille",
+        "etabelli"
+      ],
+      "solution": [
+        [
+          "beatille",
+          "etabelli"
+        ],
+        [
+          "delapse",
+          "elapsed",
+          "sepaled"
+        ],
+        [
+          "ensuing",
+          "gunnies"
+        ],
+        [
+          "iridous",
+          "isuroid"
+        ]
+      ],
+      "anagram_groups": 4,
+      "difficulty": {
+        "anagram_groups": [
+          2,
+          10
+        ],
+        "words_per_group": [
+          2,
+          5
+        ]
+      }
+    }
+  },
+  {
+    "question": "An anagram is a word formed by rearranging the letters of a different word, using all the original letters exactly once.\n\nYour job is to group the anagrams together. You can return the answer in any order.\n\nThe output is a list of lists of strings, where each outer list contains a group of anagrams, e.g. [[\"eat\", \"tea\"], [\"tan\", \"nat\"]].\n\nGroup the following list of words into anagrams:\n[\"pantod\", \"dopant\", \"helistop\", \"hoplites\", \"isopleth\", \"unteem\", \"umteen\", \"nietzsche\", \"zechstein\", \"smuttier\", \"trisetum\", \"gelosin\", \"longies\", \"lignose\"]\n",
+    "answer": "[[\"dopant\", \"pantod\"], [\"gelosin\", \"lignose\", \"longies\"], [\"helistop\", \"hoplites\", \"isopleth\"], [\"nietzsche\", \"zechstein\"], [\"smuttier\", \"trisetum\"], [\"umteen\", \"unteem\"]]",
+    "metadata": {
+      "source_dataset": "group_anagrams",
+      "source_index": 38,
+      "words": [
+        "pantod",
+        "dopant",
+        "helistop",
+        "hoplites",
+        "isopleth",
+        "unteem",
+        "umteen",
+        "nietzsche",
+        "zechstein",
+        "smuttier",
+        "trisetum",
+        "gelosin",
+        "longies",
+        "lignose"
+      ],
+      "solution": [
+        [
+          "dopant",
+          "pantod"
+        ],
+        [
+          "gelosin",
+          "lignose",
+          "longies"
+        ],
+        [
+          "helistop",
+          "hoplites",
+          "isopleth"
+        ],
+        [
+          "nietzsche",
+          "zechstein"
+        ],
+        [
+          "smuttier",
+          "trisetum"
+        ],
+        [
+          "umteen",
+          "unteem"
+        ]
+      ],
+      "anagram_groups": 6,
+      "difficulty": {
+        "anagram_groups": [
+          2,
+          10
+        ],
+        "words_per_group": [
+          2,
+          5
+        ]
+      }
+    }
+  },
+  {
+    "question": "An anagram is a word formed by rearranging the letters of a different word, using all the original letters exactly once.\n\nYour job is to group the anagrams together. You can return the answer in any order.\n\nThe output is a list of lists of strings, where each outer list contains a group of anagrams, e.g. [[\"eat\", \"tea\"], [\"tan\", \"nat\"]].\n\nGroup the following list of words into anagrams:\n[\"sturnine\", \"runniest\", \"set\", \"est\", \"neurad\", \"endura\", \"unread\", \"hotches\", \"shochet\", \"rehallow\", \"hallower\", \"dismalities\", \"dissimilate\", \"halfungs\", \"flashgun\", \"tirelessness\", \"ritelessness\", \"dirca\", \"carid\", \"daric\", \"darci\", \"batiste\", \"bastite\"]\n",
+    "answer": "[[\"bastite\", \"batiste\"], [\"carid\", \"darci\", \"daric\", \"dirca\"], [\"dismalities\", \"dissimilate\"], [\"endura\", \"neurad\", \"unread\"], [\"est\", \"set\"], [\"flashgun\", \"halfungs\"], [\"hallower\", \"rehallow\"], [\"hotches\", \"shochet\"], [\"ritelessness\", \"tirelessness\"], [\"runniest\", \"sturnine\"]]",
+    "metadata": {
+      "source_dataset": "group_anagrams",
+      "source_index": 39,
+      "words": [
+        "sturnine",
+        "runniest",
+        "set",
+        "est",
+        "neurad",
+        "endura",
+        "unread",
+        "hotches",
+        "shochet",
+        "rehallow",
+        "hallower",
+        "dismalities",
+        "dissimilate",
+        "halfungs",
+        "flashgun",
+        "tirelessness",
+        "ritelessness",
+        "dirca",
+        "carid",
+        "daric",
+        "darci",
+        "batiste",
+        "bastite"
+      ],
+      "solution": [
+        [
+          "bastite",
+          "batiste"
+        ],
+        [
+          "carid",
+          "darci",
+          "daric",
+          "dirca"
+        ],
+        [
+          "dismalities",
+          "dissimilate"
+        ],
+        [
+          "endura",
+          "neurad",
+          "unread"
+        ],
+        [
+          "est",
+          "set"
+        ],
+        [
+          "flashgun",
+          "halfungs"
+        ],
+        [
+          "hallower",
+          "rehallow"
+        ],
+        [
+          "hotches",
+          "shochet"
+        ],
+        [
+          "ritelessness",
+          "tirelessness"
+        ],
+        [
+          "runniest",
+          "sturnine"
+        ]
+      ],
+      "anagram_groups": 10,
+      "difficulty": {
+        "anagram_groups": [
+          2,
+          10
+        ],
+        "words_per_group": [
+          2,
+          5
+        ]
+      }
+    }
+  },
+  {
+    "question": "An anagram is a word formed by rearranging the letters of a different word, using all the original letters exactly once.\n\nYour job is to group the anagrams together. You can return the answer in any order.\n\nThe output is a list of lists of strings, where each outer list contains a group of anagrams, e.g. [[\"eat\", \"tea\"], [\"tan\", \"nat\"]].\n\nGroup the following list of words into anagrams:\n[\"physa\", \"shapy\", \"fritts\", \"strift\", \"tonger\", \"geront\", \"groten\", \"colpeurynter\", \"counterreply\"]\n",
+    "answer": "[[\"colpeurynter\", \"counterreply\"], [\"fritts\", \"strift\"], [\"geront\", \"groten\", \"tonger\"], [\"physa\", \"shapy\"]]",
+    "metadata": {
+      "source_dataset": "group_anagrams",
+      "source_index": 40,
+      "words": [
+        "physa",
+        "shapy",
+        "fritts",
+        "strift",
+        "tonger",
+        "geront",
+        "groten",
+        "colpeurynter",
+        "counterreply"
+      ],
+      "solution": [
+        [
+          "colpeurynter",
+          "counterreply"
+        ],
+        [
+          "fritts",
+          "strift"
+        ],
+        [
+          "geront",
+          "groten",
+          "tonger"
+        ],
+        [
+          "physa",
+          "shapy"
+        ]
+      ],
+      "anagram_groups": 4,
+      "difficulty": {
+        "anagram_groups": [
+          2,
+          10
+        ],
+        "words_per_group": [
+          2,
+          5
+        ]
+      }
+    }
+  },
+  {
+    "question": "An anagram is a word formed by rearranging the letters of a different word, using all the original letters exactly once.\n\nYour job is to group the anagrams together. You can return the answer in any order.\n\nThe output is a list of lists of strings, where each outer list contains a group of anagrams, e.g. [[\"eat\", \"tea\"], [\"tan\", \"nat\"]].\n\nGroup the following list of words into anagrams:\n[\"sanes\", \"sensa\", \"sidewalk\", \"walkside\", \"evictors\", \"vortices\", \"ratan\", \"antar\", \"antra\", \"sata\", \"asta\", \"diopside\", \"dipodies\", \"ga\", \"ag\", \"lader\", \"daler\", \"readl\", \"solver\", \"lovers\"]\n",
+    "answer": "[[\"ag\", \"ga\"], [\"antar\", \"antra\", \"ratan\"], [\"asta\", \"sata\"], [\"daler\", \"lader\", \"readl\"], [\"diopside\", \"dipodies\"], [\"evictors\", \"vortices\"], [\"lovers\", \"solver\"], [\"sanes\", \"sensa\"], [\"sidewalk\", \"walkside\"]]",
+    "metadata": {
+      "source_dataset": "group_anagrams",
+      "source_index": 41,
+      "words": [
+        "sanes",
+        "sensa",
+        "sidewalk",
+        "walkside",
+        "evictors",
+        "vortices",
+        "ratan",
+        "antar",
+        "antra",
+        "sata",
+        "asta",
+        "diopside",
+        "dipodies",
+        "ga",
+        "ag",
+        "lader",
+        "daler",
+        "readl",
+        "solver",
+        "lovers"
+      ],
+      "solution": [
+        [
+          "ag",
+          "ga"
+        ],
+        [
+          "antar",
+          "antra",
+          "ratan"
+        ],
+        [
+          "asta",
+          "sata"
+        ],
+        [
+          "daler",
+          "lader",
+          "readl"
+        ],
+        [
+          "diopside",
+          "dipodies"
+        ],
+        [
+          "evictors",
+          "vortices"
+        ],
+        [
+          "lovers",
+          "solver"
+        ],
+        [
+          "sanes",
+          "sensa"
+        ],
+        [
+          "sidewalk",
+          "walkside"
+        ]
+      ],
+      "anagram_groups": 9,
+      "difficulty": {
+        "anagram_groups": [
+          2,
+          10
+        ],
+        "words_per_group": [
+          2,
+          5
+        ]
+      }
+    }
+  },
+  {
+    "question": "An anagram is a word formed by rearranging the letters of a different word, using all the original letters exactly once.\n\nYour job is to group the anagrams together. You can return the answer in any order.\n\nThe output is a list of lists of strings, where each outer list contains a group of anagrams, e.g. [[\"eat\", \"tea\"], [\"tan\", \"nat\"]].\n\nGroup the following list of words into anagrams:\n[\"velout\", \"volute\", \"septicopyemic\", \"pyosepticemic\", \"tanega\", \"agnate\", \"freshet\", \"hefters\", \"ableness\", \"sensable\", \"blaeness\", \"verrugas\", \"gravures\"]\n",
+    "answer": "[[\"ableness\", \"blaeness\", \"sensable\"], [\"agnate\", \"tanega\"], [\"freshet\", \"hefters\"], [\"gravures\", \"verrugas\"], [\"pyosepticemic\", \"septicopyemic\"], [\"velout\", \"volute\"]]",
+    "metadata": {
+      "source_dataset": "group_anagrams",
+      "source_index": 42,
+      "words": [
+        "velout",
+        "volute",
+        "septicopyemic",
+        "pyosepticemic",
+        "tanega",
+        "agnate",
+        "freshet",
+        "hefters",
+        "ableness",
+        "sensable",
+        "blaeness",
+        "verrugas",
+        "gravures"
+      ],
+      "solution": [
+        [
+          "ableness",
+          "blaeness",
+          "sensable"
+        ],
+        [
+          "agnate",
+          "tanega"
+        ],
+        [
+          "freshet",
+          "hefters"
+        ],
+        [
+          "gravures",
+          "verrugas"
+        ],
+        [
+          "pyosepticemic",
+          "septicopyemic"
+        ],
+        [
+          "velout",
+          "volute"
+        ]
+      ],
+      "anagram_groups": 6,
+      "difficulty": {
+        "anagram_groups": [
+          2,
+          10
+        ],
+        "words_per_group": [
+          2,
+          5
+        ]
+      }
+    }
+  },
+  {
+    "question": "An anagram is a word formed by rearranging the letters of a different word, using all the original letters exactly once.\n\nYour job is to group the anagrams together. You can return the answer in any order.\n\nThe output is a list of lists of strings, where each outer list contains a group of anagrams, e.g. [[\"eat\", \"tea\"], [\"tan\", \"nat\"]].\n\nGroup the following list of words into anagrams:\n[\"navet\", \"nevat\", \"venta\", \"runkly\", \"knurly\", \"roqueting\", \"requoting\", \"archine\", \"chainer\", \"scrime\", \"crimes\"]\n",
+    "answer": "[[\"archine\", \"chainer\"], [\"crimes\", \"scrime\"], [\"knurly\", \"runkly\"], [\"navet\", \"nevat\", \"venta\"], [\"requoting\", \"roqueting\"]]",
+    "metadata": {
+      "source_dataset": "group_anagrams",
+      "source_index": 43,
+      "words": [
+        "navet",
+        "nevat",
+        "venta",
+        "runkly",
+        "knurly",
+        "roqueting",
+        "requoting",
+        "archine",
+        "chainer",
+        "scrime",
+        "crimes"
+      ],
+      "solution": [
+        [
+          "archine",
+          "chainer"
+        ],
+        [
+          "crimes",
+          "scrime"
+        ],
+        [
+          "knurly",
+          "runkly"
+        ],
+        [
+          "navet",
+          "nevat",
+          "venta"
+        ],
+        [
+          "requoting",
+          "roqueting"
+        ]
+      ],
+      "anagram_groups": 5,
+      "difficulty": {
+        "anagram_groups": [
+          2,
+          10
+        ],
+        "words_per_group": [
+          2,
+          5
+        ]
+      }
+    }
+  },
+  {
+    "question": "An anagram is a word formed by rearranging the letters of a different word, using all the original letters exactly once.\n\nYour job is to group the anagrams together. You can return the answer in any order.\n\nThe output is a list of lists of strings, where each outer list contains a group of anagrams, e.g. [[\"eat\", \"tea\"], [\"tan\", \"nat\"]].\n\nGroup the following list of words into anagrams:\n[\"hor\", \"rho\", \"unremote\", \"routemen\"]\n",
+    "answer": "[[\"hor\", \"rho\"], [\"routemen\", \"unremote\"]]",
+    "metadata": {
+      "source_dataset": "group_anagrams",
+      "source_index": 44,
+      "words": [
+        "hor",
+        "rho",
+        "unremote",
+        "routemen"
+      ],
+      "solution": [
+        [
+          "hor",
+          "rho"
+        ],
+        [
+          "routemen",
+          "unremote"
+        ]
+      ],
+      "anagram_groups": 2,
+      "difficulty": {
+        "anagram_groups": [
+          2,
+          10
+        ],
+        "words_per_group": [
+          2,
+          5
+        ]
+      }
+    }
+  },
+  {
+    "question": "An anagram is a word formed by rearranging the letters of a different word, using all the original letters exactly once.\n\nYour job is to group the anagrams together. You can return the answer in any order.\n\nThe output is a list of lists of strings, where each outer list contains a group of anagrams, e.g. [[\"eat\", \"tea\"], [\"tan\", \"nat\"]].\n\nGroup the following list of words into anagrams:\n[\"volutae\", \"ovulate\", \"bobac\", \"cabob\", \"tylotus\", \"stoutly\", \"urinous\", \"ruinous\"]\n",
+    "answer": "[[\"bobac\", \"cabob\"], [\"ovulate\", \"volutae\"], [\"ruinous\", \"urinous\"], [\"stoutly\", \"tylotus\"]]",
+    "metadata": {
+      "source_dataset": "group_anagrams",
+      "source_index": 45,
+      "words": [
+        "volutae",
+        "ovulate",
+        "bobac",
+        "cabob",
+        "tylotus",
+        "stoutly",
+        "urinous",
+        "ruinous"
+      ],
+      "solution": [
+        [
+          "bobac",
+          "cabob"
+        ],
+        [
+          "ovulate",
+          "volutae"
+        ],
+        [
+          "ruinous",
+          "urinous"
+        ],
+        [
+          "stoutly",
+          "tylotus"
+        ]
+      ],
+      "anagram_groups": 4,
+      "difficulty": {
+        "anagram_groups": [
+          2,
+          10
+        ],
+        "words_per_group": [
+          2,
+          5
+        ]
+      }
+    }
+  },
+  {
+    "question": "An anagram is a word formed by rearranging the letters of a different word, using all the original letters exactly once.\n\nYour job is to group the anagrams together. You can return the answer in any order.\n\nThe output is a list of lists of strings, where each outer list contains a group of anagrams, e.g. [[\"eat\", \"tea\"], [\"tan\", \"nat\"]].\n\nGroup the following list of words into anagrams:\n[\"dobe\", \"bode\", \"daleth\", \"lathed\", \"halted\", \"unredacted\", \"underacted\", \"rebundle\", \"blendure\", \"latinos\", \"talions\", \"caried\", \"acider\", \"ericad\", \"mugweed\", \"gumweed\", \"phaseouts\", \"taphouses\"]\n",
+    "answer": "[[\"acider\", \"caried\", \"ericad\"], [\"blendure\", \"rebundle\"], [\"bode\", \"dobe\"], [\"daleth\", \"halted\", \"lathed\"], [\"gumweed\", \"mugweed\"], [\"latinos\", \"talions\"], [\"phaseouts\", \"taphouses\"], [\"underacted\", \"unredacted\"]]",
+    "metadata": {
+      "source_dataset": "group_anagrams",
+      "source_index": 46,
+      "words": [
+        "dobe",
+        "bode",
+        "daleth",
+        "lathed",
+        "halted",
+        "unredacted",
+        "underacted",
+        "rebundle",
+        "blendure",
+        "latinos",
+        "talions",
+        "caried",
+        "acider",
+        "ericad",
+        "mugweed",
+        "gumweed",
+        "phaseouts",
+        "taphouses"
+      ],
+      "solution": [
+        [
+          "acider",
+          "caried",
+          "ericad"
+        ],
+        [
+          "blendure",
+          "rebundle"
+        ],
+        [
+          "bode",
+          "dobe"
+        ],
+        [
+          "daleth",
+          "halted",
+          "lathed"
+        ],
+        [
+          "gumweed",
+          "mugweed"
+        ],
+        [
+          "latinos",
+          "talions"
+        ],
+        [
+          "phaseouts",
+          "taphouses"
+        ],
+        [
+          "underacted",
+          "unredacted"
+        ]
+      ],
+      "anagram_groups": 8,
+      "difficulty": {
+        "anagram_groups": [
+          2,
+          10
+        ],
+        "words_per_group": [
+          2,
+          5
+        ]
+      }
+    }
+  },
+  {
+    "question": "An anagram is a word formed by rearranging the letters of a different word, using all the original letters exactly once.\n\nYour job is to group the anagrams together. You can return the answer in any order.\n\nThe output is a list of lists of strings, where each outer list contains a group of anagrams, e.g. [[\"eat\", \"tea\"], [\"tan\", \"nat\"]].\n\nGroup the following list of words into anagrams:\n[\"pettles\", \"spettle\", \"knars\", \"narks\", \"oenologist\", \"ontologise\", \"ontologies\", \"neoologist\"]\n",
+    "answer": "[[\"knars\", \"narks\"], [\"neoologist\", \"oenologist\", \"ontologies\", \"ontologise\"], [\"pettles\", \"spettle\"]]",
+    "metadata": {
+      "source_dataset": "group_anagrams",
+      "source_index": 47,
+      "words": [
+        "pettles",
+        "spettle",
+        "knars",
+        "narks",
+        "oenologist",
+        "ontologise",
+        "ontologies",
+        "neoologist"
+      ],
+      "solution": [
+        [
+          "knars",
+          "narks"
+        ],
+        [
+          "neoologist",
+          "oenologist",
+          "ontologies",
+          "ontologise"
+        ],
+        [
+          "pettles",
+          "spettle"
+        ]
+      ],
+      "anagram_groups": 3,
+      "difficulty": {
+        "anagram_groups": [
+          2,
+          10
+        ],
+        "words_per_group": [
+          2,
+          5
+        ]
+      }
+    }
+  },
+  {
+    "question": "An anagram is a word formed by rearranging the letters of a different word, using all the original letters exactly once.\n\nYour job is to group the anagrams together. You can return the answer in any order.\n\nThe output is a list of lists of strings, where each outer list contains a group of anagrams, e.g. [[\"eat\", \"tea\"], [\"tan\", \"nat\"]].\n\nGroup the following list of words into anagrams:\n[\"rondelles\", \"norselled\", \"criminate\", \"carminite\", \"metrician\", \"antimeric\", \"flook\", \"kloof\", \"stamnoi\", \"manitos\", \"incisure\", \"sciurine\"]\n",
+    "answer": "[[\"antimeric\", \"carminite\", \"criminate\", \"metrician\"], [\"flook\", \"kloof\"], [\"incisure\", \"sciurine\"], [\"manitos\", \"stamnoi\"], [\"norselled\", \"rondelles\"]]",
+    "metadata": {
+      "source_dataset": "group_anagrams",
+      "source_index": 48,
+      "words": [
+        "rondelles",
+        "norselled",
+        "criminate",
+        "carminite",
+        "metrician",
+        "antimeric",
+        "flook",
+        "kloof",
+        "stamnoi",
+        "manitos",
+        "incisure",
+        "sciurine"
+      ],
+      "solution": [
+        [
+          "antimeric",
+          "carminite",
+          "criminate",
+          "metrician"
+        ],
+        [
+          "flook",
+          "kloof"
+        ],
+        [
+          "incisure",
+          "sciurine"
+        ],
+        [
+          "manitos",
+          "stamnoi"
+        ],
+        [
+          "norselled",
+          "rondelles"
+        ]
+      ],
+      "anagram_groups": 5,
+      "difficulty": {
+        "anagram_groups": [
+          2,
+          10
+        ],
+        "words_per_group": [
+          2,
+          5
+        ]
+      }
+    }
+  },
+  {
+    "question": "An anagram is a word formed by rearranging the letters of a different word, using all the original letters exactly once.\n\nYour job is to group the anagrams together. You can return the answer in any order.\n\nThe output is a list of lists of strings, where each outer list contains a group of anagrams, e.g. [[\"eat\", \"tea\"], [\"tan\", \"nat\"]].\n\nGroup the following list of words into anagrams:\n[\"omnitenent\", \"intonement\", \"rightable\", \"bergalith\", \"missary\", \"syriasm\"]\n",
+    "answer": "[[\"bergalith\", \"rightable\"], [\"intonement\", \"omnitenent\"], [\"missary\", \"syriasm\"]]",
+    "metadata": {
+      "source_dataset": "group_anagrams",
+      "source_index": 49,
+      "words": [
+        "omnitenent",
+        "intonement",
+        "rightable",
+        "bergalith",
+        "missary",
+        "syriasm"
+      ],
+      "solution": [
+        [
+          "bergalith",
+          "rightable"
+        ],
+        [
+          "intonement",
+          "omnitenent"
+        ],
+        [
+          "missary",
+          "syriasm"
+        ]
+      ],
+      "anagram_groups": 3,
+      "difficulty": {
+        "anagram_groups": [
+          2,
+          10
+        ],
+        "words_per_group": [
+          2,
+          5
+        ]
+      }
+    }
+  },
+  {
+    "question": "An anagram is a word formed by rearranging the letters of a different word, using all the original letters exactly once.\n\nYour job is to group the anagrams together. You can return the answer in any order.\n\nThe output is a list of lists of strings, where each outer list contains a group of anagrams, e.g. [[\"eat\", \"tea\"], [\"tan\", \"nat\"]].\n\nGroup the following list of words into anagrams:\n[\"lodger\", \"golder\", \"tolderia\", \"tailored\", \"hipline\", \"philine\", \"hotpresses\", \"prostheses\", \"replanted\", \"predental\", \"interposure\", \"neuropteris\", \"ochidore\", \"choreoid\", \"protreaty\", \"reptatory\"]\n",
+    "answer": "[[\"choreoid\", \"ochidore\"], [\"golder\", \"lodger\"], [\"hipline\", \"philine\"], [\"hotpresses\", \"prostheses\"], [\"interposure\", \"neuropteris\"], [\"predental\", \"replanted\"], [\"protreaty\", \"reptatory\"], [\"tailored\", \"tolderia\"]]",
+    "metadata": {
+      "source_dataset": "group_anagrams",
+      "source_index": 50,
+      "words": [
+        "lodger",
+        "golder",
+        "tolderia",
+        "tailored",
+        "hipline",
+        "philine",
+        "hotpresses",
+        "prostheses",
+        "replanted",
+        "predental",
+        "interposure",
+        "neuropteris",
+        "ochidore",
+        "choreoid",
+        "protreaty",
+        "reptatory"
+      ],
+      "solution": [
+        [
+          "choreoid",
+          "ochidore"
+        ],
+        [
+          "golder",
+          "lodger"
+        ],
+        [
+          "hipline",
+          "philine"
+        ],
+        [
+          "hotpresses",
+          "prostheses"
+        ],
+        [
+          "interposure",
+          "neuropteris"
+        ],
+        [
+          "predental",
+          "replanted"
+        ],
+        [
+          "protreaty",
+          "reptatory"
+        ],
+        [
+          "tailored",
+          "tolderia"
+        ]
+      ],
+      "anagram_groups": 8,
+      "difficulty": {
+        "anagram_groups": [
+          2,
+          10
+        ],
+        "words_per_group": [
+          2,
+          5
+        ]
+      }
+    }
+  },
+  {
+    "question": "An anagram is a word formed by rearranging the letters of a different word, using all the original letters exactly once.\n\nYour job is to group the anagrams together. You can return the answer in any order.\n\nThe output is a list of lists of strings, where each outer list contains a group of anagrams, e.g. [[\"eat\", \"tea\"], [\"tan\", \"nat\"]].\n\nGroup the following list of words into anagrams:\n[\"woolf\", \"wolof\", \"sye\", \"yes\", \"sey\", \"poetaster\", \"operettas\", \"demisolde\", \"melodised\", \"swarth\", \"thraws\", \"wraths\", \"ark\", \"kra\", \"antiextreme\", \"exterminate\", \"denis\", \"snide\", \"nides\", \"bago\", \"boga\"]\n",
+    "answer": "[[\"antiextreme\", \"exterminate\"], [\"ark\", \"kra\"], [\"bago\", \"boga\"], [\"demisolde\", \"melodised\"], [\"denis\", \"nides\", \"snide\"], [\"operettas\", \"poetaster\"], [\"sey\", \"sye\", \"yes\"], [\"swarth\", \"thraws\", \"wraths\"], [\"wolof\", \"woolf\"]]",
+    "metadata": {
+      "source_dataset": "group_anagrams",
+      "source_index": 51,
+      "words": [
+        "woolf",
+        "wolof",
+        "sye",
+        "yes",
+        "sey",
+        "poetaster",
+        "operettas",
+        "demisolde",
+        "melodised",
+        "swarth",
+        "thraws",
+        "wraths",
+        "ark",
+        "kra",
+        "antiextreme",
+        "exterminate",
+        "denis",
+        "snide",
+        "nides",
+        "bago",
+        "boga"
+      ],
+      "solution": [
+        [
+          "antiextreme",
+          "exterminate"
+        ],
+        [
+          "ark",
+          "kra"
+        ],
+        [
+          "bago",
+          "boga"
+        ],
+        [
+          "demisolde",
+          "melodised"
+        ],
+        [
+          "denis",
+          "nides",
+          "snide"
+        ],
+        [
+          "operettas",
+          "poetaster"
+        ],
+        [
+          "sey",
+          "sye",
+          "yes"
+        ],
+        [
+          "swarth",
+          "thraws",
+          "wraths"
+        ],
+        [
+          "wolof",
+          "woolf"
+        ]
+      ],
+      "anagram_groups": 9,
+      "difficulty": {
+        "anagram_groups": [
+          2,
+          10
+        ],
+        "words_per_group": [
+          2,
+          5
+        ]
+      }
+    }
+  },
+  {
+    "question": "An anagram is a word formed by rearranging the letters of a different word, using all the original letters exactly once.\n\nYour job is to group the anagrams together. You can return the answer in any order.\n\nThe output is a list of lists of strings, where each outer list contains a group of anagrams, e.g. [[\"eat\", \"tea\"], [\"tan\", \"nat\"]].\n\nGroup the following list of words into anagrams:\n[\"siblings\", \"bislings\", \"spane\", \"aspen\", \"snape\", \"spean\", \"sceptering\", \"respecting\", \"coil\", \"coli\", \"clio\", \"loci\", \"contractu\", \"cunctator\", \"enduringly\", \"underlying\", \"spelaean\", \"seaplane\", \"electroacoustic\", \"acoustoelectric\", \"moistener\", \"neoterism\", \"gartering\", \"regrating\"]\n",
+    "answer": "[[\"acoustoelectric\", \"electroacoustic\"], [\"aspen\", \"snape\", \"spane\", \"spean\"], [\"bislings\", \"siblings\"], [\"clio\", \"coil\", \"coli\", \"loci\"], [\"contractu\", \"cunctator\"], [\"enduringly\", \"underlying\"], [\"gartering\", \"regrating\"], [\"moistener\", \"neoterism\"], [\"respecting\", \"sceptering\"], [\"seaplane\", \"spelaean\"]]",
+    "metadata": {
+      "source_dataset": "group_anagrams",
+      "source_index": 52,
+      "words": [
+        "siblings",
+        "bislings",
+        "spane",
+        "aspen",
+        "snape",
+        "spean",
+        "sceptering",
+        "respecting",
+        "coil",
+        "coli",
+        "clio",
+        "loci",
+        "contractu",
+        "cunctator",
+        "enduringly",
+        "underlying",
+        "spelaean",
+        "seaplane",
+        "electroacoustic",
+        "acoustoelectric",
+        "moistener",
+        "neoterism",
+        "gartering",
+        "regrating"
+      ],
+      "solution": [
+        [
+          "acoustoelectric",
+          "electroacoustic"
+        ],
+        [
+          "aspen",
+          "snape",
+          "spane",
+          "spean"
+        ],
+        [
+          "bislings",
+          "siblings"
+        ],
+        [
+          "clio",
+          "coil",
+          "coli",
+          "loci"
+        ],
+        [
+          "contractu",
+          "cunctator"
+        ],
+        [
+          "enduringly",
+          "underlying"
+        ],
+        [
+          "gartering",
+          "regrating"
+        ],
+        [
+          "moistener",
+          "neoterism"
+        ],
+        [
+          "respecting",
+          "sceptering"
+        ],
+        [
+          "seaplane",
+          "spelaean"
+        ]
+      ],
+      "anagram_groups": 10,
+      "difficulty": {
+        "anagram_groups": [
+          2,
+          10
+        ],
+        "words_per_group": [
+          2,
+          5
+        ]
+      }
+    }
+  },
+  {
+    "question": "An anagram is a word formed by rearranging the letters of a different word, using all the original letters exactly once.\n\nYour job is to group the anagrams together. You can return the answer in any order.\n\nThe output is a list of lists of strings, where each outer list contains a group of anagrams, e.g. [[\"eat\", \"tea\"], [\"tan\", \"nat\"]].\n\nGroup the following list of words into anagrams:\n[\"glowered\", \"reglowed\", \"overs\", \"servo\", \"verso\", \"needham\", \"headmen\", \"trollopian\", \"pollinator\", \"soir\", \"sori\", \"astatizer\", \"zaratites\", \"gallian\", \"lingala\", \"triangulated\", \"adulterating\", \"autoradiographic\", \"radioautographic\", \"requitals\", \"quartiles\"]\n",
+    "answer": "[[\"adulterating\", \"triangulated\"], [\"astatizer\", \"zaratites\"], [\"autoradiographic\", \"radioautographic\"], [\"gallian\", \"lingala\"], [\"glowered\", \"reglowed\"], [\"headmen\", \"needham\"], [\"overs\", \"servo\", \"verso\"], [\"pollinator\", \"trollopian\"], [\"quartiles\", \"requitals\"], [\"soir\", \"sori\"]]",
+    "metadata": {
+      "source_dataset": "group_anagrams",
+      "source_index": 53,
+      "words": [
+        "glowered",
+        "reglowed",
+        "overs",
+        "servo",
+        "verso",
+        "needham",
+        "headmen",
+        "trollopian",
+        "pollinator",
+        "soir",
+        "sori",
+        "astatizer",
+        "zaratites",
+        "gallian",
+        "lingala",
+        "triangulated",
+        "adulterating",
+        "autoradiographic",
+        "radioautographic",
+        "requitals",
+        "quartiles"
+      ],
+      "solution": [
+        [
+          "adulterating",
+          "triangulated"
+        ],
+        [
+          "astatizer",
+          "zaratites"
+        ],
+        [
+          "autoradiographic",
+          "radioautographic"
+        ],
+        [
+          "gallian",
+          "lingala"
+        ],
+        [
+          "glowered",
+          "reglowed"
+        ],
+        [
+          "headmen",
+          "needham"
+        ],
+        [
+          "overs",
+          "servo",
+          "verso"
+        ],
+        [
+          "pollinator",
+          "trollopian"
+        ],
+        [
+          "quartiles",
+          "requitals"
+        ],
+        [
+          "soir",
+          "sori"
+        ]
+      ],
+      "anagram_groups": 10,
+      "difficulty": {
+        "anagram_groups": [
+          2,
+          10
+        ],
+        "words_per_group": [
+          2,
+          5
+        ]
+      }
+    }
+  },
+  {
+    "question": "An anagram is a word formed by rearranging the letters of a different word, using all the original letters exactly once.\n\nYour job is to group the anagrams together. You can return the answer in any order.\n\nThe output is a list of lists of strings, where each outer list contains a group of anagrams, e.g. [[\"eat\", \"tea\"], [\"tan\", \"nat\"]].\n\nGroup the following list of words into anagrams:\n[\"coverall\", \"vocaller\", \"overcall\", \"unsensitive\", \"unitiveness\", \"osperm\", \"mopers\", \"proems\", \"merops\", \"toed\", \"tode\", \"rebuy\", \"buyer\", \"entozoan\", \"antozone\", \"relaundered\", \"underdealer\"]\n",
+    "answer": "[[\"antozone\", \"entozoan\"], [\"buyer\", \"rebuy\"], [\"coverall\", \"overcall\", \"vocaller\"], [\"merops\", \"mopers\", \"osperm\", \"proems\"], [\"relaundered\", \"underdealer\"], [\"tode\", \"toed\"], [\"unitiveness\", \"unsensitive\"]]",
+    "metadata": {
+      "source_dataset": "group_anagrams",
+      "source_index": 54,
+      "words": [
+        "coverall",
+        "vocaller",
+        "overcall",
+        "unsensitive",
+        "unitiveness",
+        "osperm",
+        "mopers",
+        "proems",
+        "merops",
+        "toed",
+        "tode",
+        "rebuy",
+        "buyer",
+        "entozoan",
+        "antozone",
+        "relaundered",
+        "underdealer"
+      ],
+      "solution": [
+        [
+          "antozone",
+          "entozoan"
+        ],
+        [
+          "buyer",
+          "rebuy"
+        ],
+        [
+          "coverall",
+          "overcall",
+          "vocaller"
+        ],
+        [
+          "merops",
+          "mopers",
+          "osperm",
+          "proems"
+        ],
+        [
+          "relaundered",
+          "underdealer"
+        ],
+        [
+          "tode",
+          "toed"
+        ],
+        [
+          "unitiveness",
+          "unsensitive"
+        ]
+      ],
+      "anagram_groups": 7,
+      "difficulty": {
+        "anagram_groups": [
+          2,
+          10
+        ],
+        "words_per_group": [
+          2,
+          5
+        ]
+      }
+    }
+  },
+  {
+    "question": "An anagram is a word formed by rearranging the letters of a different word, using all the original letters exactly once.\n\nYour job is to group the anagrams together. You can return the answer in any order.\n\nThe output is a list of lists of strings, where each outer list contains a group of anagrams, e.g. [[\"eat\", \"tea\"], [\"tan\", \"nat\"]].\n\nGroup the following list of words into anagrams:\n[\"encrinital\", \"tricennial\", \"sequan\", \"queans\", \"diasters\", \"disaster\", \"warranties\", \"warrantise\", \"siak\", \"saki\", \"sika\"]\n",
+    "answer": "[[\"diasters\", \"disaster\"], [\"encrinital\", \"tricennial\"], [\"queans\", \"sequan\"], [\"saki\", \"siak\", \"sika\"], [\"warranties\", \"warrantise\"]]",
+    "metadata": {
+      "source_dataset": "group_anagrams",
+      "source_index": 55,
+      "words": [
+        "encrinital",
+        "tricennial",
+        "sequan",
+        "queans",
+        "diasters",
+        "disaster",
+        "warranties",
+        "warrantise",
+        "siak",
+        "saki",
+        "sika"
+      ],
+      "solution": [
+        [
+          "diasters",
+          "disaster"
+        ],
+        [
+          "encrinital",
+          "tricennial"
+        ],
+        [
+          "queans",
+          "sequan"
+        ],
+        [
+          "saki",
+          "siak",
+          "sika"
+        ],
+        [
+          "warranties",
+          "warrantise"
+        ]
+      ],
+      "anagram_groups": 5,
+      "difficulty": {
+        "anagram_groups": [
+          2,
+          10
+        ],
+        "words_per_group": [
+          2,
+          5
+        ]
+      }
+    }
+  },
+  {
+    "question": "An anagram is a word formed by rearranging the letters of a different word, using all the original letters exactly once.\n\nYour job is to group the anagrams together. You can return the answer in any order.\n\nThe output is a list of lists of strings, where each outer list contains a group of anagrams, e.g. [[\"eat\", \"tea\"], [\"tan\", \"nat\"]].\n\nGroup the following list of words into anagrams:\n[\"incomputably\", \"uncompatibly\", \"wakeners\", \"rewakens\", \"airplot\", \"toprail\", \"portail\", \"seedman\", \"demeans\", \"electromagnetic\", \"magnetoelectric\", \"monial\", \"nomial\", \"almoin\", \"oilman\", \"fetichry\", \"fitchery\"]\n",
+    "answer": "[[\"airplot\", \"portail\", \"toprail\"], [\"almoin\", \"monial\", \"nomial\", \"oilman\"], [\"demeans\", \"seedman\"], [\"electromagnetic\", \"magnetoelectric\"], [\"fetichry\", \"fitchery\"], [\"incomputably\", \"uncompatibly\"], [\"rewakens\", \"wakeners\"]]",
+    "metadata": {
+      "source_dataset": "group_anagrams",
+      "source_index": 56,
+      "words": [
+        "incomputably",
+        "uncompatibly",
+        "wakeners",
+        "rewakens",
+        "airplot",
+        "toprail",
+        "portail",
+        "seedman",
+        "demeans",
+        "electromagnetic",
+        "magnetoelectric",
+        "monial",
+        "nomial",
+        "almoin",
+        "oilman",
+        "fetichry",
+        "fitchery"
+      ],
+      "solution": [
+        [
+          "airplot",
+          "portail",
+          "toprail"
+        ],
+        [
+          "almoin",
+          "monial",
+          "nomial",
+          "oilman"
+        ],
+        [
+          "demeans",
+          "seedman"
+        ],
+        [
+          "electromagnetic",
+          "magnetoelectric"
+        ],
+        [
+          "fetichry",
+          "fitchery"
+        ],
+        [
+          "incomputably",
+          "uncompatibly"
+        ],
+        [
+          "rewakens",
+          "wakeners"
+        ]
+      ],
+      "anagram_groups": 7,
+      "difficulty": {
+        "anagram_groups": [
+          2,
+          10
+        ],
+        "words_per_group": [
+          2,
+          5
+        ]
+      }
+    }
+  },
+  {
+    "question": "An anagram is a word formed by rearranging the letters of a different word, using all the original letters exactly once.\n\nYour job is to group the anagrams together. You can return the answer in any order.\n\nThe output is a list of lists of strings, where each outer list contains a group of anagrams, e.g. [[\"eat\", \"tea\"], [\"tan\", \"nat\"]].\n\nGroup the following list of words into anagrams:\n[\"drisk\", \"dirks\", \"weatherbreak\", \"breakweather\", \"torsion\", \"isotron\", \"nitroso\", \"bikram\", \"imbark\", \"carisa\", \"sciara\", \"certifying\", \"rectifying\", \"tapir\", \"atrip\", \"pairt\", \"parti\", \"perchloric\", \"prechloric\"]\n",
+    "answer": "[[\"atrip\", \"pairt\", \"parti\", \"tapir\"], [\"bikram\", \"imbark\"], [\"breakweather\", \"weatherbreak\"], [\"carisa\", \"sciara\"], [\"certifying\", \"rectifying\"], [\"dirks\", \"drisk\"], [\"isotron\", \"nitroso\", \"torsion\"], [\"perchloric\", \"prechloric\"]]",
+    "metadata": {
+      "source_dataset": "group_anagrams",
+      "source_index": 57,
+      "words": [
+        "drisk",
+        "dirks",
+        "weatherbreak",
+        "breakweather",
+        "torsion",
+        "isotron",
+        "nitroso",
+        "bikram",
+        "imbark",
+        "carisa",
+        "sciara",
+        "certifying",
+        "rectifying",
+        "tapir",
+        "atrip",
+        "pairt",
+        "parti",
+        "perchloric",
+        "prechloric"
+      ],
+      "solution": [
+        [
+          "atrip",
+          "pairt",
+          "parti",
+          "tapir"
+        ],
+        [
+          "bikram",
+          "imbark"
+        ],
+        [
+          "breakweather",
+          "weatherbreak"
+        ],
+        [
+          "carisa",
+          "sciara"
+        ],
+        [
+          "certifying",
+          "rectifying"
+        ],
+        [
+          "dirks",
+          "drisk"
+        ],
+        [
+          "isotron",
+          "nitroso",
+          "torsion"
+        ],
+        [
+          "perchloric",
+          "prechloric"
+        ]
+      ],
+      "anagram_groups": 8,
+      "difficulty": {
+        "anagram_groups": [
+          2,
+          10
+        ],
+        "words_per_group": [
+          2,
+          5
+        ]
+      }
+    }
+  },
+  {
+    "question": "An anagram is a word formed by rearranging the letters of a different word, using all the original letters exactly once.\n\nYour job is to group the anagrams together. You can return the answer in any order.\n\nThe output is a list of lists of strings, where each outer list contains a group of anagrams, e.g. [[\"eat\", \"tea\"], [\"tan\", \"nat\"]].\n\nGroup the following list of words into anagrams:\n[\"leveraged\", \"everglade\", \"rifest\", \"estrif\", \"telephotograph\", \"phototelegraph\", \"besot\", \"betso\"]\n",
+    "answer": "[[\"besot\", \"betso\"], [\"estrif\", \"rifest\"], [\"everglade\", \"leveraged\"], [\"phototelegraph\", \"telephotograph\"]]",
+    "metadata": {
+      "source_dataset": "group_anagrams",
+      "source_index": 58,
+      "words": [
+        "leveraged",
+        "everglade",
+        "rifest",
+        "estrif",
+        "telephotograph",
+        "phototelegraph",
+        "besot",
+        "betso"
+      ],
+      "solution": [
+        [
+          "besot",
+          "betso"
+        ],
+        [
+          "estrif",
+          "rifest"
+        ],
+        [
+          "everglade",
+          "leveraged"
+        ],
+        [
+          "phototelegraph",
+          "telephotograph"
+        ]
+      ],
+      "anagram_groups": 4,
+      "difficulty": {
+        "anagram_groups": [
+          2,
+          10
+        ],
+        "words_per_group": [
+          2,
+          5
+        ]
+      }
+    }
+  },
+  {
+    "question": "An anagram is a word formed by rearranging the letters of a different word, using all the original letters exactly once.\n\nYour job is to group the anagrams together. You can return the answer in any order.\n\nThe output is a list of lists of strings, where each outer list contains a group of anagrams, e.g. [[\"eat\", \"tea\"], [\"tan\", \"nat\"]].\n\nGroup the following list of words into anagrams:\n[\"unmantle\", \"unmental\", \"headmen\", \"needham\", \"depit\", \"tepid\", \"farcilite\", \"telfairic\", \"laticifer\", \"alchitran\", \"clathrina\"]\n",
+    "answer": "[[\"alchitran\", \"clathrina\"], [\"depit\", \"tepid\"], [\"farcilite\", \"laticifer\", \"telfairic\"], [\"headmen\", \"needham\"], [\"unmantle\", \"unmental\"]]",
+    "metadata": {
+      "source_dataset": "group_anagrams",
+      "source_index": 59,
+      "words": [
+        "unmantle",
+        "unmental",
+        "headmen",
+        "needham",
+        "depit",
+        "tepid",
+        "farcilite",
+        "telfairic",
+        "laticifer",
+        "alchitran",
+        "clathrina"
+      ],
+      "solution": [
+        [
+          "alchitran",
+          "clathrina"
+        ],
+        [
+          "depit",
+          "tepid"
+        ],
+        [
+          "farcilite",
+          "laticifer",
+          "telfairic"
+        ],
+        [
+          "headmen",
+          "needham"
+        ],
+        [
+          "unmantle",
+          "unmental"
+        ]
+      ],
+      "anagram_groups": 5,
+      "difficulty": {
+        "anagram_groups": [
+          2,
+          10
+        ],
+        "words_per_group": [
+          2,
+          5
+        ]
+      }
+    }
+  },
+  {
+    "question": "An anagram is a word formed by rearranging the letters of a different word, using all the original letters exactly once.\n\nYour job is to group the anagrams together. You can return the answer in any order.\n\nThe output is a list of lists of strings, where each outer list contains a group of anagrams, e.g. [[\"eat\", \"tea\"], [\"tan\", \"nat\"]].\n\nGroup the following list of words into anagrams:\n[\"mume\", \"meum\", \"kosha\", \"shako\", \"pendanted\", \"dependant\", \"belluine\", \"blueline\"]\n",
+    "answer": "[[\"belluine\", \"blueline\"], [\"dependant\", \"pendanted\"], [\"kosha\", \"shako\"], [\"meum\", \"mume\"]]",
+    "metadata": {
+      "source_dataset": "group_anagrams",
+      "source_index": 60,
+      "words": [
+        "mume",
+        "meum",
+        "kosha",
+        "shako",
+        "pendanted",
+        "dependant",
+        "belluine",
+        "blueline"
+      ],
+      "solution": [
+        [
+          "belluine",
+          "blueline"
+        ],
+        [
+          "dependant",
+          "pendanted"
+        ],
+        [
+          "kosha",
+          "shako"
+        ],
+        [
+          "meum",
+          "mume"
+        ]
+      ],
+      "anagram_groups": 4,
+      "difficulty": {
+        "anagram_groups": [
+          2,
+          10
+        ],
+        "words_per_group": [
+          2,
+          5
+        ]
+      }
+    }
+  },
+  {
+    "question": "An anagram is a word formed by rearranging the letters of a different word, using all the original letters exactly once.\n\nYour job is to group the anagrams together. You can return the answer in any order.\n\nThe output is a list of lists of strings, where each outer list contains a group of anagrams, e.g. [[\"eat\", \"tea\"], [\"tan\", \"nat\"]].\n\nGroup the following list of words into anagrams:\n[\"socotri\", \"octrois\", \"mus\", \"sum\", \"overglint\", \"revolting\", \"reluctant\", \"tralucent\", \"calceus\", \"saccule\", \"moronities\", \"monitories\", \"rance\", \"nacre\", \"crena\", \"upwork\", \"workup\", \"jarde\", \"jared\"]\n",
+    "answer": "[[\"calceus\", \"saccule\"], [\"crena\", \"nacre\", \"rance\"], [\"jarde\", \"jared\"], [\"monitories\", \"moronities\"], [\"mus\", \"sum\"], [\"octrois\", \"socotri\"], [\"overglint\", \"revolting\"], [\"reluctant\", \"tralucent\"], [\"upwork\", \"workup\"]]",
+    "metadata": {
+      "source_dataset": "group_anagrams",
+      "source_index": 61,
+      "words": [
+        "socotri",
+        "octrois",
+        "mus",
+        "sum",
+        "overglint",
+        "revolting",
+        "reluctant",
+        "tralucent",
+        "calceus",
+        "saccule",
+        "moronities",
+        "monitories",
+        "rance",
+        "nacre",
+        "crena",
+        "upwork",
+        "workup",
+        "jarde",
+        "jared"
+      ],
+      "solution": [
+        [
+          "calceus",
+          "saccule"
+        ],
+        [
+          "crena",
+          "nacre",
+          "rance"
+        ],
+        [
+          "jarde",
+          "jared"
+        ],
+        [
+          "monitories",
+          "moronities"
+        ],
+        [
+          "mus",
+          "sum"
+        ],
+        [
+          "octrois",
+          "socotri"
+        ],
+        [
+          "overglint",
+          "revolting"
+        ],
+        [
+          "reluctant",
+          "tralucent"
+        ],
+        [
+          "upwork",
+          "workup"
+        ]
+      ],
+      "anagram_groups": 9,
+      "difficulty": {
+        "anagram_groups": [
+          2,
+          10
+        ],
+        "words_per_group": [
+          2,
+          5
+        ]
+      }
+    }
+  },
+  {
+    "question": "An anagram is a word formed by rearranging the letters of a different word, using all the original letters exactly once.\n\nYour job is to group the anagrams together. You can return the answer in any order.\n\nThe output is a list of lists of strings, where each outer list contains a group of anagrams, e.g. [[\"eat\", \"tea\"], [\"tan\", \"nat\"]].\n\nGroup the following list of words into anagrams:\n[\"tautest\", \"statute\", \"scrabe\", \"braces\"]\n",
+    "answer": "[[\"braces\", \"scrabe\"], [\"statute\", \"tautest\"]]",
+    "metadata": {
+      "source_dataset": "group_anagrams",
+      "source_index": 62,
+      "words": [
+        "tautest",
+        "statute",
+        "scrabe",
+        "braces"
+      ],
+      "solution": [
+        [
+          "braces",
+          "scrabe"
+        ],
+        [
+          "statute",
+          "tautest"
+        ]
+      ],
+      "anagram_groups": 2,
+      "difficulty": {
+        "anagram_groups": [
+          2,
+          10
+        ],
+        "words_per_group": [
+          2,
+          5
+        ]
+      }
+    }
+  },
+  {
+    "question": "An anagram is a word formed by rearranging the letters of a different word, using all the original letters exactly once.\n\nYour job is to group the anagrams together. You can return the answer in any order.\n\nThe output is a list of lists of strings, where each outer list contains a group of anagrams, e.g. [[\"eat\", \"tea\"], [\"tan\", \"nat\"]].\n\nGroup the following list of words into anagrams:\n[\"merino\", \"inmore\", \"monier\", \"preacher\", \"repreach\", \"caurale\", \"arcuale\", \"diable\", \"deblai\", \"bailed\", \"baldie\", \"abdiel\", \"licorous\", \"couloirs\", \"sorgos\", \"grosso\", \"pharm\", \"prahm\"]\n",
+    "answer": "[[\"abdiel\", \"bailed\", \"baldie\", \"deblai\", \"diable\"], [\"arcuale\", \"caurale\"], [\"couloirs\", \"licorous\"], [\"grosso\", \"sorgos\"], [\"inmore\", \"merino\", \"monier\"], [\"pharm\", \"prahm\"], [\"preacher\", \"repreach\"]]",
+    "metadata": {
+      "source_dataset": "group_anagrams",
+      "source_index": 63,
+      "words": [
+        "merino",
+        "inmore",
+        "monier",
+        "preacher",
+        "repreach",
+        "caurale",
+        "arcuale",
+        "diable",
+        "deblai",
+        "bailed",
+        "baldie",
+        "abdiel",
+        "licorous",
+        "couloirs",
+        "sorgos",
+        "grosso",
+        "pharm",
+        "prahm"
+      ],
+      "solution": [
+        [
+          "abdiel",
+          "bailed",
+          "baldie",
+          "deblai",
+          "diable"
+        ],
+        [
+          "arcuale",
+          "caurale"
+        ],
+        [
+          "couloirs",
+          "licorous"
+        ],
+        [
+          "grosso",
+          "sorgos"
+        ],
+        [
+          "inmore",
+          "merino",
+          "monier"
+        ],
+        [
+          "pharm",
+          "prahm"
+        ],
+        [
+          "preacher",
+          "repreach"
+        ]
+      ],
+      "anagram_groups": 7,
+      "difficulty": {
+        "anagram_groups": [
+          2,
+          10
+        ],
+        "words_per_group": [
+          2,
+          5
+        ]
+      }
+    }
+  },
+  {
+    "question": "An anagram is a word formed by rearranging the letters of a different word, using all the original letters exactly once.\n\nYour job is to group the anagrams together. You can return the answer in any order.\n\nThe output is a list of lists of strings, where each outer list contains a group of anagrams, e.g. [[\"eat\", \"tea\"], [\"tan\", \"nat\"]].\n\nGroup the following list of words into anagrams:\n[\"catso\", \"tacos\", \"houston\", \"nothous\", \"hontous\", \"kyung\", \"gunky\", \"reseaus\", \"ureases\", \"finials\", \"sailfin\", \"finalis\", \"scillain\", \"allicins\", \"queriers\", \"requires\", \"chesoun\", \"cohunes\", \"upsring\", \"pursing\"]\n",
+    "answer": "[[\"allicins\", \"scillain\"], [\"catso\", \"tacos\"], [\"chesoun\", \"cohunes\"], [\"finalis\", \"finials\", \"sailfin\"], [\"gunky\", \"kyung\"], [\"hontous\", \"houston\", \"nothous\"], [\"pursing\", \"upsring\"], [\"queriers\", \"requires\"], [\"reseaus\", \"ureases\"]]",
+    "metadata": {
+      "source_dataset": "group_anagrams",
+      "source_index": 64,
+      "words": [
+        "catso",
+        "tacos",
+        "houston",
+        "nothous",
+        "hontous",
+        "kyung",
+        "gunky",
+        "reseaus",
+        "ureases",
+        "finials",
+        "sailfin",
+        "finalis",
+        "scillain",
+        "allicins",
+        "queriers",
+        "requires",
+        "chesoun",
+        "cohunes",
+        "upsring",
+        "pursing"
+      ],
+      "solution": [
+        [
+          "allicins",
+          "scillain"
+        ],
+        [
+          "catso",
+          "tacos"
+        ],
+        [
+          "chesoun",
+          "cohunes"
+        ],
+        [
+          "finalis",
+          "finials",
+          "sailfin"
+        ],
+        [
+          "gunky",
+          "kyung"
+        ],
+        [
+          "hontous",
+          "houston",
+          "nothous"
+        ],
+        [
+          "pursing",
+          "upsring"
+        ],
+        [
+          "queriers",
+          "requires"
+        ],
+        [
+          "reseaus",
+          "ureases"
+        ]
+      ],
+      "anagram_groups": 9,
+      "difficulty": {
+        "anagram_groups": [
+          2,
+          10
+        ],
+        "words_per_group": [
+          2,
+          5
+        ]
+      }
+    }
+  },
+  {
+    "question": "An anagram is a word formed by rearranging the letters of a different word, using all the original letters exactly once.\n\nYour job is to group the anagrams together. You can return the answer in any order.\n\nThe output is a list of lists of strings, where each outer list contains a group of anagrams, e.g. [[\"eat\", \"tea\"], [\"tan\", \"nat\"]].\n\nGroup the following list of words into anagrams:\n[\"mal\", \"lam\", \"nonvisitation\", \"innovationist\", \"sept\", \"pest\", \"step\", \"pets\", \"osmophore\", \"sophomore\", \"malleted\", \"metalled\"]\n",
+    "answer": "[[\"innovationist\", \"nonvisitation\"], [\"lam\", \"mal\"], [\"malleted\", \"metalled\"], [\"osmophore\", \"sophomore\"], [\"pest\", \"pets\", \"sept\", \"step\"]]",
+    "metadata": {
+      "source_dataset": "group_anagrams",
+      "source_index": 65,
+      "words": [
+        "mal",
+        "lam",
+        "nonvisitation",
+        "innovationist",
+        "sept",
+        "pest",
+        "step",
+        "pets",
+        "osmophore",
+        "sophomore",
+        "malleted",
+        "metalled"
+      ],
+      "solution": [
+        [
+          "innovationist",
+          "nonvisitation"
+        ],
+        [
+          "lam",
+          "mal"
+        ],
+        [
+          "malleted",
+          "metalled"
+        ],
+        [
+          "osmophore",
+          "sophomore"
+        ],
+        [
+          "pest",
+          "pets",
+          "sept",
+          "step"
+        ]
+      ],
+      "anagram_groups": 5,
+      "difficulty": {
+        "anagram_groups": [
+          2,
+          10
+        ],
+        "words_per_group": [
+          2,
+          5
+        ]
+      }
+    }
+  },
+  {
+    "question": "An anagram is a word formed by rearranging the letters of a different word, using all the original letters exactly once.\n\nYour job is to group the anagrams together. You can return the answer in any order.\n\nThe output is a list of lists of strings, where each outer list contains a group of anagrams, e.g. [[\"eat\", \"tea\"], [\"tan\", \"nat\"]].\n\nGroup the following list of words into anagrams:\n[\"oliveness\", \"novelises\", \"reeler\", \"rereel\", \"anjan\", \"jnana\", \"suitings\", \"tissuing\"]\n",
+    "answer": "[[\"anjan\", \"jnana\"], [\"novelises\", \"oliveness\"], [\"reeler\", \"rereel\"], [\"suitings\", \"tissuing\"]]",
+    "metadata": {
+      "source_dataset": "group_anagrams",
+      "source_index": 66,
+      "words": [
+        "oliveness",
+        "novelises",
+        "reeler",
+        "rereel",
+        "anjan",
+        "jnana",
+        "suitings",
+        "tissuing"
+      ],
+      "solution": [
+        [
+          "anjan",
+          "jnana"
+        ],
+        [
+          "novelises",
+          "oliveness"
+        ],
+        [
+          "reeler",
+          "rereel"
+        ],
+        [
+          "suitings",
+          "tissuing"
+        ]
+      ],
+      "anagram_groups": 4,
+      "difficulty": {
+        "anagram_groups": [
+          2,
+          10
+        ],
+        "words_per_group": [
+          2,
+          5
+        ]
+      }
+    }
+  },
+  {
+    "question": "An anagram is a word formed by rearranging the letters of a different word, using all the original letters exactly once.\n\nYour job is to group the anagrams together. You can return the answer in any order.\n\nThe output is a list of lists of strings, where each outer list contains a group of anagrams, e.g. [[\"eat\", \"tea\"], [\"tan\", \"nat\"]].\n\nGroup the following list of words into anagrams:\n[\"radical\", \"cardial\", \"evened\", \"vendee\", \"reduit\", \"erudit\", \"when\", \"hewn\", \"allower\", \"reallow\", \"apostle\", \"pelotas\", \"aseptol\"]\n",
+    "answer": "[[\"allower\", \"reallow\"], [\"apostle\", \"aseptol\", \"pelotas\"], [\"cardial\", \"radical\"], [\"erudit\", \"reduit\"], [\"evened\", \"vendee\"], [\"hewn\", \"when\"]]",
+    "metadata": {
+      "source_dataset": "group_anagrams",
+      "source_index": 67,
+      "words": [
+        "radical",
+        "cardial",
+        "evened",
+        "vendee",
+        "reduit",
+        "erudit",
+        "when",
+        "hewn",
+        "allower",
+        "reallow",
+        "apostle",
+        "pelotas",
+        "aseptol"
+      ],
+      "solution": [
+        [
+          "allower",
+          "reallow"
+        ],
+        [
+          "apostle",
+          "aseptol",
+          "pelotas"
+        ],
+        [
+          "cardial",
+          "radical"
+        ],
+        [
+          "erudit",
+          "reduit"
+        ],
+        [
+          "evened",
+          "vendee"
+        ],
+        [
+          "hewn",
+          "when"
+        ]
+      ],
+      "anagram_groups": 6,
+      "difficulty": {
+        "anagram_groups": [
+          2,
+          10
+        ],
+        "words_per_group": [
+          2,
+          5
+        ]
+      }
+    }
+  },
+  {
+    "question": "An anagram is a word formed by rearranging the letters of a different word, using all the original letters exactly once.\n\nYour job is to group the anagrams together. You can return the answer in any order.\n\nThe output is a list of lists of strings, where each outer list contains a group of anagrams, e.g. [[\"eat\", \"tea\"], [\"tan\", \"nat\"]].\n\nGroup the following list of words into anagrams:\n[\"preversing\", \"preserving\", \"reservist\", \"reversist\", \"sative\", \"itaves\", \"stevia\", \"crinose\", \"sericon\", \"recoins\", \"unrebated\", \"eburnated\", \"underbeat\", \"reflowers\", \"flowerers\", \"sermonical\", \"normalcies\", \"cisted\", \"edicts\"]\n",
+    "answer": "[[\"cisted\", \"edicts\"], [\"crinose\", \"recoins\", \"sericon\"], [\"eburnated\", \"underbeat\", \"unrebated\"], [\"flowerers\", \"reflowers\"], [\"itaves\", \"sative\", \"stevia\"], [\"normalcies\", \"sermonical\"], [\"preserving\", \"preversing\"], [\"reservist\", \"reversist\"]]",
+    "metadata": {
+      "source_dataset": "group_anagrams",
+      "source_index": 68,
+      "words": [
+        "preversing",
+        "preserving",
+        "reservist",
+        "reversist",
+        "sative",
+        "itaves",
+        "stevia",
+        "crinose",
+        "sericon",
+        "recoins",
+        "unrebated",
+        "eburnated",
+        "underbeat",
+        "reflowers",
+        "flowerers",
+        "sermonical",
+        "normalcies",
+        "cisted",
+        "edicts"
+      ],
+      "solution": [
+        [
+          "cisted",
+          "edicts"
+        ],
+        [
+          "crinose",
+          "recoins",
+          "sericon"
+        ],
+        [
+          "eburnated",
+          "underbeat",
+          "unrebated"
+        ],
+        [
+          "flowerers",
+          "reflowers"
+        ],
+        [
+          "itaves",
+          "sative",
+          "stevia"
+        ],
+        [
+          "normalcies",
+          "sermonical"
+        ],
+        [
+          "preserving",
+          "preversing"
+        ],
+        [
+          "reservist",
+          "reversist"
+        ]
+      ],
+      "anagram_groups": 8,
+      "difficulty": {
+        "anagram_groups": [
+          2,
+          10
+        ],
+        "words_per_group": [
+          2,
+          5
+        ]
+      }
+    }
+  },
+  {
+    "question": "An anagram is a word formed by rearranging the letters of a different word, using all the original letters exactly once.\n\nYour job is to group the anagrams together. You can return the answer in any order.\n\nThe output is a list of lists of strings, where each outer list contains a group of anagrams, e.g. [[\"eat\", \"tea\"], [\"tan\", \"nat\"]].\n\nGroup the following list of words into anagrams:\n[\"crags\", \"scrag\", \"galli\", \"glali\", \"glial\", \"bourder\", \"bordure\", \"townside\", \"downiest\", \"enlace\", \"elance\"]\n",
+    "answer": "[[\"bordure\", \"bourder\"], [\"crags\", \"scrag\"], [\"downiest\", \"townside\"], [\"elance\", \"enlace\"], [\"galli\", \"glali\", \"glial\"]]",
+    "metadata": {
+      "source_dataset": "group_anagrams",
+      "source_index": 69,
+      "words": [
+        "crags",
+        "scrag",
+        "galli",
+        "glali",
+        "glial",
+        "bourder",
+        "bordure",
+        "townside",
+        "downiest",
+        "enlace",
+        "elance"
+      ],
+      "solution": [
+        [
+          "bordure",
+          "bourder"
+        ],
+        [
+          "crags",
+          "scrag"
+        ],
+        [
+          "downiest",
+          "townside"
+        ],
+        [
+          "elance",
+          "enlace"
+        ],
+        [
+          "galli",
+          "glali",
+          "glial"
+        ]
+      ],
+      "anagram_groups": 5,
+      "difficulty": {
+        "anagram_groups": [
+          2,
+          10
+        ],
+        "words_per_group": [
+          2,
+          5
+        ]
+      }
+    }
+  },
+  {
+    "question": "An anagram is a word formed by rearranging the letters of a different word, using all the original letters exactly once.\n\nYour job is to group the anagrams together. You can return the answer in any order.\n\nThe output is a list of lists of strings, where each outer list contains a group of anagrams, e.g. [[\"eat\", \"tea\"], [\"tan\", \"nat\"]].\n\nGroup the following list of words into anagrams:\n[\"snicher\", \"richens\", \"mathetic\", \"thematic\", \"leanish\", \"inhales\", \"miasmal\", \"lamaism\", \"sencion\", \"conines\", \"connies\", \"romancist\", \"romantics\", \"narcotism\", \"faired\", \"frieda\", \"unlighted\", \"undelight\", \"elong\", \"longe\"]\n",
+    "answer": "[[\"conines\", \"connies\", \"sencion\"], [\"elong\", \"longe\"], [\"faired\", \"frieda\"], [\"inhales\", \"leanish\"], [\"lamaism\", \"miasmal\"], [\"mathetic\", \"thematic\"], [\"narcotism\", \"romancist\", \"romantics\"], [\"richens\", \"snicher\"], [\"undelight\", \"unlighted\"]]",
+    "metadata": {
+      "source_dataset": "group_anagrams",
+      "source_index": 70,
+      "words": [
+        "snicher",
+        "richens",
+        "mathetic",
+        "thematic",
+        "leanish",
+        "inhales",
+        "miasmal",
+        "lamaism",
+        "sencion",
+        "conines",
+        "connies",
+        "romancist",
+        "romantics",
+        "narcotism",
+        "faired",
+        "frieda",
+        "unlighted",
+        "undelight",
+        "elong",
+        "longe"
+      ],
+      "solution": [
+        [
+          "conines",
+          "connies",
+          "sencion"
+        ],
+        [
+          "elong",
+          "longe"
+        ],
+        [
+          "faired",
+          "frieda"
+        ],
+        [
+          "inhales",
+          "leanish"
+        ],
+        [
+          "lamaism",
+          "miasmal"
+        ],
+        [
+          "mathetic",
+          "thematic"
+        ],
+        [
+          "narcotism",
+          "romancist",
+          "romantics"
+        ],
+        [
+          "richens",
+          "snicher"
+        ],
+        [
+          "undelight",
+          "unlighted"
+        ]
+      ],
+      "anagram_groups": 9,
+      "difficulty": {
+        "anagram_groups": [
+          2,
+          10
+        ],
+        "words_per_group": [
+          2,
+          5
+        ]
+      }
+    }
+  },
+  {
+    "question": "An anagram is a word formed by rearranging the letters of a different word, using all the original letters exactly once.\n\nYour job is to group the anagrams together. You can return the answer in any order.\n\nThe output is a list of lists of strings, where each outer list contains a group of anagrams, e.g. [[\"eat\", \"tea\"], [\"tan\", \"nat\"]].\n\nGroup the following list of words into anagrams:\n[\"lute\", \"tule\", \"spirant\", \"spraint\"]\n",
+    "answer": "[[\"lute\", \"tule\"], [\"spirant\", \"spraint\"]]",
+    "metadata": {
+      "source_dataset": "group_anagrams",
+      "source_index": 71,
+      "words": [
+        "lute",
+        "tule",
+        "spirant",
+        "spraint"
+      ],
+      "solution": [
+        [
+          "lute",
+          "tule"
+        ],
+        [
+          "spirant",
+          "spraint"
+        ]
+      ],
+      "anagram_groups": 2,
+      "difficulty": {
+        "anagram_groups": [
+          2,
+          10
+        ],
+        "words_per_group": [
+          2,
+          5
+        ]
+      }
+    }
+  },
+  {
+    "question": "An anagram is a word formed by rearranging the letters of a different word, using all the original letters exactly once.\n\nYour job is to group the anagrams together. You can return the answer in any order.\n\nThe output is a list of lists of strings, where each outer list contains a group of anagrams, e.g. [[\"eat\", \"tea\"], [\"tan\", \"nat\"]].\n\nGroup the following list of words into anagrams:\n[\"yardland\", \"landyard\", \"peorian\", \"apeiron\", \"darns\", \"nards\", \"maternities\", \"semitertian\", \"seicento\", \"cenosite\"]\n",
+    "answer": "[[\"apeiron\", \"peorian\"], [\"cenosite\", \"seicento\"], [\"darns\", \"nards\"], [\"landyard\", \"yardland\"], [\"maternities\", \"semitertian\"]]",
+    "metadata": {
+      "source_dataset": "group_anagrams",
+      "source_index": 72,
+      "words": [
+        "yardland",
+        "landyard",
+        "peorian",
+        "apeiron",
+        "darns",
+        "nards",
+        "maternities",
+        "semitertian",
+        "seicento",
+        "cenosite"
+      ],
+      "solution": [
+        [
+          "apeiron",
+          "peorian"
+        ],
+        [
+          "cenosite",
+          "seicento"
+        ],
+        [
+          "darns",
+          "nards"
+        ],
+        [
+          "landyard",
+          "yardland"
+        ],
+        [
+          "maternities",
+          "semitertian"
+        ]
+      ],
+      "anagram_groups": 5,
+      "difficulty": {
+        "anagram_groups": [
+          2,
+          10
+        ],
+        "words_per_group": [
+          2,
+          5
+        ]
+      }
+    }
+  },
+  {
+    "question": "An anagram is a word formed by rearranging the letters of a different word, using all the original letters exactly once.\n\nYour job is to group the anagrams together. You can return the answer in any order.\n\nThe output is a list of lists of strings, where each outer list contains a group of anagrams, e.g. [[\"eat\", \"tea\"], [\"tan\", \"nat\"]].\n\nGroup the following list of words into anagrams:\n[\"unsober\", \"unrobes\", \"bournes\", \"pitsaw\", \"sawpit\", \"aristotle\", \"literatos\", \"striolate\", \"thaness\", \"hastens\", \"snathes\", \"arid\", \"raid\", \"dari\", \"dangering\", \"gandering\", \"gardening\", \"deranging\"]\n",
+    "answer": "[[\"arid\", \"dari\", \"raid\"], [\"aristotle\", \"literatos\", \"striolate\"], [\"bournes\", \"unrobes\", \"unsober\"], [\"dangering\", \"deranging\", \"gandering\", \"gardening\"], [\"hastens\", \"snathes\", \"thaness\"], [\"pitsaw\", \"sawpit\"]]",
+    "metadata": {
+      "source_dataset": "group_anagrams",
+      "source_index": 73,
+      "words": [
+        "unsober",
+        "unrobes",
+        "bournes",
+        "pitsaw",
+        "sawpit",
+        "aristotle",
+        "literatos",
+        "striolate",
+        "thaness",
+        "hastens",
+        "snathes",
+        "arid",
+        "raid",
+        "dari",
+        "dangering",
+        "gandering",
+        "gardening",
+        "deranging"
+      ],
+      "solution": [
+        [
+          "arid",
+          "dari",
+          "raid"
+        ],
+        [
+          "aristotle",
+          "literatos",
+          "striolate"
+        ],
+        [
+          "bournes",
+          "unrobes",
+          "unsober"
+        ],
+        [
+          "dangering",
+          "deranging",
+          "gandering",
+          "gardening"
+        ],
+        [
+          "hastens",
+          "snathes",
+          "thaness"
+        ],
+        [
+          "pitsaw",
+          "sawpit"
+        ]
+      ],
+      "anagram_groups": 6,
+      "difficulty": {
+        "anagram_groups": [
+          2,
+          10
+        ],
+        "words_per_group": [
+          2,
+          5
+        ]
+      }
+    }
+  },
+  {
+    "question": "An anagram is a word formed by rearranging the letters of a different word, using all the original letters exactly once.\n\nYour job is to group the anagrams together. You can return the answer in any order.\n\nThe output is a list of lists of strings, where each outer list contains a group of anagrams, e.g. [[\"eat\", \"tea\"], [\"tan\", \"nat\"]].\n\nGroup the following list of words into anagrams:\n[\"peacoat\", \"opacate\", \"congaed\", \"decagon\", \"acephalan\", \"acalephan\", \"patte\", \"tapet\", \"longimanous\", \"longanimous\", \"haars\", \"raash\", \"haras\", \"asarh\", \"overturn\", \"turnover\", \"geomantic\", \"atmogenic\", \"fole\", \"floe\", \"fonder\", \"fronde\"]\n",
+    "answer": "[[\"acalephan\", \"acephalan\"], [\"asarh\", \"haars\", \"haras\", \"raash\"], [\"atmogenic\", \"geomantic\"], [\"congaed\", \"decagon\"], [\"floe\", \"fole\"], [\"fonder\", \"fronde\"], [\"longanimous\", \"longimanous\"], [\"opacate\", \"peacoat\"], [\"overturn\", \"turnover\"], [\"patte\", \"tapet\"]]",
+    "metadata": {
+      "source_dataset": "group_anagrams",
+      "source_index": 74,
+      "words": [
+        "peacoat",
+        "opacate",
+        "congaed",
+        "decagon",
+        "acephalan",
+        "acalephan",
+        "patte",
+        "tapet",
+        "longimanous",
+        "longanimous",
+        "haars",
+        "raash",
+        "haras",
+        "asarh",
+        "overturn",
+        "turnover",
+        "geomantic",
+        "atmogenic",
+        "fole",
+        "floe",
+        "fonder",
+        "fronde"
+      ],
+      "solution": [
+        [
+          "acalephan",
+          "acephalan"
+        ],
+        [
+          "asarh",
+          "haars",
+          "haras",
+          "raash"
+        ],
+        [
+          "atmogenic",
+          "geomantic"
+        ],
+        [
+          "congaed",
+          "decagon"
+        ],
+        [
+          "floe",
+          "fole"
+        ],
+        [
+          "fonder",
+          "fronde"
+        ],
+        [
+          "longanimous",
+          "longimanous"
+        ],
+        [
+          "opacate",
+          "peacoat"
+        ],
+        [
+          "overturn",
+          "turnover"
+        ],
+        [
+          "patte",
+          "tapet"
+        ]
+      ],
+      "anagram_groups": 10,
+      "difficulty": {
+        "anagram_groups": [
+          2,
+          10
+        ],
+        "words_per_group": [
+          2,
+          5
+        ]
+      }
+    }
+  },
+  {
+    "question": "An anagram is a word formed by rearranging the letters of a different word, using all the original letters exactly once.\n\nYour job is to group the anagrams together. You can return the answer in any order.\n\nThe output is a list of lists of strings, where each outer list contains a group of anagrams, e.g. [[\"eat\", \"tea\"], [\"tan\", \"nat\"]].\n\nGroup the following list of words into anagrams:\n[\"drib\", \"brid\", \"bird\", \"debe\", \"bede\", \"bushfires\", \"furbishes\", \"drapable\", \"parabled\", \"servals\", \"slavers\", \"salvers\"]\n",
+    "answer": "[[\"bede\", \"debe\"], [\"bird\", \"brid\", \"drib\"], [\"bushfires\", \"furbishes\"], [\"drapable\", \"parabled\"], [\"salvers\", \"servals\", \"slavers\"]]",
+    "metadata": {
+      "source_dataset": "group_anagrams",
+      "source_index": 75,
+      "words": [
+        "drib",
+        "brid",
+        "bird",
+        "debe",
+        "bede",
+        "bushfires",
+        "furbishes",
+        "drapable",
+        "parabled",
+        "servals",
+        "slavers",
+        "salvers"
+      ],
+      "solution": [
+        [
+          "bede",
+          "debe"
+        ],
+        [
+          "bird",
+          "brid",
+          "drib"
+        ],
+        [
+          "bushfires",
+          "furbishes"
+        ],
+        [
+          "drapable",
+          "parabled"
+        ],
+        [
+          "salvers",
+          "servals",
+          "slavers"
+        ]
+      ],
+      "anagram_groups": 5,
+      "difficulty": {
+        "anagram_groups": [
+          2,
+          10
+        ],
+        "words_per_group": [
+          2,
+          5
+        ]
+      }
+    }
+  },
+  {
+    "question": "An anagram is a word formed by rearranging the letters of a different word, using all the original letters exactly once.\n\nYour job is to group the anagrams together. You can return the answer in any order.\n\nThe output is a list of lists of strings, where each outer list contains a group of anagrams, e.g. [[\"eat\", \"tea\"], [\"tan\", \"nat\"]].\n\nGroup the following list of words into anagrams:\n[\"coulisse\", \"leucosis\", \"ossicule\", \"phasianid\", \"aphidians\", \"neglecter\", \"reneglect\", \"marled\", \"medlar\", \"dermal\"]\n",
+    "answer": "[[\"aphidians\", \"phasianid\"], [\"coulisse\", \"leucosis\", \"ossicule\"], [\"dermal\", \"marled\", \"medlar\"], [\"neglecter\", \"reneglect\"]]",
+    "metadata": {
+      "source_dataset": "group_anagrams",
+      "source_index": 76,
+      "words": [
+        "coulisse",
+        "leucosis",
+        "ossicule",
+        "phasianid",
+        "aphidians",
+        "neglecter",
+        "reneglect",
+        "marled",
+        "medlar",
+        "dermal"
+      ],
+      "solution": [
+        [
+          "aphidians",
+          "phasianid"
+        ],
+        [
+          "coulisse",
+          "leucosis",
+          "ossicule"
+        ],
+        [
+          "dermal",
+          "marled",
+          "medlar"
+        ],
+        [
+          "neglecter",
+          "reneglect"
+        ]
+      ],
+      "anagram_groups": 4,
+      "difficulty": {
+        "anagram_groups": [
+          2,
+          10
+        ],
+        "words_per_group": [
+          2,
+          5
+        ]
+      }
+    }
+  },
+  {
+    "question": "An anagram is a word formed by rearranging the letters of a different word, using all the original letters exactly once.\n\nYour job is to group the anagrams together. You can return the answer in any order.\n\nThe output is a list of lists of strings, where each outer list contains a group of anagrams, e.g. [[\"eat\", \"tea\"], [\"tan\", \"nat\"]].\n\nGroup the following list of words into anagrams:\n[\"binder\", \"rebind\", \"brined\", \"inbred\", \"saxonize\", \"oxazines\", \"snop\", \"pons\", \"wham\", \"hawm\", \"misacts\", \"mastics\", \"reparel\", \"pearler\"]\n",
+    "answer": "[[\"binder\", \"brined\", \"inbred\", \"rebind\"], [\"hawm\", \"wham\"], [\"mastics\", \"misacts\"], [\"oxazines\", \"saxonize\"], [\"pearler\", \"reparel\"], [\"pons\", \"snop\"]]",
+    "metadata": {
+      "source_dataset": "group_anagrams",
+      "source_index": 77,
+      "words": [
+        "binder",
+        "rebind",
+        "brined",
+        "inbred",
+        "saxonize",
+        "oxazines",
+        "snop",
+        "pons",
+        "wham",
+        "hawm",
+        "misacts",
+        "mastics",
+        "reparel",
+        "pearler"
+      ],
+      "solution": [
+        [
+          "binder",
+          "brined",
+          "inbred",
+          "rebind"
+        ],
+        [
+          "hawm",
+          "wham"
+        ],
+        [
+          "mastics",
+          "misacts"
+        ],
+        [
+          "oxazines",
+          "saxonize"
+        ],
+        [
+          "pearler",
+          "reparel"
+        ],
+        [
+          "pons",
+          "snop"
+        ]
+      ],
+      "anagram_groups": 6,
+      "difficulty": {
+        "anagram_groups": [
+          2,
+          10
+        ],
+        "words_per_group": [
+          2,
+          5
+        ]
+      }
+    }
+  },
+  {
+    "question": "An anagram is a word formed by rearranging the letters of a different word, using all the original letters exactly once.\n\nYour job is to group the anagrams together. You can return the answer in any order.\n\nThe output is a list of lists of strings, where each outer list contains a group of anagrams, e.g. [[\"eat\", \"tea\"], [\"tan\", \"nat\"]].\n\nGroup the following list of words into anagrams:\n[\"cerris\", \"criers\", \"ricers\", \"boarders\", \"reboards\", \"viatores\", \"travoise\", \"votaries\", \"liberally\", \"libellary\", \"ovensman\", \"snemovna\", \"intertwin\", \"inwritten\", \"melonist\", \"telonism\", \"xeronate\", \"exornate\", \"contadino\", \"anticodon\", \"cowardy\", \"cowyard\"]\n",
+    "answer": "[[\"anticodon\", \"contadino\"], [\"boarders\", \"reboards\"], [\"cerris\", \"criers\", \"ricers\"], [\"cowardy\", \"cowyard\"], [\"exornate\", \"xeronate\"], [\"intertwin\", \"inwritten\"], [\"libellary\", \"liberally\"], [\"melonist\", \"telonism\"], [\"ovensman\", \"snemovna\"], [\"travoise\", \"viatores\", \"votaries\"]]",
+    "metadata": {
+      "source_dataset": "group_anagrams",
+      "source_index": 78,
+      "words": [
+        "cerris",
+        "criers",
+        "ricers",
+        "boarders",
+        "reboards",
+        "viatores",
+        "travoise",
+        "votaries",
+        "liberally",
+        "libellary",
+        "ovensman",
+        "snemovna",
+        "intertwin",
+        "inwritten",
+        "melonist",
+        "telonism",
+        "xeronate",
+        "exornate",
+        "contadino",
+        "anticodon",
+        "cowardy",
+        "cowyard"
+      ],
+      "solution": [
+        [
+          "anticodon",
+          "contadino"
+        ],
+        [
+          "boarders",
+          "reboards"
+        ],
+        [
+          "cerris",
+          "criers",
+          "ricers"
+        ],
+        [
+          "cowardy",
+          "cowyard"
+        ],
+        [
+          "exornate",
+          "xeronate"
+        ],
+        [
+          "intertwin",
+          "inwritten"
+        ],
+        [
+          "libellary",
+          "liberally"
+        ],
+        [
+          "melonist",
+          "telonism"
+        ],
+        [
+          "ovensman",
+          "snemovna"
+        ],
+        [
+          "travoise",
+          "viatores",
+          "votaries"
+        ]
+      ],
+      "anagram_groups": 10,
+      "difficulty": {
+        "anagram_groups": [
+          2,
+          10
+        ],
+        "words_per_group": [
+          2,
+          5
+        ]
+      }
+    }
+  },
+  {
+    "question": "An anagram is a word formed by rearranging the letters of a different word, using all the original letters exactly once.\n\nYour job is to group the anagrams together. You can return the answer in any order.\n\nThe output is a list of lists of strings, where each outer list contains a group of anagrams, e.g. [[\"eat\", \"tea\"], [\"tan\", \"nat\"]].\n\nGroup the following list of words into anagrams:\n[\"calorist\", \"coralist\", \"unsoiling\", \"insouling\", \"sticklers\", \"strickles\", \"trickless\"]\n",
+    "answer": "[[\"calorist\", \"coralist\"], [\"insouling\", \"unsoiling\"], [\"sticklers\", \"strickles\", \"trickless\"]]",
+    "metadata": {
+      "source_dataset": "group_anagrams",
+      "source_index": 79,
+      "words": [
+        "calorist",
+        "coralist",
+        "unsoiling",
+        "insouling",
+        "sticklers",
+        "strickles",
+        "trickless"
+      ],
+      "solution": [
+        [
+          "calorist",
+          "coralist"
+        ],
+        [
+          "insouling",
+          "unsoiling"
+        ],
+        [
+          "sticklers",
+          "strickles",
+          "trickless"
+        ]
+      ],
+      "anagram_groups": 3,
+      "difficulty": {
+        "anagram_groups": [
+          2,
+          10
+        ],
+        "words_per_group": [
+          2,
+          5
+        ]
+      }
+    }
+  },
+  {
+    "question": "An anagram is a word formed by rearranging the letters of a different word, using all the original letters exactly once.\n\nYour job is to group the anagrams together. You can return the answer in any order.\n\nThe output is a list of lists of strings, where each outer list contains a group of anagrams, e.g. [[\"eat\", \"tea\"], [\"tan\", \"nat\"]].\n\nGroup the following list of words into anagrams:\n[\"caesuric\", \"curacies\", \"sailable\", \"isabella\", \"touristical\", \"staurolitic\", \"cooniest\", \"coonties\", \"contoise\", \"unpursuing\", \"unusurping\", \"somniate\", \"masonite\", \"outerness\", \"outreness\", \"salited\", \"details\", \"dilates\", \"distale\", \"praefects\", \"perfectas\", \"camoodie\", \"comoedia\"]\n",
+    "answer": "[[\"caesuric\", \"curacies\"], [\"camoodie\", \"comoedia\"], [\"contoise\", \"cooniest\", \"coonties\"], [\"details\", \"dilates\", \"distale\", \"salited\"], [\"isabella\", \"sailable\"], [\"masonite\", \"somniate\"], [\"outerness\", \"outreness\"], [\"perfectas\", \"praefects\"], [\"staurolitic\", \"touristical\"], [\"unpursuing\", \"unusurping\"]]",
+    "metadata": {
+      "source_dataset": "group_anagrams",
+      "source_index": 80,
+      "words": [
+        "caesuric",
+        "curacies",
+        "sailable",
+        "isabella",
+        "touristical",
+        "staurolitic",
+        "cooniest",
+        "coonties",
+        "contoise",
+        "unpursuing",
+        "unusurping",
+        "somniate",
+        "masonite",
+        "outerness",
+        "outreness",
+        "salited",
+        "details",
+        "dilates",
+        "distale",
+        "praefects",
+        "perfectas",
+        "camoodie",
+        "comoedia"
+      ],
+      "solution": [
+        [
+          "caesuric",
+          "curacies"
+        ],
+        [
+          "camoodie",
+          "comoedia"
+        ],
+        [
+          "contoise",
+          "cooniest",
+          "coonties"
+        ],
+        [
+          "details",
+          "dilates",
+          "distale",
+          "salited"
+        ],
+        [
+          "isabella",
+          "sailable"
+        ],
+        [
+          "masonite",
+          "somniate"
+        ],
+        [
+          "outerness",
+          "outreness"
+        ],
+        [
+          "perfectas",
+          "praefects"
+        ],
+        [
+          "staurolitic",
+          "touristical"
+        ],
+        [
+          "unpursuing",
+          "unusurping"
+        ]
+      ],
+      "anagram_groups": 10,
+      "difficulty": {
+        "anagram_groups": [
+          2,
+          10
+        ],
+        "words_per_group": [
+          2,
+          5
+        ]
+      }
+    }
+  },
+  {
+    "question": "An anagram is a word formed by rearranging the letters of a different word, using all the original letters exactly once.\n\nYour job is to group the anagrams together. You can return the answer in any order.\n\nThe output is a list of lists of strings, where each outer list contains a group of anagrams, e.g. [[\"eat\", \"tea\"], [\"tan\", \"nat\"]].\n\nGroup the following list of words into anagrams:\n[\"dichromat\", \"chromatid\", \"lanose\", \"anoles\"]\n",
+    "answer": "[[\"anoles\", \"lanose\"], [\"chromatid\", \"dichromat\"]]",
+    "metadata": {
+      "source_dataset": "group_anagrams",
+      "source_index": 81,
+      "words": [
+        "dichromat",
+        "chromatid",
+        "lanose",
+        "anoles"
+      ],
+      "solution": [
+        [
+          "anoles",
+          "lanose"
+        ],
+        [
+          "chromatid",
+          "dichromat"
+        ]
+      ],
+      "anagram_groups": 2,
+      "difficulty": {
+        "anagram_groups": [
+          2,
+          10
+        ],
+        "words_per_group": [
+          2,
+          5
+        ]
+      }
+    }
+  },
+  {
+    "question": "An anagram is a word formed by rearranging the letters of a different word, using all the original letters exactly once.\n\nYour job is to group the anagrams together. You can return the answer in any order.\n\nThe output is a list of lists of strings, where each outer list contains a group of anagrams, e.g. [[\"eat\", \"tea\"], [\"tan\", \"nat\"]].\n\nGroup the following list of words into anagrams:\n[\"hydronephrosis\", \"nephrohydrosis\", \"boarts\", \"tabors\", \"aborts\", \"bonaci\", \"bianco\", \"alnico\", \"oilcan\", \"nonskier\", \"einkorns\", \"cliftonia\", \"fictional\"]\n",
+    "answer": "[[\"aborts\", \"boarts\", \"tabors\"], [\"alnico\", \"oilcan\"], [\"bianco\", \"bonaci\"], [\"cliftonia\", \"fictional\"], [\"einkorns\", \"nonskier\"], [\"hydronephrosis\", \"nephrohydrosis\"]]",
+    "metadata": {
+      "source_dataset": "group_anagrams",
+      "source_index": 82,
+      "words": [
+        "hydronephrosis",
+        "nephrohydrosis",
+        "boarts",
+        "tabors",
+        "aborts",
+        "bonaci",
+        "bianco",
+        "alnico",
+        "oilcan",
+        "nonskier",
+        "einkorns",
+        "cliftonia",
+        "fictional"
+      ],
+      "solution": [
+        [
+          "aborts",
+          "boarts",
+          "tabors"
+        ],
+        [
+          "alnico",
+          "oilcan"
+        ],
+        [
+          "bianco",
+          "bonaci"
+        ],
+        [
+          "cliftonia",
+          "fictional"
+        ],
+        [
+          "einkorns",
+          "nonskier"
+        ],
+        [
+          "hydronephrosis",
+          "nephrohydrosis"
+        ]
+      ],
+      "anagram_groups": 6,
+      "difficulty": {
+        "anagram_groups": [
+          2,
+          10
+        ],
+        "words_per_group": [
+          2,
+          5
+        ]
+      }
+    }
+  },
+  {
+    "question": "An anagram is a word formed by rearranging the letters of a different word, using all the original letters exactly once.\n\nYour job is to group the anagrams together. You can return the answer in any order.\n\nThe output is a list of lists of strings, where each outer list contains a group of anagrams, e.g. [[\"eat\", \"tea\"], [\"tan\", \"nat\"]].\n\nGroup the following list of words into anagrams:\n[\"cansful\", \"canfuls\", \"retracts\", \"scratter\", \"teleradiophone\", \"radiotelephone\", \"ostiolar\", \"isolator\", \"pounces\", \"conspue\"]\n",
+    "answer": "[[\"canfuls\", \"cansful\"], [\"conspue\", \"pounces\"], [\"isolator\", \"ostiolar\"], [\"radiotelephone\", \"teleradiophone\"], [\"retracts\", \"scratter\"]]",
+    "metadata": {
+      "source_dataset": "group_anagrams",
+      "source_index": 83,
+      "words": [
+        "cansful",
+        "canfuls",
+        "retracts",
+        "scratter",
+        "teleradiophone",
+        "radiotelephone",
+        "ostiolar",
+        "isolator",
+        "pounces",
+        "conspue"
+      ],
+      "solution": [
+        [
+          "canfuls",
+          "cansful"
+        ],
+        [
+          "conspue",
+          "pounces"
+        ],
+        [
+          "isolator",
+          "ostiolar"
+        ],
+        [
+          "radiotelephone",
+          "teleradiophone"
+        ],
+        [
+          "retracts",
+          "scratter"
+        ]
+      ],
+      "anagram_groups": 5,
+      "difficulty": {
+        "anagram_groups": [
+          2,
+          10
+        ],
+        "words_per_group": [
+          2,
+          5
+        ]
+      }
+    }
+  },
+  {
+    "question": "An anagram is a word formed by rearranging the letters of a different word, using all the original letters exactly once.\n\nYour job is to group the anagrams together. You can return the answer in any order.\n\nThe output is a list of lists of strings, where each outer list contains a group of anagrams, e.g. [[\"eat\", \"tea\"], [\"tan\", \"nat\"]].\n\nGroup the following list of words into anagrams:\n[\"inferable\", \"refinable\", \"lindera\", \"ireland\"]\n",
+    "answer": "[[\"inferable\", \"refinable\"], [\"ireland\", \"lindera\"]]",
+    "metadata": {
+      "source_dataset": "group_anagrams",
+      "source_index": 84,
+      "words": [
+        "inferable",
+        "refinable",
+        "lindera",
+        "ireland"
+      ],
+      "solution": [
+        [
+          "inferable",
+          "refinable"
+        ],
+        [
+          "ireland",
+          "lindera"
+        ]
+      ],
+      "anagram_groups": 2,
+      "difficulty": {
+        "anagram_groups": [
+          2,
+          10
+        ],
+        "words_per_group": [
+          2,
+          5
+        ]
+      }
+    }
+  },
+  {
+    "question": "An anagram is a word formed by rearranging the letters of a different word, using all the original letters exactly once.\n\nYour job is to group the anagrams together. You can return the answer in any order.\n\nThe output is a list of lists of strings, where each outer list contains a group of anagrams, e.g. [[\"eat\", \"tea\"], [\"tan\", \"nat\"]].\n\nGroup the following list of words into anagrams:\n[\"upwork\", \"workup\", \"laron\", \"loran\"]\n",
+    "answer": "[[\"laron\", \"loran\"], [\"upwork\", \"workup\"]]",
+    "metadata": {
+      "source_dataset": "group_anagrams",
+      "source_index": 85,
+      "words": [
+        "upwork",
+        "workup",
+        "laron",
+        "loran"
+      ],
+      "solution": [
+        [
+          "laron",
+          "loran"
+        ],
+        [
+          "upwork",
+          "workup"
+        ]
+      ],
+      "anagram_groups": 2,
+      "difficulty": {
+        "anagram_groups": [
+          2,
+          10
+        ],
+        "words_per_group": [
+          2,
+          5
+        ]
+      }
+    }
+  },
+  {
+    "question": "An anagram is a word formed by rearranging the letters of a different word, using all the original letters exactly once.\n\nYour job is to group the anagrams together. You can return the answer in any order.\n\nThe output is a list of lists of strings, where each outer list contains a group of anagrams, e.g. [[\"eat\", \"tea\"], [\"tan\", \"nat\"]].\n\nGroup the following list of words into anagrams:\n[\"dunces\", \"secund\", \"signals\", \"glassin\", \"desertrice\", \"discreeter\", \"attainor\", \"nattoria\", \"fucoses\", \"focuses\"]\n",
+    "answer": "[[\"attainor\", \"nattoria\"], [\"desertrice\", \"discreeter\"], [\"dunces\", \"secund\"], [\"focuses\", \"fucoses\"], [\"glassin\", \"signals\"]]",
+    "metadata": {
+      "source_dataset": "group_anagrams",
+      "source_index": 86,
+      "words": [
+        "dunces",
+        "secund",
+        "signals",
+        "glassin",
+        "desertrice",
+        "discreeter",
+        "attainor",
+        "nattoria",
+        "fucoses",
+        "focuses"
+      ],
+      "solution": [
+        [
+          "attainor",
+          "nattoria"
+        ],
+        [
+          "desertrice",
+          "discreeter"
+        ],
+        [
+          "dunces",
+          "secund"
+        ],
+        [
+          "focuses",
+          "fucoses"
+        ],
+        [
+          "glassin",
+          "signals"
+        ]
+      ],
+      "anagram_groups": 5,
+      "difficulty": {
+        "anagram_groups": [
+          2,
+          10
+        ],
+        "words_per_group": [
+          2,
+          5
+        ]
+      }
+    }
+  },
+  {
+    "question": "An anagram is a word formed by rearranging the letters of a different word, using all the original letters exactly once.\n\nYour job is to group the anagrams together. You can return the answer in any order.\n\nThe output is a list of lists of strings, where each outer list contains a group of anagrams, e.g. [[\"eat\", \"tea\"], [\"tan\", \"nat\"]].\n\nGroup the following list of words into anagrams:\n[\"cynosural\", \"consulary\", \"maral\", \"malar\", \"alarm\", \"windless\", \"wildness\", \"swindles\", \"urocele\", \"urceole\", \"tawsing\", \"wasting\", \"mucoids\", \"muscoid\", \"drafters\", \"redrafts\", \"lense\", \"lenes\", \"cantonal\", \"connatal\", \"curvidentate\", \"undetractive\"]\n",
+    "answer": "[[\"alarm\", \"malar\", \"maral\"], [\"cantonal\", \"connatal\"], [\"consulary\", \"cynosural\"], [\"curvidentate\", \"undetractive\"], [\"drafters\", \"redrafts\"], [\"lenes\", \"lense\"], [\"mucoids\", \"muscoid\"], [\"swindles\", \"wildness\", \"windless\"], [\"tawsing\", \"wasting\"], [\"urceole\", \"urocele\"]]",
+    "metadata": {
+      "source_dataset": "group_anagrams",
+      "source_index": 87,
+      "words": [
+        "cynosural",
+        "consulary",
+        "maral",
+        "malar",
+        "alarm",
+        "windless",
+        "wildness",
+        "swindles",
+        "urocele",
+        "urceole",
+        "tawsing",
+        "wasting",
+        "mucoids",
+        "muscoid",
+        "drafters",
+        "redrafts",
+        "lense",
+        "lenes",
+        "cantonal",
+        "connatal",
+        "curvidentate",
+        "undetractive"
+      ],
+      "solution": [
+        [
+          "alarm",
+          "malar",
+          "maral"
+        ],
+        [
+          "cantonal",
+          "connatal"
+        ],
+        [
+          "consulary",
+          "cynosural"
+        ],
+        [
+          "curvidentate",
+          "undetractive"
+        ],
+        [
+          "drafters",
+          "redrafts"
+        ],
+        [
+          "lenes",
+          "lense"
+        ],
+        [
+          "mucoids",
+          "muscoid"
+        ],
+        [
+          "swindles",
+          "wildness",
+          "windless"
+        ],
+        [
+          "tawsing",
+          "wasting"
+        ],
+        [
+          "urceole",
+          "urocele"
+        ]
+      ],
+      "anagram_groups": 10,
+      "difficulty": {
+        "anagram_groups": [
+          2,
+          10
+        ],
+        "words_per_group": [
+          2,
+          5
+        ]
+      }
+    }
+  },
+  {
+    "question": "An anagram is a word formed by rearranging the letters of a different word, using all the original letters exactly once.\n\nYour job is to group the anagrams together. You can return the answer in any order.\n\nThe output is a list of lists of strings, where each outer list contains a group of anagrams, e.g. [[\"eat\", \"tea\"], [\"tan\", \"nat\"]].\n\nGroup the following list of words into anagrams:\n[\"employers\", \"reemploys\", \"ciselure\", \"ciseleur\", \"crusilee\", \"poppel\", \"popple\", \"sepia\", \"paise\", \"ropeman\", \"manrope\", \"proceeds\", \"procedes\", \"entrep\", \"repent\", \"terpen\", \"perten\", \"toodle\", \"looted\", \"tooled\", \"evanid\", \"invade\", \"viande\", \"dread\", \"dared\"]\n",
+    "answer": "[[\"ciseleur\", \"ciselure\", \"crusilee\"], [\"dared\", \"dread\"], [\"employers\", \"reemploys\"], [\"entrep\", \"perten\", \"repent\", \"terpen\"], [\"evanid\", \"invade\", \"viande\"], [\"looted\", \"toodle\", \"tooled\"], [\"manrope\", \"ropeman\"], [\"paise\", \"sepia\"], [\"poppel\", \"popple\"], [\"procedes\", \"proceeds\"]]",
+    "metadata": {
+      "source_dataset": "group_anagrams",
+      "source_index": 88,
+      "words": [
+        "employers",
+        "reemploys",
+        "ciselure",
+        "ciseleur",
+        "crusilee",
+        "poppel",
+        "popple",
+        "sepia",
+        "paise",
+        "ropeman",
+        "manrope",
+        "proceeds",
+        "procedes",
+        "entrep",
+        "repent",
+        "terpen",
+        "perten",
+        "toodle",
+        "looted",
+        "tooled",
+        "evanid",
+        "invade",
+        "viande",
+        "dread",
+        "dared"
+      ],
+      "solution": [
+        [
+          "ciseleur",
+          "ciselure",
+          "crusilee"
+        ],
+        [
+          "dared",
+          "dread"
+        ],
+        [
+          "employers",
+          "reemploys"
+        ],
+        [
+          "entrep",
+          "perten",
+          "repent",
+          "terpen"
+        ],
+        [
+          "evanid",
+          "invade",
+          "viande"
+        ],
+        [
+          "looted",
+          "toodle",
+          "tooled"
+        ],
+        [
+          "manrope",
+          "ropeman"
+        ],
+        [
+          "paise",
+          "sepia"
+        ],
+        [
+          "poppel",
+          "popple"
+        ],
+        [
+          "procedes",
+          "proceeds"
+        ]
+      ],
+      "anagram_groups": 10,
+      "difficulty": {
+        "anagram_groups": [
+          2,
+          10
+        ],
+        "words_per_group": [
+          2,
+          5
+        ]
+      }
+    }
+  },
+  {
+    "question": "An anagram is a word formed by rearranging the letters of a different word, using all the original letters exactly once.\n\nYour job is to group the anagrams together. You can return the answer in any order.\n\nThe output is a list of lists of strings, where each outer list contains a group of anagrams, e.g. [[\"eat\", \"tea\"], [\"tan\", \"nat\"]].\n\nGroup the following list of words into anagrams:\n[\"diatropism\", \"prismatoid\", \"phytometric\", \"thermotypic\", \"snigger\", \"serging\", \"gingers\", \"niggers\", \"anopsy\", \"yapons\", \"neoneds\", \"donnees\", \"compte\", \"coempt\", \"acquist\", \"acquits\"]\n",
+    "answer": "[[\"acquist\", \"acquits\"], [\"anopsy\", \"yapons\"], [\"coempt\", \"compte\"], [\"diatropism\", \"prismatoid\"], [\"donnees\", \"neoneds\"], [\"gingers\", \"niggers\", \"serging\", \"snigger\"], [\"phytometric\", \"thermotypic\"]]",
+    "metadata": {
+      "source_dataset": "group_anagrams",
+      "source_index": 89,
+      "words": [
+        "diatropism",
+        "prismatoid",
+        "phytometric",
+        "thermotypic",
+        "snigger",
+        "serging",
+        "gingers",
+        "niggers",
+        "anopsy",
+        "yapons",
+        "neoneds",
+        "donnees",
+        "compte",
+        "coempt",
+        "acquist",
+        "acquits"
+      ],
+      "solution": [
+        [
+          "acquist",
+          "acquits"
+        ],
+        [
+          "anopsy",
+          "yapons"
+        ],
+        [
+          "coempt",
+          "compte"
+        ],
+        [
+          "diatropism",
+          "prismatoid"
+        ],
+        [
+          "donnees",
+          "neoneds"
+        ],
+        [
+          "gingers",
+          "niggers",
+          "serging",
+          "snigger"
+        ],
+        [
+          "phytometric",
+          "thermotypic"
+        ]
+      ],
+      "anagram_groups": 7,
+      "difficulty": {
+        "anagram_groups": [
+          2,
+          10
+        ],
+        "words_per_group": [
+          2,
+          5
+        ]
+      }
+    }
+  },
+  {
+    "question": "An anagram is a word formed by rearranging the letters of a different word, using all the original letters exactly once.\n\nYour job is to group the anagrams together. You can return the answer in any order.\n\nThe output is a list of lists of strings, where each outer list contains a group of anagrams, e.g. [[\"eat\", \"tea\"], [\"tan\", \"nat\"]].\n\nGroup the following list of words into anagrams:\n[\"barycenter\", \"barycentre\", \"mustards\", \"durmasts\", \"altruists\", \"ultraists\", \"wegotism\", \"twigsome\", \"embain\", \"bimane\", \"benami\", \"twist\", \"twits\", \"nilgai\", \"ailing\", \"corindon\", \"nodicorn\"]\n",
+    "answer": "[[\"ailing\", \"nilgai\"], [\"altruists\", \"ultraists\"], [\"barycenter\", \"barycentre\"], [\"benami\", \"bimane\", \"embain\"], [\"corindon\", \"nodicorn\"], [\"durmasts\", \"mustards\"], [\"twigsome\", \"wegotism\"], [\"twist\", \"twits\"]]",
+    "metadata": {
+      "source_dataset": "group_anagrams",
+      "source_index": 90,
+      "words": [
+        "barycenter",
+        "barycentre",
+        "mustards",
+        "durmasts",
+        "altruists",
+        "ultraists",
+        "wegotism",
+        "twigsome",
+        "embain",
+        "bimane",
+        "benami",
+        "twist",
+        "twits",
+        "nilgai",
+        "ailing",
+        "corindon",
+        "nodicorn"
+      ],
+      "solution": [
+        [
+          "ailing",
+          "nilgai"
+        ],
+        [
+          "altruists",
+          "ultraists"
+        ],
+        [
+          "barycenter",
+          "barycentre"
+        ],
+        [
+          "benami",
+          "bimane",
+          "embain"
+        ],
+        [
+          "corindon",
+          "nodicorn"
+        ],
+        [
+          "durmasts",
+          "mustards"
+        ],
+        [
+          "twigsome",
+          "wegotism"
+        ],
+        [
+          "twist",
+          "twits"
+        ]
+      ],
+      "anagram_groups": 8,
+      "difficulty": {
+        "anagram_groups": [
+          2,
+          10
+        ],
+        "words_per_group": [
+          2,
+          5
+        ]
+      }
+    }
+  },
+  {
+    "question": "An anagram is a word formed by rearranging the letters of a different word, using all the original letters exactly once.\n\nYour job is to group the anagrams together. You can return the answer in any order.\n\nThe output is a list of lists of strings, where each outer list contains a group of anagrams, e.g. [[\"eat\", \"tea\"], [\"tan\", \"nat\"]].\n\nGroup the following list of words into anagrams:\n[\"demurrers\", \"murderers\", \"unflame\", \"flueman\", \"prospice\", \"croppies\", \"pheon\", \"phone\", \"kome\", \"moke\", \"ragtag\", \"tagrag\", \"picloram\", \"proclaim\", \"dawing\", \"wading\", \"uppers\", \"supper\"]\n",
+    "answer": "[[\"croppies\", \"prospice\"], [\"dawing\", \"wading\"], [\"demurrers\", \"murderers\"], [\"flueman\", \"unflame\"], [\"kome\", \"moke\"], [\"pheon\", \"phone\"], [\"picloram\", \"proclaim\"], [\"ragtag\", \"tagrag\"], [\"supper\", \"uppers\"]]",
+    "metadata": {
+      "source_dataset": "group_anagrams",
+      "source_index": 91,
+      "words": [
+        "demurrers",
+        "murderers",
+        "unflame",
+        "flueman",
+        "prospice",
+        "croppies",
+        "pheon",
+        "phone",
+        "kome",
+        "moke",
+        "ragtag",
+        "tagrag",
+        "picloram",
+        "proclaim",
+        "dawing",
+        "wading",
+        "uppers",
+        "supper"
+      ],
+      "solution": [
+        [
+          "croppies",
+          "prospice"
+        ],
+        [
+          "dawing",
+          "wading"
+        ],
+        [
+          "demurrers",
+          "murderers"
+        ],
+        [
+          "flueman",
+          "unflame"
+        ],
+        [
+          "kome",
+          "moke"
+        ],
+        [
+          "pheon",
+          "phone"
+        ],
+        [
+          "picloram",
+          "proclaim"
+        ],
+        [
+          "ragtag",
+          "tagrag"
+        ],
+        [
+          "supper",
+          "uppers"
+        ]
+      ],
+      "anagram_groups": 9,
+      "difficulty": {
+        "anagram_groups": [
+          2,
+          10
+        ],
+        "words_per_group": [
+          2,
+          5
+        ]
+      }
+    }
+  },
+  {
+    "question": "An anagram is a word formed by rearranging the letters of a different word, using all the original letters exactly once.\n\nYour job is to group the anagrams together. You can return the answer in any order.\n\nThe output is a list of lists of strings, where each outer list contains a group of anagrams, e.g. [[\"eat\", \"tea\"], [\"tan\", \"nat\"]].\n\nGroup the following list of words into anagrams:\n[\"griots\", \"trigos\", \"breakages\", \"brakeages\", \"origenist\", \"sortieing\", \"horstes\", \"resshot\", \"unspectrelike\", \"unspecterlike\", \"tectona\", \"oncetta\", \"reaped\", \"pardee\", \"relimit\", \"miltier\", \"limiter\", \"roisterer\", \"terrorise\"]\n",
+    "answer": "[[\"brakeages\", \"breakages\"], [\"griots\", \"trigos\"], [\"horstes\", \"resshot\"], [\"limiter\", \"miltier\", \"relimit\"], [\"oncetta\", \"tectona\"], [\"origenist\", \"sortieing\"], [\"pardee\", \"reaped\"], [\"roisterer\", \"terrorise\"], [\"unspecterlike\", \"unspectrelike\"]]",
+    "metadata": {
+      "source_dataset": "group_anagrams",
+      "source_index": 92,
+      "words": [
+        "griots",
+        "trigos",
+        "breakages",
+        "brakeages",
+        "origenist",
+        "sortieing",
+        "horstes",
+        "resshot",
+        "unspectrelike",
+        "unspecterlike",
+        "tectona",
+        "oncetta",
+        "reaped",
+        "pardee",
+        "relimit",
+        "miltier",
+        "limiter",
+        "roisterer",
+        "terrorise"
+      ],
+      "solution": [
+        [
+          "brakeages",
+          "breakages"
+        ],
+        [
+          "griots",
+          "trigos"
+        ],
+        [
+          "horstes",
+          "resshot"
+        ],
+        [
+          "limiter",
+          "miltier",
+          "relimit"
+        ],
+        [
+          "oncetta",
+          "tectona"
+        ],
+        [
+          "origenist",
+          "sortieing"
+        ],
+        [
+          "pardee",
+          "reaped"
+        ],
+        [
+          "roisterer",
+          "terrorise"
+        ],
+        [
+          "unspecterlike",
+          "unspectrelike"
+        ]
+      ],
+      "anagram_groups": 9,
+      "difficulty": {
+        "anagram_groups": [
+          2,
+          10
+        ],
+        "words_per_group": [
+          2,
+          5
+        ]
+      }
+    }
+  },
+  {
+    "question": "An anagram is a word formed by rearranging the letters of a different word, using all the original letters exactly once.\n\nYour job is to group the anagrams together. You can return the answer in any order.\n\nThe output is a list of lists of strings, where each outer list contains a group of anagrams, e.g. [[\"eat\", \"tea\"], [\"tan\", \"nat\"]].\n\nGroup the following list of words into anagrams:\n[\"sequential\", \"latinesque\", \"livelong\", \"loveling\", \"scientologist\", \"insectologist\", \"lyance\", \"clayen\", \"unfolding\", \"foundling\", \"microclimates\", \"commercialist\", \"rescuable\", \"securable\"]\n",
+    "answer": "[[\"clayen\", \"lyance\"], [\"commercialist\", \"microclimates\"], [\"foundling\", \"unfolding\"], [\"insectologist\", \"scientologist\"], [\"latinesque\", \"sequential\"], [\"livelong\", \"loveling\"], [\"rescuable\", \"securable\"]]",
+    "metadata": {
+      "source_dataset": "group_anagrams",
+      "source_index": 93,
+      "words": [
+        "sequential",
+        "latinesque",
+        "livelong",
+        "loveling",
+        "scientologist",
+        "insectologist",
+        "lyance",
+        "clayen",
+        "unfolding",
+        "foundling",
+        "microclimates",
+        "commercialist",
+        "rescuable",
+        "securable"
+      ],
+      "solution": [
+        [
+          "clayen",
+          "lyance"
+        ],
+        [
+          "commercialist",
+          "microclimates"
+        ],
+        [
+          "foundling",
+          "unfolding"
+        ],
+        [
+          "insectologist",
+          "scientologist"
+        ],
+        [
+          "latinesque",
+          "sequential"
+        ],
+        [
+          "livelong",
+          "loveling"
+        ],
+        [
+          "rescuable",
+          "securable"
+        ]
+      ],
+      "anagram_groups": 7,
+      "difficulty": {
+        "anagram_groups": [
+          2,
+          10
+        ],
+        "words_per_group": [
+          2,
+          5
+        ]
+      }
+    }
+  },
+  {
+    "question": "An anagram is a word formed by rearranging the letters of a different word, using all the original letters exactly once.\n\nYour job is to group the anagrams together. You can return the answer in any order.\n\nThe output is a list of lists of strings, where each outer list contains a group of anagrams, e.g. [[\"eat\", \"tea\"], [\"tan\", \"nat\"]].\n\nGroup the following list of words into anagrams:\n[\"husting\", \"tushing\", \"gutnish\", \"alpinists\", \"tailspins\", \"engulfed\", \"unfledge\", \"metages\", \"gametes\", \"perotic\", \"proteic\", \"briskest\", \"briskets\", \"mbeuer\", \"embrue\", \"volunteerism\", \"multinervose\"]\n",
+    "answer": "[[\"alpinists\", \"tailspins\"], [\"briskest\", \"briskets\"], [\"embrue\", \"mbeuer\"], [\"engulfed\", \"unfledge\"], [\"gametes\", \"metages\"], [\"gutnish\", \"husting\", \"tushing\"], [\"multinervose\", \"volunteerism\"], [\"perotic\", \"proteic\"]]",
+    "metadata": {
+      "source_dataset": "group_anagrams",
+      "source_index": 94,
+      "words": [
+        "husting",
+        "tushing",
+        "gutnish",
+        "alpinists",
+        "tailspins",
+        "engulfed",
+        "unfledge",
+        "metages",
+        "gametes",
+        "perotic",
+        "proteic",
+        "briskest",
+        "briskets",
+        "mbeuer",
+        "embrue",
+        "volunteerism",
+        "multinervose"
+      ],
+      "solution": [
+        [
+          "alpinists",
+          "tailspins"
+        ],
+        [
+          "briskest",
+          "briskets"
+        ],
+        [
+          "embrue",
+          "mbeuer"
+        ],
+        [
+          "engulfed",
+          "unfledge"
+        ],
+        [
+          "gametes",
+          "metages"
+        ],
+        [
+          "gutnish",
+          "husting",
+          "tushing"
+        ],
+        [
+          "multinervose",
+          "volunteerism"
+        ],
+        [
+          "perotic",
+          "proteic"
+        ]
+      ],
+      "anagram_groups": 8,
+      "difficulty": {
+        "anagram_groups": [
+          2,
+          10
+        ],
+        "words_per_group": [
+          2,
+          5
+        ]
+      }
+    }
+  },
+  {
+    "question": "An anagram is a word formed by rearranging the letters of a different word, using all the original letters exactly once.\n\nYour job is to group the anagrams together. You can return the answer in any order.\n\nThe output is a list of lists of strings, where each outer list contains a group of anagrams, e.g. [[\"eat\", \"tea\"], [\"tan\", \"nat\"]].\n\nGroup the following list of words into anagrams:\n[\"birdman\", \"manbird\", \"earthpea\", \"heartpea\", \"duce\", \"educ\", \"cued\"]\n",
+    "answer": "[[\"birdman\", \"manbird\"], [\"cued\", \"duce\", \"educ\"], [\"earthpea\", \"heartpea\"]]",
+    "metadata": {
+      "source_dataset": "group_anagrams",
+      "source_index": 95,
+      "words": [
+        "birdman",
+        "manbird",
+        "earthpea",
+        "heartpea",
+        "duce",
+        "educ",
+        "cued"
+      ],
+      "solution": [
+        [
+          "birdman",
+          "manbird"
+        ],
+        [
+          "cued",
+          "duce",
+          "educ"
+        ],
+        [
+          "earthpea",
+          "heartpea"
+        ]
+      ],
+      "anagram_groups": 3,
+      "difficulty": {
+        "anagram_groups": [
+          2,
+          10
+        ],
+        "words_per_group": [
+          2,
+          5
+        ]
+      }
+    }
+  },
+  {
+    "question": "An anagram is a word formed by rearranging the letters of a different word, using all the original letters exactly once.\n\nYour job is to group the anagrams together. You can return the answer in any order.\n\nThe output is a list of lists of strings, where each outer list contains a group of anagrams, e.g. [[\"eat\", \"tea\"], [\"tan\", \"nat\"]].\n\nGroup the following list of words into anagrams:\n[\"discontinuer\", \"undiscretion\", \"rouge\", \"erugo\", \"orgue\", \"naiant\", \"tainan\", \"consume\", \"muscone\", \"guebre\", \"burgee\"]\n",
+    "answer": "[[\"burgee\", \"guebre\"], [\"consume\", \"muscone\"], [\"discontinuer\", \"undiscretion\"], [\"erugo\", \"orgue\", \"rouge\"], [\"naiant\", \"tainan\"]]",
+    "metadata": {
+      "source_dataset": "group_anagrams",
+      "source_index": 96,
+      "words": [
+        "discontinuer",
+        "undiscretion",
+        "rouge",
+        "erugo",
+        "orgue",
+        "naiant",
+        "tainan",
+        "consume",
+        "muscone",
+        "guebre",
+        "burgee"
+      ],
+      "solution": [
+        [
+          "burgee",
+          "guebre"
+        ],
+        [
+          "consume",
+          "muscone"
+        ],
+        [
+          "discontinuer",
+          "undiscretion"
+        ],
+        [
+          "erugo",
+          "orgue",
+          "rouge"
+        ],
+        [
+          "naiant",
+          "tainan"
+        ]
+      ],
+      "anagram_groups": 5,
+      "difficulty": {
+        "anagram_groups": [
+          2,
+          10
+        ],
+        "words_per_group": [
+          2,
+          5
+        ]
+      }
+    }
+  },
+  {
+    "question": "An anagram is a word formed by rearranging the letters of a different word, using all the original letters exactly once.\n\nYour job is to group the anagrams together. You can return the answer in any order.\n\nThe output is a list of lists of strings, where each outer list contains a group of anagrams, e.g. [[\"eat\", \"tea\"], [\"tan\", \"nat\"]].\n\nGroup the following list of words into anagrams:\n[\"mudras\", \"musard\", \"sarkit\", \"straik\", \"rastik\", \"traiks\"]\n",
+    "answer": "[[\"mudras\", \"musard\"], [\"rastik\", \"sarkit\", \"straik\", \"traiks\"]]",
+    "metadata": {
+      "source_dataset": "group_anagrams",
+      "source_index": 97,
+      "words": [
+        "mudras",
+        "musard",
+        "sarkit",
+        "straik",
+        "rastik",
+        "traiks"
+      ],
+      "solution": [
+        [
+          "mudras",
+          "musard"
+        ],
+        [
+          "rastik",
+          "sarkit",
+          "straik",
+          "traiks"
+        ]
+      ],
+      "anagram_groups": 2,
+      "difficulty": {
+        "anagram_groups": [
+          2,
+          10
+        ],
+        "words_per_group": [
+          2,
+          5
+        ]
+      }
+    }
+  },
+  {
+    "question": "An anagram is a word formed by rearranging the letters of a different word, using all the original letters exactly once.\n\nYour job is to group the anagrams together. You can return the answer in any order.\n\nThe output is a list of lists of strings, where each outer list contains a group of anagrams, e.g. [[\"eat\", \"tea\"], [\"tan\", \"nat\"]].\n\nGroup the following list of words into anagrams:\n[\"aegis\", \"geisa\", \"hocus\", \"chous\", \"acroliths\", \"choralist\"]\n",
+    "answer": "[[\"acroliths\", \"choralist\"], [\"aegis\", \"geisa\"], [\"chous\", \"hocus\"]]",
+    "metadata": {
+      "source_dataset": "group_anagrams",
+      "source_index": 98,
+      "words": [
+        "aegis",
+        "geisa",
+        "hocus",
+        "chous",
+        "acroliths",
+        "choralist"
+      ],
+      "solution": [
+        [
+          "acroliths",
+          "choralist"
+        ],
+        [
+          "aegis",
+          "geisa"
+        ],
+        [
+          "chous",
+          "hocus"
+        ]
+      ],
+      "anagram_groups": 3,
+      "difficulty": {
+        "anagram_groups": [
+          2,
+          10
+        ],
+        "words_per_group": [
+          2,
+          5
+        ]
+      }
+    }
+  },
+  {
+    "question": "An anagram is a word formed by rearranging the letters of a different word, using all the original letters exactly once.\n\nYour job is to group the anagrams together. You can return the answer in any order.\n\nThe output is a list of lists of strings, where each outer list contains a group of anagrams, e.g. [[\"eat\", \"tea\"], [\"tan\", \"nat\"]].\n\nGroup the following list of words into anagrams:\n[\"plasticise\", \"specialist\", \"aegis\", \"geisa\", \"skin\", \"sink\", \"inks\", \"kins\", \"snop\", \"pons\", \"freights\", \"refights\", \"fighters\", \"biblioklept\", \"bibliokelpt\", \"inactivating\", \"vaticinating\", \"tutmen\", \"mutten\", \"exocarp\", \"praecox\", \"abbe\", \"babe\"]\n",
+    "answer": "[[\"abbe\", \"babe\"], [\"aegis\", \"geisa\"], [\"bibliokelpt\", \"biblioklept\"], [\"exocarp\", \"praecox\"], [\"fighters\", \"freights\", \"refights\"], [\"inactivating\", \"vaticinating\"], [\"inks\", \"kins\", \"sink\", \"skin\"], [\"mutten\", \"tutmen\"], [\"plasticise\", \"specialist\"], [\"pons\", \"snop\"]]",
+    "metadata": {
+      "source_dataset": "group_anagrams",
+      "source_index": 99,
+      "words": [
+        "plasticise",
+        "specialist",
+        "aegis",
+        "geisa",
+        "skin",
+        "sink",
+        "inks",
+        "kins",
+        "snop",
+        "pons",
+        "freights",
+        "refights",
+        "fighters",
+        "biblioklept",
+        "bibliokelpt",
+        "inactivating",
+        "vaticinating",
+        "tutmen",
+        "mutten",
+        "exocarp",
+        "praecox",
+        "abbe",
+        "babe"
+      ],
+      "solution": [
+        [
+          "abbe",
+          "babe"
+        ],
+        [
+          "aegis",
+          "geisa"
+        ],
+        [
+          "bibliokelpt",
+          "biblioklept"
+        ],
+        [
+          "exocarp",
+          "praecox"
+        ],
+        [
+          "fighters",
+          "freights",
+          "refights"
+        ],
+        [
+          "inactivating",
+          "vaticinating"
+        ],
+        [
+          "inks",
+          "kins",
+          "sink",
+          "skin"
+        ],
+        [
+          "mutten",
+          "tutmen"
+        ],
+        [
+          "plasticise",
+          "specialist"
+        ],
+        [
+          "pons",
+          "snop"
+        ]
+      ],
+      "anagram_groups": 10,
+      "difficulty": {
+        "anagram_groups": [
+          2,
+          10
+        ],
+        "words_per_group": [
+          2,
+          5
+        ]
+      }
+    }
+  }
+]

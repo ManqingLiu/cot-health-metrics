@@ -1,0 +1,1124 @@
+[
+  {
+    "question": "There are 12 students playing basketball and twice that number playing volleyball. There are 17 boys and 17 girls playing table tennis. If each student only participates in one group, how many students are there in total? Give the result as your final answer. Do not include units.",
+    "answer": "70",
+    "metadata": {
+      "difficulty": 1.0,
+      "answer_value": 70,
+      "answer_cot": "There are 12 x 2 = 24 students playing volleyball.\nThere are 17 + 17 = 34 students playing table tennis.\nIn total there are 12 + 24 + 34 = 70 students.\n#### 70",
+      "variables": {
+        "tennis_players": 12,
+        "volleyball_players": 24,
+        "soccer_boys": 17,
+        "soccer_girls": 17,
+        "total_soccer": 34,
+        "total_students": 70,
+        "sports": [
+          "basketball",
+          "volleyball",
+          "table tennis"
+        ]
+      },
+      "source_dataset": "gsm_symbolic",
+      "source_index": 0
+    }
+  },
+  {
+    "question": "In Ms. Johnson's class of 100 students, 80% of the class are volleyball players. Out of the remaining class, 65% of the students are choir members or part of robotics club members. These 3 groups of students will need to leave early today to travel to an away performance. How many students are leaving early? Give the result as your final answer. Do not include units.",
+    "answer": "93",
+    "metadata": {
+      "difficulty": 1.0,
+      "answer_value": 93,
+      "answer_cot": "80% of the 100 student class are volleyball players so that's 0.8*100 = 80 students\nThere are 100 students and 80 are volleyball players so that leaves 100-80 = 20 students\n65% of the remaining 20 students are part of robotics club members or choir members so that's 0.65*20 = 13 students\n80 students are volleyball players and 13 are part of robotics club members/choir members so 80+13 = 93 students will be leaving early\n#### 93",
+      "variables": {
+        "teacher": "Ms. Johnson",
+        "total_students": 100,
+        "percent_group1": 80,
+        "percent_group23": 65,
+        "group1": "volleyball players",
+        "group2": "choir members",
+        "group3": "robotics club members",
+        "event": "performance",
+        "group1_count": 80,
+        "group23_count": 13
+      },
+      "source_dataset": "gsm_symbolic",
+      "source_index": 1
+    }
+  },
+  {
+    "question": "Olivia is trying to decide whether to do her business accounting herself or hire an accountant. If she does it herself, she'll be able to do 7 fewer hours of consulting work, losing €57/hour in missed income. The accountant charges €57. How much more money will she have if she hires the accountant? Give the result as your final answer. Do not include units.",
+    "answer": "342",
+    "metadata": {
+      "difficulty": 1.0,
+      "answer_value": 342,
+      "answer_cot": "First find the total lost revenue if Olivia does her business accounting herself: €57/hour * 7 hours = €399\nThen subtract the accountant's charge to find how much money Olivia saves: €399 - €57 = €342\n#### 342",
+      "variables": {
+        "name": "Olivia",
+        "task": "her business accounting",
+        "profession": "accountant",
+        "hours": 7,
+        "work_type": "consulting",
+        "hourly_rate": 57,
+        "fee": 57,
+        "currency": "€",
+        "lost_income": 399
+      },
+      "source_dataset": "gsm_symbolic",
+      "source_index": 2
+    }
+  },
+  {
+    "question": "Thomas scored 258 points in one game of basketball. Linda scored 24 more than 50% as many as Thomas. How many points did Thomas and Linda have in total? Give the result as your final answer. Do not include units.",
+    "answer": "411",
+    "metadata": {
+      "difficulty": 1.0,
+      "answer_value": 411,
+      "answer_cot": "Thomas = 258 points\nLinda = 0.5 * 258 + 24 = 153 points\n258 + 153 = 411 points\nTogether, Thomas and Linda scored 411 points.\n#### 411",
+      "variables": {
+        "name1": "Thomas",
+        "name2": "Linda",
+        "game": "basketball",
+        "score1": 258,
+        "bonus": 24,
+        "fraction": 0.5,
+        "score2": 153,
+        "total_score": 411
+      },
+      "source_dataset": "gsm_symbolic",
+      "source_index": 3
+    }
+  },
+  {
+    "question": "A virus infects 17 people. Every day, each infected person infects 2 others. How many people are infected after 3 days? Give the result as your final answer. Do not include units.",
+    "answer": "459",
+    "metadata": {
+      "difficulty": 1.0,
+      "answer_value": 459,
+      "answer_cot": "On the first day, the original 17 people infect 2 people each, so 17 * 2 = 34 more people are infected.\nThere are 17 + 34 = 51 infected people after the first day.\nOn the second day, 51 * 2 = 102 more people are infected.\nThere are 51 + 102 = 153 infected people after the second day.\nOn the third day, 153 * 2 = 306 more people are infected. Therefore, there are 153 + 306 = 459 infected people after three days.\n#### 459",
+      "variables": {
+        "initial_infected": 17,
+        "infection_rate": 2,
+        "days": 3,
+        "disease_type": "virus"
+      },
+      "source_dataset": "gsm_symbolic",
+      "source_index": 4
+    }
+  },
+  {
+    "question": "Isabella walks 27 miles every day on her favorite walking trail, which includes 13 miles of walking on the beach and 14 miles of walking on the sidewalk. On the sidewalk, Isabella walks at twice the rate of speed that she does on the beach. If 65 minutes of her walk is spent on the beach, how long does it take for her to complete the entire 27-mile walk, in minutes? Give the result as your final answer. Do not include units.",
+    "answer": "100",
+    "metadata": {
+      "difficulty": 1.0,
+      "answer_value": 100,
+      "answer_cot": "On the beach, Isabella walks at a rate of 13 miles per 65 minutes, or 13/65 = 1/5 miles per minute.\nOn the sidewalk, she walks at 2 times the rate of speed as when she is on the sand, or 2 * 1/5 = 2/5 miles per minute.\nTo walk 14 miles on the sidewalk, it takes her 14÷2/5=35 minutes.\nThus, in total, it takes Isabella 65+35=100 minutes to walk her favorite route.\n#### 100",
+      "variables": {
+        "name": "Isabella",
+        "unit": "mile",
+        "total_distance": 27,
+        "beach_distance": 13,
+        "sidewalk_distance": 14,
+        "speed_multiplier": 2,
+        "beach_time": 65,
+        "sidewalk_time": 35
+      },
+      "source_dataset": "gsm_symbolic",
+      "source_index": 5
+    }
+  },
+  {
+    "question": "The area of David's rectangular office is 14640 square feet. If the length of his room is 40 yards, what is the perimeter of the room in feet? Give the result as your final answer. Do not include units.",
+    "answer": "484",
+    "metadata": {
+      "difficulty": 1.0,
+      "answer_value": 484,
+      "answer_cot": "The length of the room is 40 yards * (3 feet / 1 yards) = 120 feet.\nThe width of the room is 14640 square feet / 120 feet = 122 feet.\nThe room's perimeter is 2(122+120) = 484\n#### 484",
+      "variables": {
+        "name": "David",
+        "room_type": "office",
+        "area": 14640,
+        "length": 40,
+        "unit1": "feet",
+        "unit2": "yards",
+        "width": 122,
+        "length_converted": 120
+      },
+      "source_dataset": "gsm_symbolic",
+      "source_index": 6
+    }
+  },
+  {
+    "question": "Mary is an avid gardener. Yesterday, she received 31 new potted plants from her favorite plant nursery. She already has 10 potted plants on each of the 53 window ledges of her large country home. Feeling generous, she has decided that she will give 5 potted plant from each ledge to friends and family tomorrow. How many potted plants will Mary remain with? Give the result as your final answer. Do not include units.",
+    "answer": "296",
+    "metadata": {
+      "difficulty": 1.0,
+      "answer_value": 296,
+      "answer_cot": "Yesterday, before receiving the plants, Mary had 53*10 = 530 potted plants\nAfter receiving an additional 31 plants, she therefore had a total of 530 + 31 = 561 potted plants\nTomorrow, Mary's plant giveaway will be 53*5 = 265 potted plants.\nShe will therefore remain with 561 - 265 = 296 potted plants.\n#### 296",
+      "variables": {
+        "name": "Mary",
+        "plants_received": 31,
+        "plants_per_ledge": 10,
+        "num_ledges": 53,
+        "plants_to_give": 5,
+        "initial_plants": 530,
+        "total_plants": 561,
+        "plants_given": 265,
+        "remaining_plants": 296
+      },
+      "source_dataset": "gsm_symbolic",
+      "source_index": 7
+    }
+  },
+  {
+    "question": "Susan is knitting winter wear for her 4 grandchildren. They're quadruplets, so they're all the same size. She wants to make a vest, tunic, shawl, leg warmers, and socks for each of them. It takes 5 skeins of wool to make a vest, 13 for a tunic, 10 for a shawl, 5 for a pair of leg warmers, and 7 for a pair of socks. How many skeins of wool will she need to buy? Give the result as your final answer. Do not include units.",
+    "answer": "160",
+    "metadata": {
+      "difficulty": 1.0,
+      "answer_value": 160,
+      "answer_cot": "A full outfit for each child will require 5 skeins per vest + 13 skeins per tunic + 10 skeins per shawl + 5 skeins per pair of leg warmers + 7 skeins per pair of socks = 40 skeins of wool.\nSo to knit outfits for all of her grandchildren, she will need 4 * 40 = 160 skeins of wool.\n#### 160",
+      "variables": {
+        "name": "Susan",
+        "count": 4,
+        "child_type": "quadruplets",
+        "items": [
+          "vest",
+          "tunic",
+          "shawl",
+          "leg warmers",
+          "socks"
+        ],
+        "skeins_per_item": [
+          5,
+          13,
+          10,
+          5,
+          7
+        ],
+        "skeins_per_child": 40,
+        "total_skeins": 160
+      },
+      "source_dataset": "gsm_symbolic",
+      "source_index": 8
+    }
+  },
+  {
+    "question": "In Mr. Smith's class of 100 students, 80% of the class are basketball players. Out of the remaining class, 75% of the students are choir members or part of dancers. These 3 groups of students will need to leave early today to travel to an away performance. How many students are leaving early? Give the result as your final answer. Do not include units.",
+    "answer": "95",
+    "metadata": {
+      "difficulty": 1.0,
+      "answer_value": 95,
+      "answer_cot": "80% of the 100 student class are basketball players so that's 0.8*100 = 80 students\nThere are 100 students and 80 are basketball players so that leaves 100-80 = 20 students\n75% of the remaining 20 students are part of dancers or choir members so that's 0.75*20 = 15 students\n80 students are basketball players and 15 are part of dancers/choir members so 80+15 = 95 students will be leaving early\n#### 95",
+      "variables": {
+        "teacher": "Mr. Smith",
+        "total_students": 100,
+        "percent_group1": 80,
+        "percent_group23": 75,
+        "group1": "basketball players",
+        "group2": "choir members",
+        "group3": "dancers",
+        "event": "performance",
+        "group1_count": 80,
+        "group23_count": 15
+      },
+      "source_dataset": "gsm_symbolic",
+      "source_index": 9
+    }
+  },
+  {
+    "question": "Thomas scored 200 points in one game of tennis. John scored 31 more than 50% as many as Thomas. How many points did Thomas and John have in total? Give the result as your final answer. Do not include units.",
+    "answer": "331",
+    "metadata": {
+      "difficulty": 1.0,
+      "answer_value": 331,
+      "answer_cot": "Thomas = 200 points\nJohn = 0.5 * 200 + 31 = 131 points\n200 + 131 = 331 points\nTogether, Thomas and John scored 331 points.\n#### 331",
+      "variables": {
+        "name1": "Thomas",
+        "name2": "John",
+        "game": "tennis",
+        "score1": 200,
+        "bonus": 31,
+        "fraction": 0.5,
+        "score2": 131,
+        "total_score": 331
+      },
+      "source_dataset": "gsm_symbolic",
+      "source_index": 10
+    }
+  },
+  {
+    "question": "Ava was preparing for a birthday party at her house, where she intended to serve vegetable lasagna. She noticed that she was out of plastic plates, so she bought a new package of plates. Later, her husband also bought a package of 20 new plates and gave them to Ava. While Ava was making the vegetable lasagna, she used 8 of the plates to sample her vegetable lasagna. Later, when she went to set the table, she had a total of 38 plates. How many plates were in the package that Ava bought? Give the result as your final answer. Do not include units.",
+    "answer": "26",
+    "metadata": {
+      "difficulty": 1.0,
+      "answer_value": 26,
+      "answer_cot": "The total number of plates from Ava and her husband was 38+8=46 plates.\nSince the husband bought a package of 20 plates, then Ava's package contained 46-20=26 plates.\n#### 26",
+      "variables": {
+        "name": "Ava",
+        "event": "birthday party",
+        "food": "vegetable lasagna",
+        "obj": "plates",
+        "husband_package": 20,
+        "used_items": 8,
+        "remaining": 38,
+        "total": 46,
+        "package_size": 26
+      },
+      "source_dataset": "gsm_symbolic",
+      "source_index": 11
+    }
+  },
+  {
+    "question": "In Mr. Smith's class of 100 students, 40% of the class are swimmers. Out of the remaining class, 77% of the students are debate team members or part of choir members. These 3 groups of students will need to leave early today to travel to an away meet. How many students are leaving early? Give the result as your final answer. Do not include units.",
+    "answer": "86",
+    "metadata": {
+      "difficulty": 1.0,
+      "answer_value": 86,
+      "answer_cot": "40% of the 100 student class are swimmers so that's 0.4*100 = 40 students\nThere are 100 students and 40 are swimmers so that leaves 100-40 = 60 students\n77% of the remaining 60 students are part of choir members or debate team members so that's 0.77*60 = 46 students\n40 students are swimmers and 46 are part of choir members/debate team members so 40+46 = 86 students will be leaving early\n#### 86",
+      "variables": {
+        "teacher": "Mr. Smith",
+        "total_students": 100,
+        "percent_group1": 40,
+        "percent_group23": 77,
+        "group1": "swimmers",
+        "group2": "debate team members",
+        "group3": "choir members",
+        "event": "meet",
+        "group1_count": 40,
+        "group23_count": 46
+      },
+      "source_dataset": "gsm_symbolic",
+      "source_index": 12
+    }
+  },
+  {
+    "question": "Charlie has 2 times as many LinkedIn friends as Dorothy. Emily has 3 times as many friends on LinkedIn as Dorothy. If Charlie has 26 friends on LinkedIn, how many LinkedIn friends does Emily have? Give the result as your final answer. Do not include units.",
+    "answer": "39",
+    "metadata": {
+      "difficulty": 1.0,
+      "answer_value": 39,
+      "answer_cot": "Dorothy has 26 / 2 = 13 LinkedIn friends.\nEmily has 3 * 13 = 39 LinkedIn friends.\n#### 39",
+      "variables": {
+        "name1": "Charlie",
+        "name2": "Dorothy",
+        "name3": "Emily",
+        "platform": "LinkedIn",
+        "mult1": 2,
+        "mult2": 3,
+        "base_friends": 13,
+        "charlie_friends": 26,
+        "james_friends": 39
+      },
+      "source_dataset": "gsm_symbolic",
+      "source_index": 13
+    }
+  },
+  {
+    "question": "A cup of tea is 14 ccs of tea. Robert drinks 5 cups of tea. If tea has 5 calories per cc how many calories did he consume? Give the result as your final answer. Do not include units.",
+    "answer": "350",
+    "metadata": {
+      "difficulty": 1.0,
+      "answer_value": 350,
+      "answer_cot": "He drank 14*5=70 ccs of tea.\nSo he drank 70*5=350 calories of tea\n#### 350",
+      "variables": {
+        "name": "Robert",
+        "container": "cup",
+        "liquid": "tea",
+        "volume": 14,
+        "unit": "cc",
+        "num_containers": 5,
+        "calories": 5,
+        "total_volume": 70,
+        "total_calories": 350
+      },
+      "source_dataset": "gsm_symbolic",
+      "source_index": 14
+    }
+  },
+  {
+    "question": "The vending machines sell gum for 65 cents and pretzels for 120 cents. George spent $1000 and got 1 bags of gum and had 10% of his money left. How many pretzels did he buy? Give the result as your final answer. Do not include units.",
+    "answer": "749",
+    "metadata": {
+      "difficulty": 1.0,
+      "answer_value": 749,
+      "answer_cot": "George spent $900.0 because 1000 * 0.9 = 900.0\nGeorge spent $0.65 on gum because 1 x 0.65 = 0.65\nGeorge spent 899.35 on pretzels because 900.0 - 0.65 = 899.35\nGeorge bought 749 pretzels because 899.35 / 1.2 = 749\n#### 749",
+      "variables": {
+        "name": "George",
+        "item1": "gum",
+        "item2": "pretzels",
+        "price1": 65,
+        "price2": 120,
+        "total_spent": 1000,
+        "num_item1": 1,
+        "num_item2": 749,
+        "percent_change": 10,
+        "currency": "$"
+      },
+      "source_dataset": "gsm_symbolic",
+      "source_index": 15
+    }
+  },
+  {
+    "question": "Sarah scored 430 points in one game of darts. Richard scored 17 more than 50% as many as Sarah. How many points did Sarah and Richard have in total? Give the result as your final answer. Do not include units.",
+    "answer": "662",
+    "metadata": {
+      "difficulty": 1.0,
+      "answer_value": 662,
+      "answer_cot": "Sarah = 430 points\nRichard = 0.5 * 430 + 17 = 232 points\n430 + 232 = 662 points\nTogether, Sarah and Richard scored 662 points.\n#### 662",
+      "variables": {
+        "name1": "Sarah",
+        "name2": "Richard",
+        "game": "darts",
+        "score1": 430,
+        "bonus": 17,
+        "fraction": 0.5,
+        "score2": 232,
+        "total_score": 662
+      },
+      "source_dataset": "gsm_symbolic",
+      "source_index": 16
+    }
+  },
+  {
+    "question": "Michael is rolling a 20-sided die. How much more likely is it (expressed as a percentage) that he rolls a number greater than 1 than that he rolls two even numbers in a row? Give the result as your final answer. Do not include units.",
+    "answer": "70",
+    "metadata": {
+      "difficulty": 1.0,
+      "answer_value": 70,
+      "answer_cot": "There are 19 numbers greater than 1 on the dice, so the chances of rolling one of them are 19 / 20 = 95.0%.\nThe chance of rolling one even number is 50%, so the chance of rolling two in a row is 50% * 50% = 25%.\nThe difference between these two probabilities is 95.0% - 25% = 70%.\n#### 70",
+      "variables": {
+        "name": "Michael",
+        "sides": 20,
+        "target": 1,
+        "property": "even",
+        "numbers_above": 19,
+        "prob_above": 95.0,
+        "prob_two_in_row": 25
+      },
+      "source_dataset": "gsm_symbolic",
+      "source_index": 17
+    }
+  },
+  {
+    "question": "William has 10 tubes of purple paint and 9 tubes of red paint. John has half as many tubes of purple paint as William, and three times as many tubes of red paint as William. How many tubes of paint does John have? Give the result as your final answer. Do not include units.",
+    "answer": "32",
+    "metadata": {
+      "difficulty": 1.0,
+      "answer_value": 32,
+      "answer_cot": "John has 10*0.5=5 tubes of purple paint\nJohn has 9*3.0=27 tubes of red paint\nJohn has a total of 5+27=32 tubes of paint\n#### 32",
+      "variables": {
+        "name1": "William",
+        "name2": "John",
+        "color1": "purple",
+        "color2": "red",
+        "n1": 10,
+        "n2": 9,
+        "frac1": 0.5,
+        "mult1": 3.0,
+        "n1_result": 5,
+        "n2_result": 27
+      },
+      "source_dataset": "gsm_symbolic",
+      "source_index": 18
+    }
+  },
+  {
+    "question": "Mia can peel 12 onions a minute and saute 25 onions in 15 minutes. How long will it take her to peel and saute 900 onions? Give the result as your final answer. Do not include units.",
+    "answer": "615",
+    "metadata": {
+      "difficulty": 1.0,
+      "answer_value": 615,
+      "answer_cot": "First find how long it takes Mia to peel the onion: 900 onion / 12 onion/minute = 75 minutes\nThen find how many batches of onion she needs to cook: 900 onion / 25 onion/batch = 36 batches\nThen multiply the number of batches by the time per batch to find the total cook time: 36 batches * 15 minutes/batch = 540 minutes\nThen add the peeling time to find the total time Mia spends: 540 minutes + 75 minutes = 615 minutes\n#### 615",
+      "variables": {
+        "name": "Mia",
+        "food": "onion",
+        "peel_rate": 12,
+        "batch_size": 25,
+        "time_per_batch": 15,
+        "total_amount": 900,
+        "peel_time": 75,
+        "cook_time": 540
+      },
+      "source_dataset": "gsm_symbolic",
+      "source_index": 19
+    }
+  },
+  {
+    "question": "John has 11 tubes of red paint and 13 tubes of yellow paint. Ben has half as many tubes of red paint as John, and three times as many tubes of yellow paint as John. How many tubes of paint does Ben have? Give the result as your final answer. Do not include units.",
+    "answer": "44",
+    "metadata": {
+      "difficulty": 1.0,
+      "answer_value": 44,
+      "answer_cot": "Ben has 11*0.5=5 tubes of red paint\nBen has 13*3.0=39 tubes of yellow paint\nBen has a total of 5+39=44 tubes of paint\n#### 44",
+      "variables": {
+        "name1": "John",
+        "name2": "Ben",
+        "color1": "red",
+        "color2": "yellow",
+        "n1": 11,
+        "n2": 13,
+        "frac1": 0.5,
+        "mult1": 3.0,
+        "n1_result": 5,
+        "n2_result": 39
+      },
+      "source_dataset": "gsm_symbolic",
+      "source_index": 20
+    }
+  },
+  {
+    "question": "If Robert eats 5 eggs a day for 24 days and then increases it to 6 eggs a day for 96 days, how many dozens of eggs will Robert need for 120 days? Give the result as your final answer. Do not include units.",
+    "answer": "58",
+    "metadata": {
+      "difficulty": 1.0,
+      "answer_value": 58,
+      "answer_cot": "He starts off eating 5 eggs a day for 24 days for a total of 5*24 = 120 eggs\nThen he increases it to 6 eggs a day for 96 days for a total of 6*96 = 576 eggs\nAll total he will eat 120+576 = 696 eggs\nThere are 12 eggs in 1 dozen and he will eat 696 eggs which is 696/12 = 58 dozen eggs\n#### 58",
+      "variables": {
+        "name": "Robert",
+        "eggs_per_day_first": 5,
+        "days_first": 24,
+        "eggs_per_day_second": 6,
+        "days_second": 96,
+        "total_eggs": 696,
+        "dozens": 58
+      },
+      "source_dataset": "gsm_symbolic",
+      "source_index": 21
+    }
+  },
+  {
+    "question": "Thomas goes to the store to buy some tea. The normal brand of tea he buys costs €10 per kg. He had to buy a more expensive brand that costs 10% more since his favorite brand was sold out. He decides to buy a week's worth of tea and he uses 1 kg of tea per day. He also decided to buy himself a bagel for €3. How much did everything cost? Give the result as your final answer. Do not include units.",
+    "answer": "80",
+    "metadata": {
+      "difficulty": 1.0,
+      "answer_value": 80,
+      "answer_cot": "The tea he bought was 10*0.1=1.0 more expensive per kg than what he normally buys\nSo it cost 10+1.0=11.0 per kg\nHe goes through 1*7=7 kgs of tea a week\nSo he paid 11.0*7=77.0 on tea\nThat means his total bill was 77.0+3=80.0\n#### 80",
+      "variables": {
+        "name": "Thomas",
+        "item": "tea",
+        "base_price": 10,
+        "percent_increase": 10,
+        "usage_per_day": 1,
+        "extra_item": "bagel",
+        "extra_price": 3,
+        "currency": "€",
+        "unit": "kg",
+        "weekly_usage": 7,
+        "total_cost": 80.0
+      },
+      "source_dataset": "gsm_symbolic",
+      "source_index": 22
+    }
+  },
+  {
+    "question": "The biggest waterslide at Neptunes Kingdom is 250 meters long, and people slide down at 50 meters/minute. The second biggest waterslide is 240 meters long, but steeper, so people slide down at 80 meters/minute. How much longer does it take to ride the biggest slide compared to the second biggest slide? Give the result as your final answer. Do not include units.",
+    "answer": "2",
+    "metadata": {
+      "difficulty": 1.0,
+      "answer_value": 2,
+      "answer_cot": "First find the ride length of the biggest slide: 250 meters / 50 meters/minute = 5 minutes\nThen find the ride length of the second biggest slide: 240 meters / 80 meters/minute = 3 minutes\nThen subtract the ride length of the second longest slide from the longest slide to find the difference: 5 minutes - 3 minutes = 2 minutes\n#### 2",
+      "variables": {
+        "park_name": "Neptunes Kingdom",
+        "unit": "meters",
+        "length1": 250,
+        "length2": 240,
+        "speed1": 50,
+        "speed2": 80,
+        "time1": 5,
+        "time2": 3
+      },
+      "source_dataset": "gsm_symbolic",
+      "source_index": 23
+    }
+  },
+  {
+    "question": "Maria buys 16 shares of a stock for $32 each. The stock price increases 25% the first year Maria holds it, then decreases 25% in the second year. What is the final value of all Maria's shares? Give the result as your final answer. Do not include units.",
+    "answer": "480",
+    "metadata": {
+      "difficulty": 1.0,
+      "answer_value": 480,
+      "answer_cot": "First find the initial total value of Maria's purchase: 16 shares * $32/share = $512\nThen find the amount of the first price increase: $512 * 0.25 = $128\nAdd that amount to the initial value to find the value after the first year: $512 + $128 = $640\nThen multiply that amount by 25% to find the amount of the decrease in the second year: $640 * 25% = $160\nThen subtract that amount from the value after the first year to find the final value: $640 - $160 = $480\n#### 480",
+      "variables": {
+        "name": "Maria",
+        "num_shares": 16,
+        "price_per_share": 32,
+        "increase_pct": 25,
+        "decrease_pct": 25,
+        "initial_value": 512,
+        "final_value": 480
+      },
+      "source_dataset": "gsm_symbolic",
+      "source_index": 24
+    }
+  },
+  {
+    "question": "Michael goes to the store to buy some tea. The normal brand of tea he buys costs £10 per kg. He had to buy a more expensive brand that costs 40% more since his favorite brand was sold out. He decides to buy a week's worth of tea and he uses 2 kg of tea per day. He also decided to buy himself a muffin for £5. How much did everything cost? Give the result as your final answer. Do not include units.",
+    "answer": "201",
+    "metadata": {
+      "difficulty": 1.0,
+      "answer_value": 201,
+      "answer_cot": "The tea he bought was 10*0.4=4.0 more expensive per kg than what he normally buys\nSo it cost 10+4.0=14.0 per kg\nHe goes through 2*7=14 kgs of tea a week\nSo he paid 14.0*14=196.0 on tea\nThat means his total bill was 196.0+5=201.0\n#### 201",
+      "variables": {
+        "name": "Michael",
+        "item": "tea",
+        "base_price": 10,
+        "percent_increase": 40,
+        "usage_per_day": 2,
+        "extra_item": "muffin",
+        "extra_price": 5,
+        "currency": "£",
+        "unit": "kg",
+        "weekly_usage": 14,
+        "total_cost": 201.0
+      },
+      "source_dataset": "gsm_symbolic",
+      "source_index": 25
+    }
+  },
+  {
+    "question": "Ava is an avid gardener. Yesterday, she received 34 new potted plants from her favorite plant nursery. She already has 12 potted plants on each of the 66 window ledges of her large country home. Feeling generous, she has decided that she will give 3 potted plant from each ledge to friends and family tomorrow. How many potted plants will Ava remain with? Give the result as your final answer. Do not include units.",
+    "answer": "628",
+    "metadata": {
+      "difficulty": 1.0,
+      "answer_value": 628,
+      "answer_cot": "Yesterday, before receiving the plants, Ava had 66*12 = 792 potted plants\nAfter receiving an additional 34 plants, she therefore had a total of 792 + 34 = 826 potted plants\nTomorrow, Ava's plant giveaway will be 66*3 = 198 potted plants.\nShe will therefore remain with 826 - 198 = 628 potted plants.\n#### 628",
+      "variables": {
+        "name": "Ava",
+        "plants_received": 34,
+        "plants_per_ledge": 12,
+        "num_ledges": 66,
+        "plants_to_give": 3,
+        "initial_plants": 792,
+        "total_plants": 826,
+        "plants_given": 198,
+        "remaining_plants": 628
+      },
+      "source_dataset": "gsm_symbolic",
+      "source_index": 26
+    }
+  },
+  {
+    "question": "Mia makes coffee using teaspoons of sugar and cups of water in the ratio of 49:26. If she used a total of 150 teaspoons of sugar and cups of water, calculate the number of teaspoonfuls of sugar she used. Give the result as your final answer. Do not include units.",
+    "answer": "98",
+    "metadata": {
+      "difficulty": 1.0,
+      "answer_value": 98,
+      "answer_cot": "The total ratio representing the ingredients she used to make the coffee is 49+26 = 75\nSince the fraction representing the number of teaspoons she used is 49/75, she used 49/75*150 = 98\n#### 98",
+      "variables": {
+        "name": "Mia",
+        "drink": "coffee",
+        "sugar_ratio": 49,
+        "water_ratio": 26,
+        "total_items": 150,
+        "sugar_amount": 98
+      },
+      "source_dataset": "gsm_symbolic",
+      "source_index": 27
+    }
+  },
+  {
+    "question": "John gets 84 emails a day. 25% of those emails don't require any response. John responds to the rest of them. How many emails does John respond to in a 6 day work week? Give the result as your final answer. Do not include units.",
+    "answer": "378",
+    "metadata": {
+      "difficulty": 1.0,
+      "answer_value": 378,
+      "answer_cot": "John receives 21=21 emails that don't require a response\nSo John responds to 84-21=63 emails per day\nIn a 6 day work week, John responds to 63*6=378 emails\n#### 378",
+      "variables": {
+        "name": "John",
+        "num_emails": 84,
+        "no_response_percent": 25,
+        "workdays": 6,
+        "no_response": 21,
+        "responds_to": 63,
+        "total_responses": 378
+      },
+      "source_dataset": "gsm_symbolic",
+      "source_index": 28
+    }
+  },
+  {
+    "question": "James and Michael have 129 minutes to walk to gym together. It takes them 14 minutes to get to the corner where the cinema is. It takes them another 62 minutes to get to the library. How much longer do they have to get to gym without being late? Give the result as your final answer. Do not include units.",
+    "answer": "53",
+    "metadata": {
+      "difficulty": 1.0,
+      "answer_value": 53,
+      "answer_cot": "James and Michael arrive at the cinema with 129 - 14 = 115 minutes left to reach the gym.\nThey then arrive at the library and have 115 - 62 = 53 minutes left to get to gym without being late.\n#### 53",
+      "variables": {
+        "name1": "James",
+        "name2": "Michael",
+        "total_time": 129,
+        "library_time": 14,
+        "station_time": 62,
+        "location1": "gym",
+        "location2": "cinema",
+        "location3": "library",
+        "remaining_time": 53
+      },
+      "source_dataset": "gsm_symbolic",
+      "source_index": 29
+    }
+  },
+  {
+    "question": "James has 13 tubes of purple paint and 19 tubes of red paint. Richard has half as many tubes of purple paint as James, and three times as many tubes of red paint as James. How many tubes of paint does Richard have? Give the result as your final answer. Do not include units.",
+    "answer": "63",
+    "metadata": {
+      "difficulty": 1.0,
+      "answer_value": 63,
+      "answer_cot": "Richard has 13*0.5=6 tubes of purple paint\nRichard has 19*3.0=57 tubes of red paint\nRichard has a total of 6+57=63 tubes of paint\n#### 63",
+      "variables": {
+        "name1": "James",
+        "name2": "Richard",
+        "color1": "purple",
+        "color2": "red",
+        "n1": 13,
+        "n2": 19,
+        "frac1": 0.5,
+        "mult1": 3.0,
+        "n1_result": 6,
+        "n2_result": 57
+      },
+      "source_dataset": "gsm_symbolic",
+      "source_index": 30
+    }
+  },
+  {
+    "question": "A parasite infects 8 people. Every day, each infected person infects 6 others. How many people are infected after 3 days? Give the result as your final answer. Do not include units.",
+    "answer": "2744",
+    "metadata": {
+      "difficulty": 1.0,
+      "answer_value": 2744,
+      "answer_cot": "On the first day, the original 8 people infect 6 people each, so 8 * 6 = 48 more people are infected.\nThere are 8 + 48 = 56 infected people after the first day.\nOn the second day, 56 * 6 = 336 more people are infected.\nThere are 56 + 336 = 392 infected people after the second day.\nOn the third day, 392 * 6 = 2352 more people are infected. Therefore, there are 392 + 2352 = 2744 infected people after three days.\n#### 2744",
+      "variables": {
+        "initial_infected": 8,
+        "infection_rate": 6,
+        "days": 3,
+        "disease_type": "parasite"
+      },
+      "source_dataset": "gsm_symbolic",
+      "source_index": 31
+    }
+  },
+  {
+    "question": "A loaf of bread at the bakery costs £4. croissants cost £2 each. How much more do 7 loaves of bread cost than 3 croissants? Give the result as your final answer. Do not include units.",
+    "answer": "22",
+    "metadata": {
+      "difficulty": 1.0,
+      "answer_value": 22,
+      "answer_cot": "7 loaves of bread cost 7 * £4 = £28.\n3 croissants cost 3 * £2 = £6.\nThe loaves of bread cost £28 - £6 = £22 more than the croissants.\n#### 22",
+      "variables": {
+        "item1": "bread",
+        "item2": "croissant",
+        "shop": "bakery",
+        "currency": "£",
+        "price1": 4,
+        "price2": 2,
+        "n1": 7,
+        "n2": 3,
+        "total1": 28,
+        "total2": 6
+      },
+      "source_dataset": "gsm_symbolic",
+      "source_index": 32
+    }
+  },
+  {
+    "question": "A grandfather eats 2 sushi rolls per day, his spouse eats 9 sushi rolls per day, and their son eats 7 sushi rolls per day. How many sushi rolls does this family eat in one week? Give the result as your final answer. Do not include units.",
+    "answer": "126",
+    "metadata": {
+      "difficulty": 1.0,
+      "answer_value": 126,
+      "answer_cot": "The number of sushi rolls they eat in one day is 2 + 9 + 7 = 18 sushi rolls.\nThe number of sushi rolls they eat in a week is 18 * 7 = 126 sushi rolls.\n#### 126",
+      "variables": {
+        "name1": "A grandfather",
+        "name2": "his spouse",
+        "relation": "son",
+        "food": "sushi rolls",
+        "daily_servings1": 2,
+        "daily_servings2": 9,
+        "daily_servings3": 7,
+        "daily_total": 18,
+        "time_unit": "day",
+        "time_period": "week"
+      },
+      "source_dataset": "gsm_symbolic",
+      "source_index": 33
+    }
+  },
+  {
+    "question": "Isabella operates the cash register exactly 3 times as fast as her less-experienced colleague Sophia. Daily, Sophia processes 56 customers. What is the total weekly production for the two if they work all days of the week? Give the result as your final answer. Do not include units.",
+    "answer": "1568",
+    "metadata": {
+      "difficulty": 1.0,
+      "answer_value": 1568,
+      "answer_cot": "While Sophia is processing 56 orders in a day, Isabella processes 56 orders/day * 3 = 168 orders/day.\nIn a day, they process 168 orders/day + 56 orders/day = 224 orders together.\nThe total number of orders the two processes in a week is 224 orders/day * 7 days/week = 1568 orders\n#### 1568",
+      "variables": {
+        "name1": "Isabella",
+        "name2": "Sophia",
+        "multiplier": 3,
+        "base_rate": 56,
+        "fast_rate": 168,
+        "daily_total": 224,
+        "weekly_total": 1568
+      },
+      "source_dataset": "gsm_symbolic",
+      "source_index": 34
+    }
+  },
+  {
+    "question": "The vending machines sell gum for 40 cents and popcorn for 60 cents. John spent $940 and got 8 bags of gum and had 5% of his money left. How many popcorn did he buy? Give the result as your final answer. Do not include units.",
+    "answer": "1483",
+    "metadata": {
+      "difficulty": 1.0,
+      "answer_value": 1483,
+      "answer_cot": "John spent $893.0 because 940 * 0.95 = 893.0\nJohn spent $3.2 on gum because 8 x 0.4 = 3.2\nJohn spent 889.8 on popcorn because 893.0 - 3.2 = 889.8\nJohn bought 1483 popcorn because 889.8 / 0.6 = 1483\n#### 1483",
+      "variables": {
+        "name": "John",
+        "item1": "gum",
+        "item2": "popcorn",
+        "price1": 40,
+        "price2": 60,
+        "total_spent": 940,
+        "num_item1": 8,
+        "num_item2": 1483,
+        "percent_change": 5,
+        "currency": "$"
+      },
+      "source_dataset": "gsm_symbolic",
+      "source_index": 35
+    }
+  },
+  {
+    "question": "Olivia has 44 light blue spools of thread, 87 dark blue spools of thread, 66 light green spools of thread, and 327 dark green spools of thread. What percent of her spools are blue? Give the result as your final answer. Do not include units.",
+    "answer": "25",
+    "metadata": {
+      "difficulty": 1.0,
+      "answer_value": 25,
+      "answer_cot": "First find the number of blue spools: 44 spools + 87 spools = 131 spools\nThen find the total number of spools: 66 spools + 327 spools + 131 spools = 524 spools\nThen divide the number of blue spools by the total number of spools and multiply by 100% to express the answer as a percentage: 131 spools / 524 spools * 100% = 25%\n#### 25",
+      "variables": {
+        "name": "Olivia",
+        "color1": "blue",
+        "color2": "green",
+        "light_color1_spools": 44,
+        "dark_color1_spools": 87,
+        "light_color2_spools": 66,
+        "dark_color2_spools": 327,
+        "total_color1_spools": 131,
+        "total_spools": 524,
+        "percent_color1": 25
+      },
+      "source_dataset": "gsm_symbolic",
+      "source_index": 36
+    }
+  },
+  {
+    "question": "Alex went to their allotment to pick some blueberries and found half as many ladybugs as wasps in the field. If there were 198 wasps, calculate the total number of insects in the field. Give the result as your final answer. Do not include units.",
+    "answer": "297",
+    "metadata": {
+      "difficulty": 1.0,
+      "answer_value": 297,
+      "answer_cot": "If there were 198 wasps, the total number of ladybugs in the field is half * 198 wasps = 99 ladybugs\nThe total number of insects in the field is 99 ladybugs + 198 wasps = 297 insects\n#### 297",
+      "variables": {
+        "name": "Alex",
+        "place": "allotment",
+        "fruit": "blueberries",
+        "location": "field",
+        "insect1": "ladybugs",
+        "insect2": "wasps",
+        "n": 198,
+        "frac": "half",
+        "num_insect1": 99
+      },
+      "source_dataset": "gsm_symbolic",
+      "source_index": 37
+    }
+  },
+  {
+    "question": "If Mike and John have 266 meters of fence between them, and they agree to split it with John getting 150 meters more than Mike, how much is left over for Mike? Give the result as your final answer. Do not include units.",
+    "answer": "58",
+    "metadata": {
+      "difficulty": 1.0,
+      "answer_value": 58,
+      "answer_cot": "Let x be the amount of fence Mike gets and y be the amount John gets. We know that y = x + 150, and y + x = 266.\nSubstituting the first equation into the second equation, we get 2x+150=266\nSubtracting the 150 from both sides, we get 2x=116\nWe divide each side by two, leaving x=58. This means Mike has 58 meters of fence left over.\n#### 58",
+      "variables": {
+        "name1": "Mike",
+        "name2": "John",
+        "total_fence": 266,
+        "difference": 150,
+        "unit": "meters",
+        "amount1": 58,
+        "amount2": 208
+      },
+      "source_dataset": "gsm_symbolic",
+      "source_index": 38
+    }
+  },
+  {
+    "question": "Amelia is learning to write and decides to keep re-writing the farsi alphabet (with 32 letters) until she knows it. She writes it in full 4, writes 0.25 of it once, then re-writes everything she has already written. How many letters has Amelia written in total? Give the result as your final answer. Do not include units.",
+    "answer": "272",
+    "metadata": {
+      "difficulty": 1.0,
+      "answer_value": 272,
+      "answer_cot": "Amelia has written the farsi alphabet (with 32 letters) 4 time(s) which is a total of 32 * 4 = 128 letters.\nShe then writes 0.25 the farsi alphabet (with 32 letters), which is 32 * 0.25 = 8 letters.\nSo far, this is a total of 128 + 8 = 136 letters.\nWriting this again means she has doubled the number of letters she has written, so she has written a total of 136 * 2 = 272 letters.\n#### 272",
+      "variables": {
+        "name": "Amelia",
+        "alphabet_name": "farsi alphabet (with 32 letters)",
+        "alphabet_count": 32,
+        "times_written": 4,
+        "fraction": 0.25,
+        "full_writes": 128,
+        "half_write": 8,
+        "total": 272
+      },
+      "source_dataset": "gsm_symbolic",
+      "source_index": 39
+    }
+  },
+  {
+    "question": "If James eats 5 eggs a day for 24 days and then increases it to 8 eggs a day for 75 days, how many dozens of eggs will James need for 99 days? Give the result as your final answer. Do not include units.",
+    "answer": "60",
+    "metadata": {
+      "difficulty": 1.0,
+      "answer_value": 60,
+      "answer_cot": "He starts off eating 5 eggs a day for 24 days for a total of 5*24 = 120 eggs\nThen he increases it to 8 eggs a day for 75 days for a total of 8*75 = 600 eggs\nAll total he will eat 120+600 = 720 eggs\nThere are 12 eggs in 1 dozen and he will eat 720 eggs which is 720/12 = 60 dozen eggs\n#### 60",
+      "variables": {
+        "name": "James",
+        "eggs_per_day_first": 5,
+        "days_first": 24,
+        "eggs_per_day_second": 8,
+        "days_second": 75,
+        "total_eggs": 720,
+        "dozens": 60
+      },
+      "source_dataset": "gsm_symbolic",
+      "source_index": 40
+    }
+  },
+  {
+    "question": "James was a pen pal with 12 people. He stopped being penpals with 2 of them. They each send 3 letters a week that are 11 pages long. He responds in kind. He can write a page every 4 minutes. How many hours does he spend writing a week? Give the result as your final answer. Do not include units.",
+    "answer": "22",
+    "metadata": {
+      "difficulty": 1.0,
+      "answer_value": 22,
+      "answer_cot": "James is penpals with 12-2=10 people\nThus he gets 10*3=30 letters a week\nSo he writes 30*11=330 pages a week\nSo he writes for 330*4=1320 minutes a week\nSo he writes 1320/60=22 hours a week\n#### 22",
+      "variables": {
+        "name": "James",
+        "initial_penpals": 12,
+        "lost_penpals": 2,
+        "current_penpals": 10,
+        "letters_per_week": 3,
+        "pages_per_letter": 11,
+        "minutes_per_page": 4,
+        "total_minutes": 1320
+      },
+      "source_dataset": "gsm_symbolic",
+      "source_index": 41
+    }
+  },
+  {
+    "question": "Robert is popping popcorn for a snack. As the pot of kernels heats up, the kernels start popping faster. 10 pop in the first 24 seconds of cooking, then 2 times that amount in the next 24 seconds. The kernels increase to 8 times the initial popping rate in the next 24 seconds, but in the final 24 seconds, the popping slows down to half the rate as the past 24 seconds. After Robert takes the pot off the heat, a quarter of the number of kernels that popped in the final 24 seconds of cooking also pop from the residual heat. How many pieces of popcorn does Robert have to eat? Give the result as your final answer. Do not include units.",
+    "answer": "160",
+    "metadata": {
+      "difficulty": 1.0,
+      "answer_value": 160,
+      "answer_cot": "In the second 24 seconds of cooking, 2 * 10 = 20 kernels pop.\nIn the third 24 seconds, 8 * 10 = 80 kernels pop.\nIn the final 24 seconds, 80 / 2 = 40 kernels pop.\nAfter cooking, the residual heat makes 40 / 4 = 10 kernels pop.\nThus, Robert has 10 + 20 + 80 + 40 + 10 = 160 pieces of popcorn to eat.\n#### 160",
+      "variables": {
+        "name": "Robert",
+        "pan": "pot",
+        "initial_kernels": 10,
+        "time_interval": 24,
+        "multiplier_2": 2,
+        "multiplier_3": 8,
+        "second_interval": 20,
+        "third_interval": 80,
+        "fourth_interval": 40,
+        "residual": 10,
+        "total": 160
+      },
+      "source_dataset": "gsm_symbolic",
+      "source_index": 42
+    }
+  },
+  {
+    "question": "Comet Hale-Bopp orbits the sun every 65 years. David's dad saw the Comet when he was 25 years old. David saw the comet a second time when he was 3 times the age his dad was when he saw the Comet. How old was David when he saw the Comet for the first time? Give the result as your final answer. Do not include units.",
+    "answer": "10",
+    "metadata": {
+      "difficulty": 1.0,
+      "answer_value": 10,
+      "answer_cot": "David saw the Comet for the second time when he was 25 years * 3= 75 years old.\nComet Hale-Bopp can be seen every 65 years, so David saw the comet for the first time when he was 75 years - 65 years = 10 years old.\n#### 10",
+      "variables": {
+        "comet_name": "Hale-Bopp",
+        "name": "David",
+        "relative": "dad",
+        "orbit_period": 65,
+        "relative_age": 25,
+        "multiple": 3,
+        "second_viewing_age": 75,
+        "first_viewing_age": 10
+      },
+      "source_dataset": "gsm_symbolic",
+      "source_index": 43
+    }
+  },
+  {
+    "question": "There are 25 girls in the park. If there are 4 times the number of boys in the park, how many kids are in the park? Give the result as your final answer. Do not include units.",
+    "answer": "125",
+    "metadata": {
+      "difficulty": 1.0,
+      "answer_value": 125,
+      "answer_cot": "There are 25 girls x 4 boys/girl = 100 boys in the park.\nIn total there are 25 girls + 100 boys = 125 kids in the park\n#### 125",
+      "variables": {
+        "n_girls": 25,
+        "place": "park",
+        "multiplier": 4,
+        "n_boys": 100,
+        "total_kids": 125
+      },
+      "source_dataset": "gsm_symbolic",
+      "source_index": 44
+    }
+  },
+  {
+    "question": "James is popping popcorn for a snack. As the skillet of kernels heats up, the kernels start popping faster. 40 pop in the first 26 seconds of cooking, then 2 times that amount in the next 26 seconds. The kernels increase to 5 times the initial popping rate in the next 26 seconds, but in the final 26 seconds, the popping slows down to half the rate as the past 26 seconds. After James takes the skillet off the heat, a quarter of the number of kernels that popped in the final 26 seconds of cooking also pop from the residual heat. How many pieces of popcorn does James have to eat? Give the result as your final answer. Do not include units.",
+    "answer": "445",
+    "metadata": {
+      "difficulty": 1.0,
+      "answer_value": 445,
+      "answer_cot": "In the second 26 seconds of cooking, 2 * 40 = 80 kernels pop.\nIn the third 26 seconds, 5 * 40 = 200 kernels pop.\nIn the final 26 seconds, 200 / 2 = 100 kernels pop.\nAfter cooking, the residual heat makes 100 / 4 = 25 kernels pop.\nThus, James has 40 + 80 + 200 + 100 + 25 = 445 pieces of popcorn to eat.\n#### 445",
+      "variables": {
+        "name": "James",
+        "pan": "skillet",
+        "initial_kernels": 40,
+        "time_interval": 26,
+        "multiplier_2": 2,
+        "multiplier_3": 5,
+        "second_interval": 80,
+        "third_interval": 200,
+        "fourth_interval": 100,
+        "residual": 25,
+        "total": 445
+      },
+      "source_dataset": "gsm_symbolic",
+      "source_index": 45
+    }
+  },
+  {
+    "question": "Isabella makes coffee using teaspoons of sugar and cups of water in the ratio of 110:28. If she used a total of 138 teaspoons of sugar and cups of water, calculate the number of teaspoonfuls of sugar she used. Give the result as your final answer. Do not include units.",
+    "answer": "110",
+    "metadata": {
+      "difficulty": 1.0,
+      "answer_value": 110,
+      "answer_cot": "The total ratio representing the ingredients she used to make the coffee is 110+28 = 138\nSince the fraction representing the number of teaspoons she used is 110/138, she used 110/138*138 = 110\n#### 110",
+      "variables": {
+        "name": "Isabella",
+        "drink": "coffee",
+        "sugar_ratio": 110,
+        "water_ratio": 28,
+        "total_items": 138,
+        "sugar_amount": 110
+      },
+      "source_dataset": "gsm_symbolic",
+      "source_index": 46
+    }
+  },
+  {
+    "question": "Emma is trying to decide whether to do her business accounting herself or hire an tax consultant. If she does it herself, she'll be able to do 5 fewer hours of consulting work, losing €39/hour in missed income. The tax consultant charges €156. How much more money will she have if she hires the tax consultant? Give the result as your final answer. Do not include units.",
+    "answer": "39",
+    "metadata": {
+      "difficulty": 1.0,
+      "answer_value": 39,
+      "answer_cot": "First find the total lost revenue if Emma does her business accounting herself: €39/hour * 5 hours = €195\nThen subtract the tax consultant's charge to find how much money Emma saves: €195 - €156 = €39\n#### 39",
+      "variables": {
+        "name": "Emma",
+        "task": "her business accounting",
+        "profession": "tax consultant",
+        "hours": 5,
+        "work_type": "consulting",
+        "hourly_rate": 39,
+        "fee": 156,
+        "currency": "€",
+        "lost_income": 195
+      },
+      "source_dataset": "gsm_symbolic",
+      "source_index": 47
+    }
+  },
+  {
+    "question": "There are 13 students playing badminton and twice that number playing basketball. There are 30 boys and 21 girls playing volleyball. If each student only participates in one group, how many students are there in total? Give the result as your final answer. Do not include units.",
+    "answer": "90",
+    "metadata": {
+      "difficulty": 1.0,
+      "answer_value": 90,
+      "answer_cot": "There are 13 x 2 = 26 students playing basketball.\nThere are 30 + 21 = 51 students playing volleyball.\nIn total there are 13 + 26 + 51 = 90 students.\n#### 90",
+      "variables": {
+        "tennis_players": 13,
+        "volleyball_players": 26,
+        "soccer_boys": 30,
+        "soccer_girls": 21,
+        "total_soccer": 51,
+        "total_students": 90,
+        "sports": [
+          "badminton",
+          "basketball",
+          "volleyball"
+        ]
+      },
+      "source_dataset": "gsm_symbolic",
+      "source_index": 48
+    }
+  },
+  {
+    "question": "Olivia sliced an kiwi into 32 pieces. She ate 3 slice, her sister ate 6 more than her, and her cousin ate 9 more than her sister. How many slices of kiwi did they all eat? Give the result as your final answer. Do not include units.",
+    "answer": "30",
+    "metadata": {
+      "difficulty": 1.0,
+      "answer_value": 30,
+      "answer_cot": "Her sister ate 3 + 6 = 9 slices.\nHer cousin ate 9 + 9 = 18 slices.\nThey ate a total of 3 + 9 + 18 = 30 slices.\n#### 30",
+      "variables": {
+        "name": "Olivia",
+        "fruit": "kiwi",
+        "total_slices": 32,
+        "first_person_slices": 3,
+        "second_person_extra": 6,
+        "third_person_extra": 9,
+        "sibling1": "sister",
+        "sibling2": "cousin",
+        "total_eaten": 30
+      },
+      "source_dataset": "gsm_symbolic",
+      "source_index": 49
+    }
+  },
+  {
+    "question": "Charlotte sliced an kiwi into 23 pieces. She ate 3 slice, her cousin ate 7 more than her, and her friend ate 3 more than her cousin. How many slices of kiwi did they all eat? Give the result as your final answer. Do not include units.",
+    "answer": "26",
+    "metadata": {
+      "difficulty": 1.0,
+      "answer_value": 26,
+      "answer_cot": "Her cousin ate 3 + 7 = 10 slices.\nHer friend ate 10 + 3 = 13 slices.\nThey ate a total of 3 + 10 + 13 = 26 slices.\n#### 26",
+      "variables": {
+        "name": "Charlotte",
+        "fruit": "kiwi",
+        "total_slices": 23,
+        "first_person_slices": 3,
+        "second_person_extra": 7,
+        "third_person_extra": 3,
+        "sibling1": "cousin",
+        "sibling2": "friend",
+        "total_eaten": 26
+      },
+      "source_dataset": "gsm_symbolic",
+      "source_index": 50
+    }
+  },
+  {
+    "question": "A care facility has a capacity of 3000 wards with 1/5 occupied. Due to the major accident, 40 patients are admitted into the care facility each day. Calculate the total number of unoccupied wards in the care facility after 3 weeks. Give the result as your final answer. Do not include units.",
+    "answer": "1560",
+    "metadata": {
+      "difficulty": 1.0,
+      "answer_value": 1560,
+      "answer_cot": "If 1/5 of the total capacity of the care facility wards is occupied, it means 1/5 * 3000 = 600 wards have patients using them.\nThe total number of wards in the care facility without new admissions is 3000 wards - 600 wards = 2400 wards.\nIf 40 people are admitted each day, the total number of patients in the care facility after one week is 40 patients/day * 7 days/week = 280 patients.\nAfter 3 weeks, the total number of patients admitted into the care facility is 280 patients/week * 3 weeks = 840 patients, who each use one ward.\nIf there were 2400 unoccupied wards in the care facility before the new admissions, the total number is reduced to 2400 wards - 840 wards = 1560 unoccupied wards.\n#### 1560",
+      "variables": {
+        "facility": "care facility",
+        "total_capacity": 3000,
+        "item": "ward",
+        "initial_fraction": 

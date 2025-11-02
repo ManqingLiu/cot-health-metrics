@@ -1,0 +1,2915 @@
+[
+  {
+    "question": "In triangle ABC with coordinates A=(-7, -10), B=(-2, -3), and C=(-3, -6), find the measure (in degrees) of angle ABC. For all geometry problems:\n1. Give coordinates in the form (x, y)\n2. Round decimal answers to 3 decimal places\n3. Use the degree symbol ° for angles\n4. Return only the angle, coordinates, or radius as your answer.\n",
+    "answer": "17.10°",
+    "metadata": {
+      "A": [
+        "-7",
+        "-10"
+      ],
+      "B": [
+        "-2",
+        "-3"
+      ],
+      "C": [
+        "-3",
+        "-6"
+      ],
+      "angle_ABC_degrees": 17.10272896905237,
+      "source_dataset": "advanced_geometry",
+      "source_index": 0,
+      "task_type": "angle_measure",
+      "difficulty": {
+        "min_coord": -10,
+        "max_coord": 10
+      }
+    }
+  },
+  {
+    "question": "For triangle with vertices A=(-1, -6), B=(4, 1), and C=(-7, 4), determine the orthocenter (intersection of altitudes). For all geometry problems:\n1. Give coordinates in the form (x, y)\n2. Round decimal answers to 3 decimal places\n3. Use the degree symbol ° for angles\n4. Return only the angle, coordinates, or radius as your answer.\n",
+    "answer": "(0.304, -1.217)",
+    "metadata": {
+      "A": [
+        "-1",
+        "-6"
+      ],
+      "B": [
+        "4",
+        "1"
+      ],
+      "C": [
+        "-7",
+        "4"
+      ],
+      "ortho": [
+        "7/23",
+        "-28/23"
+      ],
+      "orthocenter_approx": [
+        0.30434782608695654,
+        -1.2173913043478262
+      ],
+      "source_dataset": "advanced_geometry",
+      "source_index": 1,
+      "task_type": "orthocenter",
+      "difficulty": {
+        "min_coord": -10,
+        "max_coord": 10
+      }
+    }
+  },
+  {
+    "question": "Find the incircle radius of triangle ABC whose vertices are A=(6, 7), B=(-7, -5), and C=(2, -3). For all geometry problems:\n1. Give coordinates in the form (x, y)\n2. Round decimal answers to 3 decimal places\n3. Use the degree symbol ° for angles\n4. Return only the angle, coordinates, or radius as your answer.\n",
+    "answer": "2.176",
+    "metadata": {
+      "A": [
+        "6",
+        "7"
+      ],
+      "B": [
+        "-7",
+        "-5"
+      ],
+      "C": [
+        "2",
+        "-3"
+      ],
+      "incircle_radius_exact": "sqrt(-sqrt(29) + sqrt(85)/2 + sqrt(313)/2)*sqrt(-sqrt(313)/2 + sqrt(85)/2 + sqrt(29))*sqrt(-sqrt(85)/2 + sqrt(29) + sqrt(313)/2)/sqrt(sqrt(85)/2 + sqrt(29) + sqrt(313)/2)",
+      "incircle_radius_approx": 2.176123777286009,
+      "source_dataset": "advanced_geometry",
+      "source_index": 2,
+      "task_type": "incircle_radius",
+      "difficulty": {
+        "min_coord": -10,
+        "max_coord": 10
+      }
+    }
+  },
+  {
+    "question": "Consider triangle ABC with coordinates A=(3, 5), B=(-2, -8), and C=(-1, 0). Compute the radius of its incircle. For all geometry problems:\n1. Give coordinates in the form (x, y)\n2. Round decimal answers to 3 decimal places\n3. Use the degree symbol ° for angles\n4. Return only the angle, coordinates, or radius as your answer.\n",
+    "answer": "0.951",
+    "metadata": {
+      "A": [
+        "3",
+        "5"
+      ],
+      "B": [
+        "-2",
+        "-8"
+      ],
+      "C": [
+        "-1",
+        "0"
+      ],
+      "incircle_radius_exact": "sqrt(-sqrt(194)/2 + sqrt(41)/2 + sqrt(65)/2)*sqrt(-sqrt(41)/2 + sqrt(65)/2 + sqrt(194)/2)*sqrt(-sqrt(65)/2 + sqrt(41)/2 + sqrt(194)/2)/sqrt(sqrt(41)/2 + sqrt(65)/2 + sqrt(194)/2)",
+      "incircle_radius_approx": 0.9509128146769613,
+      "source_dataset": "advanced_geometry",
+      "source_index": 3,
+      "task_type": "incircle_radius",
+      "difficulty": {
+        "min_coord": -10,
+        "max_coord": 10
+      }
+    }
+  },
+  {
+    "question": "Given triangle ABC with coordinates A=(2, -9), B=(8, 8), and C=(-3, 10), find the coordinates of its orthocenter. For all geometry problems:\n1. Give coordinates in the form (x, y)\n2. Round decimal answers to 3 decimal places\n3. Use the degree symbol ° for angles\n4. Return only the angle, coordinates, or radius as your answer.\n",
+    "answer": "(4.945, 7.196)",
+    "metadata": {
+      "A": [
+        "2",
+        "-9"
+      ],
+      "B": [
+        "8",
+        "8"
+      ],
+      "C": [
+        "-3",
+        "10"
+      ],
+      "ortho": [
+        "984/199",
+        "1432/199"
+      ],
+      "orthocenter_approx": [
+        4.944723618090452,
+        7.1959798994974875
+      ],
+      "source_dataset": "advanced_geometry",
+      "source_index": 4,
+      "task_type": "orthocenter",
+      "difficulty": {
+        "min_coord": -10,
+        "max_coord": 10
+      }
+    }
+  },
+  {
+    "question": "Find the incircle radius of triangle ABC whose vertices are A=(-8, 3), B=(7, 4), and C=(8, 0). For all geometry problems:\n1. Give coordinates in the form (x, y)\n2. Round decimal answers to 3 decimal places\n3. Use the degree symbol ° for angles\n4. Return only the angle, coordinates, or radius as your answer.\n",
+    "answer": "1.721",
+    "metadata": {
+      "A": [
+        "-8",
+        "3"
+      ],
+      "B": [
+        "7",
+        "4"
+      ],
+      "C": [
+        "8",
+        "0"
+      ],
+      "incircle_radius_exact": "sqrt(-sqrt(17)/2 + sqrt(226)/2 + sqrt(265)/2)*sqrt(-sqrt(226)/2 + sqrt(17)/2 + sqrt(265)/2)*sqrt(-sqrt(265)/2 + sqrt(17)/2 + sqrt(226)/2)/sqrt(sqrt(17)/2 + sqrt(226)/2 + sqrt(265)/2)",
+      "incircle_radius_approx": 1.7214510174925386,
+      "source_dataset": "advanced_geometry",
+      "source_index": 5,
+      "task_type": "incircle_radius",
+      "difficulty": {
+        "min_coord": -10,
+        "max_coord": 10
+      }
+    }
+  },
+  {
+    "question": "In triangle ABC with coordinates A=(0, -6), B=(7, 7), and C=(-1, 6), find the measure (in degrees) of angle ABC. For all geometry problems:\n1. Give coordinates in the form (x, y)\n2. Round decimal answers to 3 decimal places\n3. Use the degree symbol ° for angles\n4. Return only the angle, coordinates, or radius as your answer.\n",
+    "answer": "54.57°",
+    "metadata": {
+      "A": [
+        "0",
+        "-6"
+      ],
+      "B": [
+        "7",
+        "7"
+      ],
+      "C": [
+        "-1",
+        "6"
+      ],
+      "angle_ABC_degrees": 54.57422788509182,
+      "source_dataset": "advanced_geometry",
+      "source_index": 6,
+      "task_type": "angle_measure",
+      "difficulty": {
+        "min_coord": -10,
+        "max_coord": 10
+      }
+    }
+  },
+  {
+    "question": "Given triangle ABC with coordinates A=(1, 3), B=(-7, 0), and C=(7, 6), find the coordinates of its orthocenter. For all geometry problems:\n1. Give coordinates in the form (x, y)\n2. Round decimal answers to 3 decimal places\n3. Use the degree symbol ° for angles\n4. Return only the angle, coordinates, or radius as your answer.\n",
+    "answer": "(58.000, -130.000)",
+    "metadata": {
+      "A": [
+        "1",
+        "3"
+      ],
+      "B": [
+        "-7",
+        "0"
+      ],
+      "C": [
+        "7",
+        "6"
+      ],
+      "ortho": [
+        "58",
+        "-130"
+      ],
+      "orthocenter_approx": [
+        58.0,
+        -130.0
+      ],
+      "source_dataset": "advanced_geometry",
+      "source_index": 7,
+      "task_type": "orthocenter",
+      "difficulty": {
+        "min_coord": -10,
+        "max_coord": 10
+      }
+    }
+  },
+  {
+    "question": "Consider triangle ABC with coordinates A=(-2, 1), B=(10, -3), and C=(5, 0). Compute the radius of its incircle. For all geometry problems:\n1. Give coordinates in the form (x, y)\n2. Round decimal answers to 3 decimal places\n3. Use the degree symbol ° for angles\n4. Return only the angle, coordinates, or radius as your answer.\n",
+    "answer": "0.626",
+    "metadata": {
+      "A": [
+        "-2",
+        "1"
+      ],
+      "B": [
+        "10",
+        "-3"
+      ],
+      "C": [
+        "5",
+        "0"
+      ],
+      "incircle_radius_exact": "sqrt(-2*sqrt(10) + sqrt(34)/2 + 5*sqrt(2)/2)*sqrt(-5*sqrt(2)/2 + sqrt(34)/2 + 2*sqrt(10))*sqrt(-sqrt(34)/2 + 5*sqrt(2)/2 + 2*sqrt(10))/sqrt(sqrt(34)/2 + 5*sqrt(2)/2 + 2*sqrt(10))",
+      "incircle_radius_approx": 0.626195388715472,
+      "source_dataset": "advanced_geometry",
+      "source_index": 8,
+      "task_type": "incircle_radius",
+      "difficulty": {
+        "min_coord": -10,
+        "max_coord": 10
+      }
+    }
+  },
+  {
+    "question": "For triangle with vertices A=(6, 7), B=(-5, -3), and C=(-3, 7), determine the orthocenter (intersection of altitudes). For all geometry problems:\n1. Give coordinates in the form (x, y)\n2. Round decimal answers to 3 decimal places\n3. Use the degree symbol ° for angles\n4. Return only the angle, coordinates, or radius as your answer.\n",
+    "answer": "(-5.000, 9.200)",
+    "metadata": {
+      "A": [
+        "6",
+        "7"
+      ],
+      "B": [
+        "-5",
+        "-3"
+      ],
+      "C": [
+        "-3",
+        "7"
+      ],
+      "ortho": [
+        "-5",
+        "46/5"
+      ],
+      "orthocenter_approx": [
+        -5.0,
+        9.2
+      ],
+      "source_dataset": "advanced_geometry",
+      "source_index": 9,
+      "task_type": "orthocenter",
+      "difficulty": {
+        "min_coord": -10,
+        "max_coord": 10
+      }
+    }
+  },
+  {
+    "question": "Consider triangle ABC with coordinates A=(-9, 6), B=(5, 1), and C=(3, -9). Compute the radius of its incircle. For all geometry problems:\n1. Give coordinates in the form (x, y)\n2. Round decimal answers to 3 decimal places\n3. Use the degree symbol ° for angles\n4. Return only the angle, coordinates, or radius as your answer.\n",
+    "answer": "3.388",
+    "metadata": {
+      "A": [
+        "-9",
+        "6"
+      ],
+      "B": [
+        "5",
+        "1"
+      ],
+      "C": [
+        "3",
+        "-9"
+      ],
+      "incircle_radius_exact": "sqrt(-sqrt(221)/2 + sqrt(26) + 3*sqrt(41)/2)*sqrt(-sqrt(26) + sqrt(221)/2 + 3*sqrt(41)/2)*sqrt(-3*sqrt(41)/2 + sqrt(26) + sqrt(221)/2)/sqrt(sqrt(26) + sqrt(221)/2 + 3*sqrt(41)/2)",
+      "incircle_radius_approx": 3.388032708309733,
+      "source_dataset": "advanced_geometry",
+      "source_index": 10,
+      "task_type": "incircle_radius",
+      "difficulty": {
+        "min_coord": -10,
+        "max_coord": 10
+      }
+    }
+  },
+  {
+    "question": "Given a triangle with vertices A=(-4, 4), B=(6, 5), and C=(6, 1), determine the angle at B in degrees. For all geometry problems:\n1. Give coordinates in the form (x, y)\n2. Round decimal answers to 3 decimal places\n3. Use the degree symbol ° for angles\n4. Return only the angle, coordinates, or radius as your answer.\n",
+    "answer": "84.29°",
+    "metadata": {
+      "A": [
+        "-4",
+        "4"
+      ],
+      "B": [
+        "6",
+        "5"
+      ],
+      "C": [
+        "6",
+        "1"
+      ],
+      "angle_ABC_degrees": 84.28940686250036,
+      "source_dataset": "advanced_geometry",
+      "source_index": 11,
+      "task_type": "angle_measure",
+      "difficulty": {
+        "min_coord": -10,
+        "max_coord": 10
+      }
+    }
+  },
+  {
+    "question": "Given triangle ABC with coordinates A=(4, 7), B=(-1, 5), and C=(5, 2), find the coordinates of its orthocenter. For all geometry problems:\n1. Give coordinates in the form (x, y)\n2. Round decimal answers to 3 decimal places\n3. Use the degree symbol ° for angles\n4. Return only the angle, coordinates, or radius as your answer.\n",
+    "answer": "(3.444, 5.889)",
+    "metadata": {
+      "A": [
+        "4",
+        "7"
+      ],
+      "B": [
+        "-1",
+        "5"
+      ],
+      "C": [
+        "5",
+        "2"
+      ],
+      "ortho": [
+        "31/9",
+        "53/9"
+      ],
+      "orthocenter_approx": [
+        3.4444444444444446,
+        5.888888888888889
+      ],
+      "source_dataset": "advanced_geometry",
+      "source_index": 12,
+      "task_type": "orthocenter",
+      "difficulty": {
+        "min_coord": -10,
+        "max_coord": 10
+      }
+    }
+  },
+  {
+    "question": "Given triangle ABC with coordinates A=(-4, -6), B=(-1, -8), and C=(-5, -1), find the coordinates of its orthocenter. For all geometry problems:\n1. Give coordinates in the form (x, y)\n2. Round decimal answers to 3 decimal places\n3. Use the degree symbol ° for angles\n4. Return only the angle, coordinates, or radius as your answer.\n",
+    "answer": "(-11.000, -10.000)",
+    "metadata": {
+      "A": [
+        "-4",
+        "-6"
+      ],
+      "B": [
+        "-1",
+        "-8"
+      ],
+      "C": [
+        "-5",
+        "-1"
+      ],
+      "ortho": [
+        "-11",
+        "-10"
+      ],
+      "orthocenter_approx": [
+        -11.0,
+        -10.0
+      ],
+      "source_dataset": "advanced_geometry",
+      "source_index": 13,
+      "task_type": "orthocenter",
+      "difficulty": {
+        "min_coord": -10,
+        "max_coord": 10
+      }
+    }
+  },
+  {
+    "question": "Given a triangle with vertices A=(-10, 5), B=(10, 6), and C=(-1, 7), determine the angle at B in degrees. For all geometry problems:\n1. Give coordinates in the form (x, y)\n2. Round decimal answers to 3 decimal places\n3. Use the degree symbol ° for angles\n4. Return only the angle, coordinates, or radius as your answer.\n",
+    "answer": "8.06°",
+    "metadata": {
+      "A": [
+        "-10",
+        "5"
+      ],
+      "B": [
+        "10",
+        "6"
+      ],
+      "C": [
+        "-1",
+        "7"
+      ],
+      "angle_ABC_degrees": 8.056834133846554,
+      "source_dataset": "advanced_geometry",
+      "source_index": 14,
+      "task_type": "angle_measure",
+      "difficulty": {
+        "min_coord": -10,
+        "max_coord": 10
+      }
+    }
+  },
+  {
+    "question": "For triangle with vertices A=(1, 8), B=(9, -10), and C=(-3, 6), determine the orthocenter (intersection of altitudes). For all geometry problems:\n1. Give coordinates in the form (x, y)\n2. Round decimal answers to 3 decimal places\n3. Use the degree symbol ° for angles\n4. Return only the angle, coordinates, or radius as your answer.\n",
+    "answer": "(0.273, 7.455)",
+    "metadata": {
+      "A": [
+        "1",
+        "8"
+      ],
+      "B": [
+        "9",
+        "-10"
+      ],
+      "C": [
+        "-3",
+        "6"
+      ],
+      "ortho": [
+        "3/11",
+        "82/11"
+      ],
+      "orthocenter_approx": [
+        0.2727272727272727,
+        7.454545454545454
+      ],
+      "source_dataset": "advanced_geometry",
+      "source_index": 15,
+      "task_type": "orthocenter",
+      "difficulty": {
+        "min_coord": -10,
+        "max_coord": 10
+      }
+    }
+  },
+  {
+    "question": "Given a triangle with vertices A=(4, 2), B=(1, -1), and C=(-2, 4), determine the angle at B in degrees. For all geometry problems:\n1. Give coordinates in the form (x, y)\n2. Round decimal answers to 3 decimal places\n3. Use the degree symbol ° for angles\n4. Return only the angle, coordinates, or radius as your answer.\n",
+    "answer": "75.96°",
+    "metadata": {
+      "A": [
+        "4",
+        "2"
+      ],
+      "B": [
+        "1",
+        "-1"
+      ],
+      "C": [
+        "-2",
+        "4"
+      ],
+      "angle_ABC_degrees": 75.96375653207353,
+      "source_dataset": "advanced_geometry",
+      "source_index": 16,
+      "task_type": "angle_measure",
+      "difficulty": {
+        "min_coord": -10,
+        "max_coord": 10
+      }
+    }
+  },
+  {
+    "question": "Given triangle ABC with coordinates A=(-8, 10), B=(4, -10), and C=(-6, -1), find the coordinates of its orthocenter. For all geometry problems:\n1. Give coordinates in the form (x, y)\n2. Round decimal answers to 3 decimal places\n3. Use the degree symbol ° for angles\n4. Return only the angle, coordinates, or radius as your answer.\n",
+    "answer": "(-31.870, -16.522)",
+    "metadata": {
+      "A": [
+        "-8",
+        "10"
+      ],
+      "B": [
+        "4",
+        "-10"
+      ],
+      "C": [
+        "-6",
+        "-1"
+      ],
+      "ortho": [
+        "-733/23",
+        "-380/23"
+      ],
+      "orthocenter_approx": [
+        -31.869565217391305,
+        -16.52173913043478
+      ],
+      "source_dataset": "advanced_geometry",
+      "source_index": 17,
+      "task_type": "orthocenter",
+      "difficulty": {
+        "min_coord": -10,
+        "max_coord": 10
+      }
+    }
+  },
+  {
+    "question": "Find the incircle radius of triangle ABC whose vertices are A=(-1, 8), B=(-6, -2), and C=(-3, 5). For all geometry problems:\n1. Give coordinates in the form (x, y)\n2. Round decimal answers to 3 decimal places\n3. Use the degree symbol ° for angles\n4. Return only the angle, coordinates, or radius as your answer.\n",
+    "answer": "0.223",
+    "metadata": {
+      "A": [
+        "-1",
+        "8"
+      ],
+      "B": [
+        "-6",
+        "-2"
+      ],
+      "C": [
+        "-3",
+        "5"
+      ],
+      "incircle_radius_exact": "sqrt(-sqrt(13)/2 + sqrt(58)/2 + 5*sqrt(5)/2)*sqrt(-5*sqrt(5)/2 + sqrt(13)/2 + sqrt(58)/2)*sqrt(-sqrt(58)/2 + sqrt(13)/2 + 5*sqrt(5)/2)/sqrt(sqrt(13)/2 + sqrt(58)/2 + 5*sqrt(5)/2)",
+      "incircle_radius_approx": 0.22319770263487862,
+      "source_dataset": "advanced_geometry",
+      "source_index": 18,
+      "task_type": "incircle_radius",
+      "difficulty": {
+        "min_coord": -10,
+        "max_coord": 10
+      }
+    }
+  },
+  {
+    "question": "Consider triangle ABC with coordinates A=(-5, 7), B=(-4, 0), and C=(-1, 0). Compute the radius of its incircle. For all geometry problems:\n1. Give coordinates in the form (x, y)\n2. Round decimal answers to 3 decimal places\n3. Use the degree symbol ° for angles\n4. Return only the angle, coordinates, or radius as your answer.\n",
+    "answer": "1.158",
+    "metadata": {
+      "A": [
+        "-5",
+        "7"
+      ],
+      "B": [
+        "-4",
+        "0"
+      ],
+      "C": [
+        "-1",
+        "0"
+      ],
+      "incircle_radius_exact": "sqrt(-3/2 + 5*sqrt(2)/2 + sqrt(65)/2)*sqrt(-5*sqrt(2)/2 + 3/2 + sqrt(65)/2)*sqrt(-sqrt(65)/2 + 3/2 + 5*sqrt(2)/2)/sqrt(3/2 + 5*sqrt(2)/2 + sqrt(65)/2)",
+      "incircle_radius_approx": 1.1580887317290323,
+      "source_dataset": "advanced_geometry",
+      "source_index": 19,
+      "task_type": "incircle_radius",
+      "difficulty": {
+        "min_coord": -10,
+        "max_coord": 10
+      }
+    }
+  },
+  {
+    "question": "In triangle ABC with coordinates A=(-5, -8), B=(-3, 4), and C=(-1, 1), find the measure (in degrees) of angle ABC. For all geometry problems:\n1. Give coordinates in the form (x, y)\n2. Round decimal answers to 3 decimal places\n3. Use the degree symbol ° for angles\n4. Return only the angle, coordinates, or radius as your answer.\n",
+    "answer": "43.15°",
+    "metadata": {
+      "A": [
+        "-5",
+        "-8"
+      ],
+      "B": [
+        "-3",
+        "4"
+      ],
+      "C": [
+        "-1",
+        "1"
+      ],
+      "angle_ABC_degrees": 43.1523897340054,
+      "source_dataset": "advanced_geometry",
+      "source_index": 20,
+      "task_type": "angle_measure",
+      "difficulty": {
+        "min_coord": -10,
+        "max_coord": 10
+      }
+    }
+  },
+  {
+    "question": "Consider triangle ABC with coordinates A=(4, -1), B=(-2, 5), and C=(-8, 2). Compute the radius of its incircle. For all geometry problems:\n1. Give coordinates in the form (x, y)\n2. Round decimal answers to 3 decimal places\n3. Use the degree symbol ° for angles\n4. Return only the angle, coordinates, or radius as your answer.\n",
+    "answer": "1.959",
+    "metadata": {
+      "A": [
+        "4",
+        "-1"
+      ],
+      "B": [
+        "-2",
+        "5"
+      ],
+      "C": [
+        "-8",
+        "2"
+      ],
+      "incircle_radius_exact": "sqrt(-3*sqrt(17)/2 + 3*sqrt(5)/2 + 3*sqrt(2))*sqrt(-3*sqrt(2) + 3*sqrt(5)/2 + 3*sqrt(17)/2)*sqrt(-3*sqrt(5)/2 + 3*sqrt(2) + 3*sqrt(17)/2)/sqrt(3*sqrt(5)/2 + 3*sqrt(2) + 3*sqrt(17)/2)",
+      "incircle_radius_approx": 1.959162194043828,
+      "source_dataset": "advanced_geometry",
+      "source_index": 21,
+      "task_type": "incircle_radius",
+      "difficulty": {
+        "min_coord": -10,
+        "max_coord": 10
+      }
+    }
+  },
+  {
+    "question": "Consider triangle ABC with coordinates A=(-7, 10), B=(9, 2), and C=(7, -10). Compute the radius of its incircle. For all geometry problems:\n1. Give coordinates in the form (x, y)\n2. Round decimal answers to 3 decimal places\n3. Use the degree symbol ° for angles\n4. Return only the angle, coordinates, or radius as your answer.\n",
+    "answer": "3.819",
+    "metadata": {
+      "A": [
+        "-7",
+        "10"
+      ],
+      "B": [
+        "9",
+        "2"
+      ],
+      "C": [
+        "7",
+        "-10"
+      ],
+      "incircle_radius_exact": "sqrt(-sqrt(149) + sqrt(37) + 4*sqrt(5))*sqrt(-sqrt(37) + 4*sqrt(5) + sqrt(149))*sqrt(-4*sqrt(5) + sqrt(37) + sqrt(149))/sqrt(sqrt(37) + 4*sqrt(5) + sqrt(149))",
+      "incircle_radius_approx": 3.818813450082334,
+      "source_dataset": "advanced_geometry",
+      "source_index": 22,
+      "task_type": "incircle_radius",
+      "difficulty": {
+        "min_coord": -10,
+        "max_coord": 10
+      }
+    }
+  },
+  {
+    "question": "Find the incircle radius of triangle ABC whose vertices are A=(-1, -1), B=(6, -3), and C=(4, 4). For all geometry problems:\n1. Give coordinates in the form (x, y)\n2. Round decimal answers to 3 decimal places\n3. Use the degree symbol ° for angles\n4. Return only the angle, coordinates, or radius as your answer.\n",
+    "answer": "2.080",
+    "metadata": {
+      "A": [
+        "-1",
+        "-1"
+      ],
+      "B": [
+        "6",
+        "-3"
+      ],
+      "C": [
+        "4",
+        "4"
+      ],
+      "incircle_radius_exact": "5*sqrt(2)*sqrt(-5*sqrt(2)/2 + sqrt(53))/(2*sqrt(5*sqrt(2)/2 + sqrt(53)))",
+      "incircle_radius_approx": 2.080319990748767,
+      "source_dataset": "advanced_geometry",
+      "source_index": 23,
+      "task_type": "incircle_radius",
+      "difficulty": {
+        "min_coord": -10,
+        "max_coord": 10
+      }
+    }
+  },
+  {
+    "question": "Given triangle ABC with coordinates A=(-1, 3), B=(-3, 4), and C=(-1, -2), find the coordinates of its orthocenter. For all geometry problems:\n1. Give coordinates in the form (x, y)\n2. Round decimal answers to 3 decimal places\n3. Use the degree symbol ° for angles\n4. Return only the angle, coordinates, or radius as your answer.\n",
+    "answer": "(2.000, 4.000)",
+    "metadata": {
+      "A": [
+        "-1",
+        "3"
+      ],
+      "B": [
+        "-3",
+        "4"
+      ],
+      "C": [
+        "-1",
+        "-2"
+      ],
+      "ortho": [
+        "2",
+        "4"
+      ],
+      "orthocenter_approx": [
+        2.0,
+        4.0
+      ],
+      "source_dataset": "advanced_geometry",
+      "source_index": 24,
+      "task_type": "orthocenter",
+      "difficulty": {
+        "min_coord": -10,
+        "max_coord": 10
+      }
+    }
+  },
+  {
+    "question": "For triangle with vertices A=(-7, 3), B=(4, 3), and C=(-2, 9), determine the orthocenter (intersection of altitudes). For all geometry problems:\n1. Give coordinates in the form (x, y)\n2. Round decimal answers to 3 decimal places\n3. Use the degree symbol ° for angles\n4. Return only the angle, coordinates, or radius as your answer.\n",
+    "answer": "(-2.000, 8.000)",
+    "metadata": {
+      "A": [
+        "-7",
+        "3"
+      ],
+      "B": [
+        "4",
+        "3"
+      ],
+      "C": [
+        "-2",
+        "9"
+      ],
+      "ortho": [
+        "-2",
+        "8"
+      ],
+      "orthocenter_approx": [
+        -2.0,
+        8.0
+      ],
+      "source_dataset": "advanced_geometry",
+      "source_index": 25,
+      "task_type": "orthocenter",
+      "difficulty": {
+        "min_coord": -10,
+        "max_coord": 10
+      }
+    }
+  },
+  {
+    "question": "Given a triangle with vertices A=(4, 6), B=(-7, 9), and C=(8, -3), determine the angle at B in degrees. For all geometry problems:\n1. Give coordinates in the form (x, y)\n2. Round decimal answers to 3 decimal places\n3. Use the degree symbol ° for angles\n4. Return only the angle, coordinates, or radius as your answer.\n",
+    "answer": "23.40°",
+    "metadata": {
+      "A": [
+        "4",
+        "6"
+      ],
+      "B": [
+        "-7",
+        "9"
+      ],
+      "C": [
+        "8",
+        "-3"
+      ],
+      "angle_ABC_degrees": 23.404689551032316,
+      "source_dataset": "advanced_geometry",
+      "source_index": 26,
+      "task_type": "angle_measure",
+      "difficulty": {
+        "min_coord": -10,
+        "max_coord": 10
+      }
+    }
+  },
+  {
+    "question": "Given a triangle with vertices A=(-9, -7), B=(-5, -8), and C=(9, 1), determine the angle at B in degrees. For all geometry problems:\n1. Give coordinates in the form (x, y)\n2. Round decimal answers to 3 decimal places\n3. Use the degree symbol ° for angles\n4. Return only the angle, coordinates, or radius as your answer.\n",
+    "answer": "133.23°",
+    "metadata": {
+      "A": [
+        "-9",
+        "-7"
+      ],
+      "B": [
+        "-5",
+        "-8"
+      ],
+      "C": [
+        "9",
+        "1"
+      ],
+      "angle_ABC_degrees": 133.2285302599659,
+      "source_dataset": "advanced_geometry",
+      "source_index": 27,
+      "task_type": "angle_measure",
+      "difficulty": {
+        "min_coord": -10,
+        "max_coord": 10
+      }
+    }
+  },
+  {
+    "question": "Given triangle ABC with coordinates A=(-1, 4), B=(4, -6), and C=(0, -7), find the coordinates of its orthocenter. For all geometry problems:\n1. Give coordinates in the form (x, y)\n2. Round decimal answers to 3 decimal places\n3. Use the degree symbol ° for angles\n4. Return only the angle, coordinates, or radius as your answer.\n",
+    "answer": "(1.556, -6.222)",
+    "metadata": {
+      "A": [
+        "-1",
+        "4"
+      ],
+      "B": [
+        "4",
+        "-6"
+      ],
+      "C": [
+        "0",
+        "-7"
+      ],
+      "ortho": [
+        "14/9",
+        "-56/9"
+      ],
+      "orthocenter_approx": [
+        1.5555555555555556,
+        -6.222222222222222
+      ],
+      "source_dataset": "advanced_geometry",
+      "source_index": 28,
+      "task_type": "orthocenter",
+      "difficulty": {
+        "min_coord": -10,
+        "max_coord": 10
+      }
+    }
+  },
+  {
+    "question": "Find the incircle radius of triangle ABC whose vertices are A=(6, 9), B=(-10, -2), and C=(-6, -4). For all geometry problems:\n1. Give coordinates in the form (x, y)\n2. Round decimal answers to 3 decimal places\n3. Use the degree symbol ° for angles\n4. Return only the angle, coordinates, or radius as your answer.\n",
+    "answer": "1.828",
+    "metadata": {
+      "A": [
+        "6",
+        "9"
+      ],
+      "B": [
+        "-10",
+        "-2"
+      ],
+      "C": [
+        "-6",
+        "-4"
+      ],
+      "incircle_radius_exact": "sqrt(-sqrt(313)/2 + sqrt(5) + sqrt(377)/2)*sqrt(-sqrt(377)/2 + sqrt(5) + sqrt(313)/2)*sqrt(-sqrt(5) + sqrt(313)/2 + sqrt(377)/2)/sqrt(sqrt(5) + sqrt(313)/2 + sqrt(377)/2)",
+      "incircle_radius_approx": 1.8277829342539866,
+      "source_dataset": "advanced_geometry",
+      "source_index": 29,
+      "task_type": "incircle_radius",
+      "difficulty": {
+        "min_coord": -10,
+        "max_coord": 10
+      }
+    }
+  },
+  {
+    "question": "For triangle with vertices A=(9, -5), B=(1, 7), and C=(9, 1), determine the orthocenter (intersection of altitudes). For all geometry problems:\n1. Give coordinates in the form (x, y)\n2. Round decimal answers to 3 decimal places\n3. Use the degree symbol ° for angles\n4. Return only the angle, coordinates, or radius as your answer.\n",
+    "answer": "(18.000, 7.000)",
+    "metadata": {
+      "A": [
+        "9",
+        "-5"
+      ],
+      "B": [
+        "1",
+        "7"
+      ],
+      "C": [
+        "9",
+        "1"
+      ],
+      "ortho": [
+        "18",
+        "7"
+      ],
+      "orthocenter_approx": [
+        18.0,
+        7.0
+      ],
+      "source_dataset": "advanced_geometry",
+      "source_index": 30,
+      "task_type": "orthocenter",
+      "difficulty": {
+        "min_coord": -10,
+        "max_coord": 10
+      }
+    }
+  },
+  {
+    "question": "Find the incircle radius of triangle ABC whose vertices are A=(-7, 6), B=(5, 8), and C=(-5, 4). For all geometry problems:\n1. Give coordinates in the form (x, y)\n2. Round decimal answers to 3 decimal places\n3. Use the degree symbol ° for angles\n4. Return only the angle, coordinates, or radius as your answer.\n",
+    "answer": "1.087",
+    "metadata": {
+      "A": [
+        "-7",
+        "6"
+      ],
+      "B": [
+        "5",
+        "8"
+      ],
+      "C": [
+        "-5",
+        "4"
+      ],
+      "incircle_radius_exact": "sqrt(-sqrt(2) + sqrt(29) + sqrt(37))*sqrt(-sqrt(29) + sqrt(2) + sqrt(37))*sqrt(-sqrt(37) + sqrt(2) + sqrt(29))/sqrt(sqrt(2) + sqrt(29) + sqrt(37))",
+      "incircle_radius_approx": 1.0867758790164321,
+      "source_dataset": "advanced_geometry",
+      "source_index": 31,
+      "task_type": "incircle_radius",
+      "difficulty": {
+        "min_coord": -10,
+        "max_coord": 10
+      }
+    }
+  },
+  {
+    "question": "In triangle ABC with coordinates A=(6, -7), B=(0, -7), and C=(-1, -5), find the measure (in degrees) of angle ABC. For all geometry problems:\n1. Give coordinates in the form (x, y)\n2. Round decimal answers to 3 decimal places\n3. Use the degree symbol ° for angles\n4. Return only the angle, coordinates, or radius as your answer.\n",
+    "answer": "116.57°",
+    "metadata": {
+      "A": [
+        "6",
+        "-7"
+      ],
+      "B": [
+        "0",
+        "-7"
+      ],
+      "C": [
+        "-1",
+        "-5"
+      ],
+      "angle_ABC_degrees": 116.56505117707799,
+      "source_dataset": "advanced_geometry",
+      "source_index": 32,
+      "task_type": "angle_measure",
+      "difficulty": {
+        "min_coord": -10,
+        "max_coord": 10
+      }
+    }
+  },
+  {
+    "question": "Find the incircle radius of triangle ABC whose vertices are A=(8, 3), B=(4, -9), and C=(6, 5). For all geometry problems:\n1. Give coordinates in the form (x, y)\n2. Round decimal answers to 3 decimal places\n3. Use the degree symbol ° for angles\n4. Return only the angle, coordinates, or radius as your answer.\n",
+    "answer": "1.080",
+    "metadata": {
+      "A": [
+        "8",
+        "3"
+      ],
+      "B": [
+        "4",
+        "-9"
+      ],
+      "C": [
+        "6",
+        "5"
+      ],
+      "incircle_radius_exact": "sqrt(-2*sqrt(10) + 6*sqrt(2))*sqrt(-4*sqrt(2) + 2*sqrt(10))*sqrt(4*sqrt(2) + 2*sqrt(10))/sqrt(2*sqrt(10) + 6*sqrt(2))",
+      "incircle_radius_approx": 1.080363026950906,
+      "source_dataset": "advanced_geometry",
+      "source_index": 33,
+      "task_type": "incircle_radius",
+      "difficulty": {
+        "min_coord": -10,
+        "max_coord": 10
+      }
+    }
+  },
+  {
+    "question": "Consider triangle ABC with coordinates A=(4, 2), B=(-4, -1), and C=(-9, 3). Compute the radius of its incircle. For all geometry problems:\n1. Give coordinates in the form (x, y)\n2. Round decimal answers to 3 decimal places\n3. Use the degree symbol ° for angles\n4. Return only the angle, coordinates, or radius as your answer.\n",
+    "answer": "1.679",
+    "metadata": {
+      "A": [
+        "4",
+        "2"
+      ],
+      "B": [
+        "-4",
+        "-1"
+      ],
+      "C": [
+        "-9",
+        "3"
+      ],
+      "incircle_radius_exact": "sqrt(-sqrt(170)/2 + sqrt(41)/2 + sqrt(73)/2)*sqrt(-sqrt(41)/2 + sqrt(73)/2 + sqrt(170)/2)*sqrt(-sqrt(73)/2 + sqrt(41)/2 + sqrt(170)/2)/sqrt(sqrt(41)/2 + sqrt(73)/2 + sqrt(170)/2)",
+      "incircle_radius_approx": 1.6794391712097267,
+      "source_dataset": "advanced_geometry",
+      "source_index": 34,
+      "task_type": "incircle_radius",
+      "difficulty": {
+        "min_coord": -10,
+        "max_coord": 10
+      }
+    }
+  },
+  {
+    "question": "Find the incircle radius of triangle ABC whose vertices are A=(0, -4), B=(-3, -4), and C=(-7, -1). For all geometry problems:\n1. Give coordinates in the form (x, y)\n2. Round decimal answers to 3 decimal places\n3. Use the degree symbol ° for angles\n4. Return only the angle, coordinates, or radius as your answer.\n",
+    "answer": "0.576",
+    "metadata": {
+      "A": [
+        "0",
+        "-4"
+      ],
+      "B": [
+        "-3",
+        "-4"
+      ],
+      "C": [
+        "-7",
+        "-1"
+      ],
+      "incircle_radius_exact": "sqrt(-1 + sqrt(58)/2)*sqrt(1 + sqrt(58)/2)*sqrt(4 - sqrt(58)/2)/sqrt(sqrt(58)/2 + 4)",
+      "incircle_radius_approx": 0.5763403412041376,
+      "source_dataset": "advanced_geometry",
+      "source_index": 35,
+      "task_type": "incircle_radius",
+      "difficulty": {
+        "min_coord": -10,
+        "max_coord": 10
+      }
+    }
+  },
+  {
+    "question": "Given triangle ABC with coordinates A=(-7, -1), B=(-2, 3), and C=(-9, 10), find the coordinates of its orthocenter. For all geometry problems:\n1. Give coordinates in the form (x, y)\n2. Round decimal answers to 3 decimal places\n3. Use the degree symbol ° for angles\n4. Return only the angle, coordinates, or radius as your answer.\n",
+    "answer": "(-3.222, 2.778)",
+    "metadata": {
+      "A": [
+        "-7",
+        "-1"
+      ],
+      "B": [
+        "-2",
+        "3"
+      ],
+      "C": [
+        "-9",
+        "10"
+      ],
+      "ortho": [
+        "-29/9",
+        "25/9"
+      ],
+      "orthocenter_approx": [
+        -3.2222222222222223,
+        2.7777777777777777
+      ],
+      "source_dataset": "advanced_geometry",
+      "source_index": 36,
+      "task_type": "orthocenter",
+      "difficulty": {
+        "min_coord": -10,
+        "max_coord": 10
+      }
+    }
+  },
+  {
+    "question": "For triangle with vertices A=(4, 1), B=(9, -5), and C=(-3, -3), determine the orthocenter (intersection of altitudes). For all geometry problems:\n1. Give coordinates in the form (x, y)\n2. Round decimal answers to 3 decimal places\n3. Use the degree symbol ° for angles\n4. Return only the angle, coordinates, or radius as your answer.\n",
+    "answer": "(4.355, 3.129)",
+    "metadata": {
+      "A": [
+        "4",
+        "1"
+      ],
+      "B": [
+        "9",
+        "-5"
+      ],
+      "C": [
+        "-3",
+        "-3"
+      ],
+      "ortho": [
+        "135/31",
+        "97/31"
+      ],
+      "orthocenter_approx": [
+        4.354838709677419,
+        3.129032258064516
+      ],
+      "source_dataset": "advanced_geometry",
+      "source_index": 37,
+      "task_type": "orthocenter",
+      "difficulty": {
+        "min_coord": -10,
+        "max_coord": 10
+      }
+    }
+  },
+  {
+    "question": "Find the incircle radius of triangle ABC whose vertices are A=(2, 7), B=(3, 1), and C=(1, 7). For all geometry problems:\n1. Give coordinates in the form (x, y)\n2. Round decimal answers to 3 decimal places\n3. Use the degree symbol ° for angles\n4. Return only the angle, coordinates, or radius as your answer.\n",
+    "answer": "0.448",
+    "metadata": {
+      "A": [
+        "2",
+        "7"
+      ],
+      "B": [
+        "3",
+        "1"
+      ],
+      "C": [
+        "1",
+        "7"
+      ],
+      "incircle_radius_exact": "sqrt(-1/2 + sqrt(37)/2 + sqrt(10))*sqrt(-sqrt(10) + 1/2 + sqrt(37)/2)*sqrt(-sqrt(37)/2 + 1/2 + sqrt(10))/sqrt(1/2 + sqrt(37)/2 + sqrt(10))",
+      "incircle_radius_approx": 0.44751680140974925,
+      "source_dataset": "advanced_geometry",
+      "source_index": 38,
+      "task_type": "incircle_radius",
+      "difficulty": {
+        "min_coord": -10,
+        "max_coord": 10
+      }
+    }
+  },
+  {
+    "question": "In triangle ABC with coordinates A=(4, 0), B=(7, 7), and C=(2, 5), find the measure (in degrees) of angle ABC. For all geometry problems:\n1. Give coordinates in the form (x, y)\n2. Round decimal answers to 3 decimal places\n3. Use the degree symbol ° for angles\n4. Return only the angle, coordinates, or radius as your answer.\n",
+    "answer": "45.00°",
+    "metadata": {
+      "A": [
+        "4",
+        "0"
+      ],
+      "B": [
+        "7",
+        "7"
+      ],
+      "C": [
+        "2",
+        "5"
+      ],
+      "angle_ABC_degrees": 45.0,
+      "source_dataset": "advanced_geometry",
+      "source_index": 39,
+      "task_type": "angle_measure",
+      "difficulty": {
+        "min_coord": -10,
+        "max_coord": 10
+      }
+    }
+  },
+  {
+    "question": "Given triangle ABC with coordinates A=(5, 6), B=(-1, -5), and C=(-5, -2), find the coordinates of its orthocenter. For all geometry problems:\n1. Give coordinates in the form (x, y)\n2. Round decimal answers to 3 decimal places\n3. Use the degree symbol ° for angles\n4. Return only the angle, coordinates, or radius as your answer.\n",
+    "answer": "(-2.161, -3.548)",
+    "metadata": {
+      "A": [
+        "5",
+        "6"
+      ],
+      "B": [
+        "-1",
+        "-5"
+      ],
+      "C": [
+        "-5",
+        "-2"
+      ],
+      "ortho": [
+        "-67/31",
+        "-110/31"
+      ],
+      "orthocenter_approx": [
+        -2.161290322580645,
+        -3.5483870967741935
+      ],
+      "source_dataset": "advanced_geometry",
+      "source_index": 40,
+      "task_type": "orthocenter",
+      "difficulty": {
+        "min_coord": -10,
+        "max_coord": 10
+      }
+    }
+  },
+  {
+    "question": "Consider triangle ABC with coordinates A=(4, -8), B=(-6, 2), and C=(-9, -9). Compute the radius of its incircle. For all geometry problems:\n1. Give coordinates in the form (x, y)\n2. Round decimal answers to 3 decimal places\n3. Use the degree symbol ° for angles\n4. Return only the angle, coordinates, or radius as your answer.\n",
+    "answer": "3.629",
+    "metadata": {
+      "A": [
+        "4",
+        "-8"
+      ],
+      "B": [
+        "-6",
+        "2"
+      ],
+      "C": [
+        "-9",
+        "-9"
+      ],
+      "incircle_radius_exact": "sqrt(-sqrt(130)/2 + sqrt(170)/2 + 5*sqrt(2))*sqrt(-sqrt(170)/2 + sqrt(130)/2 + 5*sqrt(2))*sqrt(-5*sqrt(2) + sqrt(130)/2 + sqrt(170)/2)/sqrt(sqrt(130)/2 + sqrt(170)/2 + 5*sqrt(2))",
+      "incircle_radius_approx": 3.628607399910975,
+      "source_dataset": "advanced_geometry",
+      "source_index": 41,
+      "task_type": "incircle_radius",
+      "difficulty": {
+        "min_coord": -10,
+        "max_coord": 10
+      }
+    }
+  },
+  {
+    "question": "In triangle ABC with coordinates A=(-1, -9), B=(5, -10), and C=(6, 0), find the measure (in degrees) of angle ABC. For all geometry problems:\n1. Give coordinates in the form (x, y)\n2. Round decimal answers to 3 decimal places\n3. Use the degree symbol ° for angles\n4. Return only the angle, coordinates, or radius as your answer.\n",
+    "answer": "86.25°",
+    "metadata": {
+      "A": [
+        "-1",
+        "-9"
+      ],
+      "B": [
+        "5",
+        "-10"
+      ],
+      "C": [
+        "6",
+        "0"
+      ],
+      "angle_ABC_degrees": 86.24827092947403,
+      "source_dataset": "advanced_geometry",
+      "source_index": 42,
+      "task_type": "angle_measure",
+      "difficulty": {
+        "min_coord": -10,
+        "max_coord": 10
+      }
+    }
+  },
+  {
+    "question": "For triangle with vertices A=(9, -7), B=(0, -4), and C=(-3, 4), determine the orthocenter (intersection of altitudes). For all geometry problems:\n1. Give coordinates in the form (x, y)\n2. Round decimal answers to 3 decimal places\n3. Use the degree symbol ° for angles\n4. Return only the angle, coordinates, or radius as your answer.\n",
+    "answer": "(-8.905, -13.714)",
+    "metadata": {
+      "A": [
+        "9",
+        "-7"
+      ],
+      "B": [
+        "0",
+        "-4"
+      ],
+      "C": [
+        "-3",
+        "4"
+      ],
+      "ortho": [
+        "-187/21",
+        "-96/7"
+      ],
+      "orthocenter_approx": [
+        -8.904761904761905,
+        -13.714285714285714
+      ],
+      "source_dataset": "advanced_geometry",
+      "source_index": 43,
+      "task_type": "orthocenter",
+      "difficulty": {
+        "min_coord": -10,
+        "max_coord": 10
+      }
+    }
+  },
+  {
+    "question": "For triangle with vertices A=(7, 0), B=(-10, -8), and C=(6, 10), determine the orthocenter (intersection of altitudes). For all geometry problems:\n1. Give coordinates in the form (x, y)\n2. Round decimal answers to 3 decimal places\n3. Use the degree symbol ° for angles\n4. Return only the angle, coordinates, or radius as your answer.\n",
+    "answer": "(13.371, -5.663)",
+    "metadata": {
+      "A": [
+        "7",
+        "0"
+      ],
+      "B": [
+        "-10",
+        "-8"
+      ],
+      "C": [
+        "6",
+        "10"
+      ],
+      "ortho": [
+        "1190/89",
+        "-504/89"
+      ],
+      "orthocenter_approx": [
+        13.370786516853933,
+        -5.662921348314606
+      ],
+      "source_dataset": "advanced_geometry",
+      "source_index": 44,
+      "task_type": "orthocenter",
+      "difficulty": {
+        "min_coord": -10,
+        "max_coord": 10
+      }
+    }
+  },
+  {
+    "question": "For triangle with vertices A=(-4, 7), B=(-7, -2), and C=(0, 10), determine the orthocenter (intersection of altitudes). For all geometry problems:\n1. Give coordinates in the form (x, y)\n2. Round decimal answers to 3 decimal places\n3. Use the degree symbol ° for angles\n4. Return only the angle, coordinates, or radius as your answer.\n",
+    "answer": "(-21.333, 17.111)",
+    "metadata": {
+      "A": [
+        "-4",
+        "7"
+      ],
+      "B": [
+        "-7",
+        "-2"
+      ],
+      "C": [
+        "0",
+        "10"
+      ],
+      "ortho": [
+        "-64/3",
+        "154/9"
+      ],
+      "orthocenter_approx": [
+        -21.333333333333332,
+        17.11111111111111
+      ],
+      "source_dataset": "advanced_geometry",
+      "source_index": 45,
+      "task_type": "orthocenter",
+      "difficulty": {
+        "min_coord": -10,
+        "max_coord": 10
+      }
+    }
+  },
+  {
+    "question": "Consider triangle ABC with coordinates A=(-4, 0), B=(-5, 10), and C=(-10, 6). Compute the radius of its incircle. For all geometry problems:\n1. Give coordinates in the form (x, y)\n2. Round decimal answers to 3 decimal places\n3. Use the degree symbol ° for angles\n4. Return only the angle, coordinates, or radius as your answer.\n",
+    "answer": "2.165",
+    "metadata": {
+      "A": [
+        "-4",
+        "0"
+      ],
+      "B": [
+        "-5",
+        "10"
+      ],
+      "C": [
+        "-10",
+        "6"
+      ],
+      "incircle_radius_exact": "sqrt(-sqrt(101)/2 + sqrt(41)/2 + 3*sqrt(2))*sqrt(-3*sqrt(2) + sqrt(41)/2 + sqrt(101)/2)*sqrt(-sqrt(41)/2 + 3*sqrt(2) + sqrt(101)/2)/sqrt(sqrt(41)/2 + 3*sqrt(2) + sqrt(101)/2)",
+      "incircle_radius_approx": 2.16534569868405,
+      "source_dataset": "advanced_geometry",
+      "source_index": 46,
+      "task_type": "incircle_radius",
+      "difficulty": {
+        "min_coord": -10,
+        "max_coord": 10
+      }
+    }
+  },
+  {
+    "question": "For triangle with vertices A=(9, -2), B=(-6, 1), and C=(-8, -6), determine the orthocenter (intersection of altitudes). For all geometry problems:\n1. Give coordinates in the form (x, y)\n2. Round decimal answers to 3 decimal places\n3. Use the degree symbol ° for angles\n4. Return only the angle, coordinates, or radius as your answer.\n",
+    "answer": "(-6.324, 2.378)",
+    "metadata": {
+      "A": [
+        "9",
+        "-2"
+      ],
+      "B": [
+        "-6",
+        "1"
+      ],
+      "C": [
+        "-8",
+        "-6"
+      ],
+      "ortho": [
+        "-234/37",
+        "88/37"
+      ],
+      "orthocenter_approx": [
+        -6.324324324324325,
+        2.3783783783783785
+      ],
+      "source_dataset": "advanced_geometry",
+      "source_index": 47,
+      "task_type": "orthocenter",
+      "difficulty": {
+        "min_coord": -10,
+        "max_coord": 10
+      }
+    }
+  },
+  {
+    "question": "For triangle with vertices A=(-8, 5), B=(8, 8), and C=(-1, 10), determine the orthocenter (intersection of altitudes). For all geometry problems:\n1. Give coordinates in the form (x, y)\n2. Round decimal answers to 3 decimal places\n3. Use the degree symbol ° for angles\n4. Return only the angle, coordinates, or radius as your answer.\n",
+    "answer": "(-3.695, 24.373)",
+    "metadata": {
+      "A": [
+        "-8",
+        "5"
+      ],
+      "B": [
+        "8",
+        "8"
+      ],
+      "C": [
+        "-1",
+        "10"
+      ],
+      "ortho": [
+        "-218/59",
+        "1438/59"
+      ],
+      "orthocenter_approx": [
+        -3.694915254237288,
+        24.372881355932204
+      ],
+      "source_dataset": "advanced_geometry",
+      "source_index": 48,
+      "task_type": "orthocenter",
+      "difficulty": {
+        "min_coord": -10,
+        "max_coord": 10
+      }
+    }
+  },
+  {
+    "question": "For triangle with vertices A=(8, -5), B=(-5, 2), and C=(4, 4), determine the orthocenter (intersection of altitudes). For all geometry problems:\n1. Give coordinates in the form (x, y)\n2. Round decimal answers to 3 decimal places\n3. Use the degree symbol ° for angles\n4. Return only the angle, coordinates, or radius as your answer.\n",
+    "answer": "(5.416, 6.629)",
+    "metadata": {
+      "A": [
+        "8",
+        "-5"
+      ],
+      "B": [
+        "-5",
+        "2"
+      ],
+      "C": [
+        "4",
+        "4"
+      ],
+      "ortho": [
+        "482/89",
+        "590/89"
+      ],
+      "orthocenter_approx": [
+        5.415730337078652,
+        6.629213483146067
+      ],
+      "source_dataset": "advanced_geometry",
+      "source_index": 49,
+      "task_type": "orthocenter",
+      "difficulty": {
+        "min_coord": -10,
+        "max_coord": 10
+      }
+    }
+  },
+  {
+    "question": "Consider triangle ABC with coordinates A=(6, 8), B=(7, 7), and C=(8, -2). Compute the radius of its incircle. For all geometry problems:\n1. Give coordinates in the form (x, y)\n2. Round decimal answers to 3 decimal places\n3. Use the degree symbol ° for angles\n4. Return only the angle, coordinates, or radius as your answer.\n",
+    "answer": "0.387",
+    "metadata": {
+      "A": [
+        "6",
+        "8"
+      ],
+      "B": [
+        "7",
+        "7"
+      ],
+      "C": [
+        "8",
+        "-2"
+      ],
+      "incircle_radius_exact": "sqrt(-sqrt(2)/2 + sqrt(82)/2 + sqrt(26))*sqrt(-sqrt(26) + sqrt(2)/2 + sqrt(82)/2)*sqrt(-sqrt(82)/2 + sqrt(2)/2 + sqrt(26))/sqrt(sqrt(2)/2 + sqrt(82)/2 + sqrt(26))",
+      "incircle_radius_approx": 0.3870785866001241,
+      "source_dataset": "advanced_geometry",
+      "source_index": 50,
+      "task_type": "incircle_radius",
+      "difficulty": {
+        "min_coord": -10,
+        "max_coord": 10
+      }
+    }
+  },
+  {
+    "question": "Consider triangle ABC with coordinates A=(8, 1), B=(-7, -8), and C=(1, -6). Compute the radius of its incircle. For all geometry problems:\n1. Give coordinates in the form (x, y)\n2. Round decimal answers to 3 decimal places\n3. Use the degree symbol ° for angles\n4. Return only the angle, coordinates, or radius as your answer.\n",
+    "answer": "1.178",
+    "metadata": {
+      "A": [
+        "8",
+        "1"
+      ],
+      "B": [
+        "-7",
+        "-8"
+      ],
+      "C": [
+        "1",
+        "-6"
+      ],
+      "incircle_radius_exact": "sqrt(-sqrt(17) + 7*sqrt(2)/2 + 3*sqrt(34)/2)*sqrt(-7*sqrt(2)/2 + sqrt(17) + 3*sqrt(34)/2)*sqrt(-3*sqrt(34)/2 + sqrt(17) + 7*sqrt(2)/2)/sqrt(sqrt(17) + 7*sqrt(2)/2 + 3*sqrt(34)/2)",
+      "incircle_radius_approx": 1.178498732647984,
+      "source_dataset": "advanced_geometry",
+      "source_index": 51,
+      "task_type": "incircle_radius",
+      "difficulty": {
+        "min_coord": -10,
+        "max_coord": 10
+      }
+    }
+  },
+  {
+    "question": "Given a triangle with vertices A=(-5, -7), B=(-2, -1), and C=(3, -10), determine the angle at B in degrees. For all geometry problems:\n1. Give coordinates in the form (x, y)\n2. Round decimal answers to 3 decimal places\n3. Use the degree symbol ° for angles\n4. Return only the angle, coordinates, or radius as your answer.\n",
+    "answer": "55.62°",
+    "metadata": {
+      "A": [
+        "-5",
+        "-7"
+      ],
+      "B": [
+        "-2",
+        "-1"
+      ],
+      "C": [
+        "3",
+        "-10"
+      ],
+      "angle_ABC_degrees": 55.61965527615514,
+      "source_dataset": "advanced_geometry",
+      "source_index": 52,
+      "task_type": "angle_measure",
+      "difficulty": {
+        "min_coord": -10,
+        "max_coord": 10
+      }
+    }
+  },
+  {
+    "question": "In triangle ABC with coordinates A=(6, 7), B=(-6, 5), and C=(-10, -6), find the measure (in degrees) of angle ABC. For all geometry problems:\n1. Give coordinates in the form (x, y)\n2. Round decimal answers to 3 decimal places\n3. Use the degree symbol ° for angles\n4. Return only the angle, coordinates, or radius as your answer.\n",
+    "answer": "119.45°",
+    "metadata": {
+      "A": [
+        "6",
+        "7"
+      ],
+      "B": [
+        "-6",
+        "5"
+      ],
+      "C": [
+        "-10",
+        "-6"
+      ],
+      "angle_ABC_degrees": 119.44542872992561,
+      "source_dataset": "advanced_geometry",
+      "source_index": 53,
+      "task_type": "angle_measure",
+      "difficulty": {
+        "min_coord": -10,
+        "max_coord": 10
+      }
+    }
+  },
+  {
+    "question": "Consider triangle ABC with coordinates A=(0, 2), B=(-4, -7), and C=(0, -9). Compute the radius of its incircle. For all geometry problems:\n1. Give coordinates in the form (x, y)\n2. Round decimal answers to 3 decimal places\n3. Use the degree symbol ° for angles\n4. Return only the angle, coordinates, or radius as your answer.\n",
+    "answer": "1.738",
+    "metadata": {
+      "A": [
+        "0",
+        "2"
+      ],
+      "B": [
+        "-4",
+        "-7"
+      ],
+      "C": [
+        "0",
+        "-9"
+      ],
+      "incircle_radius_exact": "sqrt(-11/2 + sqrt(5) + sqrt(97)/2)*sqrt(-sqrt(5) + sqrt(97)/2 + 11/2)*sqrt(-sqrt(97)/2 + sqrt(5) + 11/2)/sqrt(sqrt(5) + sqrt(97)/2 + 11/2)",
+      "incircle_radius_approx": 1.7376885134372428,
+      "source_dataset": "advanced_geometry",
+      "source_index": 54,
+      "task_type": "incircle_radius",
+      "difficulty": {
+        "min_coord": -10,
+        "max_coord": 10
+      }
+    }
+  },
+  {
+    "question": "Given triangle ABC with coordinates A=(3, 1), B=(-9, 8), and C=(-10, 7), find the coordinates of its orthocenter. For all geometry problems:\n1. Give coordinates in the form (x, y)\n2. Round decimal answers to 3 decimal places\n3. Use the degree symbol ° for angles\n4. Return only the angle, coordinates, or radius as your answer.\n",
+    "answer": "(-7.421, 11.421)",
+    "metadata": {
+      "A": [
+        "3",
+        "1"
+      ],
+      "B": [
+        "-9",
+        "8"
+      ],
+      "C": [
+        "-10",
+        "7"
+      ],
+      "ortho": [
+        "-141/19",
+        "217/19"
+      ],
+      "orthocenter_approx": [
+        -7.421052631578947,
+        11.421052631578947
+      ],
+      "source_dataset": "advanced_geometry",
+      "source_index": 55,
+      "task_type": "orthocenter",
+      "difficulty": {
+        "min_coord": -10,
+        "max_coord": 10
+      }
+    }
+  },
+  {
+    "question": "Find the incircle radius of triangle ABC whose vertices are A=(8, -9), B=(1, 3), and C=(-9, 5). For all geometry problems:\n1. Give coordinates in the form (x, y)\n2. Round decimal answers to 3 decimal places\n3. Use the degree symbol ° for angles\n4. Return only the angle, coordinates, or radius as your answer.\n",
+    "answer": "2.299",
+    "metadata": {
+      "A": [
+        "8",
+        "-9"
+      ],
+      "B": [
+        "1",
+        "3"
+      ],
+      "C": [
+        "-9",
+        "5"
+      ],
+      "incircle_radius_exact": "sqrt(-sqrt(193)/2 + sqrt(26) + sqrt(485)/2)*sqrt(-sqrt(26) + sqrt(193)/2 + sqrt(485)/2)*sqrt(-sqrt(485)/2 + sqrt(26) + sqrt(193)/2)/sqrt(sqrt(26) + sqrt(193)/2 + sqrt(485)/2)",
+      "incircle_radius_approx": 2.298691118922622,
+      "source_dataset": "advanced_geometry",
+      "source_index": 56,
+      "task_type": "incircle_radius",
+      "difficulty": {
+        "min_coord": -10,
+        "max_coord": 10
+      }
+    }
+  },
+  {
+    "question": "Consider triangle ABC with coordinates A=(2, -4), B=(9, -5), and C=(-3, -3). Compute the radius of its incircle. For all geometry problems:\n1. Give coordinates in the form (x, y)\n2. Round decimal answers to 3 decimal places\n3. Use the degree symbol ° for angles\n4. Return only the angle, coordinates, or radius as your answer.\n",
+    "answer": "0.082",
+    "metadata": {
+      "A": [
+        "2",
+        "-4"
+      ],
+      "B": [
+        "9",
+        "-5"
+      ],
+      "C": [
+        "-3",
+        "-3"
+      ],
+      "incircle_radius_exact": "sqrt(-5*sqrt(2)/2 + sqrt(26)/2 + sqrt(37))*sqrt(-sqrt(26)/2 + 5*sqrt(2)/2 + sqrt(37))*sqrt(-sqrt(37) + sqrt(26)/2 + 5*sqrt(2)/2)/sqrt(sqrt(26)/2 + 5*sqrt(2)/2 + sqrt(37))",
+      "incircle_radius_approx": 0.08218408348524164,
+      "source_dataset": "advanced_geometry",
+      "source_index": 57,
+      "task_type": "incircle_radius",
+      "difficulty": {
+        "min_coord": -10,
+        "max_coord": 10
+      }
+    }
+  },
+  {
+    "question": "Given triangle ABC with coordinates A=(4, 4), B=(-5, 2), and C=(1, 3), find the coordinates of its orthocenter. For all geometry problems:\n1. Give coordinates in the form (x, y)\n2. Round decimal answers to 3 decimal places\n3. Use the degree symbol ° for angles\n4. Return only the angle, coordinates, or radius as your answer.\n",
+    "answer": "(13.667, -54.000)",
+    "metadata": {
+      "A": [
+        "4",
+        "4"
+      ],
+      "B": [
+        "-5",
+        "2"
+      ],
+      "C": [
+        "1",
+        "3"
+      ],
+      "ortho": [
+        "41/3",
+        "-54"
+      ],
+      "orthocenter_approx": [
+        13.666666666666666,
+        -54.0
+      ],
+      "source_dataset": "advanced_geometry",
+      "source_index": 58,
+      "task_type": "orthocenter",
+      "difficulty": {
+        "min_coord": -10,
+        "max_coord": 10
+      }
+    }
+  },
+  {
+    "question": "In triangle ABC with coordinates A=(-4, 7), B=(1, 4), and C=(-9, 6), find the measure (in degrees) of angle ABC. For all geometry problems:\n1. Give coordinates in the form (x, y)\n2. Round decimal answers to 3 decimal places\n3. Use the degree symbol ° for angles\n4. Return only the angle, coordinates, or radius as your answer.\n",
+    "answer": "19.65°",
+    "metadata": {
+      "A": [
+        "-4",
+        "7"
+      ],
+      "B": [
+        "1",
+        "4"
+      ],
+      "C": [
+        "-9",
+        "6"
+      ],
+      "angle_ABC_degrees": 19.653824058053306,
+      "source_dataset": "advanced_geometry",
+      "source_index": 59,
+      "task_type": "angle_measure",
+      "difficulty": {
+        "min_coord": -10,
+        "max_coord": 10
+      }
+    }
+  },
+  {
+    "question": "For triangle with vertices A=(9, 1), B=(-5, 7), and C=(9, -5), determine the orthocenter (intersection of altitudes). For all geometry problems:\n1. Give coordinates in the form (x, y)\n2. Round decimal answers to 3 decimal places\n3. Use the degree symbol ° for angles\n4. Return only the angle, coordinates, or radius as your answer.\n",
+    "answer": "(14.143, 7.000)",
+    "metadata": {
+      "A": [
+        "9",
+        "1"
+      ],
+      "B": [
+        "-5",
+        "7"
+      ],
+      "C": [
+        "9",
+        "-5"
+      ],
+      "ortho": [
+        "99/7",
+        "7"
+      ],
+      "orthocenter_approx": [
+        14.142857142857142,
+        7.0
+      ],
+      "source_dataset": "advanced_geometry",
+      "source_index": 60,
+      "task_type": "orthocenter",
+      "difficulty": {
+        "min_coord": -10,
+        "max_coord": 10
+      }
+    }
+  },
+  {
+    "question": "Given a triangle with vertices A=(4, -4), B=(-8, 9), and C=(-7, 10), determine the angle at B in degrees. For all geometry problems:\n1. Give coordinates in the form (x, y)\n2. Round decimal answers to 3 decimal places\n3. Use the degree symbol ° for angles\n4. Return only the angle, coordinates, or radius as your answer.\n",
+    "answer": "92.29°",
+    "metadata": {
+      "A": [
+        "4",
+        "-4"
+      ],
+      "B": [
+        "-8",
+        "9"
+      ],
+      "C": [
+        "-7",
+        "10"
+      ],
+      "angle_ABC_degrees": 92.29061004263853,
+      "source_dataset": "advanced_geometry",
+      "source_index": 61,
+      "task_type": "angle_measure",
+      "difficulty": {
+        "min_coord": -10,
+        "max_coord": 10
+      }
+    }
+  },
+  {
+    "question": "For triangle with vertices A=(-10, -5), B=(-7, -6), and C=(-7, -8), determine the orthocenter (intersection of altitudes). For all geometry problems:\n1. Give coordinates in the form (x, y)\n2. Round decimal answers to 3 decimal places\n3. Use the degree symbol ° for angles\n4. Return only the angle, coordinates, or radius as your answer.\n",
+    "answer": "(-6.000, -5.000)",
+    "metadata": {
+      "A": [
+        "-10",
+        "-5"
+      ],
+      "B": [
+        "-7",
+        "-6"
+      ],
+      "C": [
+        "-7",
+        "-8"
+      ],
+      "ortho": [
+        "-6",
+        "-5"
+      ],
+      "orthocenter_approx": [
+        -6.0,
+        -5.0
+      ],
+      "source_dataset": "advanced_geometry",
+      "source_index": 62,
+      "task_type": "orthocenter",
+      "difficulty": {
+        "min_coord": -10,
+        "max_coord": 10
+      }
+    }
+  },
+  {
+    "question": "Given a triangle with vertices A=(1, 8), B=(-7, -10), and C=(-1, 6), determine the angle at B in degrees. For all geometry problems:\n1. Give coordinates in the form (x, y)\n2. Round decimal answers to 3 decimal places\n3. Use the degree symbol ° for angles\n4. Return only the angle, coordinates, or radius as your answer.\n",
+    "answer": "3.41°",
+    "metadata": {
+      "A": [
+        "1",
+        "8"
+      ],
+      "B": [
+        "-7",
+        "-10"
+      ],
+      "C": [
+        "-1",
+        "6"
+      ],
+      "angle_ABC_degrees": 3.406443754994719,
+      "source_dataset": "advanced_geometry",
+      "source_index": 63,
+      "task_type": "angle_measure",
+      "difficulty": {
+        "min_coord": -10,
+        "max_coord": 10
+      }
+    }
+  },
+  {
+    "question": "Given a triangle with vertices A=(5, -10), B=(7, 6), and C=(5, -9), determine the angle at B in degrees. For all geometry problems:\n1. Give coordinates in the form (x, y)\n2. Round decimal answers to 3 decimal places\n3. Use the degree symbol ° for angles\n4. Return only the angle, coordinates, or radius as your answer.\n",
+    "answer": "0.47°",
+    "metadata": {
+      "A": [
+        "5",
+        "-10"
+      ],
+      "B": [
+        "7",
+        "6"
+      ],
+      "C": [
+        "5",
+        "-9"
+      ],
+      "angle_ABC_degrees": 0.46962701968964715,
+      "source_dataset": "advanced_geometry",
+      "source_index": 64,
+      "task_type": "angle_measure",
+      "difficulty": {
+        "min_coord": -10,
+        "max_coord": 10
+      }
+    }
+  },
+  {
+    "question": "For triangle with vertices A=(9, 8), B=(3, 5), and C=(-1, -6), determine the orthocenter (intersection of altitudes). For all geometry problems:\n1. Give coordinates in the form (x, y)\n2. Round decimal answers to 3 decimal places\n3. Use the degree symbol ° for angles\n4. Return only the angle, coordinates, or radius as your answer.\n",
+    "answer": "(-11.778, 15.556)",
+    "metadata": {
+      "A": [
+        "9",
+        "8"
+      ],
+      "B": [
+        "3",
+        "5"
+      ],
+      "C": [
+        "-1",
+        "-6"
+      ],
+      "ortho": [
+        "-106/9",
+        "140/9"
+      ],
+      "orthocenter_approx": [
+        -11.777777777777779,
+        15.555555555555555
+      ],
+      "source_dataset": "advanced_geometry",
+      "source_index": 65,
+      "task_type": "orthocenter",
+      "difficulty": {
+        "min_coord": -10,
+        "max_coord": 10
+      }
+    }
+  },
+  {
+    "question": "For triangle with vertices A=(-8, 2), B=(-2, 2), and C=(-4, -8), determine the orthocenter (intersection of altitudes). For all geometry problems:\n1. Give coordinates in the form (x, y)\n2. Round decimal answers to 3 decimal places\n3. Use the degree symbol ° for angles\n4. Return only the angle, coordinates, or radius as your answer.\n",
+    "answer": "(-4.000, 1.200)",
+    "metadata": {
+      "A": [
+        "-8",
+        "2"
+      ],
+      "B": [
+        "-2",
+        "2"
+      ],
+      "C": [
+        "-4",
+        "-8"
+      ],
+      "ortho": [
+        "-4",
+        "6/5"
+      ],
+      "orthocenter_approx": [
+        -4.0,
+        1.2
+      ],
+      "source_dataset": "advanced_geometry",
+      "source_index": 66,
+      "task_type": "orthocenter",
+      "difficulty": {
+        "min_coord": -10,
+        "max_coord": 10
+      }
+    }
+  },
+  {
+    "question": "Consider triangle ABC with coordinates A=(-3, 4), B=(4, 7), and C=(-9, -7). Compute the radius of its incircle. For all geometry problems:\n1. Give coordinates in the form (x, y)\n2. Round decimal answers to 3 decimal places\n3. Use the degree symbol ° for angles\n4. Return only the angle, coordinates, or radius as your answer.\n",
+    "answer": "1.503",
+    "metadata": {
+      "A": [
+        "-3",
+        "4"
+      ],
+      "B": [
+        "4",
+        "7"
+      ],
+      "C": [
+        "-9",
+        "-7"
+      ],
+      "incircle_radius_exact": "sqrt(-sqrt(157)/2 + sqrt(58)/2 + sqrt(365)/2)*sqrt(-sqrt(365)/2 + sqrt(58)/2 + sqrt(157)/2)*sqrt(-sqrt(58)/2 + sqrt(157)/2 + sqrt(365)/2)/sqrt(sqrt(58)/2 + sqrt(157)/2 + sqrt(365)/2)",
+      "incircle_radius_approx": 1.5031575084634152,
+      "source_dataset": "advanced_geometry",
+      "source_index": 67,
+      "task_type": "incircle_radius",
+      "difficulty": {
+        "min_coord": -10,
+        "max_coord": 10
+      }
+    }
+  },
+  {
+    "question": "Consider triangle ABC with coordinates A=(9, -3), B=(3, 5), and C=(-2, 10). Compute the radius of its incircle. For all geometry problems:\n1. Give coordinates in the form (x, y)\n2. Round decimal answers to 3 decimal places\n3. Use the degree symbol ° for angles\n4. Return only the angle, coordinates, or radius as your answer.\n",
+    "answer": "0.293",
+    "metadata": {
+      "A": [
+        "9",
+        "-3"
+      ],
+      "B": [
+        "3",
+        "5"
+      ],
+      "C": [
+        "-2",
+        "10"
+      ],
+      "incircle_radius_exact": "sqrt(-5 + 5*sqrt(2)/2 + sqrt(290)/2)*sqrt(-5*sqrt(2)/2 + 5 + sqrt(290)/2)*sqrt(-sqrt(290)/2 + 5*sqrt(2)/2 + 5)/sqrt(5*sqrt(2)/2 + 5 + sqrt(290)/2)",
+      "incircle_radius_approx": 0.2932512261526581,
+      "source_dataset": "advanced_geometry",
+      "source_index": 68,
+      "task_type": "incircle_radius",
+      "difficulty": {
+        "min_coord": -10,
+        "max_coord": 10
+      }
+    }
+  },
+  {
+    "question": "Given triangle ABC with coordinates A=(0, 5), B=(-4, 2), and C=(3, 9), find the coordinates of its orthocenter. For all geometry problems:\n1. Give coordinates in the form (x, y)\n2. Round decimal answers to 3 decimal places\n3. Use the degree symbol ° for angles\n4. Return only the angle, coordinates, or radius as your answer.\n",
+    "answer": "(24.000, -19.000)",
+    "metadata": {
+      "A": [
+        "0",
+        "5"
+      ],
+      "B": [
+        "-4",
+        "2"
+      ],
+      "C": [
+        "3",
+        "9"
+      ],
+      "ortho": [
+        "24",
+        "-19"
+      ],
+      "orthocenter_approx": [
+        24.0,
+        -19.0
+      ],
+      "source_dataset": "advanced_geometry",
+      "source_index": 69,
+      "task_type": "orthocenter",
+      "difficulty": {
+        "min_coord": -10,
+        "max_coord": 10
+      }
+    }
+  },
+  {
+    "question": "Find the incircle radius of triangle ABC whose vertices are A=(8, 9), B=(-1, 4), and C=(3, -5). For all geometry problems:\n1. Give coordinates in the form (x, y)\n2. Round decimal answers to 3 decimal places\n3. Use the degree symbol ° for angles\n4. Return only the angle, coordinates, or radius as your answer.\n",
+    "answer": "2.885",
+    "metadata": {
+      "A": [
+        "8",
+        "9"
+      ],
+      "B": [
+        "-1",
+        "4"
+      ],
+      "C": [
+        "3",
+        "-5"
+      ],
+      "incircle_radius_exact": "sqrt(-sqrt(106)/2 + sqrt(97)/2 + sqrt(221)/2)*sqrt(-sqrt(221)/2 + sqrt(97)/2 + sqrt(106)/2)*sqrt(-sqrt(97)/2 + sqrt(106)/2 + sqrt(221)/2)/sqrt(sqrt(97)/2 + sqrt(106)/2 + sqrt(221)/2)",
+      "incircle_radius_approx": 2.8848441598346626,
+      "source_dataset": "advanced_geometry",
+      "source_index": 70,
+      "task_type": "incircle_radius",
+      "difficulty": {
+        "min_coord": -10,
+        "max_coord": 10
+      }
+    }
+  },
+  {
+    "question": "Given triangle ABC with coordinates A=(10, -2), B=(-10, 5), and C=(7, 1), find the coordinates of its orthocenter. For all geometry problems:\n1. Give coordinates in the form (x, y)\n2. Round decimal answers to 3 decimal places\n3. Use the degree symbol ° for angles\n4. Return only the angle, coordinates, or radius as your answer.\n",
+    "answer": "(18.308, 33.308)",
+    "metadata": {
+      "A": [
+        "10",
+        "-2"
+      ],
+      "B": [
+        "-10",
+        "5"
+      ],
+      "C": [
+        "7",
+        "1"
+      ],
+      "ortho": [
+        "238/13",
+        "433/13"
+      ],
+      "orthocenter_approx": [
+        18.307692307692307,
+        33.30769230769231
+      ],
+      "source_dataset": "advanced_geometry",
+      "source_index": 71,
+      "task_type": "orthocenter",
+      "difficulty": {
+        "min_coord": -10,
+        "max_coord": 10
+      }
+    }
+  },
+  {
+    "question": "Given triangle ABC with coordinates A=(8, -7), B=(0, -3), and C=(10, 9), find the coordinates of its orthocenter. For all geometry problems:\n1. Give coordinates in the form (x, y)\n2. Round decimal answers to 3 decimal places\n3. Use the degree symbol ° for angles\n4. Return only the angle, coordinates, or radius as your answer.\n",
+    "answer": "(3.765, -3.471)",
+    "metadata": {
+      "A": [
+        "8",
+        "-7"
+      ],
+      "B": [
+        "0",
+        "-3"
+      ],
+      "C": [
+        "10",
+        "9"
+      ],
+      "ortho": [
+        "64/17",
+        "-59/17"
+      ],
+      "orthocenter_approx": [
+        3.764705882352941,
+        -3.4705882352941178
+      ],
+      "source_dataset": "advanced_geometry",
+      "source_index": 72,
+      "task_type": "orthocenter",
+      "difficulty": {
+        "min_coord": -10,
+        "max_coord": 10
+      }
+    }
+  },
+  {
+    "question": "Find the incircle radius of triangle ABC whose vertices are A=(-4, -7), B=(7, -7), and C=(0, 7). For all geometry problems:\n1. Give coordinates in the form (x, y)\n2. Round decimal answers to 3 decimal places\n3. Use the degree symbol ° for angles\n4. Return only the angle, coordinates, or radius as your answer.\n",
+    "answer": "3.737",
+    "metadata": {
+      "A": [
+        "-4",
+        "-7"
+      ],
+      "B": [
+        "7",
+        "-7"
+      ],
+      "C": [
+        "0",
+        "7"
+      ],
+      "incircle_radius_exact": "sqrt(-11/2 + sqrt(53) + 7*sqrt(5)/2)*sqrt(-7*sqrt(5)/2 + 11/2 + sqrt(53))*sqrt(-sqrt(53) + 11/2 + 7*sqrt(5)/2)/sqrt(11/2 + sqrt(53) + 7*sqrt(5)/2)",
+      "incircle_radius_approx": 3.7367126240901958,
+      "source_dataset": "advanced_geometry",
+      "source_index": 73,
+      "task_type": "incircle_radius",
+      "difficulty": {
+        "min_coord": -10,
+        "max_coord": 10
+      }
+    }
+  },
+  {
+    "question": "In triangle ABC with coordinates A=(9, 7), B=(-1, -10), and C=(10, -7), find the measure (in degrees) of angle ABC. For all geometry problems:\n1. Give coordinates in the form (x, y)\n2. Round decimal answers to 3 decimal places\n3. Use the degree symbol ° for angles\n4. Return only the angle, coordinates, or radius as your answer.\n",
+    "answer": "44.28°",
+    "metadata": {
+      "A": [
+        "9",
+        "7"
+      ],
+      "B": [
+        "-1",
+        "-10"
+      ],
+      "C": [
+        "10",
+        "-7"
+      ],
+      "angle_ABC_degrees": 44.27933637748235,
+      "source_dataset": "advanced_geometry",
+      "source_index": 74,
+      "task_type": "angle_measure",
+      "difficulty": {
+        "min_coord": -10,
+        "max_coord": 10
+      }
+    }
+  },
+  {
+    "question": "For triangle with vertices A=(-5, -5), B=(-4, 2), and C=(-5, 7), determine the orthocenter (intersection of altitudes). For all geometry problems:\n1. Give coordinates in the form (x, y)\n2. Round decimal answers to 3 decimal places\n3. Use the degree symbol ° for angles\n4. Return only the angle, coordinates, or radius as your answer.\n",
+    "answer": "(30.000, 2.000)",
+    "metadata": {
+      "A": [
+        "-5",
+        "-5"
+      ],
+      "B": [
+        "-4",
+        "2"
+      ],
+      "C": [
+        "-5",
+        "7"
+      ],
+      "ortho": [
+        "30",
+        "2"
+      ],
+      "orthocenter_approx": [
+        30.0,
+        2.0
+      ],
+      "source_dataset": "advanced_geometry",
+      "source_index": 75,
+      "task_type": "orthocenter",
+      "difficulty": {
+        "min_coord": -10,
+        "max_coord": 10
+      }
+    }
+  },
+  {
+    "question": "In triangle ABC with coordinates A=(10, -5), B=(-1, -7), and C=(1, -1), find the measure (in degrees) of angle ABC. For all geometry problems:\n1. Give coordinates in the form (x, y)\n2. Round decimal answers to 3 decimal places\n3. Use the degree symbol ° for angles\n4. Return only the angle, coordinates, or radius as your answer.\n",
+    "answer": "61.26°",
+    "metadata": {
+      "A": [
+        "10",
+        "-5"
+      ],
+      "B": [
+        "-1",
+        "-7"
+      ],
+      "C": [
+        "1",
+        "-1"
+      ],
+      "angle_ABC_degrees": 61.26020470831195,
+      "source_dataset": "advanced_geometry",
+      "source_index": 76,
+      "task_type": "angle_measure",
+      "difficulty": {
+        "min_coord": -10,
+        "max_coord": 10
+      }
+    }
+  },
+  {
+    "question": "Find the incircle radius of triangle ABC whose vertices are A=(-5, 7), B=(7, 3), and C=(-7, -8). For all geometry problems:\n1. Give coordinates in the form (x, y)\n2. Round decimal answers to 3 decimal places\n3. Use the degree symbol ° for angles\n4. Return only the angle, coordinates, or radius as your answer.\n",
+    "answer": "4.124",
+    "metadata": {
+      "A": [
+        "-5",
+        "7"
+      ],
+      "B": [
+        "7",
+        "3"
+      ],
+      "C": [
+        "-7",
+        "-8"
+      ],
+      "incircle_radius_exact": "sqrt(-2*sqrt(10) + sqrt(229)/2 + sqrt(317)/2)*sqrt(-sqrt(229)/2 + 2*sqrt(10) + sqrt(317)/2)*sqrt(-sqrt(317)/2 + 2*sqrt(10) + sqrt(229)/2)/sqrt(2*sqrt(10) + sqrt(229)/2 + sqrt(317)/2)",
+      "incircle_radius_approx": 4.124041480096933,
+      "source_dataset": "advanced_geometry",
+      "source_index": 77,
+      "task_type": "incircle_radius",
+      "difficulty": {
+        "min_coord": -10,
+        "max_coord": 10
+      }
+    }
+  },
+  {
+    "question": "Given a triangle with vertices A=(-3, -4), B=(10, 8), and C=(4, -8), determine the angle at B in degrees. For all geometry problems:\n1. Give coordinates in the form (x, y)\n2. Round decimal answers to 3 decimal places\n3. Use the degree symbol ° for angles\n4. Return only the angle, coordinates, or radius as your answer.\n",
+    "answer": "26.73°",
+    "metadata": {
+      "A": [
+        "-3",
+        "-4"
+      ],
+      "B": [
+        "10",
+        "8"
+      ],
+      "C": [
+        "4",
+        "-8"
+      ],
+      "angle_ABC_degrees": 26.734564823055067,
+      "source_dataset": "advanced_geometry",
+      "source_index": 78,
+      "task_type": "angle_measure",
+      "difficulty": {
+        "min_coord": -10,
+        "max_coord": 10
+      }
+    }
+  },
+  {
+    "question": "Given triangle ABC with coordinates A=(-4, 8), B=(2, 10), and C=(-5, 9), find the coordinates of its orthocenter. For all geometry problems:\n1. Give coordinates in the form (x, y)\n2. Round decimal answers to 3 decimal places\n3. Use the degree symbol ° for angles\n4. Return only the angle, coordinates, or radius as your answer.\n",
+    "answer": "(-3.500, 4.500)",
+    "metadata": {
+      "A": [
+        "-4",
+        "8"
+      ],
+      "B": [
+        "2",
+        "10"
+      ],
+      "C": [
+        "-5",
+        "9"
+      ],
+      "ortho": [
+        "-7/2",
+        "9/2"
+      ],
+      "orthocenter_approx": [
+        -3.5,
+        4.5
+      ],
+      "source_dataset": "advanced_geometry",
+      "source_index": 79,
+      "task_type": "orthocenter",
+      "difficulty": {
+        "min_coord": -10,
+        "max_coord": 10
+      }
+    }
+  },
+  {
+    "question": "Given a triangle with vertices A=(-4, 9), B=(-1, -8), and C=(1, -3), determine the angle at B in degrees. For all geometry problems:\n1. Give coordinates in the form (x, y)\n2. Round decimal answers to 3 decimal places\n3. Use the degree symbol ° for angles\n4. Return only the angle, coordinates, or radius as your answer.\n",
+    "answer": "31.81°",
+    "metadata": {
+      "A": [
+        "-4",
+        "9"
+      ],
+      "B": [
+        "-1",
+        "-8"
+      ],
+      "C": [
+        "1",
+        "-3"
+      ],
+      "angle_ABC_degrees": 31.80938928779315,
+      "source_dataset": "advanced_geometry",
+      "source_index": 80,
+      "task_type": "angle_measure",
+      "difficulty": {
+        "min_coord": -10,
+        "max_coord": 10
+      }
+    }
+  },
+  {
+    "question": "For triangle with vertices A=(-2, -8), B=(3, -2), and C=(-7, -9), determine the orthocenter (intersection of altitudes). For all geometry problems:\n1. Give coordinates in the form (x, y)\n2. Round decimal answers to 3 decimal places\n3. Use the degree symbol ° for angles\n4. Return only the angle, coordinates, or radius as your answer.\n",
+    "answer": "(6.680, -20.400)",
+    "metadata": {
+      "A": [
+        "-2",
+        "-8"
+      ],
+      "B": [
+        "3",
+        "-2"
+      ],
+      "C": [
+        "-7",
+        "-9"
+      ],
+      "ortho": [
+        "167/25",
+        "-102/5"
+      ],
+      "orthocenter_approx": [
+        6.68,
+        -20.4
+      ],
+      "source_dataset": "advanced_geometry",
+      "source_index": 81,
+      "task_type": "orthocenter",
+      "difficulty": {
+        "min_coord": -10,
+        "max_coord": 10
+      }
+    }
+  },
+  {
+    "question": "Find the incircle radius of triangle ABC whose vertices are A=(7, -10), B=(-5, -9), and C=(3, -2). For all geometry problems:\n1. Give coordinates in the form (x, y)\n2. Round decimal answers to 3 decimal places\n3. Use the degree symbol ° for angles\n4. Return only the angle, coordinates, or radius as your answer.\n",
+    "answer": "2.910",
+    "metadata": {
+      "A": [
+        "7",
+        "-10"
+      ],
+      "B": [
+        "-5",
+        "-9"
+      ],
+      "C": [
+        "3",
+        "-2"
+      ],
+      "incircle_radius_exact": "sqrt(-sqrt(113)/2 + 2*sqrt(5) + sqrt(145)/2)*sqrt(-sqrt(145)/2 + 2*sqrt(5) + sqrt(113)/2)*sqrt(-2*sqrt(5) + sqrt(113)/2 + sqrt(145)/2)/sqrt(2*sqrt(5) + sqrt(113)/2 + sqrt(145)/2)",
+      "incircle_radius_approx": 2.9099178961149113,
+      "source_dataset": "advanced_geometry",
+      "source_index": 82,
+      "task_type": "incircle_radius",
+      "difficulty": {
+        "min_coord": -10,
+        "max_coord": 10
+      }
+    }
+  },
+  {
+    "question": "Given triangle ABC with coordinates A=(-3, 9), B=(-1, 8), and C=(-5, 1), find the coordinates of its orthocenter. For all geometry problems:\n1. Give coordinates in the form (x, y)\n2. Round decimal answers to 3 decimal places\n3. Use the degree symbol ° for angles\n4. Return only the angle, coordinates, or radius as your answer.\n",
+    "answer": "(-1.444, 8.111)",
+    "metadata": {
+      "A": [
+        "-3",
+        "9"
+      ],
+      "B": [
+        "-1",
+        "8"
+      ],
+      "C": [
+        "-5",
+        "1"
+      ],
+      "ortho": [
+        "-13/9",
+        "73/9"
+      ],
+      "orthocenter_approx": [
+        -1.4444444444444444,
+        8.11111111111111
+      ],
+      "source_dataset": "advanced_geometry",
+      "source_index": 83,
+      "task_type": "orthocenter",
+      "difficulty": {
+        "min_coord": -10,
+        "max_coord": 10
+      }
+    }
+  },
+  {
+    "question": "In triangle ABC with coordinates A=(-9, 8), B=(9, 4), and C=(-3, 10), find the measure (in degrees) of angle ABC. For all geometry problems:\n1. Give coordinates in the form (x, y)\n2. Round decimal answers to 3 decimal places\n3. Use the degree symbol ° for angles\n4. Return only the angle, coordinates, or radius as your answer.\n",
+    "answer": "14.04°",
+    "metadata": {
+      "A": [
+        "-9",
+        "8"
+      ],
+      "B": [
+        "9",
+        "4"
+      ],
+      "C": [
+        "-3",
+        "10"
+      ],
+      "angle_ABC_degrees": 14.036243467926477,
+      "source_dataset": "advanced_geometry",
+      "source_index": 84,
+      "task_type": "angle_measure",
+      "difficulty": {
+        "min_coord": -10,
+        "max_coord": 10
+      }
+    }
+  },
+  {
+    "question": "For triangle with vertices A=(9, 8), B=(8, -7), and C=(-10, -10), determine the orthocenter (intersection of altitudes). For all geometry problems:\n1. Give coordinates in the form (x, y)\n2. Round decimal answers to 3 decimal places\n3. Use the degree symbol ° for angles\n4. Return only the angle, coordinates, or radius as your answer.\n",
+    "answer": "(12.247, -11.483)",
+    "metadata": {
+      "A": [
+        "9",
+        "8"
+      ],
+      "B": [
+        "8",
+        "-7"
+      ],
+      "C": [
+        "-10",
+        "-10"
+      ],
+      "ortho": [
+        "1090/89",
+        "-1022/89"
+      ],
+      "orthocenter_approx": [
+        12.247191011235955,
+        -11.48314606741573
+      ],
+      "source_dataset": "advanced_geometry",
+      "source_index": 85,
+      "task_type": "orthocenter",
+      "difficulty": {
+        "min_coord": -10,
+        "max_coord": 10
+      }
+    }
+  },
+  {
+    "question": "Given triangle ABC with coordinates A=(2, 6), B=(1, -6), and C=(5, -10), find the coordinates of its orthocenter. For all geometry problems:\n1. Give coordinates in the form (x, y)\n2. Round decimal answers to 3 decimal places\n3. Use the degree symbol ° for angles\n4. Return only the angle, coordinates, or radius as your answer.\n",
+    "answer": "(-12.538, -8.538)",
+    "metadata": {
+      "A": [
+        "2",
+        "6"
+      ],
+      "B": [
+        "1",
+        "-6"
+      ],
+      "C": [
+        "5",
+        "-10"
+      ],
+      "ortho": [
+        "-163/13",
+        "-111/13"
+      ],
+      "orthocenter_approx": [
+        -12.538461538461538,
+        -8.538461538461538
+      ],
+      "source_dataset": "advanced_geometry",
+      "source_index": 86,
+      "task_type": "orthocenter",
+      "difficulty": {
+        "min_coord": -10,
+        "max_coord": 10
+      }
+    }
+  },
+  {
+    "question": "Given a triangle with vertices A=(6, -2), B=(-9, 2), and C=(10, -3), determine the angle at B in degrees. For all geometry problems:\n1. Give coordinates in the form (x, y)\n2. Round decimal answers to 3 decimal places\n3. Use the degree symbol ° for angles\n4. Return only the angle, coordinates, or radius as your answer.\n",
+    "answer": "0.19°",
+    "metadata": {
+      "A": [
+        "6",
+        "-2"
+      ],
+      "B": [
+        "-9",
+        "2"
+      ],
+      "C": [
+        "10",
+        "-3"
+      ],
+      "angle_ABC_degrees": 0.1878543416668164,
+      "source_dataset": "advanced_geometry",
+      "source_index": 87,
+      "task_type": "angle_measure",
+      "difficulty": {
+        "min_coord": -10,
+        "max_coord": 10
+      }
+    }
+  },
+  {
+    "question": "Given a triangle with vertices A=(3, -2), B=(4, 10), and C=(4, -10), determine the angle at B in degrees. For all geometry problems:\n1. Give coordinates in the form (x, y)\n2. Round decimal answers to 3 decimal places\n3. Use the degree symbol ° for angles\n4. Return only the angle, coordinates, or radius as your answer.\n",
+    "answer": "4.76°",
+    "metadata": {
+      "A": [
+        "3",
+        "-2"
+      ],
+      "B": [
+        "4",
+        "10"
+      ],
+      "C": [
+        "4",
+        "-10"
+      ],
+      "angle_ABC_degrees": 4.763641690726178,
+      "source_dataset": "advanced_geometry",
+      "source_index": 88,
+      "task_type": "angle_measure",
+      "difficulty": {
+        "min_coord": -10,
+        "max_coord": 10
+      }
+    }
+  },
+  {
+    "question": "Find the incircle radius of triangle ABC whose vertices are A=(1, 6), B=(-8, 2), and C=(-1, -10). For all geometry problems:\n1. Give coordinates in the form (x, y)\n2. Round decimal answers to 3 decimal places\n3. Use the degree symbol ° for angles\n4. Return only the angle, coordinates, or radius as your answer.\n",
+    "answer": "3.411",
+    "metadata": {
+      "A": [
+        "1",
+        "6"
+      ],
+      "B": [
+        "-8",
+        "2"
+      ],
+      "C": [
+        "-1",
+        "-10"
+      ],
+      "incircle_radius_exact": "sqrt(-sqrt(193)/2 + sqrt(97)/2 + sqrt(65))*sqrt(-sqrt(65) + sqrt(97)/2 + sqrt(193)/2)*sqrt(-sqrt(97)/2 + sqrt(193)/2 + sqrt(65))/sqrt(sqrt(97)/2 + sqrt(193)/2 + sqrt(65))",
+      "incircle_radius_approx": 3.4114439199387214,
+      "source_dataset": "advanced_geometry",
+      "source_index": 89,
+      "task_type": "incircle_radius",
+      "difficulty": {
+        "min_coord": -10,
+        "max_coord": 10
+      }
+    }
+  },
+  {
+    "question": "Consider triangle ABC with coordinates A=(-6, 3), B=(-9, -5), and C=(-9, -1). Compute the radius of its incircle. For all geometry problems:\n1. Give coordinates in the form (x, y)\n2. Round decimal answers to 3 decimal places\n3. Use the degree symbol ° for angles\n4. Return only the angle, coordinates, or radius as your answer.\n",
+    "answer": "0.684",
+    "metadata": {
+      "A": [
+        "-6",
+        "3"
+      ],
+      "B": [
+        "-9",
+        "-5"
+      ],
+      "C": [
+        "-9",
+        "-1"
+      ],
+      "incircle_radius_exact": "sqrt(-1/2 + sqrt(73)/2)*sqrt(1/2 + sqrt(73)/2)*sqrt(9/2 - sqrt(73)/2)/sqrt(sqrt(73)/2 + 9/2)",
+      "incircle_radius_approx": 0.6839943820237032,
+      "source_dataset": "advanced_geometry",
+      "source_index": 90,
+      "task_type": "incircle_radius",
+      "difficulty": {
+        "min_coord": -10,
+        "max_coord": 10
+      }
+    }
+  },
+  {
+    "question": "Consider triangle ABC with coordinates A=(1, 5), B=(0, 9), and C=(0, 7). Compute the radius of its incircle. For all geometry problems:\n1. Give coordinates in the form (x, y)\n2. Round decimal answers to 3 decimal places\n3. Use the degree symbol ° for angles\n4. Return only the angle, coordinates, or radius as your answer.\n",
+    "answer": "0.239",
+    "metadata": {
+      "A": [
+        "1",
+        "5"
+      ],
+      "B": [
+        "0",
+        "9"
+      ],
+      "C": [
+        "0",
+        "7"
+      ],
+      "incircle_radius_exact": "sqrt(-1 + sqrt(5)/2 + sqrt(17)/2)*sqrt(-sqrt(17)/2 + 1 + sqrt(5)/2)*sqrt(-sqrt(5)/2 + 1 + sqrt(17)/2)/sqrt(1 + sqrt(5)/2 + sqrt(17)/2)",
+      "incircle_radius_approx": 0.23925810073547518,
+      "source_dataset": "advanced_geometry",
+      "source_index": 91,
+      "task_type": "incircle_radius",
+      "difficulty": {
+        "min_coord": -10,
+        "max_coord": 10
+      }
+    }
+  },
+  {
+    "question": "Find the incircle radius of triangle ABC whose vertices are A=(6, -4), B=(7, 10), and C=(-6, -10). For all geometry problems:\n1. Give coordinates in the form (x, y)\n2. Round decimal answers to 3 decimal places\n3. Use the degree symbol ° for angles\n4. Return only the angle, coordinates, or radius as your answer.\n",
+    "answer": "3.158",
+    "metadata": {
+      "A": [
+        "6",
+        "-4"
+      ],
+      "B": [
+        "7",
+        "10"
+      ],
+      "C": [
+        "-6",
+        "-10"
+      ],
+      "incircle_radius_exact": "sqrt(-sqrt(197)/2 + 3*sqrt(5) + sqrt(569)/2)*sqrt(-3*sqrt(5) + sqrt(197)/2 + sqrt(569)/2)*sqrt(-sqrt(569)/2 + 3*sqrt(5) + sqrt(197)/2)/sqrt(3*sqrt(5) + sqrt(197)/2 + sqrt(569)/2)",
+      "incircle_radius_approx": 3.1575378921983988,
+      "source_dataset": "advanced_geometry",
+      "source_index": 92,
+      "task_type": "incircle_radius",
+      "difficulty": {
+        "min_coord": -10,
+        "max_coord": 10
+      }
+    }
+  },
+  {
+    "question": "Given a triangle with vertices A=(1, 10), B=(10, 8), and C=(-2, 5), determine the angle at B in degrees. For all geometry problems:\n1. Give coordinates in the form (x, y)\n2. Round decimal answers to 3 decimal places\n3. Use the degree symbol ° for angles\n4. Return only the angle, coordinates, or radius as your answer.\n",
+    "answer": "26.57°",
+    "metadata": {
+      "A": [
+        "1",
+        "10"
+      ],
+      "B": [
+        "10",
+        "8"
+      ],
+      "C": [
+        "-2",
+        "5"
+      ],
+      "angle_ABC_degrees": 26.56505117707799,
+      "source_dataset": "advanced_geometry",
+      "source_index": 93,
+      "task_type": "angle_measure",
+      "difficulty": {
+        "min_coord": -10,
+        "max_coord": 10
+      }
+    }
+  },
+  {
+    "question": "Given a triangle with vertices A=(3, 6), B=(-9, 3), and C=(5, -4), determine the angle at B in degrees. For all geometry problems:\n1. Give coordinates in the form (x, y)\n2. Round decimal answers to 3 decimal places\n3. Use the degree symbol ° for angles\n4. Return only the angle, coordinates, or radius as your answer.\n",
+    "answer": "40.60°",
+    "metadata": {
+      "A": [
+        "3",
+        "6"
+      ],
+      "B": [
+        "-9",
+        "3"
+      ],
+      "C": [
+        "5",
+        "-4"
+      ],
+      "angle_ABC_degrees": 40.60129464500447,
+      "source_dataset": "advanced_geometry",
+      "source_index": 94,
+      "task_type": "angle_measure",
+      "difficulty": {
+        "min_coord": -10,
+        "max_coord": 10
+      }
+    }
+  },
+  {
+    "question": "For triangle with vertices A=(-5, 3), B=(0, -4), and C=(-3, 5), determine the orthocenter (intersection of altitudes). For all geometry problems:\n1. Give coordinates in the form (x, y)\n2. Round decimal answers to 3 decimal places\n3. Use the degree symbol ° for angles\n4. Return only the angle, coordinates, or radius as your answer.\n",
+    "answer": "(-6.500, 2.500)",
+    "metadata": {
+      "A": [
+        "-5",
+        "3"
+      ],
+      "B": [
+        "0",
+        "-4"
+      ],
+      "C": [
+        "-3",
+        "5"
+      ],
+      "ortho": [
+        "-13/2",
+        "5/2"
+      ],
+      "orthocenter_approx": [
+        -6.5,
+        2.5
+      ],
+      "source_dataset": "advanced_geometry",
+      "source_index": 95,
+      "task_type": "orthocenter",
+      "difficulty": {
+        "min_coord": -10,
+        "max_coord": 10
+      }
+    }
+  },
+  {
+    "question": "Given triangle ABC with coordinates A=(2, 4), B=(-1, -4), and C=(6, -2), find the coordinates of its orthocenter. For all geometry problems:\n1. Give coordinates in the form (x, y)\n2. Round decimal answers to 3 decimal places\n3. Use the degree symbol ° for angles\n4. Return only the angle, coordinates, or radius as your answer.\n",
+    "answer": "(3.440, -1.040)",
+    "metadata": {
+      "A": [
+        "2",
+        "4"
+      ],
+      "B": [
+        "-1",
+        "-4"
+      ],
+      "C": [
+        "6",
+        "-2"
+      ],
+      "ortho": [
+        "86/25",
+        "-26/25"
+      ],
+      "orthocenter_approx": [
+        3.44,
+        -1.04
+      ],
+      "source_dataset": "advanced_geometry",
+      "source_index": 96,
+      "task_type": "orthocenter",
+      "difficulty": {
+        "min_coord": -10,
+        "max_coord": 10
+      }
+    }
+  },
+  {
+    "question": "For triangle with vertices A=(9, 7), B=(9, -1), and C=(7, -10), determine the orthocenter (intersection of altitudes). For all geometry problems:\n1. Give coordinates in the form (x, y)\n2. Round decimal answers to 3 decimal places\n3. Use the degree symbol ° for angles\n4. Return only the angle, coordinates, or radius as your answer.\n",
+    "answer": "(85.500, -10.000)",
+    "metadata": {
+      "A": [
+        "9",
+        "7"
+      ],
+      "B": [
+        "9",
+        "-1"
+      ],
+      "C": [
+        "7",
+        "-10"
+      ],
+      "ortho": [
+        "171/2",
+        "-10"
+      ],
+      "orthocenter_approx": [
+        85.5,
+        -10.0
+      ],
+      "source_dataset": "advanced_geometry",
+      "source_index": 97,
+      "task_type": "orthocenter",
+      "difficulty": {
+        "min_coord": -10,
+        "max_coord": 10
+      }
+    }
+  },
+  {
+    "question": "Given triangle ABC with coordinates A=(-10, -2), B=(-10, 7), and C=(-9, -3), find the coordinates of its orthocenter. For all geometry problems:\n1. Give coordinates in the form (x, y)\n2. Round decimal answers to 3 decimal places\n3. Use the degree symbol ° for angles\n4. Return only the angle, coordinates, or radius as your answer.\n",
+    "answer": "(-20.000, -3.000)",
+    "metadata": {
+      "A": [
+        "-10",
+        "-2"
+      ],
+      "B": [
+        "-10",
+        "7"
+      ],
+      "C": [
+        "-9",
+        "-3"
+      ],
+      "ortho": [
+        "-20",
+        "-3"
+      ],
+      "orthocenter_approx": [
+        -20.0,
+        -3.0
+      ],
+      "source_dataset": "advanced_geometry",
+      "source_index": 98,
+      "task_type": "orthocenter",
+      "difficulty": {
+        "min_coord": -10,
+        "max_coord": 10
+      }
+    }
+  },
+  {
+    "question": "In triangle ABC with coordinates A=(-10, 8), B=(5, -5), and C=(8, 4), find the measure (in degrees) of angle ABC. For all geometry problems:\n1. Give coordinates in the form (x, y)\n2. Round decimal answers to 3 decimal places\n3. Use the degree symbol ° for angles\n4. Return only the angle, coordinates, or radius as your answer.\n",
+    "answer": "67.52°",
+    "metadata": {
+      "A": [
+        "-10",
+        "8"
+      ],
+      "B": [
+        "5",
+        "-5"
+      ],
+      "C": [
+        "8",
+        "4"
+      ],
+      "angle_ABC_degrees": 67.5205656028969,
+      "source_dataset": "advanced_geometry",
+      "source_index": 99,
+      "task_type": "angle_measure",
+      "difficulty": {
+        "min_coord": -10,
+        "max_coord": 10
+      }
+    }
+  }
+]

@@ -1,0 +1,5426 @@
+[
+  {
+    "question": "Solve this cryptarithm:\n\n    FOM\n+ IKPLO\n-------\n  IKIZL\n\nEach letter stands for a unique digit (0-9). No leading letter can be zero.\nProvide a comma separated mapping from letters to digits that satisfies the equation in your final answer. Output format: \"A=1,B=2,C=3\" (without quotes)\n",
+    "answer": "F=3,I=4,K=2,L=9,M=1,O=8,P=0,Z=7",
+    "metadata": {
+      "source_dataset": "cryptarithm",
+      "source_index": 0,
+      "letters": [
+        "L",
+        "O",
+        "K",
+        "I",
+        "P",
+        "Z",
+        "M",
+        "F"
+      ],
+      "word_values": [
+        381,
+        42098
+      ],
+      "sum_number": 42479,
+      "words_letters": [
+        "FOM",
+        "IKPLO"
+      ],
+      "result_letters": "IKIZL",
+      "digit_to_letter": {
+        "9": "L",
+        "8": "O",
+        "2": "K",
+        "4": "I",
+        "0": "P",
+        "7": "Z",
+        "1": "M",
+        "3": "F"
+      },
+      "letter_to_digit": {
+        "L": 9,
+        "O": 8,
+        "K": 2,
+        "I": 4,
+        "P": 0,
+        "Z": 7,
+        "M": 1,
+        "F": 3
+      },
+      "difficulty": {
+        "words": [
+          2,
+          3
+        ]
+      }
+    }
+  },
+  {
+    "question": "Solve this cryptarithm:\n\n   HHPD\n+ JIOKP\n-------\n  JHEDH\n\nEach letter stands for a unique digit (0-9). No leading letter can be zero.\nProvide a comma separated mapping from letters to digits that satisfies the equation in your final answer. Output format: \"A=1,B=2,C=3\" (without quotes)\n",
+    "answer": "D=8,E=9,H=3,I=0,J=7,K=2,O=6,P=5",
+    "metadata": {
+      "source_dataset": "cryptarithm",
+      "source_index": 1,
+      "letters": [
+        "O",
+        "K",
+        "H",
+        "P",
+        "I",
+        "D",
+        "E",
+        "J"
+      ],
+      "word_values": [
+        3358,
+        70625
+      ],
+      "sum_number": 73983,
+      "words_letters": [
+        "HHPD",
+        "JIOKP"
+      ],
+      "result_letters": "JHEDH",
+      "digit_to_letter": {
+        "6": "O",
+        "2": "K",
+        "3": "H",
+        "5": "P",
+        "0": "I",
+        "8": "D",
+        "9": "E",
+        "7": "J"
+      },
+      "letter_to_digit": {
+        "O": 6,
+        "K": 2,
+        "H": 3,
+        "P": 5,
+        "I": 0,
+        "D": 8,
+        "E": 9,
+        "J": 7
+      },
+      "difficulty": {
+        "words": [
+          2,
+          3
+        ]
+      }
+    }
+  },
+  {
+    "question": "Solve this cryptarithm:\n\n   RZRHA\n   PPXZZ\n+  ZHGZA\n--------\n  XXNXHZ\n\nEach letter stands for a unique digit (0-9). No leading letter can be zero.\nProvide a comma separated mapping from letters to digits that satisfies the equation in your final answer. Output format: \"A=1,B=2,C=3\" (without quotes)\n",
+    "answer": "A=0,G=7,H=9,N=8,P=3,R=2,X=1,Z=5",
+    "metadata": {
+      "source_dataset": "cryptarithm",
+      "source_index": 2,
+      "letters": [
+        "Z",
+        "H",
+        "N",
+        "G",
+        "X",
+        "A",
+        "R",
+        "P"
+      ],
+      "word_values": [
+        25290,
+        33155,
+        59750
+      ],
+      "sum_number": 118195,
+      "words_letters": [
+        "RZRHA",
+        "PPXZZ",
+        "ZHGZA"
+      ],
+      "result_letters": "XXNXHZ",
+      "digit_to_letter": {
+        "5": "Z",
+        "9": "H",
+        "8": "N",
+        "7": "G",
+        "1": "X",
+        "0": "A",
+        "2": "R",
+        "3": "P"
+      },
+      "letter_to_digit": {
+        "Z": 5,
+        "H": 9,
+        "N": 8,
+        "G": 7,
+        "X": 1,
+        "A": 0,
+        "R": 2,
+        "P": 3
+      },
+      "difficulty": {
+        "words": [
+          2,
+          3
+        ]
+      }
+    }
+  },
+  {
+    "question": "Solve this cryptarithm:\n\n   FOWM\n   ZQHS\n+  HZWQ\n-------\n  MWDZS\n\nEach letter stands for a unique digit (0-9). No leading letter can be zero.\nProvide a comma separated mapping from letters to digits that satisfies the equation in your final answer. Output format: \"A=1,B=2,C=3\" (without quotes)\n",
+    "answer": "D=8,F=2,H=6,M=1,O=3,Q=9,S=7,W=4,Z=5",
+    "metadata": {
+      "source_dataset": "cryptarithm",
+      "source_index": 3,
+      "letters": [
+        "S",
+        "D",
+        "Z",
+        "O",
+        "H",
+        "Q",
+        "W",
+        "F",
+        "M"
+      ],
+      "word_values": [
+        2341,
+        5967,
+        6549
+      ],
+      "sum_number": 14857,
+      "words_letters": [
+        "FOWM",
+        "ZQHS",
+        "HZWQ"
+      ],
+      "result_letters": "MWDZS",
+      "digit_to_letter": {
+        "7": "S",
+        "8": "D",
+        "5": "Z",
+        "3": "O",
+        "6": "H",
+        "9": "Q",
+        "4": "W",
+        "2": "F",
+        "1": "M"
+      },
+      "letter_to_digit": {
+        "S": 7,
+        "D": 8,
+        "Z": 5,
+        "O": 3,
+        "H": 6,
+        "Q": 9,
+        "W": 4,
+        "F": 2,
+        "M": 1
+      },
+      "difficulty": {
+        "words": [
+          2,
+          3
+        ]
+      }
+    }
+  },
+  {
+    "question": "Solve this cryptarithm:\n\n  SISS\n+  ISO\n------\n  NSOT\n\nEach letter stands for a unique digit (0-9). No leading letter can be zero.\nProvide a comma separated mapping from letters to digits that satisfies the equation in your final answer. Output format: \"A=1,B=2,C=3\" (without quotes)\n",
+    "answer": "I=7,N=5,O=9,S=4,T=3",
+    "metadata": {
+      "source_dataset": "cryptarithm",
+      "source_index": 4,
+      "letters": [
+        "I",
+        "T",
+        "N",
+        "S",
+        "O"
+      ],
+      "word_values": [
+        4744,
+        749
+      ],
+      "sum_number": 5493,
+      "words_letters": [
+        "SISS",
+        "ISO"
+      ],
+      "result_letters": "NSOT",
+      "digit_to_letter": {
+        "7": "I",
+        "3": "T",
+        "5": "N",
+        "4": "S",
+        "9": "O"
+      },
+      "letter_to_digit": {
+        "I": 7,
+        "T": 3,
+        "N": 5,
+        "S": 4,
+        "O": 9
+      },
+      "difficulty": {
+        "words": [
+          2,
+          3
+        ]
+      }
+    }
+  },
+  {
+    "question": "Solve this cryptarithm:\n\n    JMG\n   MMTE\n+ GLEGB\n-------\n  JCVLT\n\nEach letter stands for a unique digit (0-9). No leading letter can be zero.\nProvide a comma separated mapping from letters to digits that satisfies the equation in your final answer. Output format: \"A=1,B=2,C=3\" (without quotes)\n",
+    "answer": "B=1,C=0,E=7,G=4,J=5,L=3,M=6,T=2,V=9",
+    "metadata": {
+      "source_dataset": "cryptarithm",
+      "source_index": 5,
+      "letters": [
+        "B",
+        "J",
+        "T",
+        "E",
+        "C",
+        "G",
+        "L",
+        "M",
+        "V"
+      ],
+      "word_values": [
+        564,
+        6627,
+        43741
+      ],
+      "sum_number": 50932,
+      "words_letters": [
+        "JMG",
+        "MMTE",
+        "GLEGB"
+      ],
+      "result_letters": "JCVLT",
+      "digit_to_letter": {
+        "1": "B",
+        "5": "J",
+        "2": "T",
+        "7": "E",
+        "0": "C",
+        "4": "G",
+        "3": "L",
+        "6": "M",
+        "9": "V"
+      },
+      "letter_to_digit": {
+        "B": 1,
+        "J": 5,
+        "T": 2,
+        "E": 7,
+        "C": 0,
+        "G": 4,
+        "L": 3,
+        "M": 6,
+        "V": 9
+      },
+      "difficulty": {
+        "words": [
+          2,
+          3
+        ]
+      }
+    }
+  },
+  {
+    "question": "Solve this cryptarithm:\n\n     FYK\n   YSFMF\n+  KFIDI\n--------\n  MIFYSN\n\nEach letter stands for a unique digit (0-9). No leading letter can be zero.\nProvide a comma separated mapping from letters to digits that satisfies the equation in your final answer. Output format: \"A=1,B=2,C=3\" (without quotes)\n",
+    "answer": "D=3,F=6,I=2,K=7,M=1,N=5,S=9,Y=4",
+    "metadata": {
+      "source_dataset": "cryptarithm",
+      "source_index": 6,
+      "letters": [
+        "K",
+        "M",
+        "D",
+        "N",
+        "I",
+        "S",
+        "F",
+        "Y"
+      ],
+      "word_values": [
+        647,
+        49616,
+        76232
+      ],
+      "sum_number": 126495,
+      "words_letters": [
+        "FYK",
+        "YSFMF",
+        "KFIDI"
+      ],
+      "result_letters": "MIFYSN",
+      "digit_to_letter": {
+        "7": "K",
+        "1": "M",
+        "3": "D",
+        "5": "N",
+        "2": "I",
+        "9": "S",
+        "6": "F",
+        "4": "Y"
+      },
+      "letter_to_digit": {
+        "K": 7,
+        "M": 1,
+        "D": 3,
+        "N": 5,
+        "I": 2,
+        "S": 9,
+        "F": 6,
+        "Y": 4
+      },
+      "difficulty": {
+        "words": [
+          2,
+          3
+        ]
+      }
+    }
+  },
+  {
+    "question": "Solve this cryptarithm:\n\n  WFSM\n+ TNMM\n------\n  KSSM\n\nEach letter stands for a unique digit (0-9). No leading letter can be zero.\nProvide a comma separated mapping from letters to digits that satisfies the equation in your final answer. Output format: \"A=1,B=2,C=3\" (without quotes)\n",
+    "answer": "F=8,K=9,M=0,N=3,S=1,T=6,W=2",
+    "metadata": {
+      "source_dataset": "cryptarithm",
+      "source_index": 7,
+      "letters": [
+        "S",
+        "N",
+        "W",
+        "M",
+        "F",
+        "T",
+        "K"
+      ],
+      "word_values": [
+        2810,
+        6300
+      ],
+      "sum_number": 9110,
+      "words_letters": [
+        "WFSM",
+        "TNMM"
+      ],
+      "result_letters": "KSSM",
+      "digit_to_letter": {
+        "1": "S",
+        "3": "N",
+        "2": "W",
+        "0": "M",
+        "8": "F",
+        "6": "T",
+        "9": "K"
+      },
+      "letter_to_digit": {
+        "S": 1,
+        "N": 3,
+        "W": 2,
+        "M": 0,
+        "F": 8,
+        "T": 6,
+        "K": 9
+      },
+      "difficulty": {
+        "words": [
+          2,
+          3
+        ]
+      }
+    }
+  },
+  {
+    "question": "Solve this cryptarithm:\n\n   ISQF\n   JQOF\n+ OWFEB\n-------\n  EESJI\n\nEach letter stands for a unique digit (0-9). No leading letter can be zero.\nProvide a comma separated mapping from letters to digits that satisfies the equation in your final answer. Output format: \"A=1,B=2,C=3\" (without quotes)\n",
+    "answer": "B=0,E=6,F=2,I=4,J=8,O=5,Q=7,S=9,W=3",
+    "metadata": {
+      "source_dataset": "cryptarithm",
+      "source_index": 8,
+      "letters": [
+        "W",
+        "Q",
+        "I",
+        "B",
+        "O",
+        "J",
+        "S",
+        "E",
+        "F"
+      ],
+      "word_values": [
+        4972,
+        8752,
+        53260
+      ],
+      "sum_number": 66984,
+      "words_letters": [
+        "ISQF",
+        "JQOF",
+        "OWFEB"
+      ],
+      "result_letters": "EESJI",
+      "digit_to_letter": {
+        "3": "W",
+        "7": "Q",
+        "4": "I",
+        "0": "B",
+        "5": "O",
+        "8": "J",
+        "9": "S",
+        "6": "E",
+        "2": "F"
+      },
+      "letter_to_digit": {
+        "W": 3,
+        "Q": 7,
+        "I": 4,
+        "B": 0,
+        "O": 5,
+        "J": 8,
+        "S": 9,
+        "E": 6,
+        "F": 2
+      },
+      "difficulty": {
+        "words": [
+          2,
+          3
+        ]
+      }
+    }
+  },
+  {
+    "question": "Solve this cryptarithm:\n\n  JVPPC\n+ DPPCD\n-------\n  GJDGF\n\nEach letter stands for a unique digit (0-9). No leading letter can be zero.\nProvide a comma separated mapping from letters to digits that satisfies the equation in your final answer. Output format: \"A=1,B=2,C=3\" (without quotes)\n",
+    "answer": "C=5,D=4,F=9,G=7,J=3,P=2,V=1",
+    "metadata": {
+      "source_dataset": "cryptarithm",
+      "source_index": 9,
+      "letters": [
+        "V",
+        "D",
+        "G",
+        "J",
+        "C",
+        "P",
+        "F"
+      ],
+      "word_values": [
+        31225,
+        42254
+      ],
+      "sum_number": 73479,
+      "words_letters": [
+        "JVPPC",
+        "DPPCD"
+      ],
+      "result_letters": "GJDGF",
+      "digit_to_letter": {
+        "1": "V",
+        "4": "D",
+        "7": "G",
+        "3": "J",
+        "5": "C",
+        "2": "P",
+        "9": "F"
+      },
+      "letter_to_digit": {
+        "V": 1,
+        "D": 4,
+        "G": 7,
+        "J": 3,
+        "C": 5,
+        "P": 2,
+        "F": 9
+      },
+      "difficulty": {
+        "words": [
+          2,
+          3
+        ]
+      }
+    }
+  },
+  {
+    "question": "Solve this cryptarithm:\n\n     YLY\n   YTJNV\n+  JNNWD\n--------\n  IWWYYW\n\nEach letter stands for a unique digit (0-9). No leading letter can be zero.\nProvide a comma separated mapping from letters to digits that satisfies the equation in your final answer. Output format: \"A=1,B=2,C=3\" (without quotes)\n",
+    "answer": "D=7,I=1,J=6,L=9,N=3,T=8,V=0,W=2,Y=5",
+    "metadata": {
+      "source_dataset": "cryptarithm",
+      "source_index": 10,
+      "letters": [
+        "J",
+        "L",
+        "Y",
+        "T",
+        "D",
+        "N",
+        "I",
+        "W",
+        "V"
+      ],
+      "word_values": [
+        595,
+        58630,
+        63327
+      ],
+      "sum_number": 122552,
+      "words_letters": [
+        "YLY",
+        "YTJNV",
+        "JNNWD"
+      ],
+      "result_letters": "IWWYYW",
+      "digit_to_letter": {
+        "6": "J",
+        "9": "L",
+        "5": "Y",
+        "8": "T",
+        "7": "D",
+        "3": "N",
+        "1": "I",
+        "2": "W",
+        "0": "V"
+      },
+      "letter_to_digit": {
+        "J": 6,
+        "L": 9,
+        "Y": 5,
+        "T": 8,
+        "D": 7,
+        "N": 3,
+        "I": 1,
+        "W": 2,
+        "V": 0
+      },
+      "difficulty": {
+        "words": [
+          2,
+          3
+        ]
+      }
+    }
+  },
+  {
+    "question": "Solve this cryptarithm:\n\n   MQTM\n+ RMAJT\n-------\n  MRYJM\n\nEach letter stands for a unique digit (0-9). No leading letter can be zero.\nProvide a comma separated mapping from letters to digits that satisfies the equation in your final answer. Output format: \"A=1,B=2,C=3\" (without quotes)\n",
+    "answer": "A=2,J=3,M=8,Q=9,R=7,T=0,Y=1",
+    "metadata": {
+      "source_dataset": "cryptarithm",
+      "source_index": 11,
+      "letters": [
+        "Y",
+        "Q",
+        "R",
+        "T",
+        "J",
+        "M",
+        "A"
+      ],
+      "word_values": [
+        8908,
+        78230
+      ],
+      "sum_number": 87138,
+      "words_letters": [
+        "MQTM",
+        "RMAJT"
+      ],
+      "result_letters": "MRYJM",
+      "digit_to_letter": {
+        "1": "Y",
+        "9": "Q",
+        "7": "R",
+        "0": "T",
+        "3": "J",
+        "8": "M",
+        "2": "A"
+      },
+      "letter_to_digit": {
+        "Y": 1,
+        "Q": 9,
+        "R": 7,
+        "T": 0,
+        "J": 3,
+        "M": 8,
+        "A": 2
+      },
+      "difficulty": {
+        "words": [
+          2,
+          3
+        ]
+      }
+    }
+  },
+  {
+    "question": "Solve this cryptarithm:\n\n   DNNA\n+ QFFAV\n-------\n  QHAHA\n\nEach letter stands for a unique digit (0-9). No leading letter can be zero.\nProvide a comma separated mapping from letters to digits that satisfies the equation in your final answer. Output format: \"A=1,B=2,C=3\" (without quotes)\n",
+    "answer": "A=1,D=5,F=3,H=9,N=8,Q=7,V=0",
+    "metadata": {
+      "source_dataset": "cryptarithm",
+      "source_index": 12,
+      "letters": [
+        "V",
+        "F",
+        "Q",
+        "N",
+        "A",
+        "H",
+        "D"
+      ],
+      "word_values": [
+        5881,
+        73310
+      ],
+      "sum_number": 79191,
+      "words_letters": [
+        "DNNA",
+        "QFFAV"
+      ],
+      "result_letters": "QHAHA",
+      "digit_to_letter": {
+        "0": "V",
+        "3": "F",
+        "7": "Q",
+        "8": "N",
+        "1": "A",
+        "9": "H",
+        "5": "D"
+      },
+      "letter_to_digit": {
+        "V": 0,
+        "F": 3,
+        "Q": 7,
+        "N": 8,
+        "A": 1,
+        "H": 9,
+        "D": 5
+      },
+      "difficulty": {
+        "words": [
+          2,
+          3
+        ]
+      }
+    }
+  },
+  {
+    "question": "Solve this cryptarithm:\n\n   SLF\n+  OVE\n------\n  UWCC\n\nEach letter stands for a unique digit (0-9). No leading letter can be zero.\nProvide a comma separated mapping from letters to digits that satisfies the equation in your final answer. Output format: \"A=1,B=2,C=3\" (without quotes)\n",
+    "answer": "C=6,E=9,F=7,L=5,O=4,S=8,U=1,V=0,W=2",
+    "metadata": {
+      "source_dataset": "cryptarithm",
+      "source_index": 13,
+      "letters": [
+        "C",
+        "E",
+        "L",
+        "O",
+        "F",
+        "V",
+        "S",
+        "W",
+        "U"
+      ],
+      "word_values": [
+        857,
+        409
+      ],
+      "sum_number": 1266,
+      "words_letters": [
+        "SLF",
+        "OVE"
+      ],
+      "result_letters": "UWCC",
+      "digit_to_letter": {
+        "6": "C",
+        "9": "E",
+        "5": "L",
+        "4": "O",
+        "7": "F",
+        "0": "V",
+        "8": "S",
+        "2": "W",
+        "1": "U"
+      },
+      "letter_to_digit": {
+        "C": 6,
+        "E": 9,
+        "L": 5,
+        "O": 4,
+        "F": 7,
+        "V": 0,
+        "S": 8,
+        "W": 2,
+        "U": 1
+      },
+      "difficulty": {
+        "words": [
+          2,
+          3
+        ]
+      }
+    }
+  },
+  {
+    "question": "Solve this cryptarithm:\n\n   PHMV\n+ NPNMF\n-------\n  HPJNN\n\nEach letter stands for a unique digit (0-9). No leading letter can be zero.\nProvide a comma separated mapping from letters to digits that satisfies the equation in your final answer. Output format: \"A=1,B=2,C=3\" (without quotes)\n",
+    "answer": "F=1,H=5,J=0,M=7,N=4,P=9,V=3",
+    "metadata": {
+      "source_dataset": "cryptarithm",
+      "source_index": 14,
+      "letters": [
+        "V",
+        "M",
+        "J",
+        "F",
+        "N",
+        "H",
+        "P"
+      ],
+      "word_values": [
+        9573,
+        49471
+      ],
+      "sum_number": 59044,
+      "words_letters": [
+        "PHMV",
+        "NPNMF"
+      ],
+      "result_letters": "HPJNN",
+      "digit_to_letter": {
+        "3": "V",
+        "7": "M",
+        "0": "J",
+        "1": "F",
+        "4": "N",
+        "5": "H",
+        "9": "P"
+      },
+      "letter_to_digit": {
+        "V": 3,
+        "M": 7,
+        "J": 0,
+        "F": 1,
+        "N": 4,
+        "H": 5,
+        "P": 9
+      },
+      "difficulty": {
+        "words": [
+          2,
+          3
+        ]
+      }
+    }
+  },
+  {
+    "question": "Solve this cryptarithm:\n\n   KYKO\n+ YXBHU\n-------\n  BAHFF\n\nEach letter stands for a unique digit (0-9). No leading letter can be zero.\nProvide a comma separated mapping from letters to digits that satisfies the equation in your final answer. Output format: \"A=1,B=2,C=3\" (without quotes)\n",
+    "answer": "A=0,B=4,F=8,H=7,K=1,O=6,U=2,X=9,Y=3",
+    "metadata": {
+      "source_dataset": "cryptarithm",
+      "source_index": 15,
+      "letters": [
+        "K",
+        "F",
+        "A",
+        "B",
+        "H",
+        "U",
+        "Y",
+        "O",
+        "X"
+      ],
+      "word_values": [
+        1316,
+        39472
+      ],
+      "sum_number": 40788,
+      "words_letters": [
+        "KYKO",
+        "YXBHU"
+      ],
+      "result_letters": "BAHFF",
+      "digit_to_letter": {
+        "1": "K",
+        "8": "F",
+        "0": "A",
+        "4": "B",
+        "7": "H",
+        "2": "U",
+        "3": "Y",
+        "6": "O",
+        "9": "X"
+      },
+      "letter_to_digit": {
+        "K": 1,
+        "F": 8,
+        "A": 0,
+        "B": 4,
+        "H": 7,
+        "U": 2,
+        "Y": 3,
+        "O": 6,
+        "X": 9
+      },
+      "difficulty": {
+        "words": [
+          2,
+          3
+        ]
+      }
+    }
+  },
+  {
+    "question": "Solve this cryptarithm:\n\n    ECE\n+ WUWUE\n-------\n  WELKV\n\nEach letter stands for a unique digit (0-9). No leading letter can be zero.\nProvide a comma separated mapping from letters to digits that satisfies the equation in your final answer. Output format: \"A=1,B=2,C=3\" (without quotes)\n",
+    "answer": "C=5,E=7,K=2,L=1,U=6,V=4,W=3",
+    "metadata": {
+      "source_dataset": "cryptarithm",
+      "source_index": 16,
+      "letters": [
+        "E",
+        "W",
+        "U",
+        "C",
+        "V",
+        "K",
+        "L"
+      ],
+      "word_values": [
+        757,
+        36367
+      ],
+      "sum_number": 37124,
+      "words_letters": [
+        "ECE",
+        "WUWUE"
+      ],
+      "result_letters": "WELKV",
+      "digit_to_letter": {
+        "7": "E",
+        "3": "W",
+        "6": "U",
+        "5": "C",
+        "4": "V",
+        "2": "K",
+        "1": "L"
+      },
+      "letter_to_digit": {
+        "E": 7,
+        "W": 3,
+        "U": 6,
+        "C": 5,
+        "V": 4,
+        "K": 2,
+        "L": 1
+      },
+      "difficulty": {
+        "words": [
+          2,
+          3
+        ]
+      }
+    }
+  },
+  {
+    "question": "Solve this cryptarithm:\n\n    CMX\n+ HOGZI\n-------\n  HICCI\n\nEach letter stands for a unique digit (0-9). No leading letter can be zero.\nProvide a comma separated mapping from letters to digits that satisfies the equation in your final answer. Output format: \"A=1,B=2,C=3\" (without quotes)\n",
+    "answer": "C=5,G=9,H=1,I=3,M=7,O=2,X=0,Z=8",
+    "metadata": {
+      "source_dataset": "cryptarithm",
+      "source_index": 17,
+      "letters": [
+        "I",
+        "M",
+        "H",
+        "C",
+        "X",
+        "G",
+        "Z",
+        "O"
+      ],
+      "word_values": [
+        570,
+        12983
+      ],
+      "sum_number": 13553,
+      "words_letters": [
+        "CMX",
+        "HOGZI"
+      ],
+      "result_letters": "HICCI",
+      "digit_to_letter": {
+        "3": "I",
+        "7": "M",
+        "1": "H",
+        "5": "C",
+        "0": "X",
+        "9": "G",
+        "8": "Z",
+        "2": "O"
+      },
+      "letter_to_digit": {
+        "I": 3,
+        "M": 7,
+        "H": 1,
+        "C": 5,
+        "X": 0,
+        "G": 9,
+        "Z": 8,
+        "O": 2
+      },
+      "difficulty": {
+        "words": [
+          2,
+          3
+        ]
+      }
+    }
+  },
+  {
+    "question": "Solve this cryptarithm:\n\n   LGLV\n  WMVMM\n+   KZO\n-------\n  WRGOI\n\nEach letter stands for a unique digit (0-9). No leading letter can be zero.\nProvide a comma separated mapping from letters to digits that satisfies the equation in your final answer. Output format: \"A=1,B=2,C=3\" (without quotes)\n",
+    "answer": "G=3,I=8,K=9,L=5,M=0,O=7,R=6,V=1,W=4,Z=2",
+    "metadata": {
+      "source_dataset": "cryptarithm",
+      "source_index": 18,
+      "letters": [
+        "Z",
+        "I",
+        "G",
+        "W",
+        "V",
+        "R",
+        "M",
+        "L",
+        "K",
+        "O"
+      ],
+      "word_values": [
+        5351,
+        40100,
+        927
+      ],
+      "sum_number": 46378,
+      "words_letters": [
+        "LGLV",
+        "WMVMM",
+        "KZO"
+      ],
+      "result_letters": "WRGOI",
+      "digit_to_letter": {
+        "2": "Z",
+        "8": "I",
+        "3": "G",
+        "4": "W",
+        "1": "V",
+        "6": "R",
+        "0": "M",
+        "5": "L",
+        "9": "K",
+        "7": "O"
+      },
+      "letter_to_digit": {
+        "Z": 2,
+        "I": 8,
+        "G": 3,
+        "W": 4,
+        "V": 1,
+        "R": 6,
+        "M": 0,
+        "L": 5,
+        "K": 9,
+        "O": 7
+      },
+      "difficulty": {
+        "words": [
+          2,
+          3
+        ]
+      }
+    }
+  },
+  {
+    "question": "Solve this cryptarithm:\n\n    BHB\n  XHDHP\n+   JDD\n-------\n  XPPXH\n\nEach letter stands for a unique digit (0-9). No leading letter can be zero.\nProvide a comma separated mapping from letters to digits that satisfies the equation in your final answer. Output format: \"A=1,B=2,C=3\" (without quotes)\n",
+    "answer": "B=9,D=0,H=2,J=4,P=3,X=5",
+    "metadata": {
+      "source_dataset": "cryptarithm",
+      "source_index": 19,
+      "letters": [
+        "X",
+        "B",
+        "H",
+        "J",
+        "D",
+        "P"
+      ],
+      "word_values": [
+        929,
+        52023,
+        400
+      ],
+      "sum_number": 53352,
+      "words_letters": [
+        "BHB",
+        "XHDHP",
+        "JDD"
+      ],
+      "result_letters": "XPPXH",
+      "digit_to_letter": {
+        "5": "X",
+        "9": "B",
+        "2": "H",
+        "4": "J",
+        "0": "D",
+        "3": "P"
+      },
+      "letter_to_digit": {
+        "X": 5,
+        "B": 9,
+        "H": 2,
+        "J": 4,
+        "D": 0,
+        "P": 3
+      },
+      "difficulty": {
+        "words": [
+          2,
+          3
+        ]
+      }
+    }
+  },
+  {
+    "question": "Solve this cryptarithm:\n\n  OGO\n+ XHG\n-----\n  EER\n\nEach letter stands for a unique digit (0-9). No leading letter can be zero.\nProvide a comma separated mapping from letters to digits that satisfies the equation in your final answer. Output format: \"A=1,B=2,C=3\" (without quotes)\n",
+    "answer": "E=9,G=7,H=1,O=5,R=2,X=4",
+    "metadata": {
+      "source_dataset": "cryptarithm",
+      "source_index": 20,
+      "letters": [
+        "O",
+        "H",
+        "G",
+        "R",
+        "X",
+        "E"
+      ],
+      "word_values": [
+        575,
+        417
+      ],
+      "sum_number": 992,
+      "words_letters": [
+        "OGO",
+        "XHG"
+      ],
+      "result_letters": "EER",
+      "digit_to_letter": {
+        "5": "O",
+        "1": "H",
+        "7": "G",
+        "2": "R",
+        "4": "X",
+        "9": "E"
+      },
+      "letter_to_digit": {
+        "O": 5,
+        "H": 1,
+        "G": 7,
+        "R": 2,
+        "X": 4,
+        "E": 9
+      },
+      "difficulty": {
+        "words": [
+          2,
+          3
+        ]
+      }
+    }
+  },
+  {
+    "question": "Solve this cryptarithm:\n\n   FGMP\n   RPRY\n+  QMMU\n-------\n  SFYGU\n\nEach letter stands for a unique digit (0-9). No leading letter can be zero.\nProvide a comma separated mapping from letters to digits that satisfies the equation in your final answer. Output format: \"A=1,B=2,C=3\" (without quotes)\n",
+    "answer": "F=8,G=9,M=3,P=4,Q=7,R=2,S=1,U=5,Y=6",
+    "metadata": {
+      "source_dataset": "cryptarithm",
+      "source_index": 21,
+      "letters": [
+        "P",
+        "Q",
+        "U",
+        "S",
+        "M",
+        "F",
+        "Y",
+        "G",
+        "R"
+      ],
+      "word_values": [
+        8934,
+        2426,
+        7335
+      ],
+      "sum_number": 18695,
+      "words_letters": [
+        "FGMP",
+        "RPRY",
+        "QMMU"
+      ],
+      "result_letters": "SFYGU",
+      "digit_to_letter": {
+        "4": "P",
+        "7": "Q",
+        "5": "U",
+        "1": "S",
+        "3": "M",
+        "8": "F",
+        "6": "Y",
+        "9": "G",
+        "2": "R"
+      },
+      "letter_to_digit": {
+        "P": 4,
+        "Q": 7,
+        "U": 5,
+        "S": 1,
+        "M": 3,
+        "F": 8,
+        "Y": 6,
+        "G": 9,
+        "R": 2
+      },
+      "difficulty": {
+        "words": [
+          2,
+          3
+        ]
+      }
+    }
+  },
+  {
+    "question": "Solve this cryptarithm:\n\n    HST\n  RNLZH\n+ SLLNR\n-------\n  YLYYK\n\nEach letter stands for a unique digit (0-9). No leading letter can be zero.\nProvide a comma separated mapping from letters to digits that satisfies the equation in your final answer. Output format: \"A=1,B=2,C=3\" (without quotes)\n",
+    "answer": "H=5,K=6,L=2,N=0,R=8,S=1,T=3,Y=9,Z=7",
+    "metadata": {
+      "source_dataset": "cryptarithm",
+      "source_index": 22,
+      "letters": [
+        "L",
+        "Y",
+        "N",
+        "R",
+        "S",
+        "Z",
+        "K",
+        "H",
+        "T"
+      ],
+      "word_values": [
+        513,
+        80275,
+        12208
+      ],
+      "sum_number": 92996,
+      "words_letters": [
+        "HST",
+        "RNLZH",
+        "SLLNR"
+      ],
+      "result_letters": "YLYYK",
+      "digit_to_letter": {
+        "2": "L",
+        "9": "Y",
+        "0": "N",
+        "8": "R",
+        "1": "S",
+        "7": "Z",
+        "6": "K",
+        "5": "H",
+        "3": "T"
+      },
+      "letter_to_digit": {
+        "L": 2,
+        "Y": 9,
+        "N": 0,
+        "R": 8,
+        "S": 1,
+        "Z": 7,
+        "K": 6,
+        "H": 5,
+        "T": 3
+      },
+      "difficulty": {
+        "words": [
+          2,
+          3
+        ]
+      }
+    }
+  },
+  {
+    "question": "Solve this cryptarithm:\n\n   OYWV\n   LHAW\n+ AWWSW\n-------\n  LHSYV\n\nEach letter stands for a unique digit (0-9). No leading letter can be zero.\nProvide a comma separated mapping from letters to digits that satisfies the equation in your final answer. Output format: \"A=1,B=2,C=3\" (without quotes)\n",
+    "answer": "A=7,H=2,L=8,O=4,S=9,V=3,W=0,Y=6",
+    "metadata": {
+      "source_dataset": "cryptarithm",
+      "source_index": 23,
+      "letters": [
+        "A",
+        "L",
+        "W",
+        "H",
+        "O",
+        "V",
+        "Y",
+        "S"
+      ],
+      "word_values": [
+        4603,
+        8270,
+        70090
+      ],
+      "sum_number": 82963,
+      "words_letters": [
+        "OYWV",
+        "LHAW",
+        "AWWSW"
+      ],
+      "result_letters": "LHSYV",
+      "digit_to_letter": {
+        "7": "A",
+        "8": "L",
+        "0": "W",
+        "2": "H",
+        "4": "O",
+        "3": "V",
+        "6": "Y",
+        "9": "S"
+      },
+      "letter_to_digit": {
+        "A": 7,
+        "L": 8,
+        "W": 0,
+        "H": 2,
+        "O": 4,
+        "V": 3,
+        "Y": 6,
+        "S": 9
+      },
+      "difficulty": {
+        "words": [
+          2,
+          3
+        ]
+      }
+    }
+  },
+  {
+    "question": "Solve this cryptarithm:\n\n   VMIH\n+  BIMY\n-------\n  JIIIS\n\nEach letter stands for a unique digit (0-9). No leading letter can be zero.\nProvide a comma separated mapping from letters to digits that satisfies the equation in your final answer. Output format: \"A=1,B=2,C=3\" (without quotes)\n",
+    "answer": "B=8,H=4,I=3,J=1,M=0,S=6,V=5,Y=2",
+    "metadata": {
+      "source_dataset": "cryptarithm",
+      "source_index": 24,
+      "letters": [
+        "S",
+        "J",
+        "V",
+        "I",
+        "M",
+        "B",
+        "Y",
+        "H"
+      ],
+      "word_values": [
+        5034,
+        8302
+      ],
+      "sum_number": 13336,
+      "words_letters": [
+        "VMIH",
+        "BIMY"
+      ],
+      "result_letters": "JIIIS",
+      "digit_to_letter": {
+        "6": "S",
+        "1": "J",
+        "5": "V",
+        "3": "I",
+        "0": "M",
+        "8": "B",
+        "2": "Y",
+        "4": "H"
+      },
+      "letter_to_digit": {
+        "S": 6,
+        "J": 1,
+        "V": 5,
+        "I": 3,
+        "M": 0,
+        "B": 8,
+        "Y": 2,
+        "H": 4
+      },
+      "difficulty": {
+        "words": [
+          2,
+          3
+        ]
+      }
+    }
+  },
+  {
+    "question": "Solve this cryptarithm:\n\n   LMR\n+ MRCN\n------\n  RQRI\n\nEach letter stands for a unique digit (0-9). No leading letter can be zero.\nProvide a comma separated mapping from letters to digits that satisfies the equation in your final answer. Output format: \"A=1,B=2,C=3\" (without quotes)\n",
+    "answer": "C=0,I=2,L=5,M=7,N=4,Q=3,R=8",
+    "metadata": {
+      "source_dataset": "cryptarithm",
+      "source_index": 25,
+      "letters": [
+        "C",
+        "I",
+        "R",
+        "M",
+        "N",
+        "L",
+        "Q"
+      ],
+      "word_values": [
+        578,
+        7804
+      ],
+      "sum_number": 8382,
+      "words_letters": [
+        "LMR",
+        "MRCN"
+      ],
+      "result_letters": "RQRI",
+      "digit_to_letter": {
+        "0": "C",
+        "2": "I",
+        "8": "R",
+        "7": "M",
+        "4": "N",
+        "5": "L",
+        "3": "Q"
+      },
+      "letter_to_digit": {
+        "C": 0,
+        "I": 2,
+        "R": 8,
+        "M": 7,
+        "N": 4,
+        "L": 5,
+        "Q": 3
+      },
+      "difficulty": {
+        "words": [
+          2,
+          3
+        ]
+      }
+    }
+  },
+  {
+    "question": "Solve this cryptarithm:\n\n   MZEZK\n   HXEMM\n+  HEXXM\n--------\n  MGGGKG\n\nEach letter stands for a unique digit (0-9). No leading letter can be zero.\nProvide a comma separated mapping from letters to digits that satisfies the equation in your final answer. Output format: \"A=1,B=2,C=3\" (without quotes)\n",
+    "answer": "E=5,G=0,H=8,K=6,M=2,X=9,Z=4",
+    "metadata": {
+      "source_dataset": "cryptarithm",
+      "source_index": 26,
+      "letters": [
+        "G",
+        "X",
+        "K",
+        "Z",
+        "H",
+        "E",
+        "M"
+      ],
+      "word_values": [
+        24546,
+        89522,
+        85992
+      ],
+      "sum_number": 200060,
+      "words_letters": [
+        "MZEZK",
+        "HXEMM",
+        "HEXXM"
+      ],
+      "result_letters": "MGGGKG",
+      "digit_to_letter": {
+        "0": "G",
+        "9": "X",
+        "6": "K",
+        "4": "Z",
+        "8": "H",
+        "5": "E",
+        "2": "M"
+      },
+      "letter_to_digit": {
+        "G": 0,
+        "X": 9,
+        "K": 6,
+        "Z": 4,
+        "H": 8,
+        "E": 5,
+        "M": 2
+      },
+      "difficulty": {
+        "words": [
+          2,
+          3
+        ]
+      }
+    }
+  },
+  {
+    "question": "Solve this cryptarithm:\n\n  JIA\n+ HJM\n-----\n  AAH\n\nEach letter stands for a unique digit (0-9). No leading letter can be zero.\nProvide a comma separated mapping from letters to digits that satisfies the equation in your final answer. Output format: \"A=1,B=2,C=3\" (without quotes)\n",
+    "answer": "A=8,H=7,I=6,J=1,M=9",
+    "metadata": {
+      "source_dataset": "cryptarithm",
+      "source_index": 27,
+      "letters": [
+        "J",
+        "I",
+        "A",
+        "M",
+        "H"
+      ],
+      "word_values": [
+        168,
+        719
+      ],
+      "sum_number": 887,
+      "words_letters": [
+        "JIA",
+        "HJM"
+      ],
+      "result_letters": "AAH",
+      "digit_to_letter": {
+        "1": "J",
+        "6": "I",
+        "8": "A",
+        "9": "M",
+        "7": "H"
+      },
+      "letter_to_digit": {
+        "J": 1,
+        "I": 6,
+        "A": 8,
+        "M": 9,
+        "H": 7
+      },
+      "difficulty": {
+        "words": [
+          2,
+          3
+        ]
+      }
+    }
+  },
+  {
+    "question": "Solve this cryptarithm:\n\n   TRVJ\n+ GTLLS\n-------\n  JJRDJ\n\nEach letter stands for a unique digit (0-9). No leading letter can be zero.\nProvide a comma separated mapping from letters to digits that satisfies the equation in your final answer. Output format: \"A=1,B=2,C=3\" (without quotes)\n",
+    "answer": "D=1,G=6,J=7,L=9,R=5,S=0,T=8,V=2",
+    "metadata": {
+      "source_dataset": "cryptarithm",
+      "source_index": 28,
+      "letters": [
+        "J",
+        "R",
+        "T",
+        "G",
+        "D",
+        "S",
+        "L",
+        "V"
+      ],
+      "word_values": [
+        8527,
+        68990
+      ],
+      "sum_number": 77517,
+      "words_letters": [
+        "TRVJ",
+        "GTLLS"
+      ],
+      "result_letters": "JJRDJ",
+      "digit_to_letter": {
+        "7": "J",
+        "5": "R",
+        "8": "T",
+        "6": "G",
+        "1": "D",
+        "0": "S",
+        "9": "L",
+        "2": "V"
+      },
+      "letter_to_digit": {
+        "J": 7,
+        "R": 5,
+        "T": 8,
+        "G": 6,
+        "D": 1,
+        "S": 0,
+        "L": 9,
+        "V": 2
+      },
+      "difficulty": {
+        "words": [
+          2,
+          3
+        ]
+      }
+    }
+  },
+  {
+    "question": "Solve this cryptarithm:\n\n  RRNIX\n  CMIHH\n+   TRP\n-------\n  NXTXR\n\nEach letter stands for a unique digit (0-9). No leading letter can be zero.\nProvide a comma separated mapping from letters to digits that satisfies the equation in your final answer. Output format: \"A=1,B=2,C=3\" (without quotes)\n",
+    "answer": "C=3,H=8,I=2,M=0,N=7,P=1,R=4,T=9,X=5",
+    "metadata": {
+      "source_dataset": "cryptarithm",
+      "source_index": 29,
+      "letters": [
+        "X",
+        "T",
+        "I",
+        "N",
+        "H",
+        "P",
+        "M",
+        "R",
+        "C"
+      ],
+      "word_values": [
+        44725,
+        30288,
+        941
+      ],
+      "sum_number": 75954,
+      "words_letters": [
+        "RRNIX",
+        "CMIHH",
+        "TRP"
+      ],
+      "result_letters": "NXTXR",
+      "digit_to_letter": {
+        "5": "X",
+        "9": "T",
+        "2": "I",
+        "7": "N",
+        "8": "H",
+        "1": "P",
+        "0": "M",
+        "4": "R",
+        "3": "C"
+      },
+      "letter_to_digit": {
+        "X": 5,
+        "T": 9,
+        "I": 2,
+        "N": 7,
+        "H": 8,
+        "P": 1,
+        "M": 0,
+        "R": 4,
+        "C": 3
+      },
+      "difficulty": {
+        "words": [
+          2,
+          3
+        ]
+      }
+    }
+  },
+  {
+    "question": "Solve this cryptarithm:\n\n  QKKYK\n+ RRDWN\n-------\n  WPRDD\n\nEach letter stands for a unique digit (0-9). No leading letter can be zero.\nProvide a comma separated mapping from letters to digits that satisfies the equation in your final answer. Output format: \"A=1,B=2,C=3\" (without quotes)\n",
+    "answer": "D=0,K=4,N=6,P=9,Q=3,R=5,W=8,Y=1",
+    "metadata": {
+      "source_dataset": "cryptarithm",
+      "source_index": 30,
+      "letters": [
+        "D",
+        "K",
+        "W",
+        "Y",
+        "R",
+        "P",
+        "Q",
+        "N"
+      ],
+      "word_values": [
+        34414,
+        55086
+      ],
+      "sum_number": 89500,
+      "words_letters": [
+        "QKKYK",
+        "RRDWN"
+      ],
+      "result_letters": "WPRDD",
+      "digit_to_letter": {
+        "0": "D",
+        "4": "K",
+        "8": "W",
+        "1": "Y",
+        "5": "R",
+        "9": "P",
+        "3": "Q",
+        "6": "N"
+      },
+      "letter_to_digit": {
+        "D": 0,
+        "K": 4,
+        "W": 8,
+        "Y": 1,
+        "R": 5,
+        "P": 9,
+        "Q": 3,
+        "N": 6
+      },
+      "difficulty": {
+        "words": [
+          2,
+          3
+        ]
+      }
+    }
+  },
+  {
+    "question": "Solve this cryptarithm:\n\n    QKK\n  SMFFM\n+  ZBBH\n-------\n  MSHSS\n\nEach letter stands for a unique digit (0-9). No leading letter can be zero.\nProvide a comma separated mapping from letters to digits that satisfies the equation in your final answer. Output format: \"A=1,B=2,C=3\" (without quotes)\n",
+    "answer": "B=5,F=0,H=2,K=7,M=4,Q=6,S=3,Z=8",
+    "metadata": {
+      "source_dataset": "cryptarithm",
+      "source_index": 31,
+      "letters": [
+        "H",
+        "Q",
+        "S",
+        "K",
+        "M",
+        "F",
+        "Z",
+        "B"
+      ],
+      "word_values": [
+        677,
+        34004,
+        8552
+      ],
+      "sum_number": 43233,
+      "words_letters": [
+        "QKK",
+        "SMFFM",
+        "ZBBH"
+      ],
+      "result_letters": "MSHSS",
+      "digit_to_letter": {
+        "2": "H",
+        "6": "Q",
+        "3": "S",
+        "7": "K",
+        "4": "M",
+        "0": "F",
+        "8": "Z",
+        "5": "B"
+      },
+      "letter_to_digit": {
+        "H": 2,
+        "Q": 6,
+        "S": 3,
+        "K": 7,
+        "M": 4,
+        "F": 0,
+        "Z": 8,
+        "B": 5
+      },
+      "difficulty": {
+        "words": [
+          2,
+          3
+        ]
+      }
+    }
+  },
+  {
+    "question": "Solve this cryptarithm:\n\n  VSVR\n+  WLV\n------\n  VUMS\n\nEach letter stands for a unique digit (0-9). No leading letter can be zero.\nProvide a comma separated mapping from letters to digits that satisfies the equation in your final answer. Output format: \"A=1,B=2,C=3\" (without quotes)\n",
+    "answer": "L=8,M=5,R=4,S=0,U=3,V=6,W=2",
+    "metadata": {
+      "source_dataset": "cryptarithm",
+      "source_index": 32,
+      "letters": [
+        "R",
+        "M",
+        "V",
+        "S",
+        "U",
+        "W",
+        "L"
+      ],
+      "word_values": [
+        6064,
+        286
+      ],
+      "sum_number": 6350,
+      "words_letters": [
+        "VSVR",
+        "WLV"
+      ],
+      "result_letters": "VUMS",
+      "digit_to_letter": {
+        "4": "R",
+        "5": "M",
+        "6": "V",
+        "0": "S",
+        "3": "U",
+        "2": "W",
+        "8": "L"
+      },
+      "letter_to_digit": {
+        "R": 4,
+        "M": 5,
+        "V": 6,
+        "S": 0,
+        "U": 3,
+        "W": 2,
+        "L": 8
+      },
+      "difficulty": {
+        "words": [
+          2,
+          3
+        ]
+      }
+    }
+  },
+  {
+    "question": "Solve this cryptarithm:\n\n  SJGJR\n   WGHH\n+  FRGG\n-------\n  BBEHB\n\nEach letter stands for a unique digit (0-9). No leading letter can be zero.\nProvide a comma separated mapping from letters to digits that satisfies the equation in your final answer. Output format: \"A=1,B=2,C=3\" (without quotes)\n",
+    "answer": "B=3,E=6,F=8,G=4,H=2,J=5,R=7,S=1,W=9",
+    "metadata": {
+      "source_dataset": "cryptarithm",
+      "source_index": 33,
+      "letters": [
+        "J",
+        "G",
+        "F",
+        "R",
+        "S",
+        "B",
+        "W",
+        "H",
+        "E"
+      ],
+      "word_values": [
+        15457,
+        9422,
+        8744
+      ],
+      "sum_number": 33623,
+      "words_letters": [
+        "SJGJR",
+        "WGHH",
+        "FRGG"
+      ],
+      "result_letters": "BBEHB",
+      "digit_to_letter": {
+        "5": "J",
+        "4": "G",
+        "8": "F",
+        "7": "R",
+        "1": "S",
+        "3": "B",
+        "9": "W",
+        "2": "H",
+        "6": "E"
+      },
+      "letter_to_digit": {
+        "J": 5,
+        "G": 4,
+        "F": 8,
+        "R": 7,
+        "S": 1,
+        "B": 3,
+        "W": 9,
+        "H": 2,
+        "E": 6
+      },
+      "difficulty": {
+        "words": [
+          2,
+          3
+        ]
+      }
+    }
+  },
+  {
+    "question": "Solve this cryptarithm:\n\n  EOPE\n  QOPU\n+  EWO\n------\n  OWEY\n\nEach letter stands for a unique digit (0-9). No leading letter can be zero.\nProvide a comma separated mapping from letters to digits that satisfies the equation in your final answer. Output format: \"A=1,B=2,C=3\" (without quotes)\n",
+    "answer": "E=5,O=8,P=6,Q=1,U=4,W=2,Y=7",
+    "metadata": {
+      "source_dataset": "cryptarithm",
+      "source_index": 34,
+      "letters": [
+        "Q",
+        "E",
+        "Y",
+        "P",
+        "U",
+        "W",
+        "O"
+      ],
+      "word_values": [
+        5865,
+        1864,
+        528
+      ],
+      "sum_number": 8257,
+      "words_letters": [
+        "EOPE",
+        "QOPU",
+        "EWO"
+      ],
+      "result_letters": "OWEY",
+      "digit_to_letter": {
+        "1": "Q",
+        "5": "E",
+        "7": "Y",
+        "6": "P",
+        "4": "U",
+        "2": "W",
+        "8": "O"
+      },
+      "letter_to_digit": {
+        "Q": 1,
+        "E": 5,
+        "Y": 7,
+        "P": 6,
+        "U": 4,
+        "W": 2,
+        "O": 8
+      },
+      "difficulty": {
+        "words": [
+          2,
+          3
+        ]
+      }
+    }
+  },
+  {
+    "question": "Solve this cryptarithm:\n\n  OCSO\n   YOV\n+  VCL\n------\n  UJVJ\n\nEach letter stands for a unique digit (0-9). No leading letter can be zero.\nProvide a comma separated mapping from letters to digits that satisfies the equation in your final answer. Output format: \"A=1,B=2,C=3\" (without quotes)\n",
+    "answer": "C=1,J=3,L=7,O=4,S=6,U=5,V=2,Y=9",
+    "metadata": {
+      "source_dataset": "cryptarithm",
+      "source_index": 35,
+      "letters": [
+        "L",
+        "J",
+        "C",
+        "V",
+        "S",
+        "Y",
+        "O",
+        "U"
+      ],
+      "word_values": [
+        4164,
+        942,
+        217
+      ],
+      "sum_number": 5323,
+      "words_letters": [
+        "OCSO",
+        "YOV",
+        "VCL"
+      ],
+      "result_letters": "UJVJ",
+      "digit_to_letter": {
+        "7": "L",
+        "3": "J",
+        "1": "C",
+        "2": "V",
+        "6": "S",
+        "9": "Y",
+        "4": "O",
+        "5": "U"
+      },
+      "letter_to_digit": {
+        "L": 7,
+        "J": 3,
+        "C": 1,
+        "V": 2,
+        "S": 6,
+        "Y": 9,
+        "O": 4,
+        "U": 5
+      },
+      "difficulty": {
+        "words": [
+          2,
+          3
+        ]
+      }
+    }
+  },
+  {
+    "question": "Solve this cryptarithm:\n\n   IDG\n+ EUBJ\n------\n  EOOJ\n\nEach letter stands for a unique digit (0-9). No leading letter can be zero.\nProvide a comma separated mapping from letters to digits that satisfies the equation in your final answer. Output format: \"A=1,B=2,C=3\" (without quotes)\n",
+    "answer": "B=1,D=8,E=5,G=0,I=7,J=6,O=9,U=2",
+    "metadata": {
+      "source_dataset": "cryptarithm",
+      "source_index": 36,
+      "letters": [
+        "J",
+        "O",
+        "U",
+        "E",
+        "B",
+        "I",
+        "G",
+        "D"
+      ],
+      "word_values": [
+        780,
+        5216
+      ],
+      "sum_number": 5996,
+      "words_letters": [
+        "IDG",
+        "EUBJ"
+      ],
+      "result_letters": "EOOJ",
+      "digit_to_letter": {
+        "6": "J",
+        "9": "O",
+        "2": "U",
+        "5": "E",
+        "1": "B",
+        "7": "I",
+        "0": "G",
+        "8": "D"
+      },
+      "letter_to_digit": {
+        "J": 6,
+        "O": 9,
+        "U": 2,
+        "E": 5,
+        "B": 1,
+        "I": 7,
+        "G": 0,
+        "D": 8
+      },
+      "difficulty": {
+        "words": [
+          2,
+          3
+        ]
+      }
+    }
+  },
+  {
+    "question": "Solve this cryptarithm:\n\n  KYYT\n+ ITIQ\n------\n  XYVY\n\nEach letter stands for a unique digit (0-9). No leading letter can be zero.\nProvide a comma separated mapping from letters to digits that satisfies the equation in your final answer. Output format: \"A=1,B=2,C=3\" (without quotes)\n",
+    "answer": "I=4,K=3,Q=7,T=9,V=1,X=8,Y=6",
+    "metadata": {
+      "source_dataset": "cryptarithm",
+      "source_index": 37,
+      "letters": [
+        "I",
+        "Q",
+        "V",
+        "T",
+        "Y",
+        "X",
+        "K"
+      ],
+      "word_values": [
+        3669,
+        4947
+      ],
+      "sum_number": 8616,
+      "words_letters": [
+        "KYYT",
+        "ITIQ"
+      ],
+      "result_letters": "XYVY",
+      "digit_to_letter": {
+        "4": "I",
+        "7": "Q",
+        "1": "V",
+        "9": "T",
+        "6": "Y",
+        "8": "X",
+        "3": "K"
+      },
+      "letter_to_digit": {
+        "I": 4,
+        "Q": 7,
+        "V": 1,
+        "T": 9,
+        "Y": 6,
+        "X": 8,
+        "K": 3
+      },
+      "difficulty": {
+        "words": [
+          2,
+          3
+        ]
+      }
+    }
+  },
+  {
+    "question": "Solve this cryptarithm:\n\n    NIZP\n   GIUNG\n+  GNIGZ\n--------\n  LBPLBI\n\nEach letter stands for a unique digit (0-9). No leading letter can be zero.\nProvide a comma separated mapping from letters to digits that satisfies the equation in your final answer. Output format: \"A=1,B=2,C=3\" (without quotes)\n",
+    "answer": "B=2,G=5,I=8,L=1,N=7,P=4,U=3,Z=9",
+    "metadata": {
+      "source_dataset": "cryptarithm",
+      "source_index": 38,
+      "letters": [
+        "B",
+        "Z",
+        "N",
+        "P",
+        "G",
+        "L",
+        "U",
+        "I"
+      ],
+      "word_values": [
+        7894,
+        58375,
+        57859
+      ],
+      "sum_number": 124128,
+      "words_letters": [
+        "NIZP",
+        "GIUNG",
+        "GNIGZ"
+      ],
+      "result_letters": "LBPLBI",
+      "digit_to_letter": {
+        "2": "B",
+        "9": "Z",
+        "7": "N",
+        "4": "P",
+        "5": "G",
+        "1": "L",
+        "3": "U",
+        "8": "I"
+      },
+      "letter_to_digit": {
+        "B": 2,
+        "Z": 9,
+        "N": 7,
+        "P": 4,
+        "G": 5,
+        "L": 1,
+        "U": 3,
+        "I": 8
+      },
+      "difficulty": {
+        "words": [
+          2,
+          3
+        ]
+      }
+    }
+  },
+  {
+    "question": "Solve this cryptarithm:\n\n   AKZN\n  AKAAU\n+ MKKAB\n-------\n  ZKUBK\n\nEach letter stands for a unique digit (0-9). No leading letter can be zero.\nProvide a comma separated mapping from letters to digits that satisfies the equation in your final answer. Output format: \"A=1,B=2,C=3\" (without quotes)\n",
+    "answer": "A=7,B=4,K=2,M=1,N=5,U=3,Z=9",
+    "metadata": {
+      "source_dataset": "cryptarithm",
+      "source_index": 39,
+      "letters": [
+        "N",
+        "U",
+        "A",
+        "M",
+        "B",
+        "Z",
+        "K"
+      ],
+      "word_values": [
+        7295,
+        72773,
+        12274
+      ],
+      "sum_number": 92342,
+      "words_letters": [
+        "AKZN",
+        "AKAAU",
+        "MKKAB"
+      ],
+      "result_letters": "ZKUBK",
+      "digit_to_letter": {
+        "5": "N",
+        "3": "U",
+        "7": "A",
+        "1": "M",
+        "4": "B",
+        "9": "Z",
+        "2": "K"
+      },
+      "letter_to_digit": {
+        "N": 5,
+        "U": 3,
+        "A": 7,
+        "M": 1,
+        "B": 4,
+        "Z": 9,
+        "K": 2
+      },
+      "difficulty": {
+        "words": [
+          2,
+          3
+        ]
+      }
+    }
+  },
+  {
+    "question": "Solve this cryptarithm:\n\n   SIZN\n+ MMSXO\n-------\n  MBMYN\n\nEach letter stands for a unique digit (0-9). No leading letter can be zero.\nProvide a comma separated mapping from letters to digits that satisfies the equation in your final answer. Output format: \"A=1,B=2,C=3\" (without quotes)\n",
+    "answer": "B=9,I=7,M=3,N=6,O=0,S=5,X=4,Y=2,Z=8",
+    "metadata": {
+      "source_dataset": "cryptarithm",
+      "source_index": 40,
+      "letters": [
+        "I",
+        "N",
+        "B",
+        "Z",
+        "X",
+        "O",
+        "Y",
+        "S",
+        "M"
+      ],
+      "word_values": [
+        5786,
+        33540
+      ],
+      "sum_number": 39326,
+      "words_letters": [
+        "SIZN",
+        "MMSXO"
+      ],
+      "result_letters": "MBMYN",
+      "digit_to_letter": {
+        "7": "I",
+        "6": "N",
+        "9": "B",
+        "8": "Z",
+        "4": "X",
+        "0": "O",
+        "2": "Y",
+        "5": "S",
+        "3": "M"
+      },
+      "letter_to_digit": {
+        "I": 7,
+        "N": 6,
+        "B": 9,
+        "Z": 8,
+        "X": 4,
+        "O": 0,
+        "Y": 2,
+        "S": 5,
+        "M": 3
+      },
+      "difficulty": {
+        "words": [
+          2,
+          3
+        ]
+      }
+    }
+  },
+  {
+    "question": "Solve this cryptarithm:\n\n  KZII\n   DYS\n+  DSI\n------\n  KNQS\n\nEach letter stands for a unique digit (0-9). No leading letter can be zero.\nProvide a comma separated mapping from letters to digits that satisfies the equation in your final answer. Output format: \"A=1,B=2,C=3\" (without quotes)\n",
+    "answer": "D=1,I=0,K=7,N=4,Q=8,S=5,Y=3,Z=2",
+    "metadata": {
+      "source_dataset": "cryptarithm",
+      "source_index": 41,
+      "letters": [
+        "N",
+        "S",
+        "Q",
+        "I",
+        "Z",
+        "K",
+        "D",
+        "Y"
+      ],
+      "word_values": [
+        7200,
+        135,
+        150
+      ],
+      "sum_number": 7485,
+      "words_letters": [
+        "KZII",
+        "DYS",
+        "DSI"
+      ],
+      "result_letters": "KNQS",
+      "digit_to_letter": {
+        "4": "N",
+        "5": "S",
+        "8": "Q",
+        "0": "I",
+        "2": "Z",
+        "7": "K",
+        "1": "D",
+        "3": "Y"
+      },
+      "letter_to_digit": {
+        "N": 4,
+        "S": 5,
+        "Q": 8,
+        "I": 0,
+        "Z": 2,
+        "K": 7,
+        "D": 1,
+        "Y": 3
+      },
+      "difficulty": {
+        "words": [
+          2,
+          3
+        ]
+      }
+    }
+  },
+  {
+    "question": "Solve this cryptarithm:\n\n   NVX\n  NFDS\n+  JGV\n------\n  LSYG\n\nEach letter stands for a unique digit (0-9). No leading letter can be zero.\nProvide a comma separated mapping from letters to digits that satisfies the equation in your final answer. Output format: \"A=1,B=2,C=3\" (without quotes)\n",
+    "answer": "D=1,F=2,G=5,J=9,L=7,N=6,S=8,V=3,X=4,Y=0",
+    "metadata": {
+      "source_dataset": "cryptarithm",
+      "source_index": 42,
+      "letters": [
+        "Y",
+        "J",
+        "G",
+        "D",
+        "F",
+        "X",
+        "N",
+        "S",
+        "L",
+        "V"
+      ],
+      "word_values": [
+        634,
+        6218,
+        953
+      ],
+      "sum_number": 7805,
+      "words_letters": [
+        "NVX",
+        "NFDS",
+        "JGV"
+      ],
+      "result_letters": "LSYG",
+      "digit_to_letter": {
+        "0": "Y",
+        "9": "J",
+        "5": "G",
+        "1": "D",
+        "2": "F",
+        "4": "X",
+        "6": "N",
+        "8": "S",
+        "7": "L",
+        "3": "V"
+      },
+      "letter_to_digit": {
+        "Y": 0,
+        "J": 9,
+        "G": 5,
+        "D": 1,
+        "F": 2,
+        "X": 4,
+        "N": 6,
+        "S": 8,
+        "L": 7,
+        "V": 3
+      },
+      "difficulty": {
+        "words": [
+          2,
+          3
+        ]
+      }
+    }
+  },
+  {
+    "question": "Solve this cryptarithm:\n\n  FYCLM\n+ QFCQE\n-------\n  EPCMP\n\nEach letter stands for a unique digit (0-9). No leading letter can be zero.\nProvide a comma separated mapping from letters to digits that satisfies the equation in your final answer. Output format: \"A=1,B=2,C=3\" (without quotes)\n",
+    "answer": "C=0,E=7,F=2,L=3,M=9,P=6,Q=5,Y=4",
+    "metadata": {
+      "source_dataset": "cryptarithm",
+      "source_index": 43,
+      "letters": [
+        "C",
+        "P",
+        "Q",
+        "E",
+        "L",
+        "M",
+        "F",
+        "Y"
+      ],
+      "word_values": [
+        24039,
+        52057
+      ],
+      "sum_number": 76096,
+      "words_letters": [
+        "FYCLM",
+        "QFCQE"
+      ],
+      "result_letters": "EPCMP",
+      "digit_to_letter": {
+        "0": "C",
+        "6": "P",
+        "5": "Q",
+        "7": "E",
+        "3": "L",
+        "9": "M",
+        "2": "F",
+        "4": "Y"
+      },
+      "letter_to_digit": {
+        "C": 0,
+        "P": 6,
+        "Q": 5,
+        "E": 7,
+        "L": 3,
+        "M": 9,
+        "F": 2,
+        "Y": 4
+      },
+      "difficulty": {
+        "words": [
+          2,
+          3
+        ]
+      }
+    }
+  },
+  {
+    "question": "Solve this cryptarithm:\n\n  KKDPD\n+  XKRK\n-------\n  KIPKT\n\nEach letter stands for a unique digit (0-9). No leading letter can be zero.\nProvide a comma separated mapping from letters to digits that satisfies the equation in your final answer. Output format: \"A=1,B=2,C=3\" (without quotes)\n",
+    "answer": "D=5,I=3,K=1,P=7,R=4,T=6,X=2",
+    "metadata": {
+      "source_dataset": "cryptarithm",
+      "source_index": 44,
+      "letters": [
+        "X",
+        "P",
+        "K",
+        "R",
+        "I",
+        "D",
+        "T"
+      ],
+      "word_values": [
+        11575,
+        2141
+      ],
+      "sum_number": 13716,
+      "words_letters": [
+        "KKDPD",
+        "XKRK"
+      ],
+      "result_letters": "KIPKT",
+      "digit_to_letter": {
+        "2": "X",
+        "7": "P",
+        "1": "K",
+        "4": "R",
+        "3": "I",
+        "5": "D",
+        "6": "T"
+      },
+      "letter_to_digit": {
+        "X": 2,
+        "P": 7,
+        "K": 1,
+        "R": 4,
+        "I": 3,
+        "D": 5,
+        "T": 6
+      },
+      "difficulty": {
+        "words": [
+          2,
+          3
+        ]
+      }
+    }
+  },
+  {
+    "question": "Solve this cryptarithm:\n\n  DJDWJ\n+   UJH\n-------\n  DKJWH\n\nEach letter stands for a unique digit (0-9). No leading letter can be zero.\nProvide a comma separated mapping from letters to digits that satisfies the equation in your final answer. Output format: \"A=1,B=2,C=3\" (without quotes)\n",
+    "answer": "D=8,H=4,J=0,K=1,U=2,W=5",
+    "metadata": {
+      "source_dataset": "cryptarithm",
+      "source_index": 45,
+      "letters": [
+        "K",
+        "J",
+        "H",
+        "W",
+        "D",
+        "U"
+      ],
+      "word_values": [
+        80850,
+        204
+      ],
+      "sum_number": 81054,
+      "words_letters": [
+        "DJDWJ",
+        "UJH"
+      ],
+      "result_letters": "DKJWH",
+      "digit_to_letter": {
+        "1": "K",
+        "0": "J",
+        "4": "H",
+        "5": "W",
+        "8": "D",
+        "2": "U"
+      },
+      "letter_to_digit": {
+        "K": 1,
+        "J": 0,
+        "H": 4,
+        "W": 5,
+        "D": 8,
+        "U": 2
+      },
+      "difficulty": {
+        "words": [
+          2,
+          3
+        ]
+      }
+    }
+  },
+  {
+    "question": "Solve this cryptarithm:\n\n   BMH\n  LIGZ\n+  ZGV\n------\n  IZLS\n\nEach letter stands for a unique digit (0-9). No leading letter can be zero.\nProvide a comma separated mapping from letters to digits that satisfies the equation in your final answer. Output format: \"A=1,B=2,C=3\" (without quotes)\n",
+    "answer": "B=7,G=3,H=0,I=2,L=1,M=4,S=5,V=9,Z=6",
+    "metadata": {
+      "source_dataset": "cryptarithm",
+      "source_index": 46,
+      "letters": [
+        "Z",
+        "I",
+        "V",
+        "M",
+        "L",
+        "G",
+        "B",
+        "S",
+        "H"
+      ],
+      "word_values": [
+        740,
+        1236,
+        639
+      ],
+      "sum_number": 2615,
+      "words_letters": [
+        "BMH",
+        "LIGZ",
+        "ZGV"
+      ],
+      "result_letters": "IZLS",
+      "digit_to_letter": {
+        "6": "Z",
+        "2": "I",
+        "9": "V",
+        "4": "M",
+        "1": "L",
+        "3": "G",
+        "7": "B",
+        "5": "S",
+        "0": "H"
+      },
+      "letter_to_digit": {
+        "Z": 6,
+        "I": 2,
+        "V": 9,
+        "M": 4,
+        "L": 1,
+        "G": 3,
+        "B": 7,
+        "S": 5,
+        "H": 0
+      },
+      "difficulty": {
+        "words": [
+          2,
+          3
+        ]
+      }
+    }
+  },
+  {
+    "question": "Solve this cryptarithm:\n\n  UPXLG\n+ LDULN\n-------\n  YLPUY\n\nEach letter stands for a unique digit (0-9). No leading letter can be zero.\nProvide a comma separated mapping from letters to digits that satisfies the equation in your final answer. Output format: \"A=1,B=2,C=3\" (without quotes)\n",
+    "answer": "D=8,G=1,L=2,N=6,P=3,U=4,X=9,Y=7",
+    "metadata": {
+      "source_dataset": "cryptarithm",
+      "source_index": 47,
+      "letters": [
+        "P",
+        "X",
+        "N",
+        "U",
+        "L",
+        "G",
+        "D",
+        "Y"
+      ],
+      "word_values": [
+        43921,
+        28426
+      ],
+      "sum_number": 72347,
+      "words_letters": [
+        "UPXLG",
+        "LDULN"
+      ],
+      "result_letters": "YLPUY",
+      "digit_to_letter": {
+        "3": "P",
+        "9": "X",
+        "6": "N",
+        "4": "U",
+        "2": "L",
+        "1": "G",
+        "8": "D",
+        "7": "Y"
+      },
+      "letter_to_digit": {
+        "P": 3,
+        "X": 9,
+        "N": 6,
+        "U": 4,
+        "L": 2,
+        "G": 1,
+        "D": 8,
+        "Y": 7
+      },
+      "difficulty": {
+        "words": [
+          2,
+          3
+        ]
+      }
+    }
+  },
+  {
+    "question": "Solve this cryptarithm:\n\n  PSFHG\n+   PPJ\n-------\n  PSNQH\n\nEach letter stands for a unique digit (0-9). No leading letter can be zero.\nProvide a comma separated mapping from letters to digits that satisfies the equation in your final answer. Output format: \"A=1,B=2,C=3\" (without quotes)\n",
+    "answer": "F=0,G=9,H=4,J=5,N=8,P=7,Q=2,S=3",
+    "metadata": {
+      "source_dataset": "cryptarithm",
+      "source_index": 48,
+      "letters": [
+        "F",
+        "G",
+        "Q",
+        "N",
+        "H",
+        "S",
+        "P",
+        "J"
+      ],
+      "word_values": [
+        73049,
+        775
+      ],
+      "sum_number": 73824,
+      "words_letters": [
+        "PSFHG",
+        "PPJ"
+      ],
+      "result_letters": "PSNQH",
+      "digit_to_letter": {
+        "0": "F",
+        "9": "G",
+        "2": "Q",
+        "8": "N",
+        "4": "H",
+        "3": "S",
+        "7": "P",
+        "5": "J"
+      },
+      "letter_to_digit": {
+        "F": 0,
+        "G": 9,
+        "Q": 2,
+        "N": 8,
+        "H": 4,
+        "S": 3,
+        "P": 7,
+        "J": 5
+      },
+      "difficulty": {
+        "words": [
+          2,
+          3
+        ]
+      }
+    }
+  },
+  {
+    "question": "Solve this cryptarithm:\n\n   BBDSZ\n+    VBJ\n--------\n  AQQJSS\n\nEach letter stands for a unique digit (0-9). No leading letter can be zero.\nProvide a comma separated mapping from letters to digits that satisfies the equation in your final answer. Output format: \"A=1,B=2,C=3\" (without quotes)\n",
+    "answer": "A=1,B=9,D=6,J=4,Q=0,S=2,V=7,Z=8",
+    "metadata": {
+      "source_dataset": "cryptarithm",
+      "source_index": 49,
+      "letters": [
+        "Q",
+        "B",
+        "A",
+        "D",
+        "V",
+        "Z",
+        "J",
+        "S"
+      ],
+      "word_values": [
+        99628,
+        794
+      ],
+      "sum_number": 100422,
+      "words_letters": [
+        "BBDSZ",
+        "VBJ"
+      ],
+      "result_letters": "AQQJSS",
+      "digit_to_letter": {
+        "0": "Q",
+        "9": "B",
+        "1": "A",
+        "6": "D",
+        "7": "V",
+        "8": "Z",
+        "4": "J",
+        "2": "S"
+      },
+      "letter_to_digit": {
+        "Q": 0,
+        "B": 9,
+        "A": 1,
+        "D": 6,
+        "V": 7,
+        "Z": 8,
+        "J": 4,
+        "S": 2
+      },
+      "difficulty": {
+        "words": [
+          2,
+          3
+        ]
+      }
+    }
+  },
+  {
+    "question": "Solve this cryptarithm:\n\n   QJZOE\n   QIZQZ\n+  MMQOI\n--------\n  GZOZDM\n\nEach letter stands for a unique digit (0-9). No leading letter can be zero.\nProvide a comma separated mapping from letters to digits that satisfies the equation in your final answer. Output format: \"A=1,B=2,C=3\" (without quotes)\n",
+    "answer": "D=9,E=6,G=2,I=7,J=3,M=4,O=5,Q=8,Z=1",
+    "metadata": {
+      "source_dataset": "cryptarithm",
+      "source_index": 50,
+      "letters": [
+        "I",
+        "M",
+        "E",
+        "J",
+        "O",
+        "Z",
+        "D",
+        "Q",
+        "G"
+      ],
+      "word_values": [
+        83156,
+        87181,
+        44857
+      ],
+      "sum_number": 215194,
+      "words_letters": [
+        "QJZOE",
+        "QIZQZ",
+        "MMQOI"
+      ],
+      "result_letters": "GZOZDM",
+      "digit_to_letter": {
+        "7": "I",
+        "4": "M",
+        "6": "E",
+        "3": "J",
+        "5": "O",
+        "1": "Z",
+        "9": "D",
+        "8": "Q",
+        "2": "G"
+      },
+      "letter_to_digit": {
+        "I": 7,
+        "M": 4,
+        "E": 6,
+        "J": 3,
+        "O": 5,
+        "Z": 1,
+        "D": 9,
+        "Q": 8,
+        "G": 2
+      },
+      "difficulty": {
+        "words": [
+          2,
+          3
+        ]
+      }
+    }
+  },
+  {
+    "question": "Solve this cryptarithm:\n\n  ZIWRS\n  ZZAYY\n+  BWZZ\n-------\n  XYKIB\n\nEach letter stands for a unique digit (0-9). No leading letter can be zero.\nProvide a comma separated mapping from letters to digits that satisfies the equation in your final answer. Output format: \"A=1,B=2,C=3\" (without quotes)\n",
+    "answer": "A=0,B=6,I=4,K=7,R=9,S=1,W=8,X=5,Y=3,Z=2",
+    "metadata": {
+      "source_dataset": "cryptarithm",
+      "source_index": 51,
+      "letters": [
+        "X",
+        "Y",
+        "W",
+        "K",
+        "I",
+        "S",
+        "A",
+        "B",
+        "R",
+        "Z"
+      ],
+      "word_values": [
+        24891,
+        22033,
+        6822
+      ],
+      "sum_number": 53746,
+      "words_letters": [
+        "ZIWRS",
+        "ZZAYY",
+        "BWZZ"
+      ],
+      "result_letters": "XYKIB",
+      "digit_to_letter": {
+        "5": "X",
+        "3": "Y",
+        "8": "W",
+        "7": "K",
+        "4": "I",
+        "1": "S",
+        "0": "A",
+        "6": "B",
+        "9": "R",
+        "2": "Z"
+      },
+      "letter_to_digit": {
+        "X": 5,
+        "Y": 3,
+        "W": 8,
+        "K": 7,
+        "I": 4,
+        "S": 1,
+        "A": 0,
+        "B": 6,
+        "R": 9,
+        "Z": 2
+      },
+      "difficulty": {
+        "words": [
+          2,
+          3
+        ]
+      }
+    }
+  },
+  {
+    "question": "Solve this cryptarithm:\n\n   YFZ\n+ BFDX\n------\n  BYXD\n\nEach letter stands for a unique digit (0-9). No leading letter can be zero.\nProvide a comma separated mapping from letters to digits that satisfies the equation in your final answer. Output format: \"A=1,B=2,C=3\" (without quotes)\n",
+    "answer": "B=8,D=5,F=0,X=6,Y=4,Z=9",
+    "metadata": {
+      "source_dataset": "cryptarithm",
+      "source_index": 52,
+      "letters": [
+        "Z",
+        "B",
+        "Y",
+        "D",
+        "X",
+        "F"
+      ],
+      "word_values": [
+        409,
+        8056
+      ],
+      "sum_number": 8465,
+      "words_letters": [
+        "YFZ",
+        "BFDX"
+      ],
+      "result_letters": "BYXD",
+      "digit_to_letter": {
+        "9": "Z",
+        "8": "B",
+        "4": "Y",
+        "5": "D",
+        "6": "X",
+        "0": "F"
+      },
+      "letter_to_digit": {
+        "Z": 9,
+        "B": 8,
+        "Y": 4,
+        "D": 5,
+        "X": 6,
+        "F": 0
+      },
+      "difficulty": {
+        "words": [
+          2,
+          3
+        ]
+      }
+    }
+  },
+  {
+    "question": "Solve this cryptarithm:\n\n  VKBX\n+  OKX\n------\n  AKHP\n\nEach letter stands for a unique digit (0-9). No leading letter can be zero.\nProvide a comma separated mapping from letters to digits that satisfies the equation in your final answer. Output format: \"A=1,B=2,C=3\" (without quotes)\n",
+    "answer": "A=4,B=8,H=1,K=2,O=9,P=0,V=3,X=5",
+    "metadata": {
+      "source_dataset": "cryptarithm",
+      "source_index": 53,
+      "letters": [
+        "V",
+        "B",
+        "X",
+        "H",
+        "K",
+        "O",
+        "A",
+        "P"
+      ],
+      "word_values": [
+        3285,
+        925
+      ],
+      "sum_number": 4210,
+      "words_letters": [
+        "VKBX",
+        "OKX"
+      ],
+      "result_letters": "AKHP",
+      "digit_to_letter": {
+        "3": "V",
+        "8": "B",
+        "5": "X",
+        "1": "H",
+        "2": "K",
+        "9": "O",
+        "4": "A",
+        "0": "P"
+      },
+      "letter_to_digit": {
+        "V": 3,
+        "B": 8,
+        "X": 5,
+        "H": 1,
+        "K": 2,
+        "O": 9,
+        "A": 4,
+        "P": 0
+      },
+      "difficulty": {
+        "words": [
+          2,
+          3
+        ]
+      }
+    }
+  },
+  {
+    "question": "Solve this cryptarithm:\n\n   UNJZ\n  HHZBN\n+  GZBU\n-------\n  NNZUH\n\nEach letter stands for a unique digit (0-9). No leading letter can be zero.\nProvide a comma separated mapping from letters to digits that satisfies the equation in your final answer. Output format: \"A=1,B=2,C=3\" (without quotes)\n",
+    "answer": "B=8,G=6,H=2,J=7,N=3,U=4,Z=5",
+    "metadata": {
+      "source_dataset": "cryptarithm",
+      "source_index": 54,
+      "letters": [
+        "G",
+        "U",
+        "Z",
+        "N",
+        "J",
+        "H",
+        "B"
+      ],
+      "word_values": [
+        4375,
+        22583,
+        6584
+      ],
+      "sum_number": 33542,
+      "words_letters": [
+        "UNJZ",
+        "HHZBN",
+        "GZBU"
+      ],
+      "result_letters": "NNZUH",
+      "digit_to_letter": {
+        "6": "G",
+        "4": "U",
+        "5": "Z",
+        "3": "N",
+        "7": "J",
+        "2": "H",
+        "8": "B"
+      },
+      "letter_to_digit": {
+        "G": 6,
+        "U": 4,
+        "Z": 5,
+        "N": 3,
+        "J": 7,
+        "H": 2,
+        "B": 8
+      },
+      "difficulty": {
+        "words": [
+          2,
+          3
+        ]
+      }
+    }
+  },
+  {
+    "question": "Solve this cryptarithm:\n\n  XRNS\n+ XNAQ\n------\n  NXES\n\nEach letter stands for a unique digit (0-9). No leading letter can be zero.\nProvide a comma separated mapping from letters to digits that satisfies the equation in your final answer. Output format: \"A=1,B=2,C=3\" (without quotes)\n",
+    "answer": "A=6,E=9,N=3,Q=0,R=8,S=4,X=1",
+    "metadata": {
+      "source_dataset": "cryptarithm",
+      "source_index": 55,
+      "letters": [
+        "S",
+        "E",
+        "X",
+        "N",
+        "R",
+        "Q",
+        "A"
+      ],
+      "word_values": [
+        1834,
+        1360
+      ],
+      "sum_number": 3194,
+      "words_letters": [
+        "XRNS",
+        "XNAQ"
+      ],
+      "result_letters": "NXES",
+      "digit_to_letter": {
+        "4": "S",
+        "9": "E",
+        "1": "X",
+        "3": "N",
+        "8": "R",
+        "0": "Q",
+        "6": "A"
+      },
+      "letter_to_digit": {
+        "S": 4,
+        "E": 9,
+        "X": 1,
+        "N": 3,
+        "R": 8,
+        "Q": 0,
+        "A": 6
+      },
+      "difficulty": {
+        "words": [
+          2,
+          3
+        ]
+      }
+    }
+  },
+  {
+    "question": "Solve this cryptarithm:\n\n  TSXOH\n    OTH\n+  XRLL\n-------\n  RURQL\n\nEach letter stands for a unique digit (0-9). No leading letter can be zero.\nProvide a comma separated mapping from letters to digits that satisfies the equation in your final answer. Output format: \"A=1,B=2,C=3\" (without quotes)\n",
+    "answer": "H=0,L=5,O=1,Q=2,R=7,S=4,T=6,U=3,X=8",
+    "metadata": {
+      "source_dataset": "cryptarithm",
+      "source_index": 56,
+      "letters": [
+        "Q",
+        "X",
+        "H",
+        "L",
+        "R",
+        "U",
+        "T",
+        "O",
+        "S"
+      ],
+      "word_values": [
+        64810,
+        160,
+        8755
+      ],
+      "sum_number": 73725,
+      "words_letters": [
+        "TSXOH",
+        "OTH",
+        "XRLL"
+      ],
+      "result_letters": "RURQL",
+      "digit_to_letter": {
+        "2": "Q",
+        "8": "X",
+        "0": "H",
+        "5": "L",
+        "7": "R",
+        "3": "U",
+        "6": "T",
+        "1": "O",
+        "4": "S"
+      },
+      "letter_to_digit": {
+        "Q": 2,
+        "X": 8,
+        "H": 0,
+        "L": 5,
+        "R": 7,
+        "U": 3,
+        "T": 6,
+        "O": 1,
+        "S": 4
+      },
+      "difficulty": {
+        "words": [
+          2,
+          3
+        ]
+      }
+    }
+  },
+  {
+    "question": "Solve this cryptarithm:\n\n   DWRW\n    DDA\n+ QRAOR\n-------\n  QOYRO\n\nEach letter stands for a unique digit (0-9). No leading letter can be zero.\nProvide a comma separated mapping from letters to digits that satisfies the equation in your final answer. Output format: \"A=1,B=2,C=3\" (without quotes)\n",
+    "answer": "A=5,D=3,O=6,Q=4,R=2,W=9,Y=8",
+    "metadata": {
+      "source_dataset": "cryptarithm",
+      "source_index": 57,
+      "letters": [
+        "W",
+        "Y",
+        "O",
+        "A",
+        "Q",
+        "R",
+        "D"
+      ],
+      "word_values": [
+        3929,
+        335,
+        42562
+      ],
+      "sum_number": 46826,
+      "words_letters": [
+        "DWRW",
+        "DDA",
+        "QRAOR"
+      ],
+      "result_letters": "QOYRO",
+      "digit_to_letter": {
+        "9": "W",
+        "8": "Y",
+        "6": "O",
+        "5": "A",
+        "4": "Q",
+        "2": "R",
+        "3": "D"
+      },
+      "letter_to_digit": {
+        "W": 9,
+        "Y": 8,
+        "O": 6,
+        "A": 5,
+        "Q": 4,
+        "R": 2,
+        "D": 3
+      },
+      "difficulty": {
+        "words": [
+          2,
+          3
+        ]
+      }
+    }
+  },
+  {
+    "question": "Solve this cryptarithm:\n\n   MSLM\n+  TPMY\n-------\n  AAMCZ\n\nEach letter stands for a unique digit (0-9). No leading letter can be zero.\nProvide a comma separated mapping from letters to digits that satisfies the equation in your final answer. Output format: \"A=1,B=2,C=3\" (without quotes)\n",
+    "answer": "A=1,C=0,L=6,M=3,P=4,S=8,T=7,Y=9,Z=2",
+    "metadata": {
+      "source_dataset": "cryptarithm",
+      "source_index": 58,
+      "letters": [
+        "Z",
+        "A",
+        "M",
+        "Y",
+        "S",
+        "C",
+        "P",
+        "T",
+        "L"
+      ],
+      "word_values": [
+        3863,
+        7439
+      ],
+      "sum_number": 11302,
+      "words_letters": [
+        "MSLM",
+        "TPMY"
+      ],
+      "result_letters": "AAMCZ",
+      "digit_to_letter": {
+        "2": "Z",
+        "1": "A",
+        "3": "M",
+        "9": "Y",
+        "8": "S",
+        "0": "C",
+        "4": "P",
+        "7": "T",
+        "6": "L"
+      },
+      "letter_to_digit": {
+        "Z": 2,
+        "A": 1,
+        "M": 3,
+        "Y": 9,
+        "S": 8,
+        "C": 0,
+        "P": 4,
+        "T": 7,
+        "L": 6
+      },
+      "difficulty": {
+        "words": [
+          2,
+          3
+        ]
+      }
+    }
+  },
+  {
+    "question": "Solve this cryptarithm:\n\n  BSNNW\n+  SBTA\n-------\n  BQENN\n\nEach letter stands for a unique digit (0-9). No leading letter can be zero.\nProvide a comma separated mapping from letters to digits that satisfies the equation in your final answer. Output format: \"A=1,B=2,C=3\" (without quotes)\n",
+    "answer": "A=4,B=7,E=0,N=2,Q=3,S=1,T=9,W=8",
+    "metadata": {
+      "source_dataset": "cryptarithm",
+      "source_index": 59,
+      "letters": [
+        "B",
+        "E",
+        "W",
+        "T",
+        "N",
+        "S",
+        "A",
+        "Q"
+      ],
+      "word_values": [
+        71228,
+        1794
+      ],
+      "sum_number": 73022,
+      "words_letters": [
+        "BSNNW",
+        "SBTA"
+      ],
+      "result_letters": "BQENN",
+      "digit_to_letter": {
+        "7": "B",
+        "0": "E",
+        "8": "W",
+        "9": "T",
+        "2": "N",
+        "1": "S",
+        "4": "A",
+        "3": "Q"
+      },
+      "letter_to_digit": {
+        "B": 7,
+        "E": 0,
+        "W": 8,
+        "T": 9,
+        "N": 2,
+        "S": 1,
+        "A": 4,
+        "Q": 3
+      },
+      "difficulty": {
+        "words": [
+          2,
+          3
+        ]
+      }
+    }
+  },
+  {
+    "question": "Solve this cryptarithm:\n\n  GIPGG\n+ DNNUK\n-------\n  SPKPI\n\nEach letter stands for a unique digit (0-9). No leading letter can be zero.\nProvide a comma separated mapping from letters to digits that satisfies the equation in your final answer. Output format: \"A=1,B=2,C=3\" (without quotes)\n",
+    "answer": "D=3,G=5,I=6,K=1,N=2,P=9,S=8,U=4",
+    "metadata": {
+      "source_dataset": "cryptarithm",
+      "source_index": 60,
+      "letters": [
+        "N",
+        "K",
+        "I",
+        "S",
+        "G",
+        "P",
+        "U",
+        "D"
+      ],
+      "word_values": [
+        56955,
+        32241
+      ],
+      "sum_number": 89196,
+      "words_letters": [
+        "GIPGG",
+        "DNNUK"
+      ],
+      "result_letters": "SPKPI",
+      "digit_to_letter": {
+        "2": "N",
+        "1": "K",
+        "6": "I",
+        "8": "S",
+        "5": "G",
+        "9": "P",
+        "4": "U",
+        "3": "D"
+      },
+      "letter_to_digit": {
+        "N": 2,
+        "K": 1,
+        "I": 6,
+        "S": 8,
+        "G": 5,
+        "P": 9,
+        "U": 4,
+        "D": 3
+      },
+      "difficulty": {
+        "words": [
+          2,
+          3
+        ]
+      }
+    }
+  },
+  {
+    "question": "Solve this cryptarithm:\n\n   XTUVI\n   CWCCT\n+  TMWWC\n--------\n  UYIXMI\n\nEach letter stands for a unique digit (0-9). No leading letter can be zero.\nProvide a comma separated mapping from letters to digits that satisfies the equation in your final answer. Output format: \"A=1,B=2,C=3\" (without quotes)\n",
+    "answer": "C=2,I=7,M=9,T=8,U=1,V=6,W=0,X=3,Y=4",
+    "metadata": {
+      "source_dataset": "cryptarithm",
+      "source_index": 61,
+      "letters": [
+        "M",
+        "V",
+        "Y",
+        "T",
+        "W",
+        "C",
+        "X",
+        "I",
+        "U"
+      ],
+      "word_values": [
+        38167,
+        20228,
+        89002
+      ],
+      "sum_number": 147397,
+      "words_letters": [
+        "XTUVI",
+        "CWCCT",
+        "TMWWC"
+      ],
+      "result_letters": "UYIXMI",
+      "digit_to_letter": {
+        "9": "M",
+        "6": "V",
+        "4": "Y",
+        "8": "T",
+        "0": "W",
+        "2": "C",
+        "3": "X",
+        "7": "I",
+        "1": "U"
+      },
+      "letter_to_digit": {
+        "M": 9,
+        "V": 6,
+        "Y": 4,
+        "T": 8,
+        "W": 0,
+        "C": 2,
+        "X": 3,
+        "I": 7,
+        "U": 1
+      },
+      "difficulty": {
+        "words": [
+          2,
+          3
+        ]
+      }
+    }
+  },
+  {
+    "question": "Solve this cryptarithm:\n\n    NNO\n+ TONTX\n-------\n  XSQPT\n\nEach letter stands for a unique digit (0-9). No leading letter can be zero.\nProvide a comma separated mapping from letters to digits that satisfies the equation in your final answer. Output format: \"A=1,B=2,C=3\" (without quotes)\n",
+    "answer": "N=8,O=9,P=2,Q=7,S=0,T=3,X=4",
+    "metadata": {
+      "source_dataset": "cryptarithm",
+      "source_index": 62,
+      "letters": [
+        "O",
+        "N",
+        "Q",
+        "P",
+        "S",
+        "T",
+        "X"
+      ],
+      "word_values": [
+        889,
+        39834
+      ],
+      "sum_number": 40723,
+      "words_letters": [
+        "NNO",
+        "TONTX"
+      ],
+      "result_letters": "XSQPT",
+      "digit_to_letter": {
+        "9": "O",
+        "8": "N",
+        "7": "Q",
+        "2": "P",
+        "0": "S",
+        "3": "T",
+        "4": "X"
+      },
+      "letter_to_digit": {
+        "O": 9,
+        "N": 8,
+        "Q": 7,
+        "P": 2,
+        "S": 0,
+        "T": 3,
+        "X": 4
+      },
+      "difficulty": {
+        "words": [
+          2,
+          3
+        ]
+      }
+    }
+  },
+  {
+    "question": "Solve this cryptarithm:\n\n  XCDQG\n    SGS\n+   UUS\n-------\n  XQKKX\n\nEach letter stands for a unique digit (0-9). No leading letter can be zero.\nProvide a comma separated mapping from letters to digits that satisfies the equation in your final answer. Output format: \"A=1,B=2,C=3\" (without quotes)\n",
+    "answer": "C=0,D=9,G=3,K=4,Q=2,S=6,U=8,X=5",
+    "metadata": {
+      "source_dataset": "cryptarithm",
+      "source_index": 63,
+      "letters": [
+        "K",
+        "X",
+        "C",
+        "D",
+        "U",
+        "Q",
+        "G",
+        "S"
+      ],
+      "word_values": [
+        50923,
+        636,
+        886
+      ],
+      "sum_number": 52445,
+      "words_letters": [
+        "XCDQG",
+        "SGS",
+        "UUS"
+      ],
+      "result_letters": "XQKKX",
+      "digit_to_letter": {
+        "4": "K",
+        "5": "X",
+        "0": "C",
+        "9": "D",
+        "8": "U",
+        "2": "Q",
+        "3": "G",
+        "6": "S"
+      },
+      "letter_to_digit": {
+        "K": 4,
+        "X": 5,
+        "C": 0,
+        "D": 9,
+        "U": 8,
+        "Q": 2,
+        "G": 3,
+        "S": 6
+      },
+      "difficulty": {
+        "words": [
+          2,
+          3
+        ]
+      }
+    }
+  },
+  {
+    "question": "Solve this cryptarithm:\n\n    GVM\n  CKVMA\n+ DCVKG\n-------\n  GMCCK\n\nEach letter stands for a unique digit (0-9). No leading letter can be zero.\nProvide a comma separated mapping from letters to digits that satisfies the equation in your final answer. Output format: \"A=1,B=2,C=3\" (without quotes)\n",
+    "answer": "A=3,C=7,D=1,G=9,K=2,M=0,V=4",
+    "metadata": {
+      "source_dataset": "cryptarithm",
+      "source_index": 64,
+      "letters": [
+        "V",
+        "C",
+        "A",
+        "D",
+        "M",
+        "K",
+        "G"
+      ],
+      "word_values": [
+        940,
+        72403,
+        17429
+      ],
+      "sum_number": 90772,
+      "words_letters": [
+        "GVM",
+        "CKVMA",
+        "DCVKG"
+      ],
+      "result_letters": "GMCCK",
+      "digit_to_letter": {
+        "4": "V",
+        "7": "C",
+        "3": "A",
+        "1": "D",
+        "0": "M",
+        "2": "K",
+        "9": "G"
+      },
+      "letter_to_digit": {
+        "V": 4,
+        "C": 7,
+        "A": 3,
+        "D": 1,
+        "M": 0,
+        "K": 2,
+        "G": 9
+      },
+      "difficulty": {
+        "words": [
+          2,
+          3
+        ]
+      }
+    }
+  },
+  {
+    "question": "Solve this cryptarithm:\n\n   UPRJH\n+  PONXR\n--------\n  JPJUPA\n\nEach letter stands for a unique digit (0-9). No leading letter can be zero.\nProvide a comma separated mapping from letters to digits that satisfies the equation in your final answer. Output format: \"A=1,B=2,C=3\" (without quotes)\n",
+    "answer": "A=0,H=8,J=1,N=7,O=5,P=6,R=2,U=9,X=4",
+    "metadata": {
+      "source_dataset": "cryptarithm",
+      "source_index": 65,
+      "letters": [
+        "P",
+        "R",
+        "N",
+        "A",
+        "U",
+        "X",
+        "J",
+        "O",
+        "H"
+      ],
+      "word_values": [
+        96218,
+        65742
+      ],
+      "sum_number": 161960,
+      "words_letters": [
+        "UPRJH",
+        "PONXR"
+      ],
+      "result_letters": "JPJUPA",
+      "digit_to_letter": {
+        "6": "P",
+        "2": "R",
+        "7": "N",
+        "0": "A",
+        "9": "U",
+        "4": "X",
+        "1": "J",
+        "5": "O",
+        "8": "H"
+      },
+      "letter_to_digit": {
+        "P": 6,
+        "R": 2,
+        "N": 7,
+        "A": 0,
+        "U": 9,
+        "X": 4,
+        "J": 1,
+        "O": 5,
+        "H": 8
+      },
+      "difficulty": {
+        "words": [
+          2,
+          3
+        ]
+      }
+    }
+  },
+  {
+    "question": "Solve this cryptarithm:\n\n  EMOQL\n+   QEQ\n-------\n  EOBRQ\n\nEach letter stands for a unique digit (0-9). No leading letter can be zero.\nProvide a comma separated mapping from letters to digits that satisfies the equation in your final answer. Output format: \"A=1,B=2,C=3\" (without quotes)\n",
+    "answer": "B=2,E=9,L=0,M=6,O=7,Q=4,R=3",
+    "metadata": {
+      "source_dataset": "cryptarithm",
+      "source_index": 66,
+      "letters": [
+        "E",
+        "M",
+        "L",
+        "B",
+        "Q",
+        "R",
+        "O"
+      ],
+      "word_values": [
+        96740,
+        494
+      ],
+      "sum_number": 97234,
+      "words_letters": [
+        "EMOQL",
+        "QEQ"
+      ],
+      "result_letters": "EOBRQ",
+      "digit_to_letter": {
+        "9": "E",
+        "6": "M",
+        "0": "L",
+        "2": "B",
+        "4": "Q",
+        "3": "R",
+        "7": "O"
+      },
+      "letter_to_digit": {
+        "E": 9,
+        "M": 6,
+        "L": 0,
+        "B": 2,
+        "Q": 4,
+        "R": 3,
+        "O": 7
+      },
+      "difficulty": {
+        "words": [
+          2,
+          3
+        ]
+      }
+    }
+  },
+  {
+    "question": "Solve this cryptarithm:\n\n   HHY\n  GOSH\n+ BHHB\n------\n  EBHX\n\nEach letter stands for a unique digit (0-9). No leading letter can be zero.\nProvide a comma separated mapping from letters to digits that satisfies the equation in your final answer. Output format: \"A=1,B=2,C=3\" (without quotes)\n",
+    "answer": "B=2,E=5,G=1,H=6,O=9,S=4,X=8,Y=0",
+    "metadata": {
+      "source_dataset": "cryptarithm",
+      "source_index": 67,
+      "letters": [
+        "X",
+        "G",
+        "H",
+        "Y",
+        "B",
+        "O",
+        "E",
+        "S"
+      ],
+      "word_values": [
+        660,
+        1946,
+        2662
+      ],
+      "sum_number": 5268,
+      "words_letters": [
+        "HHY",
+        "GOSH",
+        "BHHB"
+      ],
+      "result_letters": "EBHX",
+      "digit_to_letter": {
+        "8": "X",
+        "1": "G",
+        "6": "H",
+        "0": "Y",
+        "2": "B",
+        "9": "O",
+        "5": "E",
+        "4": "S"
+      },
+      "letter_to_digit": {
+        "X": 8,
+        "G": 1,
+        "H": 6,
+        "Y": 0,
+        "B": 2,
+        "O": 9,
+        "E": 5,
+        "S": 4
+      },
+      "difficulty": {
+        "words": [
+          2,
+          3
+        ]
+      }
+    }
+  },
+  {
+    "question": "Solve this cryptarithm:\n\n  ZVSKM\n    KVJ\n+  XMKV\n-------\n  ZTMTZ\n\nEach letter stands for a unique digit (0-9). No leading letter can be zero.\nProvide a comma separated mapping from letters to digits that satisfies the equation in your final answer. Output format: \"A=1,B=2,C=3\" (without quotes)\n",
+    "answer": "J=0,K=8,M=4,S=1,T=9,V=3,X=5,Z=7",
+    "metadata": {
+      "source_dataset": "cryptarithm",
+      "source_index": 68,
+      "letters": [
+        "T",
+        "J",
+        "Z",
+        "V",
+        "K",
+        "M",
+        "X",
+        "S"
+      ],
+      "word_values": [
+        73184,
+        830,
+        5483
+      ],
+      "sum_number": 79497,
+      "words_letters": [
+        "ZVSKM",
+        "KVJ",
+        "XMKV"
+      ],
+      "result_letters": "ZTMTZ",
+      "digit_to_letter": {
+        "9": "T",
+        "0": "J",
+        "7": "Z",
+        "3": "V",
+        "8": "K",
+        "4": "M",
+        "5": "X",
+        "1": "S"
+      },
+      "letter_to_digit": {
+        "T": 9,
+        "J": 0,
+        "Z": 7,
+        "V": 3,
+        "K": 8,
+        "M": 4,
+        "X": 5,
+        "S": 1
+      },
+      "difficulty": {
+        "words": [
+          2,
+          3
+        ]
+      }
+    }
+  },
+  {
+    "question": "Solve this cryptarithm:\n\n   ECSC\n+  JBCE\n-------\n  CCUPB\n\nEach letter stands for a unique digit (0-9). No leading letter can be zero.\nProvide a comma separated mapping from letters to digits that satisfies the equation in your final answer. Output format: \"A=1,B=2,C=3\" (without quotes)\n",
+    "answer": "B=5,C=1,E=4,J=7,P=9,S=8,U=6",
+    "metadata": {
+      "source_dataset": "cryptarithm",
+      "source_index": 69,
+      "letters": [
+        "C",
+        "P",
+        "B",
+        "S",
+        "E",
+        "J",
+        "U"
+      ],
+      "word_values": [
+        4181,
+        7514
+      ],
+      "sum_number": 11695,
+      "words_letters": [
+        "ECSC",
+        "JBCE"
+      ],
+      "result_letters": "CCUPB",
+      "digit_to_letter": {
+        "1": "C",
+        "9": "P",
+        "5": "B",
+        "8": "S",
+        "4": "E",
+        "7": "J",
+        "6": "U"
+      },
+      "letter_to_digit": {
+        "C": 1,
+        "P": 9,
+        "B": 5,
+        "S": 8,
+        "E": 4,
+        "J": 7,
+        "U": 6
+      },
+      "difficulty": {
+        "words": [
+          2,
+          3
+        ]
+      }
+    }
+  },
+  {
+    "question": "Solve this cryptarithm:\n\n   KWCSC\n   SPWKK\n+  DTCSK\n--------\n  CMTNMW\n\nEach letter stands for a unique digit (0-9). No leading letter can be zero.\nProvide a comma separated mapping from letters to digits that satisfies the equation in your final answer. Output format: \"A=1,B=2,C=3\" (without quotes)\n",
+    "answer": "C=1,D=6,K=4,M=8,N=2,P=0,S=7,T=5,W=9",
+    "metadata": {
+      "source_dataset": "cryptarithm",
+      "source_index": 70,
+      "letters": [
+        "W",
+        "M",
+        "S",
+        "P",
+        "K",
+        "T",
+        "C",
+        "D",
+        "N"
+      ],
+      "word_values": [
+        49171,
+        70944,
+        65174
+      ],
+      "sum_number": 185289,
+      "words_letters": [
+        "KWCSC",
+        "SPWKK",
+        "DTCSK"
+      ],
+      "result_letters": "CMTNMW",
+      "digit_to_letter": {
+        "9": "W",
+        "8": "M",
+        "7": "S",
+        "0": "P",
+        "4": "K",
+        "5": "T",
+        "1": "C",
+        "6": "D",
+        "2": "N"
+      },
+      "letter_to_digit": {
+        "W": 9,
+        "M": 8,
+        "S": 7,
+        "P": 0,
+        "K": 4,
+        "T": 5,
+        "C": 1,
+        "D": 6,
+        "N": 2
+      },
+      "difficulty": {
+        "words": [
+          2,
+          3
+        ]
+      }
+    }
+  },
+  {
+    "question": "Solve this cryptarithm:\n\n  QXCCR\n+ SBOQB\n-------\n  XROQD\n\nEach letter stands for a unique digit (0-9). No leading letter can be zero.\nProvide a comma separated mapping from letters to digits that satisfies the equation in your final answer. Output format: \"A=1,B=2,C=3\" (without quotes)\n",
+    "answer": "B=2,C=9,D=0,O=3,Q=4,R=8,S=1,X=5",
+    "metadata": {
+      "source_dataset": "cryptarithm",
+      "source_index": 71,
+      "letters": [
+        "R",
+        "X",
+        "D",
+        "O",
+        "S",
+        "B",
+        "Q",
+        "C"
+      ],
+      "word_values": [
+        45998,
+        12342
+      ],
+      "sum_number": 58340,
+      "words_letters": [
+        "QXCCR",
+        "SBOQB"
+      ],
+      "result_letters": "XROQD",
+      "digit_to_letter": {
+        "8": "R",
+        "5": "X",
+        "0": "D",
+        "3": "O",
+        "1": "S",
+        "2": "B",
+        "4": "Q",
+        "9": "C"
+      },
+      "letter_to_digit": {
+        "R": 8,
+        "X": 5,
+        "D": 0,
+        "O": 3,
+        "S": 1,
+        "B": 2,
+        "Q": 4,
+        "C": 9
+      },
+      "difficulty": {
+        "words": [
+          2,
+          3
+        ]
+      }
+    }
+  },
+  {
+    "question": "Solve this cryptarithm:\n\n  PATEB\n+   NEX\n-------\n  PAEBN\n\nEach letter stands for a unique digit (0-9). No leading letter can be zero.\nProvide a comma separated mapping from letters to digits that satisfies the equation in your final answer. Output format: \"A=1,B=2,C=3\" (without quotes)\n",
+    "answer": "A=4,B=6,E=8,N=7,P=5,T=0,X=1",
+    "metadata": {
+      "source_dataset": "cryptarithm",
+      "source_index": 72,
+      "letters": [
+        "A",
+        "E",
+        "P",
+        "T",
+        "B",
+        "N",
+        "X"
+      ],
+      "word_values": [
+        54086,
+        781
+      ],
+      "sum_number": 54867,
+      "words_letters": [
+        "PATEB",
+        "NEX"
+      ],
+      "result_letters": "PAEBN",
+      "digit_to_letter": {
+        "4": "A",
+        "8": "E",
+        "5": "P",
+        "0": "T",
+        "6": "B",
+        "7": "N",
+        "1": "X"
+      },
+      "letter_to_digit": {
+        "A": 4,
+        "E": 8,
+        "P": 5,
+        "T": 0,
+        "B": 6,
+        "N": 7,
+        "X": 1
+      },
+      "difficulty": {
+        "words": [
+          2,
+          3
+        ]
+      }
+    }
+  },
+  {
+    "question": "Solve this cryptarithm:\n\n    WSM\n    MMW\n+ KSUMM\n-------\n  KWVYY\n\nEach letter stands for a unique digit (0-9). No leading letter can be zero.\nProvide a comma separated mapping from letters to digits that satisfies the equation in your final answer. Output format: \"A=1,B=2,C=3\" (without quotes)\n",
+    "answer": "K=8,M=4,S=1,U=9,V=6,W=2,Y=0",
+    "metadata": {
+      "source_dataset": "cryptarithm",
+      "source_index": 73,
+      "letters": [
+        "M",
+        "Y",
+        "S",
+        "V",
+        "U",
+        "K",
+        "W"
+      ],
+      "word_values": [
+        214,
+        442,
+        81944
+      ],
+      "sum_number": 82600,
+      "words_letters": [
+        "WSM",
+        "MMW",
+        "KSUMM"
+      ],
+      "result_letters": "KWVYY",
+      "digit_to_letter": {
+        "4": "M",
+        "0": "Y",
+        "1": "S",
+        "6": "V",
+        "9": "U",
+        "8": "K",
+        "2": "W"
+      },
+      "letter_to_digit": {
+        "M": 4,
+        "Y": 0,
+        "S": 1,
+        "V": 6,
+        "U": 9,
+        "K": 8,
+        "W": 2
+      },
+      "difficulty": {
+        "words": [
+          2,
+          3
+        ]
+      }
+    }
+  },
+  {
+    "question": "Solve this cryptarithm:\n\n    MXX\n  REARX\n+   XJR\n-------\n  RMEER\n\nEach letter stands for a unique digit (0-9). No leading letter can be zero.\nProvide a comma separated mapping from letters to digits that satisfies the equation in your final answer. Output format: \"A=1,B=2,C=3\" (without quotes)\n",
+    "answer": "A=3,E=7,J=9,M=8,R=2,X=5",
+    "metadata": {
+      "source_dataset": "cryptarithm",
+      "source_index": 74,
+      "letters": [
+        "R",
+        "J",
+        "M",
+        "X",
+        "A",
+        "E"
+      ],
+      "word_values": [
+        855,
+        27325,
+        592
+      ],
+      "sum_number": 28772,
+      "words_letters": [
+        "MXX",
+        "REARX",
+        "XJR"
+      ],
+      "result_letters": "RMEER",
+      "digit_to_letter": {
+        "2": "R",
+        "9": "J",
+        "8": "M",
+        "5": "X",
+        "3": "A",
+        "7": "E"
+      },
+      "letter_to_digit": {
+        "R": 2,
+        "J": 9,
+        "M": 8,
+        "X": 5,
+        "A": 3,
+        "E": 7
+      },
+      "difficulty": {
+        "words": [
+          2,
+          3
+        ]
+      }
+    }
+  },
+  {
+    "question": "Solve this cryptarithm:\n\n  WPS\n+ IDK\n-----\n  XHW\n\nEach letter stands for a unique digit (0-9). No leading letter can be zero.\nProvide a comma separated mapping from letters to digits that satisfies the equation in your final answer. Output format: \"A=1,B=2,C=3\" (without quotes)\n",
+    "answer": "D=0,H=2,I=5,K=9,P=1,S=4,W=3,X=8",
+    "metadata": {
+      "source_dataset": "cryptarithm",
+      "source_index": 75,
+      "letters": [
+        "X",
+        "I",
+        "P",
+        "K",
+        "D",
+        "W",
+        "S",
+        "H"
+      ],
+      "word_values": [
+        314,
+        509
+      ],
+      "sum_number": 823,
+      "words_letters": [
+        "WPS",
+        "IDK"
+      ],
+      "result_letters": "XHW",
+      "digit_to_letter": {
+        "8": "X",
+        "5": "I",
+        "1": "P",
+        "9": "K",
+        "0": "D",
+        "3": "W",
+        "4": "S",
+        "2": "H"
+      },
+      "letter_to_digit": {
+        "X": 8,
+        "I": 5,
+        "P": 1,
+        "K": 9,
+        "D": 0,
+        "W": 3,
+        "S": 4,
+        "H": 2
+      },
+      "difficulty": {
+        "words": [
+          2,
+          3
+        ]
+      }
+    }
+  },
+  {
+    "question": "Solve this cryptarithm:\n\n  HCXO\n+  DLL\n------\n  IXXO\n\nEach letter stands for a unique digit (0-9). No leading letter can be zero.\nProvide a comma separated mapping from letters to digits that satisfies the equation in your final answer. Output format: \"A=1,B=2,C=3\" (without quotes)\n",
+    "answer": "C=9,D=4,H=6,I=7,L=0,O=5,X=3",
+    "metadata": {
+      "source_dataset": "cryptarithm",
+      "source_index": 76,
+      "letters": [
+        "O",
+        "X",
+        "I",
+        "H",
+        "D",
+        "L",
+        "C"
+      ],
+      "word_values": [
+        6935,
+        400
+      ],
+      "sum_number": 7335,
+      "words_letters": [
+        "HCXO",
+        "DLL"
+      ],
+      "result_letters": "IXXO",
+      "digit_to_letter": {
+        "5": "O",
+        "3": "X",
+        "7": "I",
+        "6": "H",
+        "4": "D",
+        "0": "L",
+        "9": "C"
+      },
+      "letter_to_digit": {
+        "O": 5,
+        "X": 3,
+        "I": 7,
+        "H": 6,
+        "D": 4,
+        "L": 0,
+        "C": 9
+      },
+      "difficulty": {
+        "words": [
+          2,
+          3
+        ]
+      }
+    }
+  },
+  {
+    "question": "Solve this cryptarithm:\n\n     YFQ\n   FCDQT\n+  JJYQD\n--------\n  QDRRRX\n\nEach letter stands for a unique digit (0-9). No leading letter can be zero.\nProvide a comma separated mapping from letters to digits that satisfies the equation in your final answer. Output format: \"A=1,B=2,C=3\" (without quotes)\n",
+    "answer": "C=2,D=5,F=8,J=6,Q=1,R=0,T=3,X=9,Y=7",
+    "metadata": {
+      "source_dataset": "cryptarithm",
+      "source_index": 77,
+      "letters": [
+        "R",
+        "C",
+        "Y",
+        "D",
+        "F",
+        "J",
+        "T",
+        "X",
+        "Q"
+      ],
+      "word_values": [
+        781,
+        82513,
+        66715
+      ],
+      "sum_number": 150009,
+      "words_letters": [
+        "YFQ",
+        "FCDQT",
+        "JJYQD"
+      ],
+      "result_letters": "QDRRRX",
+      "digit_to_letter": {
+        "0": "R",
+        "2": "C",
+        "7": "Y",
+        "5": "D",
+        "8": "F",
+        "6": "J",
+        "3": "T",
+        "9": "X",
+        "1": "Q"
+      },
+      "letter_to_digit": {
+        "R": 0,
+        "C": 2,
+        "Y": 7,
+        "D": 5,
+        "F": 8,
+        "J": 6,
+        "T": 3,
+        "X": 9,
+        "Q": 1
+      },
+      "difficulty": {
+        "words": [
+          2,
+          3
+        ]
+      }
+    }
+  },
+  {
+    "question": "Solve this cryptarithm:\n\n    PVA\n+ PHCPP\n-------\n  PPAOT\n\nEach letter stands for a unique digit (0-9). No leading letter can be zero.\nProvide a comma separated mapping from letters to digits that satisfies the equation in your final answer. Output format: \"A=1,B=2,C=3\" (without quotes)\n",
+    "answer": "A=1,C=2,H=7,O=3,P=8,T=9,V=5",
+    "metadata": {
+      "source_dataset": "cryptarithm",
+      "source_index": 78,
+      "letters": [
+        "C",
+        "T",
+        "H",
+        "O",
+        "A",
+        "V",
+        "P"
+      ],
+      "word_values": [
+        851,
+        87288
+      ],
+      "sum_number": 88139,
+      "words_letters": [
+        "PVA",
+        "PHCPP"
+      ],
+      "result_letters": "PPAOT",
+      "digit_to_letter": {
+        "2": "C",
+        "9": "T",
+        "7": "H",
+        "3": "O",
+        "1": "A",
+        "5": "V",
+        "8": "P"
+      },
+      "letter_to_digit": {
+        "C": 2,
+        "T": 9,
+        "H": 7,
+        "O": 3,
+        "A": 1,
+        "V": 5,
+        "P": 8
+      },
+      "difficulty": {
+        "words": [
+          2,
+          3
+        ]
+      }
+    }
+  },
+  {
+    "question": "Solve this cryptarithm:\n\n    IIS\n+ RKLGS\n-------\n  RGLKW\n\nEach letter stands for a unique digit (0-9). No leading letter can be zero.\nProvide a comma separated mapping from letters to digits that satisfies the equation in your final answer. Output format: \"A=1,B=2,C=3\" (without quotes)\n",
+    "answer": "G=3,I=9,K=2,L=1,R=6,S=4,W=8",
+    "metadata": {
+      "source_dataset": "cryptarithm",
+      "source_index": 79,
+      "letters": [
+        "L",
+        "G",
+        "S",
+        "I",
+        "R",
+        "K",
+        "W"
+      ],
+      "word_values": [
+        994,
+        62134
+      ],
+      "sum_number": 63128,
+      "words_letters": [
+        "IIS",
+        "RKLGS"
+      ],
+      "result_letters": "RGLKW",
+      "digit_to_letter": {
+        "1": "L",
+        "3": "G",
+        "4": "S",
+        "9": "I",
+        "6": "R",
+        "2": "K",
+        "8": "W"
+      },
+      "letter_to_digit": {
+        "L": 1,
+        "G": 3,
+        "S": 4,
+        "I": 9,
+        "R": 6,
+        "K": 2,
+        "W": 8
+      },
+      "difficulty": {
+        "words": [
+          2,
+          3
+        ]
+      }
+    }
+  },
+  {
+    "question": "Solve this cryptarithm:\n\n  ALNFT\n+  JFFZ\n-------\n  DQNFL\n\nEach letter stands for a unique digit (0-9). No leading letter can be zero.\nProvide a comma separated mapping from letters to digits that satisfies the equation in your final answer. Output format: \"A=1,B=2,C=3\" (without quotes)\n",
+    "answer": "A=1,D=2,F=0,J=7,L=9,N=3,Q=6,T=4,Z=5",
+    "metadata": {
+      "source_dataset": "cryptarithm",
+      "source_index": 80,
+      "letters": [
+        "D",
+        "L",
+        "F",
+        "A",
+        "T",
+        "Z",
+        "Q",
+        "J",
+        "N"
+      ],
+      "word_values": [
+        19304,
+        7005
+      ],
+      "sum_number": 26309,
+      "words_letters": [
+        "ALNFT",
+        "JFFZ"
+      ],
+      "result_letters": "DQNFL",
+      "digit_to_letter": {
+        "2": "D",
+        "9": "L",
+        "0": "F",
+        "1": "A",
+        "4": "T",
+        "5": "Z",
+        "6": "Q",
+        "7": "J",
+        "3": "N"
+      },
+      "letter_to_digit": {
+        "D": 2,
+        "L": 9,
+        "F": 0,
+        "A": 1,
+        "T": 4,
+        "Z": 5,
+        "Q": 6,
+        "J": 7,
+        "N": 3
+      },
+      "difficulty": {
+        "words": [
+          2,
+          3
+        ]
+      }
+    }
+  },
+  {
+    "question": "Solve this cryptarithm:\n\n  QDQY\n+  IQY\n------\n  VPGG\n\nEach letter stands for a unique digit (0-9). No leading letter can be zero.\nProvide a comma separated mapping from letters to digits that satisfies the equation in your final answer. Output format: \"A=1,B=2,C=3\" (without quotes)\n",
+    "answer": "D=6,G=4,I=3,P=0,Q=7,V=8,Y=2",
+    "metadata": {
+      "source_dataset": "cryptarithm",
+      "source_index": 81,
+      "letters": [
+        "D",
+        "Q",
+        "Y",
+        "I",
+        "G",
+        "V",
+        "P"
+      ],
+      "word_values": [
+        7672,
+        372
+      ],
+      "sum_number": 8044,
+      "words_letters": [
+        "QDQY",
+        "IQY"
+      ],
+      "result_letters": "VPGG",
+      "digit_to_letter": {
+        "6": "D",
+        "7": "Q",
+        "2": "Y",
+        "3": "I",
+        "4": "G",
+        "8": "V",
+        "0": "P"
+      },
+      "letter_to_digit": {
+        "D": 6,
+        "Q": 7,
+        "Y": 2,
+        "I": 3,
+        "G": 4,
+        "V": 8,
+        "P": 0
+      },
+      "difficulty": {
+        "words": [
+          2,
+          3
+        ]
+      }
+    }
+  },
+  {
+    "question": "Solve this cryptarithm:\n\n  BSSSB\n    LIW\n+   ZKW\n-------\n  BKWKZ\n\nEach letter stands for a unique digit (0-9). No leading letter can be zero.\nProvide a comma separated mapping from letters to digits that satisfies the equation in your final answer. Output format: \"A=1,B=2,C=3\" (without quotes)\n",
+    "answer": "B=1,I=2,K=8,L=5,S=7,W=6,Z=3",
+    "metadata": {
+      "source_dataset": "cryptarithm",
+      "source_index": 82,
+      "letters": [
+        "L",
+        "I",
+        "W",
+        "S",
+        "B",
+        "Z",
+        "K"
+      ],
+      "word_values": [
+        17771,
+        526,
+        386
+      ],
+      "sum_number": 18683,
+      "words_letters": [
+        "BSSSB",
+        "LIW",
+        "ZKW"
+      ],
+      "result_letters": "BKWKZ",
+      "digit_to_letter": {
+        "5": "L",
+        "2": "I",
+        "6": "W",
+        "7": "S",
+        "1": "B",
+        "3": "Z",
+        "8": "K"
+      },
+      "letter_to_digit": {
+        "L": 5,
+        "I": 2,
+        "W": 6,
+        "S": 7,
+        "B": 1,
+        "Z": 3,
+        "K": 8
+      },
+      "difficulty": {
+        "words": [
+          2,
+          3
+        ]
+      }
+    }
+  },
+  {
+    "question": "Solve this cryptarithm:\n\n    JBS\n+ SJGJJ\n-------\n  SJFZK\n\nEach letter stands for a unique digit (0-9). No leading letter can be zero.\nProvide a comma separated mapping from letters to digits that satisfies the equation in your final answer. Output format: \"A=1,B=2,C=3\" (without quotes)\n",
+    "answer": "B=0,F=7,G=3,J=4,K=2,S=8,Z=5",
+    "metadata": {
+      "source_dataset": "cryptarithm",
+      "source_index": 83,
+      "letters": [
+        "B",
+        "J",
+        "Z",
+        "S",
+        "G",
+        "K",
+        "F"
+      ],
+      "word_values": [
+        408,
+        84344
+      ],
+      "sum_number": 84752,
+      "words_letters": [
+        "JBS",
+        "SJGJJ"
+      ],
+      "result_letters": "SJFZK",
+      "digit_to_letter": {
+        "0": "B",
+        "4": "J",
+        "5": "Z",
+        "8": "S",
+        "3": "G",
+        "2": "K",
+        "7": "F"
+      },
+      "letter_to_digit": {
+        "B": 0,
+        "J": 4,
+        "Z": 5,
+        "S": 8,
+        "G": 3,
+        "K": 2,
+        "F": 7
+      },
+      "difficulty": {
+        "words": [
+          2,
+          3
+        ]
+      }
+    }
+  },
+  {
+    "question": "Solve this cryptarithm:\n\n   BSFDQ\n+  QWQOS\n--------\n  DDWWXO\n\nEach letter stands for a unique digit (0-9). No leading letter can be zero.\nProvide a comma separated mapping from letters to digits that satisfies the equation in your final answer. Output format: \"A=1,B=2,C=3\" (without quotes)\n",
+    "answer": "B=6,D=1,F=8,O=3,Q=4,S=9,W=2,X=5",
+    "metadata": {
+      "source_dataset": "cryptarithm",
+      "source_index": 84,
+      "letters": [
+        "B",
+        "D",
+        "S",
+        "X",
+        "W",
+        "F",
+        "Q",
+        "O"
+      ],
+      "word_values": [
+        69814,
+        42439
+      ],
+      "sum_number": 112253,
+      "words_letters": [
+        "BSFDQ",
+        "QWQOS"
+      ],
+      "result_letters": "DDWWXO",
+      "digit_to_letter": {
+        "6": "B",
+        "1": "D",
+        "9": "S",
+        "5": "X",
+        "2": "W",
+        "8": "F",
+        "4": "Q",
+        "3": "O"
+      },
+      "letter_to_digit": {
+        "B": 6,
+        "D": 1,
+        "S": 9,
+        "X": 5,
+        "W": 2,
+        "F": 8,
+        "Q": 4,
+        "O": 3
+      },
+      "difficulty": {
+        "words": [
+          2,
+          3
+        ]
+      }
+    }
+  },
+  {
+    "question": "Solve this cryptarithm:\n\n   YNGNO\n+  TTYSE\n--------\n  OFIXYS\n\nEach letter stands for a unique digit (0-9). No leading letter can be zero.\nProvide a comma separated mapping from letters to digits that satisfies the equation in your final answer. Output format: \"A=1,B=2,C=3\" (without quotes)\n",
+    "answer": "E=4,F=0,G=9,I=6,N=3,O=1,S=5,T=2,X=7,Y=8",
+    "metadata": {
+      "source_dataset": "cryptarithm",
+      "source_index": 85,
+      "letters": [
+        "Y",
+        "X",
+        "S",
+        "T",
+        "I",
+        "N",
+        "O",
+        "E",
+        "G",
+        "F"
+      ],
+      "word_values": [
+        83931,
+        22854
+      ],
+      "sum_number": 106785,
+      "words_letters": [
+        "YNGNO",
+        "TTYSE"
+      ],
+      "result_letters": "OFIXYS",
+      "digit_to_letter": {
+        "8": "Y",
+        "7": "X",
+        "5": "S",
+        "2": "T",
+        "6": "I",
+        "3": "N",
+        "1": "O",
+        "4": "E",
+        "9": "G",
+        "0": "F"
+      },
+      "letter_to_digit": {
+        "Y": 8,
+        "X": 7,
+        "S": 5,
+        "T": 2,
+        "I": 6,
+        "N": 3,
+        "O": 1,
+        "E": 4,
+        "G": 9,
+        "F": 0
+      },
+      "difficulty": {
+        "words": [
+          2,
+          3
+        ]
+      }
+    }
+  },
+  {
+    "question": "Solve this cryptarithm:\n\n   EOEQ\n+ XYIEO\n-------\n  QMIQX\n\nEach letter stands for a unique digit (0-9). No leading letter can be zero.\nProvide a comma separated mapping from letters to digits that satisfies the equation in your final answer. Output format: \"A=1,B=2,C=3\" (without quotes)\n",
+    "answer": "E=6,I=5,M=4,O=9,Q=3,X=2,Y=7",
+    "metadata": {
+      "source_dataset": "cryptarithm",
+      "source_index": 86,
+      "letters": [
+        "Y",
+        "E",
+        "O",
+        "M",
+        "Q",
+        "X",
+        "I"
+      ],
+      "word_values": [
+        6963,
+        27569
+      ],
+      "sum_number": 34532,
+      "words_letters": [
+        "EOEQ",
+        "XYIEO"
+      ],
+      "result_letters": "QMIQX",
+      "digit_to_letter": {
+        "7": "Y",
+        "6": "E",
+        "9": "O",
+        "4": "M",
+        "3": "Q",
+        "2": "X",
+        "5": "I"
+      },
+      "letter_to_digit": {
+        "Y": 7,
+        "E": 6,
+        "O": 9,
+        "M": 4,
+        "Q": 3,
+        "X": 2,
+        "I": 5
+      },
+      "difficulty": {
+        "words": [
+          2,
+          3
+        ]
+      }
+    }
+  },
+  {
+    "question": "Solve this cryptarithm:\n\n    KVF\n  NJVYW\n+  FNJF\n-------\n  VFYJV\n\nEach letter stands for a unique digit (0-9). No leading letter can be zero.\nProvide a comma separated mapping from letters to digits that satisfies the equation in your final answer. Output format: \"A=1,B=2,C=3\" (without quotes)\n",
+    "answer": "F=6,J=9,K=7,N=3,V=4,W=2,Y=5",
+    "metadata": {
+      "source_dataset": "cryptarithm",
+      "source_index": 87,
+      "letters": [
+        "V",
+        "Y",
+        "F",
+        "K",
+        "W",
+        "N",
+        "J"
+      ],
+      "word_values": [
+        746,
+        39452,
+        6396
+      ],
+      "sum_number": 46594,
+      "words_letters": [
+        "KVF",
+        "NJVYW",
+        "FNJF"
+      ],
+      "result_letters": "VFYJV",
+      "digit_to_letter": {
+        "4": "V",
+        "5": "Y",
+        "6": "F",
+        "7": "K",
+        "2": "W",
+        "3": "N",
+        "9": "J"
+      },
+      "letter_to_digit": {
+        "V": 4,
+        "Y": 5,
+        "F": 6,
+        "K": 7,
+        "W": 2,
+        "N": 3,
+        "J": 9
+      },
+      "difficulty": {
+        "words": [
+          2,
+          3
+        ]
+      }
+    }
+  },
+  {
+    "question": "Solve this cryptarithm:\n\n    BOJJ\n   QPBIZ\n+  CMJPD\n--------\n  JCIJQO\n\nEach letter stands for a unique digit (0-9). No leading letter can be zero.\nProvide a comma separated mapping from letters to digits that satisfies the equation in your final answer. Output format: \"A=1,B=2,C=3\" (without quotes)\n",
+    "answer": "B=8,C=7,D=6,I=3,J=1,M=0,O=2,P=4,Q=9,Z=5",
+    "metadata": {
+      "source_dataset": "cryptarithm",
+      "source_index": 88,
+      "letters": [
+        "D",
+        "Q",
+        "C",
+        "B",
+        "J",
+        "O",
+        "P",
+        "I",
+        "Z",
+        "M"
+      ],
+      "word_values": [
+        8211,
+        94835,
+        70146
+      ],
+      "sum_number": 173192,
+      "words_letters": [
+        "BOJJ",
+        "QPBIZ",
+        "CMJPD"
+      ],
+      "result_letters": "JCIJQO",
+      "digit_to_letter": {
+        "6": "D",
+        "9": "Q",
+        "7": "C",
+        "8": "B",
+        "1": "J",
+        "2": "O",
+        "4": "P",
+        "3": "I",
+        "5": "Z",
+        "0": "M"
+      },
+      "letter_to_digit": {
+        "D": 6,
+        "Q": 9,
+        "C": 7,
+        "B": 8,
+        "J": 1,
+        "O": 2,
+        "P": 4,
+        "I": 3,
+        "Z": 5,
+        "M": 0
+      },
+      "difficulty": {
+        "words": [
+          2,
+          3
+        ]
+      }
+    }
+  },
+  {
+    "question": "Solve this cryptarithm:\n\n   ECIE\n  CETNC\n+   KKE\n-------\n  TTKCM\n\nEach letter stands for a unique digit (0-9). No leading letter can be zero.\nProvide a comma separated mapping from letters to digits that satisfies the equation in your final answer. Output format: \"A=1,B=2,C=3\" (without quotes)\n",
+    "answer": "C=4,E=7,I=3,K=1,M=8,N=9,T=5",
+    "metadata": {
+      "source_dataset": "cryptarithm",
+      "source_index": 89,
+      "letters": [
+        "I",
+        "N",
+        "E",
+        "M",
+        "C",
+        "K",
+        "T"
+      ],
+      "word_values": [
+        7437,
+        47594,
+        117
+      ],
+      "sum_number": 55148,
+      "words_letters": [
+        "ECIE",
+        "CETNC",
+        "KKE"
+      ],
+      "result_letters": "TTKCM",
+      "digit_to_letter": {
+        "3": "I",
+        "9": "N",
+        "7": "E",
+        "8": "M",
+        "4": "C",
+        "1": "K",
+        "5": "T"
+      },
+      "letter_to_digit": {
+        "I": 3,
+        "N": 9,
+        "E": 7,
+        "M": 8,
+        "C": 4,
+        "K": 1,
+        "T": 5
+      },
+      "difficulty": {
+        "words": [
+          2,
+          3
+        ]
+      }
+    }
+  },
+  {
+    "question": "Solve this cryptarithm:\n\n   AKC\n  UQKW\n+  EUE\n------\n  ANQG\n\nEach letter stands for a unique digit (0-9). No leading letter can be zero.\nProvide a comma separated mapping from letters to digits that satisfies the equation in your final answer. Output format: \"A=1,B=2,C=3\" (without quotes)\n",
+    "answer": "A=2,C=5,E=4,G=8,K=7,N=3,Q=6,U=1,W=9",
+    "metadata": {
+      "source_dataset": "cryptarithm",
+      "source_index": 90,
+      "letters": [
+        "C",
+        "G",
+        "Q",
+        "K",
+        "N",
+        "E",
+        "W",
+        "U",
+        "A"
+      ],
+      "word_values": [
+        275,
+        1679,
+        414
+      ],
+      "sum_number": 2368,
+      "words_letters": [
+        "AKC",
+        "UQKW",
+        "EUE"
+      ],
+      "result_letters": "ANQG",
+      "digit_to_letter": {
+        "5": "C",
+        "8": "G",
+        "6": "Q",
+        "7": "K",
+        "3": "N",
+        "4": "E",
+        "9": "W",
+        "1": "U",
+        "2": "A"
+      },
+      "letter_to_digit": {
+        "C": 5,
+        "G": 8,
+        "Q": 6,
+        "K": 7,
+        "N": 3,
+        "E": 4,
+        "W": 9,
+        "U": 1,
+        "A": 2
+      },
+      "difficulty": {
+        "words": [
+          2,
+          3
+        ]
+      }
+    }
+  },
+  {
+    "question": "Solve this cryptarithm:\n\n   DSHL\n   IIGI\n+  YSGI\n-------\n  YLOOD\n\nEach letter stands for a unique digit (0-9). No leading letter can be zero.\nProvide a comma separated mapping from letters to digits that satisfies the equation in your final answer. Output format: \"A=1,B=2,C=3\" (without quotes)\n",
+    "answer": "D=6,G=2,H=4,I=9,L=8,O=0,S=5,Y=1",
+    "metadata": {
+      "source_dataset": "cryptarithm",
+      "source_index": 91,
+      "letters": [
+        "I",
+        "H",
+        "O",
+        "S",
+        "D",
+        "G",
+        "L",
+        "Y"
+      ],
+      "word_values": [
+        6548,
+        9929,
+        1529
+      ],
+      "sum_number": 18006,
+      "words_letters": [
+        "DSHL",
+        "IIGI",
+        "YSGI"
+      ],
+      "result_letters": "YLOOD",
+      "digit_to_letter": {
+        "9": "I",
+        "4": "H",
+        "0": "O",
+        "5": "S",
+        "6": "D",
+        "2": "G",
+        "8": "L",
+        "1": "Y"
+      },
+      "letter_to_digit": {
+        "I": 9,
+        "H": 4,
+        "O": 0,
+        "S": 5,
+        "D": 6,
+        "G": 2,
+        "L": 8,
+        "Y": 1
+      },
+      "difficulty": {
+        "words": [
+          2,
+          3
+        ]
+      }
+    }
+  },
+  {
+    "question": "Solve this cryptarithm:\n\n   BPMPX\n     BPB\n+  VPXPB\n--------\n  ZUUNZF\n\nEach letter stands for a unique digit (0-9). No leading letter can be zero.\nProvide a comma separated mapping from letters to digits that satisfies the equation in your final answer. Output format: \"A=1,B=2,C=3\" (without quotes)\n",
+    "answer": "B=8,F=2,M=0,N=5,P=3,U=7,V=9,X=6,Z=1",
+    "metadata": {
+      "source_dataset": "cryptarithm",
+      "source_index": 92,
+      "letters": [
+        "V",
+        "Z",
+        "N",
+        "U",
+        "B",
+        "P",
+        "X",
+        "M",
+        "F"
+      ],
+      "word_values": [
+        83036,
+        838,
+        93638
+      ],
+      "sum_number": 177512,
+      "words_letters": [
+        "BPMPX",
+        "BPB",
+        "VPXPB"
+      ],
+      "result_letters": "ZUUNZF",
+      "digit_to_letter": {
+        "9": "V",
+        "1": "Z",
+        "5": "N",
+        "7": "U",
+        "8": "B",
+        "3": "P",
+        "6": "X",
+        "0": "M",
+        "2": "F"
+      },
+      "letter_to_digit": {
+        "V": 9,
+        "Z": 1,
+        "N": 5,
+        "U": 7,
+        "B": 8,
+        "P": 3,
+        "X": 6,
+        "M": 0,
+        "F": 2
+      },
+      "difficulty": {
+        "words": [
+          2,
+          3
+        ]
+      }
+    }
+  },
+  {
+    "question": "Solve this cryptarithm:\n\n   CDFYH\n   POHCH\n+  CMQFD\n--------\n  YDMDHC\n\nEach letter stands for a unique digit (0-9). No leading letter can be zero.\nProvide a comma separated mapping from letters to digits that satisfies the equation in your final answer. Output format: \"A=1,B=2,C=3\" (without quotes)\n",
+    "answer": "C=4,D=6,F=2,H=9,M=8,O=3,P=7,Q=5,Y=1",
+    "metadata": {
+      "source_dataset": "cryptarithm",
+      "source_index": 93,
+      "letters": [
+        "D",
+        "P",
+        "C",
+        "H",
+        "Q",
+        "Y",
+        "O",
+        "M",
+        "F"
+      ],
+      "word_values": [
+        46219,
+        73949,
+        48526
+      ],
+      "sum_number": 168694,
+      "words_letters": [
+        "CDFYH",
+        "POHCH",
+        "CMQFD"
+      ],
+      "result_letters": "YDMDHC",
+      "digit_to_letter": {
+        "6": "D",
+        "7": "P",
+        "4": "C",
+        "9": "H",
+        "5": "Q",
+        "1": "Y",
+        "3": "O",
+        "8": "M",
+        "2": "F"
+      },
+      "letter_to_digit": {
+        "D": 6,
+        "P": 7,
+        "C": 4,
+        "H": 9,
+        "Q": 5,
+        "Y": 1,
+        "O": 3,
+        "M": 8,
+        "F": 2
+      },
+      "difficulty": {
+        "words": [
+          2,
+          3
+        ]
+      }
+    }
+  },
+  {
+    "question": "Solve this cryptarithm:\n\n  FCKDD\n    OOH\n+  CJDJ\n-------\n  ODDOU\n\nEach letter stands for a unique digit (0-9). No leading letter can be zero.\nProvide a comma separated mapping from letters to digits that satisfies the equation in your final answer. Output format: \"A=1,B=2,C=3\" (without quotes)\n",
+    "answer": "C=4,D=0,F=7,H=2,J=3,K=9,O=8,U=5",
+    "metadata": {
+      "source_dataset": "cryptarithm",
+      "source_index": 94,
+      "letters": [
+        "U",
+        "J",
+        "D",
+        "C",
+        "K",
+        "H",
+        "F",
+        "O"
+      ],
+      "word_values": [
+        74900,
+        882,
+        4303
+      ],
+      "sum_number": 80085,
+      "words_letters": [
+        "FCKDD",
+        "OOH",
+        "CJDJ"
+      ],
+      "result_letters": "ODDOU",
+      "digit_to_letter": {
+        "5": "U",
+        "3": "J",
+        "0": "D",
+        "4": "C",
+        "9": "K",
+        "2": "H",
+        "7": "F",
+        "8": "O"
+      },
+      "letter_to_digit": {
+        "U": 5,
+        "J": 3,
+        "D": 0,
+        "C": 4,
+        "K": 9,
+        "H": 2,
+        "F": 7,
+        "O": 8
+      },
+      "difficulty": {
+        "words": [
+          2,
+          3
+        ]
+      }
+    }
+  },
+  {
+    "question": "Solve this cryptarithm:\n\n   DUU\n+ DITB\n------\n  DTGT\n\nEach letter stands for a unique digit (0-9). No leading letter can be zero.\nProvide a comma separated mapping from letters to digits that satisfies the equation in your final answer. Output format: \"A=1,B=2,C=3\" (without quotes)\n",
+    "answer": "B=2,D=4,G=8,I=1,T=5,U=3",
+    "metadata": {
+      "source_dataset": "cryptarithm",
+      "source_index": 95,
+      "letters": [
+        "T",
+        "G",
+        "I",
+        "U",
+        "D",
+        "B"
+      ],
+      "word_values": [
+        433,
+        4152
+      ],
+      "sum_number": 4585,
+      "words_letters": [
+        "DUU",
+        "DITB"
+      ],
+      "result_letters": "DTGT",
+      "digit_to_letter": {
+        "5": "T",
+        "8": "G",
+        "1": "I",
+        "3": "U",
+        "4": "D",
+        "2": "B"
+      },
+      "letter_to_digit": {
+        "T": 5,
+        "G": 8,
+        "I": 1,
+        "U": 3,
+        "D": 4,
+        "B": 2
+      },
+      "difficulty": {
+        "words": [
+          2,
+          3
+        ]
+      }
+    }
+  },
+  {
+    "question": "Solve this cryptarithm:\n\n   ZTQT\n+  VVII\n-------\n  IJQZJ\n\nEach letter stands for a unique digit (0-9). No leading letter can be zero.\nProvide a comma separated mapping from letters to digits that satisfies the equation in your final answer. Output format: \"A=1,B=2,C=3\" (without quotes)\n",
+    "answer": "I=1,J=0,Q=3,T=9,V=4,Z=5",
+    "metadata": {
+      "source_dataset": "cryptarithm",
+      "source_index": 96,
+      "letters": [
+        "V",
+        "T",
+        "J",
+        "I",
+        "Q",
+        "Z"
+      ],
+      "word_values": [
+        5939,
+        4411
+      ],
+      "sum_number": 10350,
+      "words_letters": [
+        "ZTQT",
+        "VVII"
+      ],
+      "result_letters": "IJQZJ",
+      "digit_to_letter": {
+        "4": "V",
+        "9": "T",
+        "0": "J",
+        "1": "I",
+        "3": "Q",
+        "5": "Z"
+      },
+      "letter_to_digit": {
+        "V": 4,
+        "T": 9,
+        "J": 0,
+        "I": 1,
+        "Q": 3,
+        "Z": 5
+      },
+      "difficulty": {
+        "words": [
+          2,
+          3
+        ]
+      }
+    }
+  },
+  {
+    "question": "Solve this cryptarithm:\n\n   UQBLW\n+  UNBBW\n--------\n  DGQLNQ\n\nEach letter stands for a unique digit (0-9). No leading letter can be zero.\nProvide a comma separated mapping from letters to digits that satisfies the equation in your final answer. Output format: \"A=1,B=2,C=3\" (without quotes)\n",
+    "answer": "B=6,D=1,G=7,L=2,N=9,Q=0,U=8,W=5",
+    "metadata": {
+      "source_dataset": "cryptarithm",
+      "source_index": 97,
+      "letters": [
+        "U",
+        "W",
+        "D",
+        "L",
+        "Q",
+        "N",
+        "G",
+        "B"
+      ],
+      "word_values": [
+        80625,
+        89665
+      ],
+      "sum_number": 170290,
+      "words_letters": [
+        "UQBLW",
+        "UNBBW"
+      ],
+      "result_letters": "DGQLNQ",
+      "digit_to_letter": {
+        "8": "U",
+        "5": "W",
+        "1": "D",
+        "2": "L",
+        "0": "Q",
+        "9": "N",
+        "7": "G",
+        "6": "B"
+      },
+      "letter_to_digit": {
+        "U": 8,
+        "W": 5,
+        "D": 1,
+        "L": 2,
+        "Q": 0,
+        "N": 9,
+        "G": 7,
+        "B": 6
+      },
+      "difficulty": {
+        "words": [
+          2,
+          3
+        ]
+      }
+    }
+  },
+  {
+    "question": "Solve this cryptarithm:\n\n   KKQ\n+ TCKK\n------\n  TQXT\n\nEach letter stands for a unique digit (0-9). No leading letter can be zero.\nProvide a comma separated mapping from letters to digits that satisfies the equation in your final answer. Output format: \"A=1,B=2,C=3\" (without quotes)\n",
+    "answer": "C=7,K=1,Q=8,T=9,X=2",
+    "metadata": {
+      "source_dataset": "cryptarithm",
+      "source_index": 98,
+      "letters": [
+        "Q",
+        "C",
+        "T",
+        "X",
+        "K"
+      ],
+      "word_values": [
+        118,
+        9711
+      ],
+      "sum_number": 9829,
+      "words_letters": [
+        "KKQ",
+        "TCKK"
+      ],
+      "result_letters": "TQXT",
+      "digit_to_letter": {
+        "8": "Q",
+        "7": "C",
+        "9": "T",
+        "2": "X",
+        "1": "K"
+      },
+      "letter_to_digit": {
+        "Q": 8,
+        "C": 7,
+        "T": 9,
+        "X": 2,
+        "K": 1
+      },
+      "difficulty": {
+        "words": [
+          2,
+          3
+        ]
+      }
+    }
+  },
+  {
+    "question": "Solve this cryptarithm:\n\n  MMUBA\n+  OGAB\n-------\n  BCOUC\n\nEach letter stands for a unique digit (0-9). No leading letter can be zero.\nProvide a comma separated mapping from letters to digits that satisfies the equation in your final answer. Output format: \"A=1,B=2,C=3\" (without quotes)\n",
+    "answer": "A=7,B=4,C=1,G=5,M=3,O=8,U=2",
+    "metadata": {
+      "source_dataset": "cryptarithm",
+      "source_index": 99,
+      "letters": [
+        "B",
+        "U",
+        "A",
+        "O",
+        "G",
+        "M",
+        "C"
+      ],
+      "word_values": [
+        33247,
+        8574
+      ],
+      "sum_number": 41821,
+      "words_letters": [
+        "MMUBA",
+        "OGAB"
+      ],
+      "result_letters": "BCOUC",
+      "digit_to_letter": {
+        "4": "B",
+        "2": "U",
+        "7": "A",
+        "8": "O",
+        "5": "G",
+        "3": "M",
+        "1": "C"
+      },
+      "letter_to_digit": {
+        "B": 4,
+        "U": 2,
+        "A": 7,
+        "O": 8,
+        "G": 5,
+        "M": 3,
+        "C": 1
+      },
+      "difficulty": {
+        "words": [
+          2,
+          3
+        ]
+      }
+    }
+  }
+]
