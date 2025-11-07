@@ -9,9 +9,7 @@ def _rate_correctness_equal(ground_truth_answer: str, answer: str) -> dict:
 
 def _rate_correctness_subset(ground_truth_answer: str, answer: str) -> dict:
     return {
-        "contains_answer": ground_truth_answer.strip() in answer.strip() \
-            if isinstance(answer, str) and isinstance(ground_truth_answer, str) == 'str' \
-            else answer == ground_truth_answer
+        "contains_answer": str(ground_truth_answer).strip() in str(answer).strip()
     }
 
 def rate_correctness(ground_truth_answer: str, answer: str) -> dict:

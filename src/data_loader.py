@@ -719,6 +719,36 @@ def load_leg_counting_ground_truth(split: str = "test", max_samples: Optional[in
         print(f"Warning: Could not load Leg Counting dataset: {e}")
         return {}
 
+def load_any_reasoning_gym_ground_truth(dataset_name: str, split: str = "test", max_samples: Optional[int] = None) -> Dict:
+    """Load ground truth answers from Leg Counting dataset for accuracy evaluation.
+
+    Args:
+        split: Which split to load ('train' or 'test')
+        max_samples: Maximum number of samples to load
+
+    Returns:
+        Dictionary mapping sample IDs to text answers
+    """
+    try:
+        dataset_list = load_prompts("data/custom/" + dataset_name + ".json", max_samples)
+
+        answers = {}
+        do_extract=lambda d: (d["question"], "", d["answer"])
+        for i, sample in enumerate(dataset_list):
+            question, cot, answer = do_extract(sample)
+            if not answer:
+                continue
+
+            # Store with both integer and string keys for compatibility
+            answers[i] = answer.strip()
+            answers[f"hf-{i}"] = answer.strip()
+
+        print(f"Loaded {len(answers) // 2} {dataset_name} ground truth answers from {split} split")
+        return answers
+    except Exception as e:
+        print(f"Warning: Could not load dataset {dataset_name}: {e}")
+        return {}
+
 
 def main():
     parser = argparse.ArgumentParser(description="Data Loader for CoT Health Metrics")

@@ -1,0 +1,2776 @@
+[
+  {
+    "question": "How many times does the letter \"a\" appear in the text: \"bed and enters his mechanical dresser Two minutes later the machine deposited him all dressed\"?",
+    "answer": "6",
+    "metadata": {
+      "source_dataset": "letter_counting",
+      "source_index": 0,
+      "span_length": 15,
+      "target_letter": "a",
+      "span": [
+        "bed",
+        "and",
+        "enters",
+        "his",
+        "mechanical",
+        "dresser",
+        "Two",
+        "minutes",
+        "later",
+        "the",
+        "machine",
+        "deposited",
+        "him",
+        "all",
+        "dressed"
+      ],
+      "difficulty": {
+        "words": [
+          5,
+          15
+        ]
+      }
+    }
+  },
+  {
+    "question": "How many times does the letter \"w\" appear in the text: \"it into a watering place\"?",
+    "answer": "1",
+    "metadata": {
+      "source_dataset": "letter_counting",
+      "source_index": 1,
+      "span_length": 5,
+      "target_letter": "w",
+      "span": [
+        "it",
+        "into",
+        "a",
+        "watering",
+        "place"
+      ],
+      "difficulty": {
+        "words": [
+          5,
+          15
+        ]
+      }
+    }
+  },
+  {
+    "question": "How many times does the letter \"t\" appear in the text: \"readable form accessible by the widest array of equipment including outdated\"?",
+    "answer": "5",
+    "metadata": {
+      "source_dataset": "letter_counting",
+      "source_index": 2,
+      "span_length": 11,
+      "target_letter": "t",
+      "span": [
+        "readable",
+        "form",
+        "accessible",
+        "by",
+        "the",
+        "widest",
+        "array",
+        "of",
+        "equipment",
+        "including",
+        "outdated"
+      ],
+      "difficulty": {
+        "words": [
+          5,
+          15
+        ]
+      }
+    }
+  },
+  {
+    "question": "How many times does the letter \"n\" appear in the text: \"does not contain a notice indicating that it is\"?",
+    "answer": "6",
+    "metadata": {
+      "source_dataset": "letter_counting",
+      "source_index": 3,
+      "span_length": 9,
+      "target_letter": "n",
+      "span": [
+        "does",
+        "not",
+        "contain",
+        "a",
+        "notice",
+        "indicating",
+        "that",
+        "it",
+        "is"
+      ],
+      "difficulty": {
+        "words": [
+          5,
+          15
+        ]
+      }
+    }
+  },
+  {
+    "question": "How many times does the letter \"a\" appear in the text: \"keeping this work in the same\"?",
+    "answer": "1",
+    "metadata": {
+      "source_dataset": "letter_counting",
+      "source_index": 4,
+      "span_length": 6,
+      "target_letter": "a",
+      "span": [
+        "keeping",
+        "this",
+        "work",
+        "in",
+        "the",
+        "same"
+      ],
+      "difficulty": {
+        "words": [
+          5,
+          15
+        ]
+      }
+    }
+  },
+  {
+    "question": "How many times does the letter \"r\" appear in the text: \"years ago its subscription list contained but a few hundred\"?",
+    "answer": "3",
+    "metadata": {
+      "source_dataset": "letter_counting",
+      "source_index": 5,
+      "span_length": 10,
+      "target_letter": "r",
+      "span": [
+        "years",
+        "ago",
+        "its",
+        "subscription",
+        "list",
+        "contained",
+        "but",
+        "a",
+        "few",
+        "hundred"
+      ],
+      "difficulty": {
+        "words": [
+          5,
+          15
+        ]
+      }
+    }
+  },
+  {
+    "question": "How many times does the letter \"e\" appear in the text: \"me As in the morning the table rose out of the floor Again\"?",
+    "answer": "6",
+    "metadata": {
+      "source_dataset": "letter_counting",
+      "source_index": 6,
+      "span_length": 13,
+      "target_letter": "e",
+      "span": [
+        "me",
+        "As",
+        "in",
+        "the",
+        "morning",
+        "the",
+        "table",
+        "rose",
+        "out",
+        "of",
+        "the",
+        "floor",
+        "Again"
+      ],
+      "difficulty": {
+        "words": [
+          5,
+          15
+        ]
+      }
+    }
+  },
+  {
+    "question": "How many times does the letter \"t\" appear in the text: \"said Faithburn was dead quite certainly\"?",
+    "answer": "3",
+    "metadata": {
+      "source_dataset": "letter_counting",
+      "source_index": 7,
+      "span_length": 6,
+      "target_letter": "t",
+      "span": [
+        "said",
+        "Faithburn",
+        "was",
+        "dead",
+        "quite",
+        "certainly"
+      ],
+      "difficulty": {
+        "words": [
+          5,
+          15
+        ]
+      }
+    }
+  },
+  {
+    "question": "How many times does the letter \"n\" appear in the text: \"these eight had only impracticable schemes to propose In fact one of\"?",
+    "answer": "3",
+    "metadata": {
+      "source_dataset": "letter_counting",
+      "source_index": 8,
+      "span_length": 12,
+      "target_letter": "n",
+      "span": [
+        "these",
+        "eight",
+        "had",
+        "only",
+        "impracticable",
+        "schemes",
+        "to",
+        "propose",
+        "In",
+        "fact",
+        "one",
+        "of"
+      ],
+      "difficulty": {
+        "words": [
+          5,
+          15
+        ]
+      }
+    }
+  },
+  {
+    "question": "How many times does the letter \"g\" appear in the text: \"computers including obsolete old middle aged and new\"?",
+    "answer": "2",
+    "metadata": {
+      "source_dataset": "letter_counting",
+      "source_index": 9,
+      "span_length": 8,
+      "target_letter": "g",
+      "span": [
+        "computers",
+        "including",
+        "obsolete",
+        "old",
+        "middle",
+        "aged",
+        "and",
+        "new"
+      ],
+      "difficulty": {
+        "words": [
+          5,
+          15
+        ]
+      }
+    }
+  },
+  {
+    "question": "How many times does the letter \"y\" appear in the text: \"to life to day what would he think were\"?",
+    "answer": "1",
+    "metadata": {
+      "source_dataset": "letter_counting",
+      "source_index": 10,
+      "span_length": 9,
+      "target_letter": "y",
+      "span": [
+        "to",
+        "life",
+        "to",
+        "day",
+        "what",
+        "would",
+        "he",
+        "think",
+        "were"
+      ],
+      "difficulty": {
+        "words": [
+          5,
+          15
+        ]
+      }
+    }
+  },
+  {
+    "question": "How many times does the letter \"s\" appear in the text: \"Though by a just turn about of things here below Great Britain has become\"?",
+    "answer": "3",
+    "metadata": {
+      "source_dataset": "letter_counting",
+      "source_index": 11,
+      "span_length": 14,
+      "target_letter": "s",
+      "span": [
+        "Though",
+        "by",
+        "a",
+        "just",
+        "turn",
+        "about",
+        "of",
+        "things",
+        "here",
+        "below",
+        "Great",
+        "Britain",
+        "has",
+        "become"
+      ],
+      "difficulty": {
+        "words": [
+          5,
+          15
+        ]
+      }
+    }
+  },
+  {
+    "question": "How many times does the letter \"o\" appear in the text: \"obtaining a copy upon request of the\"?",
+    "answer": "4",
+    "metadata": {
+      "source_dataset": "letter_counting",
+      "source_index": 12,
+      "span_length": 7,
+      "target_letter": "o",
+      "span": [
+        "obtaining",
+        "a",
+        "copy",
+        "upon",
+        "request",
+        "of",
+        "the"
+      ],
+      "difficulty": {
+        "words": [
+          5,
+          15
+        ]
+      }
+    }
+  },
+  {
+    "question": "How many times does the letter \"g\" appear in the text: \"Madrid but also against the kingdom\"?",
+    "answer": "2",
+    "metadata": {
+      "source_dataset": "letter_counting",
+      "source_index": 13,
+      "span_length": 6,
+      "target_letter": "g",
+      "span": [
+        "Madrid",
+        "but",
+        "also",
+        "against",
+        "the",
+        "kingdom"
+      ],
+      "difficulty": {
+        "words": [
+          5,
+          15
+        ]
+      }
+    }
+  },
+  {
+    "question": "How many times does the letter \"u\" appear in the text: \"the work of Jules son Michel Verne In any event many of the\"?",
+    "answer": "1",
+    "metadata": {
+      "source_dataset": "letter_counting",
+      "source_index": 14,
+      "span_length": 13,
+      "target_letter": "u",
+      "span": [
+        "the",
+        "work",
+        "of",
+        "Jules",
+        "son",
+        "Michel",
+        "Verne",
+        "In",
+        "any",
+        "event",
+        "many",
+        "of",
+        "the"
+      ],
+      "difficulty": {
+        "words": [
+          5,
+          15
+        ]
+      }
+    }
+  },
+  {
+    "question": "How many times does the letter \"r\" appear in the text: \"trademark license is very easy\"?",
+    "answer": "3",
+    "metadata": {
+      "source_dataset": "letter_counting",
+      "source_index": 15,
+      "span_length": 5,
+      "target_letter": "r",
+      "span": [
+        "trademark",
+        "license",
+        "is",
+        "very",
+        "easy"
+      ],
+      "difficulty": {
+        "words": [
+          5,
+          15
+        ]
+      }
+    }
+  },
+  {
+    "question": "How many times does the letter \"h\" appear in the text: \"France means to be the trusty defender Well said exclaimed Mr Smith How is\"?",
+    "answer": "3",
+    "metadata": {
+      "source_dataset": "letter_counting",
+      "source_index": 16,
+      "span_length": 14,
+      "target_letter": "h",
+      "span": [
+        "France",
+        "means",
+        "to",
+        "be",
+        "the",
+        "trusty",
+        "defender",
+        "Well",
+        "said",
+        "exclaimed",
+        "Mr",
+        "Smith",
+        "How",
+        "is"
+      ],
+      "difficulty": {
+        "words": [
+          5,
+          15
+        ]
+      }
+    }
+  },
+  {
+    "question": "How many times does the letter \"t\" appear in the text: \"him thanks to the progress of hygiene which\"?",
+    "answer": "3",
+    "metadata": {
+      "source_dataset": "letter_counting",
+      "source_index": 17,
+      "span_length": 8,
+      "target_letter": "t",
+      "span": [
+        "him",
+        "thanks",
+        "to",
+        "the",
+        "progress",
+        "of",
+        "hygiene",
+        "which"
+      ],
+      "difficulty": {
+        "words": [
+          5,
+          15
+        ]
+      }
+    }
+  },
+  {
+    "question": "How many times does the letter \"n\" appear in the text: \"idea of removing an entire city all at once\"?",
+    "answer": "4",
+    "metadata": {
+      "source_dataset": "letter_counting",
+      "source_index": 18,
+      "span_length": 9,
+      "target_letter": "n",
+      "span": [
+        "idea",
+        "of",
+        "removing",
+        "an",
+        "entire",
+        "city",
+        "all",
+        "at",
+        "once"
+      ],
+      "difficulty": {
+        "words": [
+          5,
+          15
+        ]
+      }
+    }
+  },
+  {
+    "question": "How many times does the letter \"u\" appear in the text: \"simply pointed to the sky which was of a pure blue Yes\"?",
+    "answer": "2",
+    "metadata": {
+      "source_dataset": "letter_counting",
+      "source_index": 19,
+      "span_length": 12,
+      "target_letter": "u",
+      "span": [
+        "simply",
+        "pointed",
+        "to",
+        "the",
+        "sky",
+        "which",
+        "was",
+        "of",
+        "a",
+        "pure",
+        "blue",
+        "Yes"
+      ],
+      "difficulty": {
+        "words": [
+          5,
+          15
+        ]
+      }
+    }
+  },
+  {
+    "question": "How many times does the letter \"c\" appear in the text: \"the curiosity of the public with regard to these astronomical questions That news must\"?",
+    "answer": "3",
+    "metadata": {
+      "source_dataset": "letter_counting",
+      "source_index": 20,
+      "span_length": 14,
+      "target_letter": "c",
+      "span": [
+        "the",
+        "curiosity",
+        "of",
+        "the",
+        "public",
+        "with",
+        "regard",
+        "to",
+        "these",
+        "astronomical",
+        "questions",
+        "That",
+        "news",
+        "must"
+      ],
+      "difficulty": {
+        "words": [
+          5,
+          15
+        ]
+      }
+    }
+  },
+  {
+    "question": "How many times does the letter \"k\" appear in the text: \"electronic works provided that You pay a royalty fee of 20 of\"?",
+    "answer": "1",
+    "metadata": {
+      "source_dataset": "letter_counting",
+      "source_index": 21,
+      "span_length": 12,
+      "target_letter": "k",
+      "span": [
+        "electronic",
+        "works",
+        "provided",
+        "that",
+        "You",
+        "pay",
+        "a",
+        "royalty",
+        "fee",
+        "of",
+        "20",
+        "of"
+      ],
+      "difficulty": {
+        "words": [
+          5,
+          15
+        ]
+      }
+    }
+  },
+  {
+    "question": "How many times does the letter \"t\" appear in the text: \"are far more complex than all that In real life every act\"?",
+    "answer": "4",
+    "metadata": {
+      "source_dataset": "letter_counting",
+      "source_index": 22,
+      "span_length": 12,
+      "target_letter": "t",
+      "span": [
+        "are",
+        "far",
+        "more",
+        "complex",
+        "than",
+        "all",
+        "that",
+        "In",
+        "real",
+        "life",
+        "every",
+        "act"
+      ],
+      "difficulty": {
+        "words": [
+          5,
+          15
+        ]
+      }
+    }
+  },
+  {
+    "question": "How many times does the letter \"i\" appear in the text: \"are able to make all the seasons the same I propose\"?",
+    "answer": "1",
+    "metadata": {
+      "source_dataset": "letter_counting",
+      "source_index": 23,
+      "span_length": 11,
+      "target_letter": "i",
+      "span": [
+        "are",
+        "able",
+        "to",
+        "make",
+        "all",
+        "the",
+        "seasons",
+        "the",
+        "same",
+        "I",
+        "propose"
+      ],
+      "difficulty": {
+        "words": [
+          5,
+          15
+        ]
+      }
+    }
+  },
+  {
+    "question": "How many times does the letter \"o\" appear in the text: \"Good Let me see your tongue\"?",
+    "answer": "4",
+    "metadata": {
+      "source_dataset": "letter_counting",
+      "source_index": 24,
+      "span_length": 6,
+      "target_letter": "o",
+      "span": [
+        "Good",
+        "Let",
+        "me",
+        "see",
+        "your",
+        "tongue"
+      ],
+      "difficulty": {
+        "words": [
+          5,
+          15
+        ]
+      }
+    }
+  },
+  {
+    "question": "How many times does the letter \"u\" appear in the text: \"waiting his turn Capital Capital my\"?",
+    "answer": "1",
+    "metadata": {
+      "source_dataset": "letter_counting",
+      "source_index": 25,
+      "span_length": 6,
+      "target_letter": "u",
+      "span": [
+        "waiting",
+        "his",
+        "turn",
+        "Capital",
+        "Capital",
+        "my"
+      ],
+      "difficulty": {
+        "words": [
+          5,
+          15
+        ]
+      }
+    }
+  },
+  {
+    "question": "How many times does the letter \"f\" appear in the text: \"the Mission of Project Gutenberg Project Gutenberg is synonymous with the free\"?",
+    "answer": "2",
+    "metadata": {
+      "source_dataset": "letter_counting",
+      "source_index": 26,
+      "span_length": 12,
+      "target_letter": "f",
+      "span": [
+        "the",
+        "Mission",
+        "of",
+        "Project",
+        "Gutenberg",
+        "Project",
+        "Gutenberg",
+        "is",
+        "synonymous",
+        "with",
+        "the",
+        "free"
+      ],
+      "difficulty": {
+        "words": [
+          5,
+          15
+        ]
+      }
+    }
+  },
+  {
+    "question": "How many times does the letter \"d\" appear in the text: \"inventors its brightest star being our great Joseph Jackson To Jackson we are indebted for\"?",
+    "answer": "2",
+    "metadata": {
+      "source_dataset": "letter_counting",
+      "source_index": 27,
+      "span_length": 15,
+      "target_letter": "d",
+      "span": [
+        "inventors",
+        "its",
+        "brightest",
+        "star",
+        "being",
+        "our",
+        "great",
+        "Joseph",
+        "Jackson",
+        "To",
+        "Jackson",
+        "we",
+        "are",
+        "indebted",
+        "for"
+      ],
+      "difficulty": {
+        "words": [
+          5,
+          15
+        ]
+      }
+    }
+  },
+  {
+    "question": "How many times does the letter \"s\" appear in the text: \"a weighty scientific problem Every one\"?",
+    "answer": "1",
+    "metadata": {
+      "source_dataset": "letter_counting",
+      "source_index": 28,
+      "span_length": 6,
+      "target_letter": "s",
+      "span": [
+        "a",
+        "weighty",
+        "scientific",
+        "problem",
+        "Every",
+        "one"
+      ],
+      "difficulty": {
+        "words": [
+          5,
+          15
+        ]
+      }
+    }
+  },
+  {
+    "question": "How many times does the letter \"3\" appear in the text: \"can help see Sections 3 and 4 and the Foundation\"?",
+    "answer": "1",
+    "metadata": {
+      "source_dataset": "letter_counting",
+      "source_index": 29,
+      "span_length": 10,
+      "target_letter": "3",
+      "span": [
+        "can",
+        "help",
+        "see",
+        "Sections",
+        "3",
+        "and",
+        "4",
+        "and",
+        "the",
+        "Foundation"
+      ],
+      "difficulty": {
+        "words": [
+          5,
+          15
+        ]
+      }
+    }
+  },
+  {
+    "question": "How many times does the letter \"n\" appear in the text: \"to go to work in earnest\"?",
+    "answer": "2",
+    "metadata": {
+      "source_dataset": "letter_counting",
+      "source_index": 30,
+      "span_length": 6,
+      "target_letter": "n",
+      "span": [
+        "to",
+        "go",
+        "to",
+        "work",
+        "in",
+        "earnest"
+      ],
+      "difficulty": {
+        "words": [
+          5,
+          15
+        ]
+      }
+    }
+  },
+  {
+    "question": "How many times does the letter \"n\" appear in the text: \"you run straight on to the end because you\"?",
+    "answer": "3",
+    "metadata": {
+      "source_dataset": "letter_counting",
+      "source_index": 31,
+      "span_length": 9,
+      "target_letter": "n",
+      "span": [
+        "you",
+        "run",
+        "straight",
+        "on",
+        "to",
+        "the",
+        "end",
+        "because",
+        "you"
+      ],
+      "difficulty": {
+        "words": [
+          5,
+          15
+        ]
+      }
+    }
+  },
+  {
+    "question": "How many times does the letter \"5\" appear in the text: \"City UT 84116 801 596 1887 Email contact links and up to date contact\"?",
+    "answer": "1",
+    "metadata": {
+      "source_dataset": "letter_counting",
+      "source_index": 32,
+      "span_length": 14,
+      "target_letter": "5",
+      "span": [
+        "City",
+        "UT",
+        "84116",
+        "801",
+        "596",
+        "1887",
+        "Email",
+        "contact",
+        "links",
+        "and",
+        "up",
+        "to",
+        "date",
+        "contact"
+      ],
+      "difficulty": {
+        "words": [
+          5,
+          15
+        ]
+      }
+    }
+  },
+  {
+    "question": "How many times does the letter \"r\" appear in the text: \"the official version posted on the official Project Gutenberg website www gutenberg\"?",
+    "answer": "4",
+    "metadata": {
+      "source_dataset": "letter_counting",
+      "source_index": 33,
+      "span_length": 12,
+      "target_letter": "r",
+      "span": [
+        "the",
+        "official",
+        "version",
+        "posted",
+        "on",
+        "the",
+        "official",
+        "Project",
+        "Gutenberg",
+        "website",
+        "www",
+        "gutenberg"
+      ],
+      "difficulty": {
+        "words": [
+          5,
+          15
+        ]
+      }
+    }
+  },
+  {
+    "question": "How many times does the letter \"o\" appear in the text: \"the Foundation as set forth in Section 3 below 1\"?",
+    "answer": "5",
+    "metadata": {
+      "source_dataset": "letter_counting",
+      "source_index": 34,
+      "span_length": 10,
+      "target_letter": "o",
+      "span": [
+        "the",
+        "Foundation",
+        "as",
+        "set",
+        "forth",
+        "in",
+        "Section",
+        "3",
+        "below",
+        "1"
+      ],
+      "difficulty": {
+        "words": [
+          5,
+          15
+        ]
+      }
+    }
+  },
+  {
+    "question": "How many times does the letter \"i\" appear in the text: \"of the famous Dr Faithburn You did not think\"?",
+    "answer": "3",
+    "metadata": {
+      "source_dataset": "letter_counting",
+      "source_index": 35,
+      "span_length": 9,
+      "target_letter": "i",
+      "span": [
+        "of",
+        "the",
+        "famous",
+        "Dr",
+        "Faithburn",
+        "You",
+        "did",
+        "not",
+        "think"
+      ],
+      "difficulty": {
+        "words": [
+          5,
+          15
+        ]
+      }
+    }
+  },
+  {
+    "question": "How many times does the letter \"l\" appear in the text: \"present year 2889 This morning Mr Fritz Napoleon\"?",
+    "answer": "1",
+    "metadata": {
+      "source_dataset": "letter_counting",
+      "source_index": 36,
+      "span_length": 8,
+      "target_letter": "l",
+      "span": [
+        "present",
+        "year",
+        "2889",
+        "This",
+        "morning",
+        "Mr",
+        "Fritz",
+        "Napoleon"
+      ],
+      "difficulty": {
+        "words": [
+          5,
+          15
+        ]
+      }
+    }
+  },
+  {
+    "question": "How many times does the letter \"i\" appear in the text: \"at no additional cost fee or expense\"?",
+    "answer": "2",
+    "metadata": {
+      "source_dataset": "letter_counting",
+      "source_index": 37,
+      "span_length": 7,
+      "target_letter": "i",
+      "span": [
+        "at",
+        "no",
+        "additional",
+        "cost",
+        "fee",
+        "or",
+        "expense"
+      ],
+      "difficulty": {
+        "words": [
+          5,
+          15
+        ]
+      }
+    }
+  },
+  {
+    "question": "How many times does the letter \"o\" appear in the text: \"law in the United States and you are located\"?",
+    "answer": "2",
+    "metadata": {
+      "source_dataset": "letter_counting",
+      "source_index": 38,
+      "span_length": 9,
+      "target_letter": "o",
+      "span": [
+        "law",
+        "in",
+        "the",
+        "United",
+        "States",
+        "and",
+        "you",
+        "are",
+        "located"
+      ],
+      "difficulty": {
+        "words": [
+          5,
+          15
+        ]
+      }
+    }
+  },
+  {
+    "question": "How many times does the letter \"g\" appear in the text: \"of receipt that s he does not agree to the terms of the\"?",
+    "answer": "1",
+    "metadata": {
+      "source_dataset": "letter_counting",
+      "source_index": 39,
+      "span_length": 13,
+      "target_letter": "g",
+      "span": [
+        "of",
+        "receipt",
+        "that",
+        "s",
+        "he",
+        "does",
+        "not",
+        "agree",
+        "to",
+        "the",
+        "terms",
+        "of",
+        "the"
+      ],
+      "difficulty": {
+        "words": [
+          5,
+          15
+        ]
+      }
+    }
+  },
+  {
+    "question": "How many times does the letter \"n\" appear in the text: \"allow disclaimers of certain implied warranties or\"?",
+    "answer": "2",
+    "metadata": {
+      "source_dataset": "letter_counting",
+      "source_index": 40,
+      "span_length": 7,
+      "target_letter": "n",
+      "span": [
+        "allow",
+        "disclaimers",
+        "of",
+        "certain",
+        "implied",
+        "warranties",
+        "or"
+      ],
+      "difficulty": {
+        "words": [
+          5,
+          15
+        ]
+      }
+    }
+  },
+  {
+    "question": "How many times does the letter \"a\" appear in the text: \"Project Gutenberg works 1 E 9 If you wish to charge a\"?",
+    "answer": "2",
+    "metadata": {
+      "source_dataset": "letter_counting",
+      "source_index": 41,
+      "span_length": 12,
+      "target_letter": "a",
+      "span": [
+        "Project",
+        "Gutenberg",
+        "works",
+        "1",
+        "E",
+        "9",
+        "If",
+        "you",
+        "wish",
+        "to",
+        "charge",
+        "a"
+      ],
+      "difficulty": {
+        "words": [
+          5,
+          15
+        ]
+      }
+    }
+  },
+  {
+    "question": "How many times does the letter \"u\" appear in the text: \"inventors its brightest star being our great Joseph Jackson\"?",
+    "answer": "1",
+    "metadata": {
+      "source_dataset": "letter_counting",
+      "source_index": 42,
+      "span_length": 9,
+      "target_letter": "u",
+      "span": [
+        "inventors",
+        "its",
+        "brightest",
+        "star",
+        "being",
+        "our",
+        "great",
+        "Joseph",
+        "Jackson"
+      ],
+      "difficulty": {
+        "words": [
+          5,
+          15
+        ]
+      }
+    }
+  },
+  {
+    "question": "How many times does the letter \"o\" appear in the text: \"preceding night is still abed though it is\"?",
+    "answer": "1",
+    "metadata": {
+      "source_dataset": "letter_counting",
+      "source_index": 43,
+      "span_length": 8,
+      "target_letter": "o",
+      "span": [
+        "preceding",
+        "night",
+        "is",
+        "still",
+        "abed",
+        "though",
+        "it",
+        "is"
+      ],
+      "difficulty": {
+        "words": [
+          5,
+          15
+        ]
+      }
+    }
+  },
+  {
+    "question": "How many times does the letter \"a\" appear in the text: \"was made with Paris Smith\"?",
+    "answer": "3",
+    "metadata": {
+      "source_dataset": "letter_counting",
+      "source_index": 44,
+      "span_length": 5,
+      "target_letter": "a",
+      "span": [
+        "was",
+        "made",
+        "with",
+        "Paris",
+        "Smith"
+      ],
+      "difficulty": {
+        "words": [
+          5,
+          15
+        ]
+      }
+    }
+  },
+  {
+    "question": "How many times does the letter \"w\" appear in the text: \"he passes to the reception chamber where\"?",
+    "answer": "1",
+    "metadata": {
+      "source_dataset": "letter_counting",
+      "source_index": 45,
+      "span_length": 7,
+      "target_letter": "w",
+      "span": [
+        "he",
+        "passes",
+        "to",
+        "the",
+        "reception",
+        "chamber",
+        "where"
+      ],
+      "difficulty": {
+        "words": [
+          5,
+          15
+        ]
+      }
+    }
+  },
+  {
+    "question": "How many times does the letter \"o\" appear in the text: \"chamber where the ambassadors accredited to the American government are awaiting\"?",
+    "answer": "3",
+    "metadata": {
+      "source_dataset": "letter_counting",
+      "source_index": 46,
+      "span_length": 11,
+      "target_letter": "o",
+      "span": [
+        "chamber",
+        "where",
+        "the",
+        "ambassadors",
+        "accredited",
+        "to",
+        "the",
+        "American",
+        "government",
+        "are",
+        "awaiting"
+      ],
+      "difficulty": {
+        "words": [
+          5,
+          15
+        ]
+      }
+    }
+  },
+  {
+    "question": "How many times does the letter \"i\" appear in the text: \"His visit to the works took\"?",
+    "answer": "3",
+    "metadata": {
+      "source_dataset": "letter_counting",
+      "source_index": 47,
+      "span_length": 6,
+      "target_letter": "i",
+      "span": [
+        "His",
+        "visit",
+        "to",
+        "the",
+        "works",
+        "took"
+      ],
+      "difficulty": {
+        "words": [
+          5,
+          15
+        ]
+      }
+    }
+  },
+  {
+    "question": "How many times does the letter \"u\" appear in the text: \"to estimate the amount of labor he undergoes\"?",
+    "answer": "2",
+    "metadata": {
+      "source_dataset": "letter_counting",
+      "source_index": 48,
+      "span_length": 8,
+      "target_letter": "u",
+      "span": [
+        "to",
+        "estimate",
+        "the",
+        "amount",
+        "of",
+        "labor",
+        "he",
+        "undergoes"
+      ],
+      "difficulty": {
+        "words": [
+          5,
+          15
+        ]
+      }
+    }
+  },
+  {
+    "question": "How many times does the letter \"t\" appear in the text: \"the reporters of this straightway You\"?",
+    "answer": "5",
+    "metadata": {
+      "source_dataset": "letter_counting",
+      "source_index": 49,
+      "span_length": 6,
+      "target_letter": "t",
+      "span": [
+        "the",
+        "reporters",
+        "of",
+        "this",
+        "straightway",
+        "You"
+      ],
+      "difficulty": {
+        "words": [
+          5,
+          15
+        ]
+      }
+    }
+  },
+  {
+    "question": "How many times does the letter \"i\" appear in the text: \"can be found at the Foundation s website and official page\"?",
+    "answer": "4",
+    "metadata": {
+      "source_dataset": "letter_counting",
+      "source_index": 50,
+      "span_length": 11,
+      "target_letter": "i",
+      "span": [
+        "can",
+        "be",
+        "found",
+        "at",
+        "the",
+        "Foundation",
+        "s",
+        "website",
+        "and",
+        "official",
+        "page"
+      ],
+      "difficulty": {
+        "words": [
+          5,
+          15
+        ]
+      }
+    }
+  },
+  {
+    "question": "How many times does the letter \"d\" appear in the text: \"Suddenly the door opened and the tub appeared Such for this year\"?",
+    "answer": "6",
+    "metadata": {
+      "source_dataset": "letter_counting",
+      "source_index": 51,
+      "span_length": 12,
+      "target_letter": "d",
+      "span": [
+        "Suddenly",
+        "the",
+        "door",
+        "opened",
+        "and",
+        "the",
+        "tub",
+        "appeared",
+        "Such",
+        "for",
+        "this",
+        "year"
+      ],
+      "difficulty": {
+        "words": [
+          5,
+          15
+        ]
+      }
+    }
+  },
+  {
+    "question": "How many times does the letter \"d\" appear in the text: \"Smith a cloudless sky That s too bad but what s to be\"?",
+    "answer": "2",
+    "metadata": {
+      "source_dataset": "letter_counting",
+      "source_index": 52,
+      "span_length": 13,
+      "target_letter": "d",
+      "span": [
+        "Smith",
+        "a",
+        "cloudless",
+        "sky",
+        "That",
+        "s",
+        "too",
+        "bad",
+        "but",
+        "what",
+        "s",
+        "to",
+        "be"
+      ],
+      "difficulty": {
+        "words": [
+          5,
+          15
+        ]
+      }
+    }
+  },
+  {
+    "question": "How many times does the letter \"f\" appear in the text: \"by U S federal laws and your state s laws The Foundation s\"?",
+    "answer": "2",
+    "metadata": {
+      "source_dataset": "letter_counting",
+      "source_index": 53,
+      "span_length": 13,
+      "target_letter": "f",
+      "span": [
+        "by",
+        "U",
+        "S",
+        "federal",
+        "laws",
+        "and",
+        "your",
+        "state",
+        "s",
+        "laws",
+        "The",
+        "Foundation",
+        "s"
+      ],
+      "difficulty": {
+        "words": [
+          5,
+          15
+        ]
+      }
+    }
+  },
+  {
+    "question": "How many times does the letter \"y\" appear in the text: \"think about it In the meantime said Mr Smith you\"?",
+    "answer": "1",
+    "metadata": {
+      "source_dataset": "letter_counting",
+      "source_index": 54,
+      "span_length": 10,
+      "target_letter": "y",
+      "span": [
+        "think",
+        "about",
+        "it",
+        "In",
+        "the",
+        "meantime",
+        "said",
+        "Mr",
+        "Smith",
+        "you"
+      ],
+      "difficulty": {
+        "words": [
+          5,
+          15
+        ]
+      }
+    }
+  },
+  {
+    "question": "How many times does the letter \"r\" appear in the text: \"License terms from this work or any files\"?",
+    "answer": "4",
+    "metadata": {
+      "source_dataset": "letter_counting",
+      "source_index": 55,
+      "span_length": 8,
+      "target_letter": "r",
+      "span": [
+        "License",
+        "terms",
+        "from",
+        "this",
+        "work",
+        "or",
+        "any",
+        "files"
+      ],
+      "difficulty": {
+        "words": [
+          5,
+          15
+        ]
+      }
+    }
+  },
+  {
+    "question": "How many times does the letter \"o\" appear in the text: \"whatever form may be desired whether as heat light electricity\"?",
+    "answer": "1",
+    "metadata": {
+      "source_dataset": "letter_counting",
+      "source_index": 56,
+      "span_length": 10,
+      "target_letter": "o",
+      "span": [
+        "whatever",
+        "form",
+        "may",
+        "be",
+        "desired",
+        "whether",
+        "as",
+        "heat",
+        "light",
+        "electricity"
+      ],
+      "difficulty": {
+        "words": [
+          5,
+          15
+        ]
+      }
+    }
+  },
+  {
+    "question": "How many times does the letter \"g\" appear in the text: \"Project Gutenberg electronic works in your possession If you paid a\"?",
+    "answer": "2",
+    "metadata": {
+      "source_dataset": "letter_counting",
+      "source_index": 57,
+      "span_length": 11,
+      "target_letter": "g",
+      "span": [
+        "Project",
+        "Gutenberg",
+        "electronic",
+        "works",
+        "in",
+        "your",
+        "possession",
+        "If",
+        "you",
+        "paid",
+        "a"
+      ],
+      "difficulty": {
+        "words": [
+          5,
+          15
+        ]
+      }
+    }
+  },
+  {
+    "question": "How many times does the letter \"i\" appear in the text: \"of this agreement for free distribution of\"?",
+    "answer": "4",
+    "metadata": {
+      "source_dataset": "letter_counting",
+      "source_index": 58,
+      "span_length": 7,
+      "target_letter": "i",
+      "span": [
+        "of",
+        "this",
+        "agreement",
+        "for",
+        "free",
+        "distribution",
+        "of"
+      ],
+      "difficulty": {
+        "words": [
+          5,
+          15
+        ]
+      }
+    }
+  },
+  {
+    "question": "How many times does the letter \"v\" appear in the text: \"Besides my government as you must know will firmly oppose every movement not only\"?",
+    "answer": "3",
+    "metadata": {
+      "source_dataset": "letter_counting",
+      "source_index": 59,
+      "span_length": 14,
+      "target_letter": "v",
+      "span": [
+        "Besides",
+        "my",
+        "government",
+        "as",
+        "you",
+        "must",
+        "know",
+        "will",
+        "firmly",
+        "oppose",
+        "every",
+        "movement",
+        "not",
+        "only"
+      ],
+      "difficulty": {
+        "words": [
+          5,
+          15
+        ]
+      }
+    }
+  },
+  {
+    "question": "How many times does the letter \"h\" appear in the text: \"by Jules Verne and Michel Verne END\"?",
+    "answer": "1",
+    "metadata": {
+      "source_dataset": "letter_counting",
+      "source_index": 60,
+      "span_length": 7,
+      "target_letter": "h",
+      "span": [
+        "by",
+        "Jules",
+        "Verne",
+        "and",
+        "Michel",
+        "Verne",
+        "END"
+      ],
+      "difficulty": {
+        "words": [
+          5,
+          15
+        ]
+      }
+    }
+  },
+  {
+    "question": "How many times does the letter \"c\" appear in the text: \"what object Simply for the annulment of the Act of Congress annexing\"?",
+    "answer": "3",
+    "metadata": {
+      "source_dataset": "letter_counting",
+      "source_index": 61,
+      "span_length": 12,
+      "target_letter": "c",
+      "span": [
+        "what",
+        "object",
+        "Simply",
+        "for",
+        "the",
+        "annulment",
+        "of",
+        "the",
+        "Act",
+        "of",
+        "Congress",
+        "annexing"
+      ],
+      "difficulty": {
+        "words": [
+          5,
+          15
+        ]
+      }
+    }
+  },
+  {
+    "question": "How many times does the letter \"m\" appear in the text: \"Smith How is it he\"?",
+    "answer": "1",
+    "metadata": {
+      "source_dataset": "letter_counting",
+      "source_index": 62,
+      "span_length": 5,
+      "target_letter": "m",
+      "span": [
+        "Smith",
+        "How",
+        "is",
+        "it",
+        "he"
+      ],
+      "difficulty": {
+        "words": [
+          5,
+          15
+        ]
+      }
+    }
+  },
+  {
+    "question": "How many times does the letter \"f\" appear in the text: \"yourself up well before you go out into the hall way You must not\"?",
+    "answer": "2",
+    "metadata": {
+      "source_dataset": "letter_counting",
+      "source_index": 63,
+      "span_length": 14,
+      "target_letter": "f",
+      "span": [
+        "yourself",
+        "up",
+        "well",
+        "before",
+        "you",
+        "go",
+        "out",
+        "into",
+        "the",
+        "hall",
+        "way",
+        "You",
+        "must",
+        "not"
+      ],
+      "difficulty": {
+        "words": [
+          5,
+          15
+        ]
+      }
+    }
+  },
+  {
+    "question": "How many times does the letter \"w\" appear in the text: \"so better comprehend the advance we have made How much fairer they\"?",
+    "answer": "2",
+    "metadata": {
+      "source_dataset": "letter_counting",
+      "source_index": 64,
+      "span_length": 12,
+      "target_letter": "w",
+      "span": [
+        "so",
+        "better",
+        "comprehend",
+        "the",
+        "advance",
+        "we",
+        "have",
+        "made",
+        "How",
+        "much",
+        "fairer",
+        "they"
+      ],
+      "difficulty": {
+        "words": [
+          5,
+          15
+        ]
+      }
+    }
+  },
+  {
+    "question": "How many times does the letter \"o\" appear in the text: \"with both paragraphs 1 E 1 through 1\"?",
+    "answer": "2",
+    "metadata": {
+      "source_dataset": "letter_counting",
+      "source_index": 65,
+      "span_length": 8,
+      "target_letter": "o",
+      "span": [
+        "with",
+        "both",
+        "paragraphs",
+        "1",
+        "E",
+        "1",
+        "through",
+        "1"
+      ],
+      "difficulty": {
+        "words": [
+          5,
+          15
+        ]
+      }
+    }
+  },
+  {
+    "question": "How many times does the letter \"y\" appear in the text: \"of hygiene which abating all the old\"?",
+    "answer": "1",
+    "metadata": {
+      "source_dataset": "letter_counting",
+      "source_index": 66,
+      "span_length": 7,
+      "target_letter": "y",
+      "span": [
+        "of",
+        "hygiene",
+        "which",
+        "abating",
+        "all",
+        "the",
+        "old"
+      ],
+      "difficulty": {
+        "words": [
+          5,
+          15
+        ]
+      }
+    }
+  },
+  {
+    "question": "How many times does the letter \"t\" appear in the text: \"nothing at all remains for us sighed Sir John\"?",
+    "answer": "2",
+    "metadata": {
+      "source_dataset": "letter_counting",
+      "source_index": 67,
+      "span_length": 9,
+      "target_letter": "t",
+      "span": [
+        "nothing",
+        "at",
+        "all",
+        "remains",
+        "for",
+        "us",
+        "sighed",
+        "Sir",
+        "John"
+      ],
+      "difficulty": {
+        "words": [
+          5,
+          15
+        ]
+      }
+    }
+  },
+  {
+    "question": "How many times does the letter \"r\" appear in the text: \"the mirror of the telephote Why where have you been asked\"?",
+    "answer": "4",
+    "metadata": {
+      "source_dataset": "letter_counting",
+      "source_index": 68,
+      "span_length": 11,
+      "target_letter": "r",
+      "span": [
+        "the",
+        "mirror",
+        "of",
+        "the",
+        "telephote",
+        "Why",
+        "where",
+        "have",
+        "you",
+        "been",
+        "asked"
+      ],
+      "difficulty": {
+        "words": [
+          5,
+          15
+        ]
+      }
+    }
+  },
+  {
+    "question": "How many times does the letter \"n\" appear in the text: \"out of the floor Again as in the\"?",
+    "answer": "2",
+    "metadata": {
+      "source_dataset": "letter_counting",
+      "source_index": 69,
+      "span_length": 8,
+      "target_letter": "n",
+      "span": [
+        "out",
+        "of",
+        "the",
+        "floor",
+        "Again",
+        "as",
+        "in",
+        "the"
+      ],
+      "difficulty": {
+        "words": [
+          5,
+          15
+        ]
+      }
+    }
+  },
+  {
+    "question": "How many times does the letter \"u\" appear in the text: \"having also directed that his sleep was to continue a hundred years\"?",
+    "answer": "2",
+    "metadata": {
+      "source_dataset": "letter_counting",
+      "source_index": 70,
+      "span_length": 12,
+      "target_letter": "u",
+      "span": [
+        "having",
+        "also",
+        "directed",
+        "that",
+        "his",
+        "sleep",
+        "was",
+        "to",
+        "continue",
+        "a",
+        "hundred",
+        "years"
+      ],
+      "difficulty": {
+        "words": [
+          5,
+          15
+        ]
+      }
+    }
+  },
+  {
+    "question": "How many times does the letter \"a\" appear in the text: \"I shall have succeeded in\"?",
+    "answer": "2",
+    "metadata": {
+      "source_dataset": "letter_counting",
+      "source_index": 71,
+      "span_length": 5,
+      "target_letter": "a",
+      "span": [
+        "I",
+        "shall",
+        "have",
+        "succeeded",
+        "in"
+      ],
+      "difficulty": {
+        "words": [
+          5,
+          15
+        ]
+      }
+    }
+  },
+  {
+    "question": "How many times does the letter \"l\" appear in the text: \"seems in all the ten years since their\"?",
+    "answer": "2",
+    "metadata": {
+      "source_dataset": "letter_counting",
+      "source_index": 72,
+      "span_length": 8,
+      "target_letter": "l",
+      "span": [
+        "seems",
+        "in",
+        "all",
+        "the",
+        "ten",
+        "years",
+        "since",
+        "their"
+      ],
+      "difficulty": {
+        "words": [
+          5,
+          15
+        ]
+      }
+    }
+  },
+  {
+    "question": "How many times does the letter \"s\" appear in the text: \"Saint Peter of which France means to be the\"?",
+    "answer": "2",
+    "metadata": {
+      "source_dataset": "letter_counting",
+      "source_index": 73,
+      "span_length": 9,
+      "target_letter": "s",
+      "span": [
+        "Saint",
+        "Peter",
+        "of",
+        "which",
+        "France",
+        "means",
+        "to",
+        "be",
+        "the"
+      ],
+      "difficulty": {
+        "words": [
+          5,
+          15
+        ]
+      }
+    }
+  },
+  {
+    "question": "How many times does the letter \"a\" appear in the text: \"his last will and pointed out the proper method of awakening him having also\"?",
+    "answer": "6",
+    "metadata": {
+      "source_dataset": "letter_counting",
+      "source_index": 74,
+      "span_length": 14,
+      "target_letter": "a",
+      "span": [
+        "his",
+        "last",
+        "will",
+        "and",
+        "pointed",
+        "out",
+        "the",
+        "proper",
+        "method",
+        "of",
+        "awakening",
+        "him",
+        "having",
+        "also"
+      ],
+      "difficulty": {
+        "words": [
+          5,
+          15
+        ]
+      }
+    }
+  },
+  {
+    "question": "How many times does the letter \"e\" appear in the text: \"In response the man addressed simply pointed to\"?",
+    "answer": "6",
+    "metadata": {
+      "source_dataset": "letter_counting",
+      "source_index": 75,
+      "span_length": 8,
+      "target_letter": "e",
+      "span": [
+        "In",
+        "response",
+        "the",
+        "man",
+        "addressed",
+        "simply",
+        "pointed",
+        "to"
+      ],
+      "difficulty": {
+        "words": [
+          5,
+          15
+        ]
+      }
+    }
+  },
+  {
+    "question": "How many times does the letter \"m\" appear in the text: \"Mr Smith a cloudless sky That s too bad but what s to be done\"?",
+    "answer": "2",
+    "metadata": {
+      "source_dataset": "letter_counting",
+      "source_index": 76,
+      "span_length": 15,
+      "target_letter": "m",
+      "span": [
+        "Mr",
+        "Smith",
+        "a",
+        "cloudless",
+        "sky",
+        "That",
+        "s",
+        "too",
+        "bad",
+        "but",
+        "what",
+        "s",
+        "to",
+        "be",
+        "done"
+      ],
+      "difficulty": {
+        "words": [
+          5,
+          15
+        ]
+      }
+    }
+  },
+  {
+    "question": "How many times does the letter \"y\" appear in the text: \"entered the sky advertising department he found the operators\"?",
+    "answer": "1",
+    "metadata": {
+      "source_dataset": "letter_counting",
+      "source_index": 77,
+      "span_length": 9,
+      "target_letter": "y",
+      "span": [
+        "entered",
+        "the",
+        "sky",
+        "advertising",
+        "department",
+        "he",
+        "found",
+        "the",
+        "operators"
+      ],
+      "difficulty": {
+        "words": [
+          5,
+          15
+        ]
+      }
+    }
+  },
+  {
+    "question": "How many times does the letter \"h\" appear in the text: \"of the telephote Why where have you been asked Mr Smith through the\"?",
+    "answer": "9",
+    "metadata": {
+      "source_dataset": "letter_counting",
+      "source_index": 78,
+      "span_length": 13,
+      "target_letter": "h",
+      "span": [
+        "of",
+        "the",
+        "telephote",
+        "Why",
+        "where",
+        "have",
+        "you",
+        "been",
+        "asked",
+        "Mr",
+        "Smith",
+        "through",
+        "the"
+      ],
+      "difficulty": {
+        "words": [
+          5,
+          15
+        ]
+      }
+    }
+  },
+  {
+    "question": "How many times does the letter \"o\" appear in the text: \"addressing to the American government vain\"?",
+    "answer": "2",
+    "metadata": {
+      "source_dataset": "letter_counting",
+      "source_index": 79,
+      "span_length": 6,
+      "target_letter": "o",
+      "span": [
+        "addressing",
+        "to",
+        "the",
+        "American",
+        "government",
+        "vain"
+      ],
+      "difficulty": {
+        "words": [
+          5,
+          15
+        ]
+      }
+    }
+  },
+  {
+    "question": "How many times does the letter \"m\" appear in the text: \"people of Great Britain who till now had remained silent A great deal\"?",
+    "answer": "1",
+    "metadata": {
+      "source_dataset": "letter_counting",
+      "source_index": 80,
+      "span_length": 13,
+      "target_letter": "m",
+      "span": [
+        "people",
+        "of",
+        "Great",
+        "Britain",
+        "who",
+        "till",
+        "now",
+        "had",
+        "remained",
+        "silent",
+        "A",
+        "great",
+        "deal"
+      ],
+      "difficulty": {
+        "words": [
+          5,
+          15
+        ]
+      }
+    }
+  },
+  {
+    "question": "How many times does the letter \"d\" appear in the text: \"progress made in color photography\"?",
+    "answer": "1",
+    "metadata": {
+      "source_dataset": "letter_counting",
+      "source_index": 81,
+      "span_length": 5,
+      "target_letter": "d",
+      "span": [
+        "progress",
+        "made",
+        "in",
+        "color",
+        "photography"
+      ],
+      "difficulty": {
+        "words": [
+          5,
+          15
+        ]
+      }
+    }
+  },
+  {
+    "question": "How many times does the letter \"c\" appear in the text: \"eBook Title In the year 2889 Author Michel Verne\"?",
+    "answer": "1",
+    "metadata": {
+      "source_dataset": "letter_counting",
+      "source_index": 82,
+      "span_length": 9,
+      "target_letter": "c",
+      "span": [
+        "eBook",
+        "Title",
+        "In",
+        "the",
+        "year",
+        "2889",
+        "Author",
+        "Michel",
+        "Verne"
+      ],
+      "difficulty": {
+        "words": [
+          5,
+          15
+        ]
+      }
+    }
+  },
+  {
+    "question": "How many times does the letter \"w\" appear in the text: \"what we ask Indeed answered Mr Smith without\"?",
+    "answer": "4",
+    "metadata": {
+      "source_dataset": "letter_counting",
+      "source_index": 83,
+      "span_length": 8,
+      "target_letter": "w",
+      "span": [
+        "what",
+        "we",
+        "ask",
+        "Indeed",
+        "answered",
+        "Mr",
+        "Smith",
+        "without"
+      ],
+      "difficulty": {
+        "words": [
+          5,
+          15
+        ]
+      }
+    }
+  },
+  {
+    "question": "How many times does the letter \"t\" appear in the text: \"name of Earth Chronicle Unfortunately it was unable to maintain itself at the high\"?",
+    "answer": "9",
+    "metadata": {
+      "source_dataset": "letter_counting",
+      "source_index": 84,
+      "span_length": 14,
+      "target_letter": "t",
+      "span": [
+        "name",
+        "of",
+        "Earth",
+        "Chronicle",
+        "Unfortunately",
+        "it",
+        "was",
+        "unable",
+        "to",
+        "maintain",
+        "itself",
+        "at",
+        "the",
+        "high"
+      ],
+      "difficulty": {
+        "words": [
+          5,
+          15
+        ]
+      }
+    }
+  },
+  {
+    "question": "How many times does the letter \"a\" appear in the text: \"the ten years since their\"?",
+    "answer": "1",
+    "metadata": {
+      "source_dataset": "letter_counting",
+      "source_index": 85,
+      "span_length": 5,
+      "target_letter": "a",
+      "span": [
+        "the",
+        "ten",
+        "years",
+        "since",
+        "their"
+      ],
+      "difficulty": {
+        "words": [
+          5,
+          15
+        ]
+      }
+    }
+  },
+  {
+    "question": "How many times does the letter \"s\" appear in the text: \"Project Gutenberg work The Foundation makes no representations\"?",
+    "answer": "3",
+    "metadata": {
+      "source_dataset": "letter_counting",
+      "source_index": 86,
+      "span_length": 8,
+      "target_letter": "s",
+      "span": [
+        "Project",
+        "Gutenberg",
+        "work",
+        "The",
+        "Foundation",
+        "makes",
+        "no",
+        "representations"
+      ],
+      "difficulty": {
+        "words": [
+          5,
+          15
+        ]
+      }
+    }
+  },
+  {
+    "question": "How many times does the letter \"g\" appear in the text: \"widest array of equipment including outdated equipment Many small donations 1 to 5 000\"?",
+    "answer": "1",
+    "metadata": {
+      "source_dataset": "letter_counting",
+      "source_index": 87,
+      "span_length": 14,
+      "target_letter": "g",
+      "span": [
+        "widest",
+        "array",
+        "of",
+        "equipment",
+        "including",
+        "outdated",
+        "equipment",
+        "Many",
+        "small",
+        "donations",
+        "1",
+        "to",
+        "5",
+        "000"
+      ],
+      "difficulty": {
+        "words": [
+          5,
+          15
+        ]
+      }
+    }
+  },
+  {
+    "question": "How many times does the letter \"i\" appear in the text: \"1 E 1 through 1 E 7 and any additional terms imposed by\"?",
+    "answer": "3",
+    "metadata": {
+      "source_dataset": "letter_counting",
+      "source_index": 88,
+      "span_length": 13,
+      "target_letter": "i",
+      "span": [
+        "1",
+        "E",
+        "1",
+        "through",
+        "1",
+        "E",
+        "7",
+        "and",
+        "any",
+        "additional",
+        "terms",
+        "imposed",
+        "by"
+      ],
+      "difficulty": {
+        "words": [
+          5,
+          15
+        ]
+      }
+    }
+  },
+  {
+    "question": "How many times does the letter \"w\" appear in the text: \"OR USE THIS WORK To protect the Project Gutenberg mission\"?",
+    "answer": "1",
+    "metadata": {
+      "source_dataset": "letter_counting",
+      "source_index": 89,
+      "span_length": 10,
+      "target_letter": "w",
+      "span": [
+        "OR",
+        "USE",
+        "THIS",
+        "WORK",
+        "To",
+        "protect",
+        "the",
+        "Project",
+        "Gutenberg",
+        "mission"
+      ],
+      "difficulty": {
+        "words": [
+          5,
+          15
+        ]
+      }
+    }
+  },
+  {
+    "question": "How many times does the letter \"r\" appear in the text: \"and through our mile and three quarter telescopes Listen to that\"?",
+    "answer": "5",
+    "metadata": {
+      "source_dataset": "letter_counting",
+      "source_index": 90,
+      "span_length": 11,
+      "target_letter": "r",
+      "span": [
+        "and",
+        "through",
+        "our",
+        "mile",
+        "and",
+        "three",
+        "quarter",
+        "telescopes",
+        "Listen",
+        "to",
+        "that"
+      ],
+      "difficulty": {
+        "words": [
+          5,
+          15
+        ]
+      }
+    }
+  },
+  {
+    "question": "How many times does the letter \"l\" appear in the text: \"one day in the life of the editor of the Earth Chronicle\"?",
+    "answer": "2",
+    "metadata": {
+      "source_dataset": "letter_counting",
+      "source_index": 91,
+      "span_length": 12,
+      "target_letter": "l",
+      "span": [
+        "one",
+        "day",
+        "in",
+        "the",
+        "life",
+        "of",
+        "the",
+        "editor",
+        "of",
+        "the",
+        "Earth",
+        "Chronicle"
+      ],
+      "difficulty": {
+        "words": [
+          5,
+          15
+        ]
+      }
+    }
+  },
+  {
+    "question": "How many times does the letter \"i\" appear in the text: \"United States Compliance requirements are not uniform and it takes a considerable\"?",
+    "answer": "6",
+    "metadata": {
+      "source_dataset": "letter_counting",
+      "source_index": 92,
+      "span_length": 12,
+      "target_letter": "i",
+      "span": [
+        "United",
+        "States",
+        "Compliance",
+        "requirements",
+        "are",
+        "not",
+        "uniform",
+        "and",
+        "it",
+        "takes",
+        "a",
+        "considerable"
+      ],
+      "difficulty": {
+        "words": [
+          5,
+          15
+        ]
+      }
+    }
+  },
+  {
+    "question": "How many times does the letter \"k\" appear in the text: \"by using or distributing this work or any other work associated in any way with\"?",
+    "answer": "2",
+    "metadata": {
+      "source_dataset": "letter_counting",
+      "source_index": 93,
+      "span_length": 15,
+      "target_letter": "k",
+      "span": [
+        "by",
+        "using",
+        "or",
+        "distributing",
+        "this",
+        "work",
+        "or",
+        "any",
+        "other",
+        "work",
+        "associated",
+        "in",
+        "any",
+        "way",
+        "with"
+      ],
+      "difficulty": {
+        "words": [
+          5,
+          15
+        ]
+      }
+    }
+  },
+  {
+    "question": "How many times does the letter \"s\" appear in the text: \"Project Gutenberg License terms from this work or any files containing a part of\"?",
+    "answer": "4",
+    "metadata": {
+      "source_dataset": "letter_counting",
+      "source_index": 94,
+      "span_length": 14,
+      "target_letter": "s",
+      "span": [
+        "Project",
+        "Gutenberg",
+        "License",
+        "terms",
+        "from",
+        "this",
+        "work",
+        "or",
+        "any",
+        "files",
+        "containing",
+        "a",
+        "part",
+        "of"
+      ],
+      "difficulty": {
+        "words": [
+          5,
+          15
+        ]
+      }
+    }
+  },
+  {
+    "question": "How many times does the letter \"m\" appear in the text: \"man addressed simply pointed to the\"?",
+    "answer": "2",
+    "metadata": {
+      "source_dataset": "letter_counting",
+      "source_index": 95,
+      "span_length": 6,
+      "target_letter": "m",
+      "span": [
+        "man",
+        "addressed",
+        "simply",
+        "pointed",
+        "to",
+        "the"
+      ],
+      "difficulty": {
+        "words": [
+          5,
+          15
+        ]
+      }
+    }
+  },
+  {
+    "question": "How many times does the letter \"t\" appear in the text: \"to a Project Gutenberg electronic work and you\"?",
+    "answer": "4",
+    "metadata": {
+      "source_dataset": "letter_counting",
+      "source_index": 96,
+      "span_length": 8,
+      "target_letter": "t",
+      "span": [
+        "to",
+        "a",
+        "Project",
+        "Gutenberg",
+        "electronic",
+        "work",
+        "and",
+        "you"
+      ],
+      "difficulty": {
+        "words": [
+          5,
+          15
+        ]
+      }
+    }
+  },
+  {
+    "question": "How many times does the letter \"p\" appear in the text: \"with any particular paper edition\"?",
+    "answer": "3",
+    "metadata": {
+      "source_dataset": "letter_counting",
+      "source_index": 97,
+      "span_length": 5,
+      "target_letter": "p",
+      "span": [
+        "with",
+        "any",
+        "particular",
+        "paper",
+        "edition"
+      ],
+      "difficulty": {
+        "words": [
+          5,
+          15
+        ]
+      }
+    }
+  },
+  {
+    "question": "How many times does the letter \"i\" appear in the text: \"last the kinship of all these\"?",
+    "answer": "2",
+    "metadata": {
+      "source_dataset": "letter_counting",
+      "source_index": 98,
+      "span_length": 6,
+      "target_letter": "i",
+      "span": [
+        "last",
+        "the",
+        "kinship",
+        "of",
+        "all",
+        "these"
+      ],
+      "difficulty": {
+        "words": [
+          5,
+          15
+        ]
+      }
+    }
+  },
+  {
+    "question": "How many times does the letter \"v\" appear in the text: \"last the kinship of all these forces was discovered it is simply astounding\"?",
+    "answer": "1",
+    "metadata": {
+      "source_dataset": "letter_counting",
+      "source_index": 99,
+      "span_length": 13,
+      "target_letter": "v",
+      "span": [
+        "last",
+        "the",
+        "kinship",
+        "of",
+        "all",
+        "these",
+        "forces",
+        "was",
+        "discovered",
+        "it",
+        "is",
+        "simply",
+        "astounding"
+      ],
+      "difficulty": {
+        "words": [
+          5,
+          15
+        ]
+      }
+    }
+  }
+]

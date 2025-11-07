@@ -1,0 +1,1702 @@
+[
+  {
+    "question": "Mary has 2 male friends and she also has 2 female friends. They all are friends with each other and have no other friends aside. How many female friends does William, a male friend of Mary, have?",
+    "answer": "3",
+    "metadata": {
+      "source_dataset": "aiw",
+      "source_index": 0,
+      "task_type": "friends",
+      "difficulty": {
+        "task_type_weights": [
+          0.3333333333333333,
+          0.3333333333333333,
+          0.3333333333333333
+        ],
+        "num_entities": 6
+      }
+    }
+  },
+  {
+    "question": "Jennifer has 3 brothers and she also has 6 sisters. How many sisters does Jennifer's brother have?",
+    "answer": "7",
+    "metadata": {
+      "source_dataset": "aiw",
+      "source_index": 1,
+      "task_type": "siblings",
+      "difficulty": {
+        "task_type_weights": [
+          0.3333333333333333,
+          0.3333333333333333,
+          0.3333333333333333
+        ],
+        "num_entities": 6
+      }
+    }
+  },
+  {
+    "question": "Sarah has 2 male friends and she also has 4 female friends. They all are friends with each other and have no other friends aside. How many female friends does John, a male friend of Sarah, have?",
+    "answer": "5",
+    "metadata": {
+      "source_dataset": "aiw",
+      "source_index": 2,
+      "task_type": "friends",
+      "difficulty": {
+        "task_type_weights": [
+          0.3333333333333333,
+          0.3333333333333333,
+          0.3333333333333333
+        ],
+        "num_entities": 6
+      }
+    }
+  },
+  {
+    "question": "Jessica has 3 sisters and she also has 1 brothers. How many sisters does William's brother have?",
+    "answer": "4",
+    "metadata": {
+      "source_dataset": "aiw",
+      "source_index": 3,
+      "task_type": "siblings",
+      "difficulty": {
+        "task_type_weights": [
+          0.3333333333333333,
+          0.3333333333333333,
+          0.3333333333333333
+        ],
+        "num_entities": 6
+      }
+    }
+  },
+  {
+    "question": "Susan has 5 male colleagues and she also has 5 female colleagues. These are all colleagues that Susan has. All these mentioned persons around Susan are colleagues of each other. James has 2 male colleagues and 6 female colleagues in total. All these mentioned persons around James are colleagues of each other. The people in the circle around James do not have other colleagues aside - with the only exception of Matilda. She is colleague of James and she is also colleague of Susan, being part of Susan's circle. How many female colleagues does Matilda have?",
+    "answer": "6",
+    "metadata": {
+      "source_dataset": "aiw",
+      "source_index": 4,
+      "task_type": "colleagues",
+      "difficulty": {
+        "task_type_weights": [
+          0.3333333333333333,
+          0.3333333333333333,
+          0.3333333333333333
+        ],
+        "num_entities": 6
+      }
+    }
+  },
+  {
+    "question": "Susan has 4 male friends and she also has 5 female friends. They all are friends with each other and have no other friends aside. How many female friends does Thomas, a male friend of Susan, have?",
+    "answer": "6",
+    "metadata": {
+      "source_dataset": "aiw",
+      "source_index": 5,
+      "task_type": "friends",
+      "difficulty": {
+        "task_type_weights": [
+          0.3333333333333333,
+          0.3333333333333333,
+          0.3333333333333333
+        ],
+        "num_entities": 6
+      }
+    }
+  },
+  {
+    "question": "Jennifer has 6 male friends and she also has 5 female friends. They all are friends with each other and have no other friends aside. How many female friends does Thomas, a male friend of Jennifer, have?",
+    "answer": "6",
+    "metadata": {
+      "source_dataset": "aiw",
+      "source_index": 6,
+      "task_type": "friends",
+      "difficulty": {
+        "task_type_weights": [
+          0.3333333333333333,
+          0.3333333333333333,
+          0.3333333333333333
+        ],
+        "num_entities": 6
+      }
+    }
+  },
+  {
+    "question": "Susan has 3 brothers and she also has 5 sisters. How many sisters does Susan's brother have?",
+    "answer": "6",
+    "metadata": {
+      "source_dataset": "aiw",
+      "source_index": 7,
+      "task_type": "siblings",
+      "difficulty": {
+        "task_type_weights": [
+          0.3333333333333333,
+          0.3333333333333333,
+          0.3333333333333333
+        ],
+        "num_entities": 6
+      }
+    }
+  },
+  {
+    "question": "Elizabeth has 6 male friends and she also has 2 female friends. They all are friends with each other and have no other friends aside. How many female friends does David, a male friend of Elizabeth, have?",
+    "answer": "3",
+    "metadata": {
+      "source_dataset": "aiw",
+      "source_index": 8,
+      "task_type": "friends",
+      "difficulty": {
+        "task_type_weights": [
+          0.3333333333333333,
+          0.3333333333333333,
+          0.3333333333333333
+        ],
+        "num_entities": 6
+      }
+    }
+  },
+  {
+    "question": "Sarah has 2 brothers and she also has 2 sisters. How many sisters does Sarah's brother have?",
+    "answer": "3",
+    "metadata": {
+      "source_dataset": "aiw",
+      "source_index": 9,
+      "task_type": "siblings",
+      "difficulty": {
+        "task_type_weights": [
+          0.3333333333333333,
+          0.3333333333333333,
+          0.3333333333333333
+        ],
+        "num_entities": 6
+      }
+    }
+  },
+  {
+    "question": "Mary has 4 male colleagues and she also has 3 female colleagues. These are all colleagues that Mary has. All these mentioned persons around Mary are colleagues of each other. Thomas has 4 male colleagues and 1 female colleagues in total. All these mentioned persons around Thomas are colleagues of each other. The people in the circle around Thomas do not have other colleagues aside - with the only exception of Matilda. She is colleague of Thomas and she is also colleague of Mary, being part of Mary's circle. How many female colleagues does Matilda have?",
+    "answer": "4",
+    "metadata": {
+      "source_dataset": "aiw",
+      "source_index": 10,
+      "task_type": "colleagues",
+      "difficulty": {
+        "task_type_weights": [
+          0.3333333333333333,
+          0.3333333333333333,
+          0.3333333333333333
+        ],
+        "num_entities": 6
+      }
+    }
+  },
+  {
+    "question": "Linda has 5 male friends and she also has 6 female friends. They all are friends with each other and have no other friends aside. How many female friends does Joseph, a male friend of Linda, have?",
+    "answer": "7",
+    "metadata": {
+      "source_dataset": "aiw",
+      "source_index": 11,
+      "task_type": "friends",
+      "difficulty": {
+        "task_type_weights": [
+          0.3333333333333333,
+          0.3333333333333333,
+          0.3333333333333333
+        ],
+        "num_entities": 6
+      }
+    }
+  },
+  {
+    "question": "Jennifer has 5 male colleagues and she also has 3 female colleagues. These are all colleagues that Jennifer has. All these mentioned persons around Jennifer are colleagues of each other. Joseph has 4 male colleagues and 4 female colleagues in total. All these mentioned persons around Joseph are colleagues of each other. The people in the circle around Joseph do not have other colleagues aside - with the only exception of Matilda. She is colleague of Joseph and she is also colleague of Jennifer, being part of Jennifer's circle. How many female colleagues does Matilda have?",
+    "answer": "4",
+    "metadata": {
+      "source_dataset": "aiw",
+      "source_index": 12,
+      "task_type": "colleagues",
+      "difficulty": {
+        "task_type_weights": [
+          0.3333333333333333,
+          0.3333333333333333,
+          0.3333333333333333
+        ],
+        "num_entities": 6
+      }
+    }
+  },
+  {
+    "question": "Linda has 6 brothers and she also has 3 sisters. How many sisters does Linda's brother have?",
+    "answer": "4",
+    "metadata": {
+      "source_dataset": "aiw",
+      "source_index": 13,
+      "task_type": "siblings",
+      "difficulty": {
+        "task_type_weights": [
+          0.3333333333333333,
+          0.3333333333333333,
+          0.3333333333333333
+        ],
+        "num_entities": 6
+      }
+    }
+  },
+  {
+    "question": "Sarah has 4 male colleagues and she also has 6 female colleagues. These are all colleagues that Sarah has. All these mentioned persons around Sarah are colleagues of each other. James has 5 male colleagues and 3 female colleagues in total. All these mentioned persons around James are colleagues of each other. The people in the circle around James do not have other colleagues aside - with the only exception of Matilda. She is colleague of James and she is also colleague of Sarah, being part of Sarah's circle. How many female colleagues does Matilda have?",
+    "answer": "7",
+    "metadata": {
+      "source_dataset": "aiw",
+      "source_index": 14,
+      "task_type": "colleagues",
+      "difficulty": {
+        "task_type_weights": [
+          0.3333333333333333,
+          0.3333333333333333,
+          0.3333333333333333
+        ],
+        "num_entities": 6
+      }
+    }
+  },
+  {
+    "question": "Margaret has 2 sisters and she also has 1 brothers. How many sisters does Charles's brother have?",
+    "answer": "3",
+    "metadata": {
+      "source_dataset": "aiw",
+      "source_index": 15,
+      "task_type": "siblings",
+      "difficulty": {
+        "task_type_weights": [
+          0.3333333333333333,
+          0.3333333333333333,
+          0.3333333333333333
+        ],
+        "num_entities": 6
+      }
+    }
+  },
+  {
+    "question": "Linda has 2 male friends and she also has 1 female friends. They all are friends with each other and have no other friends aside. How many female friends does Bob, a male friend of Linda, have?",
+    "answer": "2",
+    "metadata": {
+      "source_dataset": "aiw",
+      "source_index": 16,
+      "task_type": "friends",
+      "difficulty": {
+        "task_type_weights": [
+          0.3333333333333333,
+          0.3333333333333333,
+          0.3333333333333333
+        ],
+        "num_entities": 6
+      }
+    }
+  },
+  {
+    "question": "Alice has 2 sisters and she also has 1 brothers. How many sisters does Joseph's brother have?",
+    "answer": "3",
+    "metadata": {
+      "source_dataset": "aiw",
+      "source_index": 17,
+      "task_type": "siblings",
+      "difficulty": {
+        "task_type_weights": [
+          0.3333333333333333,
+          0.3333333333333333,
+          0.3333333333333333
+        ],
+        "num_entities": 6
+      }
+    }
+  },
+  {
+    "question": "Margaret has 2 sisters and she also has 3 brothers. How many sisters does Robert's brother have?",
+    "answer": "3",
+    "metadata": {
+      "source_dataset": "aiw",
+      "source_index": 18,
+      "task_type": "siblings",
+      "difficulty": {
+        "task_type_weights": [
+          0.3333333333333333,
+          0.3333333333333333,
+          0.3333333333333333
+        ],
+        "num_entities": 6
+      }
+    }
+  },
+  {
+    "question": "Sarah has 3 male friends and she also has 3 female friends. They all are friends with each other and have no other friends aside. How many female friends does Michael, a male friend of Sarah, have?",
+    "answer": "4",
+    "metadata": {
+      "source_dataset": "aiw",
+      "source_index": 19,
+      "task_type": "friends",
+      "difficulty": {
+        "task_type_weights": [
+          0.3333333333333333,
+          0.3333333333333333,
+          0.3333333333333333
+        ],
+        "num_entities": 6
+      }
+    }
+  },
+  {
+    "question": "Jennifer has 2 male colleagues and she also has 4 female colleagues. These are all colleagues that Jennifer has. All these mentioned persons around Jennifer are colleagues of each other. John has 3 male colleagues and 6 female colleagues in total. All these mentioned persons around John are colleagues of each other. The people in the circle around John do not have other colleagues aside - with the only exception of Matilda. She is colleague of John and she is also colleague of Jennifer, being part of Jennifer's circle. How many female colleagues does Matilda have?",
+    "answer": "5",
+    "metadata": {
+      "source_dataset": "aiw",
+      "source_index": 20,
+      "task_type": "colleagues",
+      "difficulty": {
+        "task_type_weights": [
+          0.3333333333333333,
+          0.3333333333333333,
+          0.3333333333333333
+        ],
+        "num_entities": 6
+      }
+    }
+  },
+  {
+    "question": "Elizabeth has 4 male friends and she also has 6 female friends. They all are friends with each other and have no other friends aside. How many female friends does William, a male friend of Elizabeth, have?",
+    "answer": "7",
+    "metadata": {
+      "source_dataset": "aiw",
+      "source_index": 21,
+      "task_type": "friends",
+      "difficulty": {
+        "task_type_weights": [
+          0.3333333333333333,
+          0.3333333333333333,
+          0.3333333333333333
+        ],
+        "num_entities": 6
+      }
+    }
+  },
+  {
+    "question": "Alice has 4 male friends and she also has 5 female friends. They all are friends with each other and have no other friends aside. How many female friends does Charles, a male friend of Alice, have?",
+    "answer": "6",
+    "metadata": {
+      "source_dataset": "aiw",
+      "source_index": 22,
+      "task_type": "friends",
+      "difficulty": {
+        "task_type_weights": [
+          0.3333333333333333,
+          0.3333333333333333,
+          0.3333333333333333
+        ],
+        "num_entities": 6
+      }
+    }
+  },
+  {
+    "question": "Elizabeth has 2 male friends and she also has 4 female friends. They all are friends with each other and have no other friends aside. How many female friends does Thomas, a male friend of Elizabeth, have?",
+    "answer": "5",
+    "metadata": {
+      "source_dataset": "aiw",
+      "source_index": 23,
+      "task_type": "friends",
+      "difficulty": {
+        "task_type_weights": [
+          0.3333333333333333,
+          0.3333333333333333,
+          0.3333333333333333
+        ],
+        "num_entities": 6
+      }
+    }
+  },
+  {
+    "question": "Susan has 3 sisters and she also has 4 brothers. How many sisters does Michael's brother have?",
+    "answer": "4",
+    "metadata": {
+      "source_dataset": "aiw",
+      "source_index": 24,
+      "task_type": "siblings",
+      "difficulty": {
+        "task_type_weights": [
+          0.3333333333333333,
+          0.3333333333333333,
+          0.3333333333333333
+        ],
+        "num_entities": 6
+      }
+    }
+  },
+  {
+    "question": "Susan has 3 sisters and she also has 4 brothers. How many sisters does Joseph's brother have?",
+    "answer": "4",
+    "metadata": {
+      "source_dataset": "aiw",
+      "source_index": 25,
+      "task_type": "siblings",
+      "difficulty": {
+        "task_type_weights": [
+          0.3333333333333333,
+          0.3333333333333333,
+          0.3333333333333333
+        ],
+        "num_entities": 6
+      }
+    }
+  },
+  {
+    "question": "Sarah has 5 male colleagues and she also has 5 female colleagues. These are all colleagues that Sarah has. All these mentioned persons around Sarah are colleagues of each other. John has 2 male colleagues and 4 female colleagues in total. All these mentioned persons around John are colleagues of each other. The people in the circle around John do not have other colleagues aside - with the only exception of Matilda. She is colleague of John and she is also colleague of Sarah, being part of Sarah's circle. How many female colleagues does Matilda have?",
+    "answer": "6",
+    "metadata": {
+      "source_dataset": "aiw",
+      "source_index": 26,
+      "task_type": "colleagues",
+      "difficulty": {
+        "task_type_weights": [
+          0.3333333333333333,
+          0.3333333333333333,
+          0.3333333333333333
+        ],
+        "num_entities": 6
+      }
+    }
+  },
+  {
+    "question": "Patricia has 1 male colleagues and she also has 5 female colleagues. These are all colleagues that Patricia has. All these mentioned persons around Patricia are colleagues of each other. Robert has 3 male colleagues and 3 female colleagues in total. All these mentioned persons around Robert are colleagues of each other. The people in the circle around Robert do not have other colleagues aside - with the only exception of Matilda. She is colleague of Robert and she is also colleague of Patricia, being part of Patricia's circle. How many female colleagues does Matilda have?",
+    "answer": "6",
+    "metadata": {
+      "source_dataset": "aiw",
+      "source_index": 27,
+      "task_type": "colleagues",
+      "difficulty": {
+        "task_type_weights": [
+          0.3333333333333333,
+          0.3333333333333333,
+          0.3333333333333333
+        ],
+        "num_entities": 6
+      }
+    }
+  },
+  {
+    "question": "Elizabeth has 4 male colleagues and she also has 2 female colleagues. These are all colleagues that Elizabeth has. All these mentioned persons around Elizabeth are colleagues of each other. Joseph has 3 male colleagues and 1 female colleagues in total. All these mentioned persons around Joseph are colleagues of each other. The people in the circle around Joseph do not have other colleagues aside - with the only exception of Matilda. She is colleague of Joseph and she is also colleague of Elizabeth, being part of Elizabeth's circle. How many female colleagues does Matilda have?",
+    "answer": "3",
+    "metadata": {
+      "source_dataset": "aiw",
+      "source_index": 28,
+      "task_type": "colleagues",
+      "difficulty": {
+        "task_type_weights": [
+          0.3333333333333333,
+          0.3333333333333333,
+          0.3333333333333333
+        ],
+        "num_entities": 6
+      }
+    }
+  },
+  {
+    "question": "Margaret has 3 brothers and she also has 2 sisters. How many sisters does Margaret's brother have?",
+    "answer": "3",
+    "metadata": {
+      "source_dataset": "aiw",
+      "source_index": 29,
+      "task_type": "siblings",
+      "difficulty": {
+        "task_type_weights": [
+          0.3333333333333333,
+          0.3333333333333333,
+          0.3333333333333333
+        ],
+        "num_entities": 6
+      }
+    }
+  },
+  {
+    "question": "Margaret has 6 sisters and she also has 3 brothers. How many sisters does Robert's brother have?",
+    "answer": "7",
+    "metadata": {
+      "source_dataset": "aiw",
+      "source_index": 30,
+      "task_type": "siblings",
+      "difficulty": {
+        "task_type_weights": [
+          0.3333333333333333,
+          0.3333333333333333,
+          0.3333333333333333
+        ],
+        "num_entities": 6
+      }
+    }
+  },
+  {
+    "question": "Sarah has 2 sisters and she also has 5 brothers. How many sisters does Joseph's brother have?",
+    "answer": "3",
+    "metadata": {
+      "source_dataset": "aiw",
+      "source_index": 31,
+      "task_type": "siblings",
+      "difficulty": {
+        "task_type_weights": [
+          0.3333333333333333,
+          0.3333333333333333,
+          0.3333333333333333
+        ],
+        "num_entities": 6
+      }
+    }
+  },
+  {
+    "question": "Sarah has 3 male colleagues and she also has 1 female colleagues. These are all colleagues that Sarah has. All these mentioned persons around Sarah are colleagues of each other. John has 3 male colleagues and 2 female colleagues in total. All these mentioned persons around John are colleagues of each other. The people in the circle around John do not have other colleagues aside - with the only exception of Matilda. She is colleague of John and she is also colleague of Sarah, being part of Sarah's circle. How many female colleagues does Matilda have?",
+    "answer": "2",
+    "metadata": {
+      "source_dataset": "aiw",
+      "source_index": 32,
+      "task_type": "colleagues",
+      "difficulty": {
+        "task_type_weights": [
+          0.3333333333333333,
+          0.3333333333333333,
+          0.3333333333333333
+        ],
+        "num_entities": 6
+      }
+    }
+  },
+  {
+    "question": "Susan has 1 male friends and she also has 6 female friends. They all are friends with each other and have no other friends aside. How many female friends does Joseph, a male friend of Susan, have?",
+    "answer": "7",
+    "metadata": {
+      "source_dataset": "aiw",
+      "source_index": 33,
+      "task_type": "friends",
+      "difficulty": {
+        "task_type_weights": [
+          0.3333333333333333,
+          0.3333333333333333,
+          0.3333333333333333
+        ],
+        "num_entities": 6
+      }
+    }
+  },
+  {
+    "question": "Susan has 3 male friends and she also has 1 female friends. They all are friends with each other and have no other friends aside. How many female friends does Michael, a male friend of Susan, have?",
+    "answer": "2",
+    "metadata": {
+      "source_dataset": "aiw",
+      "source_index": 34,
+      "task_type": "friends",
+      "difficulty": {
+        "task_type_weights": [
+          0.3333333333333333,
+          0.3333333333333333,
+          0.3333333333333333
+        ],
+        "num_entities": 6
+      }
+    }
+  },
+  {
+    "question": "Barbara has 2 male colleagues and she also has 2 female colleagues. These are all colleagues that Barbara has. All these mentioned persons around Barbara are colleagues of each other. Michael has 1 male colleagues and 3 female colleagues in total. All these mentioned persons around Michael are colleagues of each other. The people in the circle around Michael do not have other colleagues aside - with the only exception of Matilda. She is colleague of Michael and she is also colleague of Barbara, being part of Barbara's circle. How many female colleagues does Matilda have?",
+    "answer": "3",
+    "metadata": {
+      "source_dataset": "aiw",
+      "source_index": 35,
+      "task_type": "colleagues",
+      "difficulty": {
+        "task_type_weights": [
+          0.3333333333333333,
+          0.3333333333333333,
+          0.3333333333333333
+        ],
+        "num_entities": 6
+      }
+    }
+  },
+  {
+    "question": "Patricia has 6 male colleagues and she also has 6 female colleagues. These are all colleagues that Patricia has. All these mentioned persons around Patricia are colleagues of each other. William has 3 male colleagues and 6 female colleagues in total. All these mentioned persons around William are colleagues of each other. The people in the circle around William do not have other colleagues aside - with the only exception of Matilda. She is colleague of William and she is also colleague of Patricia, being part of Patricia's circle. How many female colleagues does Matilda have?",
+    "answer": "7",
+    "metadata": {
+      "source_dataset": "aiw",
+      "source_index": 36,
+      "task_type": "colleagues",
+      "difficulty": {
+        "task_type_weights": [
+          0.3333333333333333,
+          0.3333333333333333,
+          0.3333333333333333
+        ],
+        "num_entities": 6
+      }
+    }
+  },
+  {
+    "question": "Barbara has 2 brothers and she also has 2 sisters. How many sisters does Barbara's brother have?",
+    "answer": "3",
+    "metadata": {
+      "source_dataset": "aiw",
+      "source_index": 37,
+      "task_type": "siblings",
+      "difficulty": {
+        "task_type_weights": [
+          0.3333333333333333,
+          0.3333333333333333,
+          0.3333333333333333
+        ],
+        "num_entities": 6
+      }
+    }
+  },
+  {
+    "question": "Sarah has 3 sisters and she also has 3 brothers. How many sisters does Richard's brother have?",
+    "answer": "4",
+    "metadata": {
+      "source_dataset": "aiw",
+      "source_index": 38,
+      "task_type": "siblings",
+      "difficulty": {
+        "task_type_weights": [
+          0.3333333333333333,
+          0.3333333333333333,
+          0.3333333333333333
+        ],
+        "num_entities": 6
+      }
+    }
+  },
+  {
+    "question": "Jessica has 5 male friends and she also has 5 female friends. They all are friends with each other and have no other friends aside. How many female friends does David, a male friend of Jessica, have?",
+    "answer": "6",
+    "metadata": {
+      "source_dataset": "aiw",
+      "source_index": 39,
+      "task_type": "friends",
+      "difficulty": {
+        "task_type_weights": [
+          0.3333333333333333,
+          0.3333333333333333,
+          0.3333333333333333
+        ],
+        "num_entities": 6
+      }
+    }
+  },
+  {
+    "question": "Jessica has 3 brothers and she also has 2 sisters. How many sisters does Jessica's brother have?",
+    "answer": "3",
+    "metadata": {
+      "source_dataset": "aiw",
+      "source_index": 40,
+      "task_type": "siblings",
+      "difficulty": {
+        "task_type_weights": [
+          0.3333333333333333,
+          0.3333333333333333,
+          0.3333333333333333
+        ],
+        "num_entities": 6
+      }
+    }
+  },
+  {
+    "question": "Jessica has 2 male friends and she also has 4 female friends. They all are friends with each other and have no other friends aside. How many female friends does John, a male friend of Jessica, have?",
+    "answer": "5",
+    "metadata": {
+      "source_dataset": "aiw",
+      "source_index": 41,
+      "task_type": "friends",
+      "difficulty": {
+        "task_type_weights": [
+          0.3333333333333333,
+          0.3333333333333333,
+          0.3333333333333333
+        ],
+        "num_entities": 6
+      }
+    }
+  },
+  {
+    "question": "Mary has 1 male colleagues and she also has 5 female colleagues. These are all colleagues that Mary has. All these mentioned persons around Mary are colleagues of each other. Joseph has 6 male colleagues and 3 female colleagues in total. All these mentioned persons around Joseph are colleagues of each other. The people in the circle around Joseph do not have other colleagues aside - with the only exception of Matilda. She is colleague of Joseph and she is also colleague of Mary, being part of Mary's circle. How many female colleagues does Matilda have?",
+    "answer": "6",
+    "metadata": {
+      "source_dataset": "aiw",
+      "source_index": 42,
+      "task_type": "colleagues",
+      "difficulty": {
+        "task_type_weights": [
+          0.3333333333333333,
+          0.3333333333333333,
+          0.3333333333333333
+        ],
+        "num_entities": 6
+      }
+    }
+  },
+  {
+    "question": "Margaret has 3 brothers and she also has 2 sisters. How many sisters does Margaret's brother have?",
+    "answer": "3",
+    "metadata": {
+      "source_dataset": "aiw",
+      "source_index": 43,
+      "task_type": "siblings",
+      "difficulty": {
+        "task_type_weights": [
+          0.3333333333333333,
+          0.3333333333333333,
+          0.3333333333333333
+        ],
+        "num_entities": 6
+      }
+    }
+  },
+  {
+    "question": "Mary has 3 male colleagues and she also has 6 female colleagues. These are all colleagues that Mary has. All these mentioned persons around Mary are colleagues of each other. Thomas has 1 male colleagues and 1 female colleagues in total. All these mentioned persons around Thomas are colleagues of each other. The people in the circle around Thomas do not have other colleagues aside - with the only exception of Matilda. She is colleague of Thomas and she is also colleague of Mary, being part of Mary's circle. How many female colleagues does Matilda have?",
+    "answer": "7",
+    "metadata": {
+      "source_dataset": "aiw",
+      "source_index": 44,
+      "task_type": "colleagues",
+      "difficulty": {
+        "task_type_weights": [
+          0.3333333333333333,
+          0.3333333333333333,
+          0.3333333333333333
+        ],
+        "num_entities": 6
+      }
+    }
+  },
+  {
+    "question": "Linda has 3 sisters and she also has 1 brothers. How many sisters does Thomas's brother have?",
+    "answer": "4",
+    "metadata": {
+      "source_dataset": "aiw",
+      "source_index": 45,
+      "task_type": "siblings",
+      "difficulty": {
+        "task_type_weights": [
+          0.3333333333333333,
+          0.3333333333333333,
+          0.3333333333333333
+        ],
+        "num_entities": 6
+      }
+    }
+  },
+  {
+    "question": "Linda has 2 male friends and she also has 6 female friends. They all are friends with each other and have no other friends aside. How many female friends does David, a male friend of Linda, have?",
+    "answer": "7",
+    "metadata": {
+      "source_dataset": "aiw",
+      "source_index": 46,
+      "task_type": "friends",
+      "difficulty": {
+        "task_type_weights": [
+          0.3333333333333333,
+          0.3333333333333333,
+          0.3333333333333333
+        ],
+        "num_entities": 6
+      }
+    }
+  },
+  {
+    "question": "Margaret has 2 brothers and she also has 3 sisters. How many sisters does Margaret's brother have?",
+    "answer": "4",
+    "metadata": {
+      "source_dataset": "aiw",
+      "source_index": 47,
+      "task_type": "siblings",
+      "difficulty": {
+        "task_type_weights": [
+          0.3333333333333333,
+          0.3333333333333333,
+          0.3333333333333333
+        ],
+        "num_entities": 6
+      }
+    }
+  },
+  {
+    "question": "Patricia has 5 sisters and she also has 6 brothers. How many sisters does Joseph's brother have?",
+    "answer": "6",
+    "metadata": {
+      "source_dataset": "aiw",
+      "source_index": 48,
+      "task_type": "siblings",
+      "difficulty": {
+        "task_type_weights": [
+          0.3333333333333333,
+          0.3333333333333333,
+          0.3333333333333333
+        ],
+        "num_entities": 6
+      }
+    }
+  },
+  {
+    "question": "Jennifer has 2 sisters and she also has 6 brothers. How many sisters does Bob's brother have?",
+    "answer": "3",
+    "metadata": {
+      "source_dataset": "aiw",
+      "source_index": 49,
+      "task_type": "siblings",
+      "difficulty": {
+        "task_type_weights": [
+          0.3333333333333333,
+          0.3333333333333333,
+          0.3333333333333333
+        ],
+        "num_entities": 6
+      }
+    }
+  },
+  {
+    "question": "Margaret has 5 male friends and she also has 5 female friends. They all are friends with each other and have no other friends aside. How many female friends does Thomas, a male friend of Margaret, have?",
+    "answer": "6",
+    "metadata": {
+      "source_dataset": "aiw",
+      "source_index": 50,
+      "task_type": "friends",
+      "difficulty": {
+        "task_type_weights": [
+          0.3333333333333333,
+          0.3333333333333333,
+          0.3333333333333333
+        ],
+        "num_entities": 6
+      }
+    }
+  },
+  {
+    "question": "Jessica has 6 male colleagues and she also has 3 female colleagues. These are all colleagues that Jessica has. All these mentioned persons around Jessica are colleagues of each other. Charles has 1 male colleagues and 1 female colleagues in total. All these mentioned persons around Charles are colleagues of each other. The people in the circle around Charles do not have other colleagues aside - with the only exception of Matilda. She is colleague of Charles and she is also colleague of Jessica, being part of Jessica's circle. How many female colleagues does Matilda have?",
+    "answer": "4",
+    "metadata": {
+      "source_dataset": "aiw",
+      "source_index": 51,
+      "task_type": "colleagues",
+      "difficulty": {
+        "task_type_weights": [
+          0.3333333333333333,
+          0.3333333333333333,
+          0.3333333333333333
+        ],
+        "num_entities": 6
+      }
+    }
+  },
+  {
+    "question": "Patricia has 3 male friends and she also has 4 female friends. They all are friends with each other and have no other friends aside. How many female friends does William, a male friend of Patricia, have?",
+    "answer": "5",
+    "metadata": {
+      "source_dataset": "aiw",
+      "source_index": 52,
+      "task_type": "friends",
+      "difficulty": {
+        "task_type_weights": [
+          0.3333333333333333,
+          0.3333333333333333,
+          0.3333333333333333
+        ],
+        "num_entities": 6
+      }
+    }
+  },
+  {
+    "question": "Sarah has 2 male colleagues and she also has 4 female colleagues. These are all colleagues that Sarah has. All these mentioned persons around Sarah are colleagues of each other. Thomas has 1 male colleagues and 2 female colleagues in total. All these mentioned persons around Thomas are colleagues of each other. The people in the circle around Thomas do not have other colleagues aside - with the only exception of Matilda. She is colleague of Thomas and she is also colleague of Sarah, being part of Sarah's circle. How many female colleagues does Matilda have?",
+    "answer": "5",
+    "metadata": {
+      "source_dataset": "aiw",
+      "source_index": 53,
+      "task_type": "colleagues",
+      "difficulty": {
+        "task_type_weights": [
+          0.3333333333333333,
+          0.3333333333333333,
+          0.3333333333333333
+        ],
+        "num_entities": 6
+      }
+    }
+  },
+  {
+    "question": "Alice has 2 male friends and she also has 1 female friends. They all are friends with each other and have no other friends aside. How many female friends does Richard, a male friend of Alice, have?",
+    "answer": "2",
+    "metadata": {
+      "source_dataset": "aiw",
+      "source_index": 54,
+      "task_type": "friends",
+      "difficulty": {
+        "task_type_weights": [
+          0.3333333333333333,
+          0.3333333333333333,
+          0.3333333333333333
+        ],
+        "num_entities": 6
+      }
+    }
+  },
+  {
+    "question": "Barbara has 5 brothers and she also has 1 sisters. How many sisters does Barbara's brother have?",
+    "answer": "2",
+    "metadata": {
+      "source_dataset": "aiw",
+      "source_index": 55,
+      "task_type": "siblings",
+      "difficulty": {
+        "task_type_weights": [
+          0.3333333333333333,
+          0.3333333333333333,
+          0.3333333333333333
+        ],
+        "num_entities": 6
+      }
+    }
+  },
+  {
+    "question": "Mary has 4 male friends and she also has 1 female friends. They all are friends with each other and have no other friends aside. How many female friends does David, a male friend of Mary, have?",
+    "answer": "2",
+    "metadata": {
+      "source_dataset": "aiw",
+      "source_index": 56,
+      "task_type": "friends",
+      "difficulty": {
+        "task_type_weights": [
+          0.3333333333333333,
+          0.3333333333333333,
+          0.3333333333333333
+        ],
+        "num_entities": 6
+      }
+    }
+  },
+  {
+    "question": "Linda has 2 male friends and she also has 2 female friends. They all are friends with each other and have no other friends aside. How many female friends does Charles, a male friend of Linda, have?",
+    "answer": "3",
+    "metadata": {
+      "source_dataset": "aiw",
+      "source_index": 57,
+      "task_type": "friends",
+      "difficulty": {
+        "task_type_weights": [
+          0.3333333333333333,
+          0.3333333333333333,
+          0.3333333333333333
+        ],
+        "num_entities": 6
+      }
+    }
+  },
+  {
+    "question": "Jessica has 4 sisters and she also has 6 brothers. How many sisters does Robert's brother have?",
+    "answer": "5",
+    "metadata": {
+      "source_dataset": "aiw",
+      "source_index": 58,
+      "task_type": "siblings",
+      "difficulty": {
+        "task_type_weights": [
+          0.3333333333333333,
+          0.3333333333333333,
+          0.3333333333333333
+        ],
+        "num_entities": 6
+      }
+    }
+  },
+  {
+    "question": "Linda has 3 male friends and she also has 4 female friends. They all are friends with each other and have no other friends aside. How many female friends does Thomas, a male friend of Linda, have?",
+    "answer": "5",
+    "metadata": {
+      "source_dataset": "aiw",
+      "source_index": 59,
+      "task_type": "friends",
+      "difficulty": {
+        "task_type_weights": [
+          0.3333333333333333,
+          0.3333333333333333,
+          0.3333333333333333
+        ],
+        "num_entities": 6
+      }
+    }
+  },
+  {
+    "question": "Margaret has 2 brothers and she also has 5 sisters. How many sisters does Margaret's brother have?",
+    "answer": "6",
+    "metadata": {
+      "source_dataset": "aiw",
+      "source_index": 60,
+      "task_type": "siblings",
+      "difficulty": {
+        "task_type_weights": [
+          0.3333333333333333,
+          0.3333333333333333,
+          0.3333333333333333
+        ],
+        "num_entities": 6
+      }
+    }
+  },
+  {
+    "question": "Jessica has 6 male colleagues and she also has 1 female colleagues. These are all colleagues that Jessica has. All these mentioned persons around Jessica are colleagues of each other. Michael has 5 male colleagues and 6 female colleagues in total. All these mentioned persons around Michael are colleagues of each other. The people in the circle around Michael do not have other colleagues aside - with the only exception of Matilda. She is colleague of Michael and she is also colleague of Jessica, being part of Jessica's circle. How many female colleagues does Matilda have?",
+    "answer": "2",
+    "metadata": {
+      "source_dataset": "aiw",
+      "source_index": 61,
+      "task_type": "colleagues",
+      "difficulty": {
+        "task_type_weights": [
+          0.3333333333333333,
+          0.3333333333333333,
+          0.3333333333333333
+        ],
+        "num_entities": 6
+      }
+    }
+  },
+  {
+    "question": "Linda has 4 male colleagues and she also has 3 female colleagues. These are all colleagues that Linda has. All these mentioned persons around Linda are colleagues of each other. Michael has 1 male colleagues and 6 female colleagues in total. All these mentioned persons around Michael are colleagues of each other. The people in the circle around Michael do not have other colleagues aside - with the only exception of Matilda. She is colleague of Michael and she is also colleague of Linda, being part of Linda's circle. How many female colleagues does Matilda have?",
+    "answer": "4",
+    "metadata": {
+      "source_dataset": "aiw",
+      "source_index": 62,
+      "task_type": "colleagues",
+      "difficulty": {
+        "task_type_weights": [
+          0.3333333333333333,
+          0.3333333333333333,
+          0.3333333333333333
+        ],
+        "num_entities": 6
+      }
+    }
+  },
+  {
+    "question": "Barbara has 1 male colleagues and she also has 1 female colleagues. These are all colleagues that Barbara has. All these mentioned persons around Barbara are colleagues of each other. Charles has 3 male colleagues and 5 female colleagues in total. All these mentioned persons around Charles are colleagues of each other. The people in the circle around Charles do not have other colleagues aside - with the only exception of Matilda. She is colleague of Charles and she is also colleague of Barbara, being part of Barbara's circle. How many female colleagues does Matilda have?",
+    "answer": "2",
+    "metadata": {
+      "source_dataset": "aiw",
+      "source_index": 63,
+      "task_type": "colleagues",
+      "difficulty": {
+        "task_type_weights": [
+          0.3333333333333333,
+          0.3333333333333333,
+          0.3333333333333333
+        ],
+        "num_entities": 6
+      }
+    }
+  },
+  {
+    "question": "Jessica has 5 male colleagues and she also has 5 female colleagues. These are all colleagues that Jessica has. All these mentioned persons around Jessica are colleagues of each other. James has 4 male colleagues and 1 female colleagues in total. All these mentioned persons around James are colleagues of each other. The people in the circle around James do not have other colleagues aside - with the only exception of Matilda. She is colleague of James and she is also colleague of Jessica, being part of Jessica's circle. How many female colleagues does Matilda have?",
+    "answer": "6",
+    "metadata": {
+      "source_dataset": "aiw",
+      "source_index": 64,
+      "task_type": "colleagues",
+      "difficulty": {
+        "task_type_weights": [
+          0.3333333333333333,
+          0.3333333333333333,
+          0.3333333333333333
+        ],
+        "num_entities": 6
+      }
+    }
+  },
+  {
+    "question": "Margaret has 4 sisters and she also has 4 brothers. How many sisters does Bob's brother have?",
+    "answer": "5",
+    "metadata": {
+      "source_dataset": "aiw",
+      "source_index": 65,
+      "task_type": "siblings",
+      "difficulty": {
+        "task_type_weights": [
+          0.3333333333333333,
+          0.3333333333333333,
+          0.3333333333333333
+        ],
+        "num_entities": 6
+      }
+    }
+  },
+  {
+    "question": "Patricia has 6 sisters and she also has 4 brothers. How many sisters does Bob's brother have?",
+    "answer": "7",
+    "metadata": {
+      "source_dataset": "aiw",
+      "source_index": 66,
+      "task_type": "siblings",
+      "difficulty": {
+        "task_type_weights": [
+          0.3333333333333333,
+          0.3333333333333333,
+          0.3333333333333333
+        ],
+        "num_entities": 6
+      }
+    }
+  },
+  {
+    "question": "Jessica has 5 brothers and she also has 1 sisters. How many sisters does Jessica's brother have?",
+    "answer": "2",
+    "metadata": {
+      "source_dataset": "aiw",
+      "source_index": 67,
+      "task_type": "siblings",
+      "difficulty": {
+        "task_type_weights": [
+          0.3333333333333333,
+          0.3333333333333333,
+          0.3333333333333333
+        ],
+        "num_entities": 6
+      }
+    }
+  },
+  {
+    "question": "Susan has 2 male colleagues and she also has 4 female colleagues. These are all colleagues that Susan has. All these mentioned persons around Susan are colleagues of each other. Charles has 4 male colleagues and 6 female colleagues in total. All these mentioned persons around Charles are colleagues of each other. The people in the circle around Charles do not have other colleagues aside - with the only exception of Matilda. She is colleague of Charles and she is also colleague of Susan, being part of Susan's circle. How many female colleagues does Matilda have?",
+    "answer": "5",
+    "metadata": {
+      "source_dataset": "aiw",
+      "source_index": 68,
+      "task_type": "colleagues",
+      "difficulty": {
+        "task_type_weights": [
+          0.3333333333333333,
+          0.3333333333333333,
+          0.3333333333333333
+        ],
+        "num_entities": 6
+      }
+    }
+  },
+  {
+    "question": "Linda has 4 male colleagues and she also has 2 female colleagues. These are all colleagues that Linda has. All these mentioned persons around Linda are colleagues of each other. David has 4 male colleagues and 4 female colleagues in total. All these mentioned persons around David are colleagues of each other. The people in the circle around David do not have other colleagues aside - with the only exception of Matilda. She is colleague of David and she is also colleague of Linda, being part of Linda's circle. How many female colleagues does Matilda have?",
+    "answer": "3",
+    "metadata": {
+      "source_dataset": "aiw",
+      "source_index": 69,
+      "task_type": "colleagues",
+      "difficulty": {
+        "task_type_weights": [
+          0.3333333333333333,
+          0.3333333333333333,
+          0.3333333333333333
+        ],
+        "num_entities": 6
+      }
+    }
+  },
+  {
+    "question": "Alice has 5 male friends and she also has 3 female friends. They all are friends with each other and have no other friends aside. How many female friends does Charles, a male friend of Alice, have?",
+    "answer": "4",
+    "metadata": {
+      "source_dataset": "aiw",
+      "source_index": 70,
+      "task_type": "friends",
+      "difficulty": {
+        "task_type_weights": [
+          0.3333333333333333,
+          0.3333333333333333,
+          0.3333333333333333
+        ],
+        "num_entities": 6
+      }
+    }
+  },
+  {
+    "question": "Elizabeth has 5 sisters and she also has 4 brothers. How many sisters does James's brother have?",
+    "answer": "6",
+    "metadata": {
+      "source_dataset": "aiw",
+      "source_index": 71,
+      "task_type": "siblings",
+      "difficulty": {
+        "task_type_weights": [
+          0.3333333333333333,
+          0.3333333333333333,
+          0.3333333333333333
+        ],
+        "num_entities": 6
+      }
+    }
+  },
+  {
+    "question": "Patricia has 6 brothers and she also has 2 sisters. How many sisters does Patricia's brother have?",
+    "answer": "3",
+    "metadata": {
+      "source_dataset": "aiw",
+      "source_index": 72,
+      "task_type": "siblings",
+      "difficulty": {
+        "task_type_weights": [
+          0.3333333333333333,
+          0.3333333333333333,
+          0.3333333333333333
+        ],
+        "num_entities": 6
+      }
+    }
+  },
+  {
+    "question": "Linda has 5 male colleagues and she also has 1 female colleagues. These are all colleagues that Linda has. All these mentioned persons around Linda are colleagues of each other. John has 3 male colleagues and 5 female colleagues in total. All these mentioned persons around John are colleagues of each other. The people in the circle around John do not have other colleagues aside - with the only exception of Matilda. She is colleague of John and she is also colleague of Linda, being part of Linda's circle. How many female colleagues does Matilda have?",
+    "answer": "2",
+    "metadata": {
+      "source_dataset": "aiw",
+      "source_index": 73,
+      "task_type": "colleagues",
+      "difficulty": {
+        "task_type_weights": [
+          0.3333333333333333,
+          0.3333333333333333,
+          0.3333333333333333
+        ],
+        "num_entities": 6
+      }
+    }
+  },
+  {
+    "question": "Margaret has 6 male colleagues and she also has 3 female colleagues. These are all colleagues that Margaret has. All these mentioned persons around Margaret are colleagues of each other. Thomas has 1 male colleagues and 6 female colleagues in total. All these mentioned persons around Thomas are colleagues of each other. The people in the circle around Thomas do not have other colleagues aside - with the only exception of Matilda. She is colleague of Thomas and she is also colleague of Margaret, being part of Margaret's circle. How many female colleagues does Matilda have?",
+    "answer": "4",
+    "metadata": {
+      "source_dataset": "aiw",
+      "source_index": 74,
+      "task_type": "colleagues",
+      "difficulty": {
+        "task_type_weights": [
+          0.3333333333333333,
+          0.3333333333333333,
+          0.3333333333333333
+        ],
+        "num_entities": 6
+      }
+    }
+  },
+  {
+    "question": "Jennifer has 2 sisters and she also has 4 brothers. How many sisters does Michael's brother have?",
+    "answer": "3",
+    "metadata": {
+      "source_dataset": "aiw",
+      "source_index": 75,
+      "task_type": "siblings",
+      "difficulty": {
+        "task_type_weights": [
+          0.3333333333333333,
+          0.3333333333333333,
+          0.3333333333333333
+        ],
+        "num_entities": 6
+      }
+    }
+  },
+  {
+    "question": "Jennifer has 1 male colleagues and she also has 6 female colleagues. These are all colleagues that Jennifer has. All these mentioned persons around Jennifer are colleagues of each other. William has 3 male colleagues and 3 female colleagues in total. All these mentioned persons around William are colleagues of each other. The people in the circle around William do not have other colleagues aside - with the only exception of Matilda. She is colleague of William and she is also colleague of Jennifer, being part of Jennifer's circle. How many female colleagues does Matilda have?",
+    "answer": "7",
+    "metadata": {
+      "source_dataset": "aiw",
+      "source_index": 76,
+      "task_type": "colleagues",
+      "difficulty": {
+        "task_type_weights": [
+          0.3333333333333333,
+          0.3333333333333333,
+          0.3333333333333333
+        ],
+        "num_entities": 6
+      }
+    }
+  },
+  {
+    "question": "Jennifer has 6 male colleagues and she also has 5 female colleagues. These are all colleagues that Jennifer has. All these mentioned persons around Jennifer are colleagues of each other. Thomas has 4 male colleagues and 1 female colleagues in total. All these mentioned persons around Thomas are colleagues of each other. The people in the circle around Thomas do not have other colleagues aside - with the only exception of Matilda. She is colleague of Thomas and she is also colleague of Jennifer, being part of Jennifer's circle. How many female colleagues does Matilda have?",
+    "answer": "6",
+    "metadata": {
+      "source_dataset": "aiw",
+      "source_index": 77,
+      "task_type": "colleagues",
+      "difficulty": {
+        "task_type_weights": [
+          0.3333333333333333,
+          0.3333333333333333,
+          0.3333333333333333
+        ],
+        "num_entities": 6
+      }
+    }
+  },
+  {
+    "question": "Linda has 6 male friends and she also has 5 female friends. They all are friends with each other and have no other friends aside. How many female friends does Bob, a male friend of Linda, have?",
+    "answer": "6",
+    "metadata": {
+      "source_dataset": "aiw",
+      "source_index": 78,
+      "task_type": "friends",
+      "difficulty": {
+        "task_type_weights": [
+          0.3333333333333333,
+          0.3333333333333333,
+          0.3333333333333333
+        ],
+        "num_entities": 6
+      }
+    }
+  },
+  {
+    "question": "Margaret has 6 brothers and she also has 2 sisters. How many sisters does Margaret's brother have?",
+    "answer": "3",
+    "metadata": {
+      "source_dataset": "aiw",
+      "source_index": 79,
+      "task_type": "siblings",
+      "difficulty": {
+        "task_type_weights": [
+          0.3333333333333333,
+          0.3333333333333333,
+          0.3333333333333333
+        ],
+        "num_entities": 6
+      }
+    }
+  },
+  {
+    "question": "Margaret has 1 male friends and she also has 6 female friends. They all are friends with each other and have no other friends aside. How many female friends does William, a male friend of Margaret, have?",
+    "answer": "7",
+    "metadata": {
+      "source_dataset": "aiw",
+      "source_index": 80,
+      "task_type": "friends",
+      "difficulty": {
+        "task_type_weights": [
+          0.3333333333333333,
+          0.3333333333333333,
+          0.3333333333333333
+        ],
+        "num_entities": 6
+      }
+    }
+  },
+  {
+    "question": "Patricia has 3 brothers and she also has 1 sisters. How many sisters does Patricia's brother have?",
+    "answer": "2",
+    "metadata": {
+      "source_dataset": "aiw",
+      "source_index": 81,
+      "task_type": "siblings",
+      "difficulty": {
+        "task_type_weights": [
+          0.3333333333333333,
+          0.3333333333333333,
+          0.3333333333333333
+        ],
+        "num_entities": 6
+      }
+    }
+  },
+  {
+    "question": "Sarah has 2 male colleagues and she also has 1 female colleagues. These are all colleagues that Sarah has. All these mentioned persons around Sarah are colleagues of each other. James has 4 male colleagues and 3 female colleagues in total. All these mentioned persons around James are colleagues of each other. The people in the circle around James do not have other colleagues aside - with the only exception of Matilda. She is colleague of James and she is also colleague of Sarah, being part of Sarah's circle. How many female colleagues does Matilda have?",
+    "answer": "2",
+    "metadata": {
+      "source_dataset": "aiw",
+      "source_index": 82,
+      "task_type": "colleagues",
+      "difficulty": {
+        "task_type_weights": [
+          0.3333333333333333,
+          0.3333333333333333,
+          0.3333333333333333
+        ],
+        "num_entities": 6
+      }
+    }
+  },
+  {
+    "question": "Linda has 3 male colleagues and she also has 5 female colleagues. These are all colleagues that Linda has. All these mentioned persons around Linda are colleagues of each other. Charles has 6 male colleagues and 2 female colleagues in total. All these mentioned persons around Charles are colleagues of each other. The people in the circle around Charles do not have other colleagues aside - with the only exception of Matilda. She is colleague of Charles and she is also colleague of Linda, being part of Linda's circle. How many female colleagues does Matilda have?",
+    "answer": "6",
+    "metadata": {
+      "source_dataset": "aiw",
+      "source_index": 83,
+      "task_type": "colleagues",
+      "difficulty": {
+        "task_type_weights": [
+          0.3333333333333333,
+          0.3333333333333333,
+          0.3333333333333333
+        ],
+        "num_entities": 6
+      }
+    }
+  },
+  {
+    "question": "Margaret has 4 male friends and she also has 2 female friends. They all are friends with each other and have no other friends aside. How many female friends does Charles, a male friend of Margaret, have?",
+    "answer": "3",
+    "metadata": {
+      "source_dataset": "aiw",
+      "source_index": 84,
+      "task_type": "friends",
+      "difficulty": {
+        "task_type_weights": [
+          0.3333333333333333,
+          0.3333333333333333,
+          0.3333333333333333
+        ],
+        "num_entities": 6
+      }
+    }
+  },
+  {
+    "question": "Margaret has 5 brothers and she also has 1 sisters. How many sisters does Margaret's brother have?",
+    "answer": "2",
+    "metadata": {
+      "source_dataset": "aiw",
+      "source_index": 85,
+      "task_type": "siblings",
+      "difficulty": {
+        "task_type_weights": [
+          0.3333333333333333,
+          0.3333333333333333,
+          0.3333333333333333
+        ],
+        "num_entities": 6
+      }
+    }
+  },
+  {
+    "question": "Linda has 5 male colleagues and she also has 3 female colleagues. These are all colleagues that Linda has. All these mentioned persons around Linda are colleagues of each other. Richard has 2 male colleagues and 4 female colleagues in total. All these mentioned persons around Richard are colleagues of each other. The people in the circle around Richard do not have other colleagues aside - with the only exception of Matilda. She is colleague of Richard and she is also colleague of Linda, being part of Linda's circle. How many female colleagues does Matilda have?",
+    "answer": "4",
+    "metadata": {
+      "source_dataset": "aiw",
+      "source_index": 86,
+      "task_type": "colleagues",
+      "difficulty": {
+        "task_type_weights": [
+          0.3333333333333333,
+          0.3333333333333333,
+          0.3333333333333333
+        ],
+        "num_entities": 6
+      }
+    }
+  },
+  {
+    "question": "Sarah has 1 male friends and she also has 6 female friends. They all are friends with each other and have no other friends aside. How many female friends does William, a male friend of Sarah, have?",
+    "answer": "7",
+    "metadata": {
+      "source_dataset": "aiw",
+      "source_index": 87,
+      "task_type": "friends",
+      "difficulty": {
+        "task_type_weights": [
+          0.3333333333333333,
+          0.3333333333333333,
+          0.3333333333333333
+        ],
+        "num_entities": 6
+      }
+    }
+  },
+  {
+    "question": "Elizabeth has 4 male friends and she also has 6 female friends. They all are friends with each other and have no other friends aside. How many female friends does Bob, a male friend of Elizabeth, have?",
+    "answer": "7",
+    "metadata": {
+      "source_dataset": "aiw",
+      "source_index": 88,
+      "task_type": "friends",
+      "difficulty": {
+        "task_type_weights": [
+          0.3333333333333333,
+          0.3333333333333333,
+          0.3333333333333333
+        ],
+        "num_entities": 6
+      }
+    }
+  },
+  {
+    "question": "Sarah has 4 brothers and she also has 3 sisters. How many sisters does Sarah's brother have?",
+    "answer": "4",
+    "metadata": {
+      "source_dataset": "aiw",
+      "source_index": 89,
+      "task_type": "siblings",
+      "difficulty": {
+        "task_type_weights": [
+          0.3333333333333333,
+          0.3333333333333333,
+          0.3333333333333333
+        ],
+        "num_entities": 6
+      }
+    }
+  },
+  {
+    "question": "Susan has 2 male friends and she also has 1 female friends. They all are friends with each other and have no other friends aside. How many female friends does James, a male friend of Susan, have?",
+    "answer": "2",
+    "metadata": {
+      "source_dataset": "aiw",
+      "source_index": 90,
+      "task_type": "friends",
+      "difficulty": {
+        "task_type_weights": [
+          0.3333333333333333,
+          0.3333333333333333,
+          0.3333333333333333
+        ],
+        "num_entities": 6
+      }
+    }
+  },
+  {
+    "question": "Jessica has 5 male friends and she also has 3 female friends. They all are friends with each other and have no other friends aside. How many female friends does David, a male friend of Jessica, have?",
+    "answer": "4",
+    "metadata": {
+      "source_dataset": "aiw",
+      "source_index": 91,
+      "task_type": "friends",
+      "difficulty": {
+        "task_type_weights": [
+          0.3333333333333333,
+          0.3333333333333333,
+          0.3333333333333333
+        ],
+        "num_entities": 6
+      }
+    }
+  },
+  {
+    "question": "Linda has 6 male friends and she also has 6 female friends. They all are friends with each other and have no other friends aside. How many female friends does Thomas, a male friend of Linda, have?",
+    "answer": "7",
+    "metadata": {
+      "source_dataset": "aiw",
+      "source_index": 92,
+      "task_type": "friends",
+      "difficulty": {
+        "task_type_weights": [
+          0.3333333333333333,
+          0.3333333333333333,
+          0.3333333333333333
+        ],
+        "num_entities": 6
+      }
+    }
+  },
+  {
+    "question": "Alice has 5 male colleagues and she also has 3 female colleagues. These are all colleagues that Alice has. All these mentioned persons around Alice are colleagues of each other. Bob has 4 male colleagues and 3 female colleagues in total. All these mentioned persons around Bob are colleagues of each other. The people in the circle around Bob do not have other colleagues aside - with the only exception of Matilda. She is colleague of Bob and she is also colleague of Alice, being part of Alice's circle. How many female colleagues does Matilda have?",
+    "answer": "4",
+    "metadata": {
+      "source_dataset": "aiw",
+      "source_index": 93,
+      "task_type": "colleagues",
+      "difficulty": {
+        "task_type_weights": [
+          0.3333333333333333,
+          0.3333333333333333,
+          0.3333333333333333
+        ],
+        "num_entities": 6
+      }
+    }
+  },
+  {
+    "question": "Sarah has 4 male friends and she also has 4 female friends. They all are friends with each other and have no other friends aside. How many female friends does James, a male friend of Sarah, have?",
+    "answer": "5",
+    "metadata": {
+      "source_dataset": "aiw",
+      "source_index": 94,
+      "task_type": "friends",
+      "difficulty": {
+        "task_type_weights": [
+          0.3333333333333333,
+          0.3333333333333333,
+          0.3333333333333333
+        ],
+        "num_entities": 6
+      }
+    }
+  },
+  {
+    "question": "Susan has 2 sisters and she also has 2 brothers. How many sisters does David's brother have?",
+    "answer": "3",
+    "metadata": {
+      "source_dataset": "aiw",
+      "source_index": 95,
+      "task_type": "siblings",
+      "difficulty": {
+        "task_type_weights": [
+          0.3333333333333333,
+          0.3333333333333333,
+          0.3333333333333333
+        ],
+        "num_entities": 6
+      }
+    }
+  },
+  {
+    "question": "Jessica has 5 sisters and she also has 2 brothers. How many sisters does William's brother have?",
+    "answer": "6",
+    "metadata": {
+      "source_dataset": "aiw",
+      "source_index": 96,
+      "task_type": "siblings",
+      "difficulty": {
+        "task_type_weights": [
+          0.3333333333333333,
+          0.3333333333333333,
+          0.3333333333333333
+        ],
+        "num_entities": 6
+      }
+    }
+  },
+  {
+    "question": "Margaret has 6 sisters and she also has 5 brothers. How many sisters does Thomas's brother have?",
+    "answer": "7",
+    "metadata": {
+      "source_dataset": "aiw",
+      "source_index": 97,
+      "task_type": "siblings",
+      "difficulty": {
+        "task_type_weights": [
+          0.3333333333333333,
+          0.3333333333333333,
+          0.3333333333333333
+        ],
+        "num_entities": 6
+      }
+    }
+  },
+  {
+    "question": "Patricia has 3 male colleagues and she also has 1 female colleagues. These are all colleagues that Patricia has. All these mentioned persons around Patricia are colleagues of each other. James has 5 male colleagues and 6 female colleagues in total. All these mentioned persons around James are colleagues of each other. The people in the circle around James do not have other colleagues aside - with the only exception of Matilda. She is colleague of James and she is also colleague of Patricia, being part of Patricia's circle. How many female colleagues does Matilda have?",
+    "answer": "2",
+    "metadata": {
+      "source_dataset": "aiw",
+      "source_index": 98,
+      "task_type": "colleagues",
+      "difficulty": {
+        "task_type_weights": [
+          0.3333333333333333,
+          0.3333333333333333,
+          0.3333333333333333
+        ],
+        "num_entities": 6
+      }
+    }
+  },
+  {
+    "question": "Mary has 4 male friends and she also has 2 female friends. They all are friends with each other and have no other friends aside. How many female friends does Charles, a male friend of Mary, have?",
+    "answer": "3",
+    "metadata": {
+      "source_dataset": "aiw",
+      "source_index": 99,
+      "task_type": "friends",
+      "difficulty": {
+        "task_type_weights": [
+          0.3333333333333333,
+          0.3333333333333333,
+          0.3333333333333333
+        ],
+        "num_entities": 6
+      }
+    }
+  }
+]

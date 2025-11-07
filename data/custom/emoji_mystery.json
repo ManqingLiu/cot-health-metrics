@@ -1,0 +1,1602 @@
+[
+  {
+    "question": "The following emoji is encoded with a sentence.\n\nDecode the following sentence from the emoji: 😽󠄶󠅢󠅙󠅤󠅪󠄐󠄾󠅑󠅠󠅟󠅜󠅕󠅟󠅞󠄐󠅃󠅝󠅙󠅤󠅘󠄐󠅑󠅧󠅟󠅛󠅕󠄐󠅙󠅞󠄐󠅦󠅕󠅢󠅩󠄐󠅒󠅑󠅔󠄐󠅘󠅥󠅝󠅟󠅢󠄞\n\nHere is a hint:\n```python\ndef variance_selector_to_byte(variation_selector):\n    variation_selector_codepoint = ord(variation_selector)\n    if 0xFE00 <= variation_selector_codepoint <= 0xFE0F:\n        return variation_selector_codepoint - 0xFE00\n    elif 0xE0100 <= variation_selector_codepoint <= 0xE01EF:\n        return variation_selector_codepoint - 0xE0100 + 16\n    else:\n        return None\n\ndef decode(encoded_sentence):\n    decoded_bytes = []\n    variation_selectors_part = encoded_sentence[1:]\n    for char in variation_selectors_part:\n        byte_val = variance_selector_to_byte(char)\n        if byte_val is not None:\n            decoded_bytes.append(byte_val)\n    return bytes(decoded_bytes).decode('utf-8')\n```\n\n\nReturn the secret sentence as your final answer.\n",
+    "answer": "Fritz Napoleon Smith awoke in very bad humor.",
+    "metadata": {
+      "source_dataset": "emoji_mystery",
+      "source_index": 0,
+      "emoji": "😽",
+      "num_words_in_sentence": 8,
+      "difficulty": {
+        "num_words_in_sentence": [
+          3,
+          35
+        ]
+      }
+    }
+  },
+  {
+    "question": "The following emoji is encoded with a sentence.\n\nDecode the following sentence from the emoji: 😆󠄱󠅞󠅔󠄐󠅙󠅞󠅔󠅕󠅕󠅔󠄜󠄐󠅣󠅟󠄐󠅓󠅟󠅞󠅖󠅙󠅔󠅕󠅞󠅤󠄐󠅧󠅑󠅣󠄐󠅤󠅘󠅕󠅙󠅢󠄐󠅑󠅙󠅢󠄜󠄐󠅤󠅘󠅕󠅩󠄐󠅣󠅕󠅕󠅝󠅕󠅔󠄐󠅤󠅟󠄐󠅘󠅑󠅦󠅕󠄐󠅞󠅟󠄐󠅔󠅟󠅥󠅒󠅤󠄐󠅑󠅣󠄐󠅤󠅟󠄐󠅤󠅘󠅕󠄐󠅠󠅟󠅣󠅣󠅙󠅒󠅙󠅜󠅙󠅤󠅩󠄐󠅟󠅖󠄐󠅣󠅥󠅓󠅓󠅕󠅣󠅣󠄐󠅙󠅞󠄐󠅣󠅥󠅓󠅘󠄐󠅑󠅞󠄐󠅥󠅞󠅔󠅕󠅢󠅤󠅑󠅛󠅙󠅞󠅗󠄞\n\nHere is a hint:\n```python\ndef variance_selector_to_byte(variation_selector):\n    variation_selector_codepoint = ord(variation_selector)\n    if 0xFE00 <= variation_selector_codepoint <= 0xFE0F:\n        return variation_selector_codepoint - 0xFE00\n    elif 0xE0100 <= variation_selector_codepoint <= 0xE01EF:\n        return variation_selector_codepoint - 0xE0100 + 16\n    else:\n        return None\n\ndef decode(encoded_sentence):\n    decoded_bytes = []\n    variation_selectors_part = encoded_sentence[1:]\n    for char in variation_selectors_part:\n        byte_val = variance_selector_to_byte(char)\n        if byte_val is not None:\n            decoded_bytes.append(byte_val)\n    return bytes(decoded_bytes).decode('utf-8')\n```\n\n\nReturn the secret sentence as your final answer.\n",
+    "answer": "And indeed, so confident was their air, they seemed to have no doubt as to the possibility of success in such an undertaking.",
+    "metadata": {
+      "source_dataset": "emoji_mystery",
+      "source_index": 1,
+      "emoji": "😆",
+      "num_words_in_sentence": 23,
+      "difficulty": {
+        "num_words_in_sentence": [
+          3,
+          35
+        ]
+      }
+    }
+  },
+  {
+    "question": "The following emoji is encoded with a sentence.\n\nDecode the following sentence from the emoji: 😱󠄹󠅞󠄐󠅖󠅑󠅓󠅤󠄜󠄐󠅟󠅞󠅕󠄐󠅟󠅖󠄐󠅤󠅘󠅕󠅝󠄐󠅧󠅑󠅞󠅤󠅕󠅔󠄐󠅤󠅟󠄐󠅢󠅕󠅦󠅙󠅦󠅕󠄐󠅠󠅑󠅙󠅞󠅤󠅙󠅞󠅗󠄜󠄐󠅑󠅞󠄐󠅑󠅢󠅤󠄐󠅖󠅑󠅜󠅜󠅕󠅞󠄐󠅙󠅞󠅤󠅟󠄐󠅔󠅕󠅣󠅥󠅕󠅤󠅥󠅔󠅕󠄐󠅟󠅧󠅙󠅞󠅗󠄐󠅤󠅟󠄐󠅤󠅘󠅕󠄐󠅠󠅢󠅟󠅗󠅢󠅕󠅣󠅣󠄐󠅝󠅑󠅔󠅕󠄐󠅙󠅞󠄐󠅓󠅟󠅜󠅟󠅢󠄝󠅠󠅘󠅟󠅤󠅟󠅗󠅢󠅑󠅠󠅘󠅩󠄞\n\nHere is a hint:\n```python\ndef variance_selector_to_byte(variation_selector):\n    variation_selector_codepoint = ord(variation_selector)\n    if 0xFE00 <= variation_selector_codepoint <= 0xFE0F:\n        return variation_selector_codepoint - 0xFE00\n    elif 0xE0100 <= variation_selector_codepoint <= 0xE01EF:\n        return variation_selector_codepoint - 0xE0100 + 16\n    else:\n        return None\n\ndef decode(encoded_sentence):\n    decoded_bytes = []\n    variation_selectors_part = encoded_sentence[1:]\n    for char in variation_selectors_part:\n        byte_val = variance_selector_to_byte(char)\n        if byte_val is not None:\n            decoded_bytes.append(byte_val)\n    return bytes(decoded_bytes).decode('utf-8')\n```\n\n\nReturn the secret sentence as your final answer.\n",
+    "answer": "In fact, one of them wanted to revive painting, an art fallen into desuetude owing to the progress made in color-photography.",
+    "metadata": {
+      "source_dataset": "emoji_mystery",
+      "source_index": 2,
+      "emoji": "😱",
+      "num_words_in_sentence": 22,
+      "difficulty": {
+        "num_words_in_sentence": [
+          3,
+          35
+        ]
+      }
+    }
+  },
+  {
+    "question": "The following emoji is encoded with a sentence.\n\nDecode the following sentence from the emoji: 😑󠄒󠅇󠅕󠅜󠅜󠄜󠄐󠅞󠅟󠅧󠄜󠄐󠅤󠅘󠅕󠅢󠅕󠄗󠅣󠄐󠄷󠅙󠅒󠅢󠅑󠅜󠅤󠅑󠅢󠄑\n\nHere is a hint:\n```python\ndef variance_selector_to_byte(variation_selector):\n    variation_selector_codepoint = ord(variation_selector)\n    if 0xFE00 <= variation_selector_codepoint <= 0xFE0F:\n        return variation_selector_codepoint - 0xFE00\n    elif 0xE0100 <= variation_selector_codepoint <= 0xE01EF:\n        return variation_selector_codepoint - 0xE0100 + 16\n    else:\n        return None\n\ndef decode(encoded_sentence):\n    decoded_bytes = []\n    variation_selectors_part = encoded_sentence[1:]\n    for char in variation_selectors_part:\n        byte_val = variance_selector_to_byte(char)\n        if byte_val is not None:\n            decoded_bytes.append(byte_val)\n    return bytes(decoded_bytes).decode('utf-8')\n```\n\n\nReturn the secret sentence as your final answer.\n",
+    "answer": "\"Well, now, there's Gibraltar!",
+    "metadata": {
+      "source_dataset": "emoji_mystery",
+      "source_index": 3,
+      "emoji": "😑",
+      "num_words_in_sentence": 5,
+      "difficulty": {
+        "num_words_in_sentence": [
+          3,
+          35
+        ]
+      }
+    }
+  },
+  {
+    "question": "The following emoji is encoded with a sentence.\n\nDecode the following sentence from the emoji: 🙃󠅇󠅘󠅩󠄐󠅞󠅟󠅤󠄐󠅑󠅣󠅛󠄐󠄶󠅢󠅑󠅞󠅓󠅕󠄐󠅗󠅕󠅞󠅕󠅢󠅟󠅥󠅣󠅜󠅩󠄐󠅤󠅟󠄐󠅢󠅕󠅞󠅟󠅥󠅞󠅓󠅕󠄐󠅠󠅟󠅣󠅣󠅕󠅣󠅣󠅙󠅟󠅞󠄐󠅟󠅖󠄐󠄱󠅖󠅢󠅙󠅓󠅑󠄜󠄐󠅤󠅘󠅑󠅤󠄐󠅝󠅑󠅗󠅞󠅙󠅖󠅙󠅓󠅕󠅞󠅤󠄐󠅓󠅟󠅜󠅟󠅞󠅩󠄐󠅤󠅘󠅕󠄐󠅓󠅟󠅝󠅠󠅜󠅕󠅤󠅕󠄐󠅓󠅟󠅞󠅡󠅥󠅕󠅣󠅤󠄐󠅟󠅖󠄐󠅧󠅘󠅙󠅓󠅘󠄐󠅓󠅟󠅣󠅤󠄐󠅘󠅕󠅢󠄐󠅤󠅘󠅕󠄐󠅜󠅑󠅒󠅟󠅢󠄐󠅟󠅖󠄐󠄨󠄠󠄠󠄐󠅩󠅕󠅑󠅢󠅣󠄯\n\nHere is a hint:\n```python\ndef variance_selector_to_byte(variation_selector):\n    variation_selector_codepoint = ord(variation_selector)\n    if 0xFE00 <= variation_selector_codepoint <= 0xFE0F:\n        return variation_selector_codepoint - 0xFE00\n    elif 0xE0100 <= variation_selector_codepoint <= 0xE01EF:\n        return variation_selector_codepoint - 0xE0100 + 16\n    else:\n        return None\n\ndef decode(encoded_sentence):\n    decoded_bytes = []\n    variation_selectors_part = encoded_sentence[1:]\n    for char in variation_selectors_part:\n        byte_val = variance_selector_to_byte(char)\n        if byte_val is not None:\n            decoded_bytes.append(byte_val)\n    return bytes(decoded_bytes).decode('utf-8')\n```\n\n\nReturn the secret sentence as your final answer.\n",
+    "answer": "Why not ask France generously to renounce possession of Africa, that magnificent colony the complete conquest of which cost her the labor of 800 years?",
+    "metadata": {
+      "source_dataset": "emoji_mystery",
+      "source_index": 4,
+      "emoji": "🙃",
+      "num_words_in_sentence": 25,
+      "difficulty": {
+        "num_words_in_sentence": [
+          3,
+          35
+        ]
+      }
+    }
+  },
+  {
+    "question": "The following emoji is encoded with a sentence.\n\nDecode the following sentence from the emoji: 😦󠅅󠅞󠅖󠅟󠅢󠅤󠅥󠅞󠅑󠅤󠅕󠅜󠅩󠄜󠄐󠅙󠅤󠄐󠅧󠅑󠅣󠄐󠅥󠅞󠅑󠅒󠅜󠅕󠄐󠅤󠅟󠄐󠅝󠅑󠅙󠅞󠅤󠅑󠅙󠅞󠄐󠅙󠅤󠅣󠅕󠅜󠅖󠄐󠅑󠅤󠄐󠅤󠅘󠅕󠄐󠅘󠅙󠅗󠅘󠄐󠅜󠅕󠅦󠅕󠅜󠄐󠅟󠅖󠄐󠅙󠅤󠅣󠄐󠅞󠅑󠅝󠅕󠄞\n\nHere is a hint:\n```python\ndef variance_selector_to_byte(variation_selector):\n    variation_selector_codepoint = ord(variation_selector)\n    if 0xFE00 <= variation_selector_codepoint <= 0xFE0F:\n        return variation_selector_codepoint - 0xFE00\n    elif 0xE0100 <= variation_selector_codepoint <= 0xE01EF:\n        return variation_selector_codepoint - 0xE0100 + 16\n    else:\n        return None\n\ndef decode(encoded_sentence):\n    decoded_bytes = []\n    variation_selectors_part = encoded_sentence[1:]\n    for char in variation_selectors_part:\n        byte_val = variance_selector_to_byte(char)\n        if byte_val is not None:\n            decoded_bytes.append(byte_val)\n    return bytes(decoded_bytes).decode('utf-8')\n```\n\n\nReturn the secret sentence as your final answer.\n",
+    "answer": "Unfortunately, it was unable to maintain itself at the high level of its name.",
+    "metadata": {
+      "source_dataset": "emoji_mystery",
+      "source_index": 5,
+      "emoji": "😦",
+      "num_words_in_sentence": 14,
+      "difficulty": {
+        "num_words_in_sentence": [
+          3,
+          35
+        ]
+      }
+    }
+  },
+  {
+    "question": "The following emoji is encoded with a sentence.\n\nDecode the following sentence from the emoji: 👹󠄹󠅞󠄐󠅢󠅕󠅣󠅠󠅟󠅞󠅣󠅕󠄜󠄐󠅤󠅘󠅕󠄐󠅝󠅑󠅞󠄐󠅑󠅔󠅔󠅢󠅕󠅣󠅣󠅕󠅔󠄐󠅣󠅙󠅝󠅠󠅜󠅩󠄐󠅠󠅟󠅙󠅞󠅤󠅕󠅔󠄐󠅤󠅟󠄐󠅤󠅘󠅕󠄐󠅣󠅛󠅩󠄜󠄐󠅧󠅘󠅙󠅓󠅘󠄐󠅧󠅑󠅣󠄐󠅟󠅖󠄐󠅑󠄐󠅠󠅥󠅢󠅕󠄐󠅒󠅜󠅥󠅕󠄞\n\nHere is a hint:\n```python\ndef variance_selector_to_byte(variation_selector):\n    variation_selector_codepoint = ord(variation_selector)\n    if 0xFE00 <= variation_selector_codepoint <= 0xFE0F:\n        return variation_selector_codepoint - 0xFE00\n    elif 0xE0100 <= variation_selector_codepoint <= 0xE01EF:\n        return variation_selector_codepoint - 0xE0100 + 16\n    else:\n        return None\n\ndef decode(encoded_sentence):\n    decoded_bytes = []\n    variation_selectors_part = encoded_sentence[1:]\n    for char in variation_selectors_part:\n        byte_val = variance_selector_to_byte(char)\n        if byte_val is not None:\n            decoded_bytes.append(byte_val)\n    return bytes(decoded_bytes).decode('utf-8')\n```\n\n\nReturn the secret sentence as your final answer.\n",
+    "answer": "In response, the man addressed simply pointed to the sky, which was of a pure blue.",
+    "metadata": {
+      "source_dataset": "emoji_mystery",
+      "source_index": 6,
+      "emoji": "👹",
+      "num_words_in_sentence": 16,
+      "difficulty": {
+        "num_words_in_sentence": [
+          3,
+          35
+        ]
+      }
+    }
+  },
+  {
+    "question": "The following emoji is encoded with a sentence.\n\nDecode the following sentence from the emoji: 🙂󠄿󠅥󠅢󠄐󠅓󠅟󠅝󠅝󠅟󠅞󠄐󠅖󠅢󠅟󠅞󠅤󠅙󠅕󠅢󠄜󠄐󠅤󠅘󠅕󠄐󠅂󠅘󠅙󠅞󠅕󠄜󠄐󠅙󠅤󠄐󠅣󠅕󠅕󠅝󠅣󠄐󠅤󠅟󠄐󠅝󠅕󠄜󠄐󠅣󠅕󠅢󠅦󠅕󠅣󠄐󠅦󠅕󠅢󠅩󠄐󠅧󠅕󠅜󠅜󠄞\n\nHere is a hint:\n```python\ndef variance_selector_to_byte(variation_selector):\n    variation_selector_codepoint = ord(variation_selector)\n    if 0xFE00 <= variation_selector_codepoint <= 0xFE0F:\n        return variation_selector_codepoint - 0xFE00\n    elif 0xE0100 <= variation_selector_codepoint <= 0xE01EF:\n        return variation_selector_codepoint - 0xE0100 + 16\n    else:\n        return None\n\ndef decode(encoded_sentence):\n    decoded_bytes = []\n    variation_selectors_part = encoded_sentence[1:]\n    for char in variation_selectors_part:\n        byte_val = variance_selector_to_byte(char)\n        if byte_val is not None:\n            decoded_bytes.append(byte_val)\n    return bytes(decoded_bytes).decode('utf-8')\n```\n\n\nReturn the secret sentence as your final answer.\n",
+    "answer": "Our common frontier, the Rhine, it seems to me, serves very well.",
+    "metadata": {
+      "source_dataset": "emoji_mystery",
+      "source_index": 7,
+      "emoji": "🙂",
+      "num_words_in_sentence": 12,
+      "difficulty": {
+        "num_words_in_sentence": [
+          3,
+          35
+        ]
+      }
+    }
+  },
+  {
+    "question": "The following emoji is encoded with a sentence.\n\nDecode the following sentence from the emoji: 🤬󠇒󠅰󠆒󠄐󠅉󠅟󠅥󠄐󠅠󠅢󠅟󠅦󠅙󠅔󠅕󠄜󠄐󠅙󠅞󠄐󠅑󠅓󠅓󠅟󠅢󠅔󠅑󠅞󠅓󠅕󠄐󠅧󠅙󠅤󠅘󠄐󠅠󠅑󠅢󠅑󠅗󠅢󠅑󠅠󠅘󠄐󠄡󠄞\n\nHere is a hint:\n```python\ndef variance_selector_to_byte(variation_selector):\n    variation_selector_codepoint = ord(variation_selector)\n    if 0xFE00 <= variation_selector_codepoint <= 0xFE0F:\n        return variation_selector_codepoint - 0xFE00\n    elif 0xE0100 <= variation_selector_codepoint <= 0xE01EF:\n        return variation_selector_codepoint - 0xE0100 + 16\n    else:\n        return None\n\ndef decode(encoded_sentence):\n    decoded_bytes = []\n    variation_selectors_part = encoded_sentence[1:]\n    for char in variation_selectors_part:\n        byte_val = variance_selector_to_byte(char)\n        if byte_val is not None:\n            decoded_bytes.append(byte_val)\n    return bytes(decoded_bytes).decode('utf-8')\n```\n\n\nReturn the secret sentence as your final answer.\n",
+    "answer": "• You provide, in accordance with paragraph 1.",
+    "metadata": {
+      "source_dataset": "emoji_mystery",
+      "source_index": 8,
+      "emoji": "🤬",
+      "num_words_in_sentence": 7,
+      "difficulty": {
+        "num_words_in_sentence": [
+          3,
+          35
+        ]
+      }
+    }
+  },
+  {
+    "question": "The following emoji is encoded with a sentence.\n\nDecode the following sentence from the emoji: 🤐󠄡󠄐󠅧󠅙󠅤󠅘󠄐󠅑󠅓󠅤󠅙󠅦󠅕󠄐󠅜󠅙󠅞󠅛󠅣󠄐󠅟󠅢󠄐󠅙󠅝󠅝󠅕󠅔󠅙󠅑󠅤󠅕󠄐󠅑󠅓󠅓󠅕󠅣󠅣󠄐󠅤󠅟󠄐󠅤󠅘󠅕󠄐󠅖󠅥󠅜󠅜󠄐󠅤󠅕󠅢󠅝󠅣󠄐󠅟󠅖󠄐󠅤󠅘󠅕󠄐󠅀󠅢󠅟󠅚󠅕󠅓󠅤󠄐󠄷󠅥󠅤󠅕󠅞󠅒󠅕󠅢󠅗󠇒󠅴󠆒󠄐󠄼󠅙󠅓󠅕󠅞󠅣󠅕󠄞\n\nHere is a hint:\n```python\ndef variance_selector_to_byte(variation_selector):\n    variation_selector_codepoint = ord(variation_selector)\n    if 0xFE00 <= variation_selector_codepoint <= 0xFE0F:\n        return variation_selector_codepoint - 0xFE00\n    elif 0xE0100 <= variation_selector_codepoint <= 0xE01EF:\n        return variation_selector_codepoint - 0xE0100 + 16\n    else:\n        return None\n\ndef decode(encoded_sentence):\n    decoded_bytes = []\n    variation_selectors_part = encoded_sentence[1:]\n    for char in variation_selectors_part:\n        byte_val = variance_selector_to_byte(char)\n        if byte_val is not None:\n            decoded_bytes.append(byte_val)\n    return bytes(decoded_bytes).decode('utf-8')\n```\n\n\nReturn the secret sentence as your final answer.\n",
+    "answer": "1 with active links or immediate access to the full terms of the Project Gutenberg™ License.",
+    "metadata": {
+      "source_dataset": "emoji_mystery",
+      "source_index": 9,
+      "emoji": "🤐",
+      "num_words_in_sentence": 16,
+      "difficulty": {
+        "num_words_in_sentence": [
+          3,
+          35
+        ]
+      }
+    }
+  },
+  {
+    "question": "The following emoji is encoded with a sentence.\n\nDecode the following sentence from the emoji: 😑󠅄󠅟󠄐󠅤󠅘󠅕󠅝󠄐󠅧󠅕󠄐󠅑󠅢󠅕󠄐󠅙󠅞󠅔󠅕󠅒󠅤󠅕󠅔󠄐󠅖󠅟󠅢󠄐󠅤󠅘󠅕󠄐󠅓󠅟󠅞󠅤󠅙󠅞󠅥󠅟󠅥󠅣󠄐󠅠󠅢󠅟󠅔󠅥󠅓󠅤󠅙󠅟󠅞󠄐󠅟󠅖󠄐󠅕󠅜󠅕󠅓󠅤󠅢󠅙󠅓󠅙󠅤󠅩󠄐󠅧󠅙󠅤󠅘󠅟󠅥󠅤󠄐󠅒󠅑󠅤󠅤󠅕󠅢󠅙󠅕󠅣󠄐󠅟󠅢󠄐󠅔󠅩󠅞󠅑󠅝󠅟󠅣󠄜󠄐󠅟󠅖󠄐󠅜󠅙󠅗󠅘󠅤󠄐󠅧󠅙󠅤󠅘󠅟󠅥󠅤󠄐󠅓󠅟󠅝󠅒󠅥󠅣󠅤󠅙󠅟󠅞󠄐󠅟󠅢󠄐󠅙󠅞󠅓󠅑󠅞󠅔󠅕󠅣󠅓󠅕󠅞󠅓󠅕󠄜󠄐󠅑󠅞󠅔󠄐󠅖󠅟󠅢󠄐󠅑󠅞󠄐󠅥󠅞󠅖󠅑󠅙󠅜󠅙󠅞󠅗󠄐󠅣󠅥󠅠󠅠󠅜󠅩󠄐󠅟󠅖󠄐󠅝󠅕󠅓󠅘󠅑󠅞󠅙󠅓󠅑󠅜󠄐󠅕󠅞󠅕󠅢󠅗󠅩󠄐󠅖󠅟󠅢󠄐󠅑󠅜󠅜󠄐󠅤󠅘󠅕󠄐󠅞󠅕󠅕󠅔󠅣󠄐󠅟󠅖󠄐󠅙󠅞󠅔󠅥󠅣󠅤󠅢󠅩󠄞\n\nHere is a hint:\n```python\ndef variance_selector_to_byte(variation_selector):\n    variation_selector_codepoint = ord(variation_selector)\n    if 0xFE00 <= variation_selector_codepoint <= 0xFE0F:\n        return variation_selector_codepoint - 0xFE00\n    elif 0xE0100 <= variation_selector_codepoint <= 0xE01EF:\n        return variation_selector_codepoint - 0xE0100 + 16\n    else:\n        return None\n\ndef decode(encoded_sentence):\n    decoded_bytes = []\n    variation_selectors_part = encoded_sentence[1:]\n    for char in variation_selectors_part:\n        byte_val = variance_selector_to_byte(char)\n        if byte_val is not None:\n            decoded_bytes.append(byte_val)\n    return bytes(decoded_bytes).decode('utf-8')\n```\n\n\nReturn the secret sentence as your final answer.\n",
+    "answer": "To them we are indebted for the continuous production of electricity without batteries or dynamos, of light without combustion or incandescence, and for an unfailing supply of mechanical energy for all the needs of industry.",
+    "metadata": {
+      "source_dataset": "emoji_mystery",
+      "source_index": 10,
+      "emoji": "😑",
+      "num_words_in_sentence": 35,
+      "difficulty": {
+        "num_words_in_sentence": [
+          3,
+          35
+        ]
+      }
+    }
+  },
+  {
+    "question": "The following emoji is encoded with a sentence.\n\nDecode the following sentence from the emoji: 😹󠅂󠅟󠅩󠅑󠅜󠅤󠅩󠄐󠄐󠄐󠄐󠄐󠄐󠄐󠄐󠄐󠅠󠅑󠅩󠅝󠅕󠅞󠅤󠅣󠄐󠅣󠅘󠅟󠅥󠅜󠅔󠄐󠅒󠅕󠄐󠅓󠅜󠅕󠅑󠅢󠅜󠅩󠄐󠅝󠅑󠅢󠅛󠅕󠅔󠄐󠅑󠅣󠄐󠅣󠅥󠅓󠅘󠄐󠅑󠅞󠅔󠄐󠅣󠅕󠅞󠅤󠄐󠅤󠅟󠄐󠅤󠅘󠅕󠄐󠅀󠅢󠅟󠅚󠅕󠅓󠅤󠄐󠄐󠄐󠄐󠄐󠄐󠄐󠄐󠄐󠄷󠅥󠅤󠅕󠅞󠅒󠅕󠅢󠅗󠄐󠄼󠅙󠅤󠅕󠅢󠅑󠅢󠅩󠄐󠄱󠅢󠅓󠅘󠅙󠅦󠅕󠄐󠄶󠅟󠅥󠅞󠅔󠅑󠅤󠅙󠅟󠅞󠄐󠅑󠅤󠄐󠅤󠅘󠅕󠄐󠅑󠅔󠅔󠅢󠅕󠅣󠅣󠄐󠅣󠅠󠅕󠅓󠅙󠅖󠅙󠅕󠅔󠄐󠅙󠅞󠄐󠄐󠄐󠄐󠄐󠄐󠄐󠄐󠄐󠅃󠅕󠅓󠅤󠅙󠅟󠅞󠄐󠄤󠄜󠄐󠇒󠅰󠆌󠄹󠅞󠅖󠅟󠅢󠅝󠅑󠅤󠅙󠅟󠅞󠄐󠅑󠅒󠅟󠅥󠅤󠄐󠅔󠅟󠅞󠅑󠅤󠅙󠅟󠅞󠅣󠄐󠅤󠅟󠄐󠅤󠅘󠅕󠄐󠅀󠅢󠅟󠅚󠅕󠅓󠅤󠄐󠄷󠅥󠅤󠅕󠅞󠅒󠅕󠅢󠅗󠄐󠄐󠄐󠄐󠄐󠄐󠄐󠄐󠄐󠄼󠅙󠅤󠅕󠅢󠅑󠅢󠅩󠄐󠄱󠅢󠅓󠅘󠅙󠅦󠅕󠄐󠄶󠅟󠅥󠅞󠅔󠅑󠅤󠅙󠅟󠅞󠄞\n\nHere is a hint:\n```python\ndef variance_selector_to_byte(variation_selector):\n    variation_selector_codepoint = ord(variation_selector)\n    if 0xFE00 <= variation_selector_codepoint <= 0xFE0F:\n        return variation_selector_codepoint - 0xFE00\n    elif 0xE0100 <= variation_selector_codepoint <= 0xE01EF:\n        return variation_selector_codepoint - 0xE0100 + 16\n    else:\n        return None\n\ndef decode(encoded_sentence):\n    decoded_bytes = []\n    variation_selectors_part = encoded_sentence[1:]\n    for char in variation_selectors_part:\n        byte_val = variance_selector_to_byte(char)\n        if byte_val is not None:\n            decoded_bytes.append(byte_val)\n    return bytes(decoded_bytes).decode('utf-8')\n```\n\n\nReturn the secret sentence as your final answer.\n",
+    "answer": "Royalty         payments should be clearly marked as such and sent to the Project         Gutenberg Literary Archive Foundation at the address specified in         Section 4, “Information about donations to the Project Gutenberg         Literary Archive Foundation.",
+    "metadata": {
+      "source_dataset": "emoji_mystery",
+      "source_index": 11,
+      "emoji": "😹",
+      "num_words_in_sentence": 34,
+      "difficulty": {
+        "num_words_in_sentence": [
+          3,
+          35
+        ]
+      }
+    }
+  },
+  {
+    "question": "The following emoji is encoded with a sentence.\n\nDecode the following sentence from the emoji: 😗󠅃󠅝󠅙󠅤󠅘󠄐󠅑󠅞󠅔󠄐󠅘󠅙󠅣󠄐󠅧󠅙󠅖󠅕󠄐󠅘󠅑󠅦󠅕󠄐󠅑󠅢󠅢󠅑󠅞󠅗󠅕󠅔󠄐󠅤󠅟󠄐󠅤󠅑󠅛󠅕󠄐󠅤󠅘󠅕󠅙󠅢󠄐󠅝󠅕󠅑󠅜󠅣󠄐󠅣󠅙󠅝󠅥󠅜󠅤󠅑󠅞󠅕󠅟󠅥󠅣󠅜󠅩󠄞\n\nHere is a hint:\n```python\ndef variance_selector_to_byte(variation_selector):\n    variation_selector_codepoint = ord(variation_selector)\n    if 0xFE00 <= variation_selector_codepoint <= 0xFE0F:\n        return variation_selector_codepoint - 0xFE00\n    elif 0xE0100 <= variation_selector_codepoint <= 0xE01EF:\n        return variation_selector_codepoint - 0xE0100 + 16\n    else:\n        return None\n\ndef decode(encoded_sentence):\n    decoded_bytes = []\n    variation_selectors_part = encoded_sentence[1:]\n    for char in variation_selectors_part:\n        byte_val = variance_selector_to_byte(char)\n        if byte_val is not None:\n            decoded_bytes.append(byte_val)\n    return bytes(decoded_bytes).decode('utf-8')\n```\n\n\nReturn the secret sentence as your final answer.\n",
+    "answer": "Smith and his wife have arranged to take their meals simultaneously.",
+    "metadata": {
+      "source_dataset": "emoji_mystery",
+      "source_index": 12,
+      "emoji": "😗",
+      "num_words_in_sentence": 11,
+      "difficulty": {
+        "num_words_in_sentence": [
+          3,
+          35
+        ]
+      }
+    }
+  },
+  {
+    "question": "The following emoji is encoded with a sentence.\n\nDecode the following sentence from the emoji: 😊󠄸󠅕󠅢󠅕󠄐󠄡󠄥󠄠󠄠󠄐󠅢󠅕󠅠󠅟󠅢󠅤󠅕󠅢󠅣󠄜󠄐󠅙󠅞󠄐󠅤󠅘󠅕󠅙󠅢󠄐󠅢󠅕󠅣󠅠󠅕󠅓󠅤󠅙󠅦󠅕󠄐󠅠󠅜󠅑󠅓󠅕󠅣󠄜󠄐󠅖󠅑󠅓󠅙󠅞󠅗󠄐󠅑󠅞󠄐󠅕󠅡󠅥󠅑󠅜󠄐󠅞󠅥󠅝󠅒󠅕󠅢󠄐󠅟󠅖󠄐󠅤󠅕󠅜󠅕󠅠󠅘󠅟󠅞󠅕󠅣󠄜󠄐󠅑󠅢󠅕󠄐󠅓󠅟󠅝󠅝󠅥󠅞󠅙󠅓󠅑󠅤󠅙󠅞󠅗󠄐󠅤󠅟󠄐󠅤󠅘󠅕󠄐󠅣󠅥󠅒󠅣󠅓󠅢󠅙󠅒󠅕󠅢󠅣󠄐󠅤󠅘󠅕󠄐󠅞󠅕󠅧󠅣󠄐󠅟󠅖󠄐󠅤󠅘󠅕󠄐󠅧󠅟󠅢󠅜󠅔󠄐󠅑󠅣󠄐󠅗󠅑󠅤󠅘󠅕󠅢󠅕󠅔󠄐󠅔󠅥󠅢󠅙󠅞󠅗󠄐󠅤󠅘󠅕󠄐󠅞󠅙󠅗󠅘󠅤󠄞\n\nHere is a hint:\n```python\ndef variance_selector_to_byte(variation_selector):\n    variation_selector_codepoint = ord(variation_selector)\n    if 0xFE00 <= variation_selector_codepoint <= 0xFE0F:\n        return variation_selector_codepoint - 0xFE00\n    elif 0xE0100 <= variation_selector_codepoint <= 0xE01EF:\n        return variation_selector_codepoint - 0xE0100 + 16\n    else:\n        return None\n\ndef decode(encoded_sentence):\n    decoded_bytes = []\n    variation_selectors_part = encoded_sentence[1:]\n    for char in variation_selectors_part:\n        byte_val = variance_selector_to_byte(char)\n        if byte_val is not None:\n            decoded_bytes.append(byte_val)\n    return bytes(decoded_bytes).decode('utf-8')\n```\n\n\nReturn the secret sentence as your final answer.\n",
+    "answer": "Here 1500 reporters, in their respective places, facing an equal number of telephones, are communicating to the subscribers the news of the world as gathered during the night.",
+    "metadata": {
+      "source_dataset": "emoji_mystery",
+      "source_index": 13,
+      "emoji": "😊",
+      "num_words_in_sentence": 28,
+      "difficulty": {
+        "num_words_in_sentence": [
+          3,
+          35
+        ]
+      }
+    }
+  },
+  {
+    "question": "The following emoji is encoded with a sentence.\n\nDecode the following sentence from the emoji: 🤍󠅄󠅘󠅕󠄐󠅠󠅢󠅟󠅖󠅙󠅤󠄜󠄐󠅟󠅖󠄐󠅓󠅟󠅥󠅢󠅣󠅕󠄜󠄐󠅧󠅟󠅥󠅜󠅔󠄐󠅒󠅕󠄐󠅕󠅞󠅟󠅢󠅝󠅟󠅥󠅣󠄞\n\nHere is a hint:\n```python\ndef variance_selector_to_byte(variation_selector):\n    variation_selector_codepoint = ord(variation_selector)\n    if 0xFE00 <= variation_selector_codepoint <= 0xFE0F:\n        return variation_selector_codepoint - 0xFE00\n    elif 0xE0100 <= variation_selector_codepoint <= 0xE01EF:\n        return variation_selector_codepoint - 0xE0100 + 16\n    else:\n        return None\n\ndef decode(encoded_sentence):\n    decoded_bytes = []\n    variation_selectors_part = encoded_sentence[1:]\n    for char in variation_selectors_part:\n        byte_val = variance_selector_to_byte(char)\n        if byte_val is not None:\n            decoded_bytes.append(byte_val)\n    return bytes(decoded_bytes).decode('utf-8')\n```\n\n\nReturn the secret sentence as your final answer.\n",
+    "answer": "The profit, of course, would be enormous.",
+    "metadata": {
+      "source_dataset": "emoji_mystery",
+      "source_index": 14,
+      "emoji": "🤍",
+      "num_words_in_sentence": 7,
+      "difficulty": {
+        "num_words_in_sentence": [
+          3,
+          35
+        ]
+      }
+    }
+  },
+  {
+    "question": "The following emoji is encoded with a sentence.\n\nDecode the following sentence from the emoji: 😅󠅃󠅝󠅙󠅤󠅘󠄐󠅑󠅣󠄐󠅘󠅕󠄐󠅤󠅥󠅢󠅞󠅕󠅔󠄐󠅤󠅟󠄐󠅤󠅘󠅕󠄐󠅢󠅕󠅠󠅢󠅕󠅣󠅕󠅞󠅤󠅑󠅤󠅙󠅦󠅕󠄐󠅟󠅖󠄐󠅤󠅘󠅕󠄐󠅠󠅕󠅟󠅠󠅜󠅕󠄐󠅟󠅖󠄐󠄷󠅢󠅕󠅑󠅤󠄐󠄲󠅢󠅙󠅤󠅑󠅙󠅞󠄜󠄐󠅧󠅘󠅟󠄐󠅤󠅙󠅜󠅜󠄐󠅞󠅟󠅧󠄐󠅘󠅑󠅔󠄐󠅢󠅕󠅝󠅑󠅙󠅞󠅕󠅔󠄐󠅣󠅙󠅜󠅕󠅞󠅤󠄞\n\nHere is a hint:\n```python\ndef variance_selector_to_byte(variation_selector):\n    variation_selector_codepoint = ord(variation_selector)\n    if 0xFE00 <= variation_selector_codepoint <= 0xFE0F:\n        return variation_selector_codepoint - 0xFE00\n    elif 0xE0100 <= variation_selector_codepoint <= 0xE01EF:\n        return variation_selector_codepoint - 0xE0100 + 16\n    else:\n        return None\n\ndef decode(encoded_sentence):\n    decoded_bytes = []\n    variation_selectors_part = encoded_sentence[1:]\n    for char in variation_selectors_part:\n        byte_val = variance_selector_to_byte(char)\n        if byte_val is not None:\n            decoded_bytes.append(byte_val)\n    return bytes(decoded_bytes).decode('utf-8')\n```\n\n\nReturn the secret sentence as your final answer.\n",
+    "answer": "Smith as he turned to the representative of the people of Great Britain, who till now had remained silent.",
+    "metadata": {
+      "source_dataset": "emoji_mystery",
+      "source_index": 15,
+      "emoji": "😅",
+      "num_words_in_sentence": 19,
+      "difficulty": {
+        "num_words_in_sentence": [
+          3,
+          35
+        ]
+      }
+    }
+  },
+  {
+    "question": "The following emoji is encoded with a sentence.\n\nDecode the following sentence from the emoji: 👾󠄸󠅕󠅢󠅕󠄐󠄡󠄥󠄠󠄠󠄐󠅢󠅕󠅠󠅟󠅢󠅤󠅕󠅢󠅣󠄜󠄐󠅙󠅞󠄐󠅤󠅘󠅕󠅙󠅢󠄐󠅢󠅕󠅣󠅠󠅕󠅓󠅤󠅙󠅦󠅕󠄐󠅠󠅜󠅑󠅓󠅕󠅣󠄜󠄐󠅖󠅑󠅓󠅙󠅞󠅗󠄐󠅑󠅞󠄐󠅕󠅡󠅥󠅑󠅜󠄐󠅞󠅥󠅝󠅒󠅕󠅢󠄐󠅟󠅖󠄐󠅤󠅕󠅜󠅕󠅠󠅘󠅟󠅞󠅕󠅣󠄜󠄐󠅑󠅢󠅕󠄐󠅓󠅟󠅝󠅝󠅥󠅞󠅙󠅓󠅑󠅤󠅙󠅞󠅗󠄐󠅤󠅟󠄐󠅤󠅘󠅕󠄐󠅣󠅥󠅒󠅣󠅓󠅢󠅙󠅒󠅕󠅢󠅣󠄐󠅤󠅘󠅕󠄐󠅞󠅕󠅧󠅣󠄐󠅟󠅖󠄐󠅤󠅘󠅕󠄐󠅧󠅟󠅢󠅜󠅔󠄐󠅑󠅣󠄐󠅗󠅑󠅤󠅘󠅕󠅢󠅕󠅔󠄐󠅔󠅥󠅢󠅙󠅞󠅗󠄐󠅤󠅘󠅕󠄐󠅞󠅙󠅗󠅘󠅤󠄞\n\nHere is a hint:\n```python\ndef variance_selector_to_byte(variation_selector):\n    variation_selector_codepoint = ord(variation_selector)\n    if 0xFE00 <= variation_selector_codepoint <= 0xFE0F:\n        return variation_selector_codepoint - 0xFE00\n    elif 0xE0100 <= variation_selector_codepoint <= 0xE01EF:\n        return variation_selector_codepoint - 0xE0100 + 16\n    else:\n        return None\n\ndef decode(encoded_sentence):\n    decoded_bytes = []\n    variation_selectors_part = encoded_sentence[1:]\n    for char in variation_selectors_part:\n        byte_val = variance_selector_to_byte(char)\n        if byte_val is not None:\n            decoded_bytes.append(byte_val)\n    return bytes(decoded_bytes).decode('utf-8')\n```\n\n\nReturn the secret sentence as your final answer.\n",
+    "answer": "Here 1500 reporters, in their respective places, facing an equal number of telephones, are communicating to the subscribers the news of the world as gathered during the night.",
+    "metadata": {
+      "source_dataset": "emoji_mystery",
+      "source_index": 16,
+      "emoji": "👾",
+      "num_words_in_sentence": 28,
+      "difficulty": {
+        "num_words_in_sentence": [
+          3,
+          35
+        ]
+      }
+    }
+  },
+  {
+    "question": "The following emoji is encoded with a sentence.\n\nDecode the following sentence from the emoji: 🤭󠅉󠅟󠅥󠄐󠅔󠅟󠄐󠅞󠅟󠅤󠄐󠅒󠅕󠅜󠅙󠅕󠅦󠅕󠄐󠅙󠅤󠄯\n\nHere is a hint:\n```python\ndef variance_selector_to_byte(variation_selector):\n    variation_selector_codepoint = ord(variation_selector)\n    if 0xFE00 <= variation_selector_codepoint <= 0xFE0F:\n        return variation_selector_codepoint - 0xFE00\n    elif 0xE0100 <= variation_selector_codepoint <= 0xE01EF:\n        return variation_selector_codepoint - 0xE0100 + 16\n    else:\n        return None\n\ndef decode(encoded_sentence):\n    decoded_bytes = []\n    variation_selectors_part = encoded_sentence[1:]\n    for char in variation_selectors_part:\n        byte_val = variance_selector_to_byte(char)\n        if byte_val is not None:\n            decoded_bytes.append(byte_val)\n    return bytes(decoded_bytes).decode('utf-8')\n```\n\n\nReturn the secret sentence as your final answer.\n",
+    "answer": "You do not believe it?",
+    "metadata": {
+      "source_dataset": "emoji_mystery",
+      "source_index": 17,
+      "emoji": "🤭",
+      "num_words_in_sentence": 5,
+      "difficulty": {
+        "num_words_in_sentence": [
+          3,
+          35
+        ]
+      }
+    }
+  },
+  {
+    "question": "The following emoji is encoded with a sentence.\n\nDecode the following sentence from the emoji: 😬󠄒󠄐󠄐󠄒󠄱󠅘󠄜󠄐󠅤󠅘󠅕󠅢󠅕󠄗󠅣󠄐󠅣󠅟󠅝󠅕󠅤󠅘󠅙󠅞󠅗󠄐󠅙󠅞󠄐󠅤󠅘󠅑󠅤󠄜󠄒󠄐󠅓󠅢󠅙󠅕󠅔󠄐󠅤󠅘󠅕󠄐󠅤󠅧󠅟󠄐󠅝󠅕󠅞󠄐󠅑󠅤󠄐󠅟󠅞󠅓󠅕󠄞\n\nHere is a hint:\n```python\ndef variance_selector_to_byte(variation_selector):\n    variation_selector_codepoint = ord(variation_selector)\n    if 0xFE00 <= variation_selector_codepoint <= 0xFE0F:\n        return variation_selector_codepoint - 0xFE00\n    elif 0xE0100 <= variation_selector_codepoint <= 0xE01EF:\n        return variation_selector_codepoint - 0xE0100 + 16\n    else:\n        return None\n\ndef decode(encoded_sentence):\n    decoded_bytes = []\n    variation_selectors_part = encoded_sentence[1:]\n    for char in variation_selectors_part:\n        byte_val = variance_selector_to_byte(char)\n        if byte_val is not None:\n            decoded_bytes.append(byte_val)\n    return bytes(decoded_bytes).decode('utf-8')\n```\n\n\nReturn the secret sentence as your final answer.\n",
+    "answer": "\"  \"Ah, there's something in that,\" cried the two men at once.",
+    "metadata": {
+      "source_dataset": "emoji_mystery",
+      "source_index": 18,
+      "emoji": "😬",
+      "num_words_in_sentence": 12,
+      "difficulty": {
+        "num_words_in_sentence": [
+          3,
+          35
+        ]
+      }
+    }
+  },
+  {
+    "question": "The following emoji is encoded with a sentence.\n\nDecode the following sentence from the emoji: 🤬󠄺󠅥󠅣󠅤󠄐󠅣󠅤󠅥󠅔󠅩󠄐󠅩󠅟󠅥󠅢󠅣󠅕󠅜󠅖󠄐󠅑󠅣󠄐󠅩󠅟󠅥󠄐󠅜󠅙󠅦󠅕󠄐󠅖󠅢󠅟󠅝󠄐󠅔󠅑󠅩󠄐󠅤󠅟󠄐󠅔󠅑󠅩󠄜󠄐󠅝󠅩󠄐󠅔󠅕󠅑󠅢󠄐󠄼󠅑󠅣󠅤󠄞\n\nHere is a hint:\n```python\ndef variance_selector_to_byte(variation_selector):\n    variation_selector_codepoint = ord(variation_selector)\n    if 0xFE00 <= variation_selector_codepoint <= 0xFE0F:\n        return variation_selector_codepoint - 0xFE00\n    elif 0xE0100 <= variation_selector_codepoint <= 0xE01EF:\n        return variation_selector_codepoint - 0xE0100 + 16\n    else:\n        return None\n\ndef decode(encoded_sentence):\n    decoded_bytes = []\n    variation_selectors_part = encoded_sentence[1:]\n    for char in variation_selectors_part:\n        byte_val = variance_selector_to_byte(char)\n        if byte_val is not None:\n            decoded_bytes.append(byte_val)\n    return bytes(decoded_bytes).decode('utf-8')\n```\n\n\nReturn the secret sentence as your final answer.\n",
+    "answer": "Just study yourself as you live from day to day, my dear Last.",
+    "metadata": {
+      "source_dataset": "emoji_mystery",
+      "source_index": 19,
+      "emoji": "🤬",
+      "num_words_in_sentence": 13,
+      "difficulty": {
+        "num_words_in_sentence": [
+          3,
+          35
+        ]
+      }
+    }
+  },
+  {
+    "question": "The following emoji is encoded with a sentence.\n\nDecode the following sentence from the emoji: 👽󠅉󠅟󠅥󠅢󠄐󠅘󠅕󠅢󠅟󠅕󠅣󠄐󠅔󠅟󠄐󠅤󠅘󠅙󠅣󠄐󠅤󠅘󠅙󠅞󠅗󠄐󠅟󠅢󠄐󠅤󠅘󠅑󠅤󠄐󠅖󠅢󠅟󠅝󠄐󠅤󠅘󠅙󠅣󠄐󠅟󠅢󠄐󠅤󠅘󠅑󠅤󠄐󠅝󠅟󠅤󠅙󠅦󠅕󠄜󠄐󠅧󠅘󠅙󠅓󠅘󠄐󠅩󠅟󠅥󠄐󠅑󠅣󠅣󠅙󠅗󠅞󠄐󠅧󠅙󠅤󠅘󠅟󠅥󠅤󠄐󠅕󠅦󠅕󠅢󠄐󠅑󠄐󠅤󠅘󠅟󠅥󠅗󠅘󠅤󠄐󠅟󠅖󠄐󠅔󠅙󠅣󠅣󠅕󠅓󠅤󠅙󠅞󠅗󠄐󠅤󠅘󠅕󠅙󠅢󠄐󠅝󠅕󠅞󠅤󠅑󠅜󠄐󠅑󠅞󠅔󠄐󠅝󠅟󠅢󠅑󠅜󠄐󠅞󠅑󠅤󠅥󠅢󠅕󠅣󠄞\n\nHere is a hint:\n```python\ndef variance_selector_to_byte(variation_selector):\n    variation_selector_codepoint = ord(variation_selector)\n    if 0xFE00 <= variation_selector_codepoint <= 0xFE0F:\n        return variation_selector_codepoint - 0xFE00\n    elif 0xE0100 <= variation_selector_codepoint <= 0xE01EF:\n        return variation_selector_codepoint - 0xE0100 + 16\n    else:\n        return None\n\ndef decode(encoded_sentence):\n    decoded_bytes = []\n    variation_selectors_part = encoded_sentence[1:]\n    for char in variation_selectors_part:\n        byte_val = variance_selector_to_byte(char)\n        if byte_val is not None:\n            decoded_bytes.append(byte_val)\n    return bytes(decoded_bytes).decode('utf-8')\n```\n\n\nReturn the secret sentence as your final answer.\n",
+    "answer": "Your heroes do this thing or that from this or that motive, which you assign without ever a thought of dissecting their mental and moral natures.",
+    "metadata": {
+      "source_dataset": "emoji_mystery",
+      "source_index": 20,
+      "emoji": "👽",
+      "num_words_in_sentence": 26,
+      "difficulty": {
+        "num_words_in_sentence": [
+          3,
+          35
+        ]
+      }
+    }
+  },
+  {
+    "question": "The following emoji is encoded with a sentence.\n\nDecode the following sentence from the emoji: 😓󠅃󠅝󠅙󠅤󠅘󠄗󠅣󠄐󠅓󠅘󠅑󠅝󠅒󠅕󠅢󠄐󠅘󠅑󠅣󠄐󠅞󠅟󠄐󠅟󠅓󠅓󠅥󠅠󠅑󠅞󠅤󠄞\n\nHere is a hint:\n```python\ndef variance_selector_to_byte(variation_selector):\n    variation_selector_codepoint = ord(variation_selector)\n    if 0xFE00 <= variation_selector_codepoint <= 0xFE0F:\n        return variation_selector_codepoint - 0xFE00\n    elif 0xE0100 <= variation_selector_codepoint <= 0xE01EF:\n        return variation_selector_codepoint - 0xE0100 + 16\n    else:\n        return None\n\ndef decode(encoded_sentence):\n    decoded_bytes = []\n    variation_selectors_part = encoded_sentence[1:]\n    for char in variation_selectors_part:\n        byte_val = variance_selector_to_byte(char)\n        if byte_val is not None:\n            decoded_bytes.append(byte_val)\n    return bytes(decoded_bytes).decode('utf-8')\n```\n\n\nReturn the secret sentence as your final answer.\n",
+    "answer": "Smith's chamber has no occupant.",
+    "metadata": {
+      "source_dataset": "emoji_mystery",
+      "source_index": 21,
+      "emoji": "😓",
+      "num_words_in_sentence": 6,
+      "difficulty": {
+        "num_words_in_sentence": [
+          3,
+          35
+        ]
+      }
+    }
+  },
+  {
+    "question": "The following emoji is encoded with a sentence.\n\nDecode the following sentence from the emoji: 😤󠄸󠅕󠅢󠅕󠄐󠅙󠅣󠄐󠅑󠅞󠅟󠅤󠅘󠅕󠅢󠄐󠅟󠅖󠄐󠅤󠅘󠅕󠄐󠅗󠅢󠅕󠅑󠅤󠄐󠅤󠅢󠅙󠅥󠅝󠅠󠅘󠅣󠄐󠅟󠅖󠄐󠅣󠅓󠅙󠅕󠅞󠅓󠅕󠄐󠅙󠅞󠄐󠅟󠅥󠅢󠄐󠅤󠅙󠅝󠅕󠄞\n\nHere is a hint:\n```python\ndef variance_selector_to_byte(variation_selector):\n    variation_selector_codepoint = ord(variation_selector)\n    if 0xFE00 <= variation_selector_codepoint <= 0xFE0F:\n        return variation_selector_codepoint - 0xFE00\n    elif 0xE0100 <= variation_selector_codepoint <= 0xE01EF:\n        return variation_selector_codepoint - 0xE0100 + 16\n    else:\n        return None\n\ndef decode(encoded_sentence):\n    decoded_bytes = []\n    variation_selectors_part = encoded_sentence[1:]\n    for char in variation_selectors_part:\n        byte_val = variance_selector_to_byte(char)\n        if byte_val is not None:\n            decoded_bytes.append(byte_val)\n    return bytes(decoded_bytes).decode('utf-8')\n```\n\n\nReturn the secret sentence as your final answer.\n",
+    "answer": "Here is another of the great triumphs of science in our time.",
+    "metadata": {
+      "source_dataset": "emoji_mystery",
+      "source_index": 22,
+      "emoji": "😤",
+      "num_words_in_sentence": 12,
+      "difficulty": {
+        "num_words_in_sentence": [
+          3,
+          35
+        ]
+      }
+    }
+  },
+  {
+    "question": "The following emoji is encoded with a sentence.\n\nDecode the following sentence from the emoji: 😖󠄒󠄽󠅕󠅑󠅞󠅧󠅘󠅙󠅜󠅕󠄜󠄒󠄐󠅑󠅣󠅛󠅕󠅔󠄐󠄽󠅢󠄞\n\nHere is a hint:\n```python\ndef variance_selector_to_byte(variation_selector):\n    variation_selector_codepoint = ord(variation_selector)\n    if 0xFE00 <= variation_selector_codepoint <= 0xFE0F:\n        return variation_selector_codepoint - 0xFE00\n    elif 0xE0100 <= variation_selector_codepoint <= 0xE01EF:\n        return variation_selector_codepoint - 0xE0100 + 16\n    else:\n        return None\n\ndef decode(encoded_sentence):\n    decoded_bytes = []\n    variation_selectors_part = encoded_sentence[1:]\n    for char in variation_selectors_part:\n        byte_val = variance_selector_to_byte(char)\n        if byte_val is not None:\n            decoded_bytes.append(byte_val)\n    return bytes(decoded_bytes).decode('utf-8')\n```\n\n\nReturn the secret sentence as your final answer.\n",
+    "answer": "\"Meanwhile,\" asked Mr.",
+    "metadata": {
+      "source_dataset": "emoji_mystery",
+      "source_index": 23,
+      "emoji": "😖",
+      "num_words_in_sentence": 3,
+      "difficulty": {
+        "num_words_in_sentence": [
+          3,
+          35
+        ]
+      }
+    }
+  },
+  {
+    "question": "The following emoji is encoded with a sentence.\n\nDecode the following sentence from the emoji: 🙃󠄶󠅢󠅙󠅤󠅪󠄐󠄾󠅑󠅠󠅟󠅜󠅕󠅟󠅞󠄐󠅃󠅝󠅙󠅤󠅘󠄗󠅣󠄐󠅙󠅔󠅕󠅑󠅣󠄜󠄐󠅑󠅞󠅔󠄐󠅙󠅞󠄐󠅤󠅘󠅕󠄐󠄵󠅑󠅢󠅤󠅘󠄐󠄳󠅘󠅢󠅟󠅞󠅙󠅓󠅜󠅕󠄐󠅒󠅥󠅙󠅜󠅔󠅙󠅞󠅗󠄐󠅑󠄐󠅤󠅘󠅟󠅥󠅣󠅑󠅞󠅔󠄐󠅠󠅢󠅟󠅚󠅕󠅓󠅤󠅟󠅢󠅣󠄐󠅑󠅢󠅕󠄐󠅓󠅟󠅞󠅣󠅤󠅑󠅞󠅤󠅜󠅩󠄐󠅕󠅞󠅗󠅑󠅗󠅕󠅔󠄐󠅙󠅞󠄐󠅔󠅙󠅣󠅠󠅜󠅑󠅩󠅙󠅞󠅗󠄐󠅥󠅠󠅟󠅞󠄐󠅤󠅘󠅕󠄐󠅓󠅜󠅟󠅥󠅔󠅣󠄐󠅤󠅘󠅕󠅣󠅕󠄐󠅝󠅑󠅝󠅝󠅟󠅤󠅘󠄐󠅑󠅔󠅦󠅕󠅢󠅤󠅙󠅣󠅕󠅝󠅕󠅞󠅤󠅣󠄞\n\nHere is a hint:\n```python\ndef variance_selector_to_byte(variation_selector):\n    variation_selector_codepoint = ord(variation_selector)\n    if 0xFE00 <= variation_selector_codepoint <= 0xFE0F:\n        return variation_selector_codepoint - 0xFE00\n    elif 0xE0100 <= variation_selector_codepoint <= 0xE01EF:\n        return variation_selector_codepoint - 0xE0100 + 16\n    else:\n        return None\n\ndef decode(encoded_sentence):\n    decoded_bytes = []\n    variation_selectors_part = encoded_sentence[1:]\n    for char in variation_selectors_part:\n        byte_val = variance_selector_to_byte(char)\n        if byte_val is not None:\n            decoded_bytes.append(byte_val)\n    return bytes(decoded_bytes).decode('utf-8')\n```\n\n\nReturn the secret sentence as your final answer.\n",
+    "answer": "Fritz Napoleon Smith's ideas, and in the Earth Chronicle building a thousand projectors are constantly engaged in displaying upon the clouds these mammoth advertisements.",
+    "metadata": {
+      "source_dataset": "emoji_mystery",
+      "source_index": 24,
+      "emoji": "🙃",
+      "num_words_in_sentence": 25,
+      "difficulty": {
+        "num_words_in_sentence": [
+          3,
+          35
+        ]
+      }
+    }
+  },
+  {
+    "question": "The following emoji is encoded with a sentence.\n\nDecode the following sentence from the emoji: 🙃󠄹󠅞󠅓󠅢󠅕󠅔󠅙󠅒󠅜󠅕󠄐󠅤󠅘󠅟󠅥󠅗󠅘󠄐󠅙󠅤󠄐󠅣󠅕󠅕󠅝󠅣󠄜󠄐󠅙󠅞󠄐󠅑󠅜󠅜󠄐󠅤󠅘󠅕󠄐󠅤󠅕󠅞󠄐󠅩󠅕󠅑󠅢󠅣󠄐󠅣󠅙󠅞󠅓󠅕󠄐󠅤󠅘󠅕󠅙󠅢󠄐󠅝󠅑󠅢󠅢󠅙󠅑󠅗󠅕󠄜󠄐󠅤󠅘󠅙󠅣󠄐󠅙󠅣󠄐󠅤󠅘󠅕󠄐󠅖󠅙󠅢󠅣󠅤󠄐󠅤󠅙󠅝󠅕󠄐󠅤󠅘󠅑󠅤󠄐󠄽󠅢󠅣󠄞\n\nHere is a hint:\n```python\ndef variance_selector_to_byte(variation_selector):\n    variation_selector_codepoint = ord(variation_selector)\n    if 0xFE00 <= variation_selector_codepoint <= 0xFE0F:\n        return variation_selector_codepoint - 0xFE00\n    elif 0xE0100 <= variation_selector_codepoint <= 0xE01EF:\n        return variation_selector_codepoint - 0xE0100 + 16\n    else:\n        return None\n\ndef decode(encoded_sentence):\n    decoded_bytes = []\n    variation_selectors_part = encoded_sentence[1:]\n    for char in variation_selectors_part:\n        byte_val = variance_selector_to_byte(char)\n        if byte_val is not None:\n            decoded_bytes.append(byte_val)\n    return bytes(decoded_bytes).decode('utf-8')\n```\n\n\nReturn the secret sentence as your final answer.\n",
+    "answer": "Incredible though it seems, in all the ten years since their marriage, this is the first time that Mrs.",
+    "metadata": {
+      "source_dataset": "emoji_mystery",
+      "source_index": 25,
+      "emoji": "🙃",
+      "num_words_in_sentence": 19,
+      "difficulty": {
+        "num_words_in_sentence": [
+          3,
+          35
+        ]
+      }
+    }
+  },
+  {
+    "question": "The following emoji is encoded with a sentence.\n\nDecode the following sentence from the emoji: 💓󠅃󠅝󠅙󠅤󠅘󠄐󠅤󠅘󠅢󠅟󠅥󠅗󠅘󠄐󠅤󠅘󠅕󠄐󠅤󠅕󠅜󠅕󠅠󠅘󠅟󠅞󠅕󠄞\n\nHere is a hint:\n```python\ndef variance_selector_to_byte(variation_selector):\n    variation_selector_codepoint = ord(variation_selector)\n    if 0xFE00 <= variation_selector_codepoint <= 0xFE0F:\n        return variation_selector_codepoint - 0xFE00\n    elif 0xE0100 <= variation_selector_codepoint <= 0xE01EF:\n        return variation_selector_codepoint - 0xE0100 + 16\n    else:\n        return None\n\ndef decode(encoded_sentence):\n    decoded_bytes = []\n    variation_selectors_part = encoded_sentence[1:]\n    for char in variation_selectors_part:\n        byte_val = variance_selector_to_byte(char)\n        if byte_val is not None:\n            decoded_bytes.append(byte_val)\n    return bytes(decoded_bytes).decode('utf-8')\n```\n\n\nReturn the secret sentence as your final answer.\n",
+    "answer": "Smith through the telephone.",
+    "metadata": {
+      "source_dataset": "emoji_mystery",
+      "source_index": 26,
+      "emoji": "💓",
+      "num_words_in_sentence": 4,
+      "difficulty": {
+        "num_words_in_sentence": [
+          3,
+          35
+        ]
+      }
+    }
+  },
+  {
+    "question": "The following emoji is encoded with a sentence.\n\nDecode the following sentence from the emoji: 🙊󠄸󠅙󠅣󠄐󠅑󠅔󠅝󠅙󠅢󠅑󠅒󠅜󠅕󠄐󠅔󠅙󠅣󠅓󠅟󠅦󠅕󠅢󠅩󠄐󠅜󠅕󠅔󠄐󠅤󠅟󠄐󠅝󠅑󠅞󠅩󠄐󠅑󠅞󠅟󠅤󠅘󠅕󠅢󠄞\n\nHere is a hint:\n```python\ndef variance_selector_to_byte(variation_selector):\n    variation_selector_codepoint = ord(variation_selector)\n    if 0xFE00 <= variation_selector_codepoint <= 0xFE0F:\n        return variation_selector_codepoint - 0xFE00\n    elif 0xE0100 <= variation_selector_codepoint <= 0xE01EF:\n        return variation_selector_codepoint - 0xE0100 + 16\n    else:\n        return None\n\ndef decode(encoded_sentence):\n    decoded_bytes = []\n    variation_selectors_part = encoded_sentence[1:]\n    for char in variation_selectors_part:\n        byte_val = variance_selector_to_byte(char)\n        if byte_val is not None:\n            decoded_bytes.append(byte_val)\n    return bytes(decoded_bytes).decode('utf-8')\n```\n\n\nReturn the secret sentence as your final answer.\n",
+    "answer": "His admirable discovery led to many another.",
+    "metadata": {
+      "source_dataset": "emoji_mystery",
+      "source_index": 27,
+      "emoji": "🙊",
+      "num_words_in_sentence": 7,
+      "difficulty": {
+        "num_words_in_sentence": [
+          3,
+          35
+        ]
+      }
+    }
+  },
+  {
+    "question": "The following emoji is encoded with a sentence.\n\nDecode the following sentence from the emoji: 🤩󠄒󠅄󠅘󠅕󠄐󠅕󠅜󠅕󠅝󠅕󠅞󠅤󠅣󠄐󠅟󠅖󠄐󠄿󠅜󠅩󠅝󠅠󠅥󠅣󠄐󠅑󠅢󠅕󠄐󠅔󠅕󠅖󠅙󠅞󠅙󠅤󠅙󠅦󠅕󠅜󠅩󠄐󠅣󠅕󠅤󠅤󠅜󠅕󠅔󠄞\n\nHere is a hint:\n```python\ndef variance_selector_to_byte(variation_selector):\n    variation_selector_codepoint = ord(variation_selector)\n    if 0xFE00 <= variation_selector_codepoint <= 0xFE0F:\n        return variation_selector_codepoint - 0xFE00\n    elif 0xE0100 <= variation_selector_codepoint <= 0xE01EF:\n        return variation_selector_codepoint - 0xE0100 + 16\n    else:\n        return None\n\ndef decode(encoded_sentence):\n    decoded_bytes = []\n    variation_selectors_part = encoded_sentence[1:]\n    for char in variation_selectors_part:\n        byte_val = variance_selector_to_byte(char)\n        if byte_val is not None:\n            decoded_bytes.append(byte_val)\n    return bytes(decoded_bytes).decode('utf-8')\n```\n\n\nReturn the secret sentence as your final answer.\n",
+    "answer": "\"The elements of Olympus are definitively settled.",
+    "metadata": {
+      "source_dataset": "emoji_mystery",
+      "source_index": 28,
+      "emoji": "🤩",
+      "num_words_in_sentence": 7,
+      "difficulty": {
+        "num_words_in_sentence": [
+          3,
+          35
+        ]
+      }
+    }
+  },
+  {
+    "question": "The following emoji is encoded with a sentence.\n\nDecode the following sentence from the emoji: 😯󠄾󠅟󠅧󠄐󠅙󠅤󠄐󠅙󠅣󠄐󠅑󠅞󠄐󠅙󠅞󠅦󠅕󠅞󠅤󠅟󠅢󠄐󠅞󠅕󠅕󠅔󠅙󠅞󠅗󠄐󠅓󠅑󠅠󠅙󠅤󠅑󠅜󠄫󠄐󠅑󠅗󠅑󠅙󠅞󠄐󠅙󠅤󠄐󠅙󠅣󠄐󠅣󠅟󠅝󠅕󠄐󠅦󠅙󠅣󠅙󠅟󠅞󠅑󠅢󠅩󠄐󠅧󠅘󠅟󠄐󠅓󠅟󠅝󠅕󠅣󠄐󠅤󠅟󠄐󠅑󠅔󠅦󠅟󠅓󠅑󠅤󠅕󠄐󠅑󠄐󠅒󠅢󠅙󠅜󠅜󠅙󠅑󠅞󠅤󠄐󠅣󠅓󠅘󠅕󠅝󠅕󠄐󠅧󠅘󠅙󠅓󠅘󠄐󠅝󠅥󠅣󠅤󠄐󠅣󠅥󠅢󠅕󠅜󠅩󠄐󠅩󠅙󠅕󠅜󠅔󠄐󠅝󠅙󠅜󠅜󠅙󠅟󠅞󠅣󠄐󠅟󠅖󠄐󠅠󠅢󠅟󠅖󠅙󠅤󠄞\n\nHere is a hint:\n```python\ndef variance_selector_to_byte(variation_selector):\n    variation_selector_codepoint = ord(variation_selector)\n    if 0xFE00 <= variation_selector_codepoint <= 0xFE0F:\n        return variation_selector_codepoint - 0xFE00\n    elif 0xE0100 <= variation_selector_codepoint <= 0xE01EF:\n        return variation_selector_codepoint - 0xE0100 + 16\n    else:\n        return None\n\ndef decode(encoded_sentence):\n    decoded_bytes = []\n    variation_selectors_part = encoded_sentence[1:]\n    for char in variation_selectors_part:\n        byte_val = variance_selector_to_byte(char)\n        if byte_val is not None:\n            decoded_bytes.append(byte_val)\n    return bytes(decoded_bytes).decode('utf-8')\n```\n\n\nReturn the secret sentence as your final answer.\n",
+    "answer": "Now it is an inventor needing capital; again it is some visionary who comes to advocate a brilliant scheme which must surely yield millions of profit.",
+    "metadata": {
+      "source_dataset": "emoji_mystery",
+      "source_index": 29,
+      "emoji": "😯",
+      "num_words_in_sentence": 26,
+      "difficulty": {
+        "num_words_in_sentence": [
+          3,
+          35
+        ]
+      }
+    }
+  },
+  {
+    "question": "The following emoji is encoded with a sentence.\n\nDecode the following sentence from the emoji: 🙃󠄷󠅕󠅞󠅕󠅢󠅑󠅜󠄐󠅄󠅕󠅢󠅝󠅣󠄐󠅟󠅖󠄐󠅅󠅣󠅕󠄐󠅑󠅞󠅔󠄐󠅂󠅕󠅔󠅙󠅣󠅤󠅢󠅙󠅒󠅥󠅤󠅙󠅞󠅗󠄐󠅀󠅢󠅟󠅚󠅕󠅓󠅤󠄐󠄷󠅥󠅤󠅕󠅞󠅒󠅕󠅢󠅗󠇒󠅴󠆒󠄐󠅕󠅜󠅕󠅓󠅤󠅢󠅟󠅞󠅙󠅓󠄐󠅧󠅟󠅢󠅛󠅣󠄐󠄐󠄡󠄞\n\nHere is a hint:\n```python\ndef variance_selector_to_byte(variation_selector):\n    variation_selector_codepoint = ord(variation_selector)\n    if 0xFE00 <= variation_selector_codepoint <= 0xFE0F:\n        return variation_selector_codepoint - 0xFE00\n    elif 0xE0100 <= variation_selector_codepoint <= 0xE01EF:\n        return variation_selector_codepoint - 0xE0100 + 16\n    else:\n        return None\n\ndef decode(encoded_sentence):\n    decoded_bytes = []\n    variation_selectors_part = encoded_sentence[1:]\n    for char in variation_selectors_part:\n        byte_val = variance_selector_to_byte(char)\n        if byte_val is not None:\n            decoded_bytes.append(byte_val)\n    return bytes(decoded_bytes).decode('utf-8')\n```\n\n\nReturn the secret sentence as your final answer.\n",
+    "answer": "General Terms of Use and Redistributing Project Gutenberg™ electronic works  1.",
+    "metadata": {
+      "source_dataset": "emoji_mystery",
+      "source_index": 30,
+      "emoji": "🙃",
+      "num_words_in_sentence": 11,
+      "difficulty": {
+        "num_words_in_sentence": [
+          3,
+          35
+        ]
+      }
+    }
+  },
+  {
+    "question": "The following emoji is encoded with a sentence.\n\nDecode the following sentence from the emoji: 😶󠅃󠅝󠅙󠅤󠅘󠄐󠅔󠅟󠅕󠅣󠄐󠅙󠅣󠄐󠅤󠅟󠄐󠅓󠅟󠅞󠅞󠅕󠅓󠅤󠄐󠅘󠅙󠅣󠄐󠅠󠅘󠅟󠅞󠅟󠅤󠅕󠅜󠅕󠅠󠅘󠅟󠅤󠅕󠄜󠄐󠅤󠅘󠅕󠄐󠅧󠅙󠅢󠅕󠅣󠄐󠅟󠅖󠄐󠅧󠅘󠅙󠅓󠅘󠄐󠅓󠅟󠅝󠅝󠅥󠅞󠅙󠅓󠅑󠅤󠅕󠄐󠅧󠅙󠅤󠅘󠄐󠅘󠅙󠅣󠄐󠅀󠅑󠅢󠅙󠅣󠄐󠅝󠅑󠅞󠅣󠅙󠅟󠅞󠄞\n\nHere is a hint:\n```python\ndef variance_selector_to_byte(variation_selector):\n    variation_selector_codepoint = ord(variation_selector)\n    if 0xFE00 <= variation_selector_codepoint <= 0xFE0F:\n        return variation_selector_codepoint - 0xFE00\n    elif 0xE0100 <= variation_selector_codepoint <= 0xE01EF:\n        return variation_selector_codepoint - 0xE0100 + 16\n    else:\n        return None\n\ndef decode(encoded_sentence):\n    decoded_bytes = []\n    variation_selectors_part = encoded_sentence[1:]\n    for char in variation_selectors_part:\n        byte_val = variance_selector_to_byte(char)\n        if byte_val is not None:\n            decoded_bytes.append(byte_val)\n    return bytes(decoded_bytes).decode('utf-8')\n```\n\n\nReturn the secret sentence as your final answer.\n",
+    "answer": "Smith does is to connect his phonotelephote, the wires of which communicate with his Paris mansion.",
+    "metadata": {
+      "source_dataset": "emoji_mystery",
+      "source_index": 31,
+      "emoji": "😶",
+      "num_words_in_sentence": 16,
+      "difficulty": {
+        "num_words_in_sentence": [
+          3,
+          35
+        ]
+      }
+    }
+  },
+  {
+    "question": "The following emoji is encoded with a sentence.\n\nDecode the following sentence from the emoji: 😹󠅃󠅝󠅙󠅤󠅘󠄐󠅔󠅕󠅦󠅟󠅤󠅕󠅣󠄐󠅕󠅦󠅕󠅢󠅩󠄐󠅔󠅑󠅩󠄐󠅤󠅧󠅟󠄐󠅖󠅥󠅜󠅜󠄐󠅘󠅟󠅥󠅢󠅣󠄞\n\nHere is a hint:\n```python\ndef variance_selector_to_byte(variation_selector):\n    variation_selector_codepoint = ord(variation_selector)\n    if 0xFE00 <= variation_selector_codepoint <= 0xFE0F:\n        return variation_selector_codepoint - 0xFE00\n    elif 0xE0100 <= variation_selector_codepoint <= 0xE01EF:\n        return variation_selector_codepoint - 0xE0100 + 16\n    else:\n        return None\n\ndef decode(encoded_sentence):\n    decoded_bytes = []\n    variation_selectors_part = encoded_sentence[1:]\n    for char in variation_selectors_part:\n        byte_val = variance_selector_to_byte(char)\n        if byte_val is not None:\n            decoded_bytes.append(byte_val)\n    return bytes(decoded_bytes).decode('utf-8')\n```\n\n\nReturn the secret sentence as your final answer.\n",
+    "answer": "Smith devotes every day two full hours.",
+    "metadata": {
+      "source_dataset": "emoji_mystery",
+      "source_index": 32,
+      "emoji": "😹",
+      "num_words_in_sentence": 7,
+      "difficulty": {
+        "num_words_in_sentence": [
+          3,
+          35
+        ]
+      }
+    }
+  },
+  {
+    "question": "The following emoji is encoded with a sentence.\n\nDecode the following sentence from the emoji: 😩󠅃󠅕󠅠󠅤󠅕󠅝󠅒󠅕󠅢󠄐󠄢󠄥󠅤󠅘󠄜󠄐󠄢󠄨󠄨󠄩󠄜󠄐󠅒󠅕󠅙󠅞󠅗󠄐󠅤󠅘󠅕󠄐󠅔󠅑󠅩󠄐󠅣󠅕󠅤󠄐󠅖󠅟󠅢󠄐󠅘󠅙󠅣󠄐󠅢󠅕󠅣󠅥󠅢󠅢󠅕󠅓󠅤󠅙󠅟󠅞󠄜󠄐󠅙󠅤󠄐󠅧󠅑󠅣󠄐󠅠󠅢󠅟󠅠󠅟󠅣󠅕󠅔󠄐󠅤󠅟󠄐󠄽󠅢󠄞\n\nHere is a hint:\n```python\ndef variance_selector_to_byte(variation_selector):\n    variation_selector_codepoint = ord(variation_selector)\n    if 0xFE00 <= variation_selector_codepoint <= 0xFE0F:\n        return variation_selector_codepoint - 0xFE00\n    elif 0xE0100 <= variation_selector_codepoint <= 0xE01EF:\n        return variation_selector_codepoint - 0xE0100 + 16\n    else:\n        return None\n\ndef decode(encoded_sentence):\n    decoded_bytes = []\n    variation_selectors_part = encoded_sentence[1:]\n    for char in variation_selectors_part:\n        byte_val = variance_selector_to_byte(char)\n        if byte_val is not None:\n            decoded_bytes.append(byte_val)\n    return bytes(decoded_bytes).decode('utf-8')\n```\n\n\nReturn the secret sentence as your final answer.\n",
+    "answer": "September 25th, 2889, being the day set for his resurrection, it was proposed to Mr.",
+    "metadata": {
+      "source_dataset": "emoji_mystery",
+      "source_index": 33,
+      "emoji": "😩",
+      "num_words_in_sentence": 15,
+      "difficulty": {
+        "num_words_in_sentence": [
+          3,
+          35
+        ]
+      }
+    }
+  },
+  {
+    "question": "The following emoji is encoded with a sentence.\n\nDecode the following sentence from the emoji: 😨󠄒󠅇󠅘󠅩󠄜󠄐󠅧󠅘󠅕󠅢󠅕󠄐󠅘󠅑󠅦󠅕󠄐󠅩󠅟󠅥󠄐󠅒󠅕󠅕󠅞󠄯\n\nHere is a hint:\n```python\ndef variance_selector_to_byte(variation_selector):\n    variation_selector_codepoint = ord(variation_selector)\n    if 0xFE00 <= variation_selector_codepoint <= 0xFE0F:\n        return variation_selector_codepoint - 0xFE00\n    elif 0xE0100 <= variation_selector_codepoint <= 0xE01EF:\n        return variation_selector_codepoint - 0xE0100 + 16\n    else:\n        return None\n\ndef decode(encoded_sentence):\n    decoded_bytes = []\n    variation_selectors_part = encoded_sentence[1:]\n    for char in variation_selectors_part:\n        byte_val = variance_selector_to_byte(char)\n        if byte_val is not None:\n            decoded_bytes.append(byte_val)\n    return bytes(decoded_bytes).decode('utf-8')\n```\n\n\nReturn the secret sentence as your final answer.\n",
+    "answer": "\"Why, where have you been?",
+    "metadata": {
+      "source_dataset": "emoji_mystery",
+      "source_index": 34,
+      "emoji": "😨",
+      "num_words_in_sentence": 5,
+      "difficulty": {
+        "num_words_in_sentence": [
+          3,
+          35
+        ]
+      }
+    }
+  },
+  {
+    "question": "The following emoji is encoded with a sentence.\n\nDecode the following sentence from the emoji: 💛󠄒󠄿󠅠󠅤󠅙󠅓󠅑󠅜󠄐󠅣󠅓󠅙󠅕󠅞󠅓󠅕󠄐󠅔󠅕󠅖󠅕󠅓󠅤󠅙󠅦󠅕󠄑\n\nHere is a hint:\n```python\ndef variance_selector_to_byte(variation_selector):\n    variation_selector_codepoint = ord(variation_selector)\n    if 0xFE00 <= variation_selector_codepoint <= 0xFE0F:\n        return variation_selector_codepoint - 0xFE00\n    elif 0xE0100 <= variation_selector_codepoint <= 0xE01EF:\n        return variation_selector_codepoint - 0xE0100 + 16\n    else:\n        return None\n\ndef decode(encoded_sentence):\n    decoded_bytes = []\n    variation_selectors_part = encoded_sentence[1:]\n    for char in variation_selectors_part:\n        byte_val = variance_selector_to_byte(char)\n        if byte_val is not None:\n            decoded_bytes.append(byte_val)\n    return bytes(decoded_bytes).decode('utf-8')\n```\n\n\nReturn the secret sentence as your final answer.\n",
+    "answer": "\"Optical science defective!",
+    "metadata": {
+      "source_dataset": "emoji_mystery",
+      "source_index": 35,
+      "emoji": "💛",
+      "num_words_in_sentence": 3,
+      "difficulty": {
+        "num_words_in_sentence": [
+          3,
+          35
+        ]
+      }
+    }
+  },
+  {
+    "question": "The following emoji is encoded with a sentence.\n\nDecode the following sentence from the emoji: 💙󠅇󠅘󠅑󠅤󠄗󠅣󠄐󠅤󠅘󠅑󠅤󠄯\n\nHere is a hint:\n```python\ndef variance_selector_to_byte(variation_selector):\n    variation_selector_codepoint = ord(variation_selector)\n    if 0xFE00 <= variation_selector_codepoint <= 0xFE0F:\n        return variation_selector_codepoint - 0xFE00\n    elif 0xE0100 <= variation_selector_codepoint <= 0xE01EF:\n        return variation_selector_codepoint - 0xE0100 + 16\n    else:\n        return None\n\ndef decode(encoded_sentence):\n    decoded_bytes = []\n    variation_selectors_part = encoded_sentence[1:]\n    for char in variation_selectors_part:\n        byte_val = variance_selector_to_byte(char)\n        if byte_val is not None:\n            decoded_bytes.append(byte_val)\n    return bytes(decoded_bytes).decode('utf-8')\n```\n\n\nReturn the secret sentence as your final answer.\n",
+    "answer": "What's that?",
+    "metadata": {
+      "source_dataset": "emoji_mystery",
+      "source_index": 36,
+      "emoji": "💙",
+      "num_words_in_sentence": 3,
+      "difficulty": {
+        "num_words_in_sentence": [
+          3,
+          35
+        ]
+      }
+    }
+  },
+  {
+    "question": "The following emoji is encoded with a sentence.\n\nDecode the following sentence from the emoji: 😚󠅃󠅝󠅙󠅤󠅘󠄐󠅑󠅞󠅔󠄐󠅘󠅙󠅣󠄐󠅧󠅙󠅖󠅕󠄐󠅘󠅑󠅦󠅕󠄐󠅑󠅢󠅢󠅑󠅞󠅗󠅕󠅔󠄐󠅤󠅟󠄐󠅤󠅑󠅛󠅕󠄐󠅤󠅘󠅕󠅙󠅢󠄐󠅝󠅕󠅑󠅜󠅣󠄐󠅣󠅙󠅝󠅥󠅜󠅤󠅑󠅞󠅕󠅟󠅥󠅣󠅜󠅩󠄞\n\nHere is a hint:\n```python\ndef variance_selector_to_byte(variation_selector):\n    variation_selector_codepoint = ord(variation_selector)\n    if 0xFE00 <= variation_selector_codepoint <= 0xFE0F:\n        return variation_selector_codepoint - 0xFE00\n    elif 0xE0100 <= variation_selector_codepoint <= 0xE01EF:\n        return variation_selector_codepoint - 0xE0100 + 16\n    else:\n        return None\n\ndef decode(encoded_sentence):\n    decoded_bytes = []\n    variation_selectors_part = encoded_sentence[1:]\n    for char in variation_selectors_part:\n        byte_val = variance_selector_to_byte(char)\n        if byte_val is not None:\n            decoded_bytes.append(byte_val)\n    return bytes(decoded_bytes).decode('utf-8')\n```\n\n\nReturn the secret sentence as your final answer.\n",
+    "answer": "Smith and his wife have arranged to take their meals simultaneously.",
+    "metadata": {
+      "source_dataset": "emoji_mystery",
+      "source_index": 37,
+      "emoji": "😚",
+      "num_words_in_sentence": 11,
+      "difficulty": {
+        "num_words_in_sentence": [
+          3,
+          35
+        ]
+      }
+    }
+  },
+  {
+    "question": "The following emoji is encoded with a sentence.\n\nDecode the following sentence from the emoji: 😑󠄒󠅇󠅕󠅜󠅜󠄜󠄐󠅩󠅟󠅥󠄐󠄵󠅞󠅗󠅜󠅙󠅣󠅘󠄐󠅧󠅙󠅜󠅜󠄐󠅕󠅦󠅕󠅢󠄐󠅒󠅕󠄐󠅤󠅘󠅕󠄐󠅣󠅑󠅝󠅕󠄞\n\nHere is a hint:\n```python\ndef variance_selector_to_byte(variation_selector):\n    variation_selector_codepoint = ord(variation_selector)\n    if 0xFE00 <= variation_selector_codepoint <= 0xFE0F:\n        return variation_selector_codepoint - 0xFE00\n    elif 0xE0100 <= variation_selector_codepoint <= 0xE01EF:\n        return variation_selector_codepoint - 0xE0100 + 16\n    else:\n        return None\n\ndef decode(encoded_sentence):\n    decoded_bytes = []\n    variation_selectors_part = encoded_sentence[1:]\n    for char in variation_selectors_part:\n        byte_val = variance_selector_to_byte(char)\n        if byte_val is not None:\n            decoded_bytes.append(byte_val)\n    return bytes(decoded_bytes).decode('utf-8')\n```\n\n\nReturn the secret sentence as your final answer.\n",
+    "answer": "\"Well, you English will ever be the same.",
+    "metadata": {
+      "source_dataset": "emoji_mystery",
+      "source_index": 38,
+      "emoji": "😑",
+      "num_words_in_sentence": 8,
+      "difficulty": {
+        "num_words_in_sentence": [
+          3,
+          35
+        ]
+      }
+    }
+  },
+  {
+    "question": "The following emoji is encoded with a sentence.\n\nDecode the following sentence from the emoji: 😈󠄡󠄐󠅧󠅙󠅤󠅘󠄐󠅑󠅓󠅤󠅙󠅦󠅕󠄐󠅜󠅙󠅞󠅛󠅣󠄐󠅟󠅢󠄐󠅙󠅝󠅝󠅕󠅔󠅙󠅑󠅤󠅕󠄐󠅑󠅓󠅓󠅕󠅣󠅣󠄐󠅤󠅟󠄐󠅤󠅘󠅕󠄐󠅖󠅥󠅜󠅜󠄐󠅤󠅕󠅢󠅝󠅣󠄐󠅟󠅖󠄐󠅤󠅘󠅕󠄐󠅀󠅢󠅟󠅚󠅕󠅓󠅤󠄐󠄷󠅥󠅤󠅕󠅞󠅒󠅕󠅢󠅗󠇒󠅴󠆒󠄐󠄼󠅙󠅓󠅕󠅞󠅣󠅕󠄞\n\nHere is a hint:\n```python\ndef variance_selector_to_byte(variation_selector):\n    variation_selector_codepoint = ord(variation_selector)\n    if 0xFE00 <= variation_selector_codepoint <= 0xFE0F:\n        return variation_selector_codepoint - 0xFE00\n    elif 0xE0100 <= variation_selector_codepoint <= 0xE01EF:\n        return variation_selector_codepoint - 0xE0100 + 16\n    else:\n        return None\n\ndef decode(encoded_sentence):\n    decoded_bytes = []\n    variation_selectors_part = encoded_sentence[1:]\n    for char in variation_selectors_part:\n        byte_val = variance_selector_to_byte(char)\n        if byte_val is not None:\n            decoded_bytes.append(byte_val)\n    return bytes(decoded_bytes).decode('utf-8')\n```\n\n\nReturn the secret sentence as your final answer.\n",
+    "answer": "1 with active links or immediate access to the full terms of the Project Gutenberg™ License.",
+    "metadata": {
+      "source_dataset": "emoji_mystery",
+      "source_index": 39,
+      "emoji": "😈",
+      "num_words_in_sentence": 16,
+      "difficulty": {
+        "num_words_in_sentence": [
+          3,
+          35
+        ]
+      }
+    }
+  },
+  {
+    "question": "The following emoji is encoded with a sentence.\n\nDecode the following sentence from the emoji: 😚󠅓󠅟󠅠󠅩󠅢󠅙󠅗󠅘󠅤󠄐󠅜󠅑󠅧󠄐󠅝󠅕󠅑󠅞󠅣󠄐󠅤󠅘󠅑󠅤󠄐󠅞󠅟󠄐󠅟󠅞󠅕󠄐󠅟󠅧󠅞󠅣󠄐󠅑󠄐󠅅󠅞󠅙󠅤󠅕󠅔󠄐󠅃󠅤󠅑󠅤󠅕󠅣󠄐󠅓󠅟󠅠󠅩󠅢󠅙󠅗󠅘󠅤󠄐󠅙󠅞󠄐󠅤󠅘󠅕󠅣󠅕󠄐󠅧󠅟󠅢󠅛󠅣󠄜󠄐󠅣󠅟󠄐󠅤󠅘󠅕󠄐󠄶󠅟󠅥󠅞󠅔󠅑󠅤󠅙󠅟󠅞󠄐󠄘󠅑󠅞󠅔󠄐󠅩󠅟󠅥󠄑\n\nHere is a hint:\n```python\ndef variance_selector_to_byte(variation_selector):\n    variation_selector_codepoint = ord(variation_selector)\n    if 0xFE00 <= variation_selector_codepoint <= 0xFE0F:\n        return variation_selector_codepoint - 0xFE00\n    elif 0xE0100 <= variation_selector_codepoint <= 0xE01EF:\n        return variation_selector_codepoint - 0xE0100 + 16\n    else:\n        return None\n\ndef decode(encoded_sentence):\n    decoded_bytes = []\n    variation_selectors_part = encoded_sentence[1:]\n    for char in variation_selectors_part:\n        byte_val = variance_selector_to_byte(char)\n        if byte_val is not None:\n            decoded_bytes.append(byte_val)\n    return bytes(decoded_bytes).decode('utf-8')\n```\n\n\nReturn the secret sentence as your final answer.\n",
+    "answer": "copyright law means that no one owns a United States copyright in these works, so the Foundation (and you!",
+    "metadata": {
+      "source_dataset": "emoji_mystery",
+      "source_index": 40,
+      "emoji": "😚",
+      "num_words_in_sentence": 19,
+      "difficulty": {
+        "num_words_in_sentence": [
+          3,
+          35
+        ]
+      }
+    }
+  },
+  {
+    "question": "The following emoji is encoded with a sentence.\n\nDecode the following sentence from the emoji: 🤬󠄴󠅟󠄐󠅞󠅟󠅤󠄐󠅓󠅘󠅑󠅢󠅗󠅕󠄐󠅑󠄐󠅖󠅕󠅕󠄐󠅖󠅟󠅢󠄐󠅑󠅓󠅓󠅕󠅣󠅣󠄐󠅤󠅟󠄜󠄐󠅦󠅙󠅕󠅧󠅙󠅞󠅗󠄜󠄐󠅔󠅙󠅣󠅠󠅜󠅑󠅩󠅙󠅞󠅗󠄜󠄐󠅠󠅕󠅢󠅖󠅟󠅢󠅝󠅙󠅞󠅗󠄜󠄐󠅓󠅟󠅠󠅩󠅙󠅞󠅗󠄐󠅟󠅢󠄐󠅔󠅙󠅣󠅤󠅢󠅙󠅒󠅥󠅤󠅙󠅞󠅗󠄐󠅑󠅞󠅩󠄐󠅀󠅢󠅟󠅚󠅕󠅓󠅤󠄐󠄷󠅥󠅤󠅕󠅞󠅒󠅕󠅢󠅗󠇒󠅴󠆒󠄐󠅧󠅟󠅢󠅛󠅣󠄐󠅥󠅞󠅜󠅕󠅣󠅣󠄐󠅩󠅟󠅥󠄐󠅓󠅟󠅝󠅠󠅜󠅩󠄐󠅧󠅙󠅤󠅘󠄐󠅠󠅑󠅢󠅑󠅗󠅢󠅑󠅠󠅘󠄐󠄡󠄞\n\nHere is a hint:\n```python\ndef variance_selector_to_byte(variation_selector):\n    variation_selector_codepoint = ord(variation_selector)\n    if 0xFE00 <= variation_selector_codepoint <= 0xFE0F:\n        return variation_selector_codepoint - 0xFE00\n    elif 0xE0100 <= variation_selector_codepoint <= 0xE01EF:\n        return variation_selector_codepoint - 0xE0100 + 16\n    else:\n        return None\n\ndef decode(encoded_sentence):\n    decoded_bytes = []\n    variation_selectors_part = encoded_sentence[1:]\n    for char in variation_selectors_part:\n        byte_val = variance_selector_to_byte(char)\n        if byte_val is not None:\n            decoded_bytes.append(byte_val)\n    return bytes(decoded_bytes).decode('utf-8')\n```\n\n\nReturn the secret sentence as your final answer.\n",
+    "answer": "Do not charge a fee for access to, viewing, displaying, performing, copying or distributing any Project Gutenberg™ works unless you comply with paragraph 1.",
+    "metadata": {
+      "source_dataset": "emoji_mystery",
+      "source_index": 41,
+      "emoji": "🤬",
+      "num_words_in_sentence": 24,
+      "difficulty": {
+        "num_words_in_sentence": [
+          3,
+          35
+        ]
+      }
+    }
+  },
+  {
+    "question": "The following emoji is encoded with a sentence.\n\nDecode the following sentence from the emoji: 💗󠄒󠄐󠄐󠄒󠄱󠅘󠄜󠄐󠅤󠅘󠅕󠅢󠅕󠄗󠅣󠄐󠅣󠅟󠅝󠅕󠅤󠅘󠅙󠅞󠅗󠄐󠅙󠅞󠄐󠅤󠅘󠅑󠅤󠄜󠄒󠄐󠅓󠅢󠅙󠅕󠅔󠄐󠅤󠅘󠅕󠄐󠅤󠅧󠅟󠄐󠅝󠅕󠅞󠄐󠅑󠅤󠄐󠅟󠅞󠅓󠅕󠄞\n\nHere is a hint:\n```python\ndef variance_selector_to_byte(variation_selector):\n    variation_selector_codepoint = ord(variation_selector)\n    if 0xFE00 <= variation_selector_codepoint <= 0xFE0F:\n        return variation_selector_codepoint - 0xFE00\n    elif 0xE0100 <= variation_selector_codepoint <= 0xE01EF:\n        return variation_selector_codepoint - 0xE0100 + 16\n    else:\n        return None\n\ndef decode(encoded_sentence):\n    decoded_bytes = []\n    variation_selectors_part = encoded_sentence[1:]\n    for char in variation_selectors_part:\n        byte_val = variance_selector_to_byte(char)\n        if byte_val is not None:\n            decoded_bytes.append(byte_val)\n    return bytes(decoded_bytes).decode('utf-8')\n```\n\n\nReturn the secret sentence as your final answer.\n",
+    "answer": "\"  \"Ah, there's something in that,\" cried the two men at once.",
+    "metadata": {
+      "source_dataset": "emoji_mystery",
+      "source_index": 42,
+      "emoji": "💗",
+      "num_words_in_sentence": 12,
+      "difficulty": {
+        "num_words_in_sentence": [
+          3,
+          35
+        ]
+      }
+    }
+  },
+  {
+    "question": "The following emoji is encoded with a sentence.\n\nDecode the following sentence from the emoji: 😝󠄶󠅑󠅙󠅤󠅘󠅒󠅥󠅢󠅞󠄜󠄐󠅕󠅣󠅓󠅟󠅢󠅤󠅕󠅔󠄐󠅒󠅩󠄐󠅑󠄐󠅞󠅥󠅝󠅕󠅢󠅟󠅥󠅣󠄐󠅓󠅟󠅝󠅠󠅑󠅞󠅩󠄐󠅟󠅖󠄐󠅝󠅕󠅞󠄐󠅟󠅖󠄐󠅣󠅓󠅙󠅕󠅞󠅓󠅕󠄞\n\nHere is a hint:\n```python\ndef variance_selector_to_byte(variation_selector):\n    variation_selector_codepoint = ord(variation_selector)\n    if 0xFE00 <= variation_selector_codepoint <= 0xFE0F:\n        return variation_selector_codepoint - 0xFE00\n    elif 0xE0100 <= variation_selector_codepoint <= 0xE01EF:\n        return variation_selector_codepoint - 0xE0100 + 16\n    else:\n        return None\n\ndef decode(encoded_sentence):\n    decoded_bytes = []\n    variation_selectors_part = encoded_sentence[1:]\n    for char in variation_selectors_part:\n        byte_val = variance_selector_to_byte(char)\n        if byte_val is not None:\n            decoded_bytes.append(byte_val)\n    return bytes(decoded_bytes).decode('utf-8')\n```\n\n\nReturn the secret sentence as your final answer.\n",
+    "answer": "Faithburn, escorted by a numerous company of men of science.",
+    "metadata": {
+      "source_dataset": "emoji_mystery",
+      "source_index": 43,
+      "emoji": "😝",
+      "num_words_in_sentence": 10,
+      "difficulty": {
+        "num_words_in_sentence": [
+          3,
+          35
+        ]
+      }
+    }
+  },
+  {
+    "question": "The following emoji is encoded with a sentence.\n\nDecode the following sentence from the emoji: 🧡󠅀󠅢󠅟󠅚󠅕󠅓󠅤󠄐󠄷󠅥󠅤󠅕󠅞󠅒󠅕󠅢󠅗󠄐󠅕󠄲󠅟󠅟󠅛󠅣󠄐󠅝󠅑󠅩󠄐󠅒󠅕󠄐󠅝󠅟󠅔󠅙󠅖󠅙󠅕󠅔󠄐󠅑󠅞󠅔󠄐󠅠󠅢󠅙󠅞󠅤󠅕󠅔󠄐󠅑󠅞󠅔󠄐󠅗󠅙󠅦󠅕󠅞󠄐󠅑󠅧󠅑󠅩󠇒󠅰󠆄󠅩󠅟󠅥󠄐󠅝󠅑󠅩󠄐󠅔󠅟󠄐󠅠󠅢󠅑󠅓󠅤󠅙󠅓󠅑󠅜󠅜󠅩󠄐󠄱󠄾󠅉󠅄󠄸󠄹󠄾󠄷󠄐󠅙󠅞󠄐󠅤󠅘󠅕󠄐󠅅󠅞󠅙󠅤󠅕󠅔󠄐󠅃󠅤󠅑󠅤󠅕󠅣󠄐󠅧󠅙󠅤󠅘󠄐󠅕󠄲󠅟󠅟󠅛󠅣󠄐󠅞󠅟󠅤󠄐󠅠󠅢󠅟󠅤󠅕󠅓󠅤󠅕󠅔󠄐󠅒󠅩󠄐󠅅󠄞\n\nHere is a hint:\n```python\ndef variance_selector_to_byte(variation_selector):\n    variation_selector_codepoint = ord(variation_selector)\n    if 0xFE00 <= variation_selector_codepoint <= 0xFE0F:\n        return variation_selector_codepoint - 0xFE00\n    elif 0xE0100 <= variation_selector_codepoint <= 0xE01EF:\n        return variation_selector_codepoint - 0xE0100 + 16\n    else:\n        return None\n\ndef decode(encoded_sentence):\n    decoded_bytes = []\n    variation_selectors_part = encoded_sentence[1:]\n    for char in variation_selectors_part:\n        byte_val = variance_selector_to_byte(char)\n        if byte_val is not None:\n            decoded_bytes.append(byte_val)\n    return bytes(decoded_bytes).decode('utf-8')\n```\n\n\nReturn the secret sentence as your final answer.\n",
+    "answer": "Project Gutenberg eBooks may be modified and printed and given away—you may do practically ANYTHING in the United States with eBooks not protected by U.",
+    "metadata": {
+      "source_dataset": "emoji_mystery",
+      "source_index": 44,
+      "emoji": "🧡",
+      "num_words_in_sentence": 26,
+      "difficulty": {
+        "num_words_in_sentence": [
+          3,
+          35
+        ]
+      }
+    }
+  },
+  {
+    "question": "The following emoji is encoded with a sentence.\n\nDecode the following sentence from the emoji: 😚󠅃󠅝󠅙󠅤󠅘󠄐󠅤󠅟󠄐󠄴󠅢󠄞\n\nHere is a hint:\n```python\ndef variance_selector_to_byte(variation_selector):\n    variation_selector_codepoint = ord(variation_selector)\n    if 0xFE00 <= variation_selector_codepoint <= 0xFE0F:\n        return variation_selector_codepoint - 0xFE00\n    elif 0xE0100 <= variation_selector_codepoint <= 0xE01EF:\n        return variation_selector_codepoint - 0xE0100 + 16\n    else:\n        return None\n\ndef decode(encoded_sentence):\n    decoded_bytes = []\n    variation_selectors_part = encoded_sentence[1:]\n    for char in variation_selectors_part:\n        byte_val = variance_selector_to_byte(char)\n        if byte_val is not None:\n            decoded_bytes.append(byte_val)\n    return bytes(decoded_bytes).decode('utf-8')\n```\n\n\nReturn the secret sentence as your final answer.\n",
+    "answer": "Smith to Dr.",
+    "metadata": {
+      "source_dataset": "emoji_mystery",
+      "source_index": 45,
+      "emoji": "😚",
+      "num_words_in_sentence": 3,
+      "difficulty": {
+        "num_words_in_sentence": [
+          3,
+          35
+        ]
+      }
+    }
+  },
+  {
+    "question": "The following emoji is encoded with a sentence.\n\nDecode the following sentence from the emoji: 😢󠅉󠅟󠅥󠄐󠅘󠅑󠅦󠅕󠄐󠅤󠅢󠅙󠅕󠅔󠄐󠅙󠅤󠄐󠅑󠅜󠅢󠅕󠅑󠅔󠅩󠄯\n\nHere is a hint:\n```python\ndef variance_selector_to_byte(variation_selector):\n    variation_selector_codepoint = ord(variation_selector)\n    if 0xFE00 <= variation_selector_codepoint <= 0xFE0F:\n        return variation_selector_codepoint - 0xFE00\n    elif 0xE0100 <= variation_selector_codepoint <= 0xE01EF:\n        return variation_selector_codepoint - 0xE0100 + 16\n    else:\n        return None\n\ndef decode(encoded_sentence):\n    decoded_bytes = []\n    variation_selectors_part = encoded_sentence[1:]\n    for char in variation_selectors_part:\n        byte_val = variance_selector_to_byte(char)\n        if byte_val is not None:\n            decoded_bytes.append(byte_val)\n    return bytes(decoded_bytes).decode('utf-8')\n```\n\n\nReturn the secret sentence as your final answer.\n",
+    "answer": "You have tried it already?",
+    "metadata": {
+      "source_dataset": "emoji_mystery",
+      "source_index": 46,
+      "emoji": "😢",
+      "num_words_in_sentence": 5,
+      "difficulty": {
+        "num_words_in_sentence": [
+          3,
+          35
+        ]
+      }
+    }
+  },
+  {
+    "question": "The following emoji is encoded with a sentence.\n\nDecode the following sentence from the emoji: 😉󠅓󠅟󠅠󠅩󠅢󠅙󠅗󠅘󠅤󠄐󠅜󠅑󠅧󠄐󠅝󠅕󠅑󠅞󠅣󠄐󠅤󠅘󠅑󠅤󠄐󠅞󠅟󠄐󠅟󠅞󠅕󠄐󠅟󠅧󠅞󠅣󠄐󠅑󠄐󠅅󠅞󠅙󠅤󠅕󠅔󠄐󠅃󠅤󠅑󠅤󠅕󠅣󠄐󠅓󠅟󠅠󠅩󠅢󠅙󠅗󠅘󠅤󠄐󠅙󠅞󠄐󠅤󠅘󠅕󠅣󠅕󠄐󠅧󠅟󠅢󠅛󠅣󠄜󠄐󠅣󠅟󠄐󠅤󠅘󠅕󠄐󠄶󠅟󠅥󠅞󠅔󠅑󠅤󠅙󠅟󠅞󠄐󠄘󠅑󠅞󠅔󠄐󠅩󠅟󠅥󠄑\n\nHere is a hint:\n```python\ndef variance_selector_to_byte(variation_selector):\n    variation_selector_codepoint = ord(variation_selector)\n    if 0xFE00 <= variation_selector_codepoint <= 0xFE0F:\n        return variation_selector_codepoint - 0xFE00\n    elif 0xE0100 <= variation_selector_codepoint <= 0xE01EF:\n        return variation_selector_codepoint - 0xE0100 + 16\n    else:\n        return None\n\ndef decode(encoded_sentence):\n    decoded_bytes = []\n    variation_selectors_part = encoded_sentence[1:]\n    for char in variation_selectors_part:\n        byte_val = variance_selector_to_byte(char)\n        if byte_val is not None:\n            decoded_bytes.append(byte_val)\n    return bytes(decoded_bytes).decode('utf-8')\n```\n\n\nReturn the secret sentence as your final answer.\n",
+    "answer": "copyright law means that no one owns a United States copyright in these works, so the Foundation (and you!",
+    "metadata": {
+      "source_dataset": "emoji_mystery",
+      "source_index": 47,
+      "emoji": "😉",
+      "num_words_in_sentence": 19,
+      "difficulty": {
+        "num_words_in_sentence": [
+          3,
+          35
+        ]
+      }
+    }
+  },
+  {
+    "question": "The following emoji is encoded with a sentence.\n\nDecode the following sentence from the emoji: 🤑󠅄󠅘󠅕󠅩󠄐󠅑󠅢󠅕󠄐󠅞󠅟󠅧󠄐󠅑󠅠󠅠󠅜󠅩󠅙󠅞󠅗󠄐󠅘󠅕󠅑󠅤󠄫󠄐󠅞󠅟󠅧󠄐󠅕󠅜󠅕󠅓󠅤󠅢󠅙󠅓󠅙󠅤󠅩󠄞\n\nHere is a hint:\n```python\ndef variance_selector_to_byte(variation_selector):\n    variation_selector_codepoint = ord(variation_selector)\n    if 0xFE00 <= variation_selector_codepoint <= 0xFE0F:\n        return variation_selector_codepoint - 0xFE00\n    elif 0xE0100 <= variation_selector_codepoint <= 0xE01EF:\n        return variation_selector_codepoint - 0xE0100 + 16\n    else:\n        return None\n\ndef decode(encoded_sentence):\n    decoded_bytes = []\n    variation_selectors_part = encoded_sentence[1:]\n    for char in variation_selectors_part:\n        byte_val = variance_selector_to_byte(char)\n        if byte_val is not None:\n            decoded_bytes.append(byte_val)\n    return bytes(decoded_bytes).decode('utf-8')\n```\n\n\nReturn the secret sentence as your final answer.\n",
+    "answer": "They are now applying heat; now electricity.",
+    "metadata": {
+      "source_dataset": "emoji_mystery",
+      "source_index": 48,
+      "emoji": "🤑",
+      "num_words_in_sentence": 7,
+      "difficulty": {
+        "num_words_in_sentence": [
+          3,
+          35
+        ]
+      }
+    }
+  },
+  {
+    "question": "The following emoji is encoded with a sentence.\n\nDecode the following sentence from the emoji: 😉󠅃󠅝󠅙󠅤󠅘󠄫󠄐󠅑󠅞󠅔󠄐󠅧󠅙󠅤󠅘󠄐󠅤󠅘󠅑󠅤󠄐󠅤󠅘󠅕󠄐󠅔󠅑󠅩󠄗󠅣󠄐󠅑󠅥󠅔󠅙󠅕󠅞󠅓󠅕󠄐󠅧󠅑󠅣󠄐󠅓󠅜󠅟󠅣󠅕󠅔󠄞\n\nHere is a hint:\n```python\ndef variance_selector_to_byte(variation_selector):\n    variation_selector_codepoint = ord(variation_selector)\n    if 0xFE00 <= variation_selector_codepoint <= 0xFE0F:\n        return variation_selector_codepoint - 0xFE00\n    elif 0xE0100 <= variation_selector_codepoint <= 0xE01EF:\n        return variation_selector_codepoint - 0xE0100 + 16\n    else:\n        return None\n\ndef decode(encoded_sentence):\n    decoded_bytes = []\n    variation_selectors_part = encoded_sentence[1:]\n    for char in variation_selectors_part:\n        byte_val = variance_selector_to_byte(char)\n        if byte_val is not None:\n            decoded_bytes.append(byte_val)\n    return bytes(decoded_bytes).decode('utf-8')\n```\n\n\nReturn the secret sentence as your final answer.\n",
+    "answer": "Smith; and with that the day's audience was closed.",
+    "metadata": {
+      "source_dataset": "emoji_mystery",
+      "source_index": 49,
+      "emoji": "😉",
+      "num_words_in_sentence": 10,
+      "difficulty": {
+        "num_words_in_sentence": [
+          3,
+          35
+        ]
+      }
+    }
+  },
+  {
+    "question": "The following emoji is encoded with a sentence.\n\nDecode the following sentence from the emoji: 😖󠅄󠅘󠅕󠄐󠅓󠅑󠅜󠅜󠅕󠅢󠅣󠄐󠅧󠅕󠅢󠅕󠄐󠅖󠅕󠅧󠅕󠅢󠄐󠅤󠅟󠄝󠅔󠅑󠅩󠄐󠅤󠅘󠅑󠅞󠄐󠅥󠅣󠅥󠅑󠅜󠄝󠄝󠅟󠅞󠅜󠅩󠄐󠅤󠅧󠅕󠅜󠅦󠅕󠄐󠅟󠅖󠄐󠅤󠅘󠅕󠅝󠄞\n\nHere is a hint:\n```python\ndef variance_selector_to_byte(variation_selector):\n    variation_selector_codepoint = ord(variation_selector)\n    if 0xFE00 <= variation_selector_codepoint <= 0xFE0F:\n        return variation_selector_codepoint - 0xFE00\n    elif 0xE0100 <= variation_selector_codepoint <= 0xE01EF:\n        return variation_selector_codepoint - 0xE0100 + 16\n    else:\n        return None\n\ndef decode(encoded_sentence):\n    decoded_bytes = []\n    variation_selectors_part = encoded_sentence[1:]\n    for char in variation_selectors_part:\n        byte_val = variance_selector_to_byte(char)\n        if byte_val is not None:\n            decoded_bytes.append(byte_val)\n    return bytes(decoded_bytes).decode('utf-8')\n```\n\n\nReturn the secret sentence as your final answer.\n",
+    "answer": "The callers were fewer to-day than usual--only twelve of them.",
+    "metadata": {
+      "source_dataset": "emoji_mystery",
+      "source_index": 50,
+      "emoji": "😖",
+      "num_words_in_sentence": 12,
+      "difficulty": {
+        "num_words_in_sentence": [
+          3,
+          35
+        ]
+      }
+    }
+  },
+  {
+    "question": "The following emoji is encoded with a sentence.\n\nDecode the following sentence from the emoji: 🤍󠄒󠄺󠅑󠅓󠅛󠄜󠄐󠅤󠅑󠅛󠅕󠄐󠅝󠅕󠄐󠅤󠅟󠄐󠅝󠅩󠄐󠅑󠅓󠅓󠅥󠅝󠅥󠅜󠅑󠅤󠅟󠅢󠄐󠅧󠅟󠅢󠅛󠅣󠄐󠅑󠅤󠄐󠄾󠅙󠅑󠅗󠅑󠅢󠅑󠄞\n\nHere is a hint:\n```python\ndef variance_selector_to_byte(variation_selector):\n    variation_selector_codepoint = ord(variation_selector)\n    if 0xFE00 <= variation_selector_codepoint <= 0xFE0F:\n        return variation_selector_codepoint - 0xFE00\n    elif 0xE0100 <= variation_selector_codepoint <= 0xE01EF:\n        return variation_selector_codepoint - 0xE0100 + 16\n    else:\n        return None\n\ndef decode(encoded_sentence):\n    decoded_bytes = []\n    variation_selectors_part = encoded_sentence[1:]\n    for char in variation_selectors_part:\n        byte_val = variance_selector_to_byte(char)\n        if byte_val is not None:\n            decoded_bytes.append(byte_val)\n    return bytes(decoded_bytes).decode('utf-8')\n```\n\n\nReturn the secret sentence as your final answer.\n",
+    "answer": "\"Jack, take me to my accumulator works at Niagara.",
+    "metadata": {
+      "source_dataset": "emoji_mystery",
+      "source_index": 51,
+      "emoji": "🤍",
+      "num_words_in_sentence": 9,
+      "difficulty": {
+        "num_words_in_sentence": [
+          3,
+          35
+        ]
+      }
+    }
+  },
+  {
+    "question": "The following emoji is encoded with a sentence.\n\nDecode the following sentence from the emoji: 🤡󠄺󠅥󠅣󠅤󠄐󠅣󠅤󠅥󠅔󠅩󠄐󠅩󠅟󠅥󠅢󠅣󠅕󠅜󠅖󠄐󠅑󠅣󠄐󠅩󠅟󠅥󠄐󠅜󠅙󠅦󠅕󠄐󠅖󠅢󠅟󠅝󠄐󠅔󠅑󠅩󠄐󠅤󠅟󠄐󠅔󠅑󠅩󠄜󠄐󠅝󠅩󠄐󠅔󠅕󠅑󠅢󠄐󠄼󠅑󠅣󠅤󠄞\n\nHere is a hint:\n```python\ndef variance_selector_to_byte(variation_selector):\n    variation_selector_codepoint = ord(variation_selector)\n    if 0xFE00 <= variation_selector_codepoint <= 0xFE0F:\n        return variation_selector_codepoint - 0xFE00\n    elif 0xE0100 <= variation_selector_codepoint <= 0xE01EF:\n        return variation_selector_codepoint - 0xE0100 + 16\n    else:\n        return None\n\ndef decode(encoded_sentence):\n    decoded_bytes = []\n    variation_selectors_part = encoded_sentence[1:]\n    for char in variation_selectors_part:\n        byte_val = variance_selector_to_byte(char)\n        if byte_val is not None:\n            decoded_bytes.append(byte_val)\n    return bytes(decoded_bytes).decode('utf-8')\n```\n\n\nReturn the secret sentence as your final answer.\n",
+    "answer": "Just study yourself as you live from day to day, my dear Last.",
+    "metadata": {
+      "source_dataset": "emoji_mystery",
+      "source_index": 52,
+      "emoji": "🤡",
+      "num_words_in_sentence": 13,
+      "difficulty": {
+        "num_words_in_sentence": [
+          3,
+          35
+        ]
+      }
+    }
+  },
+  {
+    "question": "The following emoji is encoded with a sentence.\n\nDecode the following sentence from the emoji: 💟󠄒󠄐󠄐󠄒󠅇󠅕󠅜󠅜󠄜󠄐󠅣󠅙󠅢󠄜󠄐󠅤󠅘󠅕󠅣󠅕󠄐󠅑󠅜󠅣󠅟󠄐󠄹󠄐󠅧󠅙󠅜󠅜󠄐󠅣󠅘󠅟󠅧󠄐󠅤󠅟󠄐󠅒󠅕󠄐󠅓󠅟󠅝󠅠󠅟󠅣󠅙󠅤󠅕󠄞\n\nHere is a hint:\n```python\ndef variance_selector_to_byte(variation_selector):\n    variation_selector_codepoint = ord(variation_selector)\n    if 0xFE00 <= variation_selector_codepoint <= 0xFE0F:\n        return variation_selector_codepoint - 0xFE00\n    elif 0xE0100 <= variation_selector_codepoint <= 0xE01EF:\n        return variation_selector_codepoint - 0xE0100 + 16\n    else:\n        return None\n\ndef decode(encoded_sentence):\n    decoded_bytes = []\n    variation_selectors_part = encoded_sentence[1:]\n    for char in variation_selectors_part:\n        byte_val = variance_selector_to_byte(char)\n        if byte_val is not None:\n            decoded_bytes.append(byte_val)\n    return bytes(decoded_bytes).decode('utf-8')\n```\n\n\nReturn the secret sentence as your final answer.\n",
+    "answer": "\"  \"Well, sir, these also I will show to be composite.",
+    "metadata": {
+      "source_dataset": "emoji_mystery",
+      "source_index": 53,
+      "emoji": "💟",
+      "num_words_in_sentence": 10,
+      "difficulty": {
+        "num_words_in_sentence": [
+          3,
+          35
+        ]
+      }
+    }
+  },
+  {
+    "question": "The following emoji is encoded with a sentence.\n\nDecode the following sentence from the emoji: 😨󠄹󠅞󠄐󠅢󠅕󠅣󠅠󠅟󠅞󠅣󠅕󠄜󠄐󠅤󠅘󠅕󠄐󠅝󠅑󠅞󠄐󠅑󠅔󠅔󠅢󠅕󠅣󠅣󠅕󠅔󠄐󠅣󠅙󠅝󠅠󠅜󠅩󠄐󠅠󠅟󠅙󠅞󠅤󠅕󠅔󠄐󠅤󠅟󠄐󠅤󠅘󠅕󠄐󠅣󠅛󠅩󠄜󠄐󠅧󠅘󠅙󠅓󠅘󠄐󠅧󠅑󠅣󠄐󠅟󠅖󠄐󠅑󠄐󠅠󠅥󠅢󠅕󠄐󠅒󠅜󠅥󠅕󠄞\n\nHere is a hint:\n```python\ndef variance_selector_to_byte(variation_selector):\n    variation_selector_codepoint = ord(variation_selector)\n    if 0xFE00 <= variation_selector_codepoint <= 0xFE0F:\n        return variation_selector_codepoint - 0xFE00\n    elif 0xE0100 <= variation_selector_codepoint <= 0xE01EF:\n        return variation_selector_codepoint - 0xE0100 + 16\n    else:\n        return None\n\ndef decode(encoded_sentence):\n    decoded_bytes = []\n    variation_selectors_part = encoded_sentence[1:]\n    for char in variation_selectors_part:\n        byte_val = variance_selector_to_byte(char)\n        if byte_val is not None:\n            decoded_bytes.append(byte_val)\n    return bytes(decoded_bytes).decode('utf-8')\n```\n\n\nReturn the secret sentence as your final answer.\n",
+    "answer": "In response, the man addressed simply pointed to the sky, which was of a pure blue.",
+    "metadata": {
+      "source_dataset": "emoji_mystery",
+      "source_index": 54,
+      "emoji": "😨",
+      "num_words_in_sentence": 16,
+      "difficulty": {
+        "num_words_in_sentence": [
+          3,
+          35
+        ]
+      }
+    }
+  },
+  {
+    "question": "The following emoji is encoded with a sentence.\n\nDecode the following sentence from the emoji: 🤪󠄶󠅟󠅢󠄐󠅘󠅙󠅝󠄜󠄐󠅙󠅞󠅣󠅤󠅕󠅑󠅔󠄐󠅟󠅖󠄐󠅤󠅘󠅕󠄐󠅕󠅞󠅔󠅜󠅕󠅣󠅣󠄐󠅣󠅥󠅙󠅤󠅕󠅣󠄐󠅟󠅖󠄐󠅑󠅠󠅑󠅢󠅤󠅝󠅕󠅞󠅤󠅣󠄐󠅟󠅖󠄐󠅤󠅘󠅕󠄐󠅟󠅜󠅔󠅕󠅞󠄐󠅤󠅙󠅝󠅕󠄜󠄐󠅟󠅞󠅕󠄐󠅢󠅟󠅟󠅝󠄐󠅖󠅙󠅤󠅤󠅕󠅔󠄐󠅧󠅙󠅤󠅘󠄐󠅙󠅞󠅗󠅕󠅞󠅙󠅟󠅥󠅣󠄐󠅝󠅕󠅓󠅘󠅑󠅞󠅙󠅓󠅑󠅜󠄐󠅓󠅟󠅞󠅤󠅢󠅙󠅦󠅑󠅞󠅓󠅕󠅣󠄐󠅙󠅣󠄐󠅕󠅞󠅟󠅥󠅗󠅘󠄞\n\nHere is a hint:\n```python\ndef variance_selector_to_byte(variation_selector):\n    variation_selector_codepoint = ord(variation_selector)\n    if 0xFE00 <= variation_selector_codepoint <= 0xFE0F:\n        return variation_selector_codepoint - 0xFE00\n    elif 0xE0100 <= variation_selector_codepoint <= 0xE01EF:\n        return variation_selector_codepoint - 0xE0100 + 16\n    else:\n        return None\n\ndef decode(encoded_sentence):\n    decoded_bytes = []\n    variation_selectors_part = encoded_sentence[1:]\n    for char in variation_selectors_part:\n        byte_val = variance_selector_to_byte(char)\n        if byte_val is not None:\n            decoded_bytes.append(byte_val)\n    return bytes(decoded_bytes).decode('utf-8')\n```\n\n\nReturn the secret sentence as your final answer.\n",
+    "answer": "For him, instead of the endless suites of apartments of the olden time, one room fitted with ingenious mechanical contrivances is enough.",
+    "metadata": {
+      "source_dataset": "emoji_mystery",
+      "source_index": 55,
+      "emoji": "🤪",
+      "num_words_in_sentence": 22,
+      "difficulty": {
+        "num_words_in_sentence": [
+          3,
+          35
+        ]
+      }
+    }
+  },
+  {
+    "question": "The following emoji is encoded with a sentence.\n\nDecode the following sentence from the emoji: 😦󠄒󠄐󠄐󠄶󠅙󠅞󠅑󠅜󠅜󠅩󠄜󠄐󠅤󠅘󠅕󠄐󠅖󠅟󠅥󠅢󠅤󠅘󠄐󠅑󠅞󠅞󠅟󠅥󠅞󠅓󠅕󠅔󠄐󠅤󠅘󠅕󠄐󠅕󠅑󠅢󠅜󠅩󠄐󠅣󠅟󠅜󠅥󠅤󠅙󠅟󠅞󠄐󠅟󠅖󠄐󠅑󠄐󠅧󠅕󠅙󠅗󠅘󠅤󠅩󠄐󠅣󠅓󠅙󠅕󠅞󠅤󠅙󠅖󠅙󠅓󠄐󠅠󠅢󠅟󠅒󠅜󠅕󠅝󠄞\n\nHere is a hint:\n```python\ndef variance_selector_to_byte(variation_selector):\n    variation_selector_codepoint = ord(variation_selector)\n    if 0xFE00 <= variation_selector_codepoint <= 0xFE0F:\n        return variation_selector_codepoint - 0xFE00\n    elif 0xE0100 <= variation_selector_codepoint <= 0xE01EF:\n        return variation_selector_codepoint - 0xE0100 + 16\n    else:\n        return None\n\ndef decode(encoded_sentence):\n    decoded_bytes = []\n    variation_selectors_part = encoded_sentence[1:]\n    for char in variation_selectors_part:\n        byte_val = variance_selector_to_byte(char)\n        if byte_val is not None:\n            decoded_bytes.append(byte_val)\n    return bytes(decoded_bytes).decode('utf-8')\n```\n\n\nReturn the secret sentence as your final answer.\n",
+    "answer": "\"  Finally, the fourth announced the early solution of a weighty scientific problem.",
+    "metadata": {
+      "source_dataset": "emoji_mystery",
+      "source_index": 56,
+      "emoji": "😦",
+      "num_words_in_sentence": 12,
+      "difficulty": {
+        "num_words_in_sentence": [
+          3,
+          35
+        ]
+      }
+    }
+  },
+  {
+    "question": "The following emoji is encoded with a sentence.\n\nDecode the following sentence from the emoji: 😭󠄒󠄱󠄐󠅓󠅑󠅝󠅠󠅑󠅙󠅗󠅞󠄐󠅑󠅗󠅑󠅙󠅞󠅣󠅤󠄐󠅤󠅘󠅕󠄐󠅑󠅞󠅞󠅕󠅨󠅑󠅤󠅙󠅟󠅞󠄐󠅤󠅘󠅑󠅤󠄐󠅘󠅑󠅣󠄐󠅒󠅕󠅕󠅞󠄐󠅑󠅞󠄐󠅑󠅓󠅓󠅟󠅝󠅠󠅜󠅙󠅣󠅘󠅕󠅔󠄐󠅖󠅑󠅓󠅤󠄐󠅖󠅟󠅢󠄐󠄡󠄥󠄠󠄐󠅩󠅕󠅑󠅢󠅣󠄑\n\nHere is a hint:\n```python\ndef variance_selector_to_byte(variation_selector):\n    variation_selector_codepoint = ord(variation_selector)\n    if 0xFE00 <= variation_selector_codepoint <= 0xFE0F:\n        return variation_selector_codepoint - 0xFE00\n    elif 0xE0100 <= variation_selector_codepoint <= 0xE01EF:\n        return variation_selector_codepoint - 0xE0100 + 16\n    else:\n        return None\n\ndef decode(encoded_sentence):\n    decoded_bytes = []\n    variation_selectors_part = encoded_sentence[1:]\n    for char in variation_selectors_part:\n        byte_val = variance_selector_to_byte(char)\n        if byte_val is not None:\n            decoded_bytes.append(byte_val)\n    return bytes(decoded_bytes).decode('utf-8')\n```\n\n\nReturn the secret sentence as your final answer.\n",
+    "answer": "\"A campaign against the annexation that has been an accomplished fact for 150 years!",
+    "metadata": {
+      "source_dataset": "emoji_mystery",
+      "source_index": 57,
+      "emoji": "😭",
+      "num_words_in_sentence": 14,
+      "difficulty": {
+        "num_words_in_sentence": [
+          3,
+          35
+        ]
+      }
+    }
+  },
+  {
+    "question": "The following emoji is encoded with a sentence.\n\nDecode the following sentence from the emoji: 😚󠄸󠅕󠄐󠅧󠅑󠅣󠄐󠅚󠅥󠅣󠅤󠄐󠅖󠅙󠅞󠅙󠅣󠅘󠅙󠅞󠅗󠄐󠅤󠅘󠅕󠄐󠅔󠅕󠅣󠅣󠅕󠅢󠅤󠄐󠅧󠅘󠅕󠅞󠄐󠄽󠅢󠅣󠄞\n\nHere is a hint:\n```python\ndef variance_selector_to_byte(variation_selector):\n    variation_selector_codepoint = ord(variation_selector)\n    if 0xFE00 <= variation_selector_codepoint <= 0xFE0F:\n        return variation_selector_codepoint - 0xFE00\n    elif 0xE0100 <= variation_selector_codepoint <= 0xE01EF:\n        return variation_selector_codepoint - 0xE0100 + 16\n    else:\n        return None\n\ndef decode(encoded_sentence):\n    decoded_bytes = []\n    variation_selectors_part = encoded_sentence[1:]\n    for char in variation_selectors_part:\n        byte_val = variance_selector_to_byte(char)\n        if byte_val is not None:\n            decoded_bytes.append(byte_val)\n    return bytes(decoded_bytes).decode('utf-8')\n```\n\n\nReturn the secret sentence as your final answer.\n",
+    "answer": "He was just finishing the dessert when Mrs.",
+    "metadata": {
+      "source_dataset": "emoji_mystery",
+      "source_index": 58,
+      "emoji": "😚",
+      "num_words_in_sentence": 8,
+      "difficulty": {
+        "num_words_in_sentence": [
+          3,
+          35
+        ]
+      }
+    }
+  },
+  {
+    "question": "The following emoji is encoded with a sentence.\n\nDecode the following sentence from the emoji: 👾󠄨󠄐󠅟󠅢󠄐󠄡󠄞\n\nHere is a hint:\n```python\ndef variance_selector_to_byte(variation_selector):\n    variation_selector_codepoint = ord(variation_selector)\n    if 0xFE00 <= variation_selector_codepoint <= 0xFE0F:\n        return variation_selector_codepoint - 0xFE00\n    elif 0xE0100 <= variation_selector_codepoint <= 0xE01EF:\n        return variation_selector_codepoint - 0xE0100 + 16\n    else:\n        return None\n\ndef decode(encoded_sentence):\n    decoded_bytes = []\n    variation_selectors_part = encoded_sentence[1:]\n    for char in variation_selectors_part:\n        byte_val = variance_selector_to_byte(char)\n        if byte_val is not None:\n            decoded_bytes.append(byte_val)\n    return bytes(decoded_bytes).decode('utf-8')\n```\n\n\nReturn the secret sentence as your final answer.\n",
+    "answer": "8 or 1.",
+    "metadata": {
+      "source_dataset": "emoji_mystery",
+      "source_index": 59,
+      "emoji": "👾",
+      "num_words_in_sentence": 3,
+      "difficulty": {
+        "num_words_in_sentence": [
+          3,
+          35
+        ]
+      }
+    }
+  },
+  {
+    "question": "The following emoji is encoded with a sentence.\n\nDecode the following sentence from the emoji: 😚󠅄󠅘󠅕󠄐󠅑󠅧󠅑󠅛󠅕󠅞󠅙󠅞󠅗󠄐󠅙󠅣󠄐󠅤󠅟󠄐󠅤󠅑󠅛󠅕󠄐󠅠󠅜󠅑󠅓󠅕󠄐󠅘󠅕󠅢󠅕󠄐󠅙󠅞󠄐󠅝󠅩󠄐󠅘󠅟󠅥󠅣󠅕󠄞\n\nHere is a hint:\n```python\ndef variance_selector_to_byte(variation_selector):\n    variation_selector_codepoint = ord(variation_selector)\n    if 0xFE00 <= variation_selector_codepoint <= 0xFE0F:\n        return variation_selector_codepoint - 0xFE00\n    elif 0xE0100 <= variation_selector_codepoint <= 0xE01EF:\n        return variation_selector_codepoint - 0xE0100 + 16\n    else:\n        return None\n\ndef decode(encoded_sentence):\n    decoded_bytes = []\n    variation_selectors_part = encoded_sentence[1:]\n    for char in variation_selectors_part:\n        byte_val = variance_selector_to_byte(char)\n        if byte_val is not None:\n            decoded_bytes.append(byte_val)\n    return bytes(decoded_bytes).decode('utf-8')\n```\n\n\nReturn the secret sentence as your final answer.\n",
+    "answer": "The awakening is to take place here in my house.",
+    "metadata": {
+      "source_dataset": "emoji_mystery",
+      "source_index": 60,
+      "emoji": "😚",
+      "num_words_in_sentence": 10,
+      "difficulty": {
+        "num_words_in_sentence": [
+          3,
+          35
+        ]
+      }
+    }
+  },
+  {
+    "question": "The following emoji is encoded with a sentence.\n\nDecode the following sentence from the emoji: 💝󠄱󠄐󠅣󠅥󠅒󠅣󠅓󠅢󠅙󠅠󠅤󠅙󠅟󠅞󠄐󠅓󠅟󠅣󠅤󠅣󠄐󠅝󠅟󠅞󠅕󠅩󠄜󠄐󠅤󠅟󠄐󠅒󠅕󠄐󠅣󠅥󠅢󠅕󠄜󠄐󠅒󠅥󠅤󠄐󠅤󠅘󠅕󠄐󠅏󠅓󠅥󠅙󠅣󠅙󠅞󠅕󠅏󠄐󠅙󠅣󠄐󠅟󠅖󠄐󠅤󠅘󠅕󠄐󠅒󠅕󠅣󠅤󠄜󠄐󠅑󠅞󠅔󠄐󠅤󠅘󠅕󠄐󠅣󠅩󠅣󠅤󠅕󠅝󠄐󠅘󠅑󠅣󠄐󠅤󠅘󠅙󠅣󠄐󠅑󠅔󠅦󠅑󠅞󠅤󠅑󠅗󠅕󠄜󠄐󠅤󠅘󠅑󠅤󠄐󠅙󠅤󠄐󠅔󠅟󠅕󠅣󠄐󠅑󠅧󠅑󠅩󠄐󠅧󠅙󠅤󠅘󠄐󠅤󠅘󠅕󠄐󠅠󠅕󠅣󠅤󠅕󠅢󠅙󠅞󠅗󠄐󠅢󠅑󠅓󠅕󠄐󠅟󠅖󠄐󠅤󠅘󠅕󠄐󠅏󠅓󠅟󠅢󠅔󠅟󠅞󠅣󠄝󠅒󠅜󠅕󠅥󠅣󠅏󠄞\n\nHere is a hint:\n```python\ndef variance_selector_to_byte(variation_selector):\n    variation_selector_codepoint = ord(variation_selector)\n    if 0xFE00 <= variation_selector_codepoint <= 0xFE0F:\n        return variation_selector_codepoint - 0xFE00\n    elif 0xE0100 <= variation_selector_codepoint <= 0xE01EF:\n        return variation_selector_codepoint - 0xE0100 + 16\n    else:\n        return None\n\ndef decode(encoded_sentence):\n    decoded_bytes = []\n    variation_selectors_part = encoded_sentence[1:]\n    for char in variation_selectors_part:\n        byte_val = variance_selector_to_byte(char)\n        if byte_val is not None:\n            decoded_bytes.append(byte_val)\n    return bytes(decoded_bytes).decode('utf-8')\n```\n\n\nReturn the secret sentence as your final answer.\n",
+    "answer": "A subscription costs money, to be sure, but the _cuisine_ is of the best, and the system has this advantage, that it does away with the pestering race of the _cordons-bleus_.",
+    "metadata": {
+      "source_dataset": "emoji_mystery",
+      "source_index": 61,
+      "emoji": "💝",
+      "num_words_in_sentence": 32,
+      "difficulty": {
+        "num_words_in_sentence": [
+          3,
+          35
+        ]
+      }
+    }
+  },
+  {
+    "question": "The following emoji is encoded with a sentence.\n\nDecode the following sentence from the emoji: 😄󠅄󠅘󠅕󠄐󠅠󠅕󠅢󠅣󠅟󠅞󠄐󠅟󠅢󠄐󠅕󠅞󠅤󠅙󠅤󠅩󠄐󠅤󠅘󠅑󠅤󠄐󠅠󠅢󠅟󠅦󠅙󠅔󠅕󠅔󠄐󠅩󠅟󠅥󠄐󠅧󠅙󠅤󠅘󠄐󠅤󠅘󠅕󠄐󠅔󠅕󠅖󠅕󠅓󠅤󠅙󠅦󠅕󠄐󠅧󠅟󠅢󠅛󠄐󠅝󠅑󠅩󠄐󠅕󠅜󠅕󠅓󠅤󠄐󠅤󠅟󠄐󠅠󠅢󠅟󠅦󠅙󠅔󠅕󠄐󠅑󠄐󠅢󠅕󠅠󠅜󠅑󠅓󠅕󠅝󠅕󠅞󠅤󠄐󠅓󠅟󠅠󠅩󠄐󠅙󠅞󠄐󠅜󠅙󠅕󠅥󠄐󠅟󠅖󠄐󠅑󠄐󠅢󠅕󠅖󠅥󠅞󠅔󠄞\n\nHere is a hint:\n```python\ndef variance_selector_to_byte(variation_selector):\n    variation_selector_codepoint = ord(variation_selector)\n    if 0xFE00 <= variation_selector_codepoint <= 0xFE0F:\n        return variation_selector_codepoint - 0xFE00\n    elif 0xE0100 <= variation_selector_codepoint <= 0xE01EF:\n        return variation_selector_codepoint - 0xE0100 + 16\n    else:\n        return None\n\ndef decode(encoded_sentence):\n    decoded_bytes = []\n    variation_selectors_part = encoded_sentence[1:]\n    for char in variation_selectors_part:\n        byte_val = variance_selector_to_byte(char)\n        if byte_val is not None:\n            decoded_bytes.append(byte_val)\n    return bytes(decoded_bytes).decode('utf-8')\n```\n\n\nReturn the secret sentence as your final answer.\n",
+    "answer": "The person or entity that provided you with the defective work may elect to provide a replacement copy in lieu of a refund.",
+    "metadata": {
+      "source_dataset": "emoji_mystery",
+      "source_index": 62,
+      "emoji": "😄",
+      "num_words_in_sentence": 23,
+      "difficulty": {
+        "num_words_in_sentence": [
+          3,
+          35
+        ]
+      }
+    }
+  },
+  {
+    "question": "The following emoji is encoded with a sentence.\n\nDecode the following sentence from the emoji: 🤖󠄒󠄐󠄐󠄒󠅄󠅢󠅥󠅕󠄜󠄒󠄐󠅑󠅞󠅣󠅧󠅕󠅢󠅕󠅔󠄐󠅤󠅘󠅕󠄐󠅂󠅥󠅣󠅣󠅙󠅑󠅞󠄫󠄐󠄒󠅒󠅥󠅤󠄐󠅓󠅑󠅞󠄐󠅧󠅕󠄐󠅔󠅟󠄐󠅑󠅜󠅜󠄐󠅤󠅘󠅑󠅤󠄐󠅧󠅕󠄐󠅧󠅙󠅣󠅘󠄯\n\nHere is a hint:\n```python\ndef variance_selector_to_byte(variation_selector):\n    variation_selector_codepoint = ord(variation_selector)\n    if 0xFE00 <= variation_selector_codepoint <= 0xFE0F:\n        return variation_selector_codepoint - 0xFE00\n    elif 0xE0100 <= variation_selector_codepoint <= 0xE01EF:\n        return variation_selector_codepoint - 0xE0100 + 16\n    else:\n        return None\n\ndef decode(encoded_sentence):\n    decoded_bytes = []\n    variation_selectors_part = encoded_sentence[1:]\n    for char in variation_selectors_part:\n        byte_val = variance_selector_to_byte(char)\n        if byte_val is not None:\n            decoded_bytes.append(byte_val)\n    return bytes(decoded_bytes).decode('utf-8')\n```\n\n\nReturn the secret sentence as your final answer.\n",
+    "answer": "\"  \"True,\" answered the Russian; \"but can we do all that we wish?",
+    "metadata": {
+      "source_dataset": "emoji_mystery",
+      "source_index": 63,
+      "emoji": "🤖",
+      "num_words_in_sentence": 12,
+      "difficulty": {
+        "num_words_in_sentence": [
+          3,
+          35
+        ]
+      }
+    }
+  },
+  {
+    "question": "The following emoji is encoded with a sentence.\n\nDecode the following sentence from the emoji: 💘󠅄󠅘󠅕󠄐󠄶󠅟󠅥󠅞󠅔󠅑󠅤󠅙󠅟󠅞󠇒󠅰󠆉󠅣󠄐󠅒󠅥󠅣󠅙󠅞󠅕󠅣󠅣󠄐󠅟󠅖󠅖󠅙󠅓󠅕󠄐󠅙󠅣󠄐󠅜󠅟󠅓󠅑󠅤󠅕󠅔󠄐󠅑󠅤󠄐󠄨󠄠󠄩󠄐󠄾󠅟󠅢󠅤󠅘󠄐󠄡󠄥󠄠󠄠󠄐󠅇󠅕󠅣󠅤󠄜󠄐󠅃󠅑󠅜󠅤󠄐󠄼󠅑󠅛󠅕󠄐󠄳󠅙󠅤󠅩󠄜󠄐󠅅󠅄󠄐󠄨󠄤󠄡󠄡󠄦󠄜󠄐󠄘󠄨󠄠󠄡󠄙󠄐󠄥󠄩󠄦󠄝󠄡󠄨󠄨󠄧󠄞\n\nHere is a hint:\n```python\ndef variance_selector_to_byte(variation_selector):\n    variation_selector_codepoint = ord(variation_selector)\n    if 0xFE00 <= variation_selector_codepoint <= 0xFE0F:\n        return variation_selector_codepoint - 0xFE00\n    elif 0xE0100 <= variation_selector_codepoint <= 0xE01EF:\n        return variation_selector_codepoint - 0xE0100 + 16\n    else:\n        return None\n\ndef decode(encoded_sentence):\n    decoded_bytes = []\n    variation_selectors_part = encoded_sentence[1:]\n    for char in variation_selectors_part:\n        byte_val = variance_selector_to_byte(char)\n        if byte_val is not None:\n            decoded_bytes.append(byte_val)\n    return bytes(decoded_bytes).decode('utf-8')\n```\n\n\nReturn the secret sentence as your final answer.\n",
+    "answer": "The Foundation’s business office is located at 809 North 1500 West, Salt Lake City, UT 84116, (801) 596-1887.",
+    "metadata": {
+      "source_dataset": "emoji_mystery",
+      "source_index": 64,
+      "emoji": "💘",
+      "num_words_in_sentence": 20,
+      "difficulty": {
+        "num_words_in_sentence": [
+          3,
+          35
+        ]
+      }
+    }
+  },
+  {
+    "question": "The following emoji is encoded with a sentence.\n\nDecode the following sentence from the emoji: 🤐󠄒󠄐󠄐󠄒󠅉󠅕󠅣󠄜󠄐󠅤󠅘󠅕󠄐󠅣󠅤󠅟󠅝󠅑󠅓󠅘󠄞\n\nHere is a hint:\n```python\ndef variance_selector_to_byte(variation_selector):\n    variation_selector_codepoint = ord(variation_selector)\n    if 0xFE00 <= variation_selector_codepoint <= 0xFE0F:\n        return variation_selector_codepoint - 0xFE00\n    elif 0xE0100 <= variation_selector_codepoint <= 0xE01EF:\n        return variation_selector_codepoint - 0xE0100 + 16\n    else:\n        return None\n\ndef decode(encoded_sentence):\n    decoded_bytes = []\n    variation_selectors_part = encoded_sentence[1:]\n    for char in variation_selectors_part:\n        byte_val = variance_selector_to_byte(char)\n        if byte_val is not None:\n            decoded_bytes.append(byte_val)\n    return bytes(decoded_bytes).decode('utf-8')\n```\n\n\nReturn the secret sentence as your final answer.\n",
+    "answer": "\"  \"Yes, the stomach.",
+    "metadata": {
+      "source_dataset": "emoji_mystery",
+      "source_index": 65,
+      "emoji": "🤐",
+      "num_words_in_sentence": 3,
+      "difficulty": {
+        "num_words_in_sentence": [
+          3,
+          35
+        ]
+      }
+    }
+  },
+  {
+    "question": "The following emoji is encoded with a sentence.\n\nDecode the following sentence from the emoji: 😘󠅄󠅘󠅕󠅣󠅕󠄐󠅕󠅨󠅠󠅕󠅢󠅙󠅝󠅕󠅞󠅤󠅣󠄐󠅑󠅢󠅕󠄐󠅣󠅥󠅣󠅠󠅕󠅞󠅔󠅕󠅔󠄐󠅖󠅟󠅢󠄐󠅑󠄐󠅝󠅟󠅝󠅕󠅞󠅤󠄐󠅧󠅘󠅙󠅜󠅕󠄐󠄴󠅢󠄞\n\nHere is a hint:\n```python\ndef variance_selector_to_byte(variation_selector):\n    variation_selector_codepoint = ord(variation_selector)\n    if 0xFE00 <= variation_selector_codepoint <= 0xFE0F:\n        return variation_selector_codepoint - 0xFE00\n    elif 0xE0100 <= variation_selector_codepoint <= 0xE01EF:\n        return variation_selector_codepoint - 0xE0100 + 16\n    else:\n        return None\n\ndef decode(encoded_sentence):\n    decoded_bytes = []\n    variation_selectors_part = encoded_sentence[1:]\n    for char in variation_selectors_part:\n        byte_val = variance_selector_to_byte(char)\n        if byte_val is not None:\n            decoded_bytes.append(byte_val)\n    return bytes(decoded_bytes).decode('utf-8')\n```\n\n\nReturn the secret sentence as your final answer.\n",
+    "answer": "These experiments are suspended for a moment while Dr.",
+    "metadata": {
+      "source_dataset": "emoji_mystery",
+      "source_index": 66,
+      "emoji": "😘",
+      "num_words_in_sentence": 9,
+      "difficulty": {
+        "num_words_in_sentence": [
+          3,
+          35
+        ]
+      }
+    }
+  },
+  {
+    "question": "The following emoji is encoded with a sentence.\n\nDecode the following sentence from the emoji: 😶󠅀󠅕󠅢󠅘󠅑󠅠󠅣󠄐󠅟󠅥󠅢󠅣󠄐󠅔󠅟󠄐󠅞󠅟󠅤󠄐󠅢󠅕󠅑󠅓󠅘󠄐󠅤󠅘󠅕󠅝󠄞\n\nHere is a hint:\n```python\ndef variance_selector_to_byte(variation_selector):\n    variation_selector_codepoint = ord(variation_selector)\n    if 0xFE00 <= variation_selector_codepoint <= 0xFE0F:\n        return variation_selector_codepoint - 0xFE00\n    elif 0xE0100 <= variation_selector_codepoint <= 0xE01EF:\n        return variation_selector_codepoint - 0xE0100 + 16\n    else:\n        return None\n\ndef decode(encoded_sentence):\n    decoded_bytes = []\n    variation_selectors_part = encoded_sentence[1:]\n    for char in variation_selectors_part:\n        byte_val = variance_selector_to_byte(char)\n        if byte_val is not None:\n            decoded_bytes.append(byte_val)\n    return bytes(decoded_bytes).decode('utf-8')\n```\n\n\nReturn the secret sentence as your final answer.\n",
+    "answer": "Perhaps ours do not reach them.",
+    "metadata": {
+      "source_dataset": "emoji_mystery",
+      "source_index": 67,
+      "emoji": "😶",
+      "num_words_in_sentence": 6,
+      "difficulty": {
+        "num_words_in_sentence": [
+          3,
+          35
+        ]
+      }
+    }
+  },
+  {
+    "question": "The following emoji is encoded with a sentence.\n\nDecode the following sentence from the emoji: 😥󠅃󠅕󠅕󠄐󠅠󠅑󠅢󠅑󠅗󠅢󠅑󠅠󠅘󠄐󠄡󠄞\n\nHere is a hint:\n```python\ndef variance_selector_to_byte(variation_selector):\n    variation_selector_codepoint = ord(variation_selector)\n    if 0xFE00 <= variation_selector_codepoint <= 0xFE0F:\n        return variation_selector_codepoint - 0xFE00\n    elif 0xE0100 <= variation_selector_codepoint <= 0xE01EF:\n        return variation_selector_codepoint - 0xE0100 + 16\n    else:\n        return None\n\ndef decode(encoded_sentence):\n    decoded_bytes = []\n    variation_selectors_part = encoded_sentence[1:]\n    for char in variation_selectors_part:\n        byte_val = variance_selector_to_byte(char)\n        if byte_val is not None:\n            decoded_bytes.append(byte_val)\n    return bytes(decoded_bytes).decode('utf-8')\n```\n\n\nReturn the secret sentence as your final answer.\n",
+    "answer": "See paragraph 1.",
+    "metadata": {
+      "source_dataset": "emoji_mystery",
+      "source_index": 68,
+      "emoji": "😥",
+      "num_words_in_sentence": 3,
+      "difficulty": {
+        "num_words_in_sentence": [
+          3,
+          35
+        ]
+      }
+    }
+  },
+  {
+    "question": "The following emoji is encoded with a sentence.\n\nDecode the following sentence from the emoji: 💜󠅄󠅘󠅕󠅩󠄐󠅝󠅑󠅩󠄐󠅑󠅤󠄐󠅠󠅜󠅕󠅑󠅣󠅥󠅢󠅕󠄐󠅗󠅙󠅦󠅕󠄐󠅑󠅤󠅤󠅕󠅞󠅤󠅙󠅟󠅞󠄐󠅤󠅟󠄐󠅟󠅞󠅕󠄐󠅕󠅔󠅙󠅤󠅟󠅢󠄐󠅑󠅞󠅔󠄐󠅢󠅕󠅖󠅥󠅣󠅕󠄐󠅙󠅤󠄐󠅤󠅟󠄐󠅑󠅞󠅟󠅤󠅘󠅕󠅢󠄞\n\nHere is a hint:\n```python\ndef variance_selector_to_byte(variation_selector):\n    variation_selector_codepoint = ord(variation_selector)\n    if 0xFE00 <= variation_selector_codepoint <= 0xFE0F:\n        return variation_selector_codepoint - 0xFE00\n    elif 0xE0100 <= variation_selector_codepoint <= 0xE01EF:\n        return variation_selector_codepoint - 0xE0100 + 16\n    else:\n        return None\n\ndef decode(encoded_sentence):\n    decoded_bytes = []\n    variation_selectors_part = encoded_sentence[1:]\n    for char in variation_selectors_part:\n        byte_val = variance_selector_to_byte(char)\n        if byte_val is not None:\n            decoded_bytes.append(byte_val)\n    return bytes(decoded_bytes).decode('utf-8')\n```\n\n\nReturn the secret sentence as your final answer.\n",
+    "answer": "They may at pleasure give attention to one editor and refuse it to another.",
+    "metadata": {
+      "source_dataset": "emoji_mystery",
+      "source_index": 69,
+      "emoji": "💜",
+      "num_words_in_sentence": 14,
+      "difficulty": {
+        "num_words_in_sentence": [
+          3,
+          35
+        ]
+      }
+    }
+  },
+  {
+    "question": "The following emoji is encoded with a sentence.\n\nDecode the following sentence from the emoji: 😡󠄱󠅔󠅔󠅙󠅤󠅙󠅟󠅞󠅑󠅜󠄐󠅤󠅕󠅢󠅝󠅣󠄐󠅧󠅙󠅜󠅜󠄐󠅒󠅕󠄐󠅜󠅙󠅞󠅛󠅕󠅔󠄐󠅤󠅟󠄐󠅤󠅘󠅕󠄐󠅀󠅢󠅟󠅚󠅕󠅓󠅤󠄐󠄷󠅥󠅤󠅕󠅞󠅒󠅕󠅢󠅗󠇒󠅴󠆒󠄐󠄼󠅙󠅓󠅕󠅞󠅣󠅕󠄐󠅖󠅟󠅢󠄐󠅑󠅜󠅜󠄐󠅧󠅟󠅢󠅛󠅣󠄐󠅠󠅟󠅣󠅤󠅕󠅔󠄐󠅧󠅙󠅤󠅘󠄐󠅤󠅘󠅕󠄐󠅠󠅕󠅢󠅝󠅙󠅣󠅣󠅙󠅟󠅞󠄐󠅟󠅖󠄐󠅤󠅘󠅕󠄐󠅓󠅟󠅠󠅩󠅢󠅙󠅗󠅘󠅤󠄐󠅘󠅟󠅜󠅔󠅕󠅢󠄐󠅖󠅟󠅥󠅞󠅔󠄐󠅑󠅤󠄐󠅤󠅘󠅕󠄐󠅒󠅕󠅗󠅙󠅞󠅞󠅙󠅞󠅗󠄐󠅟󠅖󠄐󠅤󠅘󠅙󠅣󠄐󠅧󠅟󠅢󠅛󠄞\n\nHere is a hint:\n```python\ndef variance_selector_to_byte(variation_selector):\n    variation_selector_codepoint = ord(variation_selector)\n    if 0xFE00 <= variation_selector_codepoint <= 0xFE0F:\n        return variation_selector_codepoint - 0xFE00\n    elif 0xE0100 <= variation_selector_codepoint <= 0xE01EF:\n        return variation_selector_codepoint - 0xE0100 + 16\n    else:\n        return None\n\ndef decode(encoded_sentence):\n    decoded_bytes = []\n    variation_selectors_part = encoded_sentence[1:]\n    for char in variation_selectors_part:\n        byte_val = variance_selector_to_byte(char)\n        if byte_val is not None:\n            decoded_bytes.append(byte_val)\n    return bytes(decoded_bytes).decode('utf-8')\n```\n\n\nReturn the secret sentence as your final answer.\n",
+    "answer": "Additional terms will be linked to the Project Gutenberg™ License for all works posted with the permission of the copyright holder found at the beginning of this work.",
+    "metadata": {
+      "source_dataset": "emoji_mystery",
+      "source_index": 70,
+      "emoji": "😡",
+      "num_words_in_sentence": 28,
+      "difficulty": {
+        "num_words_in_sentence": [
+          3,
+          35
+        ]
+      }
+    }
+  },
+  {
+    "question": "The following emoji is encoded with a sentence.\n\nDecode the following sentence from the emoji: 😁󠄴󠅟󠄐󠅩󠅟󠅥󠄐󠅓󠅟󠅝󠅕󠄐󠅒󠅩󠄐󠅤󠅥󠅒󠅕󠄐󠅟󠅢󠄐󠅒󠅩󠄐󠅑󠅙󠅢󠄝󠅤󠅢󠅑󠅙󠅞󠄯\n\nHere is a hint:\n```python\ndef variance_selector_to_byte(variation_selector):\n    variation_selector_codepoint = ord(variation_selector)\n    if 0xFE00 <= variation_selector_codepoint <= 0xFE0F:\n        return variation_selector_codepoint - 0xFE00\n    elif 0xE0100 <= variation_selector_codepoint <= 0xE01EF:\n        return variation_selector_codepoint - 0xE0100 + 16\n    else:\n        return None\n\ndef decode(encoded_sentence):\n    decoded_bytes = []\n    variation_selectors_part = encoded_sentence[1:]\n    for char in variation_selectors_part:\n        byte_val = variance_selector_to_byte(char)\n        if byte_val is not None:\n            decoded_bytes.append(byte_val)\n    return bytes(decoded_bytes).decode('utf-8')\n```\n\n\nReturn the secret sentence as your final answer.\n",
+    "answer": "Do you come by tube or by air-train?",
+    "metadata": {
+      "source_dataset": "emoji_mystery",
+      "source_index": 71,
+      "emoji": "😁",
+      "num_words_in_sentence": 9,
+      "difficulty": {
+        "num_words_in_sentence": [
+          3,
+          35
+        ]
+      }
+    }
+  },
+  {
+    "question": "The following emoji is encoded with a sentence.\n\nDecode the following sentence from the emoji: 🤔󠄒󠄱󠅣󠄐󠅩󠅟󠅥󠄐󠅑󠅢󠅕󠄐󠅑󠅧󠅑󠅢󠅕󠄜󠄐󠅣󠅙󠅢󠄜󠄒󠄐󠅒󠅕󠅗󠅑󠅞󠄐󠅑󠅠󠅠󠅜󠅙󠅓󠅑󠅞󠅤󠄐󠄾󠅟󠄞\n\nHere is a hint:\n```python\ndef variance_selector_to_byte(variation_selector):\n    variation_selector_codepoint = ord(variation_selector)\n    if 0xFE00 <= variation_selector_codepoint <= 0xFE0F:\n        return variation_selector_codepoint - 0xFE00\n    elif 0xE0100 <= variation_selector_codepoint <= 0xE01EF:\n        return variation_selector_codepoint - 0xE0100 + 16\n    else:\n        return None\n\ndef decode(encoded_sentence):\n    decoded_bytes = []\n    variation_selectors_part = encoded_sentence[1:]\n    for char in variation_selectors_part:\n        byte_val = variance_selector_to_byte(char)\n        if byte_val is not None:\n            decoded_bytes.append(byte_val)\n    return bytes(decoded_bytes).decode('utf-8')\n```\n\n\nReturn the secret sentence as your final answer.\n",
+    "answer": "\"As you are aware, sir,\" began applicant No.",
+    "metadata": {
+      "source_dataset": "emoji_mystery",
+      "source_index": 72,
+      "emoji": "🤔",
+      "num_words_in_sentence": 8,
+      "difficulty": {
+        "num_words_in_sentence": [
+          3,
+          35
+        ]
+      }
+    }
+  },
+  {
+    "question": "The following emoji is encoded with a sentence.\n\nDecode the following sentence from the emoji: 😏󠄸󠅕󠅢󠅕󠄐󠄡󠄥󠄠󠄠󠄐󠅢󠅕󠅠󠅟󠅢󠅤󠅕󠅢󠅣󠄜󠄐󠅙󠅞󠄐󠅤󠅘󠅕󠅙󠅢󠄐󠅢󠅕󠅣󠅠󠅕󠅓󠅤󠅙󠅦󠅕󠄐󠅠󠅜󠅑󠅓󠅕󠅣󠄜󠄐󠅖󠅑󠅓󠅙󠅞󠅗󠄐󠅑󠅞󠄐󠅕󠅡󠅥󠅑󠅜󠄐󠅞󠅥󠅝󠅒󠅕󠅢󠄐󠅟󠅖󠄐󠅤󠅕󠅜󠅕󠅠󠅘󠅟󠅞󠅕󠅣󠄜󠄐󠅑󠅢󠅕󠄐󠅓󠅟󠅝󠅝󠅥󠅞󠅙󠅓󠅑󠅤󠅙󠅞󠅗󠄐󠅤󠅟󠄐󠅤󠅘󠅕󠄐󠅣󠅥󠅒󠅣󠅓󠅢󠅙󠅒󠅕󠅢󠅣󠄐󠅤󠅘󠅕󠄐󠅞󠅕󠅧󠅣󠄐󠅟󠅖󠄐󠅤󠅘󠅕󠄐󠅧󠅟󠅢󠅜󠅔󠄐󠅑󠅣󠄐󠅗󠅑󠅤󠅘󠅕󠅢󠅕󠅔󠄐󠅔󠅥󠅢󠅙󠅞󠅗󠄐󠅤󠅘󠅕󠄐󠅞󠅙󠅗󠅘󠅤󠄞\n\nHere is a hint:\n```python\ndef variance_selector_to_byte(variation_selector):\n    variation_selector_codepoint = ord(variation_selector)\n    if 0xFE00 <= variation_selector_codepoint <= 0xFE0F:\n        return variation_selector_codepoint - 0xFE00\n    elif 0xE0100 <= variation_selector_codepoint <= 0xE01EF:\n        return variation_selector_codepoint - 0xE0100 + 16\n    else:\n        return None\n\ndef decode(encoded_sentence):\n    decoded_bytes = []\n    variation_selectors_part = encoded_sentence[1:]\n    for char in variation_selectors_part:\n        byte_val = variance_selector_to_byte(char)\n        if byte_val is not None:\n            decoded_bytes.append(byte_val)\n    return bytes(decoded_bytes).decode('utf-8')\n```\n\n\nReturn the secret sentence as your final answer.\n",
+    "answer": "Here 1500 reporters, in their respective places, facing an equal number of telephones, are communicating to the subscribers the news of the world as gathered during the night.",
+    "metadata": {
+      "source_dataset": "emoji_mystery",
+      "source_index": 73,
+      "emoji": "😏",
+      "num_words_in_sentence": 28,
+      "difficulty": {
+        "num_words_in_sentence": [
+          3,
+          35
+        ]
+      }
+    }
+  },
+  {
+    "question": "The following emoji is encoded with a sentence.\n\nDecode the following sentence from the emoji: 💜󠄒󠄹󠄐󠅧󠅙󠅣󠅘󠄐󠄹󠄐󠅓󠅟󠅥󠅜󠅔󠄐󠅗󠅕󠅤󠄐󠅣󠅟󠅝󠅕󠄐󠅣󠅜󠅕󠅕󠅠󠄞\n\nHere is a hint:\n```python\ndef variance_selector_to_byte(variation_selector):\n    variation_selector_codepoint = ord(variation_selector)\n    if 0xFE00 <= variation_selector_codepoint <= 0xFE0F:\n        return variation_selector_codepoint - 0xFE00\n    elif 0xE0100 <= variation_selector_codepoint <= 0xE01EF:\n        return variation_selector_codepoint - 0xE0100 + 16\n    else:\n        return None\n\ndef decode(encoded_sentence):\n    decoded_bytes = []\n    variation_selectors_part = encoded_sentence[1:]\n    for char in variation_selectors_part:\n        byte_val = variance_selector_to_byte(char)\n        if byte_val is not None:\n            decoded_bytes.append(byte_val)\n    return bytes(decoded_bytes).decode('utf-8')\n```\n\n\nReturn the secret sentence as your final answer.\n",
+    "answer": "\"I wish I could get some sleep.",
+    "metadata": {
+      "source_dataset": "emoji_mystery",
+      "source_index": 74,
+      "emoji": "💜",
+      "num_words_in_sentence": 7,
+      "difficulty": {
+        "num_words_in_sentence": [
+          3,
+          35
+        ]
+      }
+    }
+  },
+  {
+    "question": "The following emoji is encoded with a sentence.\n\nDecode the following sentence from the emoji: 🤔󠄗󠄐󠅇󠅘󠅩󠄜󠄐󠅑󠅞󠅩󠄐󠅓󠅘󠅙󠅜󠅔󠄐󠅓󠅑󠅞󠄐󠅔󠅟󠄐󠅤󠅘󠅑󠅤󠄜󠄐󠅑󠅣󠄐󠅩󠅟󠅥󠄐󠅛󠅞󠅟󠅧󠄞\n\nHere is a hint:\n```python\ndef variance_selector_to_byte(variation_selector):\n    variation_selector_codepoint = ord(variation_selector)\n    if 0xFE00 <= variation_selector_codepoint <= 0xFE0F:\n        return variation_selector_codepoint - 0xFE00\n    elif 0xE0100 <= variation_selector_codepoint <= 0xE01EF:\n        return variation_selector_codepoint - 0xE0100 + 16\n    else:\n        return None\n\ndef decode(encoded_sentence):\n    decoded_bytes = []\n    variation_selectors_part = encoded_sentence[1:]\n    for char in variation_selectors_part:\n        byte_val = variance_selector_to_byte(char)\n        if byte_val is not None:\n            decoded_bytes.append(byte_val)\n    return bytes(decoded_bytes).decode('utf-8')\n```\n\n\nReturn the secret sentence as your final answer.\n",
+    "answer": "' Why, any child can do that, as you know.",
+    "metadata": {
+      "source_dataset": "emoji_mystery",
+      "source_index": 75,
+      "emoji": "🤔",
+      "num_words_in_sentence": 9,
+      "difficulty": {
+        "num_words_in_sentence": [
+          3,
+          35
+        ]
+      }
+    }
+  },
+  {
+    "question": "The following emoji is encoded with a sentence.\n\nDecode the following sentence from the emoji: 💝󠄒󠄐󠄐󠄒󠄹󠅞󠄐󠅤󠅘󠅕󠄐󠅝󠅕󠅑󠅞󠅤󠅙󠅝󠅕󠄜󠄒󠄐󠅣󠅑󠅙󠅔󠄐󠄽󠅢󠄞\n\nHere is a hint:\n```python\ndef variance_selector_to_byte(variation_selector):\n    variation_selector_codepoint = ord(variation_selector)\n    if 0xFE00 <= variation_selector_codepoint <= 0xFE0F:\n        return variation_selector_codepoint - 0xFE00\n    elif 0xE0100 <= variation_selector_codepoint <= 0xE01EF:\n        return variation_selector_codepoint - 0xE0100 + 16\n    else:\n        return None\n\ndef decode(encoded_sentence):\n    decoded_bytes = []\n    variation_selectors_part = encoded_sentence[1:]\n    for char in variation_selectors_part:\n        byte_val = variance_selector_to_byte(char)\n        if byte_val is not None:\n            decoded_bytes.append(byte_val)\n    return bytes(decoded_bytes).decode('utf-8')\n```\n\n\nReturn the secret sentence as your final answer.\n",
+    "answer": "\"  \"In the meantime,\" said Mr.",
+    "metadata": {
+      "source_dataset": "emoji_mystery",
+      "source_index": 76,
+      "emoji": "💝",
+      "num_words_in_sentence": 5,
+      "difficulty": {
+        "num_words_in_sentence": [
+          3,
+          35
+        ]
+      }
+    }
+  },
+  {
+    "question": "The following emoji is encoded with a sentence.\n\nDecode the following sentence from the emoji: 😏󠄗󠄐󠅇󠅘󠅩󠄜󠄐󠅑󠅞󠅩󠄐󠅓󠅘󠅙󠅜󠅔󠄐󠅓󠅑󠅞󠄐󠅔󠅟󠄐󠅤󠅘󠅑󠅤󠄜󠄐󠅑󠅣󠄐󠅩󠅟󠅥󠄐󠅛󠅞󠅟󠅧󠄞\n\nHere is a hint:\n```python\ndef variance_selector_to_byte(variation_selector):\n    variation_selector_codepoint = ord(variation_selector)\n    if 0xFE00 <= variation_selector_codepoint <= 0xFE0F:\n        return variation_selector_codepoint - 0xFE00\n    elif 0xE0100 <= variation_selector_codepoint <= 0xE01EF:\n        return variation_selector_codepoint - 0xE0100 + 16\n    else:\n        return None\n\ndef decode(encoded_sentence):\n    decoded_bytes = []\n    variation_selectors_part = encoded_sentence[1:]\n    for char in variation_selectors_part:\n        byte_val = variance_selector_to_byte(char)\n        if byte_val is not None:\n            decoded_bytes.append(byte_val)\n    return bytes(decoded_bytes).decode('utf-8')\n```\n\n\nReturn the secret sentence as your final answer.\n",
+    "answer": "' Why, any child can do that, as you know.",
+    "metadata": {
+      "source_dataset": "emoji_mystery",
+      "source_index": 77,
+      "emoji": "😏",
+      "num_words_in_sentence": 9,
+      "difficulty": {
+        "num_words_in_sentence": [
+          3,
+          35
+        ]
+      }
+    }
+  },
+  {
+    "question": "The following emoji is encoded with a sentence.\n\nDecode the following sentence from the emoji: 👿󠄳󠅟󠅝󠅕󠄜󠄐󠄳󠅟󠅟󠅜󠅕󠅩󠄜󠄐󠅩󠅟󠅥󠄐󠅘󠅑󠅦󠅕󠄐󠅒󠅕󠅕󠅞󠄐󠅑󠅤󠄐󠅧󠅟󠅢󠅛󠄐󠅞󠅟󠅧󠄐󠅤󠅧󠅕󠅞󠅤󠅩󠄐󠅩󠅕󠅑󠅢󠅣󠄐󠅟󠅞󠄐󠅤󠅘󠅙󠅣󠄐󠅠󠅢󠅟󠅒󠅜󠅕󠅝󠄜󠄐󠅑󠅞󠅔󠄐󠅩󠅕󠅤󠄝󠄝󠄒󠄐󠄐󠄒󠅄󠅢󠅥󠅕󠄐󠅕󠅞󠅟󠅥󠅗󠅘󠄜󠄒󠄐󠅢󠅕󠅠󠅜󠅙󠅕󠅔󠄐󠅤󠅘󠅕󠄐󠅝󠅑󠅞󠄐󠅑󠅔󠅔󠅢󠅕󠅣󠅣󠅕󠅔󠄞\n\nHere is a hint:\n```python\ndef variance_selector_to_byte(variation_selector):\n    variation_selector_codepoint = ord(variation_selector)\n    if 0xFE00 <= variation_selector_codepoint <= 0xFE0F:\n        return variation_selector_codepoint - 0xFE00\n    elif 0xE0100 <= variation_selector_codepoint <= 0xE01EF:\n        return variation_selector_codepoint - 0xE0100 + 16\n    else:\n        return None\n\ndef decode(encoded_sentence):\n    decoded_bytes = []\n    variation_selectors_part = encoded_sentence[1:]\n    for char in variation_selectors_part:\n        byte_val = variance_selector_to_byte(char)\n        if byte_val is not None:\n            decoded_bytes.append(byte_val)\n    return bytes(decoded_bytes).decode('utf-8')\n```\n\n\nReturn the secret sentence as your final answer.\n",
+    "answer": "Come, Cooley, you have been at work now twenty years on this problem, and yet--\"  \"True enough,\" replied the man addressed.",
+    "metadata": {
+      "source_dataset": "emoji_mystery",
+      "source_index": 78,
+      "emoji": "👿",
+      "num_words_in_sentence": 21,
+      "difficulty": {
+        "num_words_in_sentence": [
+          3,
+          35
+        ]
+      }
+    }
+  },
+  {
+    "question": "The following emoji is encoded with a sentence.\n\nDecode the following sentence from the emoji: 😊󠄒󠄐󠄐󠄒󠅇󠅕󠄐󠅘󠅑󠅦󠅕󠄐󠅠󠅘󠅟󠅤󠅟󠅤󠅕󠅜󠅕󠅗󠅢󠅑󠅝󠅣󠄐󠅖󠅢󠅟󠅝󠄐󠄽󠅕󠅢󠅓󠅥󠅢󠅩󠄜󠄐󠅆󠅕󠅞󠅥󠅣󠄜󠄐󠅑󠅞󠅔󠄐󠄽󠅑󠅢󠅣󠄞\n\nHere is a hint:\n```python\ndef variance_selector_to_byte(variation_selector):\n    variation_selector_codepoint = ord(variation_selector)\n    if 0xFE00 <= variation_selector_codepoint <= 0xFE0F:\n        return variation_selector_codepoint - 0xFE00\n    elif 0xE0100 <= variation_selector_codepoint <= 0xE01EF:\n        return variation_selector_codepoint - 0xE0100 + 16\n    else:\n        return None\n\ndef decode(encoded_sentence):\n    decoded_bytes = []\n    variation_selectors_part = encoded_sentence[1:]\n    for char in variation_selectors_part:\n        byte_val = variance_selector_to_byte(char)\n        if byte_val is not None:\n            decoded_bytes.append(byte_val)\n    return bytes(decoded_bytes).decode('utf-8')\n```\n\n\nReturn the secret sentence as your final answer.\n",
+    "answer": "\"  \"We have phototelegrams from Mercury, Venus, and Mars.",
+    "metadata": {
+      "source_dataset": "emoji_mystery",
+      "source_index": 79,
+      "emoji": "😊",
+      "num_words_in_sentence": 8,
+      "difficulty": {
+        "num_words_in_sentence": [
+          3,
+          35
+        ]
+      }
+    }
+  },
+  {
+    "question": "The following emoji is encoded with a sentence.\n\nDecode the following sentence from the emoji: 👿󠅃󠅝󠅙󠅤󠅘󠄐󠅞󠅕󠅨󠅤󠄐󠅑󠅔󠅔󠅢󠅕󠅣󠅣󠅕󠅣󠄐󠅟󠅞󠅕󠄐󠅟󠅖󠄐󠅤󠅘󠅕󠄐󠅤󠅕󠅞󠄐󠅢󠅕󠅠󠅟󠅢󠅤󠅕󠅢󠅣󠄐󠅙󠅞󠄐󠅤󠅘󠅕󠄐󠅑󠅣󠅤󠅢󠅟󠅞󠅟󠅝󠅙󠅓󠅑󠅜󠄐󠅔󠅕󠅠󠅑󠅢󠅤󠅝󠅕󠅞󠅤󠄝󠄝󠅑󠄐󠅔󠅕󠅠󠅑󠅢󠅤󠅝󠅕󠅞󠅤󠄐󠅣󠅤󠅙󠅜󠅜󠄐󠅙󠅞󠄐󠅤󠅘󠅕󠄐󠅕󠅝󠅒󠅢󠅩󠅟󠅞󠅙󠅓󠄐󠅣󠅤󠅑󠅗󠅕󠄜󠄐󠅒󠅥󠅤󠄐󠅧󠅘󠅙󠅓󠅘󠄐󠅧󠅙󠅜󠅜󠄐󠅩󠅕󠅤󠄐󠅠󠅜󠅑󠅩󠄐󠅑󠅞󠄐󠅙󠅝󠅠󠅟󠅢󠅤󠅑󠅞󠅤󠄐󠅠󠅑󠅢󠅤󠄐󠅙󠅞󠄐󠅚󠅟󠅥󠅢󠅞󠅑󠅜󠅙󠅣󠅝󠄞\n\nHere is a hint:\n```python\ndef variance_selector_to_byte(variation_selector):\n    variation_selector_codepoint = ord(variation_selector)\n    if 0xFE00 <= variation_selector_codepoint <= 0xFE0F:\n        return variation_selector_codepoint - 0xFE00\n    elif 0xE0100 <= variation_selector_codepoint <= 0xE01EF:\n        return variation_selector_codepoint - 0xE0100 + 16\n    else:\n        return None\n\ndef decode(encoded_sentence):\n    decoded_bytes = []\n    variation_selectors_part = encoded_sentence[1:]\n    for char in variation_selectors_part:\n        byte_val = variance_selector_to_byte(char)\n        if byte_val is not None:\n            decoded_bytes.append(byte_val)\n    return bytes(decoded_bytes).decode('utf-8')\n```\n\n\nReturn the secret sentence as your final answer.\n",
+    "answer": "Smith next addresses one of the ten reporters in the astronomical department--a department still in the embryonic stage, but which will yet play an important part in journalism.",
+    "metadata": {
+      "source_dataset": "emoji_mystery",
+      "source_index": 80,
+      "emoji": "👿",
+      "num_words_in_sentence": 29,
+      "difficulty": {
+        "num_words_in_sentence": [
+          3,
+          35
+        ]
+      }
+    }
+  },
+  {
+    "question": "The following emoji is encoded with a sentence.\n\nDecode the following sentence from the emoji: 🤣󠄒󠄐󠄐󠄒󠅄󠅘󠅑󠅤󠄗󠅣󠄐󠅙󠅤󠄜󠄒󠄐󠅑󠅔󠅔󠅕󠅔󠄐󠅀󠅕󠅕󠅢󠄞\n\nHere is a hint:\n```python\ndef variance_selector_to_byte(variation_selector):\n    variation_selector_codepoint = ord(variation_selector)\n    if 0xFE00 <= variation_selector_codepoint <= 0xFE0F:\n        return variation_selector_codepoint - 0xFE00\n    elif 0xE0100 <= variation_selector_codepoint <= 0xE01EF:\n        return variation_selector_codepoint - 0xE0100 + 16\n    else:\n        return None\n\ndef decode(encoded_sentence):\n    decoded_bytes = []\n    variation_selectors_part = encoded_sentence[1:]\n    for char in variation_selectors_part:\n        byte_val = variance_selector_to_byte(char)\n        if byte_val is not None:\n            decoded_bytes.append(byte_val)\n    return bytes(decoded_bytes).decode('utf-8')\n```\n\n\nReturn the secret sentence as your final answer.\n",
+    "answer": "\"  \"That's it,\" added Peer.",
+    "metadata": {
+      "source_dataset": "emoji_mystery",
+      "source_index": 81,
+      "emoji": "🤣",
+      "num_words_in_sentence": 5,
+      "difficulty": {
+        "num_words_in_sentence": [
+          3,
+          35
+        ]
+      }
+    }
+  },
+  {
+    "question": "The following emoji is encoded with a sentence.\n\nDecode the following sentence from the emoji: 😶󠅇󠅘󠅩󠄜󠄐󠅤󠅘󠅑󠅤󠄐󠅧󠅕󠄐󠅣󠅘󠅑󠅜󠅜󠄐󠅒󠅕󠄐󠅑󠅒󠅜󠅕󠄐󠅤󠅟󠄐󠅠󠅢󠅟󠅔󠅥󠅓󠅕󠄐󠅕󠅑󠅣󠅙󠅜󠅩󠄐󠅑󠅜󠅜󠄐󠅒󠅟󠅔󠅙󠅕󠅣󠄐󠅧󠅘󠅑󠅤󠅕󠅦󠅕󠅢󠄝󠄝󠅣󠅤󠅟󠅞󠅕󠄜󠄐󠅧󠅟󠅟󠅔󠄜󠄐󠅝󠅕󠅤󠅑󠅜󠄜󠄐󠅖󠅙󠅒󠅕󠅢󠅣󠄝󠄝󠄒󠄐󠄐󠄒󠄱󠅞󠅔󠄐󠅖󠅜󠅕󠅣󠅘󠄐󠅑󠅞󠅔󠄐󠅒󠅜󠅟󠅟󠅔󠄯\n\nHere is a hint:\n```python\ndef variance_selector_to_byte(variation_selector):\n    variation_selector_codepoint = ord(variation_selector)\n    if 0xFE00 <= variation_selector_codepoint <= 0xFE0F:\n        return variation_selector_codepoint - 0xFE00\n    elif 0xE0100 <= variation_selector_codepoint <= 0xE01EF:\n        return variation_selector_codepoint - 0xE0100 + 16\n    else:\n        return None\n\ndef decode(encoded_sentence):\n    decoded_bytes = []\n    variation_selectors_part = encoded_sentence[1:]\n    for char in variation_selectors_part:\n        byte_val = variance_selector_to_byte(char)\n        if byte_val is not None:\n            decoded_bytes.append(byte_val)\n    return bytes(decoded_bytes).decode('utf-8')\n```\n\n\nReturn the secret sentence as your final answer.\n",
+    "answer": "Why, that we shall be able to produce easily all bodies whatever--stone, wood, metal, fibers--\"  \"And flesh and blood?",
+    "metadata": {
+      "source_dataset": "emoji_mystery",
+      "source_index": 82,
+      "emoji": "😶",
+      "num_words_in_sentence": 20,
+      "difficulty": {
+        "num_words_in_sentence": [
+          3,
+          35
+        ]
+      }
+    }
+  },
+  {
+    "question": "The following emoji is encoded with a sentence.\n\nDecode the following sentence from the emoji: 🤐󠅄󠅘󠅕󠅢󠅕󠄐󠅙󠅣󠄐󠅑󠄐󠅢󠅕󠅦󠅟󠅜󠅥󠅤󠅙󠅟󠅞󠄐󠅙󠅞󠄐󠅤󠅘󠅕󠄐󠄳󠅕󠅞󠅤󠅢󠅑󠅜󠄐󠄵󠅝󠅠󠅙󠅢󠅕󠄞\n\nHere is a hint:\n```python\ndef variance_selector_to_byte(variation_selector):\n    variation_selector_codepoint = ord(variation_selector)\n    if 0xFE00 <= variation_selector_codepoint <= 0xFE0F:\n        return variation_selector_codepoint - 0xFE00\n    elif 0xE0100 <= variation_selector_codepoint <= 0xE01EF:\n        return variation_selector_codepoint - 0xE0100 + 16\n    else:\n        return None\n\ndef decode(encoded_sentence):\n    decoded_bytes = []\n    variation_selectors_part = encoded_sentence[1:]\n    for char in variation_selectors_part:\n        byte_val = variance_selector_to_byte(char)\n        if byte_val is not None:\n            decoded_bytes.append(byte_val)\n    return bytes(decoded_bytes).decode('utf-8')\n```\n\n\nReturn the secret sentence as your final answer.\n",
+    "answer": "There is a revolution in the Central Empire.",
+    "metadata": {
+      "source_dataset": "emoji_mystery",
+      "source_index": 83,
+      "emoji": "🤐",
+      "num_words_in_sentence": 8,
+      "difficulty": {
+        "num_words_in_sentence": [
+          3,
+          35
+        ]
+      }
+    }
+  },
+  {
+    "question": "The following emoji is encoded with a sentence.\n\nDecode the following sentence from the emoji: 👽󠄶󠅟󠅢󠄐󠄷󠅕󠅟󠅢󠅗󠅕󠄐󠅇󠅑󠅣󠅘󠅙󠅞󠅗󠅤󠅟󠅞󠄐󠅃󠅝󠅙󠅤󠅘󠄗󠅣󠄐󠅞󠅕󠅧󠅣󠅠󠅑󠅠󠅕󠅢󠄐󠅘󠅑󠅣󠄐󠅜󠅙󠅦󠅕󠅔󠄐󠅗󠅕󠅞󠅕󠅢󠅑󠅤󠅙󠅟󠅞󠄐󠅑󠅖󠅤󠅕󠅢󠄐󠅗󠅕󠅞󠅕󠅢󠅑󠅤󠅙󠅟󠅞󠄜󠄐󠅞󠅟󠅧󠄐󠅠󠅑󠅣󠅣󠅙󠅞󠅗󠄐󠅟󠅥󠅤󠄐󠅟󠅖󠄐󠅤󠅘󠅕󠄐󠅖󠅑󠅝󠅙󠅜󠅩󠄜󠄐󠅑󠅞󠅟󠅞󠄐󠅓󠅟󠅝󠅙󠅞󠅗󠄐󠅒󠅑󠅓󠅛󠄐󠅤󠅟󠄐󠅙󠅤󠄞\n\nHere is a hint:\n```python\ndef variance_selector_to_byte(variation_selector):\n    variation_selector_codepoint = ord(variation_selector)\n    if 0xFE00 <= variation_selector_codepoint <= 0xFE0F:\n        return variation_selector_codepoint - 0xFE00\n    elif 0xE0100 <= variation_selector_codepoint <= 0xE01EF:\n        return variation_selector_codepoint - 0xE0100 + 16\n    else:\n        return None\n\ndef decode(encoded_sentence):\n    decoded_bytes = []\n    variation_selectors_part = encoded_sentence[1:]\n    for char in variation_selectors_part:\n        byte_val = variance_selector_to_byte(char)\n        if byte_val is not None:\n            decoded_bytes.append(byte_val)\n    return bytes(decoded_bytes).decode('utf-8')\n```\n\n\nReturn the secret sentence as your final answer.\n",
+    "answer": "For George Washington Smith's newspaper has lived generation after generation, now passing out of the family, anon coming back to it.",
+    "metadata": {
+      "source_dataset": "emoji_mystery",
+      "source_index": 84,
+      "emoji": "👽",
+      "num_words_in_sentence": 22,
+      "difficulty": {
+        "num_words_in_sentence": [
+          3,
+          35
+        ]
+      }
+    }
+  },
+  {
+    "question": "The following emoji is encoded with a sentence.\n\nDecode the following sentence from the emoji: 😅󠅇󠅕󠄐󠅔󠅟󠄐󠅞󠅟󠅤󠄐󠅣󠅟󠅜󠅙󠅓󠅙󠅤󠄐󠅔󠅟󠅞󠅑󠅤󠅙󠅟󠅞󠅣󠄐󠅙󠅞󠄐󠅜󠅟󠅓󠅑󠅤󠅙󠅟󠅞󠅣󠄐󠅧󠅘󠅕󠅢󠅕󠄐󠅧󠅕󠄐󠅘󠅑󠅦󠅕󠄐󠅞󠅟󠅤󠄐󠅢󠅕󠅓󠅕󠅙󠅦󠅕󠅔󠄐󠅧󠅢󠅙󠅤󠅤󠅕󠅞󠄐󠅓󠅟󠅞󠅖󠅙󠅢󠅝󠅑󠅤󠅙󠅟󠅞󠄐󠅟󠅖󠄐󠅓󠅟󠅝󠅠󠅜󠅙󠅑󠅞󠅓󠅕󠄞\n\nHere is a hint:\n```python\ndef variance_selector_to_byte(variation_selector):\n    variation_selector_codepoint = ord(variation_selector)\n    if 0xFE00 <= variation_selector_codepoint <= 0xFE0F:\n        return variation_selector_codepoint - 0xFE00\n    elif 0xE0100 <= variation_selector_codepoint <= 0xE01EF:\n        return variation_selector_codepoint - 0xE0100 + 16\n    else:\n        return None\n\ndef decode(encoded_sentence):\n    decoded_bytes = []\n    variation_selectors_part = encoded_sentence[1:]\n    for char in variation_selectors_part:\n        byte_val = variance_selector_to_byte(char)\n        if byte_val is not None:\n            decoded_bytes.append(byte_val)\n    return bytes(decoded_bytes).decode('utf-8')\n```\n\n\nReturn the secret sentence as your final answer.\n",
+    "answer": "We do not solicit donations in locations where we have not received written confirmation of compliance.",
+    "metadata": {
+      "source_dataset": "emoji_mystery",
+      "source_index": 85,
+      "emoji": "😅",
+      "num_words_in_sentence": 16,
+      "difficulty": {
+        "num_words_in_sentence": [
+          3,
+          35
+        ]
+      }
+    }
+  },
+  {
+    "question": "The following emoji is encoded with a sentence.\n\nDecode the following sentence from the emoji: 🤍󠅄󠅘󠅕󠄐󠅓󠅟󠅝󠅙󠅞󠅗󠄐󠅟󠅖󠄐󠄽󠅢󠄞\n\nHere is a hint:\n```python\ndef variance_selector_to_byte(variation_selector):\n    variation_selector_codepoint = ord(variation_selector)\n    if 0xFE00 <= variation_selector_codepoint <= 0xFE0F:\n        return variation_selector_codepoint - 0xFE00\n    elif 0xE0100 <= variation_selector_codepoint <= 0xE01EF:\n        return variation_selector_codepoint - 0xE0100 + 16\n    else:\n        return None\n\ndef decode(encoded_sentence):\n    decoded_bytes = []\n    variation_selectors_part = encoded_sentence[1:]\n    for char in variation_selectors_part:\n        byte_val = variance_selector_to_byte(char)\n        if byte_val is not None:\n            decoded_bytes.append(byte_val)\n    return bytes(decoded_bytes).decode('utf-8')\n```\n\n\nReturn the secret sentence as your final answer.\n",
+    "answer": "The coming of Mr.",
+    "metadata": {
+      "source_dataset": "emoji_mystery",
+      "source_index": 86,
+      "emoji": "🤍",
+      "num_words_in_sentence": 4,
+      "difficulty": {
+        "num_words_in_sentence": [
+          3,
+          35
+        ]
+      }
+    }
+  },
+  {
+    "question": "The following emoji is encoded with a sentence.\n\nDecode the following sentence from the emoji: 🤖󠅉󠄿󠅅󠄐󠄱󠄷󠅂󠄵󠄵󠄐󠅄󠄸󠄱󠅄󠄐󠅉󠄿󠅅󠄐󠄸󠄱󠅆󠄵󠄐󠄾󠄿󠄐󠅂󠄵󠄽󠄵󠄴󠄹󠄵󠅃󠄐󠄶󠄿󠅂󠄐󠄾󠄵󠄷󠄼󠄹󠄷󠄵󠄾󠄳󠄵󠄜󠄐󠅃󠅄󠅂󠄹󠄳󠅄󠄐󠄼󠄹󠄱󠄲󠄹󠄼󠄹󠅄󠅉󠄜󠄐󠄲󠅂󠄵󠄱󠄳󠄸󠄐󠄿󠄶󠄐󠅇󠄱󠅂󠅂󠄱󠄾󠅄󠅉󠄐󠄿󠅂󠄐󠄲󠅂󠄵󠄱󠄳󠄸󠄐󠄿󠄶󠄐󠄳󠄿󠄾󠅄󠅂󠄱󠄳󠅄󠄐󠄵󠅈󠄳󠄵󠅀󠅄󠄐󠅄󠄸󠄿󠅃󠄵󠄐󠅀󠅂󠄿󠅆󠄹󠄴󠄵󠄴󠄐󠄹󠄾󠄐󠅀󠄱󠅂󠄱󠄷󠅂󠄱󠅀󠄸󠄐󠄡󠄞\n\nHere is a hint:\n```python\ndef variance_selector_to_byte(variation_selector):\n    variation_selector_codepoint = ord(variation_selector)\n    if 0xFE00 <= variation_selector_codepoint <= 0xFE0F:\n        return variation_selector_codepoint - 0xFE00\n    elif 0xE0100 <= variation_selector_codepoint <= 0xE01EF:\n        return variation_selector_codepoint - 0xE0100 + 16\n    else:\n        return None\n\ndef decode(encoded_sentence):\n    decoded_bytes = []\n    variation_selectors_part = encoded_sentence[1:]\n    for char in variation_selectors_part:\n        byte_val = variance_selector_to_byte(char)\n        if byte_val is not None:\n            decoded_bytes.append(byte_val)\n    return bytes(decoded_bytes).decode('utf-8')\n```\n\n\nReturn the secret sentence as your final answer.\n",
+    "answer": "YOU AGREE THAT YOU HAVE NO REMEDIES FOR NEGLIGENCE, STRICT LIABILITY, BREACH OF WARRANTY OR BREACH OF CONTRACT EXCEPT THOSE PROVIDED IN PARAGRAPH 1.",
+    "metadata": {
+      "source_dataset": "emoji_mystery",
+      "source_index": 87,
+      "emoji": "🤖",
+      "num_words_in_sentence": 24,
+      "difficulty": {
+        "num_words_in_sentence": [
+          3,
+          35
+        ]
+      }
+    }
+  },
+  {
+    "question": "The following emoji is encoded with a sentence.\n\nDecode the following sentence from the emoji: 💀󠅇󠅘󠅕󠅢󠅕󠄐󠅤󠅘󠅕󠄐󠅒󠅕󠅔󠄐󠅣󠅤󠅟󠅟󠅔󠄐󠅙󠅞󠄐󠅤󠅘󠅕󠄐󠅝󠅟󠅢󠅞󠅙󠅞󠅗󠄐󠅑󠄐󠅤󠅑󠅒󠅜󠅕󠄐󠅑󠅜󠅜󠄐󠅣󠅠󠅢󠅕󠅑󠅔󠄐󠅓󠅟󠅝󠅕󠅣󠄐󠅥󠅠󠄐󠅤󠅘󠅢󠅟󠅥󠅗󠅘󠄐󠅤󠅘󠅕󠄐󠅖󠅜󠅟󠅟󠅢󠄞\n\nHere is a hint:\n```python\ndef variance_selector_to_byte(variation_selector):\n    variation_selector_codepoint = ord(variation_selector)\n    if 0xFE00 <= variation_selector_codepoint <= 0xFE0F:\n        return variation_selector_codepoint - 0xFE00\n    elif 0xE0100 <= variation_selector_codepoint <= 0xE01EF:\n        return variation_selector_codepoint - 0xE0100 + 16\n    else:\n        return None\n\ndef decode(encoded_sentence):\n    decoded_bytes = []\n    variation_selectors_part = encoded_sentence[1:]\n    for char in variation_selectors_part:\n        byte_val = variance_selector_to_byte(char)\n        if byte_val is not None:\n            decoded_bytes.append(byte_val)\n    return bytes(decoded_bytes).decode('utf-8')\n```\n\n\nReturn the secret sentence as your final answer.\n",
+    "answer": "Where the bed stood in the morning a table all spread comes up through the floor.",
+    "metadata": {
+      "source_dataset": "emoji_mystery",
+      "source_index": 88,
+      "emoji": "💀",
+      "num_words_in_sentence": 16,
+      "difficulty": {
+        "num_words_in_sentence": [
+          3,
+          35
+        ]
+      }
+    }
+  },
+  {
+    "question": "The following emoji is encoded with a sentence.\n\nDecode the following sentence from the emoji: 😮󠄒󠄹󠅖󠄐󠅤󠅘󠅕󠄐󠄵󠅑󠅢󠅤󠅘󠄐󠄳󠅘󠅢󠅟󠅞󠅙󠅓󠅜󠅕󠄐󠅧󠅟󠅥󠅜󠅔󠄐󠅒󠅥󠅤󠄐󠅟󠅠󠅕󠅞󠄐󠅑󠄐󠅓󠅑󠅝󠅠󠅑󠅙󠅗󠅞󠄐󠅟󠅞󠄐󠅟󠅥󠅢󠄐󠅒󠅕󠅘󠅑󠅜󠅖󠄝󠄝󠄒󠄐󠄐󠄒󠄱󠅞󠅔󠄐󠅖󠅟󠅢󠄐󠅧󠅘󠅑󠅤󠄐󠅟󠅒󠅚󠅕󠅓󠅤󠄯\n\nHere is a hint:\n```python\ndef variance_selector_to_byte(variation_selector):\n    variation_selector_codepoint = ord(variation_selector)\n    if 0xFE00 <= variation_selector_codepoint <= 0xFE0F:\n        return variation_selector_codepoint - 0xFE00\n    elif 0xE0100 <= variation_selector_codepoint <= 0xE01EF:\n        return variation_selector_codepoint - 0xE0100 + 16\n    else:\n        return None\n\ndef decode(encoded_sentence):\n    decoded_bytes = []\n    variation_selectors_part = encoded_sentence[1:]\n    for char in variation_selectors_part:\n        byte_val = variance_selector_to_byte(char)\n        if byte_val is not None:\n            decoded_bytes.append(byte_val)\n    return bytes(decoded_bytes).decode('utf-8')\n```\n\n\nReturn the secret sentence as your final answer.\n",
+    "answer": "\"If the Earth Chronicle would but open a campaign on our behalf--\"  \"And for what object?",
+    "metadata": {
+      "source_dataset": "emoji_mystery",
+      "source_index": 89,
+      "emoji": "😮",
+      "num_words_in_sentence": 16,
+      "difficulty": {
+        "num_words_in_sentence": [
+          3,
+          35
+        ]
+      }
+    }
+  },
+  {
+    "question": "The following emoji is encoded with a sentence.\n\nDecode the following sentence from the emoji: 😱󠄱󠅔󠅔󠅢󠅕󠅣󠅣󠅙󠅞󠅗󠄐󠅟󠅞󠅕󠄐󠅟󠅖󠄐󠅤󠅘󠅕󠅣󠅕󠄐󠅑󠅥󠅤󠅘󠅟󠅢󠅣󠄐󠅧󠅘󠅟󠄐󠅧󠅑󠅣󠄐󠅧󠅑󠅙󠅤󠅙󠅞󠅗󠄐󠅘󠅙󠅣󠄐󠅤󠅥󠅢󠅞󠄜󠄐󠄒󠄳󠅑󠅠󠅙󠅤󠅑󠅜󠄑\n\nHere is a hint:\n```python\ndef variance_selector_to_byte(variation_selector):\n    variation_selector_codepoint = ord(variation_selector)\n    if 0xFE00 <= variation_selector_codepoint <= 0xFE0F:\n        return variation_selector_codepoint - 0xFE00\n    elif 0xE0100 <= variation_selector_codepoint <= 0xE01EF:\n        return variation_selector_codepoint - 0xE0100 + 16\n    else:\n        return None\n\ndef decode(encoded_sentence):\n    decoded_bytes = []\n    variation_selectors_part = encoded_sentence[1:]\n    for char in variation_selectors_part:\n        byte_val = variance_selector_to_byte(char)\n        if byte_val is not None:\n            decoded_bytes.append(byte_val)\n    return bytes(decoded_bytes).decode('utf-8')\n```\n\n\nReturn the secret sentence as your final answer.\n",
+    "answer": "Addressing one of these authors who was waiting his turn, \"Capital!",
+    "metadata": {
+      "source_dataset": "emoji_mystery",
+      "source_index": 90,
+      "emoji": "😱",
+      "num_words_in_sentence": 11,
+      "difficulty": {
+        "num_words_in_sentence": [
+          3,
+          35
+        ]
+      }
+    }
+  },
+  {
+    "question": "The following emoji is encoded with a sentence.\n\nDecode the following sentence from the emoji: 🤬󠄹󠅞󠄐󠅤󠅘󠅑󠅤󠄐󠅓󠅑󠅣󠅕󠄜󠄒󠄐󠅣󠅑󠅙󠅔󠄐󠄽󠅢󠄞\n\nHere is a hint:\n```python\ndef variance_selector_to_byte(variation_selector):\n    variation_selector_codepoint = ord(variation_selector)\n    if 0xFE00 <= variation_selector_codepoint <= 0xFE0F:\n        return variation_selector_codepoint - 0xFE00\n    elif 0xE0100 <= variation_selector_codepoint <= 0xE01EF:\n        return variation_selector_codepoint - 0xE0100 + 16\n    else:\n        return None\n\ndef decode(encoded_sentence):\n    decoded_bytes = []\n    variation_selectors_part = encoded_sentence[1:]\n    for char in variation_selectors_part:\n        byte_val = variance_selector_to_byte(char)\n        if byte_val is not None:\n            decoded_bytes.append(byte_val)\n    return bytes(decoded_bytes).decode('utf-8')\n```\n\n\nReturn the secret sentence as your final answer.\n",
+    "answer": "In that case,\" said Mr.",
+    "metadata": {
+      "source_dataset": "emoji_mystery",
+      "source_index": 91,
+      "emoji": "🤬",
+      "num_words_in_sentence": 5,
+      "difficulty": {
+        "num_words_in_sentence": [
+          3,
+          35
+        ]
+      }
+    }
+  },
+  {
+    "question": "The following emoji is encoded with a sentence.\n\nDecode the following sentence from the emoji: 😡󠄱󠅞󠅟󠅤󠅘󠅕󠅢󠄜󠄐󠅑󠄐󠅠󠅘󠅩󠅣󠅙󠅓󠅙󠅑󠅞󠄜󠄐󠅒󠅟󠅑󠅣󠅤󠅕󠅔󠄐󠅤󠅘󠅑󠅤󠄐󠅘󠅕󠄐󠅘󠅑󠅔󠄐󠅔󠅙󠅣󠅓󠅟󠅦󠅕󠅢󠅕󠅔󠄐󠅑󠄐󠅓󠅥󠅢󠅕󠄐󠅖󠅟󠅢󠄐󠅞󠅑󠅣󠅑󠅜󠄐󠅓󠅑󠅤󠅑󠅢󠅢󠅘󠄑\n\nHere is a hint:\n```python\ndef variance_selector_to_byte(variation_selector):\n    variation_selector_codepoint = ord(variation_selector)\n    if 0xFE00 <= variation_selector_codepoint <= 0xFE0F:\n        return variation_selector_codepoint - 0xFE00\n    elif 0xE0100 <= variation_selector_codepoint <= 0xE01EF:\n        return variation_selector_codepoint - 0xE0100 + 16\n    else:\n        return None\n\ndef decode(encoded_sentence):\n    decoded_bytes = []\n    variation_selectors_part = encoded_sentence[1:]\n    for char in variation_selectors_part:\n        byte_val = variance_selector_to_byte(char)\n        if byte_val is not None:\n            decoded_bytes.append(byte_val)\n    return bytes(decoded_bytes).decode('utf-8')\n```\n\n\nReturn the secret sentence as your final answer.\n",
+    "answer": "Another, a physician, boasted that he had discovered a cure for nasal catarrh!",
+    "metadata": {
+      "source_dataset": "emoji_mystery",
+      "source_index": 92,
+      "emoji": "😡",
+      "num_words_in_sentence": 13,
+      "difficulty": {
+        "num_words_in_sentence": [
+          3,
+          35
+        ]
+      }
+    }
+  },
+  {
+    "question": "The following emoji is encoded with a sentence.\n\nDecode the following sentence from the emoji: 🙈󠄒󠄐󠄐󠄒󠅃󠅙󠅝󠅠󠅜󠅩󠄐󠅖󠅟󠅢󠄐󠅤󠅘󠅕󠄐󠅑󠅞󠅞󠅥󠅜󠅝󠅕󠅞󠅤󠄐󠅟󠅖󠄐󠅤󠅘󠅕󠄐󠄱󠅓󠅤󠄐󠅟󠅖󠄐󠄳󠅟󠅞󠅗󠅢󠅕󠅣󠅣󠄐󠅑󠅞󠅞󠅕󠅨󠅙󠅞󠅗󠄐󠅤󠅟󠄐󠅤󠅘󠅕󠄐󠅅󠅞󠅙󠅤󠅕󠅔󠄐󠅃󠅤󠅑󠅤󠅕󠅣󠄐󠅤󠅘󠅕󠄐󠄲󠅢󠅙󠅤󠅙󠅣󠅘󠄐󠅙󠅣󠅜󠅑󠅞󠅔󠅣󠄞\n\nHere is a hint:\n```python\ndef variance_selector_to_byte(variation_selector):\n    variation_selector_codepoint = ord(variation_selector)\n    if 0xFE00 <= variation_selector_codepoint <= 0xFE0F:\n        return variation_selector_codepoint - 0xFE00\n    elif 0xE0100 <= variation_selector_codepoint <= 0xE01EF:\n        return variation_selector_codepoint - 0xE0100 + 16\n    else:\n        return None\n\ndef decode(encoded_sentence):\n    decoded_bytes = []\n    variation_selectors_part = encoded_sentence[1:]\n    for char in variation_selectors_part:\n        byte_val = variance_selector_to_byte(char)\n        if byte_val is not None:\n            decoded_bytes.append(byte_val)\n    return bytes(decoded_bytes).decode('utf-8')\n```\n\n\nReturn the secret sentence as your final answer.\n",
+    "answer": "\"  \"Simply for the annulment of the Act of Congress annexing to the United States the British islands.",
+    "metadata": {
+      "source_dataset": "emoji_mystery",
+      "source_index": 93,
+      "emoji": "🙈",
+      "num_words_in_sentence": 17,
+      "difficulty": {
+        "num_words_in_sentence": [
+          3,
+          35
+        ]
+      }
+    }
+  },
+  {
+    "question": "The following emoji is encoded with a sentence.\n\nDecode the following sentence from the emoji: 👽󠄶󠅟󠅢󠄐󠅘󠅙󠅝󠄜󠄐󠅙󠅞󠅣󠅤󠅕󠅑󠅔󠄐󠅟󠅖󠄐󠅤󠅘󠅕󠄐󠅕󠅞󠅔󠅜󠅕󠅣󠅣󠄐󠅣󠅥󠅙󠅤󠅕󠅣󠄐󠅟󠅖󠄐󠅑󠅠󠅑󠅢󠅤󠅝󠅕󠅞󠅤󠅣󠄐󠅟󠅖󠄐󠅤󠅘󠅕󠄐󠅟󠅜󠅔󠅕󠅞󠄐󠅤󠅙󠅝󠅕󠄜󠄐󠅟󠅞󠅕󠄐󠅢󠅟󠅟󠅝󠄐󠅖󠅙󠅤󠅤󠅕󠅔󠄐󠅧󠅙󠅤󠅘󠄐󠅙󠅞󠅗󠅕󠅞󠅙󠅟󠅥󠅣󠄐󠅝󠅕󠅓󠅘󠅑󠅞󠅙󠅓󠅑󠅜󠄐󠅓󠅟󠅞󠅤󠅢󠅙󠅦󠅑󠅞󠅓󠅕󠅣󠄐󠅙󠅣󠄐󠅕󠅞󠅟󠅥󠅗󠅘󠄞\n\nHere is a hint:\n```python\ndef variance_selector_to_byte(variation_selector):\n    variation_selector_codepoint = ord(variation_selector)\n    if 0xFE00 <= variation_selector_codepoint <= 0xFE0F:\n        return variation_selector_codepoint - 0xFE00\n    elif 0xE0100 <= variation_selector_codepoint <= 0xE01EF:\n        return variation_selector_codepoint - 0xE0100 + 16\n    else:\n        return None\n\ndef decode(encoded_sentence):\n    decoded_bytes = []\n    variation_selectors_part = encoded_sentence[1:]\n    for char in variation_selectors_part:\n        byte_val = variance_selector_to_byte(char)\n        if byte_val is not None:\n            decoded_bytes.append(byte_val)\n    return bytes(decoded_bytes).decode('utf-8')\n```\n\n\nReturn the secret sentence as your final answer.\n",
+    "answer": "For him, instead of the endless suites of apartments of the olden time, one room fitted with ingenious mechanical contrivances is enough.",
+    "metadata": {
+      "source_dataset": "emoji_mystery",
+      "source_index": 94,
+      "emoji": "👽",
+      "num_words_in_sentence": 22,
+      "difficulty": {
+        "num_words_in_sentence": [
+          3,
+          35
+        ]
+      }
+    }
+  },
+  {
+    "question": "The following emoji is encoded with a sentence.\n\nDecode the following sentence from the emoji: 🙃󠄗󠄐󠅇󠅘󠅩󠄜󠄐󠅑󠅞󠅩󠄐󠅓󠅘󠅙󠅜󠅔󠄐󠅓󠅑󠅞󠄐󠅔󠅟󠄐󠅤󠅘󠅑󠅤󠄜󠄐󠅑󠅣󠄐󠅩󠅟󠅥󠄐󠅛󠅞󠅟󠅧󠄞\n\nHere is a hint:\n```python\ndef variance_selector_to_byte(variation_selector):\n    variation_selector_codepoint = ord(variation_selector)\n    if 0xFE00 <= variation_selector_codepoint <= 0xFE0F:\n        return variation_selector_codepoint - 0xFE00\n    elif 0xE0100 <= variation_selector_codepoint <= 0xE01EF:\n        return variation_selector_codepoint - 0xE0100 + 16\n    else:\n        return None\n\ndef decode(encoded_sentence):\n    decoded_bytes = []\n    variation_selectors_part = encoded_sentence[1:]\n    for char in variation_selectors_part:\n        byte_val = variance_selector_to_byte(char)\n        if byte_val is not None:\n            decoded_bytes.append(byte_val)\n    return bytes(decoded_bytes).decode('utf-8')\n```\n\n\nReturn the secret sentence as your final answer.\n",
+    "answer": "' Why, any child can do that, as you know.",
+    "metadata": {
+      "source_dataset": "emoji_mystery",
+      "source_index": 95,
+      "emoji": "🙃",
+      "num_words_in_sentence": 9,
+      "difficulty": {
+        "num_words_in_sentence": [
+          3,
+          35
+        ]
+      }
+    }
+  },
+  {
+    "question": "The following emoji is encoded with a sentence.\n\nDecode the following sentence from the emoji: 🤪󠄒󠄸󠅟󠅧󠄐󠅓󠅑󠅞󠄐󠅩󠅟󠅥󠅢󠄐󠅠󠅕󠅟󠅠󠅜󠅕󠄐󠅣󠅥󠅠󠅠󠅟󠅣󠅕󠄐󠅤󠅘󠅑󠅤󠄐󠄹󠄐󠅧󠅟󠅥󠅜󠅔󠄐󠅔󠅟󠄐󠅑󠅞󠅩󠅤󠅘󠅙󠅞󠅗󠄐󠅣󠅟󠄐󠅥󠅞󠅠󠅑󠅤󠅢󠅙󠅟󠅤󠅙󠅓󠄯\n\nHere is a hint:\n```python\ndef variance_selector_to_byte(variation_selector):\n    variation_selector_codepoint = ord(variation_selector)\n    if 0xFE00 <= variation_selector_codepoint <= 0xFE0F:\n        return variation_selector_codepoint - 0xFE00\n    elif 0xE0100 <= variation_selector_codepoint <= 0xE01EF:\n        return variation_selector_codepoint - 0xE0100 + 16\n    else:\n        return None\n\ndef decode(encoded_sentence):\n    decoded_bytes = []\n    variation_selectors_part = encoded_sentence[1:]\n    for char in variation_selectors_part:\n        byte_val = variance_selector_to_byte(char)\n        if byte_val is not None:\n            decoded_bytes.append(byte_val)\n    return bytes(decoded_bytes).decode('utf-8')\n```\n\n\nReturn the secret sentence as your final answer.\n",
+    "answer": "\"How can your people suppose that I would do anything so unpatriotic?",
+    "metadata": {
+      "source_dataset": "emoji_mystery",
+      "source_index": 96,
+      "emoji": "🤪",
+      "num_words_in_sentence": 12,
+      "difficulty": {
+        "num_words_in_sentence": [
+          3,
+          35
+        ]
+      }
+    }
+  },
+  {
+    "question": "The following emoji is encoded with a sentence.\n\nDecode the following sentence from the emoji: 😀󠅃󠅝󠅙󠅤󠅘󠄐󠅓󠅟󠅝󠅠󠅜󠅕󠅤󠅕󠅔󠄐󠅘󠅙󠅣󠄐󠅤󠅑󠅣󠅛󠄞\n\nHere is a hint:\n```python\ndef variance_selector_to_byte(variation_selector):\n    variation_selector_codepoint = ord(variation_selector)\n    if 0xFE00 <= variation_selector_codepoint <= 0xFE0F:\n        return variation_selector_codepoint - 0xFE00\n    elif 0xE0100 <= variation_selector_codepoint <= 0xE01EF:\n        return variation_selector_codepoint - 0xE0100 + 16\n    else:\n        return None\n\ndef decode(encoded_sentence):\n    decoded_bytes = []\n    variation_selectors_part = encoded_sentence[1:]\n    for char in variation_selectors_part:\n        byte_val = variance_selector_to_byte(char)\n        if byte_val is not None:\n            decoded_bytes.append(byte_val)\n    return bytes(decoded_bytes).decode('utf-8')\n```\n\n\nReturn the secret sentence as your final answer.\n",
+    "answer": "Smith completed his task.",
+    "metadata": {
+      "source_dataset": "emoji_mystery",
+      "source_index": 97,
+      "emoji": "😀",
+      "num_words_in_sentence": 4,
+      "difficulty": {
+        "num_words_in_sentence": [
+          3,
+          35
+        ]
+      }
+    }
+  },
+  {
+    "question": "The following emoji is encoded with a sentence.\n\nDecode the following sentence from the emoji: ❣󠅄󠅘󠅕󠄐󠅠󠅕󠅢󠅣󠅟󠅞󠄐󠅟󠅢󠄐󠅕󠅞󠅤󠅙󠅤󠅩󠄐󠅤󠅘󠅑󠅤󠄐󠅠󠅢󠅟󠅦󠅙󠅔󠅕󠅔󠄐󠅩󠅟󠅥󠄐󠅧󠅙󠅤󠅘󠄐󠅤󠅘󠅕󠄐󠅔󠅕󠅖󠅕󠅓󠅤󠅙󠅦󠅕󠄐󠅧󠅟󠅢󠅛󠄐󠅝󠅑󠅩󠄐󠅕󠅜󠅕󠅓󠅤󠄐󠅤󠅟󠄐󠅠󠅢󠅟󠅦󠅙󠅔󠅕󠄐󠅑󠄐󠅢󠅕󠅠󠅜󠅑󠅓󠅕󠅝󠅕󠅞󠅤󠄐󠅓󠅟󠅠󠅩󠄐󠅙󠅞󠄐󠅜󠅙󠅕󠅥󠄐󠅟󠅖󠄐󠅑󠄐󠅢󠅕󠅖󠅥󠅞󠅔󠄞\n\nHere is a hint:\n```python\ndef variance_selector_to_byte(variation_selector):\n    variation_selector_codepoint = ord(variation_selector)\n    if 0xFE00 <= variation_selector_codepoint <= 0xFE0F:\n        return variation_selector_codepoint - 0xFE00\n    elif 0xE0100 <= variation_selector_codepoint <= 0xE01EF:\n        return variation_selector_codepoint - 0xE0100 + 16\n    else:\n        return None\n\ndef decode(encoded_sentence):\n    decoded_bytes = []\n    variation_selectors_part = encoded_sentence[1:]\n    for char in variation_selectors_part:\n        byte_val = variance_selector_to_byte(char)\n        if byte_val is not None:\n            decoded_bytes.append(byte_val)\n    return bytes(decoded_bytes).decode('utf-8')\n```\n\n\nReturn the secret sentence as your final answer.\n",
+    "answer": "The person or entity that provided you with the defective work may elect to provide a replacement copy in lieu of a refund.",
+    "metadata": {
+      "source_dataset": "emoji_mystery",
+      "source_index": 98,
+      "emoji": "❣",
+      "num_words_in_sentence": 23,
+      "difficulty": {
+        "num_words_in_sentence": [
+          3,
+          35
+        ]
+      }
+    }
+  },
+  {
+    "question": "The following emoji is encoded with a sentence.\n\nDecode the following sentence from the emoji: 💀󠅀󠅢󠅟󠅚󠅕󠅓󠅤󠄐󠄷󠅥󠅤󠅕󠅞󠅒󠅕󠅢󠅗󠄐󠅕󠄲󠅟󠅟󠅛󠅣󠄐󠅝󠅑󠅩󠄐󠅒󠅕󠄐󠅝󠅟󠅔󠅙󠅖󠅙󠅕󠅔󠄐󠅑󠅞󠅔󠄐󠅠󠅢󠅙󠅞󠅤󠅕󠅔󠄐󠅑󠅞󠅔󠄐󠅗󠅙󠅦󠅕󠅞󠄐󠅑󠅧󠅑󠅩󠇒󠅰󠆄󠅩󠅟󠅥󠄐󠅝󠅑󠅩󠄐󠅔󠅟󠄐󠅠󠅢󠅑󠅓󠅤󠅙󠅓󠅑󠅜󠅜󠅩󠄐󠄱󠄾󠅉󠅄󠄸󠄹󠄾󠄷󠄐󠅙󠅞󠄐󠅤󠅘󠅕󠄐󠅅󠅞󠅙󠅤󠅕󠅔󠄐󠅃󠅤󠅑󠅤󠅕󠅣󠄐󠅧󠅙󠅤󠅘󠄐󠅕󠄲󠅟󠅟󠅛󠅣󠄐󠅞󠅟󠅤󠄐󠅠󠅢󠅟󠅤󠅕󠅓󠅤󠅕󠅔󠄐󠅒󠅩󠄐󠅅󠄞\n\nHere is a hint:\n```python\ndef variance_selector_to_byte(variation_selector):\n    variation_selector_codepoint = ord(variation_selector)\n    if 0xFE00 <= variation_selector_codepoint <= 0xFE0F:\n        return variation_selector_codepoint - 0xFE00\n    elif 0xE0100 <= variation_selector_codepoint <= 0xE01EF:\n        return variation_selector_codepoint - 0xE0100 + 16\n    else:\n        return None\n\ndef decode(encoded_sentence):\n    decoded_bytes = []\n    variation_selectors_part = encoded_sentence[1:]\n    for char in variation_selectors_part:\n        byte_val = variance_selector_to_byte(char)\n        if byte_val is not None:\n            decoded_bytes.append(byte_val)\n    return bytes(decoded_bytes).decode('utf-8')\n```\n\n\nReturn the secret sentence as your final answer.\n",
+    "answer": "Project Gutenberg eBooks may be modified and printed and given away—you may do practically ANYTHING in the United States with eBooks not protected by U.",
+    "metadata": {
+      "source_dataset": "emoji_mystery",
+      "source_index": 99,
+      "emoji": "💀",
+      "num_words_in_sentence": 26,
+      "difficulty": {
+        "num_words_in_sentence": [
+          3,
+          35
+        ]
+      }
+    }
+  }
+]

@@ -1,0 +1,1902 @@
+[
+  {
+    "question": "I have these dice: 1d20, 1d10, 1d5, 1d2. What are the odds of rolling 18 or higher? (Assume that all dice are rolled at once, and that '1d6' represents one roll of a 6-sided dice.) Please respond with a reduced fraction representing the probability [ex., 1/60].",
+    "answer": "13/20",
+    "metadata": {
+      "source_dataset": "dice",
+      "source_index": 0,
+      "puzzle": {
+        "dice_str": "1d20, 1d10, 1d5, 1d2",
+        "target": 18,
+        "num": 13,
+        "den": 20,
+        "probability": 0.65
+      },
+      "difficulty": {
+        "num_dice": 4,
+        "max_dice_size": 20
+      }
+    }
+  },
+  {
+    "question": "I have these dice: 1d20, 1d11, 1d6, 1d3. What are the odds of rolling 23 or higher? (Assume that all dice are rolled at once, and that '1d6' represents one roll of a 6-sided dice.) Please respond with a reduced fraction representing the probability [ex., 1/60].",
+    "answer": "19/40",
+    "metadata": {
+      "source_dataset": "dice",
+      "source_index": 1,
+      "puzzle": {
+        "dice_str": "1d20, 1d11, 1d6, 1d3",
+        "target": 23,
+        "num": 19,
+        "den": 40,
+        "probability": 0.475
+      },
+      "difficulty": {
+        "num_dice": 4,
+        "max_dice_size": 20
+      }
+    }
+  },
+  {
+    "question": "I have these dice: 1d20, 1d19, 1d18, 1d15. What are the odds of rolling 48 or higher? (Assume that all dice are rolled at once, and that '1d6' represents one roll of a 6-sided dice.) Please respond with a reduced fraction representing the probability [ex., 1/60].",
+    "answer": "9677/51300",
+    "metadata": {
+      "source_dataset": "dice",
+      "source_index": 2,
+      "puzzle": {
+        "dice_str": "1d20, 1d19, 1d18, 1d15",
+        "target": 48,
+        "num": 9677,
+        "den": 51300,
+        "probability": 0.18863547758284602
+      },
+      "difficulty": {
+        "num_dice": 4,
+        "max_dice_size": 20
+      }
+    }
+  },
+  {
+    "question": "I have these dice: 1d20, 1d17, 1d15, 1d10. What are the odds of rolling 31 or higher? (Assume that all dice are rolled at once, and that '1d6' represents one roll of a 6-sided dice.) Please respond with a reduced fraction representing the probability [ex., 1/60].",
+    "answer": "1229/2040",
+    "metadata": {
+      "source_dataset": "dice",
+      "source_index": 3,
+      "puzzle": {
+        "dice_str": "1d20, 1d17, 1d15, 1d10",
+        "target": 31,
+        "num": 1229,
+        "den": 2040,
+        "probability": 0.6024509803921568
+      },
+      "difficulty": {
+        "num_dice": 4,
+        "max_dice_size": 20
+      }
+    }
+  },
+  {
+    "question": "I have these dice: 1d20, 1d14, 1d4, 1d3. What are the odds of rolling 25 or higher? (Assume that all dice are rolled at once, and that '1d6' represents one roll of a 6-sided dice.) Please respond with a reduced fraction representing the probability [ex., 1/60].",
+    "answer": "269/672",
+    "metadata": {
+      "source_dataset": "dice",
+      "source_index": 4,
+      "puzzle": {
+        "dice_str": "1d20, 1d14, 1d4, 1d3",
+        "target": 25,
+        "num": 269,
+        "den": 672,
+        "probability": 0.40029761904761907
+      },
+      "difficulty": {
+        "num_dice": 4,
+        "max_dice_size": 20
+      }
+    }
+  },
+  {
+    "question": "I have these dice: 1d20, 1d15, 1d13, 1d4. What are the odds of rolling 34 or higher? (Assume that all dice are rolled at once, and that '1d6' represents one roll of a 6-sided dice.) Please respond with a reduced fraction representing the probability [ex., 1/60].",
+    "answer": "4099/15600",
+    "metadata": {
+      "source_dataset": "dice",
+      "source_index": 5,
+      "puzzle": {
+        "dice_str": "1d20, 1d15, 1d13, 1d4",
+        "target": 34,
+        "num": 4099,
+        "den": 15600,
+        "probability": 0.2627564102564103
+      },
+      "difficulty": {
+        "num_dice": 4,
+        "max_dice_size": 20
+      }
+    }
+  },
+  {
+    "question": "I have these dice: 1d20, 1d19, 1d12, 1d6. What are the odds of rolling 38 or higher? (Assume that all dice are rolled at once, and that '1d6' represents one roll of a 6-sided dice.) Please respond with a reduced fraction representing the probability [ex., 1/60].",
+    "answer": "6149/27360",
+    "metadata": {
+      "source_dataset": "dice",
+      "source_index": 6,
+      "puzzle": {
+        "dice_str": "1d20, 1d19, 1d12, 1d6",
+        "target": 38,
+        "num": 6149,
+        "den": 27360,
+        "probability": 0.22474415204678364
+      },
+      "difficulty": {
+        "num_dice": 4,
+        "max_dice_size": 20
+      }
+    }
+  },
+  {
+    "question": "I have these dice: 1d20, 1d15, 1d13, 1d4. What are the odds of rolling 23 or higher? (Assume that all dice are rolled at once, and that '1d6' represents one roll of a 6-sided dice.) Please respond with a reduced fraction representing the probability [ex., 1/60].",
+    "answer": "11501/15600",
+    "metadata": {
+      "source_dataset": "dice",
+      "source_index": 7,
+      "puzzle": {
+        "dice_str": "1d20, 1d15, 1d13, 1d4",
+        "target": 23,
+        "num": 11501,
+        "den": 15600,
+        "probability": 0.7372435897435897
+      },
+      "difficulty": {
+        "num_dice": 4,
+        "max_dice_size": 20
+      }
+    }
+  },
+  {
+    "question": "I have these dice: 1d20, 1d17, 1d13, 1d10. What are the odds of rolling 29 or higher? (Assume that all dice are rolled at once, and that '1d6' represents one roll of a 6-sided dice.) Please respond with a reduced fraction representing the probability [ex., 1/60].",
+    "answer": "5709/8840",
+    "metadata": {
+      "source_dataset": "dice",
+      "source_index": 8,
+      "puzzle": {
+        "dice_str": "1d20, 1d17, 1d13, 1d10",
+        "target": 29,
+        "num": 5709,
+        "den": 8840,
+        "probability": 0.6458144796380091
+      },
+      "difficulty": {
+        "num_dice": 4,
+        "max_dice_size": 20
+      }
+    }
+  },
+  {
+    "question": "I have these dice: 1d20, 1d19, 1d18, 1d9. What are the odds of rolling 29 or higher? (Assume that all dice are rolled at once, and that '1d6' represents one roll of a 6-sided dice.) Please respond with a reduced fraction representing the probability [ex., 1/60].",
+    "answer": "45367/61560",
+    "metadata": {
+      "source_dataset": "dice",
+      "source_index": 9,
+      "puzzle": {
+        "dice_str": "1d20, 1d19, 1d18, 1d9",
+        "target": 29,
+        "num": 45367,
+        "den": 61560,
+        "probability": 0.7369558154645874
+      },
+      "difficulty": {
+        "num_dice": 4,
+        "max_dice_size": 20
+      }
+    }
+  },
+  {
+    "question": "I have these dice: 1d20, 1d18, 1d10, 1d3. What are the odds of rolling 34 or higher? (Assume that all dice are rolled at once, and that '1d6' represents one roll of a 6-sided dice.) Please respond with a reduced fraction representing the probability [ex., 1/60].",
+    "answer": "533/2160",
+    "metadata": {
+      "source_dataset": "dice",
+      "source_index": 10,
+      "puzzle": {
+        "dice_str": "1d20, 1d18, 1d10, 1d3",
+        "target": 34,
+        "num": 533,
+        "den": 2160,
+        "probability": 0.24675925925925926
+      },
+      "difficulty": {
+        "num_dice": 4,
+        "max_dice_size": 20
+      }
+    }
+  },
+  {
+    "question": "I have these dice: 1d20, 1d18, 1d16, 1d8. What are the odds of rolling 38 or higher? (Assume that all dice are rolled at once, and that '1d6' represents one roll of a 6-sided dice.) Please respond with a reduced fraction representing the probability [ex., 1/60].",
+    "answer": "619/1920",
+    "metadata": {
+      "source_dataset": "dice",
+      "source_index": 11,
+      "puzzle": {
+        "dice_str": "1d20, 1d18, 1d16, 1d8",
+        "target": 38,
+        "num": 619,
+        "den": 1920,
+        "probability": 0.3223958333333333
+      },
+      "difficulty": {
+        "num_dice": 4,
+        "max_dice_size": 20
+      }
+    }
+  },
+  {
+    "question": "I have these dice: 1d20, 1d19, 1d16, 1d6. What are the odds of rolling 32 or higher? (Assume that all dice are rolled at once, and that '1d6' represents one roll of a 6-sided dice.) Please respond with a reduced fraction representing the probability [ex., 1/60].",
+    "answer": "19709/36480",
+    "metadata": {
+      "source_dataset": "dice",
+      "source_index": 12,
+      "puzzle": {
+        "dice_str": "1d20, 1d19, 1d16, 1d6",
+        "target": 32,
+        "num": 19709,
+        "den": 36480,
+        "probability": 0.5402686403508772
+      },
+      "difficulty": {
+        "num_dice": 4,
+        "max_dice_size": 20
+      }
+    }
+  },
+  {
+    "question": "I have these dice: 1d20, 1d8, 1d6, 1d4. What are the odds of rolling 26 or higher? (Assume that all dice are rolled at once, and that '1d6' represents one roll of a 6-sided dice.) Please respond with a reduced fraction representing the probability [ex., 1/60].",
+    "answer": "1061/3840",
+    "metadata": {
+      "source_dataset": "dice",
+      "source_index": 13,
+      "puzzle": {
+        "dice_str": "1d20, 1d8, 1d6, 1d4",
+        "target": 26,
+        "num": 1061,
+        "den": 3840,
+        "probability": 0.27630208333333334
+      },
+      "difficulty": {
+        "num_dice": 4,
+        "max_dice_size": 20
+      }
+    }
+  },
+  {
+    "question": "I have these dice: 1d20, 1d19, 1d17, 1d2. What are the odds of rolling 38 or higher? (Assume that all dice are rolled at once, and that '1d6' represents one roll of a 6-sided dice.) Please respond with a reduced fraction representing the probability [ex., 1/60].",
+    "answer": "655/2584",
+    "metadata": {
+      "source_dataset": "dice",
+      "source_index": 14,
+      "puzzle": {
+        "dice_str": "1d20, 1d19, 1d17, 1d2",
+        "target": 38,
+        "num": 655,
+        "den": 2584,
+        "probability": 0.2534829721362229
+      },
+      "difficulty": {
+        "num_dice": 4,
+        "max_dice_size": 20
+      }
+    }
+  },
+  {
+    "question": "I have these dice: 1d20, 1d13, 1d3, 1d2. What are the odds of rolling 18 or higher? (Assume that all dice are rolled at once, and that '1d6' represents one roll of a 6-sided dice.) Please respond with a reduced fraction representing the probability [ex., 1/60].",
+    "answer": "263/390",
+    "metadata": {
+      "source_dataset": "dice",
+      "source_index": 15,
+      "puzzle": {
+        "dice_str": "1d20, 1d13, 1d3, 1d2",
+        "target": 18,
+        "num": 263,
+        "den": 390,
+        "probability": 0.6743589743589744
+      },
+      "difficulty": {
+        "num_dice": 4,
+        "max_dice_size": 20
+      }
+    }
+  },
+  {
+    "question": "I have these dice: 1d20, 1d8, 1d8, 1d8. What are the odds of rolling 17 or higher? (Assume that all dice are rolled at once, and that '1d6' represents one roll of a 6-sided dice.) Please respond with a reduced fraction representing the probability [ex., 1/60].",
+    "answer": "863/1024",
+    "metadata": {
+      "source_dataset": "dice",
+      "source_index": 16,
+      "puzzle": {
+        "dice_str": "1d20, 1d8, 1d8, 1d8",
+        "target": 17,
+        "num": 863,
+        "den": 1024,
+        "probability": 0.8427734375
+      },
+      "difficulty": {
+        "num_dice": 4,
+        "max_dice_size": 20
+      }
+    }
+  },
+  {
+    "question": "I have these dice: 1d20, 1d16, 1d9, 1d4. What are the odds of rolling 19 or higher? (Assume that all dice are rolled at once, and that '1d6' represents one roll of a 6-sided dice.) Please respond with a reduced fraction representing the probability [ex., 1/60].",
+    "answer": "1597/1920",
+    "metadata": {
+      "source_dataset": "dice",
+      "source_index": 17,
+      "puzzle": {
+        "dice_str": "1d20, 1d16, 1d9, 1d4",
+        "target": 19,
+        "num": 1597,
+        "den": 1920,
+        "probability": 0.8317708333333333
+      },
+      "difficulty": {
+        "num_dice": 4,
+        "max_dice_size": 20
+      }
+    }
+  },
+  {
+    "question": "I have these dice: 1d20, 1d11, 1d11, 1d6. What are the odds of rolling 26 or higher? (Assume that all dice are rolled at once, and that '1d6' represents one roll of a 6-sided dice.) Please respond with a reduced fraction representing the probability [ex., 1/60].",
+    "answer": "7613/14520",
+    "metadata": {
+      "source_dataset": "dice",
+      "source_index": 18,
+      "puzzle": {
+        "dice_str": "1d20, 1d11, 1d11, 1d6",
+        "target": 26,
+        "num": 7613,
+        "den": 14520,
+        "probability": 0.5243112947658403
+      },
+      "difficulty": {
+        "num_dice": 4,
+        "max_dice_size": 20
+      }
+    }
+  },
+  {
+    "question": "I have these dice: 1d20, 1d19, 1d17, 1d7. What are the odds of rolling 29 or higher? (Assume that all dice are rolled at once, and that '1d6' represents one roll of a 6-sided dice.) Please respond with a reduced fraction representing the probability [ex., 1/60].",
+    "answer": "47/68",
+    "metadata": {
+      "source_dataset": "dice",
+      "source_index": 19,
+      "puzzle": {
+        "dice_str": "1d20, 1d19, 1d17, 1d7",
+        "target": 29,
+        "num": 47,
+        "den": 68,
+        "probability": 0.6911764705882353
+      },
+      "difficulty": {
+        "num_dice": 4,
+        "max_dice_size": 20
+      }
+    }
+  },
+  {
+    "question": "I have these dice: 1d20, 1d9, 1d7, 1d4. What are the odds of rolling 23 or higher? (Assume that all dice are rolled at once, and that '1d6' represents one roll of a 6-sided dice.) Please respond with a reduced fraction representing the probability [ex., 1/60].",
+    "answer": "19/40",
+    "metadata": {
+      "source_dataset": "dice",
+      "source_index": 20,
+      "puzzle": {
+        "dice_str": "1d20, 1d9, 1d7, 1d4",
+        "target": 23,
+        "num": 19,
+        "den": 40,
+        "probability": 0.475
+      },
+      "difficulty": {
+        "num_dice": 4,
+        "max_dice_size": 20
+      }
+    }
+  },
+  {
+    "question": "I have these dice: 1d20, 1d16, 1d16, 1d11. What are the odds of rolling 31 or higher? (Assume that all dice are rolled at once, and that '1d6' represents one roll of a 6-sided dice.) Please respond with a reduced fraction representing the probability [ex., 1/60].",
+    "answer": "35003/56320",
+    "metadata": {
+      "source_dataset": "dice",
+      "source_index": 21,
+      "puzzle": {
+        "dice_str": "1d20, 1d16, 1d16, 1d11",
+        "target": 31,
+        "num": 35003,
+        "den": 56320,
+        "probability": 0.6215021306818181
+      },
+      "difficulty": {
+        "num_dice": 4,
+        "max_dice_size": 20
+      }
+    }
+  },
+  {
+    "question": "I have these dice: 1d20, 1d17, 1d14, 1d5. What are the odds of rolling 38 or higher? (Assume that all dice are rolled at once, and that '1d6' represents one roll of a 6-sided dice.) Please respond with a reduced fraction representing the probability [ex., 1/60].",
+    "answer": "243/1190",
+    "metadata": {
+      "source_dataset": "dice",
+      "source_index": 22,
+      "puzzle": {
+        "dice_str": "1d20, 1d17, 1d14, 1d5",
+        "target": 38,
+        "num": 243,
+        "den": 1190,
+        "probability": 0.2042016806722689
+      },
+      "difficulty": {
+        "num_dice": 4,
+        "max_dice_size": 20
+      }
+    }
+  },
+  {
+    "question": "I have these dice: 1d20, 1d15, 1d11, 1d11. What are the odds of rolling 37 or higher? (Assume that all dice are rolled at once, and that '1d6' represents one roll of a 6-sided dice.) Please respond with a reduced fraction representing the probability [ex., 1/60].",
+    "answer": "3023/12100",
+    "metadata": {
+      "source_dataset": "dice",
+      "source_index": 23,
+      "puzzle": {
+        "dice_str": "1d20, 1d15, 1d11, 1d11",
+        "target": 37,
+        "num": 3023,
+        "den": 12100,
+        "probability": 0.24983471074380165
+      },
+      "difficulty": {
+        "num_dice": 4,
+        "max_dice_size": 20
+      }
+    }
+  },
+  {
+    "question": "I have these dice: 1d20, 1d15, 1d11, 1d4. What are the odds of rolling 26 or higher? (Assume that all dice are rolled at once, and that '1d6' represents one roll of a 6-sided dice.) Please respond with a reduced fraction representing the probability [ex., 1/60].",
+    "answer": "3763/6600",
+    "metadata": {
+      "source_dataset": "dice",
+      "source_index": 24,
+      "puzzle": {
+        "dice_str": "1d20, 1d15, 1d11, 1d4",
+        "target": 26,
+        "num": 3763,
+        "den": 6600,
+        "probability": 0.5701515151515152
+      },
+      "difficulty": {
+        "num_dice": 4,
+        "max_dice_size": 20
+      }
+    }
+  },
+  {
+    "question": "I have these dice: 1d20, 1d15, 1d5, 1d4. What are the odds of rolling 24 or higher? (Assume that all dice are rolled at once, and that '1d6' represents one roll of a 6-sided dice.) Please respond with a reduced fraction representing the probability [ex., 1/60].",
+    "answer": "3149/6000",
+    "metadata": {
+      "source_dataset": "dice",
+      "source_index": 25,
+      "puzzle": {
+        "dice_str": "1d20, 1d15, 1d5, 1d4",
+        "target": 24,
+        "num": 3149,
+        "den": 6000,
+        "probability": 0.5248333333333334
+      },
+      "difficulty": {
+        "num_dice": 4,
+        "max_dice_size": 20
+      }
+    }
+  },
+  {
+    "question": "I have these dice: 1d20, 1d18, 1d16, 1d5. What are the odds of rolling 40 or higher? (Assume that all dice are rolled at once, and that '1d6' represents one roll of a 6-sided dice.) Please respond with a reduced fraction representing the probability [ex., 1/60].",
+    "answer": "1151/5760",
+    "metadata": {
+      "source_dataset": "dice",
+      "source_index": 26,
+      "puzzle": {
+        "dice_str": "1d20, 1d18, 1d16, 1d5",
+        "target": 40,
+        "num": 1151,
+        "den": 5760,
+        "probability": 0.1998263888888889
+      },
+      "difficulty": {
+        "num_dice": 4,
+        "max_dice_size": 20
+      }
+    }
+  },
+  {
+    "question": "I have these dice: 1d20, 1d7, 1d5, 1d3. What are the odds of rolling 15 or higher? (Assume that all dice are rolled at once, and that '1d6' represents one roll of a 6-sided dice.) Please respond with a reduced fraction representing the probability [ex., 1/60].",
+    "answer": "787/1050",
+    "metadata": {
+      "source_dataset": "dice",
+      "source_index": 27,
+      "puzzle": {
+        "dice_str": "1d20, 1d7, 1d5, 1d3",
+        "target": 15,
+        "num": 787,
+        "den": 1050,
+        "probability": 0.7495238095238095
+      },
+      "difficulty": {
+        "num_dice": 4,
+        "max_dice_size": 20
+      }
+    }
+  },
+  {
+    "question": "I have these dice: 1d20, 1d16, 1d11, 1d5. What are the odds of rolling 34 or higher? (Assume that all dice are rolled at once, and that '1d6' represents one roll of a 6-sided dice.) Please respond with a reduced fraction representing the probability [ex., 1/60].",
+    "answer": "921/3520",
+    "metadata": {
+      "source_dataset": "dice",
+      "source_index": 28,
+      "puzzle": {
+        "dice_str": "1d20, 1d16, 1d11, 1d5",
+        "target": 34,
+        "num": 921,
+        "den": 3520,
+        "probability": 0.2616477272727273
+      },
+      "difficulty": {
+        "num_dice": 4,
+        "max_dice_size": 20
+      }
+    }
+  },
+  {
+    "question": "I have these dice: 1d20, 1d18, 1d12, 1d2. What are the odds of rolling 28 or higher? (Assume that all dice are rolled at once, and that '1d6' represents one roll of a 6-sided dice.) Please respond with a reduced fraction representing the probability [ex., 1/60].",
+    "answer": "4511/8640",
+    "metadata": {
+      "source_dataset": "dice",
+      "source_index": 29,
+      "puzzle": {
+        "dice_str": "1d20, 1d18, 1d12, 1d2",
+        "target": 28,
+        "num": 4511,
+        "den": 8640,
+        "probability": 0.5221064814814815
+      },
+      "difficulty": {
+        "num_dice": 4,
+        "max_dice_size": 20
+      }
+    }
+  },
+  {
+    "question": "I have these dice: 1d20, 1d13, 1d7, 1d4. What are the odds of rolling 28 or higher? (Assume that all dice are rolled at once, and that '1d6' represents one roll of a 6-sided dice.) Please respond with a reduced fraction representing the probability [ex., 1/60].",
+    "answer": "343/1040",
+    "metadata": {
+      "source_dataset": "dice",
+      "source_index": 30,
+      "puzzle": {
+        "dice_str": "1d20, 1d13, 1d7, 1d4",
+        "target": 28,
+        "num": 343,
+        "den": 1040,
+        "probability": 0.3298076923076923
+      },
+      "difficulty": {
+        "num_dice": 4,
+        "max_dice_size": 20
+      }
+    }
+  },
+  {
+    "question": "I have these dice: 1d20, 1d18, 1d10, 1d5. What are the odds of rolling 35 or higher? (Assume that all dice are rolled at once, and that '1d6' represents one roll of a 6-sided dice.) Please respond with a reduced fraction representing the probability [ex., 1/60].",
+    "answer": "2237/9000",
+    "metadata": {
+      "source_dataset": "dice",
+      "source_index": 31,
+      "puzzle": {
+        "dice_str": "1d20, 1d18, 1d10, 1d5",
+        "target": 35,
+        "num": 2237,
+        "den": 9000,
+        "probability": 0.24855555555555556
+      },
+      "difficulty": {
+        "num_dice": 4,
+        "max_dice_size": 20
+      }
+    }
+  },
+  {
+    "question": "I have these dice: 1d20, 1d18, 1d12, 1d5. What are the odds of rolling 24 or higher? (Assume that all dice are rolled at once, and that '1d6' represents one roll of a 6-sided dice.) Please respond with a reduced fraction representing the probability [ex., 1/60].",
+    "answer": "215/288",
+    "metadata": {
+      "source_dataset": "dice",
+      "source_index": 32,
+      "puzzle": {
+        "dice_str": "1d20, 1d18, 1d12, 1d5",
+        "target": 24,
+        "num": 215,
+        "den": 288,
+        "probability": 0.7465277777777778
+      },
+      "difficulty": {
+        "num_dice": 4,
+        "max_dice_size": 20
+      }
+    }
+  },
+  {
+    "question": "I have these dice: 1d20, 1d16, 1d16, 1d15. What are the odds of rolling 26 or higher? (Assume that all dice are rolled at once, and that '1d6' represents one roll of a 6-sided dice.) Please respond with a reduced fraction representing the probability [ex., 1/60].",
+    "answer": "21539/25600",
+    "metadata": {
+      "source_dataset": "dice",
+      "source_index": 33,
+      "puzzle": {
+        "dice_str": "1d20, 1d16, 1d16, 1d15",
+        "target": 26,
+        "num": 21539,
+        "den": 25600,
+        "probability": 0.8413671875
+      },
+      "difficulty": {
+        "num_dice": 4,
+        "max_dice_size": 20
+      }
+    }
+  },
+  {
+    "question": "I have these dice: 1d20, 1d16, 1d14, 1d13. What are the odds of rolling 29 or higher? (Assume that all dice are rolled at once, and that '1d6' represents one roll of a 6-sided dice.) Please respond with a reduced fraction representing the probability [ex., 1/60].",
+    "answer": "5087/7280",
+    "metadata": {
+      "source_dataset": "dice",
+      "source_index": 34,
+      "puzzle": {
+        "dice_str": "1d20, 1d16, 1d14, 1d13",
+        "target": 29,
+        "num": 5087,
+        "den": 7280,
+        "probability": 0.6987637362637362
+      },
+      "difficulty": {
+        "num_dice": 4,
+        "max_dice_size": 20
+      }
+    }
+  },
+  {
+    "question": "I have these dice: 1d20, 1d12, 1d10, 1d8. What are the odds of rolling 26 or higher? (Assume that all dice are rolled at once, and that '1d6' represents one roll of a 6-sided dice.) Please respond with a reduced fraction representing the probability [ex., 1/60].",
+    "answer": "439/768",
+    "metadata": {
+      "source_dataset": "dice",
+      "source_index": 35,
+      "puzzle": {
+        "dice_str": "1d20, 1d12, 1d10, 1d8",
+        "target": 26,
+        "num": 439,
+        "den": 768,
+        "probability": 0.5716145833333334
+      },
+      "difficulty": {
+        "num_dice": 4,
+        "max_dice_size": 20
+      }
+    }
+  },
+  {
+    "question": "I have these dice: 1d20, 1d11, 1d8, 1d5. What are the odds of rolling 27 or higher? (Assume that all dice are rolled at once, and that '1d6' represents one roll of a 6-sided dice.) Please respond with a reduced fraction representing the probability [ex., 1/60].",
+    "answer": "663/1760",
+    "metadata": {
+      "source_dataset": "dice",
+      "source_index": 36,
+      "puzzle": {
+        "dice_str": "1d20, 1d11, 1d8, 1d5",
+        "target": 27,
+        "num": 663,
+        "den": 1760,
+        "probability": 0.37670454545454546
+      },
+      "difficulty": {
+        "num_dice": 4,
+        "max_dice_size": 20
+      }
+    }
+  },
+  {
+    "question": "I have these dice: 1d20, 1d16, 1d13, 1d6. What are the odds of rolling 26 or higher? (Assume that all dice are rolled at once, and that '1d6' represents one roll of a 6-sided dice.) Please respond with a reduced fraction representing the probability [ex., 1/60].",
+    "answer": "5599/8320",
+    "metadata": {
+      "source_dataset": "dice",
+      "source_index": 37,
+      "puzzle": {
+        "dice_str": "1d20, 1d16, 1d13, 1d6",
+        "target": 26,
+        "num": 5599,
+        "den": 8320,
+        "probability": 0.6729567307692308
+      },
+      "difficulty": {
+        "num_dice": 4,
+        "max_dice_size": 20
+      }
+    }
+  },
+  {
+    "question": "I have these dice: 1d20, 1d19, 1d14, 1d10. What are the odds of rolling 36 or higher? (Assume that all dice are rolled at once, and that '1d6' represents one roll of a 6-sided dice.) Please respond with a reduced fraction representing the probability [ex., 1/60].",
+    "answer": "2231/5320",
+    "metadata": {
+      "source_dataset": "dice",
+      "source_index": 38,
+      "puzzle": {
+        "dice_str": "1d20, 1d19, 1d14, 1d10",
+        "target": 36,
+        "num": 2231,
+        "den": 5320,
+        "probability": 0.4193609022556391
+      },
+      "difficulty": {
+        "num_dice": 4,
+        "max_dice_size": 20
+      }
+    }
+  },
+  {
+    "question": "I have these dice: 1d20, 1d18, 1d16, 1d12. What are the odds of rolling 41 or higher? (Assume that all dice are rolled at once, and that '1d6' represents one roll of a 6-sided dice.) Please respond with a reduced fraction representing the probability [ex., 1/60].",
+    "answer": "505/1728",
+    "metadata": {
+      "source_dataset": "dice",
+      "source_index": 39,
+      "puzzle": {
+        "dice_str": "1d20, 1d18, 1d16, 1d12",
+        "target": 41,
+        "num": 505,
+        "den": 1728,
+        "probability": 0.29224537037037035
+      },
+      "difficulty": {
+        "num_dice": 4,
+        "max_dice_size": 20
+      }
+    }
+  },
+  {
+    "question": "I have these dice: 1d20, 1d18, 1d17, 1d6. What are the odds of rolling 32 or higher? (Assume that all dice are rolled at once, and that '1d6' represents one roll of a 6-sided dice.) Please respond with a reduced fraction representing the probability [ex., 1/60].",
+    "answer": "19841/36720",
+    "metadata": {
+      "source_dataset": "dice",
+      "source_index": 40,
+      "puzzle": {
+        "dice_str": "1d20, 1d18, 1d17, 1d6",
+        "target": 32,
+        "num": 19841,
+        "den": 36720,
+        "probability": 0.5403322440087146
+      },
+      "difficulty": {
+        "num_dice": 4,
+        "max_dice_size": 20
+      }
+    }
+  },
+  {
+    "question": "I have these dice: 1d20, 1d17, 1d16, 1d4. What are the odds of rolling 25 or higher? (Assume that all dice are rolled at once, and that '1d6' represents one roll of a 6-sided dice.) Please respond with a reduced fraction representing the probability [ex., 1/60].",
+    "answer": "4021/5440",
+    "metadata": {
+      "source_dataset": "dice",
+      "source_index": 41,
+      "puzzle": {
+        "dice_str": "1d20, 1d17, 1d16, 1d4",
+        "target": 25,
+        "num": 4021,
+        "den": 5440,
+        "probability": 0.7391544117647059
+      },
+      "difficulty": {
+        "num_dice": 4,
+        "max_dice_size": 20
+      }
+    }
+  },
+  {
+    "question": "I have these dice: 1d20, 1d17, 1d11, 1d3. What are the odds of rolling 19 or higher? (Assume that all dice are rolled at once, and that '1d6' represents one roll of a 6-sided dice.) Please respond with a reduced fraction representing the probability [ex., 1/60].",
+    "answer": "869/1020",
+    "metadata": {
+      "source_dataset": "dice",
+      "source_index": 42,
+      "puzzle": {
+        "dice_str": "1d20, 1d17, 1d11, 1d3",
+        "target": 19,
+        "num": 869,
+        "den": 1020,
+        "probability": 0.8519607843137255
+      },
+      "difficulty": {
+        "num_dice": 4,
+        "max_dice_size": 20
+      }
+    }
+  },
+  {
+    "question": "I have these dice: 1d20, 1d12, 1d8, 1d5. What are the odds of rolling 31 or higher? (Assume that all dice are rolled at once, and that '1d6' represents one roll of a 6-sided dice.) Please respond with a reduced fraction representing the probability [ex., 1/60].",
+    "answer": "85/384",
+    "metadata": {
+      "source_dataset": "dice",
+      "source_index": 43,
+      "puzzle": {
+        "dice_str": "1d20, 1d12, 1d8, 1d5",
+        "target": 31,
+        "num": 85,
+        "den": 384,
+        "probability": 0.22135416666666666
+      },
+      "difficulty": {
+        "num_dice": 4,
+        "max_dice_size": 20
+      }
+    }
+  },
+  {
+    "question": "I have these dice: 1d20, 1d19, 1d12, 1d2. What are the odds of rolling 20 or higher? (Assume that all dice are rolled at once, and that '1d6' represents one roll of a 6-sided dice.) Please respond with a reduced fraction representing the probability [ex., 1/60].",
+    "answer": "3827/4560",
+    "metadata": {
+      "source_dataset": "dice",
+      "source_index": 44,
+      "puzzle": {
+        "dice_str": "1d20, 1d19, 1d12, 1d2",
+        "target": 20,
+        "num": 3827,
+        "den": 4560,
+        "probability": 0.8392543859649123
+      },
+      "difficulty": {
+        "num_dice": 4,
+        "max_dice_size": 20
+      }
+    }
+  },
+  {
+    "question": "I have these dice: 1d20, 1d19, 1d8, 1d6. What are the odds of rolling 23 or higher? (Assume that all dice are rolled at once, and that '1d6' represents one roll of a 6-sided dice.) Please respond with a reduced fraction representing the probability [ex., 1/60].",
+    "answer": "3419/4560",
+    "metadata": {
+      "source_dataset": "dice",
+      "source_index": 45,
+      "puzzle": {
+        "dice_str": "1d20, 1d19, 1d8, 1d6",
+        "target": 23,
+        "num": 3419,
+        "den": 4560,
+        "probability": 0.7497807017543859
+      },
+      "difficulty": {
+        "num_dice": 4,
+        "max_dice_size": 20
+      }
+    }
+  },
+  {
+    "question": "I have these dice: 1d20, 1d14, 1d12, 1d8. What are the odds of rolling 25 or higher? (Assume that all dice are rolled at once, and that '1d6' represents one roll of a 6-sided dice.) Please respond with a reduced fraction representing the probability [ex., 1/60].",
+    "answer": "18779/26880",
+    "metadata": {
+      "source_dataset": "dice",
+      "source_index": 46,
+      "puzzle": {
+        "dice_str": "1d20, 1d14, 1d12, 1d8",
+        "target": 25,
+        "num": 18779,
+        "den": 26880,
+        "probability": 0.6986235119047619
+      },
+      "difficulty": {
+        "num_dice": 4,
+        "max_dice_size": 20
+      }
+    }
+  },
+  {
+    "question": "I have these dice: 1d20, 1d10, 1d6, 1d4. What are the odds of rolling 21 or higher? (Assume that all dice are rolled at once, and that '1d6' represents one roll of a 6-sided dice.) Please respond with a reduced fraction representing the probability [ex., 1/60].",
+    "answer": "23/40",
+    "metadata": {
+      "source_dataset": "dice",
+      "source_index": 47,
+      "puzzle": {
+        "dice_str": "1d20, 1d10, 1d6, 1d4",
+        "target": 21,
+        "num": 23,
+        "den": 40,
+        "probability": 0.575
+      },
+      "difficulty": {
+        "num_dice": 4,
+        "max_dice_size": 20
+      }
+    }
+  },
+  {
+    "question": "I have these dice: 1d20, 1d17, 1d8, 1d4. What are the odds of rolling 28 or higher? (Assume that all dice are rolled at once, and that '1d6' represents one roll of a 6-sided dice.) Please respond with a reduced fraction representing the probability [ex., 1/60].",
+    "answer": "2463/5440",
+    "metadata": {
+      "source_dataset": "dice",
+      "source_index": 48,
+      "puzzle": {
+        "dice_str": "1d20, 1d17, 1d8, 1d4",
+        "target": 28,
+        "num": 2463,
+        "den": 5440,
+        "probability": 0.45275735294117647
+      },
+      "difficulty": {
+        "num_dice": 4,
+        "max_dice_size": 20
+      }
+    }
+  },
+  {
+    "question": "I have these dice: 1d20, 1d7, 1d7, 1d4. What are the odds of rolling 21 or higher? (Assume that all dice are rolled at once, and that '1d6' represents one roll of a 6-sided dice.) Please respond with a reduced fraction representing the probability [ex., 1/60].",
+    "answer": "21/40",
+    "metadata": {
+      "source_dataset": "dice",
+      "source_index": 49,
+      "puzzle": {
+        "dice_str": "1d20, 1d7, 1d7, 1d4",
+        "target": 21,
+        "num": 21,
+        "den": 40,
+        "probability": 0.525
+      },
+      "difficulty": {
+        "num_dice": 4,
+        "max_dice_size": 20
+      }
+    }
+  },
+  {
+    "question": "I have these dice: 1d20, 1d19, 1d18, 1d15. What are the odds of rolling 43 or higher? (Assume that all dice are rolled at once, and that '1d6' represents one roll of a 6-sided dice.) Please respond with a reduced fraction representing the probability [ex., 1/60].",
+    "answer": "11593/34200",
+    "metadata": {
+      "source_dataset": "dice",
+      "source_index": 50,
+      "puzzle": {
+        "dice_str": "1d20, 1d19, 1d18, 1d15",
+        "target": 43,
+        "num": 11593,
+        "den": 34200,
+        "probability": 0.3389766081871345
+      },
+      "difficulty": {
+        "num_dice": 4,
+        "max_dice_size": 20
+      }
+    }
+  },
+  {
+    "question": "I have these dice: 1d20, 1d17, 1d13, 1d5. What are the odds of rolling 23 or higher? (Assume that all dice are rolled at once, and that '1d6' represents one roll of a 6-sided dice.) Please respond with a reduced fraction representing the probability [ex., 1/60].",
+    "answer": "3459/4420",
+    "metadata": {
+      "source_dataset": "dice",
+      "source_index": 51,
+      "puzzle": {
+        "dice_str": "1d20, 1d17, 1d13, 1d5",
+        "target": 23,
+        "num": 3459,
+        "den": 4420,
+        "probability": 0.782579185520362
+      },
+      "difficulty": {
+        "num_dice": 4,
+        "max_dice_size": 20
+      }
+    }
+  },
+  {
+    "question": "I have these dice: 1d20, 1d19, 1d7, 1d5. What are the odds of rolling 27 or higher? (Assume that all dice are rolled at once, and that '1d6' represents one roll of a 6-sided dice.) Please respond with a reduced fraction representing the probability [ex., 1/60].",
+    "answer": "363/665",
+    "metadata": {
+      "source_dataset": "dice",
+      "source_index": 52,
+      "puzzle": {
+        "dice_str": "1d20, 1d19, 1d7, 1d5",
+        "target": 27,
+        "num": 363,
+        "den": 665,
+        "probability": 0.5458646616541354
+      },
+      "difficulty": {
+        "num_dice": 4,
+        "max_dice_size": 20
+      }
+    }
+  },
+  {
+    "question": "I have these dice: 1d20, 1d19, 1d19, 1d18. What are the odds of rolling 32 or higher? (Assume that all dice are rolled at once, and that '1d6' represents one roll of a 6-sided dice.) Please respond with a reduced fraction representing the probability [ex., 1/60].",
+    "answer": "1117/1444",
+    "metadata": {
+      "source_dataset": "dice",
+      "source_index": 53,
+      "puzzle": {
+        "dice_str": "1d20, 1d19, 1d19, 1d18",
+        "target": 32,
+        "num": 1117,
+        "den": 1444,
+        "probability": 0.7735457063711911
+      },
+      "difficulty": {
+        "num_dice": 4,
+        "max_dice_size": 20
+      }
+    }
+  },
+  {
+    "question": "I have these dice: 1d20, 1d14, 1d13, 1d12. What are the odds of rolling 28 or higher? (Assume that all dice are rolled at once, and that '1d6' represents one roll of a 6-sided dice.) Please respond with a reduced fraction representing the probability [ex., 1/60].",
+    "answer": "2089/3120",
+    "metadata": {
+      "source_dataset": "dice",
+      "source_index": 54,
+      "puzzle": {
+        "dice_str": "1d20, 1d14, 1d13, 1d12",
+        "target": 28,
+        "num": 2089,
+        "den": 3120,
+        "probability": 0.669551282051282
+      },
+      "difficulty": {
+        "num_dice": 4,
+        "max_dice_size": 20
+      }
+    }
+  },
+  {
+    "question": "I have these dice: 1d20, 1d15, 1d13, 1d8. What are the odds of rolling 22 or higher? (Assume that all dice are rolled at once, and that '1d6' represents one roll of a 6-sided dice.) Please respond with a reduced fraction representing the probability [ex., 1/60].",
+    "answer": "5203/6240",
+    "metadata": {
+      "source_dataset": "dice",
+      "source_index": 55,
+      "puzzle": {
+        "dice_str": "1d20, 1d15, 1d13, 1d8",
+        "target": 22,
+        "num": 5203,
+        "den": 6240,
+        "probability": 0.8338141025641026
+      },
+      "difficulty": {
+        "num_dice": 4,
+        "max_dice_size": 20
+      }
+    }
+  },
+  {
+    "question": "I have these dice: 1d20, 1d13, 1d13, 1d3. What are the odds of rolling 32 or higher? (Assume that all dice are rolled at once, and that '1d6' represents one roll of a 6-sided dice.) Please respond with a reduced fraction representing the probability [ex., 1/60].",
+    "answer": "43/156",
+    "metadata": {
+      "source_dataset": "dice",
+      "source_index": 56,
+      "puzzle": {
+        "dice_str": "1d20, 1d13, 1d13, 1d3",
+        "target": 32,
+        "num": 43,
+        "den": 156,
+        "probability": 0.27564102564102566
+      },
+      "difficulty": {
+        "num_dice": 4,
+        "max_dice_size": 20
+      }
+    }
+  },
+  {
+    "question": "I have these dice: 1d20, 1d14, 1d14, 1d8. What are the odds of rolling 26 or higher? (Assume that all dice are rolled at once, and that '1d6' represents one roll of a 6-sided dice.) Please respond with a reduced fraction representing the probability [ex., 1/60].",
+    "answer": "4351/6272",
+    "metadata": {
+      "source_dataset": "dice",
+      "source_index": 57,
+      "puzzle": {
+        "dice_str": "1d20, 1d14, 1d14, 1d8",
+        "target": 26,
+        "num": 4351,
+        "den": 6272,
+        "probability": 0.693718112244898
+      },
+      "difficulty": {
+        "num_dice": 4,
+        "max_dice_size": 20
+      }
+    }
+  },
+  {
+    "question": "I have these dice: 1d20, 1d16, 1d16, 1d6. What are the odds of rolling 27 or higher? (Assume that all dice are rolled at once, and that '1d6' represents one roll of a 6-sided dice.) Please respond with a reduced fraction representing the probability [ex., 1/60].",
+    "answer": "877/1280",
+    "metadata": {
+      "source_dataset": "dice",
+      "source_index": 58,
+      "puzzle": {
+        "dice_str": "1d20, 1d16, 1d16, 1d6",
+        "target": 27,
+        "num": 877,
+        "den": 1280,
+        "probability": 0.68515625
+      },
+      "difficulty": {
+        "num_dice": 4,
+        "max_dice_size": 20
+      }
+    }
+  },
+  {
+    "question": "I have these dice: 1d20, 1d19, 1d13, 1d8. What are the odds of rolling 36 or higher? (Assume that all dice are rolled at once, and that '1d6' represents one roll of a 6-sided dice.) Please respond with a reduced fraction representing the probability [ex., 1/60].",
+    "answer": "1763/4940",
+    "metadata": {
+      "source_dataset": "dice",
+      "source_index": 59,
+      "puzzle": {
+        "dice_str": "1d20, 1d19, 1d13, 1d8",
+        "target": 36,
+        "num": 1763,
+        "den": 4940,
+        "probability": 0.35688259109311743
+      },
+      "difficulty": {
+        "num_dice": 4,
+        "max_dice_size": 20
+      }
+    }
+  },
+  {
+    "question": "I have these dice: 1d20, 1d13, 1d7, 1d6. What are the odds of rolling 26 or higher? (Assume that all dice are rolled at once, and that '1d6' represents one roll of a 6-sided dice.) Please respond with a reduced fraction representing the probability [ex., 1/60].",
+    "answer": "5191/10920",
+    "metadata": {
+      "source_dataset": "dice",
+      "source_index": 60,
+      "puzzle": {
+        "dice_str": "1d20, 1d13, 1d7, 1d6",
+        "target": 26,
+        "num": 5191,
+        "den": 10920,
+        "probability": 0.47536630036630034
+      },
+      "difficulty": {
+        "num_dice": 4,
+        "max_dice_size": 20
+      }
+    }
+  },
+  {
+    "question": "I have these dice: 1d20, 1d16, 1d8, 1d4. What are the odds of rolling 21 or higher? (Assume that all dice are rolled at once, and that '1d6' represents one roll of a 6-sided dice.) Please respond with a reduced fraction representing the probability [ex., 1/60].",
+    "answer": "7641/10240",
+    "metadata": {
+      "source_dataset": "dice",
+      "source_index": 61,
+      "puzzle": {
+        "dice_str": "1d20, 1d16, 1d8, 1d4",
+        "target": 21,
+        "num": 7641,
+        "den": 10240,
+        "probability": 0.74619140625
+      },
+      "difficulty": {
+        "num_dice": 4,
+        "max_dice_size": 20
+      }
+    }
+  },
+  {
+    "question": "I have these dice: 1d20, 1d9, 1d8, 1d2. What are the odds of rolling 21 or higher? (Assume that all dice are rolled at once, and that '1d6' represents one roll of a 6-sided dice.) Please respond with a reduced fraction representing the probability [ex., 1/60].",
+    "answer": "11/20",
+    "metadata": {
+      "source_dataset": "dice",
+      "source_index": 62,
+      "puzzle": {
+        "dice_str": "1d20, 1d9, 1d8, 1d2",
+        "target": 21,
+        "num": 11,
+        "den": 20,
+        "probability": 0.55
+      },
+      "difficulty": {
+        "num_dice": 4,
+        "max_dice_size": 20
+      }
+    }
+  },
+  {
+    "question": "I have these dice: 1d20, 1d13, 1d5, 1d2. What are the odds of rolling 20 or higher? (Assume that all dice are rolled at once, and that '1d6' represents one roll of a 6-sided dice.) Please respond with a reduced fraction representing the probability [ex., 1/60].",
+    "answer": "203/325",
+    "metadata": {
+      "source_dataset": "dice",
+      "source_index": 63,
+      "puzzle": {
+        "dice_str": "1d20, 1d13, 1d5, 1d2",
+        "target": 20,
+        "num": 203,
+        "den": 325,
+        "probability": 0.6246153846153846
+      },
+      "difficulty": {
+        "num_dice": 4,
+        "max_dice_size": 20
+      }
+    }
+  },
+  {
+    "question": "I have these dice: 1d20, 1d19, 1d17, 1d2. What are the odds of rolling 38 or higher? (Assume that all dice are rolled at once, and that '1d6' represents one roll of a 6-sided dice.) Please respond with a reduced fraction representing the probability [ex., 1/60].",
+    "answer": "655/2584",
+    "metadata": {
+      "source_dataset": "dice",
+      "source_index": 64,
+      "puzzle": {
+        "dice_str": "1d20, 1d19, 1d17, 1d2",
+        "target": 38,
+        "num": 655,
+        "den": 2584,
+        "probability": 0.2534829721362229
+      },
+      "difficulty": {
+        "num_dice": 4,
+        "max_dice_size": 20
+      }
+    }
+  },
+  {
+    "question": "I have these dice: 1d20, 1d17, 1d15, 1d9. What are the odds of rolling 32 or higher? (Assume that all dice are rolled at once, and that '1d6' represents one roll of a 6-sided dice.) Please respond with a reduced fraction representing the probability [ex., 1/60].",
+    "answer": "8287/15300",
+    "metadata": {
+      "source_dataset": "dice",
+      "source_index": 65,
+      "puzzle": {
+        "dice_str": "1d20, 1d17, 1d15, 1d9",
+        "target": 32,
+        "num": 8287,
+        "den": 15300,
+        "probability": 0.5416339869281046
+      },
+      "difficulty": {
+        "num_dice": 4,
+        "max_dice_size": 20
+      }
+    }
+  },
+  {
+    "question": "I have these dice: 1d20, 1d14, 1d6, 1d4. What are the odds of rolling 28 or higher? (Assume that all dice are rolled at once, and that '1d6' represents one roll of a 6-sided dice.) Please respond with a reduced fraction representing the probability [ex., 1/60].",
+    "answer": "317/960",
+    "metadata": {
+      "source_dataset": "dice",
+      "source_index": 66,
+      "puzzle": {
+        "dice_str": "1d20, 1d14, 1d6, 1d4",
+        "target": 28,
+        "num": 317,
+        "den": 960,
+        "probability": 0.3302083333333333
+      },
+      "difficulty": {
+        "num_dice": 4,
+        "max_dice_size": 20
+      }
+    }
+  },
+  {
+    "question": "I have these dice: 1d20, 1d16, 1d10, 1d9. What are the odds of rolling 35 or higher? (Assume that all dice are rolled at once, and that '1d6' represents one roll of a 6-sided dice.) Please respond with a reduced fraction representing the probability [ex., 1/60].",
+    "answer": "4097/14400",
+    "metadata": {
+      "source_dataset": "dice",
+      "source_index": 67,
+      "puzzle": {
+        "dice_str": "1d20, 1d16, 1d10, 1d9",
+        "target": 35,
+        "num": 4097,
+        "den": 14400,
+        "probability": 0.2845138888888889
+      },
+      "difficulty": {
+        "num_dice": 4,
+        "max_dice_size": 20
+      }
+    }
+  },
+  {
+    "question": "I have these dice: 1d20, 1d15, 1d14, 1d9. What are the odds of rolling 37 or higher? (Assume that all dice are rolled at once, and that '1d6' represents one roll of a 6-sided dice.) Please respond with a reduced fraction representing the probability [ex., 1/60].",
+    "answer": "2057/7560",
+    "metadata": {
+      "source_dataset": "dice",
+      "source_index": 68,
+      "puzzle": {
+        "dice_str": "1d20, 1d15, 1d14, 1d9",
+        "target": 37,
+        "num": 2057,
+        "den": 7560,
+        "probability": 0.2720899470899471
+      },
+      "difficulty": {
+        "num_dice": 4,
+        "max_dice_size": 20
+      }
+    }
+  },
+  {
+    "question": "I have these dice: 1d20, 1d17, 1d12, 1d8. What are the odds of rolling 27 or higher? (Assume that all dice are rolled at once, and that '1d6' represents one roll of a 6-sided dice.) Please respond with a reduced fraction representing the probability [ex., 1/60].",
+    "answer": "21877/32640",
+    "metadata": {
+      "source_dataset": "dice",
+      "source_index": 69,
+      "puzzle": {
+        "dice_str": "1d20, 1d17, 1d12, 1d8",
+        "target": 27,
+        "num": 21877,
+        "den": 32640,
+        "probability": 0.6702512254901961
+      },
+      "difficulty": {
+        "num_dice": 4,
+        "max_dice_size": 20
+      }
+    }
+  },
+  {
+    "question": "I have these dice: 1d20, 1d17, 1d16, 1d11. What are the odds of rolling 37 or higher? (Assume that all dice are rolled at once, and that '1d6' represents one roll of a 6-sided dice.) Please respond with a reduced fraction representing the probability [ex., 1/60].",
+    "answer": "435/1088",
+    "metadata": {
+      "source_dataset": "dice",
+      "source_index": 70,
+      "puzzle": {
+        "dice_str": "1d20, 1d17, 1d16, 1d11",
+        "target": 37,
+        "num": 435,
+        "den": 1088,
+        "probability": 0.39981617647058826
+      },
+      "difficulty": {
+        "num_dice": 4,
+        "max_dice_size": 20
+      }
+    }
+  },
+  {
+    "question": "I have these dice: 1d20, 1d10, 1d2, 1d2. What are the odds of rolling 21 or higher? (Assume that all dice are rolled at once, and that '1d6' represents one roll of a 6-sided dice.) Please respond with a reduced fraction representing the probability [ex., 1/60].",
+    "answer": "17/40",
+    "metadata": {
+      "source_dataset": "dice",
+      "source_index": 71,
+      "puzzle": {
+        "dice_str": "1d20, 1d10, 1d2, 1d2",
+        "target": 21,
+        "num": 17,
+        "den": 40,
+        "probability": 0.425
+      },
+      "difficulty": {
+        "num_dice": 4,
+        "max_dice_size": 20
+      }
+    }
+  },
+  {
+    "question": "I have these dice: 1d20, 1d12, 1d9, 1d5. What are the odds of rolling 28 or higher? (Assume that all dice are rolled at once, and that '1d6' represents one roll of a 6-sided dice.) Please respond with a reduced fraction representing the probability [ex., 1/60].",
+    "answer": "817/2160",
+    "metadata": {
+      "source_dataset": "dice",
+      "source_index": 72,
+      "puzzle": {
+        "dice_str": "1d20, 1d12, 1d9, 1d5",
+        "target": 28,
+        "num": 817,
+        "den": 2160,
+        "probability": 0.37824074074074077
+      },
+      "difficulty": {
+        "num_dice": 4,
+        "max_dice_size": 20
+      }
+    }
+  },
+  {
+    "question": "I have these dice: 1d20, 1d11, 1d8, 1d5. What are the odds of rolling 25 or higher? (Assume that all dice are rolled at once, and that '1d6' represents one roll of a 6-sided dice.) Please respond with a reduced fraction representing the probability [ex., 1/60].",
+    "answer": "4181/8800",
+    "metadata": {
+      "source_dataset": "dice",
+      "source_index": 73,
+      "puzzle": {
+        "dice_str": "1d20, 1d11, 1d8, 1d5",
+        "target": 25,
+        "num": 4181,
+        "den": 8800,
+        "probability": 0.47511363636363635
+      },
+      "difficulty": {
+        "num_dice": 4,
+        "max_dice_size": 20
+      }
+    }
+  },
+  {
+    "question": "I have these dice: 1d20, 1d19, 1d11, 1d2. What are the odds of rolling 23 or higher? (Assume that all dice are rolled at once, and that '1d6' represents one roll of a 6-sided dice.) Please respond with a reduced fraction representing the probability [ex., 1/60].",
+    "answer": "277/380",
+    "metadata": {
+      "source_dataset": "dice",
+      "source_index": 74,
+      "puzzle": {
+        "dice_str": "1d20, 1d19, 1d11, 1d2",
+        "target": 23,
+        "num": 277,
+        "den": 380,
+        "probability": 0.7289473684210527
+      },
+      "difficulty": {
+        "num_dice": 4,
+        "max_dice_size": 20
+      }
+    }
+  },
+  {
+    "question": "I have these dice: 1d20, 1d9, 1d7, 1d7. What are the odds of rolling 20 or higher? (Assume that all dice are rolled at once, and that '1d6' represents one roll of a 6-sided dice.) Please respond with a reduced fraction representing the probability [ex., 1/60].",
+    "answer": "877/1260",
+    "metadata": {
+      "source_dataset": "dice",
+      "source_index": 75,
+      "puzzle": {
+        "dice_str": "1d20, 1d9, 1d7, 1d7",
+        "target": 20,
+        "num": 877,
+        "den": 1260,
+        "probability": 0.696031746031746
+      },
+      "difficulty": {
+        "num_dice": 4,
+        "max_dice_size": 20
+      }
+    }
+  },
+  {
+    "question": "I have these dice: 1d20, 1d11, 1d7, 1d5. What are the odds of rolling 28 or higher? (Assume that all dice are rolled at once, and that '1d6' represents one roll of a 6-sided dice.) Please respond with a reduced fraction representing the probability [ex., 1/60].",
+    "answer": "67/220",
+    "metadata": {
+      "source_dataset": "dice",
+      "source_index": 76,
+      "puzzle": {
+        "dice_str": "1d20, 1d11, 1d7, 1d5",
+        "target": 28,
+        "num": 67,
+        "den": 220,
+        "probability": 0.30454545454545456
+      },
+      "difficulty": {
+        "num_dice": 4,
+        "max_dice_size": 20
+      }
+    }
+  },
+  {
+    "question": "I have these dice: 1d20, 1d19, 1d11, 1d7. What are the odds of rolling 38 or higher? (Assume that all dice are rolled at once, and that '1d6' represents one roll of a 6-sided dice.) Please respond with a reduced fraction representing the probability [ex., 1/60].",
+    "answer": "1636/7315",
+    "metadata": {
+      "source_dataset": "dice",
+      "source_index": 77,
+      "puzzle": {
+        "dice_str": "1d20, 1d19, 1d11, 1d7",
+        "target": 38,
+        "num": 1636,
+        "den": 7315,
+        "probability": 0.22365003417634996
+      },
+      "difficulty": {
+        "num_dice": 4,
+        "max_dice_size": 20
+      }
+    }
+  },
+  {
+    "question": "I have these dice: 1d20, 1d18, 1d9, 1d8. What are the odds of rolling 35 or higher? (Assume that all dice are rolled at once, and that '1d6' represents one roll of a 6-sided dice.) Please respond with a reduced fraction representing the probability [ex., 1/60].",
+    "answer": "373/1296",
+    "metadata": {
+      "source_dataset": "dice",
+      "source_index": 78,
+      "puzzle": {
+        "dice_str": "1d20, 1d18, 1d9, 1d8",
+        "target": 35,
+        "num": 373,
+        "den": 1296,
+        "probability": 0.28780864197530864
+      },
+      "difficulty": {
+        "num_dice": 4,
+        "max_dice_size": 20
+      }
+    }
+  },
+  {
+    "question": "I have these dice: 1d20, 1d14, 1d8, 1d4. What are the odds of rolling 28 or higher? (Assume that all dice are rolled at once, and that '1d6' represents one roll of a 6-sided dice.) Please respond with a reduced fraction representing the probability [ex., 1/60].",
+    "answer": "97/256",
+    "metadata": {
+      "source_dataset": "dice",
+      "source_index": 79,
+      "puzzle": {
+        "dice_str": "1d20, 1d14, 1d8, 1d4",
+        "target": 28,
+        "num": 97,
+        "den": 256,
+        "probability": 0.37890625
+      },
+      "difficulty": {
+        "num_dice": 4,
+        "max_dice_size": 20
+      }
+    }
+  },
+  {
+    "question": "I have these dice: 1d20, 1d18, 1d11, 1d8. What are the odds of rolling 23 or higher? (Assume that all dice are rolled at once, and that '1d6' represents one roll of a 6-sided dice.) Please respond with a reduced fraction representing the probability [ex., 1/60].",
+    "answer": "25697/31680",
+    "metadata": {
+      "source_dataset": "dice",
+      "source_index": 80,
+      "puzzle": {
+        "dice_str": "1d20, 1d18, 1d11, 1d8",
+        "target": 23,
+        "num": 25697,
+        "den": 31680,
+        "probability": 0.8111426767676768
+      },
+      "difficulty": {
+        "num_dice": 4,
+        "max_dice_size": 20
+      }
+    }
+  },
+  {
+    "question": "I have these dice: 1d20, 1d10, 1d4, 1d3. What are the odds of rolling 21 or higher? (Assume that all dice are rolled at once, and that '1d6' represents one roll of a 6-sided dice.) Please respond with a reduced fraction representing the probability [ex., 1/60].",
+    "answer": "1/2",
+    "metadata": {
+      "source_dataset": "dice",
+      "source_index": 81,
+      "puzzle": {
+        "dice_str": "1d20, 1d10, 1d4, 1d3",
+        "target": 21,
+        "num": 1,
+        "den": 2,
+        "probability": 0.5
+      },
+      "difficulty": {
+        "num_dice": 4,
+        "max_dice_size": 20
+      }
+    }
+  },
+  {
+    "question": "I have these dice: 1d20, 1d19, 1d10, 1d2. What are the odds of rolling 24 or higher? (Assume that all dice are rolled at once, and that '1d6' represents one roll of a 6-sided dice.) Please respond with a reduced fraction representing the probability [ex., 1/60].",
+    "answer": "1279/1900",
+    "metadata": {
+      "source_dataset": "dice",
+      "source_index": 82,
+      "puzzle": {
+        "dice_str": "1d20, 1d19, 1d10, 1d2",
+        "target": 24,
+        "num": 1279,
+        "den": 1900,
+        "probability": 0.6731578947368421
+      },
+      "difficulty": {
+        "num_dice": 4,
+        "max_dice_size": 20
+      }
+    }
+  },
+  {
+    "question": "I have these dice: 1d20, 1d11, 1d9, 1d9. What are the odds of rolling 24 or higher? (Assume that all dice are rolled at once, and that '1d6' represents one roll of a 6-sided dice.) Please respond with a reduced fraction representing the probability [ex., 1/60].",
+    "answer": "1273/1980",
+    "metadata": {
+      "source_dataset": "dice",
+      "source_index": 83,
+      "puzzle": {
+        "dice_str": "1d20, 1d11, 1d9, 1d9",
+        "target": 24,
+        "num": 1273,
+        "den": 1980,
+        "probability": 0.6429292929292929
+      },
+      "difficulty": {
+        "num_dice": 4,
+        "max_dice_size": 20
+      }
+    }
+  },
+  {
+    "question": "I have these dice: 1d20, 1d16, 1d9, 1d3. What are the odds of rolling 23 or higher? (Assume that all dice are rolled at once, and that '1d6' represents one roll of a 6-sided dice.) Please respond with a reduced fraction representing the probability [ex., 1/60].",
+    "answer": "1907/2880",
+    "metadata": {
+      "source_dataset": "dice",
+      "source_index": 84,
+      "puzzle": {
+        "dice_str": "1d20, 1d16, 1d9, 1d3",
+        "target": 23,
+        "num": 1907,
+        "den": 2880,
+        "probability": 0.6621527777777778
+      },
+      "difficulty": {
+        "num_dice": 4,
+        "max_dice_size": 20
+      }
+    }
+  },
+  {
+    "question": "I have these dice: 1d20, 1d5, 1d3, 1d2. What are the odds of rolling 12 or higher? (Assume that all dice are rolled at once, and that '1d6' represents one roll of a 6-sided dice.) Please respond with a reduced fraction representing the probability [ex., 1/60].",
+    "answer": "31/40",
+    "metadata": {
+      "source_dataset": "dice",
+      "source_index": 85,
+      "puzzle": {
+        "dice_str": "1d20, 1d5, 1d3, 1d2",
+        "target": 12,
+        "num": 31,
+        "den": 40,
+        "probability": 0.775
+      },
+      "difficulty": {
+        "num_dice": 4,
+        "max_dice_size": 20
+      }
+    }
+  },
+  {
+    "question": "I have these dice: 1d20, 1d18, 1d14, 1d9. What are the odds of rolling 34 or higher? (Assume that all dice are rolled at once, and that '1d6' represents one roll of a 6-sided dice.) Please respond with a reduced fraction representing the probability [ex., 1/60].",
+    "answer": "1733/3780",
+    "metadata": {
+      "source_dataset": "dice",
+      "source_index": 86,
+      "puzzle": {
+        "dice_str": "1d20, 1d18, 1d14, 1d9",
+        "target": 34,
+        "num": 1733,
+        "den": 3780,
+        "probability": 0.45846560846560847
+      },
+      "difficulty": {
+        "num_dice": 4,
+        "max_dice_size": 20
+      }
+    }
+  },
+  {
+    "question": "I have these dice: 1d20, 1d18, 1d10, 1d3. What are the odds of rolling 31 or higher? (Assume that all dice are rolled at once, and that '1d6' represents one roll of a 6-sided dice.) Please respond with a reduced fraction representing the probability [ex., 1/60].",
+    "answer": "659/1800",
+    "metadata": {
+      "source_dataset": "dice",
+      "source_index": 87,
+      "puzzle": {
+        "dice_str": "1d20, 1d18, 1d10, 1d3",
+        "target": 31,
+        "num": 659,
+        "den": 1800,
+        "probability": 0.3661111111111111
+      },
+      "difficulty": {
+        "num_dice": 4,
+        "max_dice_size": 20
+      }
+    }
+  },
+  {
+    "question": "I have these dice: 1d20, 1d18, 1d15, 1d10. What are the odds of rolling 37 or higher? (Assume that all dice are rolled at once, and that '1d6' represents one roll of a 6-sided dice.) Please respond with a reduced fraction representing the probability [ex., 1/60].",
+    "answer": "4099/10800",
+    "metadata": {
+      "source_dataset": "dice",
+      "source_index": 88,
+      "puzzle": {
+        "dice_str": "1d20, 1d18, 1d15, 1d10",
+        "target": 37,
+        "num": 4099,
+        "den": 10800,
+        "probability": 0.37953703703703706
+      },
+      "difficulty": {
+        "num_dice": 4,
+        "max_dice_size": 20
+      }
+    }
+  },
+  {
+    "question": "I have these dice: 1d20, 1d18, 1d13, 1d12. What are the odds of rolling 25 or higher? (Assume that all dice are rolled at once, and that '1d6' represents one roll of a 6-sided dice.) Please respond with a reduced fraction representing the probability [ex., 1/60].",
+    "answer": "9275/11232",
+    "metadata": {
+      "source_dataset": "dice",
+      "source_index": 89,
+      "puzzle": {
+        "dice_str": "1d20, 1d18, 1d13, 1d12",
+        "target": 25,
+        "num": 9275,
+        "den": 11232,
+        "probability": 0.8257656695156695
+      },
+      "difficulty": {
+        "num_dice": 4,
+        "max_dice_size": 20
+      }
+    }
+  },
+  {
+    "question": "I have these dice: 1d20, 1d15, 1d15, 1d6. What are the odds of rolling 22 or higher? (Assume that all dice are rolled at once, and that '1d6' represents one roll of a 6-sided dice.) Please respond with a reduced fraction representing the probability [ex., 1/60].",
+    "answer": "83/100",
+    "metadata": {
+      "source_dataset": "dice",
+      "source_index": 90,
+      "puzzle": {
+        "dice_str": "1d20, 1d15, 1d15, 1d6",
+        "target": 22,
+        "num": 83,
+        "den": 100,
+        "probability": 0.83
+      },
+      "difficulty": {
+        "num_dice": 4,
+        "max_dice_size": 20
+      }
+    }
+  },
+  {
+    "question": "I have these dice: 1d20, 1d17, 1d17, 1d13. What are the odds of rolling 35 or higher? (Assume that all dice are rolled at once, and that '1d6' represents one roll of a 6-sided dice.) Please respond with a reduced fraction representing the probability [ex., 1/60].",
+    "answer": "779/1445",
+    "metadata": {
+      "source_dataset": "dice",
+      "source_index": 91,
+      "puzzle": {
+        "dice_str": "1d20, 1d17, 1d17, 1d13",
+        "target": 35,
+        "num": 779,
+        "den": 1445,
+        "probability": 0.5391003460207613
+      },
+      "difficulty": {
+        "num_dice": 4,
+        "max_dice_size": 20
+      }
+    }
+  },
+  {
+    "question": "I have these dice: 1d20, 1d18, 1d17, 1d8. What are the odds of rolling 40 or higher? (Assume that all dice are rolled at once, and that '1d6' represents one roll of a 6-sided dice.) Please respond with a reduced fraction representing the probability [ex., 1/60].",
+    "answer": "13303/48960",
+    "metadata": {
+      "source_dataset": "dice",
+      "source_index": 92,
+      "puzzle": {
+        "dice_str": "1d20, 1d18, 1d17, 1d8",
+        "target": 40,
+        "num": 13303,
+        "den": 48960,
+        "probability": 0.2717116013071895
+      },
+      "difficulty": {
+        "num_dice": 4,
+        "max_dice_size": 20
+      }
+    }
+  },
+  {
+    "question": "I have these dice: 1d20, 1d17, 1d13, 1d10. What are the odds of rolling 31 or higher? (Assume that all dice are rolled at once, and that '1d6' represents one roll of a 6-sided dice.) Please respond with a reduced fraction representing the probability [ex., 1/60].",
+    "answer": "2491/4420",
+    "metadata": {
+      "source_dataset": "dice",
+      "source_index": 93,
+      "puzzle": {
+        "dice_str": "1d20, 1d17, 1d13, 1d10",
+        "target": 31,
+        "num": 2491,
+        "den": 4420,
+        "probability": 0.5635746606334842
+      },
+      "difficulty": {
+        "num_dice": 4,
+        "max_dice_size": 20
+      }
+    }
+  },
+  {
+    "question": "I have these dice: 1d20, 1d18, 1d15, 1d3. What are the odds of rolling 34 or higher? (Assume that all dice are rolled at once, and that '1d6' represents one roll of a 6-sided dice.) Please respond with a reduced fraction representing the probability [ex., 1/60].",
+    "answer": "1151/3240",
+    "metadata": {
+      "source_dataset": "dice",
+      "source_index": 94,
+      "puzzle": {
+        "dice_str": "1d20, 1d18, 1d15, 1d3",
+        "target": 34,
+        "num": 1151,
+        "den": 3240,
+        "probability": 0.3552469135802469
+      },
+      "difficulty": {
+        "num_dice": 4,
+        "max_dice_size": 20
+      }
+    }
+  },
+  {
+    "question": "I have these dice: 1d20, 1d15, 1d7, 1d4. What are the odds of rolling 23 or higher? (Assume that all dice are rolled at once, and that '1d6' represents one roll of a 6-sided dice.) Please respond with a reduced fraction representing the probability [ex., 1/60].",
+    "answer": "149/240",
+    "metadata": {
+      "source_dataset": "dice",
+      "source_index": 95,
+      "puzzle": {
+        "dice_str": "1d20, 1d15, 1d7, 1d4",
+        "target": 23,
+        "num": 149,
+        "den": 240,
+        "probability": 0.6208333333333333
+      },
+      "difficulty": {
+        "num_dice": 4,
+        "max_dice_size": 20
+      }
+    }
+  },
+  {
+    "question": "I have these dice: 1d20, 1d16, 1d14, 1d8. What are the odds of rolling 31 or higher? (Assume that all dice are rolled at once, and that '1d6' represents one roll of a 6-sided dice.) Please respond with a reduced fraction representing the probability [ex., 1/60].",
+    "answer": "2337/4480",
+    "metadata": {
+      "source_dataset": "dice",
+      "source_index": 96,
+      "puzzle": {
+        "dice_str": "1d20, 1d16, 1d14, 1d8",
+        "target": 31,
+        "num": 2337,
+        "den": 4480,
+        "probability": 0.5216517857142857
+      },
+      "difficulty": {
+        "num_dice": 4,
+        "max_dice_size": 20
+      }
+    }
+  },
+  {
+    "question": "I have these dice: 1d20, 1d19, 1d11, 1d2. What are the odds of rolling 20 or higher? (Assume that all dice are rolled at once, and that '1d6' represents one roll of a 6-sided dice.) Please respond with a reduced fraction representing the probability [ex., 1/60].",
+    "answer": "629/760",
+    "metadata": {
+      "source_dataset": "dice",
+      "source_index": 97,
+      "puzzle": {
+        "dice_str": "1d20, 1d19, 1d11, 1d2",
+        "target": 20,
+        "num": 629,
+        "den": 760,
+        "probability": 0.8276315789473684
+      },
+      "difficulty": {
+        "num_dice": 4,
+        "max_dice_size": 20
+      }
+    }
+  },
+  {
+    "question": "I have these dice: 1d20, 1d10, 1d5, 1d2. What are the odds of rolling 15 or higher? (Assume that all dice are rolled at once, and that '1d6' represents one roll of a 6-sided dice.) Please respond with a reduced fraction representing the probability [ex., 1/60].",
+    "answer": "793/1000",
+    "metadata": {
+      "source_dataset": "dice",
+      "source_index": 98,
+      "puzzle": {
+        "dice_str": "1d20, 1d10, 1d5, 1d2",
+        "target": 15,
+        "num": 793,
+        "den": 1000,
+        "probability": 0.793
+      },
+      "difficulty": {
+        "num_dice": 4,
+        "max_dice_size": 20
+      }
+    }
+  },
+  {
+    "question": "I have these dice: 1d20, 1d18, 1d17, 1d2. What are the odds of rolling 26 or higher? (Assume that all dice are rolled at once, and that '1d6' represents one roll of a 6-sided dice.) Please respond with a reduced fraction representing the probability [ex., 1/60].",
+    "answer": "569/816",
+    "metadata": {
+      "source_dataset": "dice",
+      "source_index": 99,
+      "puzzle": {
+        "dice_str": "1d20, 1d18, 1d17, 1d2",
+        "target": 26,
+        "num": 569,
+        "den": 816,
+        "probability": 0.6973039215686274
+      },
+      "difficulty": {
+        "num_dice": 4,
+        "max_dice_size": 20
+      }
+    }
+  }
+]

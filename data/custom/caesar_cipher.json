@@ -1,0 +1,2202 @@
+[
+  {
+    "question": "Decrypt this Caesar cipher text: JNJUBUF ZPVS BTTPDJBUF XIPN J XBT DPNQMJNFOUJOH B NPNFOU BHP. Provide only the decrypted text as your final answer.",
+    "answer": "IMITATE YOUR ASSOCIATE WHOM I WAS COMPLIMENTING A MOMENT AGO",
+    "metadata": {
+      "source_dataset": "caesar_cipher",
+      "source_index": 0,
+      "rotation": 1,
+      "cipher_text": "JNJUBUF ZPVS BTTPDJBUF XIPN J XBT DPNQMJNFOUJOH B NPNFOU BHP",
+      "clear_text": "IMITATE YOUR ASSOCIATE WHOM I WAS COMPLIMENTING A MOMENT AGO",
+      "num_words": 10,
+      "difficulty": {
+        "words": [
+          3,
+          20
+        ],
+        "rotation": [
+          1,
+          25
+        ]
+      }
+    }
+  },
+  {
+    "question": "Decrypt this Caesar cipher text: PBSDJ XKZYVOYX CWSDR LYEQRD SD PYB K WOBO KXN YBSQSXKDON DOVOZRYXSM TYEBXKVSCW. Provide only the decrypted text as your final answer.",
+    "answer": "FRITZ NAPOLEON SMITH BOUGHT IT FOR A MERE AND ORIGINATED TELEPHONIC JOURNALISM",
+    "metadata": {
+      "source_dataset": "caesar_cipher",
+      "source_index": 1,
+      "rotation": 10,
+      "cipher_text": "PBSDJ XKZYVOYX CWSDR LYEQRD SD PYB K WOBO KXN YBSQSXKDON DOVOZRYXSM TYEBXKVSCW",
+      "clear_text": "FRITZ NAPOLEON SMITH BOUGHT IT FOR A MERE AND ORIGINATED TELEPHONIC JOURNALISM",
+      "num_words": 12,
+      "difficulty": {
+        "words": [
+          3,
+          20
+        ],
+        "rotation": [
+          1,
+          25
+        ]
+      }
+    }
+  },
+  {
+    "question": "Decrypt this Caesar cipher text: ZW PFLI JKFDRTY ZJ FLK FW ZK DLJK SV DVEUVU. Provide only the decrypted text as your final answer.",
+    "answer": "IF YOUR STOMACH IS OUT OF IT MUST BE MENDED",
+    "metadata": {
+      "source_dataset": "caesar_cipher",
+      "source_index": 2,
+      "rotation": 17,
+      "cipher_text": "ZW PFLI JKFDRTY ZJ FLK FW ZK DLJK SV DVEUVU",
+      "clear_text": "IF YOUR STOMACH IS OUT OF IT MUST BE MENDED",
+      "num_words": 10,
+      "difficulty": {
+        "words": [
+          3,
+          20
+        ],
+        "rotation": [
+          1,
+          25
+        ]
+      }
+    }
+  },
+  {
+    "question": "Decrypt this Caesar cipher text: WG DFCUFSGG SJSFMKVSFS SLQSDH AIHHSFSR AF. Provide only the decrypted text as your final answer.",
+    "answer": "IS PROGRESS EVERYWHERE EXCEPT MUTTERED MR",
+    "metadata": {
+      "source_dataset": "caesar_cipher",
+      "source_index": 3,
+      "rotation": 14,
+      "cipher_text": "WG DFCUFSGG SJSFMKVSFS SLQSDH AIHHSFSR AF",
+      "clear_text": "IS PROGRESS EVERYWHERE EXCEPT MUTTERED MR",
+      "num_words": 6,
+      "difficulty": {
+        "words": [
+          3,
+          20
+        ],
+        "rotation": [
+          1,
+          25
+        ]
+      }
+    }
+  },
+  {
+    "question": "Decrypt this Caesar cipher text: FUR VF URE URNQ FHAX VA GUR CVYYBJF. Provide only the decrypted text as your final answer.",
+    "answer": "SHE IS HER HEAD SUNK IN THE PILLOWS",
+    "metadata": {
+      "source_dataset": "caesar_cipher",
+      "source_index": 4,
+      "rotation": 13,
+      "cipher_text": "FUR VF URE URNQ FHAX VA GUR CVYYBJF",
+      "clear_text": "SHE IS HER HEAD SUNK IN THE PILLOWS",
+      "num_words": 8,
+      "difficulty": {
+        "words": [
+          3,
+          20
+        ],
+        "rotation": [
+          1,
+          25
+        ]
+      }
+    }
+  },
+  {
+    "question": "Decrypt this Caesar cipher text: KLV VSHFLDO SURMHFW KDG WR GR ZLWK WKH FLWB RI DV HYHUBERGB VRPH ILIWHHQ PLOHV LQODQG. Provide only the decrypted text as your final answer.",
+    "answer": "HIS SPECIAL PROJECT HAD TO DO WITH THE CITY OF AS EVERYBODY SOME FIFTEEN MILES INLAND",
+    "metadata": {
+      "source_dataset": "caesar_cipher",
+      "source_index": 5,
+      "rotation": 3,
+      "cipher_text": "KLV VSHFLDO SURMHFW KDG WR GR ZLWK WKH FLWB RI DV HYHUBERGB VRPH ILIWHHQ PLOHV LQODQG",
+      "clear_text": "HIS SPECIAL PROJECT HAD TO DO WITH THE CITY OF AS EVERYBODY SOME FIFTEEN MILES INLAND",
+      "num_words": 16,
+      "difficulty": {
+        "words": [
+          3,
+          20
+        ],
+        "rotation": [
+          1,
+          25
+        ]
+      }
+    }
+  },
+  {
+    "question": "Decrypt this Caesar cipher text: ESP NZAJCTRSE WLHD ZQ ESP AWLNP HSPCP JZF LCP WZNLEPO LWDZ RZGPCY HSLE JZF NLY OZ HTES ESTD HZCV. Provide only the decrypted text as your final answer.",
+    "answer": "THE COPYRIGHT LAWS OF THE PLACE WHERE YOU ARE LOCATED ALSO GOVERN WHAT YOU CAN DO WITH THIS WORK",
+    "metadata": {
+      "source_dataset": "caesar_cipher",
+      "source_index": 6,
+      "rotation": 11,
+      "cipher_text": "ESP NZAJCTRSE WLHD ZQ ESP AWLNP HSPCP JZF LCP WZNLEPO LWDZ RZGPCY HSLE JZF NLY OZ HTES ESTD HZCV",
+      "clear_text": "THE COPYRIGHT LAWS OF THE PLACE WHERE YOU ARE LOCATED ALSO GOVERN WHAT YOU CAN DO WITH THIS WORK",
+      "num_words": 19,
+      "difficulty": {
+        "words": [
+          3,
+          20
+        ],
+        "rotation": [
+          1,
+          25
+        ]
+      }
+    }
+  },
+  {
+    "question": "Decrypt this Caesar cipher text: UZODQPUNXQ FTAGST UF UZ MXX FTQ FQZ KQMDE EUZOQ FTQUD FTUE UE FTQ RUDEF FUYQ FTMF YDE. Provide only the decrypted text as your final answer.",
+    "answer": "INCREDIBLE THOUGH IT IN ALL THE TEN YEARS SINCE THEIR THIS IS THE FIRST TIME THAT MRS",
+    "metadata": {
+      "source_dataset": "caesar_cipher",
+      "source_index": 7,
+      "rotation": 12,
+      "cipher_text": "UZODQPUNXQ FTAGST UF UZ MXX FTQ FQZ KQMDE EUZOQ FTQUD FTUE UE FTQ RUDEF FUYQ FTMF YDE",
+      "clear_text": "INCREDIBLE THOUGH IT IN ALL THE TEN YEARS SINCE THEIR THIS IS THE FIRST TIME THAT MRS",
+      "num_words": 17,
+      "difficulty": {
+        "words": [
+          3,
+          20
+        ],
+        "rotation": [
+          1,
+          25
+        ]
+      }
+    }
+  },
+  {
+    "question": "Decrypt this Caesar cipher text: QXF UXWP QJB QN KNNW MA. Provide only the decrypted text as your final answer.",
+    "answer": "HOW LONG HAS HE BEEN DR",
+    "metadata": {
+      "source_dataset": "caesar_cipher",
+      "source_index": 8,
+      "rotation": 9,
+      "cipher_text": "QXF UXWP QJB QN KNNW MA",
+      "clear_text": "HOW LONG HAS HE BEEN DR",
+      "num_words": 6,
+      "difficulty": {
+        "words": [
+          3,
+          20
+        ],
+        "rotation": [
+          1,
+          25
+        ]
+      }
+    }
+  },
+  {
+    "question": "Decrypt this Caesar cipher text: RE ZEUVGVEUVEK XFMVIEDVEK. Provide only the decrypted text as your final answer.",
+    "answer": "AN INDEPENDENT GOVERNMENT",
+    "metadata": {
+      "source_dataset": "caesar_cipher",
+      "source_index": 9,
+      "rotation": 17,
+      "cipher_text": "RE ZEUVGVEUVEK XFMVIEDVEK",
+      "clear_text": "AN INDEPENDENT GOVERNMENT",
+      "num_words": 3,
+      "difficulty": {
+        "words": [
+          3,
+          20
+        ],
+        "rotation": [
+          1,
+          25
+        ]
+      }
+    }
+  },
+  {
+    "question": "Decrypt this Caesar cipher text: KV KU FGNKIJVHWN VJWU VQ VCMG DTGCMHCUV YKVJ QPG YJQ KU OKNGU QT UQ CYCA. Provide only the decrypted text as your final answer.",
+    "answer": "IT IS DELIGHTFUL THUS TO TAKE BREAKFAST WITH ONE WHO IS MILES OR SO AWAY",
+    "metadata": {
+      "source_dataset": "caesar_cipher",
+      "source_index": 10,
+      "rotation": 2,
+      "cipher_text": "KV KU FGNKIJVHWN VJWU VQ VCMG DTGCMHCUV YKVJ QPG YJQ KU OKNGU QT UQ CYCA",
+      "clear_text": "IT IS DELIGHTFUL THUS TO TAKE BREAKFAST WITH ONE WHO IS MILES OR SO AWAY",
+      "num_words": 15,
+      "difficulty": {
+        "words": [
+          3,
+          20
+        ],
+        "rotation": [
+          1,
+          25
+        ]
+      }
+    }
+  },
+  {
+    "question": "Decrypt this Caesar cipher text: MVY MVYAF OL WYVKBJLK HUK KPZAYPIBALK WYVQLJA LIVVRZ DPAO VUSF H SVVZL ULADVYR VM CVSBUALLY ZBWWVYA. Provide only the decrypted text as your final answer.",
+    "answer": "FOR FORTY HE PRODUCED AND DISTRIBUTED PROJECT EBOOKS WITH ONLY A LOOSE NETWORK OF VOLUNTEER SUPPORT",
+    "metadata": {
+      "source_dataset": "caesar_cipher",
+      "source_index": 11,
+      "rotation": 7,
+      "cipher_text": "MVY MVYAF OL WYVKBJLK HUK KPZAYPIBALK WYVQLJA LIVVRZ DPAO VUSF H SVVZL ULADVYR VM CVSBUALLY ZBWWVYA",
+      "clear_text": "FOR FORTY HE PRODUCED AND DISTRIBUTED PROJECT EBOOKS WITH ONLY A LOOSE NETWORK OF VOLUNTEER SUPPORT",
+      "num_words": 16,
+      "difficulty": {
+        "words": [
+          3,
+          20
+        ],
+        "rotation": [
+          1,
+          25
+        ]
+      }
+    }
+  },
+  {
+    "question": "Decrypt this Caesar cipher text: LWPI DU PHZTS BG. Provide only the decrypted text as your final answer.",
+    "answer": "WHAT OF ASKED MR",
+    "metadata": {
+      "source_dataset": "caesar_cipher",
+      "source_index": 12,
+      "rotation": 15,
+      "cipher_text": "LWPI DU PHZTS BG",
+      "clear_text": "WHAT OF ASKED MR",
+      "num_words": 4,
+      "difficulty": {
+        "words": [
+          3,
+          20
+        ],
+        "rotation": [
+          1,
+          25
+        ]
+      }
+    }
+  },
+  {
+    "question": "Decrypt this Caesar cipher text: MPYZA OL LUALYZ AOL OHSS VM AOL H CHZA HWHYATLUA JYVDULK DPAO HU LUVYTVBZ AYHUZWHYLUA JBWVSH. Provide only the decrypted text as your final answer.",
+    "answer": "FIRST HE ENTERS THE HALL OF THE A VAST APARTMENT CROWNED WITH AN ENORMOUS TRANSPARENT CUPOLA",
+    "metadata": {
+      "source_dataset": "caesar_cipher",
+      "source_index": 13,
+      "rotation": 7,
+      "cipher_text": "MPYZA OL LUALYZ AOL OHSS VM AOL H CHZA HWHYATLUA JYVDULK DPAO HU LUVYTVBZ AYHUZWHYLUA JBWVSH",
+      "clear_text": "FIRST HE ENTERS THE HALL OF THE A VAST APARTMENT CROWNED WITH AN ENORMOUS TRANSPARENT CUPOLA",
+      "num_words": 16,
+      "difficulty": {
+        "words": [
+          3,
+          20
+        ],
+        "rotation": [
+          1,
+          25
+        ]
+      }
+    }
+  },
+  {
+    "question": "Decrypt this Caesar cipher text: BOE BOZ BEEJUJPOBM UFSNT JNQPTFE CZ UIF DPQZSJHIU IPMEFS. Provide only the decrypted text as your final answer.",
+    "answer": "AND ANY ADDITIONAL TERMS IMPOSED BY THE COPYRIGHT HOLDER",
+    "metadata": {
+      "source_dataset": "caesar_cipher",
+      "source_index": 14,
+      "rotation": 1,
+      "cipher_text": "BOE BOZ BEEJUJPOBM UFSNT JNQPTFE CZ UIF DPQZSJHIU IPMEFS",
+      "clear_text": "AND ANY ADDITIONAL TERMS IMPOSED BY THE COPYRIGHT HOLDER",
+      "num_words": 9,
+      "difficulty": {
+        "words": [
+          3,
+          20
+        ],
+        "rotation": [
+          1,
+          25
+        ]
+      }
+    }
+  },
+  {
+    "question": "Decrypt this Caesar cipher text: DQOWAZ GB FTQ ZGYNQD AR EOUQZFUEFE MZP MDFUEFE FTMF TQ AR UZHQZFADE FTMF TQ TME GZPQD TUE BMK. Provide only the decrypted text as your final answer.",
+    "answer": "RECKON UP THE NUMBER OF SCIENTISTS AND ARTISTS THAT HE OF INVENTORS THAT HE HAS UNDER HIS PAY",
+    "metadata": {
+      "source_dataset": "caesar_cipher",
+      "source_index": 15,
+      "rotation": 12,
+      "cipher_text": "DQOWAZ GB FTQ ZGYNQD AR EOUQZFUEFE MZP MDFUEFE FTMF TQ AR UZHQZFADE FTMF TQ TME GZPQD TUE BMK",
+      "clear_text": "RECKON UP THE NUMBER OF SCIENTISTS AND ARTISTS THAT HE OF INVENTORS THAT HE HAS UNDER HIS PAY",
+      "num_words": 18,
+      "difficulty": {
+        "words": [
+          3,
+          20
+        ],
+        "rotation": [
+          1,
+          25
+        ]
+      }
+    }
+  },
+  {
+    "question": "Decrypt this Caesar cipher text: PM AOL ZLJVUK JVWF PZ HSZV FVB THF KLTHUK H YLMBUK PU DYPAPUN DPAOVBA MBYAOLY VWWVYABUPAPLZ AV MPE AOL WYVISLT. Provide only the decrypted text as your final answer.",
+    "answer": "IF THE SECOND COPY IS ALSO YOU MAY DEMAND A REFUND IN WRITING WITHOUT FURTHER OPPORTUNITIES TO FIX THE PROBLEM",
+    "metadata": {
+      "source_dataset": "caesar_cipher",
+      "source_index": 16,
+      "rotation": 7,
+      "cipher_text": "PM AOL ZLJVUK JVWF PZ HSZV FVB THF KLTHUK H YLMBUK PU DYPAPUN DPAOVBA MBYAOLY VWWVYABUPAPLZ AV MPE AOL WYVISLT",
+      "clear_text": "IF THE SECOND COPY IS ALSO YOU MAY DEMAND A REFUND IN WRITING WITHOUT FURTHER OPPORTUNITIES TO FIX THE PROBLEM",
+      "num_words": 20,
+      "difficulty": {
+        "words": [
+          3,
+          20
+        ],
+        "rotation": [
+          1,
+          25
+        ]
+      }
+    }
+  },
+  {
+    "question": "Decrypt this Caesar cipher text: DW UHJXODU LQWHUYDOV WKHB DUH HYHU DGGUHVVLQJ WR WKH DPHULFDQ JRYHUQPHQW YDLQ FRPSODLQWV. Provide only the decrypted text as your final answer.",
+    "answer": "AT REGULAR INTERVALS THEY ARE EVER ADDRESSING TO THE AMERICAN GOVERNMENT VAIN COMPLAINTS",
+    "metadata": {
+      "source_dataset": "caesar_cipher",
+      "source_index": 17,
+      "rotation": 3,
+      "cipher_text": "DW UHJXODU LQWHUYDOV WKHB DUH HYHU DGGUHVVLQJ WR WKH DPHULFDQ JRYHUQPHQW YDLQ FRPSODLQWV",
+      "clear_text": "AT REGULAR INTERVALS THEY ARE EVER ADDRESSING TO THE AMERICAN GOVERNMENT VAIN COMPLAINTS",
+      "num_words": 13,
+      "difficulty": {
+        "words": [
+          3,
+          20
+        ],
+        "rotation": [
+          1,
+          25
+        ]
+      }
+    }
+  },
+  {
+    "question": "Decrypt this Caesar cipher text: DKUO WO DY WI KMMEWEVKDYB GYBUC KD XSKQKBK. Provide only the decrypted text as your final answer.",
+    "answer": "TAKE ME TO MY ACCUMULATOR WORKS AT NIAGARA",
+    "metadata": {
+      "source_dataset": "caesar_cipher",
+      "source_index": 18,
+      "rotation": 10,
+      "cipher_text": "DKUO WO DY WI KMMEWEVKDYB GYBUC KD XSKQKBK",
+      "clear_text": "TAKE ME TO MY ACCUMULATOR WORKS AT NIAGARA",
+      "num_words": 8,
+      "difficulty": {
+        "words": [
+          3,
+          20
+        ],
+        "rotation": [
+          1,
+          25
+        ]
+      }
+    }
+  },
+  {
+    "question": "Decrypt this Caesar cipher text: KDIRGOSY KBKXE UTK VXKYKTZ. Provide only the decrypted text as your final answer.",
+    "answer": "EXCLAIMS EVERY ONE PRESENT",
+    "metadata": {
+      "source_dataset": "caesar_cipher",
+      "source_index": 19,
+      "rotation": 6,
+      "cipher_text": "KDIRGOSY KBKXE UTK VXKYKTZ",
+      "clear_text": "EXCLAIMS EVERY ONE PRESENT",
+      "num_words": 4,
+      "difficulty": {
+        "words": [
+          3,
+          20
+        ],
+        "rotation": [
+          1,
+          25
+        ]
+      }
+    }
+  },
+  {
+    "question": "Decrypt this Caesar cipher text: IUVEXOMNZ RGC OT IXKGZOTM ZNK VXUPKIZ IURRKIZOUT. Provide only the decrypted text as your final answer.",
+    "answer": "COPYRIGHT LAW IN CREATING THE PROJECT COLLECTION",
+    "metadata": {
+      "source_dataset": "caesar_cipher",
+      "source_index": 20,
+      "rotation": 6,
+      "cipher_text": "IUVEXOMNZ RGC OT IXKGZOTM ZNK VXUPKIZ IURRKIZOUT",
+      "clear_text": "COPYRIGHT LAW IN CREATING THE PROJECT COLLECTION",
+      "num_words": 7,
+      "difficulty": {
+        "words": [
+          3,
+          20
+        ],
+        "rotation": [
+          1,
+          25
+        ]
+      }
+    }
+  },
+  {
+    "question": "Decrypt this Caesar cipher text: HBXIW PH WT HTKTGTS RDBBJCXRPIXDC LXIW EPGXH. Provide only the decrypted text as your final answer.",
+    "answer": "SMITH AS HE SEVERED COMMUNICATION WITH PARIS",
+    "metadata": {
+      "source_dataset": "caesar_cipher",
+      "source_index": 21,
+      "rotation": 15,
+      "cipher_text": "HBXIW PH WT HTKTGTS RDBBJCXRPIXDC LXIW EPGXH",
+      "clear_text": "SMITH AS HE SEVERED COMMUNICATION WITH PARIS",
+      "num_words": 7,
+      "difficulty": {
+        "words": [
+          3,
+          20
+        ],
+        "rotation": [
+          1,
+          25
+        ]
+      }
+    }
+  },
+  {
+    "question": "Decrypt this Caesar cipher text: IWGSVXIH FC E RYQIVSYW GSQTERC SJ QIR SJ WGMIRGI. Provide only the decrypted text as your final answer.",
+    "answer": "ESCORTED BY A NUMEROUS COMPANY OF MEN OF SCIENCE",
+    "metadata": {
+      "source_dataset": "caesar_cipher",
+      "source_index": 22,
+      "rotation": 4,
+      "cipher_text": "IWGSVXIH FC E RYQIVSYW GSQTERC SJ QIR SJ WGMIRGI",
+      "clear_text": "ESCORTED BY A NUMEROUS COMPANY OF MEN OF SCIENCE",
+      "num_words": 9,
+      "difficulty": {
+        "words": [
+          3,
+          20
+        ],
+        "rotation": [
+          1,
+          25
+        ]
+      }
+    }
+  },
+  {
+    "question": "Decrypt this Caesar cipher text: DRO CKSN WB. Provide only the decrypted text as your final answer.",
+    "answer": "THE SAID MR",
+    "metadata": {
+      "source_dataset": "caesar_cipher",
+      "source_index": 23,
+      "rotation": 10,
+      "cipher_text": "DRO CKSN WB",
+      "clear_text": "THE SAID MR",
+      "num_words": 3,
+      "difficulty": {
+        "words": [
+          3,
+          20
+        ],
+        "rotation": [
+          1,
+          25
+        ]
+      }
+    }
+  },
+  {
+    "question": "Decrypt this Caesar cipher text: CWSDR NYOC SC DY MYXXOMD RSC DRO GSBOC YP GRSMR MYWWEXSMKDO GSDR RSC ZKBSC WKXCSYX. Provide only the decrypted text as your final answer.",
+    "answer": "SMITH DOES IS TO CONNECT HIS THE WIRES OF WHICH COMMUNICATE WITH HIS PARIS MANSION",
+    "metadata": {
+      "source_dataset": "caesar_cipher",
+      "source_index": 24,
+      "rotation": 10,
+      "cipher_text": "CWSDR NYOC SC DY MYXXOMD RSC DRO GSBOC YP GRSMR MYWWEXSMKDO GSDR RSC ZKBSC WKXCSYX",
+      "clear_text": "SMITH DOES IS TO CONNECT HIS THE WIRES OF WHICH COMMUNICATE WITH HIS PARIS MANSION",
+      "num_words": 15,
+      "difficulty": {
+        "words": [
+          3,
+          20
+        ],
+        "rotation": [
+          1,
+          25
+        ]
+      }
+    }
+  },
+  {
+    "question": "Decrypt this Caesar cipher text: E ZEPYEFPI MRZIRXMSR ERH QV. Provide only the decrypted text as your final answer.",
+    "answer": "A VALUABLE INVENTION AND MR",
+    "metadata": {
+      "source_dataset": "caesar_cipher",
+      "source_index": 25,
+      "rotation": 4,
+      "cipher_text": "E ZEPYEFPI MRZIRXMSR ERH QV",
+      "clear_text": "A VALUABLE INVENTION AND MR",
+      "num_words": 5,
+      "difficulty": {
+        "words": [
+          3,
+          20
+        ],
+        "rotation": [
+          1,
+          25
+        ]
+      }
+    }
+  },
+  {
+    "question": "Decrypt this Caesar cipher text: FK QTL ELROP JO. Provide only the decrypted text as your final answer.",
+    "answer": "IN TWO HOURS MR",
+    "metadata": {
+      "source_dataset": "caesar_cipher",
+      "source_index": 26,
+      "rotation": 23,
+      "cipher_text": "FK QTL ELROP JO",
+      "clear_text": "IN TWO HOURS MR",
+      "num_words": 4,
+      "difficulty": {
+        "words": [
+          3,
+          20
+        ],
+        "rotation": [
+          1,
+          25
+        ]
+      }
+    }
+  },
+  {
+    "question": "Decrypt this Caesar cipher text: JVMXD RETSPISR WQMXL FSYKLX MX JSV E QIVI ERH SVMKMREXIH XIPITLSRMG NSYVREPMWQ. Provide only the decrypted text as your final answer.",
+    "answer": "FRITZ NAPOLEON SMITH BOUGHT IT FOR A MERE AND ORIGINATED TELEPHONIC JOURNALISM",
+    "metadata": {
+      "source_dataset": "caesar_cipher",
+      "source_index": 27,
+      "rotation": 4,
+      "cipher_text": "JVMXD RETSPISR WQMXL FSYKLX MX JSV E QIVI ERH SVMKMREXIH XIPITLSRMG NSYVREPMWQ",
+      "clear_text": "FRITZ NAPOLEON SMITH BOUGHT IT FOR A MERE AND ORIGINATED TELEPHONIC JOURNALISM",
+      "num_words": 12,
+      "difficulty": {
+        "words": [
+          3,
+          20
+        ],
+        "rotation": [
+          1,
+          25
+        ]
+      }
+    }
+  },
+  {
+    "question": "Decrypt this Caesar cipher text: CWSDR MYXDSXEOC RSC BYEXN KXN OXDOBC DRO RKVV. Provide only the decrypted text as your final answer.",
+    "answer": "SMITH CONTINUES HIS ROUND AND ENTERS THE HALL",
+    "metadata": {
+      "source_dataset": "caesar_cipher",
+      "source_index": 28,
+      "rotation": 10,
+      "cipher_text": "CWSDR MYXDSXEOC RSC BYEXN KXN OXDOBC DRO RKVV",
+      "clear_text": "SMITH CONTINUES HIS ROUND AND ENTERS THE HALL",
+      "num_words": 8,
+      "difficulty": {
+        "words": [
+          3,
+          20
+        ],
+        "rotation": [
+          1,
+          25
+        ]
+      }
+    }
+  },
+  {
+    "question": "Decrypt this Caesar cipher text: KF KYZJ NFIB DI. Provide only the decrypted text as your final answer.",
+    "answer": "TO THIS WORK MR",
+    "metadata": {
+      "source_dataset": "caesar_cipher",
+      "source_index": 29,
+      "rotation": 17,
+      "cipher_text": "KF KYZJ NFIB DI",
+      "clear_text": "TO THIS WORK MR",
+      "num_words": 4,
+      "difficulty": {
+        "words": [
+          3,
+          20
+        ],
+        "rotation": [
+          1,
+          25
+        ]
+      }
+    }
+  },
+  {
+    "question": "Decrypt this Caesar cipher text: NBY BYLY CM UHINBYL IZ NBY ALYUN NLCOGJBM IZ MWCYHWY CH IOL NCGY. Provide only the decrypted text as your final answer.",
+    "answer": "THE HERE IS ANOTHER OF THE GREAT TRIUMPHS OF SCIENCE IN OUR TIME",
+    "metadata": {
+      "source_dataset": "caesar_cipher",
+      "source_index": 30,
+      "rotation": 20,
+      "cipher_text": "NBY BYLY CM UHINBYL IZ NBY ALYUN NLCOGJBM IZ MWCYHWY CH IOL NCGY",
+      "clear_text": "THE HERE IS ANOTHER OF THE GREAT TRIUMPHS OF SCIENCE IN OUR TIME",
+      "num_words": 13,
+      "difficulty": {
+        "words": [
+          3,
+          20
+        ],
+        "rotation": [
+          1,
+          25
+        ]
+      }
+    }
+  },
+  {
+    "question": "Decrypt this Caesar cipher text: LI AEW NYWX JMRMWLMRK XLI HIWWIVX ALIR QVW. Provide only the decrypted text as your final answer.",
+    "answer": "HE WAS JUST FINISHING THE DESSERT WHEN MRS",
+    "metadata": {
+      "source_dataset": "caesar_cipher",
+      "source_index": 31,
+      "rotation": 4,
+      "cipher_text": "LI AEW NYWX JMRMWLMRK XLI HIWWIVX ALIR QVW",
+      "clear_text": "HE WAS JUST FINISHING THE DESSERT WHEN MRS",
+      "num_words": 8,
+      "difficulty": {
+        "words": [
+          3,
+          20
+        ],
+        "rotation": [
+          1,
+          25
+        ]
+      }
+    }
+  },
+  {
+    "question": "Decrypt this Caesar cipher text: UFERKZFEJ RIV RTTVGKVU ZE R ELDSVI FW FKYVI NRPJ ZETCLUZEX FECZEV GRPDVEKJ REU TIVUZK TRIU UFERKZFEJ. Provide only the decrypted text as your final answer.",
+    "answer": "DONATIONS ARE ACCEPTED IN A NUMBER OF OTHER WAYS INCLUDING ONLINE PAYMENTS AND CREDIT CARD DONATIONS",
+    "metadata": {
+      "source_dataset": "caesar_cipher",
+      "source_index": 32,
+      "rotation": 17,
+      "cipher_text": "UFERKZFEJ RIV RTTVGKVU ZE R ELDSVI FW FKYVI NRPJ ZETCLUZEX FECZEV GRPDVEKJ REU TIVUZK TRIU UFERKZFEJ",
+      "clear_text": "DONATIONS ARE ACCEPTED IN A NUMBER OF OTHER WAYS INCLUDING ONLINE PAYMENTS AND CREDIT CARD DONATIONS",
+      "num_words": 16,
+      "difficulty": {
+        "words": [
+          3,
+          20
+        ],
+        "rotation": [
+          1,
+          25
+        ]
+      }
+    }
+  },
+  {
+    "question": "Decrypt this Caesar cipher text: BM BL MAX WTR YHK MAX KXMNKG MH EBYX HY MAX YTFHNL WK. Provide only the decrypted text as your final answer.",
+    "answer": "IT IS THE DAY FOR THE RETURN TO LIFE OF THE FAMOUS DR",
+    "metadata": {
+      "source_dataset": "caesar_cipher",
+      "source_index": 33,
+      "rotation": 19,
+      "cipher_text": "BM BL MAX WTR YHK MAX KXMNKG MH EBYX HY MAX YTFHNL WK",
+      "clear_text": "IT IS THE DAY FOR THE RETURN TO LIFE OF THE FAMOUS DR",
+      "num_words": 13,
+      "difficulty": {
+        "words": [
+          3,
+          20
+        ],
+        "rotation": [
+          1,
+          25
+        ]
+      }
+    }
+  },
+  {
+    "question": "Decrypt this Caesar cipher text: IWT UDJGIW PCCDJCRTS IWT TPGAN HDAJIXDC DU P LTXVWIN HRXTCIXUXR EGDQATB. Provide only the decrypted text as your final answer.",
+    "answer": "THE FOURTH ANNOUNCED THE EARLY SOLUTION OF A WEIGHTY SCIENTIFIC PROBLEM",
+    "metadata": {
+      "source_dataset": "caesar_cipher",
+      "source_index": 34,
+      "rotation": 15,
+      "cipher_text": "IWT UDJGIW PCCDJCRTS IWT TPGAN HDAJIXDC DU P LTXVWIN HRXTCIXUXR EGDQATB",
+      "clear_text": "THE FOURTH ANNOUNCED THE EARLY SOLUTION OF A WEIGHTY SCIENTIFIC PROBLEM",
+      "num_words": 11,
+      "difficulty": {
+        "words": [
+          3,
+          20
+        ],
+        "rotation": [
+          1,
+          25
+        ]
+      }
+    }
+  },
+  {
+    "question": "Decrypt this Caesar cipher text: HSPCP ESP MPO DEZZO TY ESP XZCYTYR L ELMWP LWW DACPLO NZXPD FA ESCZFRS ESP QWZZC. Provide only the decrypted text as your final answer.",
+    "answer": "WHERE THE BED STOOD IN THE MORNING A TABLE ALL SPREAD COMES UP THROUGH THE FLOOR",
+    "metadata": {
+      "source_dataset": "caesar_cipher",
+      "source_index": 35,
+      "rotation": 11,
+      "cipher_text": "HSPCP ESP MPO DEZZO TY ESP XZCYTYR L ELMWP LWW DACPLO NZXPD FA ESCZFRS ESP QWZZC",
+      "clear_text": "WHERE THE BED STOOD IN THE MORNING A TABLE ALL SPREAD COMES UP THROUGH THE FLOOR",
+      "num_words": 16,
+      "difficulty": {
+        "words": [
+          3,
+          20
+        ],
+        "rotation": [
+          1,
+          25
+        ]
+      }
+    }
+  },
+  {
+    "question": "Decrypt this Caesar cipher text: WQMXL TEWWIH MRXS XLI RIBX ER IRSVQSYW KEPPIVC YTAEVH SJ JIIX MR HIZSXIH XS EXQSWTLIVMG EHZIVXMWMRK. Provide only the decrypted text as your final answer.",
+    "answer": "SMITH PASSED INTO THE NEXT AN ENORMOUS GALLERY UPWARD OF FEET IN DEVOTED TO ATMOSPHERIC ADVERTISING",
+    "metadata": {
+      "source_dataset": "caesar_cipher",
+      "source_index": 36,
+      "rotation": 4,
+      "cipher_text": "WQMXL TEWWIH MRXS XLI RIBX ER IRSVQSYW KEPPIVC YTAEVH SJ JIIX MR HIZSXIH XS EXQSWTLIVMG EHZIVXMWMRK",
+      "clear_text": "SMITH PASSED INTO THE NEXT AN ENORMOUS GALLERY UPWARD OF FEET IN DEVOTED TO ATMOSPHERIC ADVERTISING",
+      "num_words": 16,
+      "difficulty": {
+        "words": [
+          3,
+          20
+        ],
+        "rotation": [
+          1,
+          25
+        ]
+      }
+    }
+  },
+  {
+    "question": "Decrypt this Caesar cipher text: LXIW IWTXG WTPSH QTCI SDLC DKTG IWTXG TATRIGXR IWXGIN HRXTCIXUXR BTC LTGT PQHDGQTS XC IGPCHRTCSTCIPA RPARJAPIXDCH. Provide only the decrypted text as your final answer.",
+    "answer": "WITH THEIR HEADS BENT DOWN OVER THEIR ELECTRIC THIRTY SCIENTIFIC MEN WERE ABSORBED IN TRANSCENDENTAL CALCULATIONS",
+    "metadata": {
+      "source_dataset": "caesar_cipher",
+      "source_index": 37,
+      "rotation": 15,
+      "cipher_text": "LXIW IWTXG WTPSH QTCI SDLC DKTG IWTXG TATRIGXR IWXGIN HRXTCIXUXR BTC LTGT PQHDGQTS XC IGPCHRTCSTCIPA RPARJAPIXDCH",
+      "clear_text": "WITH THEIR HEADS BENT DOWN OVER THEIR ELECTRIC THIRTY SCIENTIFIC MEN WERE ABSORBED IN TRANSCENDENTAL CALCULATIONS",
+      "num_words": 16,
+      "difficulty": {
+        "words": [
+          3,
+          20
+        ],
+        "rotation": [
+          1,
+          25
+        ]
+      }
+    }
+  },
+  {
+    "question": "Decrypt this Caesar cipher text: VF CEBTERFF RIRELJURER RKPRCG ZHGGRERQ ZE. Provide only the decrypted text as your final answer.",
+    "answer": "IS PROGRESS EVERYWHERE EXCEPT MUTTERED MR",
+    "metadata": {
+      "source_dataset": "caesar_cipher",
+      "source_index": 38,
+      "rotation": 13,
+      "cipher_text": "VF CEBTERFF RIRELJURER RKPRCG ZHGGRERQ ZE",
+      "clear_text": "IS PROGRESS EVERYWHERE EXCEPT MUTTERED MR",
+      "num_words": 6,
+      "difficulty": {
+        "words": [
+          3,
+          20
+        ],
+        "rotation": [
+          1,
+          25
+        ]
+      }
+    }
+  },
+  {
+    "question": "Decrypt this Caesar cipher text: HBXIW ID SG. Provide only the decrypted text as your final answer.",
+    "answer": "SMITH TO DR",
+    "metadata": {
+      "source_dataset": "caesar_cipher",
+      "source_index": 39,
+      "rotation": 15,
+      "cipher_text": "HBXIW ID SG",
+      "clear_text": "SMITH TO DR",
+      "num_words": 3,
+      "difficulty": {
+        "words": [
+          3,
+          20
+        ],
+        "rotation": [
+          1,
+          25
+        ]
+      }
+    }
+  },
+  {
+    "question": "Decrypt this Caesar cipher text: VHSG SGDHQ GDZCR ADMS CNVM NUDQ SGDHQ DKDBSQHB SGHQSX RBHDMSHEHB LDM VDQD ZARNQADC HM SQZMRBDMCDMSZK BZKBTKZSHNMR. Provide only the decrypted text as your final answer.",
+    "answer": "WITH THEIR HEADS BENT DOWN OVER THEIR ELECTRIC THIRTY SCIENTIFIC MEN WERE ABSORBED IN TRANSCENDENTAL CALCULATIONS",
+    "metadata": {
+      "source_dataset": "caesar_cipher",
+      "source_index": 40,
+      "rotation": 25,
+      "cipher_text": "VHSG SGDHQ GDZCR ADMS CNVM NUDQ SGDHQ DKDBSQHB SGHQSX RBHDMSHEHB LDM VDQD ZARNQADC HM SQZMRBDMCDMSZK BZKBTKZSHNMR",
+      "clear_text": "WITH THEIR HEADS BENT DOWN OVER THEIR ELECTRIC THIRTY SCIENTIFIC MEN WERE ABSORBED IN TRANSCENDENTAL CALCULATIONS",
+      "num_words": 16,
+      "difficulty": {
+        "words": [
+          3,
+          20
+        ],
+        "rotation": [
+          1,
+          25
+        ]
+      }
+    }
+  },
+  {
+    "question": "Decrypt this Caesar cipher text: WDL ADCV WPH WT QTTC SG. Provide only the decrypted text as your final answer.",
+    "answer": "HOW LONG HAS HE BEEN DR",
+    "metadata": {
+      "source_dataset": "caesar_cipher",
+      "source_index": 41,
+      "rotation": 15,
+      "cipher_text": "WDL ADCV WPH WT QTTC SG",
+      "clear_text": "HOW LONG HAS HE BEEN DR",
+      "num_words": 6,
+      "difficulty": {
+        "words": [
+          3,
+          20
+        ],
+        "rotation": [
+          1,
+          25
+        ]
+      }
+    }
+  },
+  {
+    "question": "Decrypt this Caesar cipher text: VGDQD GZUD XNT ZRJDC LQ. Provide only the decrypted text as your final answer.",
+    "answer": "WHERE HAVE YOU ASKED MR",
+    "metadata": {
+      "source_dataset": "caesar_cipher",
+      "source_index": 42,
+      "rotation": 25,
+      "cipher_text": "VGDQD GZUD XNT ZRJDC LQ",
+      "clear_text": "WHERE HAVE YOU ASKED MR",
+      "num_words": 5,
+      "difficulty": {
+        "words": [
+          3,
+          20
+        ],
+        "rotation": [
+          1,
+          25
+        ]
+      }
+    }
+  },
+  {
+    "question": "Decrypt this Caesar cipher text: X AFPZRPPFLK TXP DLFKD LK TEBK EB BKQBOBA. Provide only the decrypted text as your final answer.",
+    "answer": "A DISCUSSION WAS GOING ON WHEN HE ENTERED",
+    "metadata": {
+      "source_dataset": "caesar_cipher",
+      "source_index": 43,
+      "rotation": 23,
+      "cipher_text": "X AFPZRPPFLK TXP DLFKD LK TEBK EB BKQBOBA",
+      "clear_text": "A DISCUSSION WAS GOING ON WHEN HE ENTERED",
+      "num_words": 8,
+      "difficulty": {
+        "words": [
+          3,
+          20
+        ],
+        "rotation": [
+          1,
+          25
+        ]
+      }
+    }
+  },
+  {
+    "question": "Decrypt this Caesar cipher text: SDD LZWKW OGFVWJK ZSNW TWWF OJGMYZL TQ LZW SUUMEMDSLGJ SFV LZW LJSFKXGJEWJ. Provide only the decrypted text as your final answer.",
+    "answer": "ALL THESE WONDERS HAVE BEEN WROUGHT BY THE ACCUMULATOR AND THE TRANSFORMER",
+    "metadata": {
+      "source_dataset": "caesar_cipher",
+      "source_index": 44,
+      "rotation": 18,
+      "cipher_text": "SDD LZWKW OGFVWJK ZSNW TWWF OJGMYZL TQ LZW SUUMEMDSLGJ SFV LZW LJSFKXGJEWJ",
+      "clear_text": "ALL THESE WONDERS HAVE BEEN WROUGHT BY THE ACCUMULATOR AND THE TRANSFORMER",
+      "num_words": 12,
+      "difficulty": {
+        "words": [
+          3,
+          20
+        ],
+        "rotation": [
+          1,
+          25
+        ]
+      }
+    }
+  },
+  {
+    "question": "Decrypt this Caesar cipher text: UGRF RFCGP FCYBQ ZCLR BMUL MTCP RFCGP CJCARPGA RFGPRW QAGCLRGDGA KCL UCPC YZQMPZCB GL RPYLQACLBCLRYJ AYJASJYRGMLQ. Provide only the decrypted text as your final answer.",
+    "answer": "WITH THEIR HEADS BENT DOWN OVER THEIR ELECTRIC THIRTY SCIENTIFIC MEN WERE ABSORBED IN TRANSCENDENTAL CALCULATIONS",
+    "metadata": {
+      "source_dataset": "caesar_cipher",
+      "source_index": 45,
+      "rotation": 24,
+      "cipher_text": "UGRF RFCGP FCYBQ ZCLR BMUL MTCP RFCGP CJCARPGA RFGPRW QAGCLRGDGA KCL UCPC YZQMPZCB GL RPYLQACLBCLRYJ AYJASJYRGMLQ",
+      "clear_text": "WITH THEIR HEADS BENT DOWN OVER THEIR ELECTRIC THIRTY SCIENTIFIC MEN WERE ABSORBED IN TRANSCENDENTAL CALCULATIONS",
+      "num_words": 16,
+      "difficulty": {
+        "words": [
+          3,
+          20
+        ],
+        "rotation": [
+          1,
+          25
+        ]
+      }
+    }
+  },
+  {
+    "question": "Decrypt this Caesar cipher text: PU JVUZLXBLUJL VM AOL CPIYHAPVUZ AOL HPY ILJHTL SBTPUVBZ. Provide only the decrypted text as your final answer.",
+    "answer": "IN CONSEQUENCE OF THE VIBRATIONS THE AIR BECAME LUMINOUS",
+    "metadata": {
+      "source_dataset": "caesar_cipher",
+      "source_index": 46,
+      "rotation": 7,
+      "cipher_text": "PU JVUZLXBLUJL VM AOL CPIYHAPVUZ AOL HPY ILJHTL SBTPUVBZ",
+      "clear_text": "IN CONSEQUENCE OF THE VIBRATIONS THE AIR BECAME LUMINOUS",
+      "num_words": 9,
+      "difficulty": {
+        "words": [
+          3,
+          20
+        ],
+        "rotation": [
+          1,
+          25
+        ]
+      }
+    }
+  },
+  {
+    "question": "Decrypt this Caesar cipher text: RGD HR CQDZLHMF CQDZLHMF. Provide only the decrypted text as your final answer.",
+    "answer": "SHE IS DREAMING DREAMING",
+    "metadata": {
+      "source_dataset": "caesar_cipher",
+      "source_index": 47,
+      "rotation": 25,
+      "cipher_text": "RGD HR CQDZLHMF CQDZLHMF",
+      "clear_text": "SHE IS DREAMING DREAMING",
+      "num_words": 4,
+      "difficulty": {
+        "words": [
+          3,
+          20
+        ],
+        "rotation": [
+          1,
+          25
+        ]
+      }
+    }
+  },
+  {
+    "question": "Decrypt this Caesar cipher text: LRO ZLJJLK QEB FQ PBBJP QL PBOSBP SBOV TBII. Provide only the decrypted text as your final answer.",
+    "answer": "OUR COMMON THE IT SEEMS TO SERVES VERY WELL",
+    "metadata": {
+      "source_dataset": "caesar_cipher",
+      "source_index": 48,
+      "rotation": 23,
+      "cipher_text": "LRO ZLJJLK QEB FQ PBBJP QL PBOSBP SBOV TBII",
+      "clear_text": "OUR COMMON THE IT SEEMS TO SERVES VERY WELL",
+      "num_words": 9,
+      "difficulty": {
+        "words": [
+          3,
+          20
+        ],
+        "rotation": [
+          1,
+          25
+        ]
+      }
+    }
+  },
+  {
+    "question": "Decrypt this Caesar cipher text: LAX BL IKHGHNGVBGZ T MAX WXEBZAMYNE OBLBHG ZTOX T ATIIBXK MNKG MH FK. Provide only the decrypted text as your final answer.",
+    "answer": "SHE IS PRONOUNCING A THE DELIGHTFUL VISION GAVE A HAPPIER TURN TO MR",
+    "metadata": {
+      "source_dataset": "caesar_cipher",
+      "source_index": 49,
+      "rotation": 19,
+      "cipher_text": "LAX BL IKHGHNGVBGZ T MAX WXEBZAMYNE OBLBHG ZTOX T ATIIBXK MNKG MH FK",
+      "clear_text": "SHE IS PRONOUNCING A THE DELIGHTFUL VISION GAVE A HAPPIER TURN TO MR",
+      "num_words": 13,
+      "difficulty": {
+        "words": [
+          3,
+          20
+        ],
+        "rotation": [
+          1,
+          25
+        ]
+      }
+    }
+  },
+  {
+    "question": "Decrypt this Caesar cipher text: RJ ZE KYV KYV REU NVIV JLGGCZVU KYIFLXY KYV. Provide only the decrypted text as your final answer.",
+    "answer": "AS IN THE THE AND WERE SUPPLIED THROUGH THE",
+    "metadata": {
+      "source_dataset": "caesar_cipher",
+      "source_index": 50,
+      "rotation": 17,
+      "cipher_text": "RJ ZE KYV KYV REU NVIV JLGGCZVU KYIFLXY KYV",
+      "clear_text": "AS IN THE THE AND WERE SUPPLIED THROUGH THE",
+      "num_words": 9,
+      "difficulty": {
+        "words": [
+          3,
+          20
+        ],
+        "rotation": [
+          1,
+          25
+        ]
+      }
+    }
+  },
+  {
+    "question": "Decrypt this Caesar cipher text: XQVETBFL XOXKR HGX IKXLXGM. Provide only the decrypted text as your final answer.",
+    "answer": "EXCLAIMS EVERY ONE PRESENT",
+    "metadata": {
+      "source_dataset": "caesar_cipher",
+      "source_index": 51,
+      "rotation": 19,
+      "cipher_text": "XQVETBFL XOXKR HGX IKXLXGM",
+      "clear_text": "EXCLAIMS EVERY ONE PRESENT",
+      "num_words": 4,
+      "difficulty": {
+        "words": [
+          3,
+          20
+        ],
+        "rotation": [
+          1,
+          25
+        ]
+      }
+    }
+  },
+  {
+    "question": "Decrypt this Caesar cipher text: TKGXRE GRR ZNK OTJOBOJAGR CUXQY OT ZNK IURRKIZOUT GXK OT ZNK VAHROI JUSGOT OT ZNK ATOZKJ YZGZKY. Provide only the decrypted text as your final answer.",
+    "answer": "NEARLY ALL THE INDIVIDUAL WORKS IN THE COLLECTION ARE IN THE PUBLIC DOMAIN IN THE UNITED STATES",
+    "metadata": {
+      "source_dataset": "caesar_cipher",
+      "source_index": 52,
+      "rotation": 6,
+      "cipher_text": "TKGXRE GRR ZNK OTJOBOJAGR CUXQY OT ZNK IURRKIZOUT GXK OT ZNK VAHROI JUSGOT OT ZNK ATOZKJ YZGZKY",
+      "clear_text": "NEARLY ALL THE INDIVIDUAL WORKS IN THE COLLECTION ARE IN THE PUBLIC DOMAIN IN THE UNITED STATES",
+      "num_words": 17,
+      "difficulty": {
+        "words": [
+          3,
+          20
+        ],
+        "rotation": [
+          1,
+          25
+        ]
+      }
+    }
+  },
+  {
+    "question": "Decrypt this Caesar cipher text: TIVRKZEX KYV NFIBJ WIFD GIZEK VUZKZFEJ EFK GIFKVTKVU SP L. Provide only the decrypted text as your final answer.",
+    "answer": "CREATING THE WORKS FROM PRINT EDITIONS NOT PROTECTED BY U",
+    "metadata": {
+      "source_dataset": "caesar_cipher",
+      "source_index": 53,
+      "rotation": 17,
+      "cipher_text": "TIVRKZEX KYV NFIBJ WIFD GIZEK VUZKZFEJ EFK GIFKVTKVU SP L",
+      "clear_text": "CREATING THE WORKS FROM PRINT EDITIONS NOT PROTECTED BY U",
+      "num_words": 10,
+      "difficulty": {
+        "words": [
+          3,
+          20
+        ],
+        "rotation": [
+          1,
+          25
+        ]
+      }
+    }
+  },
+  {
+    "question": "Decrypt this Caesar cipher text: ESP QZFCES LYYZFYNPO ESP PLCWJ DZWFETZY ZQ L HPTRSEJ DNTPYETQTN ACZMWPX. Provide only the decrypted text as your final answer.",
+    "answer": "THE FOURTH ANNOUNCED THE EARLY SOLUTION OF A WEIGHTY SCIENTIFIC PROBLEM",
+    "metadata": {
+      "source_dataset": "caesar_cipher",
+      "source_index": 54,
+      "rotation": 11,
+      "cipher_text": "ESP QZFCES LYYZFYNPO ESP PLCWJ DZWFETZY ZQ L HPTRSEJ DNTPYETQTN ACZMWPX",
+      "clear_text": "THE FOURTH ANNOUNCED THE EARLY SOLUTION OF A WEIGHTY SCIENTIFIC PROBLEM",
+      "num_words": 11,
+      "difficulty": {
+        "words": [
+          3,
+          20
+        ],
+        "rotation": [
+          1,
+          25
+        ]
+      }
+    }
+  },
+  {
+    "question": "Decrypt this Caesar cipher text: GOWR ORRFSGGWBU HVS VSOR GSS AF. Provide only the decrypted text as your final answer.",
+    "answer": "SAID ADDRESSING THE HEAD SEE MR",
+    "metadata": {
+      "source_dataset": "caesar_cipher",
+      "source_index": 55,
+      "rotation": 14,
+      "cipher_text": "GOWR ORRFSGGWBU HVS VSOR GSS AF",
+      "clear_text": "SAID ADDRESSING THE HEAD SEE MR",
+      "num_words": 6,
+      "difficulty": {
+        "words": [
+          3,
+          20
+        ],
+        "rotation": [
+          1,
+          25
+        ]
+      }
+    }
+  },
+  {
+    "question": "Decrypt this Caesar cipher text: MAX HY PHNEW UX XGHKFHNL. Provide only the decrypted text as your final answer.",
+    "answer": "THE OF WOULD BE ENORMOUS",
+    "metadata": {
+      "source_dataset": "caesar_cipher",
+      "source_index": 56,
+      "rotation": 19,
+      "cipher_text": "MAX HY PHNEW UX XGHKFHNL",
+      "clear_text": "THE OF WOULD BE ENORMOUS",
+      "num_words": 5,
+      "difficulty": {
+        "words": [
+          3,
+          20
+        ],
+        "rotation": [
+          1,
+          25
+        ]
+      }
+    }
+  },
+  {
+    "question": "Decrypt this Caesar cipher text: YRG ZR FRR LBHE GBATHR. Provide only the decrypted text as your final answer.",
+    "answer": "LET ME SEE YOUR TONGUE",
+    "metadata": {
+      "source_dataset": "caesar_cipher",
+      "source_index": 57,
+      "rotation": 13,
+      "cipher_text": "YRG ZR FRR LBHE GBATHR",
+      "clear_text": "LET ME SEE YOUR TONGUE",
+      "num_words": 5,
+      "difficulty": {
+        "words": [
+          3,
+          20
+        ],
+        "rotation": [
+          1,
+          25
+        ]
+      }
+    }
+  },
+  {
+    "question": "Decrypt this Caesar cipher text: LXIW IWTXG WTPSH QTCI SDLC DKTG IWTXG TATRIGXR IWXGIN HRXTCIXUXR BTC LTGT PQHDGQTS XC IGPCHRTCSTCIPA RPARJAPIXDCH. Provide only the decrypted text as your final answer.",
+    "answer": "WITH THEIR HEADS BENT DOWN OVER THEIR ELECTRIC THIRTY SCIENTIFIC MEN WERE ABSORBED IN TRANSCENDENTAL CALCULATIONS",
+    "metadata": {
+      "source_dataset": "caesar_cipher",
+      "source_index": 58,
+      "rotation": 15,
+      "cipher_text": "LXIW IWTXG WTPSH QTCI SDLC DKTG IWTXG TATRIGXR IWXGIN HRXTCIXUXR BTC LTGT PQHDGQTS XC IGPCHRTCSTCIPA RPARJAPIXDCH",
+      "clear_text": "WITH THEIR HEADS BENT DOWN OVER THEIR ELECTRIC THIRTY SCIENTIFIC MEN WERE ABSORBED IN TRANSCENDENTAL CALCULATIONS",
+      "num_words": 16,
+      "difficulty": {
+        "words": [
+          3,
+          20
+        ],
+        "rotation": [
+          1,
+          25
+        ]
+      }
+    }
+  },
+  {
+    "question": "Decrypt this Caesar cipher text: PM AOL ZLJVUK JVWF PZ HSZV FVB THF KLTHUK H YLMBUK PU DYPAPUN DPAOVBA MBYAOLY VWWVYABUPAPLZ AV MPE AOL WYVISLT. Provide only the decrypted text as your final answer.",
+    "answer": "IF THE SECOND COPY IS ALSO YOU MAY DEMAND A REFUND IN WRITING WITHOUT FURTHER OPPORTUNITIES TO FIX THE PROBLEM",
+    "metadata": {
+      "source_dataset": "caesar_cipher",
+      "source_index": 59,
+      "rotation": 7,
+      "cipher_text": "PM AOL ZLJVUK JVWF PZ HSZV FVB THF KLTHUK H YLMBUK PU DYPAPUN DPAOVBA MBYAOLY VWWVYABUPAPLZ AV MPE AOL WYVISLT",
+      "clear_text": "IF THE SECOND COPY IS ALSO YOU MAY DEMAND A REFUND IN WRITING WITHOUT FURTHER OPPORTUNITIES TO FIX THE PROBLEM",
+      "num_words": 20,
+      "difficulty": {
+        "words": [
+          3,
+          20
+        ],
+        "rotation": [
+          1,
+          25
+        ]
+      }
+    }
+  },
+  {
+    "question": "Decrypt this Caesar cipher text: PDA YKIEJC KB IN. Provide only the decrypted text as your final answer.",
+    "answer": "THE COMING OF MR",
+    "metadata": {
+      "source_dataset": "caesar_cipher",
+      "source_index": 60,
+      "rotation": 22,
+      "cipher_text": "PDA YKIEJC KB IN",
+      "clear_text": "THE COMING OF MR",
+      "num_words": 4,
+      "difficulty": {
+        "words": [
+          3,
+          20
+        ],
+        "rotation": [
+          1,
+          25
+        ]
+      }
+    }
+  },
+  {
+    "question": "Decrypt this Caesar cipher text: WMS KSQR AMKC YLB QCC. Provide only the decrypted text as your final answer.",
+    "answer": "YOU MUST COME AND SEE",
+    "metadata": {
+      "source_dataset": "caesar_cipher",
+      "source_index": 61,
+      "rotation": 24,
+      "cipher_text": "WMS KSQR AMKC YLB QCC",
+      "clear_text": "YOU MUST COME AND SEE",
+      "num_words": 5,
+      "difficulty": {
+        "words": [
+          3,
+          20
+        ],
+        "rotation": [
+          1,
+          25
+        ]
+      }
+    }
+  },
+  {
+    "question": "Decrypt this Caesar cipher text: AV QHJRZVU DL HYL PUKLIALK MVY AOVZL DVUKLYMBS PUZAYBTLUAZ AOL ULD HJJBTBSHAVYZ. Provide only the decrypted text as your final answer.",
+    "answer": "TO JACKSON WE ARE INDEBTED FOR THOSE WONDERFUL INSTRUMENTS THE NEW ACCUMULATORS",
+    "metadata": {
+      "source_dataset": "caesar_cipher",
+      "source_index": 62,
+      "rotation": 7,
+      "cipher_text": "AV QHJRZVU DL HYL PUKLIALK MVY AOVZL DVUKLYMBS PUZAYBTLUAZ AOL ULD HJJBTBSHAVYZ",
+      "clear_text": "TO JACKSON WE ARE INDEBTED FOR THOSE WONDERFUL INSTRUMENTS THE NEW ACCUMULATORS",
+      "num_words": 12,
+      "difficulty": {
+        "words": [
+          3,
+          20
+        ],
+        "rotation": [
+          1,
+          25
+        ]
+      }
+    }
+  },
+  {
+    "question": "Decrypt this Caesar cipher text: FTQ QUZ AD RQPQDMX FMJ UPQZFURUOMFUAZ ZGYNQD UE. Provide only the decrypted text as your final answer.",
+    "answer": "THE EIN OR FEDERAL TAX IDENTIFICATION NUMBER IS",
+    "metadata": {
+      "source_dataset": "caesar_cipher",
+      "source_index": 63,
+      "rotation": 12,
+      "cipher_text": "FTQ QUZ AD RQPQDMX FMJ UPQZFURUOMFUAZ ZGYNQD UE",
+      "clear_text": "THE EIN OR FEDERAL TAX IDENTIFICATION NUMBER IS",
+      "num_words": 8,
+      "difficulty": {
+        "words": [
+          3,
+          20
+        ],
+        "rotation": [
+          1,
+          25
+        ]
+      }
+    }
+  },
+  {
+    "question": "Decrypt this Caesar cipher text: UIF DBTLFU CFJOH MBJE EPXO JO UIF NJEEMF PG UIF UIF UFMFQIPUF XBT HPU JO SFBEJOFTT. Provide only the decrypted text as your final answer.",
+    "answer": "THE CASKET BEING LAID DOWN IN THE MIDDLE OF THE THE TELEPHOTE WAS GOT IN READINESS",
+    "metadata": {
+      "source_dataset": "caesar_cipher",
+      "source_index": 64,
+      "rotation": 1,
+      "cipher_text": "UIF DBTLFU CFJOH MBJE EPXO JO UIF NJEEMF PG UIF UIF UFMFQIPUF XBT HPU JO SFBEJOFTT",
+      "clear_text": "THE CASKET BEING LAID DOWN IN THE MIDDLE OF THE THE TELEPHOTE WAS GOT IN READINESS",
+      "num_words": 16,
+      "difficulty": {
+        "words": [
+          3,
+          20
+        ],
+        "rotation": [
+          1,
+          25
+        ]
+      }
+    }
+  },
+  {
+    "question": "Decrypt this Caesar cipher text: QCNB NBCM MUFFS NBY UOXCYHWY YHXYX. Provide only the decrypted text as your final answer.",
+    "answer": "WITH THIS SALLY THE AUDIENCE ENDED",
+    "metadata": {
+      "source_dataset": "caesar_cipher",
+      "source_index": 65,
+      "rotation": 20,
+      "cipher_text": "QCNB NBCM MUFFS NBY UOXCYHWY YHXYX",
+      "clear_text": "WITH THIS SALLY THE AUDIENCE ENDED",
+      "num_words": 6,
+      "difficulty": {
+        "words": [
+          3,
+          20
+        ],
+        "rotation": [
+          1,
+          25
+        ]
+      }
+    }
+  },
+  {
+    "question": "Decrypt this Caesar cipher text: QEBV JXV XQ MIBXPROB DFSB XQQBKQFLK QL LKB BAFQLO XKA OBCRPB FQ QL XKLQEBO. Provide only the decrypted text as your final answer.",
+    "answer": "THEY MAY AT PLEASURE GIVE ATTENTION TO ONE EDITOR AND REFUSE IT TO ANOTHER",
+    "metadata": {
+      "source_dataset": "caesar_cipher",
+      "source_index": 66,
+      "rotation": 23,
+      "cipher_text": "QEBV JXV XQ MIBXPROB DFSB XQQBKQFLK QL LKB BAFQLO XKA OBCRPB FQ QL XKLQEBO",
+      "clear_text": "THEY MAY AT PLEASURE GIVE ATTENTION TO ONE EDITOR AND REFUSE IT TO ANOTHER",
+      "num_words": 14,
+      "difficulty": {
+        "words": [
+          3,
+          20
+        ],
+        "rotation": [
+          1,
+          25
+        ]
+      }
+    }
+  },
+  {
+    "question": "Decrypt this Caesar cipher text: PM EIA RCAB NQVQAPQVO BPM LMAAMZB EPMV UZA. Provide only the decrypted text as your final answer.",
+    "answer": "HE WAS JUST FINISHING THE DESSERT WHEN MRS",
+    "metadata": {
+      "source_dataset": "caesar_cipher",
+      "source_index": 67,
+      "rotation": 8,
+      "cipher_text": "PM EIA RCAB NQVQAPQVO BPM LMAAMZB EPMV UZA",
+      "clear_text": "HE WAS JUST FINISHING THE DESSERT WHEN MRS",
+      "num_words": 8,
+      "difficulty": {
+        "words": [
+          3,
+          20
+        ],
+        "rotation": [
+          1,
+          25
+        ]
+      }
+    }
+  },
+  {
+    "question": "Decrypt this Caesar cipher text: FYZN NI ZYYFCHA BY FUS XIQH IH UH YRNYHMCIH WBUCL. Provide only the decrypted text as your final answer.",
+    "answer": "LEFT TO FEELING HE LAY DOWN ON AN EXTENSION CHAIR",
+    "metadata": {
+      "source_dataset": "caesar_cipher",
+      "source_index": 68,
+      "rotation": 20,
+      "cipher_text": "FYZN NI ZYYFCHA BY FUS XIQH IH UH YRNYHMCIH WBUCL",
+      "clear_text": "LEFT TO FEELING HE LAY DOWN ON AN EXTENSION CHAIR",
+      "num_words": 10,
+      "difficulty": {
+        "words": [
+          3,
+          20
+        ],
+        "rotation": [
+          1,
+          25
+        ]
+      }
+    }
+  },
+  {
+    "question": "Decrypt this Caesar cipher text: ESP LEEPYETZY ZQ ESP NSTYPDP RZGPCYXPYE DSLWW MP NLWWPO EZ ESP XLEEPC. Provide only the decrypted text as your final answer.",
+    "answer": "THE ATTENTION OF THE CHINESE GOVERNMENT SHALL BE CALLED TO THE MATTER",
+    "metadata": {
+      "source_dataset": "caesar_cipher",
+      "source_index": 69,
+      "rotation": 11,
+      "cipher_text": "ESP LEEPYETZY ZQ ESP NSTYPDP RZGPCYXPYE DSLWW MP NLWWPO EZ ESP XLEEPC",
+      "clear_text": "THE ATTENTION OF THE CHINESE GOVERNMENT SHALL BE CALLED TO THE MATTER",
+      "num_words": 12,
+      "difficulty": {
+        "words": [
+          3,
+          20
+        ],
+        "rotation": [
+          1,
+          25
+        ]
+      }
+    }
+  },
+  {
+    "question": "Decrypt this Caesar cipher text: WNA KLAJEJC PDA DA ATLHWEJAZ. Provide only the decrypted text as your final answer.",
+    "answer": "ARE OPENING THE HE EXPLAINED",
+    "metadata": {
+      "source_dataset": "caesar_cipher",
+      "source_index": 70,
+      "rotation": 22,
+      "cipher_text": "WNA KLAJEJC PDA DA ATLHWEJAZ",
+      "clear_text": "ARE OPENING THE HE EXPLAINED",
+      "num_words": 5,
+      "difficulty": {
+        "words": [
+          3,
+          20
+        ],
+        "rotation": [
+          1,
+          25
+        ]
+      }
+    }
+  },
+  {
+    "question": "Decrypt this Caesar cipher text: VGG OCZNZ RJIYZMN CVQZ WZZI RMJPBCO WT OCZ VXXPHPGVOJM VIY OCZ OMVINAJMHZM. Provide only the decrypted text as your final answer.",
+    "answer": "ALL THESE WONDERS HAVE BEEN WROUGHT BY THE ACCUMULATOR AND THE TRANSFORMER",
+    "metadata": {
+      "source_dataset": "caesar_cipher",
+      "source_index": 71,
+      "rotation": 21,
+      "cipher_text": "VGG OCZNZ RJIYZMN CVQZ WZZI RMJPBCO WT OCZ VXXPHPGVOJM VIY OCZ OMVINAJMHZM",
+      "clear_text": "ALL THESE WONDERS HAVE BEEN WROUGHT BY THE ACCUMULATOR AND THE TRANSFORMER",
+      "num_words": 12,
+      "difficulty": {
+        "words": [
+          3,
+          20
+        ],
+        "rotation": [
+          1,
+          25
+        ]
+      }
+    }
+  },
+  {
+    "question": "Decrypt this Caesar cipher text: VHFIEXMBGZ MAX LXGMXGVX. Provide only the decrypted text as your final answer.",
+    "answer": "COMPLETING THE SENTENCE",
+    "metadata": {
+      "source_dataset": "caesar_cipher",
+      "source_index": 72,
+      "rotation": 19,
+      "cipher_text": "VHFIEXMBGZ MAX LXGMXGVX",
+      "clear_text": "COMPLETING THE SENTENCE",
+      "num_words": 3,
+      "difficulty": {
+        "words": [
+          3,
+          20
+        ],
+        "rotation": [
+          1,
+          25
+        ]
+      }
+    }
+  },
+  {
+    "question": "Decrypt this Caesar cipher text: DOLYL OHCL FVB HZRLK TY. Provide only the decrypted text as your final answer.",
+    "answer": "WHERE HAVE YOU ASKED MR",
+    "metadata": {
+      "source_dataset": "caesar_cipher",
+      "source_index": 73,
+      "rotation": 7,
+      "cipher_text": "DOLYL OHCL FVB HZRLK TY",
+      "clear_text": "WHERE HAVE YOU ASKED MR",
+      "num_words": 5,
+      "difficulty": {
+        "words": [
+          3,
+          20
+        ],
+        "rotation": [
+          1,
+          25
+        ]
+      }
+    }
+  },
+  {
+    "question": "Decrypt this Caesar cipher text: ESFQ KESDD VGFSLAGFK LG SJW HSJLAUMDSJDQ AEHGJLSFL LG ESAFLSAFAFY LSP WPWEHL KLSLMK OALZ LZW AJK. Provide only the decrypted text as your final answer.",
+    "answer": "MANY SMALL DONATIONS TO ARE PARTICULARLY IMPORTANT TO MAINTAINING TAX EXEMPT STATUS WITH THE IRS",
+    "metadata": {
+      "source_dataset": "caesar_cipher",
+      "source_index": 74,
+      "rotation": 18,
+      "cipher_text": "ESFQ KESDD VGFSLAGFK LG SJW HSJLAUMDSJDQ AEHGJLSFL LG ESAFLSAFAFY LSP WPWEHL KLSLMK OALZ LZW AJK",
+      "clear_text": "MANY SMALL DONATIONS TO ARE PARTICULARLY IMPORTANT TO MAINTAINING TAX EXEMPT STATUS WITH THE IRS",
+      "num_words": 15,
+      "difficulty": {
+        "words": [
+          3,
+          20
+        ],
+        "rotation": [
+          1,
+          25
+        ]
+      }
+    }
+  },
+  {
+    "question": "Decrypt this Caesar cipher text: ATOZKJ QOTMJUS LGRRY ZU ZNK YNGXK UL ZNK ZNK OTJOKY ZU ZNGZ YGOJ SX. Provide only the decrypted text as your final answer.",
+    "answer": "UNITED KINGDOM FALLS TO THE SHARE OF THE THE INDIES TO THAT SAID MR",
+    "metadata": {
+      "source_dataset": "caesar_cipher",
+      "source_index": 75,
+      "rotation": 6,
+      "cipher_text": "ATOZKJ QOTMJUS LGRRY ZU ZNK YNGXK UL ZNK ZNK OTJOKY ZU ZNGZ YGOJ SX",
+      "clear_text": "UNITED KINGDOM FALLS TO THE SHARE OF THE THE INDIES TO THAT SAID MR",
+      "num_words": 14,
+      "difficulty": {
+        "words": [
+          3,
+          20
+        ],
+        "rotation": [
+          1,
+          25
+        ]
+      }
+    }
+  },
+  {
+    "question": "Decrypt this Caesar cipher text: IYE UXYG RYG OKQOB SC DRO MEBSYCSDI YP DRO ZELVSM GSDR BOQKBN DY DROCO KCDBYXYWSMKV AEOCDSYXC. Provide only the decrypted text as your final answer.",
+    "answer": "YOU KNOW HOW EAGER IS THE CURIOSITY OF THE PUBLIC WITH REGARD TO THESE ASTRONOMICAL QUESTIONS",
+    "metadata": {
+      "source_dataset": "caesar_cipher",
+      "source_index": 76,
+      "rotation": 10,
+      "cipher_text": "IYE UXYG RYG OKQOB SC DRO MEBSYCSDI YP DRO ZELVSM GSDR BOQKBN DY DROCO KCDBYXYWSMKV AEOCDSYXC",
+      "clear_text": "YOU KNOW HOW EAGER IS THE CURIOSITY OF THE PUBLIC WITH REGARD TO THESE ASTRONOMICAL QUESTIONS",
+      "num_words": 16,
+      "difficulty": {
+        "words": [
+          3,
+          20
+        ],
+        "rotation": [
+          1,
+          25
+        ]
+      }
+    }
+  },
+  {
+    "question": "Decrypt this Caesar cipher text: YSOZN ZNXUAMN ZNK ZKRKVNUTK. Provide only the decrypted text as your final answer.",
+    "answer": "SMITH THROUGH THE TELEPHONE",
+    "metadata": {
+      "source_dataset": "caesar_cipher",
+      "source_index": 77,
+      "rotation": 6,
+      "cipher_text": "YSOZN ZNXUAMN ZNK ZKRKVNUTK",
+      "clear_text": "SMITH THROUGH THE TELEPHONE",
+      "num_words": 4,
+      "difficulty": {
+        "words": [
+          3,
+          20
+        ],
+        "rotation": [
+          1,
+          25
+        ]
+      }
+    }
+  },
+  {
+    "question": "Decrypt this Caesar cipher text: EQAP Q KWCTL OMB AWUM ATMMX. Provide only the decrypted text as your final answer.",
+    "answer": "WISH I COULD GET SOME SLEEP",
+    "metadata": {
+      "source_dataset": "caesar_cipher",
+      "source_index": 78,
+      "rotation": 8,
+      "cipher_text": "EQAP Q KWCTL OMB AWUM ATMMX",
+      "clear_text": "WISH I COULD GET SOME SLEEP",
+      "num_words": 6,
+      "difficulty": {
+        "words": [
+          3,
+          20
+        ],
+        "rotation": [
+          1,
+          25
+        ]
+      }
+    }
+  },
+  {
+    "question": "Decrypt this Caesar cipher text: ADV TPUBALZ SHALY AOL THJOPUL KLWVZPALK OPT HSS KYLZZLK HA AOL AOYLZOVSK VM OPZ VMMPJL. Provide only the decrypted text as your final answer.",
+    "answer": "TWO MINUTES LATER THE MACHINE DEPOSITED HIM ALL DRESSED AT THE THRESHOLD OF HIS OFFICE",
+    "metadata": {
+      "source_dataset": "caesar_cipher",
+      "source_index": 79,
+      "rotation": 7,
+      "cipher_text": "ADV TPUBALZ SHALY AOL THJOPUL KLWVZPALK OPT HSS KYLZZLK HA AOL AOYLZOVSK VM OPZ VMMPJL",
+      "clear_text": "TWO MINUTES LATER THE MACHINE DEPOSITED HIM ALL DRESSED AT THE THRESHOLD OF HIS OFFICE",
+      "num_words": 15,
+      "difficulty": {
+        "words": [
+          3,
+          20
+        ],
+        "rotation": [
+          1,
+          25
+        ]
+      }
+    }
+  },
+  {
+    "question": "Decrypt this Caesar cipher text: TBJO MVY AOHA LEWLYPTLUA. Provide only the decrypted text as your final answer.",
+    "answer": "MUCH FOR THAT EXPERIMENT",
+    "metadata": {
+      "source_dataset": "caesar_cipher",
+      "source_index": 80,
+      "rotation": 7,
+      "cipher_text": "TBJO MVY AOHA LEWLYPTLUA",
+      "clear_text": "MUCH FOR THAT EXPERIMENT",
+      "num_words": 4,
+      "difficulty": {
+        "words": [
+          3,
+          20
+        ],
+        "rotation": [
+          1,
+          25
+        ]
+      }
+    }
+  },
+  {
+    "question": "Decrypt this Caesar cipher text: QRB RAXW LXWBCRCDCRXW RB CJGNM CX CQN DCVXBC KH CQN QNJEH BCAJRW CQJC RB YDC DYXW RC. Provide only the decrypted text as your final answer.",
+    "answer": "HIS IRON CONSTITUTION IS TAXED TO THE UTMOST BY THE HEAVY STRAIN THAT IS PUT UPON IT",
+    "metadata": {
+      "source_dataset": "caesar_cipher",
+      "source_index": 81,
+      "rotation": 9,
+      "cipher_text": "QRB RAXW LXWBCRCDCRXW RB CJGNM CX CQN DCVXBC KH CQN QNJEH BCAJRW CQJC RB YDC DYXW RC",
+      "clear_text": "HIS IRON CONSTITUTION IS TAXED TO THE UTMOST BY THE HEAVY STRAIN THAT IS PUT UPON IT",
+      "num_words": 17,
+      "difficulty": {
+        "words": [
+          3,
+          20
+        ],
+        "rotation": [
+          1,
+          25
+        ]
+      }
+    }
+  },
+  {
+    "question": "Decrypt this Caesar cipher text: KEALZ JWUWANWV SFV SDD LZW SFV LZSL UGFKLALMLWV LZW JWHSKL. Provide only the decrypted text as your final answer.",
+    "answer": "SMITH RECEIVED AND ALL THE AND THAT CONSTITUTED THE REPAST",
+    "metadata": {
+      "source_dataset": "caesar_cipher",
+      "source_index": 82,
+      "rotation": 18,
+      "cipher_text": "KEALZ JWUWANWV SFV SDD LZW SFV LZSL UGFKLALMLWV LZW JWHSKL",
+      "clear_text": "SMITH RECEIVED AND ALL THE AND THAT CONSTITUTED THE REPAST",
+      "num_words": 10,
+      "difficulty": {
+        "words": [
+          3,
+          20
+        ],
+        "rotation": [
+          1,
+          25
+        ]
+      }
+    }
+  },
+  {
+    "question": "Decrypt this Caesar cipher text: IV QVLMXMVLMVB OWDMZVUMVB. Provide only the decrypted text as your final answer.",
+    "answer": "AN INDEPENDENT GOVERNMENT",
+    "metadata": {
+      "source_dataset": "caesar_cipher",
+      "source_index": 83,
+      "rotation": 8,
+      "cipher_text": "IV QVLMXMVLMVB OWDMZVUMVB",
+      "clear_text": "AN INDEPENDENT GOVERNMENT",
+      "num_words": 3,
+      "difficulty": {
+        "words": [
+          3,
+          20
+        ],
+        "rotation": [
+          1,
+          25
+        ]
+      }
+    }
+  },
+  {
+    "question": "Decrypt this Caesar cipher text: RTQLGEV IWVGPDGTI XQNWPVGGTU CPF GORNQAGGU GZRGPF EQPUKFGTCDNG GHHQTV VQ FQ EQRATKIJV TGUGCTEJ VTCPUETKDG CPF RTQQHTGCF YQTMU PQV RTQVGEVGF DA W. Provide only the decrypted text as your final answer.",
+    "answer": "PROJECT GUTENBERG VOLUNTEERS AND EMPLOYEES EXPEND CONSIDERABLE EFFORT TO DO COPYRIGHT RESEARCH TRANSCRIBE AND PROOFREAD WORKS NOT PROTECTED BY U",
+    "metadata": {
+      "source_dataset": "caesar_cipher",
+      "source_index": 84,
+      "rotation": 2,
+      "cipher_text": "RTQLGEV IWVGPDGTI XQNWPVGGTU CPF GORNQAGGU GZRGPF EQPUKFGTCDNG GHHQTV VQ FQ EQRATKIJV TGUGCTEJ VTCPUETKDG CPF RTQQHTGCF YQTMU PQV RTQVGEVGF DA W",
+      "clear_text": "PROJECT GUTENBERG VOLUNTEERS AND EMPLOYEES EXPEND CONSIDERABLE EFFORT TO DO COPYRIGHT RESEARCH TRANSCRIBE AND PROOFREAD WORKS NOT PROTECTED BY U",
+      "num_words": 20,
+      "difficulty": {
+        "words": [
+          3,
+          20
+        ],
+        "rotation": [
+          1,
+          25
+        ]
+      }
+    }
+  },
+  {
+    "question": "Decrypt this Caesar cipher text: U ECHA CM BY. Provide only the decrypted text as your final answer.",
+    "answer": "A KING IS HE",
+    "metadata": {
+      "source_dataset": "caesar_cipher",
+      "source_index": 85,
+      "rotation": 20,
+      "cipher_text": "U ECHA CM BY",
+      "clear_text": "A KING IS HE",
+      "num_words": 4,
+      "difficulty": {
+        "words": [
+          3,
+          20
+        ],
+        "rotation": [
+          1,
+          25
+        ]
+      }
+    }
+  },
+  {
+    "question": "Decrypt this Caesar cipher text: FVE QB ABG PBHAG BA ZR SBE URYC. Provide only the decrypted text as your final answer.",
+    "answer": "SIR DO NOT COUNT ON ME FOR HELP",
+    "metadata": {
+      "source_dataset": "caesar_cipher",
+      "source_index": 86,
+      "rotation": 13,
+      "cipher_text": "FVE QB ABG PBHAG BA ZR SBE URYC",
+      "clear_text": "SIR DO NOT COUNT ON ME FOR HELP",
+      "num_words": 8,
+      "difficulty": {
+        "words": [
+          3,
+          20
+        ],
+        "rotation": [
+          1,
+          25
+        ]
+      }
+    }
+  },
+  {
+    "question": "Decrypt this Caesar cipher text: KYV ZEMRCZUZKP FI LEVEWFITVRSZCZKP FW REP GIFMZJZFE FW KYZJ RXIVVDVEK JYRCC EFK MFZU KYV IVDRZEZEX GIFMZJZFEJ. Provide only the decrypted text as your final answer.",
+    "answer": "THE INVALIDITY OR UNENFORCEABILITY OF ANY PROVISION OF THIS AGREEMENT SHALL NOT VOID THE REMAINING PROVISIONS",
+    "metadata": {
+      "source_dataset": "caesar_cipher",
+      "source_index": 87,
+      "rotation": 17,
+      "cipher_text": "KYV ZEMRCZUZKP FI LEVEWFITVRSZCZKP FW REP GIFMZJZFE FW KYZJ RXIVVDVEK JYRCC EFK MFZU KYV IVDRZEZEX GIFMZJZFEJ",
+      "clear_text": "THE INVALIDITY OR UNENFORCEABILITY OF ANY PROVISION OF THIS AGREEMENT SHALL NOT VOID THE REMAINING PROVISIONS",
+      "num_words": 16,
+      "difficulty": {
+        "words": [
+          3,
+          20
+        ],
+        "rotation": [
+          1,
+          25
+        ]
+      }
+    }
+  },
+  {
+    "question": "Decrypt this Caesar cipher text: MCI AIGH BCH SLDCGS MCIFGSZT HC QCZR. Provide only the decrypted text as your final answer.",
+    "answer": "YOU MUST NOT EXPOSE YOURSELF TO COLD",
+    "metadata": {
+      "source_dataset": "caesar_cipher",
+      "source_index": 88,
+      "rotation": 14,
+      "cipher_text": "MCI AIGH BCH SLDCGS MCIFGSZT HC QCZR",
+      "clear_text": "YOU MUST NOT EXPOSE YOURSELF TO COLD",
+      "num_words": 7,
+      "difficulty": {
+        "words": [
+          3,
+          20
+        ],
+        "rotation": [
+          1,
+          25
+        ]
+      }
+    }
+  },
+  {
+    "question": "Decrypt this Caesar cipher text: TUE HUEUF FA FTQ IADWE FAAW YADQ FUYQ FTMZ TQ TMP MZFUOUBMFQP. Provide only the decrypted text as your final answer.",
+    "answer": "HIS VISIT TO THE WORKS TOOK MORE TIME THAN HE HAD ANTICIPATED",
+    "metadata": {
+      "source_dataset": "caesar_cipher",
+      "source_index": 89,
+      "rotation": 12,
+      "cipher_text": "TUE HUEUF FA FTQ IADWE FAAW YADQ FUYQ FTMZ TQ TMP MZFUOUBMFQP",
+      "clear_text": "HIS VISIT TO THE WORKS TOOK MORE TIME THAN HE HAD ANTICIPATED",
+      "num_words": 12,
+      "difficulty": {
+        "words": [
+          3,
+          20
+        ],
+        "rotation": [
+          1,
+          25
+        ]
+      }
+    }
+  },
+  {
+    "question": "Decrypt this Caesar cipher text: BJ RZXY YMNSP FGTZY NY. Provide only the decrypted text as your final answer.",
+    "answer": "WE MUST THINK ABOUT IT",
+    "metadata": {
+      "source_dataset": "caesar_cipher",
+      "source_index": 90,
+      "rotation": 5,
+      "cipher_text": "BJ RZXY YMNSP FGTZY NY",
+      "clear_text": "WE MUST THINK ABOUT IT",
+      "num_words": 5,
+      "difficulty": {
+        "words": [
+          3,
+          20
+        ],
+        "rotation": [
+          1,
+          25
+        ]
+      }
+    }
+  },
+  {
+    "question": "Decrypt this Caesar cipher text: PQOXMDQE FTQ YMZ FA NQ PQMP. Provide only the decrypted text as your final answer.",
+    "answer": "DECLARES THE MAN TO BE DEAD",
+    "metadata": {
+      "source_dataset": "caesar_cipher",
+      "source_index": 91,
+      "rotation": 12,
+      "cipher_text": "PQOXMDQE FTQ YMZ FA NQ PQMP",
+      "clear_text": "DECLARES THE MAN TO BE DEAD",
+      "num_words": 6,
+      "difficulty": {
+        "words": [
+          3,
+          20
+        ],
+        "rotation": [
+          1,
+          25
+        ]
+      }
+    }
+  },
+  {
+    "question": "Decrypt this Caesar cipher text: KYVP RIV KRBZEX WRZKYSLIE FLK FW MVIZKRSCV REU UIP. Provide only the decrypted text as your final answer.",
+    "answer": "THEY ARE TAKING FAITHBURN OUT OF VERITABLE AND DRY",
+    "metadata": {
+      "source_dataset": "caesar_cipher",
+      "source_index": 92,
+      "rotation": 17,
+      "cipher_text": "KYVP RIV KRBZEX WRZKYSLIE FLK FW MVIZKRSCV REU UIP",
+      "clear_text": "THEY ARE TAKING FAITHBURN OUT OF VERITABLE AND DRY",
+      "num_words": 9,
+      "difficulty": {
+        "words": [
+          3,
+          20
+        ],
+        "rotation": [
+          1,
+          25
+        ]
+      }
+    }
+  },
+  {
+    "question": "Decrypt this Caesar cipher text: MZYPXZY OJ OCZ XJIYDODJI JA V YM. Provide only the decrypted text as your final answer.",
+    "answer": "REDUCED TO THE CONDITION OF A DR",
+    "metadata": {
+      "source_dataset": "caesar_cipher",
+      "source_index": 93,
+      "rotation": 21,
+      "cipher_text": "MZYPXZY OJ OCZ XJIYDODJI JA V YM",
+      "clear_text": "REDUCED TO THE CONDITION OF A DR",
+      "num_words": 7,
+      "difficulty": {
+        "words": [
+          3,
+          20
+        ],
+        "rotation": [
+          1,
+          25
+        ]
+      }
+    }
+  },
+  {
+    "question": "Decrypt this Caesar cipher text: QCDMFWUVH ZOK WB QFSOHWBU HVS DFCXSQH QCZZSQHWCB. Provide only the decrypted text as your final answer.",
+    "answer": "COPYRIGHT LAW IN CREATING THE PROJECT COLLECTION",
+    "metadata": {
+      "source_dataset": "caesar_cipher",
+      "source_index": 94,
+      "rotation": 14,
+      "cipher_text": "QCDMFWUVH ZOK WB QFSOHWBU HVS DFCXSQH QCZZSQHWCB",
+      "clear_text": "COPYRIGHT LAW IN CREATING THE PROJECT COLLECTION",
+      "num_words": 7,
+      "difficulty": {
+        "words": [
+          3,
+          20
+        ],
+        "rotation": [
+          1,
+          25
+        ]
+      }
+    }
+  },
+  {
+    "question": "Decrypt this Caesar cipher text: ZNK NKXK OY GTUZNKX UL ZNK MXKGZ ZXOASVNY UL YIOKTIK OT UAX ZOSK. Provide only the decrypted text as your final answer.",
+    "answer": "THE HERE IS ANOTHER OF THE GREAT TRIUMPHS OF SCIENCE IN OUR TIME",
+    "metadata": {
+      "source_dataset": "caesar_cipher",
+      "source_index": 95,
+      "rotation": 6,
+      "cipher_text": "ZNK NKXK OY GTUZNKX UL ZNK MXKGZ ZXOASVNY UL YIOKTIK OT UAX ZOSK",
+      "clear_text": "THE HERE IS ANOTHER OF THE GREAT TRIUMPHS OF SCIENCE IN OUR TIME",
+      "num_words": 13,
+      "difficulty": {
+        "words": [
+          3,
+          20
+        ],
+        "rotation": [
+          1,
+          25
+        ]
+      }
+    }
+  },
+  {
+    "question": "Decrypt this Caesar cipher text: FNVQ NQQERFFVAT GUR URNQ FRR ZE. Provide only the decrypted text as your final answer.",
+    "answer": "SAID ADDRESSING THE HEAD SEE MR",
+    "metadata": {
+      "source_dataset": "caesar_cipher",
+      "source_index": 96,
+      "rotation": 13,
+      "cipher_text": "FNVQ NQQERFFVAT GUR URNQ FRR ZE",
+      "clear_text": "SAID ADDRESSING THE HEAD SEE MR",
+      "num_words": 6,
+      "difficulty": {
+        "words": [
+          3,
+          20
+        ],
+        "rotation": [
+          1,
+          25
+        ]
+      }
+    }
+  },
+  {
+    "question": "Decrypt this Caesar cipher text: FQ TXP MRYIFPEBA FK COXKZB QEB KBUQ VBXO. Provide only the decrypted text as your final answer.",
+    "answer": "IT WAS PUBLISHED IN FRANCE THE NEXT YEAR",
+    "metadata": {
+      "source_dataset": "caesar_cipher",
+      "source_index": 97,
+      "rotation": 23,
+      "cipher_text": "FQ TXP MRYIFPEBA FK COXKZB QEB KBUQ VBXO",
+      "clear_text": "IT WAS PUBLISHED IN FRANCE THE NEXT YEAR",
+      "num_words": 8,
+      "difficulty": {
+        "words": [
+          3,
+          20
+        ],
+        "rotation": [
+          1,
+          25
+        ]
+      }
+    }
+  },
+  {
+    "question": "Decrypt this Caesar cipher text: UIF TDFOF XIFSF UIF WJMMBHF NBJE EJTDVTTFT JOUFSFTUJOH QIJMPTPQIJDBM QSPCMFNT XJUI IFS MPWFS TIPXT ZPVS WFSZ BDVUF QPXFS PG PCTFSWBUJPO. Provide only the decrypted text as your final answer.",
+    "answer": "THE SCENE WHERE THE VILLAGE MAID DISCUSSES INTERESTING PHILOSOPHICAL PROBLEMS WITH HER LOVER SHOWS YOUR VERY ACUTE POWER OF OBSERVATION",
+    "metadata": {
+      "source_dataset": "caesar_cipher",
+      "source_index": 98,
+      "rotation": 1,
+      "cipher_text": "UIF TDFOF XIFSF UIF WJMMBHF NBJE EJTDVTTFT JOUFSFTUJOH QIJMPTPQIJDBM QSPCMFNT XJUI IFS MPWFS TIPXT ZPVS WFSZ BDVUF QPXFS PG PCTFSWBUJPO",
+      "clear_text": "THE SCENE WHERE THE VILLAGE MAID DISCUSSES INTERESTING PHILOSOPHICAL PROBLEMS WITH HER LOVER SHOWS YOUR VERY ACUTE POWER OF OBSERVATION",
+      "num_words": 20,
+      "difficulty": {
+        "words": [
+          3,
+          20
+        ],
+        "rotation": [
+          1,
+          25
+        ]
+      }
+    }
+  },
+  {
+    "question": "Decrypt this Caesar cipher text: H ZL SHQDC PTHSD SHQDC CN XNT MNS SGHMJ SGZS Z AZSG VNTKC QDEQDRG. Provide only the decrypted text as your final answer.",
+    "answer": "I AM TIRED QUITE TIRED DO YOU NOT THINK THAT A BATH WOULD REFRESH",
+    "metadata": {
+      "source_dataset": "caesar_cipher",
+      "source_index": 99,
+      "rotation": 25,
+      "cipher_text": "H ZL SHQDC PTHSD SHQDC CN XNT MNS SGHMJ SGZS Z AZSG VNTKC QDEQDRG",
+      "clear_text": "I AM TIRED QUITE TIRED DO YOU NOT THINK THAT A BATH WOULD REFRESH",
+      "num_words": 14,
+      "difficulty": {
+        "words": [
+          3,
+          20
+        ],
+        "rotation": [
+          1,
+          25
+        ]
+      }
+    }
+  }
+]

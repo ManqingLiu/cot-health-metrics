@@ -1,0 +1,2102 @@
+[
+  {
+    "question": "You are a police officer. A maniac has planted a bomb next to a public fountain.\n\nTo defuse the bomb, you must solve a puzzle. The puzzle is solved when you fill any of the available jugs with the target amount of water.\n\nYou have three move types: 'fill', 'empty' and 'pour'.\n\nTo fill Jug A, you 'fill A'.\nTo empty Jug B, you 'empty B'.\nTo pour the contents of Jug A into Jug B, you 'pour A->B'.\nAll jugs are empty to begin with.\n\nThe empty jugs hold this many litres of water: A:13, B:13, C:4\nAnd your target is: 10 litres.\n\nHow do you defuse the bomb?\n\nReply as a JSON-parsable list of moves which result in any of the jugs being filled with the target amount.\n",
+    "answer": "[\"fill A\", \"pour A->C\", \"fill B\", \"empty C\", \"pour A->C\", \"empty C\", \"pour A->C\", \"empty C\", \"pour A->C\", \"pour B->C\"]",
+    "metadata": {
+      "source_dataset": "jugs",
+      "source_index": 0,
+      "puzzle": {
+        "jug_capacities": [
+          13,
+          13,
+          4
+        ],
+        "target": 10,
+        "min_moves": 10
+      },
+      "difficulty": {
+        "num_jugs": 3,
+        "difficulty": 10
+      }
+    }
+  },
+  {
+    "question": "You are a police officer. A maniac has planted a bomb next to a public fountain.\n\nTo defuse the bomb, you must solve a puzzle. The puzzle is solved when you fill any of the available jugs with the target amount of water.\n\nYou have three move types: 'fill', 'empty' and 'pour'.\n\nTo fill Jug A, you 'fill A'.\nTo empty Jug B, you 'empty B'.\nTo pour the contents of Jug A into Jug B, you 'pour A->B'.\nAll jugs are empty to begin with.\n\nThe empty jugs hold this many litres of water: A:7, B:10, C:10\nAnd your target is: 5 litres.\n\nHow do you defuse the bomb?\n\nReply as a JSON-parsable list of moves which result in any of the jugs being filled with the target amount.\n",
+    "answer": "[\"fill A\", \"pour A->B\", \"fill A\", \"pour A->B\", \"pour A->C\", \"fill A\", \"pour A->C\", \"empty B\", \"pour A->B\", \"fill A\", \"pour A->B\", \"fill A\", \"pour A->B\"]",
+    "metadata": {
+      "source_dataset": "jugs",
+      "source_index": 1,
+      "puzzle": {
+        "jug_capacities": [
+          7,
+          10,
+          10
+        ],
+        "target": 5,
+        "min_moves": 13
+      },
+      "difficulty": {
+        "num_jugs": 3,
+        "difficulty": 10
+      }
+    }
+  },
+  {
+    "question": "You are a police officer. A maniac has planted a bomb next to a public fountain.\n\nTo defuse the bomb, you must solve a puzzle. The puzzle is solved when you fill any of the available jugs with the target amount of water.\n\nYou have three move types: 'fill', 'empty' and 'pour'.\n\nTo fill Jug A, you 'fill A'.\nTo empty Jug B, you 'empty B'.\nTo pour the contents of Jug A into Jug B, you 'pour A->B'.\nAll jugs are empty to begin with.\n\nThe empty jugs hold this many litres of water: A:7, B:10, C:7\nAnd your target is: 2 litres.\n\nHow do you defuse the bomb?\n\nReply as a JSON-parsable list of moves which result in any of the jugs being filled with the target amount.\n",
+    "answer": "[\"fill B\", \"pour B->A\", \"empty A\", \"pour B->A\", \"fill B\", \"pour B->A\", \"empty A\", \"pour B->A\", \"fill B\", \"pour B->A\", \"pour B->C\"]",
+    "metadata": {
+      "source_dataset": "jugs",
+      "source_index": 2,
+      "puzzle": {
+        "jug_capacities": [
+          7,
+          10,
+          7
+        ],
+        "target": 2,
+        "min_moves": 11
+      },
+      "difficulty": {
+        "num_jugs": 3,
+        "difficulty": 10
+      }
+    }
+  },
+  {
+    "question": "You are a police officer. A maniac has planted a bomb next to a public fountain.\n\nTo defuse the bomb, you must solve a puzzle. The puzzle is solved when you fill any of the available jugs with the target amount of water.\n\nYou have three move types: 'fill', 'empty' and 'pour'.\n\nTo fill Jug A, you 'fill A'.\nTo empty Jug B, you 'empty B'.\nTo pour the contents of Jug A into Jug B, you 'pour A->B'.\nAll jugs are empty to begin with.\n\nThe empty jugs hold this many litres of water: A:13, B:11, C:13\nAnd your target is: 12 litres.\n\nHow do you defuse the bomb?\n\nReply as a JSON-parsable list of moves which result in any of the jugs being filled with the target amount.\n",
+    "answer": "[\"fill A\", \"pour A->B\", \"empty B\", \"pour A->B\", \"fill A\", \"pour A->B\", \"empty B\", \"pour A->B\", \"fill A\", \"pour A->B\", \"empty B\", \"pour A->B\", \"fill A\", \"pour A->B\", \"empty B\", \"pour A->B\", \"fill A\", \"pour A->B\", \"empty B\", \"pour A->B\", \"fill A\", \"pour A->B\"]",
+    "metadata": {
+      "source_dataset": "jugs",
+      "source_index": 3,
+      "puzzle": {
+        "jug_capacities": [
+          13,
+          11,
+          13
+        ],
+        "target": 12,
+        "min_moves": 22
+      },
+      "difficulty": {
+        "num_jugs": 3,
+        "difficulty": 10
+      }
+    }
+  },
+  {
+    "question": "You are a police officer. A maniac has planted a bomb next to a public fountain.\n\nTo defuse the bomb, you must solve a puzzle. The puzzle is solved when you fill any of the available jugs with the target amount of water.\n\nYou have three move types: 'fill', 'empty' and 'pour'.\n\nTo fill Jug A, you 'fill A'.\nTo empty Jug B, you 'empty B'.\nTo pour the contents of Jug A into Jug B, you 'pour A->B'.\nAll jugs are empty to begin with.\n\nThe empty jugs hold this many litres of water: A:6, B:7, C:7\nAnd your target is: 3 litres.\n\nHow do you defuse the bomb?\n\nReply as a JSON-parsable list of moves which result in any of the jugs being filled with the target amount.\n",
+    "answer": "[\"fill B\", \"pour B->A\", \"empty A\", \"pour B->A\", \"fill B\", \"pour B->A\", \"empty A\", \"pour B->A\", \"fill B\", \"pour B->A\"]",
+    "metadata": {
+      "source_dataset": "jugs",
+      "source_index": 4,
+      "puzzle": {
+        "jug_capacities": [
+          6,
+          7,
+          7
+        ],
+        "target": 3,
+        "min_moves": 10
+      },
+      "difficulty": {
+        "num_jugs": 3,
+        "difficulty": 10
+      }
+    }
+  },
+  {
+    "question": "You are a police officer. A maniac has planted a bomb next to a public fountain.\n\nTo defuse the bomb, you must solve a puzzle. The puzzle is solved when you fill any of the available jugs with the target amount of water.\n\nYou have three move types: 'fill', 'empty' and 'pour'.\n\nTo fill Jug A, you 'fill A'.\nTo empty Jug B, you 'empty B'.\nTo pour the contents of Jug A into Jug B, you 'pour A->B'.\nAll jugs are empty to begin with.\n\nThe empty jugs hold this many litres of water: A:11, B:9, C:9\nAnd your target is: 10 litres.\n\nHow do you defuse the bomb?\n\nReply as a JSON-parsable list of moves which result in any of the jugs being filled with the target amount.\n",
+    "answer": "[\"fill A\", \"pour A->B\", \"pour A->C\", \"fill A\", \"pour A->C\", \"empty B\", \"pour A->B\", \"fill A\", \"pour A->B\", \"empty B\", \"pour A->B\", \"fill A\", \"pour A->B\", \"empty B\", \"pour A->B\", \"fill A\", \"pour A->B\"]",
+    "metadata": {
+      "source_dataset": "jugs",
+      "source_index": 5,
+      "puzzle": {
+        "jug_capacities": [
+          11,
+          9,
+          9
+        ],
+        "target": 10,
+        "min_moves": 17
+      },
+      "difficulty": {
+        "num_jugs": 3,
+        "difficulty": 10
+      }
+    }
+  },
+  {
+    "question": "You are a police officer. A maniac has planted a bomb next to a public fountain.\n\nTo defuse the bomb, you must solve a puzzle. The puzzle is solved when you fill any of the available jugs with the target amount of water.\n\nYou have three move types: 'fill', 'empty' and 'pour'.\n\nTo fill Jug A, you 'fill A'.\nTo empty Jug B, you 'empty B'.\nTo pour the contents of Jug A into Jug B, you 'pour A->B'.\nAll jugs are empty to begin with.\n\nThe empty jugs hold this many litres of water: A:9, B:5, C:5\nAnd your target is: 2 litres.\n\nHow do you defuse the bomb?\n\nReply as a JSON-parsable list of moves which result in any of the jugs being filled with the target amount.\n",
+    "answer": "[\"fill B\", \"pour B->A\", \"fill B\", \"pour B->A\", \"empty A\", \"pour B->A\", \"fill B\", \"pour B->A\", \"fill B\", \"pour B->A\"]",
+    "metadata": {
+      "source_dataset": "jugs",
+      "source_index": 6,
+      "puzzle": {
+        "jug_capacities": [
+          9,
+          5,
+          5
+        ],
+        "target": 2,
+        "min_moves": 10
+      },
+      "difficulty": {
+        "num_jugs": 3,
+        "difficulty": 10
+      }
+    }
+  },
+  {
+    "question": "You are a police officer. A maniac has planted a bomb next to a public fountain.\n\nTo defuse the bomb, you must solve a puzzle. The puzzle is solved when you fill any of the available jugs with the target amount of water.\n\nYou have three move types: 'fill', 'empty' and 'pour'.\n\nTo fill Jug A, you 'fill A'.\nTo empty Jug B, you 'empty B'.\nTo pour the contents of Jug A into Jug B, you 'pour A->B'.\nAll jugs are empty to begin with.\n\nThe empty jugs hold this many litres of water: A:8, B:11, C:11\nAnd your target is: 1 litres.\n\nHow do you defuse the bomb?\n\nReply as a JSON-parsable list of moves which result in any of the jugs being filled with the target amount.\n",
+    "answer": "[\"fill B\", \"pour B->A\", \"empty A\", \"pour B->A\", \"fill B\", \"pour B->A\", \"empty A\", \"pour B->A\", \"fill B\", \"pour B->A\", \"empty A\", \"pour B->A\"]",
+    "metadata": {
+      "source_dataset": "jugs",
+      "source_index": 7,
+      "puzzle": {
+        "jug_capacities": [
+          8,
+          11,
+          11
+        ],
+        "target": 1,
+        "min_moves": 12
+      },
+      "difficulty": {
+        "num_jugs": 3,
+        "difficulty": 10
+      }
+    }
+  },
+  {
+    "question": "You are a police officer. A maniac has planted a bomb next to a public fountain.\n\nTo defuse the bomb, you must solve a puzzle. The puzzle is solved when you fill any of the available jugs with the target amount of water.\n\nYou have three move types: 'fill', 'empty' and 'pour'.\n\nTo fill Jug A, you 'fill A'.\nTo empty Jug B, you 'empty B'.\nTo pour the contents of Jug A into Jug B, you 'pour A->B'.\nAll jugs are empty to begin with.\n\nThe empty jugs hold this many litres of water: A:9, B:13, C:4\nAnd your target is: 2 litres.\n\nHow do you defuse the bomb?\n\nReply as a JSON-parsable list of moves which result in any of the jugs being filled with the target amount.\n",
+    "answer": "[\"fill A\", \"pour A->C\", \"empty C\", \"pour A->C\", \"empty C\", \"pour A->C\", \"fill A\", \"pour A->C\", \"empty C\", \"pour A->C\"]",
+    "metadata": {
+      "source_dataset": "jugs",
+      "source_index": 8,
+      "puzzle": {
+        "jug_capacities": [
+          9,
+          13,
+          4
+        ],
+        "target": 2,
+        "min_moves": 10
+      },
+      "difficulty": {
+        "num_jugs": 3,
+        "difficulty": 10
+      }
+    }
+  },
+  {
+    "question": "You are a police officer. A maniac has planted a bomb next to a public fountain.\n\nTo defuse the bomb, you must solve a puzzle. The puzzle is solved when you fill any of the available jugs with the target amount of water.\n\nYou have three move types: 'fill', 'empty' and 'pour'.\n\nTo fill Jug A, you 'fill A'.\nTo empty Jug B, you 'empty B'.\nTo pour the contents of Jug A into Jug B, you 'pour A->B'.\nAll jugs are empty to begin with.\n\nThe empty jugs hold this many litres of water: A:6, B:11, C:11\nAnd your target is: 3 litres.\n\nHow do you defuse the bomb?\n\nReply as a JSON-parsable list of moves which result in any of the jugs being filled with the target amount.\n",
+    "answer": "[\"fill B\", \"pour B->A\", \"empty A\", \"pour B->A\", \"fill B\", \"pour B->A\", \"empty A\", \"pour B->A\", \"empty A\", \"pour B->A\", \"fill B\", \"pour B->A\", \"empty A\", \"pour B->A\"]",
+    "metadata": {
+      "source_dataset": "jugs",
+      "source_index": 9,
+      "puzzle": {
+        "jug_capacities": [
+          6,
+          11,
+          11
+        ],
+        "target": 3,
+        "min_moves": 14
+      },
+      "difficulty": {
+        "num_jugs": 3,
+        "difficulty": 10
+      }
+    }
+  },
+  {
+    "question": "You are a police officer. A maniac has planted a bomb next to a public fountain.\n\nTo defuse the bomb, you must solve a puzzle. The puzzle is solved when you fill any of the available jugs with the target amount of water.\n\nYou have three move types: 'fill', 'empty' and 'pour'.\n\nTo fill Jug A, you 'fill A'.\nTo empty Jug B, you 'empty B'.\nTo pour the contents of Jug A into Jug B, you 'pour A->B'.\nAll jugs are empty to begin with.\n\nThe empty jugs hold this many litres of water: A:11, B:13, C:11\nAnd your target is: 12 litres.\n\nHow do you defuse the bomb?\n\nReply as a JSON-parsable list of moves which result in any of the jugs being filled with the target amount.\n",
+    "answer": "[\"fill B\", \"pour B->A\", \"empty A\", \"pour B->A\", \"fill B\", \"pour B->A\", \"empty A\", \"pour B->A\", \"fill B\", \"pour B->A\", \"empty A\", \"pour B->A\", \"fill B\", \"pour B->A\", \"empty A\", \"pour B->A\", \"fill B\", \"pour B->A\", \"pour B->C\", \"fill B\", \"pour B->C\"]",
+    "metadata": {
+      "source_dataset": "jugs",
+      "source_index": 10,
+      "puzzle": {
+        "jug_capacities": [
+          11,
+          13,
+          11
+        ],
+        "target": 12,
+        "min_moves": 21
+      },
+      "difficulty": {
+        "num_jugs": 3,
+        "difficulty": 10
+      }
+    }
+  },
+  {
+    "question": "You are a police officer. A maniac has planted a bomb next to a public fountain.\n\nTo defuse the bomb, you must solve a puzzle. The puzzle is solved when you fill any of the available jugs with the target amount of water.\n\nYou have three move types: 'fill', 'empty' and 'pour'.\n\nTo fill Jug A, you 'fill A'.\nTo empty Jug B, you 'empty B'.\nTo pour the contents of Jug A into Jug B, you 'pour A->B'.\nAll jugs are empty to begin with.\n\nThe empty jugs hold this many litres of water: A:4, B:9, C:9\nAnd your target is: 2 litres.\n\nHow do you defuse the bomb?\n\nReply as a JSON-parsable list of moves which result in any of the jugs being filled with the target amount.\n",
+    "answer": "[\"fill B\", \"pour B->A\", \"empty A\", \"pour B->A\", \"empty A\", \"pour B->A\", \"fill B\", \"pour B->A\", \"empty A\", \"pour B->A\"]",
+    "metadata": {
+      "source_dataset": "jugs",
+      "source_index": 11,
+      "puzzle": {
+        "jug_capacities": [
+          4,
+          9,
+          9
+        ],
+        "target": 2,
+        "min_moves": 10
+      },
+      "difficulty": {
+        "num_jugs": 3,
+        "difficulty": 10
+      }
+    }
+  },
+  {
+    "question": "You are a police officer. A maniac has planted a bomb next to a public fountain.\n\nTo defuse the bomb, you must solve a puzzle. The puzzle is solved when you fill any of the available jugs with the target amount of water.\n\nYou have three move types: 'fill', 'empty' and 'pour'.\n\nTo fill Jug A, you 'fill A'.\nTo empty Jug B, you 'empty B'.\nTo pour the contents of Jug A into Jug B, you 'pour A->B'.\nAll jugs are empty to begin with.\n\nThe empty jugs hold this many litres of water: A:10, B:10, C:9\nAnd your target is: 4 litres.\n\nHow do you defuse the bomb?\n\nReply as a JSON-parsable list of moves which result in any of the jugs being filled with the target amount.\n",
+    "answer": "[\"fill A\", \"pour A->C\", \"fill B\", \"empty C\", \"pour A->C\", \"fill A\", \"pour A->C\", \"empty C\", \"pour A->C\", \"fill A\", \"pour A->C\", \"empty C\", \"pour A->C\", \"pour B->C\"]",
+    "metadata": {
+      "source_dataset": "jugs",
+      "source_index": 12,
+      "puzzle": {
+        "jug_capacities": [
+          10,
+          10,
+          9
+        ],
+        "target": 4,
+        "min_moves": 14
+      },
+      "difficulty": {
+        "num_jugs": 3,
+        "difficulty": 10
+      }
+    }
+  },
+  {
+    "question": "You are a police officer. A maniac has planted a bomb next to a public fountain.\n\nTo defuse the bomb, you must solve a puzzle. The puzzle is solved when you fill any of the available jugs with the target amount of water.\n\nYou have three move types: 'fill', 'empty' and 'pour'.\n\nTo fill Jug A, you 'fill A'.\nTo empty Jug B, you 'empty B'.\nTo pour the contents of Jug A into Jug B, you 'pour A->B'.\nAll jugs are empty to begin with.\n\nThe empty jugs hold this many litres of water: A:13, B:3, C:13\nAnd your target is: 5 litres.\n\nHow do you defuse the bomb?\n\nReply as a JSON-parsable list of moves which result in any of the jugs being filled with the target amount.\n",
+    "answer": "[\"fill B\", \"pour B->A\", \"fill B\", \"pour B->A\", \"fill B\", \"pour B->A\", \"fill B\", \"pour B->A\", \"fill B\", \"pour B->A\", \"pour B->C\", \"pour A->B\", \"pour B->C\"]",
+    "metadata": {
+      "source_dataset": "jugs",
+      "source_index": 13,
+      "puzzle": {
+        "jug_capacities": [
+          13,
+          3,
+          13
+        ],
+        "target": 5,
+        "min_moves": 13
+      },
+      "difficulty": {
+        "num_jugs": 3,
+        "difficulty": 10
+      }
+    }
+  },
+  {
+    "question": "You are a police officer. A maniac has planted a bomb next to a public fountain.\n\nTo defuse the bomb, you must solve a puzzle. The puzzle is solved when you fill any of the available jugs with the target amount of water.\n\nYou have three move types: 'fill', 'empty' and 'pour'.\n\nTo fill Jug A, you 'fill A'.\nTo empty Jug B, you 'empty B'.\nTo pour the contents of Jug A into Jug B, you 'pour A->B'.\nAll jugs are empty to begin with.\n\nThe empty jugs hold this many litres of water: A:3, B:13, C:10\nAnd your target is: 5 litres.\n\nHow do you defuse the bomb?\n\nReply as a JSON-parsable list of moves which result in any of the jugs being filled with the target amount.\n",
+    "answer": "[\"fill A\", \"pour A->B\", \"fill A\", \"pour A->B\", \"fill A\", \"pour A->B\", \"fill A\", \"pour A->B\", \"fill A\", \"pour A->C\", \"pour B->C\"]",
+    "metadata": {
+      "source_dataset": "jugs",
+      "source_index": 14,
+      "puzzle": {
+        "jug_capacities": [
+          3,
+          13,
+          10
+        ],
+        "target": 5,
+        "min_moves": 11
+      },
+      "difficulty": {
+        "num_jugs": 3,
+        "difficulty": 10
+      }
+    }
+  },
+  {
+    "question": "You are a police officer. A maniac has planted a bomb next to a public fountain.\n\nTo defuse the bomb, you must solve a puzzle. The puzzle is solved when you fill any of the available jugs with the target amount of water.\n\nYou have three move types: 'fill', 'empty' and 'pour'.\n\nTo fill Jug A, you 'fill A'.\nTo empty Jug B, you 'empty B'.\nTo pour the contents of Jug A into Jug B, you 'pour A->B'.\nAll jugs are empty to begin with.\n\nThe empty jugs hold this many litres of water: A:13, B:12, C:13\nAnd your target is: 8 litres.\n\nHow do you defuse the bomb?\n\nReply as a JSON-parsable list of moves which result in any of the jugs being filled with the target amount.\n",
+    "answer": "[\"fill B\", \"pour B->A\", \"fill B\", \"pour B->A\", \"empty A\", \"pour B->A\", \"fill B\", \"pour B->A\", \"empty A\", \"pour B->A\", \"fill B\", \"pour B->A\", \"pour B->C\", \"pour A->B\", \"pour B->C\"]",
+    "metadata": {
+      "source_dataset": "jugs",
+      "source_index": 15,
+      "puzzle": {
+        "jug_capacities": [
+          13,
+          12,
+          13
+        ],
+        "target": 8,
+        "min_moves": 15
+      },
+      "difficulty": {
+        "num_jugs": 3,
+        "difficulty": 10
+      }
+    }
+  },
+  {
+    "question": "You are a police officer. A maniac has planted a bomb next to a public fountain.\n\nTo defuse the bomb, you must solve a puzzle. The puzzle is solved when you fill any of the available jugs with the target amount of water.\n\nYou have three move types: 'fill', 'empty' and 'pour'.\n\nTo fill Jug A, you 'fill A'.\nTo empty Jug B, you 'empty B'.\nTo pour the contents of Jug A into Jug B, you 'pour A->B'.\nAll jugs are empty to begin with.\n\nThe empty jugs hold this many litres of water: A:13, B:9, C:13\nAnd your target is: 6 litres.\n\nHow do you defuse the bomb?\n\nReply as a JSON-parsable list of moves which result in any of the jugs being filled with the target amount.\n",
+    "answer": "[\"fill B\", \"pour B->A\", \"fill B\", \"pour B->A\", \"empty A\", \"pour B->A\", \"fill B\", \"pour B->A\", \"pour B->C\", \"pour A->B\", \"pour B->C\", \"fill B\", \"pour B->C\"]",
+    "metadata": {
+      "source_dataset": "jugs",
+      "source_index": 16,
+      "puzzle": {
+        "jug_capacities": [
+          13,
+          9,
+          13
+        ],
+        "target": 6,
+        "min_moves": 13
+      },
+      "difficulty": {
+        "num_jugs": 3,
+        "difficulty": 10
+      }
+    }
+  },
+  {
+    "question": "You are a police officer. A maniac has planted a bomb next to a public fountain.\n\nTo defuse the bomb, you must solve a puzzle. The puzzle is solved when you fill any of the available jugs with the target amount of water.\n\nYou have three move types: 'fill', 'empty' and 'pour'.\n\nTo fill Jug A, you 'fill A'.\nTo empty Jug B, you 'empty B'.\nTo pour the contents of Jug A into Jug B, you 'pour A->B'.\nAll jugs are empty to begin with.\n\nThe empty jugs hold this many litres of water: A:7, B:5, C:12\nAnd your target is: 6 litres.\n\nHow do you defuse the bomb?\n\nReply as a JSON-parsable list of moves which result in any of the jugs being filled with the target amount.\n",
+    "answer": "[\"fill A\", \"pour A->B\", \"empty B\", \"pour A->B\", \"fill A\", \"pour A->B\", \"empty B\", \"pour A->B\", \"fill A\", \"pour A->B\"]",
+    "metadata": {
+      "source_dataset": "jugs",
+      "source_index": 17,
+      "puzzle": {
+        "jug_capacities": [
+          7,
+          5,
+          12
+        ],
+        "target": 6,
+        "min_moves": 10
+      },
+      "difficulty": {
+        "num_jugs": 3,
+        "difficulty": 10
+      }
+    }
+  },
+  {
+    "question": "You are a police officer. A maniac has planted a bomb next to a public fountain.\n\nTo defuse the bomb, you must solve a puzzle. The puzzle is solved when you fill any of the available jugs with the target amount of water.\n\nYou have three move types: 'fill', 'empty' and 'pour'.\n\nTo fill Jug A, you 'fill A'.\nTo empty Jug B, you 'empty B'.\nTo pour the contents of Jug A into Jug B, you 'pour A->B'.\nAll jugs are empty to begin with.\n\nThe empty jugs hold this many litres of water: A:13, B:13, C:5\nAnd your target is: 9 litres.\n\nHow do you defuse the bomb?\n\nReply as a JSON-parsable list of moves which result in any of the jugs being filled with the target amount.\n",
+    "answer": "[\"fill A\", \"pour A->C\", \"fill B\", \"empty C\", \"pour A->C\", \"empty C\", \"pour A->C\", \"fill A\", \"pour A->C\", \"empty C\", \"pour A->C\", \"empty C\", \"pour A->C\", \"empty C\", \"pour A->C\", \"pour B->C\"]",
+    "metadata": {
+      "source_dataset": "jugs",
+      "source_index": 18,
+      "puzzle": {
+        "jug_capacities": [
+          13,
+          13,
+          5
+        ],
+        "target": 9,
+        "min_moves": 16
+      },
+      "difficulty": {
+        "num_jugs": 3,
+        "difficulty": 10
+      }
+    }
+  },
+  {
+    "question": "You are a police officer. A maniac has planted a bomb next to a public fountain.\n\nTo defuse the bomb, you must solve a puzzle. The puzzle is solved when you fill any of the available jugs with the target amount of water.\n\nYou have three move types: 'fill', 'empty' and 'pour'.\n\nTo fill Jug A, you 'fill A'.\nTo empty Jug B, you 'empty B'.\nTo pour the contents of Jug A into Jug B, you 'pour A->B'.\nAll jugs are empty to begin with.\n\nThe empty jugs hold this many litres of water: A:5, B:11, C:5\nAnd your target is: 8 litres.\n\nHow do you defuse the bomb?\n\nReply as a JSON-parsable list of moves which result in any of the jugs being filled with the target amount.\n",
+    "answer": "[\"fill B\", \"pour B->A\", \"empty A\", \"pour B->A\", \"empty A\", \"pour B->A\", \"fill B\", \"pour B->A\", \"empty A\", \"pour B->A\", \"pour B->C\", \"fill B\", \"pour B->C\"]",
+    "metadata": {
+      "source_dataset": "jugs",
+      "source_index": 19,
+      "puzzle": {
+        "jug_capacities": [
+          5,
+          11,
+          5
+        ],
+        "target": 8,
+        "min_moves": 13
+      },
+      "difficulty": {
+        "num_jugs": 3,
+        "difficulty": 10
+      }
+    }
+  },
+  {
+    "question": "You are a police officer. A maniac has planted a bomb next to a public fountain.\n\nTo defuse the bomb, you must solve a puzzle. The puzzle is solved when you fill any of the available jugs with the target amount of water.\n\nYou have three move types: 'fill', 'empty' and 'pour'.\n\nTo fill Jug A, you 'fill A'.\nTo empty Jug B, you 'empty B'.\nTo pour the contents of Jug A into Jug B, you 'pour A->B'.\nAll jugs are empty to begin with.\n\nThe empty jugs hold this many litres of water: A:5, B:11, C:5\nAnd your target is: 3 litres.\n\nHow do you defuse the bomb?\n\nReply as a JSON-parsable list of moves which result in any of the jugs being filled with the target amount.\n",
+    "answer": "[\"fill A\", \"pour A->B\", \"fill A\", \"pour A->B\", \"fill A\", \"pour A->B\", \"empty B\", \"pour A->B\", \"fill A\", \"pour A->B\", \"fill A\", \"pour A->B\"]",
+    "metadata": {
+      "source_dataset": "jugs",
+      "source_index": 20,
+      "puzzle": {
+        "jug_capacities": [
+          5,
+          11,
+          5
+        ],
+        "target": 3,
+        "min_moves": 12
+      },
+      "difficulty": {
+        "num_jugs": 3,
+        "difficulty": 10
+      }
+    }
+  },
+  {
+    "question": "You are a police officer. A maniac has planted a bomb next to a public fountain.\n\nTo defuse the bomb, you must solve a puzzle. The puzzle is solved when you fill any of the available jugs with the target amount of water.\n\nYou have three move types: 'fill', 'empty' and 'pour'.\n\nTo fill Jug A, you 'fill A'.\nTo empty Jug B, you 'empty B'.\nTo pour the contents of Jug A into Jug B, you 'pour A->B'.\nAll jugs are empty to begin with.\n\nThe empty jugs hold this many litres of water: A:10, B:10, C:7\nAnd your target is: 5 litres.\n\nHow do you defuse the bomb?\n\nReply as a JSON-parsable list of moves which result in any of the jugs being filled with the target amount.\n",
+    "answer": "[\"fill C\", \"pour C->A\", \"fill C\", \"pour C->A\", \"empty A\", \"pour C->A\", \"fill C\", \"pour C->A\", \"pour C->B\", \"pour A->C\", \"pour C->B\", \"fill C\", \"pour C->B\"]",
+    "metadata": {
+      "source_dataset": "jugs",
+      "source_index": 21,
+      "puzzle": {
+        "jug_capacities": [
+          10,
+          10,
+          7
+        ],
+        "target": 5,
+        "min_moves": 13
+      },
+      "difficulty": {
+        "num_jugs": 3,
+        "difficulty": 10
+      }
+    }
+  },
+  {
+    "question": "You are a police officer. A maniac has planted a bomb next to a public fountain.\n\nTo defuse the bomb, you must solve a puzzle. The puzzle is solved when you fill any of the available jugs with the target amount of water.\n\nYou have three move types: 'fill', 'empty' and 'pour'.\n\nTo fill Jug A, you 'fill A'.\nTo empty Jug B, you 'empty B'.\nTo pour the contents of Jug A into Jug B, you 'pour A->B'.\nAll jugs are empty to begin with.\n\nThe empty jugs hold this many litres of water: A:7, B:6, C:13\nAnd your target is: 10 litres.\n\nHow do you defuse the bomb?\n\nReply as a JSON-parsable list of moves which result in any of the jugs being filled with the target amount.\n",
+    "answer": "[\"fill B\", \"pour B->A\", \"fill B\", \"pour B->A\", \"empty A\", \"pour B->A\", \"fill B\", \"pour B->A\", \"pour B->C\", \"pour A->B\", \"pour B->C\"]",
+    "metadata": {
+      "source_dataset": "jugs",
+      "source_index": 22,
+      "puzzle": {
+        "jug_capacities": [
+          7,
+          6,
+          13
+        ],
+        "target": 10,
+        "min_moves": 11
+      },
+      "difficulty": {
+        "num_jugs": 3,
+        "difficulty": 10
+      }
+    }
+  },
+  {
+    "question": "You are a police officer. A maniac has planted a bomb next to a public fountain.\n\nTo defuse the bomb, you must solve a puzzle. The puzzle is solved when you fill any of the available jugs with the target amount of water.\n\nYou have three move types: 'fill', 'empty' and 'pour'.\n\nTo fill Jug A, you 'fill A'.\nTo empty Jug B, you 'empty B'.\nTo pour the contents of Jug A into Jug B, you 'pour A->B'.\nAll jugs are empty to begin with.\n\nThe empty jugs hold this many litres of water: A:11, B:9, C:9\nAnd your target is: 3 litres.\n\nHow do you defuse the bomb?\n\nReply as a JSON-parsable list of moves which result in any of the jugs being filled with the target amount.\n",
+    "answer": "[\"fill B\", \"pour B->A\", \"fill B\", \"pour B->A\", \"empty A\", \"pour B->A\", \"fill B\", \"pour B->A\", \"empty A\", \"pour B->A\", \"fill B\", \"pour B->A\"]",
+    "metadata": {
+      "source_dataset": "jugs",
+      "source_index": 23,
+      "puzzle": {
+        "jug_capacities": [
+          11,
+          9,
+          9
+        ],
+        "target": 3,
+        "min_moves": 12
+      },
+      "difficulty": {
+        "num_jugs": 3,
+        "difficulty": 10
+      }
+    }
+  },
+  {
+    "question": "You are a police officer. A maniac has planted a bomb next to a public fountain.\n\nTo defuse the bomb, you must solve a puzzle. The puzzle is solved when you fill any of the available jugs with the target amount of water.\n\nYou have three move types: 'fill', 'empty' and 'pour'.\n\nTo fill Jug A, you 'fill A'.\nTo empty Jug B, you 'empty B'.\nTo pour the contents of Jug A into Jug B, you 'pour A->B'.\nAll jugs are empty to begin with.\n\nThe empty jugs hold this many litres of water: A:11, B:13, C:13\nAnd your target is: 12 litres.\n\nHow do you defuse the bomb?\n\nReply as a JSON-parsable list of moves which result in any of the jugs being filled with the target amount.\n",
+    "answer": "[\"fill B\", \"pour B->A\", \"empty A\", \"pour B->A\", \"fill B\", \"pour B->A\", \"empty A\", \"pour B->A\", \"fill B\", \"pour B->A\", \"empty A\", \"pour B->A\", \"fill B\", \"pour B->A\", \"empty A\", \"pour B->A\", \"fill B\", \"pour B->A\", \"empty A\", \"pour B->A\", \"fill B\", \"pour B->A\"]",
+    "metadata": {
+      "source_dataset": "jugs",
+      "source_index": 24,
+      "puzzle": {
+        "jug_capacities": [
+          11,
+          13,
+          13
+        ],
+        "target": 12,
+        "min_moves": 22
+      },
+      "difficulty": {
+        "num_jugs": 3,
+        "difficulty": 10
+      }
+    }
+  },
+  {
+    "question": "You are a police officer. A maniac has planted a bomb next to a public fountain.\n\nTo defuse the bomb, you must solve a puzzle. The puzzle is solved when you fill any of the available jugs with the target amount of water.\n\nYou have three move types: 'fill', 'empty' and 'pour'.\n\nTo fill Jug A, you 'fill A'.\nTo empty Jug B, you 'empty B'.\nTo pour the contents of Jug A into Jug B, you 'pour A->B'.\nAll jugs are empty to begin with.\n\nThe empty jugs hold this many litres of water: A:11, B:12, C:12\nAnd your target is: 4 litres.\n\nHow do you defuse the bomb?\n\nReply as a JSON-parsable list of moves which result in any of the jugs being filled with the target amount.\n",
+    "answer": "[\"fill B\", \"pour B->A\", \"empty A\", \"pour B->A\", \"fill B\", \"pour B->A\", \"empty A\", \"pour B->A\", \"fill B\", \"pour B->A\", \"empty A\", \"pour B->A\", \"fill B\", \"pour B->A\"]",
+    "metadata": {
+      "source_dataset": "jugs",
+      "source_index": 25,
+      "puzzle": {
+        "jug_capacities": [
+          11,
+          12,
+          12
+        ],
+        "target": 4,
+        "min_moves": 14
+      },
+      "difficulty": {
+        "num_jugs": 3,
+        "difficulty": 10
+      }
+    }
+  },
+  {
+    "question": "You are a police officer. A maniac has planted a bomb next to a public fountain.\n\nTo defuse the bomb, you must solve a puzzle. The puzzle is solved when you fill any of the available jugs with the target amount of water.\n\nYou have three move types: 'fill', 'empty' and 'pour'.\n\nTo fill Jug A, you 'fill A'.\nTo empty Jug B, you 'empty B'.\nTo pour the contents of Jug A into Jug B, you 'pour A->B'.\nAll jugs are empty to begin with.\n\nThe empty jugs hold this many litres of water: A:11, B:11, C:10\nAnd your target is: 7 litres.\n\nHow do you defuse the bomb?\n\nReply as a JSON-parsable list of moves which result in any of the jugs being filled with the target amount.\n",
+    "answer": "[\"fill C\", \"pour C->A\", \"fill C\", \"pour C->A\", \"empty A\", \"pour C->A\", \"fill C\", \"pour C->A\", \"pour C->B\", \"pour A->C\", \"pour C->B\"]",
+    "metadata": {
+      "source_dataset": "jugs",
+      "source_index": 26,
+      "puzzle": {
+        "jug_capacities": [
+          11,
+          11,
+          10
+        ],
+        "target": 7,
+        "min_moves": 11
+      },
+      "difficulty": {
+        "num_jugs": 3,
+        "difficulty": 10
+      }
+    }
+  },
+  {
+    "question": "You are a police officer. A maniac has planted a bomb next to a public fountain.\n\nTo defuse the bomb, you must solve a puzzle. The puzzle is solved when you fill any of the available jugs with the target amount of water.\n\nYou have three move types: 'fill', 'empty' and 'pour'.\n\nTo fill Jug A, you 'fill A'.\nTo empty Jug B, you 'empty B'.\nTo pour the contents of Jug A into Jug B, you 'pour A->B'.\nAll jugs are empty to begin with.\n\nThe empty jugs hold this many litres of water: A:10, B:13, C:13\nAnd your target is: 11 litres.\n\nHow do you defuse the bomb?\n\nReply as a JSON-parsable list of moves which result in any of the jugs being filled with the target amount.\n",
+    "answer": "[\"fill A\", \"pour A->B\", \"fill A\", \"pour A->B\", \"pour A->C\", \"fill A\", \"pour A->C\", \"empty B\", \"pour A->B\", \"fill A\", \"pour A->B\", \"empty B\", \"pour A->B\", \"fill A\", \"pour A->B\"]",
+    "metadata": {
+      "source_dataset": "jugs",
+      "source_index": 27,
+      "puzzle": {
+        "jug_capacities": [
+          10,
+          13,
+          13
+        ],
+        "target": 11,
+        "min_moves": 15
+      },
+      "difficulty": {
+        "num_jugs": 3,
+        "difficulty": 10
+      }
+    }
+  },
+  {
+    "question": "You are a police officer. A maniac has planted a bomb next to a public fountain.\n\nTo defuse the bomb, you must solve a puzzle. The puzzle is solved when you fill any of the available jugs with the target amount of water.\n\nYou have three move types: 'fill', 'empty' and 'pour'.\n\nTo fill Jug A, you 'fill A'.\nTo empty Jug B, you 'empty B'.\nTo pour the contents of Jug A into Jug B, you 'pour A->B'.\nAll jugs are empty to begin with.\n\nThe empty jugs hold this many litres of water: A:13, B:13, C:12\nAnd your target is: 4 litres.\n\nHow do you defuse the bomb?\n\nReply as a JSON-parsable list of moves which result in any of the jugs being filled with the target amount.\n",
+    "answer": "[\"fill A\", \"pour A->C\", \"fill B\", \"empty C\", \"pour A->C\", \"fill A\", \"pour A->C\", \"empty C\", \"pour A->C\", \"fill A\", \"pour A->C\", \"empty C\", \"pour A->C\", \"pour B->C\"]",
+    "metadata": {
+      "source_dataset": "jugs",
+      "source_index": 28,
+      "puzzle": {
+        "jug_capacities": [
+          13,
+          13,
+          12
+        ],
+        "target": 4,
+        "min_moves": 14
+      },
+      "difficulty": {
+        "num_jugs": 3,
+        "difficulty": 10
+      }
+    }
+  },
+  {
+    "question": "You are a police officer. A maniac has planted a bomb next to a public fountain.\n\nTo defuse the bomb, you must solve a puzzle. The puzzle is solved when you fill any of the available jugs with the target amount of water.\n\nYou have three move types: 'fill', 'empty' and 'pour'.\n\nTo fill Jug A, you 'fill A'.\nTo empty Jug B, you 'empty B'.\nTo pour the contents of Jug A into Jug B, you 'pour A->B'.\nAll jugs are empty to begin with.\n\nThe empty jugs hold this many litres of water: A:13, B:12, C:6\nAnd your target is: 3 litres.\n\nHow do you defuse the bomb?\n\nReply as a JSON-parsable list of moves which result in any of the jugs being filled with the target amount.\n",
+    "answer": "[\"fill A\", \"pour A->B\", \"empty B\", \"pour A->B\", \"fill A\", \"pour A->B\", \"empty B\", \"pour A->B\", \"fill A\", \"pour A->B\"]",
+    "metadata": {
+      "source_dataset": "jugs",
+      "source_index": 29,
+      "puzzle": {
+        "jug_capacities": [
+          13,
+          12,
+          6
+        ],
+        "target": 3,
+        "min_moves": 10
+      },
+      "difficulty": {
+        "num_jugs": 3,
+        "difficulty": 10
+      }
+    }
+  },
+  {
+    "question": "You are a police officer. A maniac has planted a bomb next to a public fountain.\n\nTo defuse the bomb, you must solve a puzzle. The puzzle is solved when you fill any of the available jugs with the target amount of water.\n\nYou have three move types: 'fill', 'empty' and 'pour'.\n\nTo fill Jug A, you 'fill A'.\nTo empty Jug B, you 'empty B'.\nTo pour the contents of Jug A into Jug B, you 'pour A->B'.\nAll jugs are empty to begin with.\n\nThe empty jugs hold this many litres of water: A:5, B:5, C:9\nAnd your target is: 2 litres.\n\nHow do you defuse the bomb?\n\nReply as a JSON-parsable list of moves which result in any of the jugs being filled with the target amount.\n",
+    "answer": "[\"fill A\", \"pour A->C\", \"fill A\", \"pour A->C\", \"fill B\", \"empty C\", \"pour A->C\", \"fill A\", \"pour A->C\", \"pour B->C\"]",
+    "metadata": {
+      "source_dataset": "jugs",
+      "source_index": 30,
+      "puzzle": {
+        "jug_capacities": [
+          5,
+          5,
+          9
+        ],
+        "target": 2,
+        "min_moves": 10
+      },
+      "difficulty": {
+        "num_jugs": 3,
+        "difficulty": 10
+      }
+    }
+  },
+  {
+    "question": "You are a police officer. A maniac has planted a bomb next to a public fountain.\n\nTo defuse the bomb, you must solve a puzzle. The puzzle is solved when you fill any of the available jugs with the target amount of water.\n\nYou have three move types: 'fill', 'empty' and 'pour'.\n\nTo fill Jug A, you 'fill A'.\nTo empty Jug B, you 'empty B'.\nTo pour the contents of Jug A into Jug B, you 'pour A->B'.\nAll jugs are empty to begin with.\n\nThe empty jugs hold this many litres of water: A:11, B:11, C:6\nAnd your target is: 8 litres.\n\nHow do you defuse the bomb?\n\nReply as a JSON-parsable list of moves which result in any of the jugs being filled with the target amount.\n",
+    "answer": "[\"fill C\", \"pour C->A\", \"fill C\", \"pour C->A\", \"empty A\", \"pour C->A\", \"fill C\", \"pour C->A\", \"fill C\", \"pour C->A\", \"pour C->B\", \"pour A->C\", \"pour C->B\"]",
+    "metadata": {
+      "source_dataset": "jugs",
+      "source_index": 31,
+      "puzzle": {
+        "jug_capacities": [
+          11,
+          11,
+          6
+        ],
+        "target": 8,
+        "min_moves": 13
+      },
+      "difficulty": {
+        "num_jugs": 3,
+        "difficulty": 10
+      }
+    }
+  },
+  {
+    "question": "You are a police officer. A maniac has planted a bomb next to a public fountain.\n\nTo defuse the bomb, you must solve a puzzle. The puzzle is solved when you fill any of the available jugs with the target amount of water.\n\nYou have three move types: 'fill', 'empty' and 'pour'.\n\nTo fill Jug A, you 'fill A'.\nTo empty Jug B, you 'empty B'.\nTo pour the contents of Jug A into Jug B, you 'pour A->B'.\nAll jugs are empty to begin with.\n\nThe empty jugs hold this many litres of water: A:11, B:7, C:11\nAnd your target is: 5 litres.\n\nHow do you defuse the bomb?\n\nReply as a JSON-parsable list of moves which result in any of the jugs being filled with the target amount.\n",
+    "answer": "[\"fill A\", \"pour A->B\", \"empty B\", \"pour A->B\", \"fill A\", \"pour A->B\", \"empty B\", \"pour A->B\", \"empty B\", \"pour A->B\", \"fill A\", \"pour A->B\"]",
+    "metadata": {
+      "source_dataset": "jugs",
+      "source_index": 32,
+      "puzzle": {
+        "jug_capacities": [
+          11,
+          7,
+          11
+        ],
+        "target": 5,
+        "min_moves": 12
+      },
+      "difficulty": {
+        "num_jugs": 3,
+        "difficulty": 10
+      }
+    }
+  },
+  {
+    "question": "You are a police officer. A maniac has planted a bomb next to a public fountain.\n\nTo defuse the bomb, you must solve a puzzle. The puzzle is solved when you fill any of the available jugs with the target amount of water.\n\nYou have three move types: 'fill', 'empty' and 'pour'.\n\nTo fill Jug A, you 'fill A'.\nTo empty Jug B, you 'empty B'.\nTo pour the contents of Jug A into Jug B, you 'pour A->B'.\nAll jugs are empty to begin with.\n\nThe empty jugs hold this many litres of water: A:10, B:13, C:13\nAnd your target is: 12 litres.\n\nHow do you defuse the bomb?\n\nReply as a JSON-parsable list of moves which result in any of the jugs being filled with the target amount.\n",
+    "answer": "[\"fill B\", \"pour B->A\", \"empty A\", \"pour B->A\", \"fill B\", \"pour B->A\", \"empty A\", \"pour B->A\", \"fill B\", \"pour B->A\", \"empty A\", \"pour B->A\", \"fill B\", \"pour B->A\"]",
+    "metadata": {
+      "source_dataset": "jugs",
+      "source_index": 33,
+      "puzzle": {
+        "jug_capacities": [
+          10,
+          13,
+          13
+        ],
+        "target": 12,
+        "min_moves": 14
+      },
+      "difficulty": {
+        "num_jugs": 3,
+        "difficulty": 10
+      }
+    }
+  },
+  {
+    "question": "You are a police officer. A maniac has planted a bomb next to a public fountain.\n\nTo defuse the bomb, you must solve a puzzle. The puzzle is solved when you fill any of the available jugs with the target amount of water.\n\nYou have three move types: 'fill', 'empty' and 'pour'.\n\nTo fill Jug A, you 'fill A'.\nTo empty Jug B, you 'empty B'.\nTo pour the contents of Jug A into Jug B, you 'pour A->B'.\nAll jugs are empty to begin with.\n\nThe empty jugs hold this many litres of water: A:7, B:7, C:10\nAnd your target is: 8 litres.\n\nHow do you defuse the bomb?\n\nReply as a JSON-parsable list of moves which result in any of the jugs being filled with the target amount.\n",
+    "answer": "[\"fill A\", \"pour A->C\", \"fill A\", \"pour A->C\", \"fill B\", \"empty C\", \"pour A->C\", \"fill A\", \"pour A->C\", \"empty C\", \"pour A->C\", \"pour B->C\"]",
+    "metadata": {
+      "source_dataset": "jugs",
+      "source_index": 34,
+      "puzzle": {
+        "jug_capacities": [
+          7,
+          7,
+          10
+        ],
+        "target": 8,
+        "min_moves": 12
+      },
+      "difficulty": {
+        "num_jugs": 3,
+        "difficulty": 10
+      }
+    }
+  },
+  {
+    "question": "You are a police officer. A maniac has planted a bomb next to a public fountain.\n\nTo defuse the bomb, you must solve a puzzle. The puzzle is solved when you fill any of the available jugs with the target amount of water.\n\nYou have three move types: 'fill', 'empty' and 'pour'.\n\nTo fill Jug A, you 'fill A'.\nTo empty Jug B, you 'empty B'.\nTo pour the contents of Jug A into Jug B, you 'pour A->B'.\nAll jugs are empty to begin with.\n\nThe empty jugs hold this many litres of water: A:4, B:4, C:11\nAnd your target is: 5 litres.\n\nHow do you defuse the bomb?\n\nReply as a JSON-parsable list of moves which result in any of the jugs being filled with the target amount.\n",
+    "answer": "[\"fill A\", \"pour A->C\", \"fill A\", \"pour A->C\", \"fill A\", \"pour A->C\", \"fill B\", \"empty C\", \"pour A->C\", \"pour B->C\"]",
+    "metadata": {
+      "source_dataset": "jugs",
+      "source_index": 35,
+      "puzzle": {
+        "jug_capacities": [
+          4,
+          4,
+          11
+        ],
+        "target": 5,
+        "min_moves": 10
+      },
+      "difficulty": {
+        "num_jugs": 3,
+        "difficulty": 10
+      }
+    }
+  },
+  {
+    "question": "You are a police officer. A maniac has planted a bomb next to a public fountain.\n\nTo defuse the bomb, you must solve a puzzle. The puzzle is solved when you fill any of the available jugs with the target amount of water.\n\nYou have three move types: 'fill', 'empty' and 'pour'.\n\nTo fill Jug A, you 'fill A'.\nTo empty Jug B, you 'empty B'.\nTo pour the contents of Jug A into Jug B, you 'pour A->B'.\nAll jugs are empty to begin with.\n\nThe empty jugs hold this many litres of water: A:11, B:9, C:9\nAnd your target is: 3 litres.\n\nHow do you defuse the bomb?\n\nReply as a JSON-parsable list of moves which result in any of the jugs being filled with the target amount.\n",
+    "answer": "[\"fill B\", \"pour B->A\", \"fill B\", \"pour B->A\", \"empty A\", \"pour B->A\", \"fill B\", \"pour B->A\", \"empty A\", \"pour B->A\", \"fill B\", \"pour B->A\"]",
+    "metadata": {
+      "source_dataset": "jugs",
+      "source_index": 36,
+      "puzzle": {
+        "jug_capacities": [
+          11,
+          9,
+          9
+        ],
+        "target": 3,
+        "min_moves": 12
+      },
+      "difficulty": {
+        "num_jugs": 3,
+        "difficulty": 10
+      }
+    }
+  },
+  {
+    "question": "You are a police officer. A maniac has planted a bomb next to a public fountain.\n\nTo defuse the bomb, you must solve a puzzle. The puzzle is solved when you fill any of the available jugs with the target amount of water.\n\nYou have three move types: 'fill', 'empty' and 'pour'.\n\nTo fill Jug A, you 'fill A'.\nTo empty Jug B, you 'empty B'.\nTo pour the contents of Jug A into Jug B, you 'pour A->B'.\nAll jugs are empty to begin with.\n\nThe empty jugs hold this many litres of water: A:12, B:13, C:11\nAnd your target is: 6 litres.\n\nHow do you defuse the bomb?\n\nReply as a JSON-parsable list of moves which result in any of the jugs being filled with the target amount.\n",
+    "answer": "[\"fill B\", \"pour B->C\", \"empty C\", \"pour B->C\", \"fill B\", \"pour B->C\", \"empty C\", \"pour B->C\", \"fill B\", \"pour B->C\"]",
+    "metadata": {
+      "source_dataset": "jugs",
+      "source_index": 37,
+      "puzzle": {
+        "jug_capacities": [
+          12,
+          13,
+          11
+        ],
+        "target": 6,
+        "min_moves": 10
+      },
+      "difficulty": {
+        "num_jugs": 3,
+        "difficulty": 10
+      }
+    }
+  },
+  {
+    "question": "You are a police officer. A maniac has planted a bomb next to a public fountain.\n\nTo defuse the bomb, you must solve a puzzle. The puzzle is solved when you fill any of the available jugs with the target amount of water.\n\nYou have three move types: 'fill', 'empty' and 'pour'.\n\nTo fill Jug A, you 'fill A'.\nTo empty Jug B, you 'empty B'.\nTo pour the contents of Jug A into Jug B, you 'pour A->B'.\nAll jugs are empty to begin with.\n\nThe empty jugs hold this many litres of water: A:8, B:8, C:11\nAnd your target is: 7 litres.\n\nHow do you defuse the bomb?\n\nReply as a JSON-parsable list of moves which result in any of the jugs being filled with the target amount.\n",
+    "answer": "[\"fill A\", \"pour A->C\", \"fill A\", \"pour A->C\", \"fill B\", \"empty C\", \"pour A->C\", \"fill A\", \"pour A->C\", \"empty C\", \"pour A->C\", \"fill A\", \"pour A->C\", \"pour B->C\"]",
+    "metadata": {
+      "source_dataset": "jugs",
+      "source_index": 38,
+      "puzzle": {
+        "jug_capacities": [
+          8,
+          8,
+          11
+        ],
+        "target": 7,
+        "min_moves": 14
+      },
+      "difficulty": {
+        "num_jugs": 3,
+        "difficulty": 10
+      }
+    }
+  },
+  {
+    "question": "You are a police officer. A maniac has planted a bomb next to a public fountain.\n\nTo defuse the bomb, you must solve a puzzle. The puzzle is solved when you fill any of the available jugs with the target amount of water.\n\nYou have three move types: 'fill', 'empty' and 'pour'.\n\nTo fill Jug A, you 'fill A'.\nTo empty Jug B, you 'empty B'.\nTo pour the contents of Jug A into Jug B, you 'pour A->B'.\nAll jugs are empty to begin with.\n\nThe empty jugs hold this many litres of water: A:8, B:7, C:8\nAnd your target is: 4 litres.\n\nHow do you defuse the bomb?\n\nReply as a JSON-parsable list of moves which result in any of the jugs being filled with the target amount.\n",
+    "answer": "[\"fill B\", \"pour B->A\", \"fill B\", \"pour B->A\", \"empty A\", \"pour B->A\", \"fill B\", \"pour B->A\", \"pour B->C\", \"pour A->B\", \"pour B->C\"]",
+    "metadata": {
+      "source_dataset": "jugs",
+      "source_index": 39,
+      "puzzle": {
+        "jug_capacities": [
+          8,
+          7,
+          8
+        ],
+        "target": 4,
+        "min_moves": 11
+      },
+      "difficulty": {
+        "num_jugs": 3,
+        "difficulty": 10
+      }
+    }
+  },
+  {
+    "question": "You are a police officer. A maniac has planted a bomb next to a public fountain.\n\nTo defuse the bomb, you must solve a puzzle. The puzzle is solved when you fill any of the available jugs with the target amount of water.\n\nYou have three move types: 'fill', 'empty' and 'pour'.\n\nTo fill Jug A, you 'fill A'.\nTo empty Jug B, you 'empty B'.\nTo pour the contents of Jug A into Jug B, you 'pour A->B'.\nAll jugs are empty to begin with.\n\nThe empty jugs hold this many litres of water: A:7, B:13, C:13\nAnd your target is: 9 litres.\n\nHow do you defuse the bomb?\n\nReply as a JSON-parsable list of moves which result in any of the jugs being filled with the target amount.\n",
+    "answer": "[\"fill A\", \"pour A->B\", \"fill A\", \"pour A->B\", \"pour A->C\", \"fill A\", \"pour A->C\", \"fill A\", \"pour A->C\", \"empty B\", \"pour A->B\", \"fill A\", \"pour A->B\"]",
+    "metadata": {
+      "source_dataset": "jugs",
+      "source_index": 40,
+      "puzzle": {
+        "jug_capacities": [
+          7,
+          13,
+          13
+        ],
+        "target": 9,
+        "min_moves": 13
+      },
+      "difficulty": {
+        "num_jugs": 3,
+        "difficulty": 10
+      }
+    }
+  },
+  {
+    "question": "You are a police officer. A maniac has planted a bomb next to a public fountain.\n\nTo defuse the bomb, you must solve a puzzle. The puzzle is solved when you fill any of the available jugs with the target amount of water.\n\nYou have three move types: 'fill', 'empty' and 'pour'.\n\nTo fill Jug A, you 'fill A'.\nTo empty Jug B, you 'empty B'.\nTo pour the contents of Jug A into Jug B, you 'pour A->B'.\nAll jugs are empty to begin with.\n\nThe empty jugs hold this many litres of water: A:8, B:13, C:13\nAnd your target is: 7 litres.\n\nHow do you defuse the bomb?\n\nReply as a JSON-parsable list of moves which result in any of the jugs being filled with the target amount.\n",
+    "answer": "[\"fill B\", \"pour B->A\", \"empty A\", \"pour B->A\", \"fill B\", \"pour B->A\", \"empty A\", \"pour B->A\", \"empty A\", \"pour B->A\", \"fill B\", \"pour B->A\"]",
+    "metadata": {
+      "source_dataset": "jugs",
+      "source_index": 41,
+      "puzzle": {
+        "jug_capacities": [
+          8,
+          13,
+          13
+        ],
+        "target": 7,
+        "min_moves": 12
+      },
+      "difficulty": {
+        "num_jugs": 3,
+        "difficulty": 10
+      }
+    }
+  },
+  {
+    "question": "You are a police officer. A maniac has planted a bomb next to a public fountain.\n\nTo defuse the bomb, you must solve a puzzle. The puzzle is solved when you fill any of the available jugs with the target amount of water.\n\nYou have three move types: 'fill', 'empty' and 'pour'.\n\nTo fill Jug A, you 'fill A'.\nTo empty Jug B, you 'empty B'.\nTo pour the contents of Jug A into Jug B, you 'pour A->B'.\nAll jugs are empty to begin with.\n\nThe empty jugs hold this many litres of water: A:10, B:10, C:11\nAnd your target is: 6 litres.\n\nHow do you defuse the bomb?\n\nReply as a JSON-parsable list of moves which result in any of the jugs being filled with the target amount.\n",
+    "answer": "[\"fill A\", \"pour A->C\", \"fill A\", \"pour A->C\", \"fill B\", \"empty C\", \"pour A->C\", \"fill A\", \"pour A->C\", \"empty C\", \"pour A->C\", \"fill A\", \"pour A->C\", \"empty C\", \"pour A->C\", \"pour B->C\"]",
+    "metadata": {
+      "source_dataset": "jugs",
+      "source_index": 42,
+      "puzzle": {
+        "jug_capacities": [
+          10,
+          10,
+          11
+        ],
+        "target": 6,
+        "min_moves": 16
+      },
+      "difficulty": {
+        "num_jugs": 3,
+        "difficulty": 10
+      }
+    }
+  },
+  {
+    "question": "You are a police officer. A maniac has planted a bomb next to a public fountain.\n\nTo defuse the bomb, you must solve a puzzle. The puzzle is solved when you fill any of the available jugs with the target amount of water.\n\nYou have three move types: 'fill', 'empty' and 'pour'.\n\nTo fill Jug A, you 'fill A'.\nTo empty Jug B, you 'empty B'.\nTo pour the contents of Jug A into Jug B, you 'pour A->B'.\nAll jugs are empty to begin with.\n\nThe empty jugs hold this many litres of water: A:11, B:11, C:12\nAnd your target is: 6 litres.\n\nHow do you defuse the bomb?\n\nReply as a JSON-parsable list of moves which result in any of the jugs being filled with the target amount.\n",
+    "answer": "[\"fill A\", \"pour A->C\", \"fill A\", \"pour A->C\", \"fill B\", \"empty C\", \"pour A->C\", \"fill A\", \"pour A->C\", \"empty C\", \"pour A->C\", \"fill A\", \"pour A->C\", \"empty C\", \"pour A->C\", \"fill A\", \"pour A->C\", \"empty C\", \"pour A->C\", \"pour B->C\"]",
+    "metadata": {
+      "source_dataset": "jugs",
+      "source_index": 43,
+      "puzzle": {
+        "jug_capacities": [
+          11,
+          11,
+          12
+        ],
+        "target": 6,
+        "min_moves": 20
+      },
+      "difficulty": {
+        "num_jugs": 3,
+        "difficulty": 10
+      }
+    }
+  },
+  {
+    "question": "You are a police officer. A maniac has planted a bomb next to a public fountain.\n\nTo defuse the bomb, you must solve a puzzle. The puzzle is solved when you fill any of the available jugs with the target amount of water.\n\nYou have three move types: 'fill', 'empty' and 'pour'.\n\nTo fill Jug A, you 'fill A'.\nTo empty Jug B, you 'empty B'.\nTo pour the contents of Jug A into Jug B, you 'pour A->B'.\nAll jugs are empty to begin with.\n\nThe empty jugs hold this many litres of water: A:11, B:13, C:9\nAnd your target is: 12 litres.\n\nHow do you defuse the bomb?\n\nReply as a JSON-parsable list of moves which result in any of the jugs being filled with the target amount.\n",
+    "answer": "[\"fill B\", \"pour B->C\", \"empty C\", \"pour B->C\", \"fill B\", \"pour B->C\", \"empty C\", \"pour B->C\", \"fill B\", \"pour B->C\"]",
+    "metadata": {
+      "source_dataset": "jugs",
+      "source_index": 44,
+      "puzzle": {
+        "jug_capacities": [
+          11,
+          13,
+          9
+        ],
+        "target": 12,
+        "min_moves": 10
+      },
+      "difficulty": {
+        "num_jugs": 3,
+        "difficulty": 10
+      }
+    }
+  },
+  {
+    "question": "You are a police officer. A maniac has planted a bomb next to a public fountain.\n\nTo defuse the bomb, you must solve a puzzle. The puzzle is solved when you fill any of the available jugs with the target amount of water.\n\nYou have three move types: 'fill', 'empty' and 'pour'.\n\nTo fill Jug A, you 'fill A'.\nTo empty Jug B, you 'empty B'.\nTo pour the contents of Jug A into Jug B, you 'pour A->B'.\nAll jugs are empty to begin with.\n\nThe empty jugs hold this many litres of water: A:13, B:8, C:13\nAnd your target is: 1 litres.\n\nHow do you defuse the bomb?\n\nReply as a JSON-parsable list of moves which result in any of the jugs being filled with the target amount.\n",
+    "answer": "[\"fill B\", \"pour B->A\", \"fill B\", \"pour B->A\", \"empty A\", \"pour B->A\", \"fill B\", \"pour B->A\", \"fill B\", \"pour B->A\", \"pour B->C\", \"pour A->B\", \"pour B->C\"]",
+    "metadata": {
+      "source_dataset": "jugs",
+      "source_index": 45,
+      "puzzle": {
+        "jug_capacities": [
+          13,
+          8,
+          13
+        ],
+        "target": 1,
+        "min_moves": 13
+      },
+      "difficulty": {
+        "num_jugs": 3,
+        "difficulty": 10
+      }
+    }
+  },
+  {
+    "question": "You are a police officer. A maniac has planted a bomb next to a public fountain.\n\nTo defuse the bomb, you must solve a puzzle. The puzzle is solved when you fill any of the available jugs with the target amount of water.\n\nYou have three move types: 'fill', 'empty' and 'pour'.\n\nTo fill Jug A, you 'fill A'.\nTo empty Jug B, you 'empty B'.\nTo pour the contents of Jug A into Jug B, you 'pour A->B'.\nAll jugs are empty to begin with.\n\nThe empty jugs hold this many litres of water: A:5, B:12, C:5\nAnd your target is: 8 litres.\n\nHow do you defuse the bomb?\n\nReply as a JSON-parsable list of moves which result in any of the jugs being filled with the target amount.\n",
+    "answer": "[\"fill A\", \"pour A->B\", \"fill A\", \"pour A->B\", \"fill A\", \"pour A->B\", \"empty B\", \"pour A->B\", \"fill A\", \"pour A->B\"]",
+    "metadata": {
+      "source_dataset": "jugs",
+      "source_index": 46,
+      "puzzle": {
+        "jug_capacities": [
+          5,
+          12,
+          5
+        ],
+        "target": 8,
+        "min_moves": 10
+      },
+      "difficulty": {
+        "num_jugs": 3,
+        "difficulty": 10
+      }
+    }
+  },
+  {
+    "question": "You are a police officer. A maniac has planted a bomb next to a public fountain.\n\nTo defuse the bomb, you must solve a puzzle. The puzzle is solved when you fill any of the available jugs with the target amount of water.\n\nYou have three move types: 'fill', 'empty' and 'pour'.\n\nTo fill Jug A, you 'fill A'.\nTo empty Jug B, you 'empty B'.\nTo pour the contents of Jug A into Jug B, you 'pour A->B'.\nAll jugs are empty to begin with.\n\nThe empty jugs hold this many litres of water: A:9, B:7, C:9\nAnd your target is: 8 litres.\n\nHow do you defuse the bomb?\n\nReply as a JSON-parsable list of moves which result in any of the jugs being filled with the target amount.\n",
+    "answer": "[\"fill A\", \"pour A->B\", \"empty B\", \"pour A->B\", \"fill A\", \"pour A->B\", \"empty B\", \"pour A->B\", \"fill A\", \"pour A->B\", \"empty B\", \"pour A->B\", \"fill A\", \"pour A->B\"]",
+    "metadata": {
+      "source_dataset": "jugs",
+      "source_index": 47,
+      "puzzle": {
+        "jug_capacities": [
+          9,
+          7,
+          9
+        ],
+        "target": 8,
+        "min_moves": 14
+      },
+      "difficulty": {
+        "num_jugs": 3,
+        "difficulty": 10
+      }
+    }
+  },
+  {
+    "question": "You are a police officer. A maniac has planted a bomb next to a public fountain.\n\nTo defuse the bomb, you must solve a puzzle. The puzzle is solved when you fill any of the available jugs with the target amount of water.\n\nYou have three move types: 'fill', 'empty' and 'pour'.\n\nTo fill Jug A, you 'fill A'.\nTo empty Jug B, you 'empty B'.\nTo pour the contents of Jug A into Jug B, you 'pour A->B'.\nAll jugs are empty to begin with.\n\nThe empty jugs hold this many litres of water: A:13, B:11, C:11\nAnd your target is: 1 litres.\n\nHow do you defuse the bomb?\n\nReply as a JSON-parsable list of moves which result in any of the jugs being filled with the target amount.\n",
+    "answer": "[\"fill B\", \"pour B->A\", \"fill B\", \"pour B->A\", \"empty A\", \"pour B->A\", \"fill B\", \"pour B->A\", \"empty A\", \"pour B->A\", \"fill B\", \"pour B->A\", \"empty A\", \"pour B->A\", \"fill B\", \"pour B->A\", \"empty A\", \"pour B->A\", \"fill B\", \"pour B->A\"]",
+    "metadata": {
+      "source_dataset": "jugs",
+      "source_index": 48,
+      "puzzle": {
+        "jug_capacities": [
+          13,
+          11,
+          11
+        ],
+        "target": 1,
+        "min_moves": 20
+      },
+      "difficulty": {
+        "num_jugs": 3,
+        "difficulty": 10
+      }
+    }
+  },
+  {
+    "question": "You are a police officer. A maniac has planted a bomb next to a public fountain.\n\nTo defuse the bomb, you must solve a puzzle. The puzzle is solved when you fill any of the available jugs with the target amount of water.\n\nYou have three move types: 'fill', 'empty' and 'pour'.\n\nTo fill Jug A, you 'fill A'.\nTo empty Jug B, you 'empty B'.\nTo pour the contents of Jug A into Jug B, you 'pour A->B'.\nAll jugs are empty to begin with.\n\nThe empty jugs hold this many litres of water: A:13, B:13, C:6\nAnd your target is: 4 litres.\n\nHow do you defuse the bomb?\n\nReply as a JSON-parsable list of moves which result in any of the jugs being filled with the target amount.\n",
+    "answer": "[\"fill C\", \"pour C->A\", \"fill C\", \"pour C->A\", \"fill C\", \"pour C->A\", \"pour C->B\", \"pour A->C\", \"pour C->B\", \"pour A->C\", \"pour C->B\"]",
+    "metadata": {
+      "source_dataset": "jugs",
+      "source_index": 49,
+      "puzzle": {
+        "jug_capacities": [
+          13,
+          13,
+          6
+        ],
+        "target": 4,
+        "min_moves": 11
+      },
+      "difficulty": {
+        "num_jugs": 3,
+        "difficulty": 10
+      }
+    }
+  },
+  {
+    "question": "You are a police officer. A maniac has planted a bomb next to a public fountain.\n\nTo defuse the bomb, you must solve a puzzle. The puzzle is solved when you fill any of the available jugs with the target amount of water.\n\nYou have three move types: 'fill', 'empty' and 'pour'.\n\nTo fill Jug A, you 'fill A'.\nTo empty Jug B, you 'empty B'.\nTo pour the contents of Jug A into Jug B, you 'pour A->B'.\nAll jugs are empty to begin with.\n\nThe empty jugs hold this many litres of water: A:12, B:12, C:7\nAnd your target is: 6 litres.\n\nHow do you defuse the bomb?\n\nReply as a JSON-parsable list of moves which result in any of the jugs being filled with the target amount.\n",
+    "answer": "[\"fill C\", \"pour C->A\", \"fill C\", \"pour C->A\", \"empty A\", \"pour C->A\", \"fill C\", \"pour C->A\", \"fill C\", \"pour C->A\", \"pour C->B\", \"pour A->C\", \"pour C->B\", \"fill C\", \"pour C->B\"]",
+    "metadata": {
+      "source_dataset": "jugs",
+      "source_index": 50,
+      "puzzle": {
+        "jug_capacities": [
+          12,
+          12,
+          7
+        ],
+        "target": 6,
+        "min_moves": 15
+      },
+      "difficulty": {
+        "num_jugs": 3,
+        "difficulty": 10
+      }
+    }
+  },
+  {
+    "question": "You are a police officer. A maniac has planted a bomb next to a public fountain.\n\nTo defuse the bomb, you must solve a puzzle. The puzzle is solved when you fill any of the available jugs with the target amount of water.\n\nYou have three move types: 'fill', 'empty' and 'pour'.\n\nTo fill Jug A, you 'fill A'.\nTo empty Jug B, you 'empty B'.\nTo pour the contents of Jug A into Jug B, you 'pour A->B'.\nAll jugs are empty to begin with.\n\nThe empty jugs hold this many litres of water: A:3, B:3, C:11\nAnd your target is: 7 litres.\n\nHow do you defuse the bomb?\n\nReply as a JSON-parsable list of moves which result in any of the jugs being filled with the target amount.\n",
+    "answer": "[\"fill C\", \"pour C->A\", \"empty A\", \"pour C->A\", \"empty A\", \"pour C->A\", \"empty A\", \"pour C->A\", \"fill C\", \"pour C->A\", \"pour C->B\"]",
+    "metadata": {
+      "source_dataset": "jugs",
+      "source_index": 51,
+      "puzzle": {
+        "jug_capacities": [
+          3,
+          3,
+          11
+        ],
+        "target": 7,
+        "min_moves": 11
+      },
+      "difficulty": {
+        "num_jugs": 3,
+        "difficulty": 10
+      }
+    }
+  },
+  {
+    "question": "You are a police officer. A maniac has planted a bomb next to a public fountain.\n\nTo defuse the bomb, you must solve a puzzle. The puzzle is solved when you fill any of the available jugs with the target amount of water.\n\nYou have three move types: 'fill', 'empty' and 'pour'.\n\nTo fill Jug A, you 'fill A'.\nTo empty Jug B, you 'empty B'.\nTo pour the contents of Jug A into Jug B, you 'pour A->B'.\nAll jugs are empty to begin with.\n\nThe empty jugs hold this many litres of water: A:13, B:12, C:12\nAnd your target is: 5 litres.\n\nHow do you defuse the bomb?\n\nReply as a JSON-parsable list of moves which result in any of the jugs being filled with the target amount.\n",
+    "answer": "[\"fill A\", \"pour A->B\", \"pour A->C\", \"fill A\", \"pour A->C\", \"empty B\", \"pour A->B\", \"fill A\", \"pour A->B\", \"empty B\", \"pour A->B\", \"fill A\", \"pour A->B\", \"empty B\", \"pour A->B\", \"fill A\", \"pour A->B\"]",
+    "metadata": {
+      "source_dataset": "jugs",
+      "source_index": 52,
+      "puzzle": {
+        "jug_capacities": [
+          13,
+          12,
+          12
+        ],
+        "target": 5,
+        "min_moves": 17
+      },
+      "difficulty": {
+        "num_jugs": 3,
+        "difficulty": 10
+      }
+    }
+  },
+  {
+    "question": "You are a police officer. A maniac has planted a bomb next to a public fountain.\n\nTo defuse the bomb, you must solve a puzzle. The puzzle is solved when you fill any of the available jugs with the target amount of water.\n\nYou have three move types: 'fill', 'empty' and 'pour'.\n\nTo fill Jug A, you 'fill A'.\nTo empty Jug B, you 'empty B'.\nTo pour the contents of Jug A into Jug B, you 'pour A->B'.\nAll jugs are empty to begin with.\n\nThe empty jugs hold this many litres of water: A:13, B:13, C:4\nAnd your target is: 6 litres.\n\nHow do you defuse the bomb?\n\nReply as a JSON-parsable list of moves which result in any of the jugs being filled with the target amount.\n",
+    "answer": "[\"fill A\", \"pour A->C\", \"fill B\", \"empty C\", \"pour A->C\", \"empty C\", \"pour A->C\", \"empty C\", \"pour A->C\", \"pour B->C\", \"empty C\", \"pour B->C\"]",
+    "metadata": {
+      "source_dataset": "jugs",
+      "source_index": 53,
+      "puzzle": {
+        "jug_capacities": [
+          13,
+          13,
+          4
+        ],
+        "target": 6,
+        "min_moves": 12
+      },
+      "difficulty": {
+        "num_jugs": 3,
+        "difficulty": 10
+      }
+    }
+  },
+  {
+    "question": "You are a police officer. A maniac has planted a bomb next to a public fountain.\n\nTo defuse the bomb, you must solve a puzzle. The puzzle is solved when you fill any of the available jugs with the target amount of water.\n\nYou have three move types: 'fill', 'empty' and 'pour'.\n\nTo fill Jug A, you 'fill A'.\nTo empty Jug B, you 'empty B'.\nTo pour the contents of Jug A into Jug B, you 'pour A->B'.\nAll jugs are empty to begin with.\n\nThe empty jugs hold this many litres of water: A:8, B:8, C:13\nAnd your target is: 7 litres.\n\nHow do you defuse the bomb?\n\nReply as a JSON-parsable list of moves which result in any of the jugs being filled with the target amount.\n",
+    "answer": "[\"fill C\", \"pour C->A\", \"empty A\", \"pour C->A\", \"fill C\", \"pour C->A\", \"empty A\", \"pour C->A\", \"pour C->B\", \"fill C\", \"pour C->B\"]",
+    "metadata": {
+      "source_dataset": "jugs",
+      "source_index": 54,
+      "puzzle": {
+        "jug_capacities": [
+          8,
+          8,
+          13
+        ],
+        "target": 7,
+        "min_moves": 11
+      },
+      "difficulty": {
+        "num_jugs": 3,
+        "difficulty": 10
+      }
+    }
+  },
+  {
+    "question": "You are a police officer. A maniac has planted a bomb next to a public fountain.\n\nTo defuse the bomb, you must solve a puzzle. The puzzle is solved when you fill any of the available jugs with the target amount of water.\n\nYou have three move types: 'fill', 'empty' and 'pour'.\n\nTo fill Jug A, you 'fill A'.\nTo empty Jug B, you 'empty B'.\nTo pour the contents of Jug A into Jug B, you 'pour A->B'.\nAll jugs are empty to begin with.\n\nThe empty jugs hold this many litres of water: A:9, B:9, C:8\nAnd your target is: 3 litres.\n\nHow do you defuse the bomb?\n\nReply as a JSON-parsable list of moves which result in any of the jugs being filled with the target amount.\n",
+    "answer": "[\"fill A\", \"pour A->C\", \"fill B\", \"empty C\", \"pour A->C\", \"fill A\", \"pour A->C\", \"empty C\", \"pour A->C\", \"pour B->C\"]",
+    "metadata": {
+      "source_dataset": "jugs",
+      "source_index": 55,
+      "puzzle": {
+        "jug_capacities": [
+          9,
+          9,
+          8
+        ],
+        "target": 3,
+        "min_moves": 10
+      },
+      "difficulty": {
+        "num_jugs": 3,
+        "difficulty": 10
+      }
+    }
+  },
+  {
+    "question": "You are a police officer. A maniac has planted a bomb next to a public fountain.\n\nTo defuse the bomb, you must solve a puzzle. The puzzle is solved when you fill any of the available jugs with the target amount of water.\n\nYou have three move types: 'fill', 'empty' and 'pour'.\n\nTo fill Jug A, you 'fill A'.\nTo empty Jug B, you 'empty B'.\nTo pour the contents of Jug A into Jug B, you 'pour A->B'.\nAll jugs are empty to begin with.\n\nThe empty jugs hold this many litres of water: A:8, B:13, C:13\nAnd your target is: 9 litres.\n\nHow do you defuse the bomb?\n\nReply as a JSON-parsable list of moves which result in any of the jugs being filled with the target amount.\n",
+    "answer": "[\"fill A\", \"pour A->B\", \"fill A\", \"pour A->B\", \"pour A->C\", \"fill A\", \"pour A->C\", \"fill A\", \"pour A->C\", \"empty B\", \"pour A->B\", \"fill A\", \"pour A->B\", \"empty B\", \"pour A->B\", \"fill A\", \"pour A->B\"]",
+    "metadata": {
+      "source_dataset": "jugs",
+      "source_index": 56,
+      "puzzle": {
+        "jug_capacities": [
+          8,
+          13,
+          13
+        ],
+        "target": 9,
+        "min_moves": 17
+      },
+      "difficulty": {
+        "num_jugs": 3,
+        "difficulty": 10
+      }
+    }
+  },
+  {
+    "question": "You are a police officer. A maniac has planted a bomb next to a public fountain.\n\nTo defuse the bomb, you must solve a puzzle. The puzzle is solved when you fill any of the available jugs with the target amount of water.\n\nYou have three move types: 'fill', 'empty' and 'pour'.\n\nTo fill Jug A, you 'fill A'.\nTo empty Jug B, you 'empty B'.\nTo pour the contents of Jug A into Jug B, you 'pour A->B'.\nAll jugs are empty to begin with.\n\nThe empty jugs hold this many litres of water: A:4, B:9, C:13\nAnd your target is: 2 litres.\n\nHow do you defuse the bomb?\n\nReply as a JSON-parsable list of moves which result in any of the jugs being filled with the target amount.\n",
+    "answer": "[\"fill B\", \"pour B->A\", \"empty A\", \"pour B->A\", \"empty A\", \"pour B->A\", \"fill B\", \"pour B->A\", \"empty A\", \"pour B->A\"]",
+    "metadata": {
+      "source_dataset": "jugs",
+      "source_index": 57,
+      "puzzle": {
+        "jug_capacities": [
+          4,
+          9,
+          13
+        ],
+        "target": 2,
+        "min_moves": 10
+      },
+      "difficulty": {
+        "num_jugs": 3,
+        "difficulty": 10
+      }
+    }
+  },
+  {
+    "question": "You are a police officer. A maniac has planted a bomb next to a public fountain.\n\nTo defuse the bomb, you must solve a puzzle. The puzzle is solved when you fill any of the available jugs with the target amount of water.\n\nYou have three move types: 'fill', 'empty' and 'pour'.\n\nTo fill Jug A, you 'fill A'.\nTo empty Jug B, you 'empty B'.\nTo pour the contents of Jug A into Jug B, you 'pour A->B'.\nAll jugs are empty to begin with.\n\nThe empty jugs hold this many litres of water: A:4, B:11, C:4\nAnd your target is: 2 litres.\n\nHow do you defuse the bomb?\n\nReply as a JSON-parsable list of moves which result in any of the jugs being filled with the target amount.\n",
+    "answer": "[\"fill B\", \"pour B->A\", \"empty A\", \"pour B->A\", \"empty A\", \"pour B->A\", \"fill B\", \"pour B->A\", \"empty A\", \"pour B->A\", \"pour B->C\"]",
+    "metadata": {
+      "source_dataset": "jugs",
+      "source_index": 58,
+      "puzzle": {
+        "jug_capacities": [
+          4,
+          11,
+          4
+        ],
+        "target": 2,
+        "min_moves": 11
+      },
+      "difficulty": {
+        "num_jugs": 3,
+        "difficulty": 10
+      }
+    }
+  },
+  {
+    "question": "You are a police officer. A maniac has planted a bomb next to a public fountain.\n\nTo defuse the bomb, you must solve a puzzle. The puzzle is solved when you fill any of the available jugs with the target amount of water.\n\nYou have three move types: 'fill', 'empty' and 'pour'.\n\nTo fill Jug A, you 'fill A'.\nTo empty Jug B, you 'empty B'.\nTo pour the contents of Jug A into Jug B, you 'pour A->B'.\nAll jugs are empty to begin with.\n\nThe empty jugs hold this many litres of water: A:11, B:8, C:8\nAnd your target is: 1 litres.\n\nHow do you defuse the bomb?\n\nReply as a JSON-parsable list of moves which result in any of the jugs being filled with the target amount.\n",
+    "answer": "[\"fill A\", \"pour A->B\", \"pour A->C\", \"fill A\", \"pour A->C\", \"empty B\", \"pour A->B\", \"fill A\", \"pour A->B\", \"empty B\", \"pour A->B\"]",
+    "metadata": {
+      "source_dataset": "jugs",
+      "source_index": 59,
+      "puzzle": {
+        "jug_capacities": [
+          11,
+          8,
+          8
+        ],
+        "target": 1,
+        "min_moves": 11
+      },
+      "difficulty": {
+        "num_jugs": 3,
+        "difficulty": 10
+      }
+    }
+  },
+  {
+    "question": "You are a police officer. A maniac has planted a bomb next to a public fountain.\n\nTo defuse the bomb, you must solve a puzzle. The puzzle is solved when you fill any of the available jugs with the target amount of water.\n\nYou have three move types: 'fill', 'empty' and 'pour'.\n\nTo fill Jug A, you 'fill A'.\nTo empty Jug B, you 'empty B'.\nTo pour the contents of Jug A into Jug B, you 'pour A->B'.\nAll jugs are empty to begin with.\n\nThe empty jugs hold this many litres of water: A:6, B:11, C:11\nAnd your target is: 3 litres.\n\nHow do you defuse the bomb?\n\nReply as a JSON-parsable list of moves which result in any of the jugs being filled with the target amount.\n",
+    "answer": "[\"fill B\", \"pour B->A\", \"empty A\", \"pour B->A\", \"fill B\", \"pour B->A\", \"empty A\", \"pour B->A\", \"empty A\", \"pour B->A\", \"fill B\", \"pour B->A\", \"empty A\", \"pour B->A\"]",
+    "metadata": {
+      "source_dataset": "jugs",
+      "source_index": 60,
+      "puzzle": {
+        "jug_capacities": [
+          6,
+          11,
+          11
+        ],
+        "target": 3,
+        "min_moves": 14
+      },
+      "difficulty": {
+        "num_jugs": 3,
+        "difficulty": 10
+      }
+    }
+  },
+  {
+    "question": "You are a police officer. A maniac has planted a bomb next to a public fountain.\n\nTo defuse the bomb, you must solve a puzzle. The puzzle is solved when you fill any of the available jugs with the target amount of water.\n\nYou have three move types: 'fill', 'empty' and 'pour'.\n\nTo fill Jug A, you 'fill A'.\nTo empty Jug B, you 'empty B'.\nTo pour the contents of Jug A into Jug B, you 'pour A->B'.\nAll jugs are empty to begin with.\n\nThe empty jugs hold this many litres of water: A:13, B:12, C:12\nAnd your target is: 4 litres.\n\nHow do you defuse the bomb?\n\nReply as a JSON-parsable list of moves which result in any of the jugs being filled with the target amount.\n",
+    "answer": "[\"fill A\", \"pour A->B\", \"pour A->C\", \"fill A\", \"pour A->C\", \"empty B\", \"pour A->B\", \"fill A\", \"pour A->B\", \"empty B\", \"pour A->B\", \"fill A\", \"pour A->B\"]",
+    "metadata": {
+      "source_dataset": "jugs",
+      "source_index": 61,
+      "puzzle": {
+        "jug_capacities": [
+          13,
+          12,
+          12
+        ],
+        "target": 4,
+        "min_moves": 13
+      },
+      "difficulty": {
+        "num_jugs": 3,
+        "difficulty": 10
+      }
+    }
+  },
+  {
+    "question": "You are a police officer. A maniac has planted a bomb next to a public fountain.\n\nTo defuse the bomb, you must solve a puzzle. The puzzle is solved when you fill any of the available jugs with the target amount of water.\n\nYou have three move types: 'fill', 'empty' and 'pour'.\n\nTo fill Jug A, you 'fill A'.\nTo empty Jug B, you 'empty B'.\nTo pour the contents of Jug A into Jug B, you 'pour A->B'.\nAll jugs are empty to begin with.\n\nThe empty jugs hold this many litres of water: A:10, B:10, C:11\nAnd your target is: 4 litres.\n\nHow do you defuse the bomb?\n\nReply as a JSON-parsable list of moves which result in any of the jugs being filled with the target amount.\n",
+    "answer": "[\"fill C\", \"pour C->A\", \"empty A\", \"pour C->A\", \"fill C\", \"pour C->A\", \"empty A\", \"pour C->A\", \"fill C\", \"pour C->A\", \"pour C->B\", \"fill C\", \"pour C->B\"]",
+    "metadata": {
+      "source_dataset": "jugs",
+      "source_index": 62,
+      "puzzle": {
+        "jug_capacities": [
+          10,
+          10,
+          11
+        ],
+        "target": 4,
+        "min_moves": 13
+      },
+      "difficulty": {
+        "num_jugs": 3,
+        "difficulty": 10
+      }
+    }
+  },
+  {
+    "question": "You are a police officer. A maniac has planted a bomb next to a public fountain.\n\nTo defuse the bomb, you must solve a puzzle. The puzzle is solved when you fill any of the available jugs with the target amount of water.\n\nYou have three move types: 'fill', 'empty' and 'pour'.\n\nTo fill Jug A, you 'fill A'.\nTo empty Jug B, you 'empty B'.\nTo pour the contents of Jug A into Jug B, you 'pour A->B'.\nAll jugs are empty to begin with.\n\nThe empty jugs hold this many litres of water: A:9, B:11, C:11\nAnd your target is: 10 litres.\n\nHow do you defuse the bomb?\n\nReply as a JSON-parsable list of moves which result in any of the jugs being filled with the target amount.\n",
+    "answer": "[\"fill B\", \"pour B->A\", \"empty A\", \"pour B->A\", \"fill B\", \"pour B->A\", \"empty A\", \"pour B->A\", \"fill B\", \"pour B->A\", \"empty A\", \"pour B->A\", \"fill B\", \"pour B->A\", \"empty A\", \"pour B->A\", \"fill B\", \"pour B->A\"]",
+    "metadata": {
+      "source_dataset": "jugs",
+      "source_index": 63,
+      "puzzle": {
+        "jug_capacities": [
+          9,
+          11,
+          11
+        ],
+        "target": 10,
+        "min_moves": 18
+      },
+      "difficulty": {
+        "num_jugs": 3,
+        "difficulty": 10
+      }
+    }
+  },
+  {
+    "question": "You are a police officer. A maniac has planted a bomb next to a public fountain.\n\nTo defuse the bomb, you must solve a puzzle. The puzzle is solved when you fill any of the available jugs with the target amount of water.\n\nYou have three move types: 'fill', 'empty' and 'pour'.\n\nTo fill Jug A, you 'fill A'.\nTo empty Jug B, you 'empty B'.\nTo pour the contents of Jug A into Jug B, you 'pour A->B'.\nAll jugs are empty to begin with.\n\nThe empty jugs hold this many litres of water: A:7, B:8, C:8\nAnd your target is: 3 litres.\n\nHow do you defuse the bomb?\n\nReply as a JSON-parsable list of moves which result in any of the jugs being filled with the target amount.\n",
+    "answer": "[\"fill B\", \"pour B->A\", \"empty A\", \"pour B->A\", \"fill B\", \"pour B->A\", \"empty A\", \"pour B->A\", \"fill B\", \"pour B->A\"]",
+    "metadata": {
+      "source_dataset": "jugs",
+      "source_index": 64,
+      "puzzle": {
+        "jug_capacities": [
+          7,
+          8,
+          8
+        ],
+        "target": 3,
+        "min_moves": 10
+      },
+      "difficulty": {
+        "num_jugs": 3,
+        "difficulty": 10
+      }
+    }
+  },
+  {
+    "question": "You are a police officer. A maniac has planted a bomb next to a public fountain.\n\nTo defuse the bomb, you must solve a puzzle. The puzzle is solved when you fill any of the available jugs with the target amount of water.\n\nYou have three move types: 'fill', 'empty' and 'pour'.\n\nTo fill Jug A, you 'fill A'.\nTo empty Jug B, you 'empty B'.\nTo pour the contents of Jug A into Jug B, you 'pour A->B'.\nAll jugs are empty to begin with.\n\nThe empty jugs hold this many litres of water: A:7, B:9, C:9\nAnd your target is: 6 litres.\n\nHow do you defuse the bomb?\n\nReply as a JSON-parsable list of moves which result in any of the jugs being filled with the target amount.\n",
+    "answer": "[\"fill B\", \"pour B->A\", \"empty A\", \"pour B->A\", \"fill B\", \"pour B->A\", \"empty A\", \"pour B->A\", \"fill B\", \"pour B->A\"]",
+    "metadata": {
+      "source_dataset": "jugs",
+      "source_index": 65,
+      "puzzle": {
+        "jug_capacities": [
+          7,
+          9,
+          9
+        ],
+        "target": 6,
+        "min_moves": 10
+      },
+      "difficulty": {
+        "num_jugs": 3,
+        "difficulty": 10
+      }
+    }
+  },
+  {
+    "question": "You are a police officer. A maniac has planted a bomb next to a public fountain.\n\nTo defuse the bomb, you must solve a puzzle. The puzzle is solved when you fill any of the available jugs with the target amount of water.\n\nYou have three move types: 'fill', 'empty' and 'pour'.\n\nTo fill Jug A, you 'fill A'.\nTo empty Jug B, you 'empty B'.\nTo pour the contents of Jug A into Jug B, you 'pour A->B'.\nAll jugs are empty to begin with.\n\nThe empty jugs hold this many litres of water: A:8, B:8, C:13\nAnd your target is: 4 litres.\n\nHow do you defuse the bomb?\n\nReply as a JSON-parsable list of moves which result in any of the jugs being filled with the target amount.\n",
+    "answer": "[\"fill C\", \"pour C->A\", \"empty A\", \"pour C->A\", \"fill C\", \"pour C->A\", \"empty A\", \"pour C->A\", \"empty A\", \"pour C->A\", \"fill C\", \"pour C->A\", \"empty A\", \"pour C->A\", \"fill C\", \"pour C->A\", \"pour C->B\"]",
+    "metadata": {
+      "source_dataset": "jugs",
+      "source_index": 66,
+      "puzzle": {
+        "jug_capacities": [
+          8,
+          8,
+          13
+        ],
+        "target": 4,
+        "min_moves": 17
+      },
+      "difficulty": {
+        "num_jugs": 3,
+        "difficulty": 10
+      }
+    }
+  },
+  {
+    "question": "You are a police officer. A maniac has planted a bomb next to a public fountain.\n\nTo defuse the bomb, you must solve a puzzle. The puzzle is solved when you fill any of the available jugs with the target amount of water.\n\nYou have three move types: 'fill', 'empty' and 'pour'.\n\nTo fill Jug A, you 'fill A'.\nTo empty Jug B, you 'empty B'.\nTo pour the contents of Jug A into Jug B, you 'pour A->B'.\nAll jugs are empty to begin with.\n\nThe empty jugs hold this many litres of water: A:10, B:3, C:13\nAnd your target is: 8 litres.\n\nHow do you defuse the bomb?\n\nReply as a JSON-parsable list of moves which result in any of the jugs being filled with the target amount.\n",
+    "answer": "[\"fill A\", \"pour A->B\", \"empty B\", \"pour A->B\", \"empty B\", \"pour A->B\", \"empty B\", \"pour A->B\", \"fill A\", \"pour A->B\"]",
+    "metadata": {
+      "source_dataset": "jugs",
+      "source_index": 67,
+      "puzzle": {
+        "jug_capacities": [
+          10,
+          3,
+          13
+        ],
+        "target": 8,
+        "min_moves": 10
+      },
+      "difficulty": {
+        "num_jugs": 3,
+        "difficulty": 10
+      }
+    }
+  },
+  {
+    "question": "You are a police officer. A maniac has planted a bomb next to a public fountain.\n\nTo defuse the bomb, you must solve a puzzle. The puzzle is solved when you fill any of the available jugs with the target amount of water.\n\nYou have three move types: 'fill', 'empty' and 'pour'.\n\nTo fill Jug A, you 'fill A'.\nTo empty Jug B, you 'empty B'.\nTo pour the contents of Jug A into Jug B, you 'pour A->B'.\nAll jugs are empty to begin with.\n\nThe empty jugs hold this many litres of water: A:6, B:7, C:7\nAnd your target is: 3 litres.\n\nHow do you defuse the bomb?\n\nReply as a JSON-parsable list of moves which result in any of the jugs being filled with the target amount.\n",
+    "answer": "[\"fill B\", \"pour B->A\", \"empty A\", \"pour B->A\", \"fill B\", \"pour B->A\", \"empty A\", \"pour B->A\", \"fill B\", \"pour B->A\"]",
+    "metadata": {
+      "source_dataset": "jugs",
+      "source_index": 68,
+      "puzzle": {
+        "jug_capacities": [
+          6,
+          7,
+          7
+        ],
+        "target": 3,
+        "min_moves": 10
+      },
+      "difficulty": {
+        "num_jugs": 3,
+        "difficulty": 10
+      }
+    }
+  },
+  {
+    "question": "You are a police officer. A maniac has planted a bomb next to a public fountain.\n\nTo defuse the bomb, you must solve a puzzle. The puzzle is solved when you fill any of the available jugs with the target amount of water.\n\nYou have three move types: 'fill', 'empty' and 'pour'.\n\nTo fill Jug A, you 'fill A'.\nTo empty Jug B, you 'empty B'.\nTo pour the contents of Jug A into Jug B, you 'pour A->B'.\nAll jugs are empty to begin with.\n\nThe empty jugs hold this many litres of water: A:8, B:13, C:13\nAnd your target is: 4 litres.\n\nHow do you defuse the bomb?\n\nReply as a JSON-parsable list of moves which result in any of the jugs being filled with the target amount.\n",
+    "answer": "[\"fill B\", \"pour B->A\", \"empty A\", \"pour B->A\", \"fill B\", \"pour B->A\", \"empty A\", \"pour B->A\", \"empty A\", \"pour B->A\", \"fill B\", \"pour B->A\", \"empty A\", \"pour B->A\", \"fill B\", \"pour B->A\", \"empty A\", \"pour B->A\"]",
+    "metadata": {
+      "source_dataset": "jugs",
+      "source_index": 69,
+      "puzzle": {
+        "jug_capacities": [
+          8,
+          13,
+          13
+        ],
+        "target": 4,
+        "min_moves": 18
+      },
+      "difficulty": {
+        "num_jugs": 3,
+        "difficulty": 10
+      }
+    }
+  },
+  {
+    "question": "You are a police officer. A maniac has planted a bomb next to a public fountain.\n\nTo defuse the bomb, you must solve a puzzle. The puzzle is solved when you fill any of the available jugs with the target amount of water.\n\nYou have three move types: 'fill', 'empty' and 'pour'.\n\nTo fill Jug A, you 'fill A'.\nTo empty Jug B, you 'empty B'.\nTo pour the contents of Jug A into Jug B, you 'pour A->B'.\nAll jugs are empty to begin with.\n\nThe empty jugs hold this many litres of water: A:10, B:11, C:11\nAnd your target is: 3 litres.\n\nHow do you defuse the bomb?\n\nReply as a JSON-parsable list of moves which result in any of the jugs being filled with the target amount.\n",
+    "answer": "[\"fill B\", \"pour B->A\", \"empty A\", \"pour B->A\", \"fill B\", \"pour B->A\", \"empty A\", \"pour B->A\", \"fill B\", \"pour B->A\"]",
+    "metadata": {
+      "source_dataset": "jugs",
+      "source_index": 70,
+      "puzzle": {
+        "jug_capacities": [
+          10,
+          11,
+          11
+        ],
+        "target": 3,
+        "min_moves": 10
+      },
+      "difficulty": {
+        "num_jugs": 3,
+        "difficulty": 10
+      }
+    }
+  },
+  {
+    "question": "You are a police officer. A maniac has planted a bomb next to a public fountain.\n\nTo defuse the bomb, you must solve a puzzle. The puzzle is solved when you fill any of the available jugs with the target amount of water.\n\nYou have three move types: 'fill', 'empty' and 'pour'.\n\nTo fill Jug A, you 'fill A'.\nTo empty Jug B, you 'empty B'.\nTo pour the contents of Jug A into Jug B, you 'pour A->B'.\nAll jugs are empty to begin with.\n\nThe empty jugs hold this many litres of water: A:13, B:7, C:13\nAnd your target is: 4 litres.\n\nHow do you defuse the bomb?\n\nReply as a JSON-parsable list of moves which result in any of the jugs being filled with the target amount.\n",
+    "answer": "[\"fill A\", \"pour A->B\", \"empty B\", \"pour A->B\", \"fill A\", \"pour A->B\", \"empty B\", \"pour A->B\", \"empty B\", \"pour A->B\", \"fill A\", \"pour A->B\", \"empty B\", \"pour A->B\"]",
+    "metadata": {
+      "source_dataset": "jugs",
+      "source_index": 71,
+      "puzzle": {
+        "jug_capacities": [
+          13,
+          7,
+          13
+        ],
+        "target": 4,
+        "min_moves": 14
+      },
+      "difficulty": {
+        "num_jugs": 3,
+        "difficulty": 10
+      }
+    }
+  },
+  {
+    "question": "You are a police officer. A maniac has planted a bomb next to a public fountain.\n\nTo defuse the bomb, you must solve a puzzle. The puzzle is solved when you fill any of the available jugs with the target amount of water.\n\nYou have three move types: 'fill', 'empty' and 'pour'.\n\nTo fill Jug A, you 'fill A'.\nTo empty Jug B, you 'empty B'.\nTo pour the contents of Jug A into Jug B, you 'pour A->B'.\nAll jugs are empty to begin with.\n\nThe empty jugs hold this many litres of water: A:13, B:6, C:13\nAnd your target is: 10 litres.\n\nHow do you defuse the bomb?\n\nReply as a JSON-parsable list of moves which result in any of the jugs being filled with the target amount.\n",
+    "answer": "[\"fill B\", \"pour B->A\", \"fill B\", \"pour B->A\", \"fill B\", \"pour B->A\", \"empty A\", \"pour B->A\", \"fill B\", \"pour B->A\", \"fill B\", \"pour B->A\", \"pour B->C\", \"pour A->B\", \"pour B->C\"]",
+    "metadata": {
+      "source_dataset": "jugs",
+      "source_index": 72,
+      "puzzle": {
+        "jug_capacities": [
+          13,
+          6,
+          13
+        ],
+        "target": 10,
+        "min_moves": 15
+      },
+      "difficulty": {
+        "num_jugs": 3,
+        "difficulty": 10
+      }
+    }
+  },
+  {
+    "question": "You are a police officer. A maniac has planted a bomb next to a public fountain.\n\nTo defuse the bomb, you must solve a puzzle. The puzzle is solved when you fill any of the available jugs with the target amount of water.\n\nYou have three move types: 'fill', 'empty' and 'pour'.\n\nTo fill Jug A, you 'fill A'.\nTo empty Jug B, you 'empty B'.\nTo pour the contents of Jug A into Jug B, you 'pour A->B'.\nAll jugs are empty to begin with.\n\nThe empty jugs hold this many litres of water: A:13, B:13, C:7\nAnd your target is: 11 litres.\n\nHow do you defuse the bomb?\n\nReply as a JSON-parsable list of moves which result in any of the jugs being filled with the target amount.\n",
+    "answer": "[\"fill A\", \"pour A->C\", \"fill B\", \"empty C\", \"pour A->C\", \"fill A\", \"pour A->C\", \"empty C\", \"pour A->C\", \"empty C\", \"pour A->C\", \"pour B->C\"]",
+    "metadata": {
+      "source_dataset": "jugs",
+      "source_index": 73,
+      "puzzle": {
+        "jug_capacities": [
+          13,
+          13,
+          7
+        ],
+        "target": 11,
+        "min_moves": 12
+      },
+      "difficulty": {
+        "num_jugs": 3,
+        "difficulty": 10
+      }
+    }
+  },
+  {
+    "question": "You are a police officer. A maniac has planted a bomb next to a public fountain.\n\nTo defuse the bomb, you must solve a puzzle. The puzzle is solved when you fill any of the available jugs with the target amount of water.\n\nYou have three move types: 'fill', 'empty' and 'pour'.\n\nTo fill Jug A, you 'fill A'.\nTo empty Jug B, you 'empty B'.\nTo pour the contents of Jug A into Jug B, you 'pour A->B'.\nAll jugs are empty to begin with.\n\nThe empty jugs hold this many litres of water: A:9, B:11, C:11\nAnd your target is: 1 litres.\n\nHow do you defuse the bomb?\n\nReply as a JSON-parsable list of moves which result in any of the jugs being filled with the target amount.\n",
+    "answer": "[\"fill A\", \"pour A->B\", \"fill A\", \"pour A->B\", \"pour A->C\", \"fill A\", \"pour A->C\", \"empty B\", \"pour A->B\", \"fill A\", \"pour A->B\", \"empty B\", \"pour A->B\", \"fill A\", \"pour A->B\"]",
+    "metadata": {
+      "source_dataset": "jugs",
+      "source_index": 74,
+      "puzzle": {
+        "jug_capacities": [
+          9,
+          11,
+          11
+        ],
+        "target": 1,
+        "min_moves": 15
+      },
+      "difficulty": {
+        "num_jugs": 3,
+        "difficulty": 10
+      }
+    }
+  },
+  {
+    "question": "You are a police officer. A maniac has planted a bomb next to a public fountain.\n\nTo defuse the bomb, you must solve a puzzle. The puzzle is solved when you fill any of the available jugs with the target amount of water.\n\nYou have three move types: 'fill', 'empty' and 'pour'.\n\nTo fill Jug A, you 'fill A'.\nTo empty Jug B, you 'empty B'.\nTo pour the contents of Jug A into Jug B, you 'pour A->B'.\nAll jugs are empty to begin with.\n\nThe empty jugs hold this many litres of water: A:5, B:9, C:9\nAnd your target is: 7 litres.\n\nHow do you defuse the bomb?\n\nReply as a JSON-parsable list of moves which result in any of the jugs being filled with the target amount.\n",
+    "answer": "[\"fill B\", \"pour B->A\", \"empty A\", \"pour B->A\", \"fill B\", \"pour B->A\", \"empty A\", \"pour B->A\", \"empty A\", \"pour B->A\", \"fill B\", \"pour B->A\"]",
+    "metadata": {
+      "source_dataset": "jugs",
+      "source_index": 75,
+      "puzzle": {
+        "jug_capacities": [
+          5,
+          9,
+          9
+        ],
+        "target": 7,
+        "min_moves": 12
+      },
+      "difficulty": {
+        "num_jugs": 3,
+        "difficulty": 10
+      }
+    }
+  },
+  {
+    "question": "You are a police officer. A maniac has planted a bomb next to a public fountain.\n\nTo defuse the bomb, you must solve a puzzle. The puzzle is solved when you fill any of the available jugs with the target amount of water.\n\nYou have three move types: 'fill', 'empty' and 'pour'.\n\nTo fill Jug A, you 'fill A'.\nTo empty Jug B, you 'empty B'.\nTo pour the contents of Jug A into Jug B, you 'pour A->B'.\nAll jugs are empty to begin with.\n\nThe empty jugs hold this many litres of water: A:13, B:3, C:3\nAnd your target is: 11 litres.\n\nHow do you defuse the bomb?\n\nReply as a JSON-parsable list of moves which result in any of the jugs being filled with the target amount.\n",
+    "answer": "[\"fill A\", \"pour A->B\", \"pour A->C\", \"empty B\", \"pour A->B\", \"empty B\", \"pour A->B\", \"empty B\", \"pour A->B\", \"fill A\", \"pour A->B\"]",
+    "metadata": {
+      "source_dataset": "jugs",
+      "source_index": 76,
+      "puzzle": {
+        "jug_capacities": [
+          13,
+          3,
+          3
+        ],
+        "target": 11,
+        "min_moves": 11
+      },
+      "difficulty": {
+        "num_jugs": 3,
+        "difficulty": 10
+      }
+    }
+  },
+  {
+    "question": "You are a police officer. A maniac has planted a bomb next to a public fountain.\n\nTo defuse the bomb, you must solve a puzzle. The puzzle is solved when you fill any of the available jugs with the target amount of water.\n\nYou have three move types: 'fill', 'empty' and 'pour'.\n\nTo fill Jug A, you 'fill A'.\nTo empty Jug B, you 'empty B'.\nTo pour the contents of Jug A into Jug B, you 'pour A->B'.\nAll jugs are empty to begin with.\n\nThe empty jugs hold this many litres of water: A:11, B:3, C:3\nAnd your target is: 4 litres.\n\nHow do you defuse the bomb?\n\nReply as a JSON-parsable list of moves which result in any of the jugs being filled with the target amount.\n",
+    "answer": "[\"fill B\", \"pour B->A\", \"fill B\", \"pour B->A\", \"fill B\", \"pour B->A\", \"fill B\", \"pour B->A\", \"empty A\", \"pour B->A\", \"fill B\", \"pour B->A\"]",
+    "metadata": {
+      "source_dataset": "jugs",
+      "source_index": 77,
+      "puzzle": {
+        "jug_capacities": [
+          11,
+          3,
+          3
+        ],
+        "target": 4,
+        "min_moves": 12
+      },
+      "difficulty": {
+        "num_jugs": 3,
+        "difficulty": 10
+      }
+    }
+  },
+  {
+    "question": "You are a police officer. A maniac has planted a bomb next to a public fountain.\n\nTo defuse the bomb, you must solve a puzzle. The puzzle is solved when you fill any of the available jugs with the target amount of water.\n\nYou have three move types: 'fill', 'empty' and 'pour'.\n\nTo fill Jug A, you 'fill A'.\nTo empty Jug B, you 'empty B'.\nTo pour the contents of Jug A into Jug B, you 'pour A->B'.\nAll jugs are empty to begin with.\n\nThe empty jugs hold this many litres of water: A:10, B:13, C:13\nAnd your target is: 5 litres.\n\nHow do you defuse the bomb?\n\nReply as a JSON-parsable list of moves which result in any of the jugs being filled with the target amount.\n",
+    "answer": "[\"fill B\", \"pour B->A\", \"empty A\", \"pour B->A\", \"fill B\", \"pour B->A\", \"empty A\", \"pour B->A\", \"fill B\", \"pour B->A\", \"empty A\", \"pour B->A\", \"fill B\", \"pour B->A\", \"empty A\", \"pour B->A\", \"empty A\", \"pour B->A\", \"fill B\", \"pour B->A\"]",
+    "metadata": {
+      "source_dataset": "jugs",
+      "source_index": 78,
+      "puzzle": {
+        "jug_capacities": [
+          10,
+          13,
+          13
+        ],
+        "target": 5,
+        "min_moves": 20
+      },
+      "difficulty": {
+        "num_jugs": 3,
+        "difficulty": 10
+      }
+    }
+  },
+  {
+    "question": "You are a police officer. A maniac has planted a bomb next to a public fountain.\n\nTo defuse the bomb, you must solve a puzzle. The puzzle is solved when you fill any of the available jugs with the target amount of water.\n\nYou have three move types: 'fill', 'empty' and 'pour'.\n\nTo fill Jug A, you 'fill A'.\nTo empty Jug B, you 'empty B'.\nTo pour the contents of Jug A into Jug B, you 'pour A->B'.\nAll jugs are empty to begin with.\n\nThe empty jugs hold this many litres of water: A:12, B:6, C:13\nAnd your target is: 3 litres.\n\nHow do you defuse the bomb?\n\nReply as a JSON-parsable list of moves which result in any of the jugs being filled with the target amount.\n",
+    "answer": "[\"fill C\", \"pour C->A\", \"empty A\", \"pour C->A\", \"fill C\", \"pour C->A\", \"empty A\", \"pour C->A\", \"fill C\", \"pour C->A\"]",
+    "metadata": {
+      "source_dataset": "jugs",
+      "source_index": 79,
+      "puzzle": {
+        "jug_capacities": [
+          12,
+          6,
+          13
+        ],
+        "target": 3,
+        "min_moves": 10
+      },
+      "difficulty": {
+        "num_jugs": 3,
+        "difficulty": 10
+      }
+    }
+  },
+  {
+    "question": "You are a police officer. A maniac has planted a bomb next to a public fountain.\n\nTo defuse the bomb, you must solve a puzzle. The puzzle is solved when you fill any of the available jugs with the target amount of water.\n\nYou have three move types: 'fill', 'empty' and 'pour'.\n\nTo fill Jug A, you 'fill A'.\nTo empty Jug B, you 'empty B'.\nTo pour the contents of Jug A into Jug B, you 'pour A->B'.\nAll jugs are empty to begin with.\n\nThe empty jugs hold this many litres of water: A:9, B:9, C:13\nAnd your target is: 3 litres.\n\nHow do you defuse the bomb?\n\nReply as a JSON-parsable list of moves which result in any of the jugs being filled with the target amount.\n",
+    "answer": "[\"fill C\", \"pour C->A\", \"empty A\", \"pour C->A\", \"fill C\", \"pour C->A\", \"empty A\", \"pour C->A\", \"fill C\", \"pour C->A\", \"pour C->B\"]",
+    "metadata": {
+      "source_dataset": "jugs",
+      "source_index": 80,
+      "puzzle": {
+        "jug_capacities": [
+          9,
+          9,
+          13
+        ],
+        "target": 3,
+        "min_moves": 11
+      },
+      "difficulty": {
+        "num_jugs": 3,
+        "difficulty": 10
+      }
+    }
+  },
+  {
+    "question": "You are a police officer. A maniac has planted a bomb next to a public fountain.\n\nTo defuse the bomb, you must solve a puzzle. The puzzle is solved when you fill any of the available jugs with the target amount of water.\n\nYou have three move types: 'fill', 'empty' and 'pour'.\n\nTo fill Jug A, you 'fill A'.\nTo empty Jug B, you 'empty B'.\nTo pour the contents of Jug A into Jug B, you 'pour A->B'.\nAll jugs are empty to begin with.\n\nThe empty jugs hold this many litres of water: A:9, B:11, C:11\nAnd your target is: 6 litres.\n\nHow do you defuse the bomb?\n\nReply as a JSON-parsable list of moves which result in any of the jugs being filled with the target amount.\n",
+    "answer": "[\"fill B\", \"pour B->A\", \"empty A\", \"pour B->A\", \"fill B\", \"pour B->A\", \"empty A\", \"pour B->A\", \"fill B\", \"pour B->A\"]",
+    "metadata": {
+      "source_dataset": "jugs",
+      "source_index": 81,
+      "puzzle": {
+        "jug_capacities": [
+          9,
+          11,
+          11
+        ],
+        "target": 6,
+        "min_moves": 10
+      },
+      "difficulty": {
+        "num_jugs": 3,
+        "difficulty": 10
+      }
+    }
+  },
+  {
+    "question": "You are a police officer. A maniac has planted a bomb next to a public fountain.\n\nTo defuse the bomb, you must solve a puzzle. The puzzle is solved when you fill any of the available jugs with the target amount of water.\n\nYou have three move types: 'fill', 'empty' and 'pour'.\n\nTo fill Jug A, you 'fill A'.\nTo empty Jug B, you 'empty B'.\nTo pour the contents of Jug A into Jug B, you 'pour A->B'.\nAll jugs are empty to begin with.\n\nThe empty jugs hold this many litres of water: A:11, B:3, C:3\nAnd your target is: 4 litres.\n\nHow do you defuse the bomb?\n\nReply as a JSON-parsable list of moves which result in any of the jugs being filled with the target amount.\n",
+    "answer": "[\"fill B\", \"pour B->A\", \"fill B\", \"pour B->A\", \"fill B\", \"pour B->A\", \"fill B\", \"pour B->A\", \"empty A\", \"pour B->A\", \"fill B\", \"pour B->A\"]",
+    "metadata": {
+      "source_dataset": "jugs",
+      "source_index": 82,
+      "puzzle": {
+        "jug_capacities": [
+          11,
+          3,
+          3
+        ],
+        "target": 4,
+        "min_moves": 12
+      },
+      "difficulty": {
+        "num_jugs": 3,
+        "difficulty": 10
+      }
+    }
+  },
+  {
+    "question": "You are a police officer. A maniac has planted a bomb next to a public fountain.\n\nTo defuse the bomb, you must solve a puzzle. The puzzle is solved when you fill any of the available jugs with the target amount of water.\n\nYou have three move types: 'fill', 'empty' and 'pour'.\n\nTo fill Jug A, you 'fill A'.\nTo empty Jug B, you 'empty B'.\nTo pour the contents of Jug A into Jug B, you 'pour A->B'.\nAll jugs are empty to begin with.\n\nThe empty jugs hold this many litres of water: A:12, B:7, C:12\nAnd your target is: 11 litres.\n\nHow do you defuse the bomb?\n\nReply as a JSON-parsable list of moves which result in any of the jugs being filled with the target amount.\n",
+    "answer": "[\"fill B\", \"pour B->A\", \"fill B\", \"pour B->A\", \"empty A\", \"pour B->A\", \"fill B\", \"pour B->A\", \"fill B\", \"pour B->A\", \"pour B->C\", \"pour A->B\", \"pour B->C\"]",
+    "metadata": {
+      "source_dataset": "jugs",
+      "source_index": 83,
+      "puzzle": {
+        "jug_capacities": [
+          12,
+          7,
+          12
+        ],
+        "target": 11,
+        "min_moves": 13
+      },
+      "difficulty": {
+        "num_jugs": 3,
+        "difficulty": 10
+      }
+    }
+  },
+  {
+    "question": "You are a police officer. A maniac has planted a bomb next to a public fountain.\n\nTo defuse the bomb, you must solve a puzzle. The puzzle is solved when you fill any of the available jugs with the target amount of water.\n\nYou have three move types: 'fill', 'empty' and 'pour'.\n\nTo fill Jug A, you 'fill A'.\nTo empty Jug B, you 'empty B'.\nTo pour the contents of Jug A into Jug B, you 'pour A->B'.\nAll jugs are empty to begin with.\n\nThe empty jugs hold this many litres of water: A:11, B:11, C:6\nAnd your target is: 3 litres.\n\nHow do you defuse the bomb?\n\nReply as a JSON-parsable list of moves which result in any of the jugs being filled with the target amount.\n",
+    "answer": "[\"fill A\", \"pour A->C\", \"fill B\", \"empty C\", \"pour A->C\", \"fill A\", \"pour A->C\", \"empty C\", \"pour A->C\", \"empty C\", \"pour A->C\", \"pour B->C\", \"empty C\", \"pour B->C\"]",
+    "metadata": {
+      "source_dataset": "jugs",
+      "source_index": 84,
+      "puzzle": {
+        "jug_capacities": [
+          11,
+          11,
+          6
+        ],
+        "target": 3,
+        "min_moves": 14
+      },
+      "difficulty": {
+        "num_jugs": 3,
+        "difficulty": 10
+      }
+    }
+  },
+  {
+    "question": "You are a police officer. A maniac has planted a bomb next to a public fountain.\n\nTo defuse the bomb, you must solve a puzzle. The puzzle is solved when you fill any of the available jugs with the target amount of water.\n\nYou have three move types: 'fill', 'empty' and 'pour'.\n\nTo fill Jug A, you 'fill A'.\nTo empty Jug B, you 'empty B'.\nTo pour the contents of Jug A into Jug B, you 'pour A->B'.\nAll jugs are empty to begin with.\n\nThe empty jugs hold this many litres of water: A:5, B:11, C:11\nAnd your target is: 8 litres.\n\nHow do you defuse the bomb?\n\nReply as a JSON-parsable list of moves which result in any of the jugs being filled with the target amount.\n",
+    "answer": "[\"fill B\", \"pour B->A\", \"empty A\", \"pour B->A\", \"empty A\", \"pour B->A\", \"fill B\", \"pour B->A\", \"empty A\", \"pour B->A\", \"empty A\", \"pour B->A\", \"fill B\", \"pour B->A\"]",
+    "metadata": {
+      "source_dataset": "jugs",
+      "source_index": 85,
+      "puzzle": {
+        "jug_capacities": [
+          5,
+          11,
+          11
+        ],
+        "target": 8,
+        "min_moves": 14
+      },
+      "difficulty": {
+        "num_jugs": 3,
+        "difficulty": 10
+      }
+    }
+  },
+  {
+    "question": "You are a police officer. A maniac has planted a bomb next to a public fountain.\n\nTo defuse the bomb, you must solve a puzzle. The puzzle is solved when you fill any of the available jugs with the target amount of water.\n\nYou have three move types: 'fill', 'empty' and 'pour'.\n\nTo fill Jug A, you 'fill A'.\nTo empty Jug B, you 'empty B'.\nTo pour the contents of Jug A into Jug B, you 'pour A->B'.\nAll jugs are empty to begin with.\n\nThe empty jugs hold this many litres of water: A:5, B:8, C:5\nAnd your target is: 4 litres.\n\nHow do you defuse the bomb?\n\nReply as a JSON-parsable list of moves which result in any of the jugs being filled with the target amount.\n",
+    "answer": "[\"fill A\", \"pour A->B\", \"fill A\", \"pour A->B\", \"empty B\", \"pour A->B\", \"fill A\", \"pour A->B\", \"fill A\", \"pour A->B\"]",
+    "metadata": {
+      "source_dataset": "jugs",
+      "source_index": 86,
+      "puzzle": {
+        "jug_capacities": [
+          5,
+          8,
+          5
+        ],
+        "target": 4,
+        "min_moves": 10
+      },
+      "difficulty": {
+        "num_jugs": 3,
+        "difficulty": 10
+      }
+    }
+  },
+  {
+    "question": "You are a police officer. A maniac has planted a bomb next to a public fountain.\n\nTo defuse the bomb, you must solve a puzzle. The puzzle is solved when you fill any of the available jugs with the target amount of water.\n\nYou have three move types: 'fill', 'empty' and 'pour'.\n\nTo fill Jug A, you 'fill A'.\nTo empty Jug B, you 'empty B'.\nTo pour the contents of Jug A into Jug B, you 'pour A->B'.\nAll jugs are empty to begin with.\n\nThe empty jugs hold this many litres of water: A:7, B:12, C:7\nAnd your target is: 6 litres.\n\nHow do you defuse the bomb?\n\nReply as a JSON-parsable list of moves which result in any of the jugs being filled with the target amount.\n",
+    "answer": "[\"fill A\", \"pour A->B\", \"fill A\", \"pour A->B\", \"empty B\", \"pour A->B\", \"fill A\", \"pour A->B\", \"fill A\", \"pour A->B\", \"empty B\", \"pour A->B\", \"fill A\", \"pour A->B\", \"fill A\", \"pour A->B\"]",
+    "metadata": {
+      "source_dataset": "jugs",
+      "source_index": 87,
+      "puzzle": {
+        "jug_capacities": [
+          7,
+          12,
+          7
+        ],
+        "target": 6,
+        "min_moves": 16
+      },
+      "difficulty": {
+        "num_jugs": 3,
+        "difficulty": 10
+      }
+    }
+  },
+  {
+    "question": "You are a police officer. A maniac has planted a bomb next to a public fountain.\n\nTo defuse the bomb, you must solve a puzzle. The puzzle is solved when you fill any of the available jugs with the target amount of water.\n\nYou have three move types: 'fill', 'empty' and 'pour'.\n\nTo fill Jug A, you 'fill A'.\nTo empty Jug B, you 'empty B'.\nTo pour the contents of Jug A into Jug B, you 'pour A->B'.\nAll jugs are empty to begin with.\n\nThe empty jugs hold this many litres of water: A:10, B:13, C:10\nAnd your target is: 1 litres.\n\nHow do you defuse the bomb?\n\nReply as a JSON-parsable list of moves which result in any of the jugs being filled with the target amount.\n",
+    "answer": "[\"fill A\", \"pour A->B\", \"fill A\", \"pour A->B\", \"empty B\", \"pour A->B\", \"fill A\", \"pour A->B\", \"empty B\", \"pour A->B\", \"fill A\", \"pour A->B\"]",
+    "metadata": {
+      "source_dataset": "jugs",
+      "source_index": 88,
+      "puzzle": {
+        "jug_capacities": [
+          10,
+          13,
+          10
+        ],
+        "target": 1,
+        "min_moves": 12
+      },
+      "difficulty": {
+        "num_jugs": 3,
+        "difficulty": 10
+      }
+    }
+  },
+  {
+    "question": "You are a police officer. A maniac has planted a bomb next to a public fountain.\n\nTo defuse the bomb, you must solve a puzzle. The puzzle is solved when you fill any of the available jugs with the target amount of water.\n\nYou have three move types: 'fill', 'empty' and 'pour'.\n\nTo fill Jug A, you 'fill A'.\nTo empty Jug B, you 'empty B'.\nTo pour the contents of Jug A into Jug B, you 'pour A->B'.\nAll jugs are empty to begin with.\n\nThe empty jugs hold this many litres of water: A:11, B:12, C:12\nAnd your target is: 7 litres.\n\nHow do you defuse the bomb?\n\nReply as a JSON-parsable list of moves which result in any of the jugs being filled with the target amount.\n",
+    "answer": "[\"fill A\", \"pour A->B\", \"fill A\", \"pour A->B\", \"pour A->C\", \"fill A\", \"pour A->C\", \"empty B\", \"pour A->B\", \"fill A\", \"pour A->B\", \"empty B\", \"pour A->B\", \"fill A\", \"pour A->B\"]",
+    "metadata": {
+      "source_dataset": "jugs",
+      "source_index": 89,
+      "puzzle": {
+        "jug_capacities": [
+          11,
+          12,
+          12
+        ],
+        "target": 7,
+        "min_moves": 15
+      },
+      "difficulty": {
+        "num_jugs": 3,
+        "difficulty": 10
+      }
+    }
+  },
+  {
+    "question": "You are a police officer. A maniac has planted a bomb next to a public fountain.\n\nTo defuse the bomb, you must solve a puzzle. The puzzle is solved when you fill any of the available jugs with the target amount of water.\n\nYou have three move types: 'fill', 'empty' and 'pour'.\n\nTo fill Jug A, you 'fill A'.\nTo empty Jug B, you 'empty B'.\nTo pour the contents of Jug A into Jug B, you 'pour A->B'.\nAll jugs are empty to begin with.\n\nThe empty jugs hold this many litres of water: A:11, B:12, C:11\nAnd your target is: 6 litres.\n\nHow do you defuse the bomb?\n\nReply as a JSON-parsable list of moves which result in any of the jugs being filled with the target amount.\n",
+    "answer": "[\"fill A\", \"pour A->B\", \"fill A\", \"pour A->B\", \"empty B\", \"pour A->B\", \"fill A\", \"pour A->B\", \"empty B\", \"pour A->B\", \"fill A\", \"pour A->B\", \"empty B\", \"pour A->B\", \"fill A\", \"pour A->B\", \"empty B\", \"pour A->B\", \"fill A\", \"pour A->B\"]",
+    "metadata": {
+      "source_dataset": "jugs",
+      "source_index": 90,
+      "puzzle": {
+        "jug_capacities": [
+          11,
+          12,
+          11
+        ],
+        "target": 6,
+        "min_moves": 20
+      },
+      "difficulty": {
+        "num_jugs": 3,
+        "difficulty": 10
+      }
+    }
+  },
+  {
+    "question": "You are a police officer. A maniac has planted a bomb next to a public fountain.\n\nTo defuse the bomb, you must solve a puzzle. The puzzle is solved when you fill any of the available jugs with the target amount of water.\n\nYou have three move types: 'fill', 'empty' and 'pour'.\n\nTo fill Jug A, you 'fill A'.\nTo empty Jug B, you 'empty B'.\nTo pour the contents of Jug A into Jug B, you 'pour A->B'.\nAll jugs are empty to begin with.\n\nThe empty jugs hold this many litres of water: A:13, B:7, C:7\nAnd your target is: 4 litres.\n\nHow do you defuse the bomb?\n\nReply as a JSON-parsable list of moves which result in any of the jugs being filled with the target amount.\n",
+    "answer": "[\"fill A\", \"pour A->B\", \"pour A->C\", \"fill A\", \"pour A->C\", \"empty B\", \"pour A->B\", \"empty B\", \"pour A->B\", \"fill A\", \"pour A->B\", \"empty B\", \"pour A->B\"]",
+    "metadata": {
+      "source_dataset": "jugs",
+      "source_index": 91,
+      "puzzle": {
+        "jug_capacities": [
+          13,
+          7,
+          7
+        ],
+        "target": 4,
+        "min_moves": 13
+      },
+      "difficulty": {
+        "num_jugs": 3,
+        "difficulty": 10
+      }
+    }
+  },
+  {
+    "question": "You are a police officer. A maniac has planted a bomb next to a public fountain.\n\nTo defuse the bomb, you must solve a puzzle. The puzzle is solved when you fill any of the available jugs with the target amount of water.\n\nYou have three move types: 'fill', 'empty' and 'pour'.\n\nTo fill Jug A, you 'fill A'.\nTo empty Jug B, you 'empty B'.\nTo pour the contents of Jug A into Jug B, you 'pour A->B'.\nAll jugs are empty to begin with.\n\nThe empty jugs hold this many litres of water: A:11, B:7, C:7\nAnd your target is: 2 litres.\n\nHow do you defuse the bomb?\n\nReply as a JSON-parsable list of moves which result in any of the jugs being filled with the target amount.\n",
+    "answer": "[\"fill B\", \"pour B->A\", \"fill B\", \"pour B->A\", \"empty A\", \"pour B->A\", \"fill B\", \"pour B->A\", \"fill B\", \"pour B->A\", \"empty A\", \"pour B->A\", \"fill B\", \"pour B->A\"]",
+    "metadata": {
+      "source_dataset": "jugs",
+      "source_index": 92,
+      "puzzle": {
+        "jug_capacities": [
+          11,
+          7,
+          7
+        ],
+        "target": 2,
+        "min_moves": 14
+      },
+      "difficulty": {
+        "num_jugs": 3,
+        "difficulty": 10
+      }
+    }
+  },
+  {
+    "question": "You are a police officer. A maniac has planted a bomb next to a public fountain.\n\nTo defuse the bomb, you must solve a puzzle. The puzzle is solved when you fill any of the available jugs with the target amount of water.\n\nYou have three move types: 'fill', 'empty' and 'pour'.\n\nTo fill Jug A, you 'fill A'.\nTo empty Jug B, you 'empty B'.\nTo pour the contents of Jug A into Jug B, you 'pour A->B'.\nAll jugs are empty to begin with.\n\nThe empty jugs hold this many litres of water: A:9, B:11, C:9\nAnd your target is: 8 litres.\n\nHow do you defuse the bomb?\n\nReply as a JSON-parsable list of moves which result in any of the jugs being filled with the target amount.\n",
+    "answer": "[\"fill B\", \"pour B->A\", \"empty A\", \"pour B->A\", \"fill B\", \"pour B->A\", \"empty A\", \"pour B->A\", \"fill B\", \"pour B->A\", \"pour B->C\", \"fill B\", \"pour B->C\"]",
+    "metadata": {
+      "source_dataset": "jugs",
+      "source_index": 93,
+      "puzzle": {
+        "jug_capacities": [
+          9,
+          11,
+          9
+        ],
+        "target": 8,
+        "min_moves": 13
+      },
+      "difficulty": {
+        "num_jugs": 3,
+        "difficulty": 10
+      }
+    }
+  },
+  {
+    "question": "You are a police officer. A maniac has planted a bomb next to a public fountain.\n\nTo defuse the bomb, you must solve a puzzle. The puzzle is solved when you fill any of the available jugs with the target amount of water.\n\nYou have three move types: 'fill', 'empty' and 'pour'.\n\nTo fill Jug A, you 'fill A'.\nTo empty Jug B, you 'empty B'.\nTo pour the contents of Jug A into Jug B, you 'pour A->B'.\nAll jugs are empty to begin with.\n\nThe empty jugs hold this many litres of water: A:13, B:10, C:10\nAnd your target is: 11 litres.\n\nHow do you defuse the bomb?\n\nReply as a JSON-parsable list of moves which result in any of the jugs being filled with the target amount.\n",
+    "answer": "[\"fill B\", \"pour B->A\", \"fill B\", \"pour B->A\", \"empty A\", \"pour B->A\", \"fill B\", \"pour B->A\", \"empty A\", \"pour B->A\", \"fill B\", \"pour B->A\", \"empty A\", \"pour B->A\", \"fill B\", \"pour B->A\"]",
+    "metadata": {
+      "source_dataset": "jugs",
+      "source_index": 94,
+      "puzzle": {
+        "jug_capacities": [
+          13,
+          10,
+          10
+        ],
+        "target": 11,
+        "min_moves": 16
+      },
+      "difficulty": {
+        "num_jugs": 3,
+        "difficulty": 10
+      }
+    }
+  },
+  {
+    "question": "You are a police officer. A maniac has planted a bomb next to a public fountain.\n\nTo defuse the bomb, you must solve a puzzle. The puzzle is solved when you fill any of the available jugs with the target amount of water.\n\nYou have three move types: 'fill', 'empty' and 'pour'.\n\nTo fill Jug A, you 'fill A'.\nTo empty Jug B, you 'empty B'.\nTo pour the contents of Jug A into Jug B, you 'pour A->B'.\nAll jugs are empty to begin with.\n\nThe empty jugs hold this many litres of water: A:9, B:11, C:11\nAnd your target is: 6 litres.\n\nHow do you defuse the bomb?\n\nReply as a JSON-parsable list of moves which result in any of the jugs being filled with the target amount.\n",
+    "answer": "[\"fill B\", \"pour B->A\", \"empty A\", \"pour B->A\", \"fill B\", \"pour B->A\", \"empty A\", \"pour B->A\", \"fill B\", \"pour B->A\"]",
+    "metadata": {
+      "source_dataset": "jugs",
+      "source_index": 95,
+      "puzzle": {
+        "jug_capacities": [
+          9,
+          11,
+          11
+        ],
+        "target": 6,
+        "min_moves": 10
+      },
+      "difficulty": {
+        "num_jugs": 3,
+        "difficulty": 10
+      }
+    }
+  },
+  {
+    "question": "You are a police officer. A maniac has planted a bomb next to a public fountain.\n\nTo defuse the bomb, you must solve a puzzle. The puzzle is solved when you fill any of the available jugs with the target amount of water.\n\nYou have three move types: 'fill', 'empty' and 'pour'.\n\nTo fill Jug A, you 'fill A'.\nTo empty Jug B, you 'empty B'.\nTo pour the contents of Jug A into Jug B, you 'pour A->B'.\nAll jugs are empty to begin with.\n\nThe empty jugs hold this many litres of water: A:8, B:5, C:5\nAnd your target is: 4 litres.\n\nHow do you defuse the bomb?\n\nReply as a JSON-parsable list of moves which result in any of the jugs being filled with the target amount.\n",
+    "answer": "[\"fill B\", \"pour B->A\", \"fill B\", \"pour B->A\", \"empty A\", \"pour B->A\", \"fill B\", \"pour B->A\", \"fill B\", \"pour B->A\"]",
+    "metadata": {
+      "source_dataset": "jugs",
+      "source_index": 96,
+      "puzzle": {
+        "jug_capacities": [
+          8,
+          5,
+          5
+        ],
+        "target": 4,
+        "min_moves": 10
+      },
+      "difficulty": {
+        "num_jugs": 3,
+        "difficulty": 10
+      }
+    }
+  },
+  {
+    "question": "You are a police officer. A maniac has planted a bomb next to a public fountain.\n\nTo defuse the bomb, you must solve a puzzle. The puzzle is solved when you fill any of the available jugs with the target amount of water.\n\nYou have three move types: 'fill', 'empty' and 'pour'.\n\nTo fill Jug A, you 'fill A'.\nTo empty Jug B, you 'empty B'.\nTo pour the contents of Jug A into Jug B, you 'pour A->B'.\nAll jugs are empty to begin with.\n\nThe empty jugs hold this many litres of water: A:7, B:9, C:7\nAnd your target is: 8 litres.\n\nHow do you defuse the bomb?\n\nReply as a JSON-parsable list of moves which result in any of the jugs being filled with the target amount.\n",
+    "answer": "[\"fill B\", \"pour B->A\", \"empty A\", \"pour B->A\", \"fill B\", \"pour B->A\", \"empty A\", \"pour B->A\", \"fill B\", \"pour B->A\", \"pour B->C\", \"fill B\", \"pour B->C\"]",
+    "metadata": {
+      "source_dataset": "jugs",
+      "source_index": 97,
+      "puzzle": {
+        "jug_capacities": [
+          7,
+          9,
+          7
+        ],
+        "target": 8,
+        "min_moves": 13
+      },
+      "difficulty": {
+        "num_jugs": 3,
+        "difficulty": 10
+      }
+    }
+  },
+  {
+    "question": "You are a police officer. A maniac has planted a bomb next to a public fountain.\n\nTo defuse the bomb, you must solve a puzzle. The puzzle is solved when you fill any of the available jugs with the target amount of water.\n\nYou have three move types: 'fill', 'empty' and 'pour'.\n\nTo fill Jug A, you 'fill A'.\nTo empty Jug B, you 'empty B'.\nTo pour the contents of Jug A into Jug B, you 'pour A->B'.\nAll jugs are empty to begin with.\n\nThe empty jugs hold this many litres of water: A:5, B:5, C:8\nAnd your target is: 4 litres.\n\nHow do you defuse the bomb?\n\nReply as a JSON-parsable list of moves which result in any of the jugs being filled with the target amount.\n",
+    "answer": "[\"fill A\", \"pour A->C\", \"fill A\", \"pour A->C\", \"fill B\", \"empty C\", \"pour A->C\", \"fill A\", \"pour A->C\", \"pour B->C\"]",
+    "metadata": {
+      "source_dataset": "jugs",
+      "source_index": 98,
+      "puzzle": {
+        "jug_capacities": [
+          5,
+          5,
+          8
+        ],
+        "target": 4,
+        "min_moves": 10
+      },
+      "difficulty": {
+        "num_jugs": 3,
+        "difficulty": 10
+      }
+    }
+  },
+  {
+    "question": "You are a police officer. A maniac has planted a bomb next to a public fountain.\n\nTo defuse the bomb, you must solve a puzzle. The puzzle is solved when you fill any of the available jugs with the target amount of water.\n\nYou have three move types: 'fill', 'empty' and 'pour'.\n\nTo fill Jug A, you 'fill A'.\nTo empty Jug B, you 'empty B'.\nTo pour the contents of Jug A into Jug B, you 'pour A->B'.\nAll jugs are empty to begin with.\n\nThe empty jugs hold this many litres of water: A:7, B:7, C:13\nAnd your target is: 2 litres.\n\nHow do you defuse the bomb?\n\nReply as a JSON-parsable list of moves which result in any of the jugs being filled with the target amount.\n",
+    "answer": "[\"fill A\", \"pour A->C\", \"fill A\", \"pour A->C\", \"fill B\", \"empty C\", \"pour A->C\", \"fill A\", \"pour A->C\", \"pour B->C\"]",
+    "metadata": {
+      "source_dataset": "jugs",
+      "source_index": 99,
+      "puzzle": {
+        "jug_capacities": [
+          7,
+          7,
+          13
+        ],
+        "target": 2,
+        "min_moves": 10
+      },
+      "difficulty": {
+        "num_jugs": 3,
+        "difficulty": 10
+      }
+    }
+  }
+]

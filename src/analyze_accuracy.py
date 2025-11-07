@@ -58,7 +58,8 @@ from datetime import datetime
 
 # Import ground truth loading functions from data_loader
 from data_loader import load_gsm8k_ground_truth, load_theory_of_mind_ground_truth, load_3sum_ground_truth, \
-    load_maze_ground_truth, load_arc_agi_ground_truth, load_aiw_ground_truth, load_arc_1d_ground_truth
+    load_maze_ground_truth, load_arc_agi_ground_truth, load_aiw_ground_truth, load_arc_1d_ground_truth, \
+    load_any_reasoning_gym_ground_truth
 
 
 def _get_datetime_str():
@@ -332,7 +333,21 @@ def compare_answers(predicted, actual, dataset_type="gsm8k"):
         return True
 
     else:
-        raise ValueError(f"Unknown dataset type: {dataset_type}")
+        predicted = str(predicted).strip()
+        actual = str(actual).strip()
+
+        import re
+        predicted = re.sub(r'^.*Answer:', '', predicted)
+        predicted = re.sub(r'<\|im_end\|>', '', predicted)
+        predicted = predicted.strip()
+
+        if predicted == actual:
+            return True
+        if len(actual) > 0 and actual in predicted:
+            return True
+
+        return False
+        #raise ValueError(f"Unknown dataset type: {dataset_type}")
 
 
 class DualWriter:
@@ -500,9 +515,12 @@ def analyze_log_file(log_file_path, dataset_type="gsm8k", data_split="train", ou
         ground_truth = load_arc_1d_ground_truth(split=data_split, max_samples=ground_truth_samples_needed)
         dual_print(f"Using ARC-1D '{data_split}' split for ground truth comparison")
     else:
-        dual_print(f"Unknown dataset type: {dataset_type}")
-        writer.close()
-        return
+        ground_truth = load_any_reasoning_gym_ground_truth(dataset_name=dataset_type, split=data_split, max_samples=ground_truth_samples_needed)
+        dual_print(f"Using {dataset_type} '{data_split}' split for ground truth comparison")
+    #else:
+        #dual_print(f"Unknown dataset type: {dataset_type}")
+        #writer.close()
+        #return
 
     # Analyze results
     total = len(results)
@@ -845,7 +863,8 @@ if __name__ == "__main__":
     parser.add_argument("log_files", nargs='+', help="JSON log file(s) to analyze")
 
     parser.add_argument("--dataset",
-                        choices=["gsm8k", "theory_of_mind", "3sum", "maze", "aiw", "arc_agi", "arc_1d"],
+                        #choices=["gsm8k", "theory_of_mind", "3sum", "maze", "aiw", "arc_agi", "arc_1d"],
+                        type=str,
                         default="gsm8k",
                         help="Dataset type to analyze (default: gsm8k)")
 

@@ -1,0 +1,2402 @@
+[
+  {
+    "question": "Find the Greatest Common Divisor (GCD) of these numbers: 26, 760. Give only the GCD as your final answer.",
+    "answer": "2",
+    "metadata": {
+      "source_dataset": "gcd",
+      "source_index": 0,
+      "numbers": [
+        26,
+        760
+      ],
+      "result": 2,
+      "num_terms": 2,
+      "difficulty": {
+        "num_terms": [
+          2,
+          2
+        ],
+        "value": [
+          1,
+          1000
+        ]
+      }
+    }
+  },
+  {
+    "question": "Find the Greatest Common Divisor (GCD) of these numbers: 688, 716. Give only the GCD as your final answer.",
+    "answer": "4",
+    "metadata": {
+      "source_dataset": "gcd",
+      "source_index": 1,
+      "numbers": [
+        688,
+        716
+      ],
+      "result": 4,
+      "num_terms": 2,
+      "difficulty": {
+        "num_terms": [
+          2,
+          2
+        ],
+        "value": [
+          1,
+          1000
+        ]
+      }
+    }
+  },
+  {
+    "question": "Find the Greatest Common Divisor (GCD) of these numbers: 297, 30. Give only the GCD as your final answer.",
+    "answer": "3",
+    "metadata": {
+      "source_dataset": "gcd",
+      "source_index": 2,
+      "numbers": [
+        297,
+        30
+      ],
+      "result": 3,
+      "num_terms": 2,
+      "difficulty": {
+        "num_terms": [
+          2,
+          2
+        ],
+        "value": [
+          1,
+          1000
+        ]
+      }
+    }
+  },
+  {
+    "question": "Find the Greatest Common Divisor (GCD) of these numbers: 428, 500. Give only the GCD as your final answer.",
+    "answer": "4",
+    "metadata": {
+      "source_dataset": "gcd",
+      "source_index": 3,
+      "numbers": [
+        428,
+        500
+      ],
+      "result": 4,
+      "num_terms": 2,
+      "difficulty": {
+        "num_terms": [
+          2,
+          2
+        ],
+        "value": [
+          1,
+          1000
+        ]
+      }
+    }
+  },
+  {
+    "question": "Find the Greatest Common Divisor (GCD) of these numbers: 410, 41. Give only the GCD as your final answer.",
+    "answer": "41",
+    "metadata": {
+      "source_dataset": "gcd",
+      "source_index": 4,
+      "numbers": [
+        410,
+        41
+      ],
+      "result": 41,
+      "num_terms": 2,
+      "difficulty": {
+        "num_terms": [
+          2,
+          2
+        ],
+        "value": [
+          1,
+          1000
+        ]
+      }
+    }
+  },
+  {
+    "question": "Find the Greatest Common Divisor (GCD) of these numbers: 525, 396. Give only the GCD as your final answer.",
+    "answer": "3",
+    "metadata": {
+      "source_dataset": "gcd",
+      "source_index": 5,
+      "numbers": [
+        525,
+        396
+      ],
+      "result": 3,
+      "num_terms": 2,
+      "difficulty": {
+        "num_terms": [
+          2,
+          2
+        ],
+        "value": [
+          1,
+          1000
+        ]
+      }
+    }
+  },
+  {
+    "question": "Find the Greatest Common Divisor (GCD) of these numbers: 732, 781. Give only the GCD as your final answer.",
+    "answer": "1",
+    "metadata": {
+      "source_dataset": "gcd",
+      "source_index": 6,
+      "numbers": [
+        732,
+        781
+      ],
+      "result": 1,
+      "num_terms": 2,
+      "difficulty": {
+        "num_terms": [
+          2,
+          2
+        ],
+        "value": [
+          1,
+          1000
+        ]
+      }
+    }
+  },
+  {
+    "question": "Find the Greatest Common Divisor (GCD) of these numbers: 697, 46. Give only the GCD as your final answer.",
+    "answer": "1",
+    "metadata": {
+      "source_dataset": "gcd",
+      "source_index": 7,
+      "numbers": [
+        697,
+        46
+      ],
+      "result": 1,
+      "num_terms": 2,
+      "difficulty": {
+        "num_terms": [
+          2,
+          2
+        ],
+        "value": [
+          1,
+          1000
+        ]
+      }
+    }
+  },
+  {
+    "question": "Find the Greatest Common Divisor (GCD) of these numbers: 710, 485. Give only the GCD as your final answer.",
+    "answer": "5",
+    "metadata": {
+      "source_dataset": "gcd",
+      "source_index": 8,
+      "numbers": [
+        710,
+        485
+      ],
+      "result": 5,
+      "num_terms": 2,
+      "difficulty": {
+        "num_terms": [
+          2,
+          2
+        ],
+        "value": [
+          1,
+          1000
+        ]
+      }
+    }
+  },
+  {
+    "question": "Find the Greatest Common Divisor (GCD) of these numbers: 853, 566. Give only the GCD as your final answer.",
+    "answer": "1",
+    "metadata": {
+      "source_dataset": "gcd",
+      "source_index": 9,
+      "numbers": [
+        853,
+        566
+      ],
+      "result": 1,
+      "num_terms": 2,
+      "difficulty": {
+        "num_terms": [
+          2,
+          2
+        ],
+        "value": [
+          1,
+          1000
+        ]
+      }
+    }
+  },
+  {
+    "question": "Find the Greatest Common Divisor (GCD) of these numbers: 56, 902. Give only the GCD as your final answer.",
+    "answer": "2",
+    "metadata": {
+      "source_dataset": "gcd",
+      "source_index": 10,
+      "numbers": [
+        56,
+        902
+      ],
+      "result": 2,
+      "num_terms": 2,
+      "difficulty": {
+        "num_terms": [
+          2,
+          2
+        ],
+        "value": [
+          1,
+          1000
+        ]
+      }
+    }
+  },
+  {
+    "question": "Find the Greatest Common Divisor (GCD) of these numbers: 960, 736. Give only the GCD as your final answer.",
+    "answer": "32",
+    "metadata": {
+      "source_dataset": "gcd",
+      "source_index": 11,
+      "numbers": [
+        960,
+        736
+      ],
+      "result": 32,
+      "num_terms": 2,
+      "difficulty": {
+        "num_terms": [
+          2,
+          2
+        ],
+        "value": [
+          1,
+          1000
+        ]
+      }
+    }
+  },
+  {
+    "question": "Find the Greatest Common Divisor (GCD) of these numbers: 450, 570. Give only the GCD as your final answer.",
+    "answer": "30",
+    "metadata": {
+      "source_dataset": "gcd",
+      "source_index": 12,
+      "numbers": [
+        450,
+        570
+      ],
+      "result": 30,
+      "num_terms": 2,
+      "difficulty": {
+        "num_terms": [
+          2,
+          2
+        ],
+        "value": [
+          1,
+          1000
+        ]
+      }
+    }
+  },
+  {
+    "question": "Find the Greatest Common Divisor (GCD) of these numbers: 758, 310. Give only the GCD as your final answer.",
+    "answer": "2",
+    "metadata": {
+      "source_dataset": "gcd",
+      "source_index": 13,
+      "numbers": [
+        758,
+        310
+      ],
+      "result": 2,
+      "num_terms": 2,
+      "difficulty": {
+        "num_terms": [
+          2,
+          2
+        ],
+        "value": [
+          1,
+          1000
+        ]
+      }
+    }
+  },
+  {
+    "question": "Find the Greatest Common Divisor (GCD) of these numbers: 486, 669. Give only the GCD as your final answer.",
+    "answer": "3",
+    "metadata": {
+      "source_dataset": "gcd",
+      "source_index": 14,
+      "numbers": [
+        486,
+        669
+      ],
+      "result": 3,
+      "num_terms": 2,
+      "difficulty": {
+        "num_terms": [
+          2,
+          2
+        ],
+        "value": [
+          1,
+          1000
+        ]
+      }
+    }
+  },
+  {
+    "question": "Find the Greatest Common Divisor (GCD) of these numbers: 489, 298. Give only the GCD as your final answer.",
+    "answer": "1",
+    "metadata": {
+      "source_dataset": "gcd",
+      "source_index": 15,
+      "numbers": [
+        489,
+        298
+      ],
+      "result": 1,
+      "num_terms": 2,
+      "difficulty": {
+        "num_terms": [
+          2,
+          2
+        ],
+        "value": [
+          1,
+          1000
+        ]
+      }
+    }
+  },
+  {
+    "question": "Find the Greatest Common Divisor (GCD) of these numbers: 416, 362. Give only the GCD as your final answer.",
+    "answer": "2",
+    "metadata": {
+      "source_dataset": "gcd",
+      "source_index": 16,
+      "numbers": [
+        416,
+        362
+      ],
+      "result": 2,
+      "num_terms": 2,
+      "difficulty": {
+        "num_terms": [
+          2,
+          2
+        ],
+        "value": [
+          1,
+          1000
+        ]
+      }
+    }
+  },
+  {
+    "question": "Find the Greatest Common Divisor (GCD) of these numbers: 24, 140. Give only the GCD as your final answer.",
+    "answer": "4",
+    "metadata": {
+      "source_dataset": "gcd",
+      "source_index": 17,
+      "numbers": [
+        24,
+        140
+      ],
+      "result": 4,
+      "num_terms": 2,
+      "difficulty": {
+        "num_terms": [
+          2,
+          2
+        ],
+        "value": [
+          1,
+          1000
+        ]
+      }
+    }
+  },
+  {
+    "question": "Find the Greatest Common Divisor (GCD) of these numbers: 272, 236. Give only the GCD as your final answer.",
+    "answer": "4",
+    "metadata": {
+      "source_dataset": "gcd",
+      "source_index": 18,
+      "numbers": [
+        272,
+        236
+      ],
+      "result": 4,
+      "num_terms": 2,
+      "difficulty": {
+        "num_terms": [
+          2,
+          2
+        ],
+        "value": [
+          1,
+          1000
+        ]
+      }
+    }
+  },
+  {
+    "question": "Find the Greatest Common Divisor (GCD) of these numbers: 301, 329. Give only the GCD as your final answer.",
+    "answer": "7",
+    "metadata": {
+      "source_dataset": "gcd",
+      "source_index": 19,
+      "numbers": [
+        301,
+        329
+      ],
+      "result": 7,
+      "num_terms": 2,
+      "difficulty": {
+        "num_terms": [
+          2,
+          2
+        ],
+        "value": [
+          1,
+          1000
+        ]
+      }
+    }
+  },
+  {
+    "question": "Find the Greatest Common Divisor (GCD) of these numbers: 914, 476. Give only the GCD as your final answer.",
+    "answer": "2",
+    "metadata": {
+      "source_dataset": "gcd",
+      "source_index": 20,
+      "numbers": [
+        914,
+        476
+      ],
+      "result": 2,
+      "num_terms": 2,
+      "difficulty": {
+        "num_terms": [
+          2,
+          2
+        ],
+        "value": [
+          1,
+          1000
+        ]
+      }
+    }
+  },
+  {
+    "question": "Find the Greatest Common Divisor (GCD) of these numbers: 496, 676. Give only the GCD as your final answer.",
+    "answer": "4",
+    "metadata": {
+      "source_dataset": "gcd",
+      "source_index": 21,
+      "numbers": [
+        496,
+        676
+      ],
+      "result": 4,
+      "num_terms": 2,
+      "difficulty": {
+        "num_terms": [
+          2,
+          2
+        ],
+        "value": [
+          1,
+          1000
+        ]
+      }
+    }
+  },
+  {
+    "question": "Find the Greatest Common Divisor (GCD) of these numbers: 128, 646. Give only the GCD as your final answer.",
+    "answer": "2",
+    "metadata": {
+      "source_dataset": "gcd",
+      "source_index": 22,
+      "numbers": [
+        128,
+        646
+      ],
+      "result": 2,
+      "num_terms": 2,
+      "difficulty": {
+        "num_terms": [
+          2,
+          2
+        ],
+        "value": [
+          1,
+          1000
+        ]
+      }
+    }
+  },
+  {
+    "question": "Find the Greatest Common Divisor (GCD) of these numbers: 455, 470. Give only the GCD as your final answer.",
+    "answer": "5",
+    "metadata": {
+      "source_dataset": "gcd",
+      "source_index": 23,
+      "numbers": [
+        455,
+        470
+      ],
+      "result": 5,
+      "num_terms": 2,
+      "difficulty": {
+        "num_terms": [
+          2,
+          2
+        ],
+        "value": [
+          1,
+          1000
+        ]
+      }
+    }
+  },
+  {
+    "question": "Find the Greatest Common Divisor (GCD) of these numbers: 320, 446. Give only the GCD as your final answer.",
+    "answer": "2",
+    "metadata": {
+      "source_dataset": "gcd",
+      "source_index": 24,
+      "numbers": [
+        320,
+        446
+      ],
+      "result": 2,
+      "num_terms": 2,
+      "difficulty": {
+        "num_terms": [
+          2,
+          2
+        ],
+        "value": [
+          1,
+          1000
+        ]
+      }
+    }
+  },
+  {
+    "question": "Find the Greatest Common Divisor (GCD) of these numbers: 274, 968. Give only the GCD as your final answer.",
+    "answer": "2",
+    "metadata": {
+      "source_dataset": "gcd",
+      "source_index": 25,
+      "numbers": [
+        274,
+        968
+      ],
+      "result": 2,
+      "num_terms": 2,
+      "difficulty": {
+        "num_terms": [
+          2,
+          2
+        ],
+        "value": [
+          1,
+          1000
+        ]
+      }
+    }
+  },
+  {
+    "question": "Find the Greatest Common Divisor (GCD) of these numbers: 622, 594. Give only the GCD as your final answer.",
+    "answer": "2",
+    "metadata": {
+      "source_dataset": "gcd",
+      "source_index": 26,
+      "numbers": [
+        622,
+        594
+      ],
+      "result": 2,
+      "num_terms": 2,
+      "difficulty": {
+        "num_terms": [
+          2,
+          2
+        ],
+        "value": [
+          1,
+          1000
+        ]
+      }
+    }
+  },
+  {
+    "question": "Find the Greatest Common Divisor (GCD) of these numbers: 336, 942. Give only the GCD as your final answer.",
+    "answer": "6",
+    "metadata": {
+      "source_dataset": "gcd",
+      "source_index": 27,
+      "numbers": [
+        336,
+        942
+      ],
+      "result": 6,
+      "num_terms": 2,
+      "difficulty": {
+        "num_terms": [
+          2,
+          2
+        ],
+        "value": [
+          1,
+          1000
+        ]
+      }
+    }
+  },
+  {
+    "question": "Find the Greatest Common Divisor (GCD) of these numbers: 302, 720. Give only the GCD as your final answer.",
+    "answer": "2",
+    "metadata": {
+      "source_dataset": "gcd",
+      "source_index": 28,
+      "numbers": [
+        302,
+        720
+      ],
+      "result": 2,
+      "num_terms": 2,
+      "difficulty": {
+        "num_terms": [
+          2,
+          2
+        ],
+        "value": [
+          1,
+          1000
+        ]
+      }
+    }
+  },
+  {
+    "question": "Find the Greatest Common Divisor (GCD) of these numbers: 270, 89. Give only the GCD as your final answer.",
+    "answer": "1",
+    "metadata": {
+      "source_dataset": "gcd",
+      "source_index": 29,
+      "numbers": [
+        270,
+        89
+      ],
+      "result": 1,
+      "num_terms": 2,
+      "difficulty": {
+        "num_terms": [
+          2,
+          2
+        ],
+        "value": [
+          1,
+          1000
+        ]
+      }
+    }
+  },
+  {
+    "question": "Find the Greatest Common Divisor (GCD) of these numbers: 801, 609. Give only the GCD as your final answer.",
+    "answer": "3",
+    "metadata": {
+      "source_dataset": "gcd",
+      "source_index": 30,
+      "numbers": [
+        801,
+        609
+      ],
+      "result": 3,
+      "num_terms": 2,
+      "difficulty": {
+        "num_terms": [
+          2,
+          2
+        ],
+        "value": [
+          1,
+          1000
+        ]
+      }
+    }
+  },
+  {
+    "question": "Find the Greatest Common Divisor (GCD) of these numbers: 578, 188. Give only the GCD as your final answer.",
+    "answer": "2",
+    "metadata": {
+      "source_dataset": "gcd",
+      "source_index": 31,
+      "numbers": [
+        578,
+        188
+      ],
+      "result": 2,
+      "num_terms": 2,
+      "difficulty": {
+        "num_terms": [
+          2,
+          2
+        ],
+        "value": [
+          1,
+          1000
+        ]
+      }
+    }
+  },
+  {
+    "question": "Find the Greatest Common Divisor (GCD) of these numbers: 360, 123. Give only the GCD as your final answer.",
+    "answer": "3",
+    "metadata": {
+      "source_dataset": "gcd",
+      "source_index": 32,
+      "numbers": [
+        360,
+        123
+      ],
+      "result": 3,
+      "num_terms": 2,
+      "difficulty": {
+        "num_terms": [
+          2,
+          2
+        ],
+        "value": [
+          1,
+          1000
+        ]
+      }
+    }
+  },
+  {
+    "question": "Find the Greatest Common Divisor (GCD) of these numbers: 932, 689. Give only the GCD as your final answer.",
+    "answer": "1",
+    "metadata": {
+      "source_dataset": "gcd",
+      "source_index": 33,
+      "numbers": [
+        932,
+        689
+      ],
+      "result": 1,
+      "num_terms": 2,
+      "difficulty": {
+        "num_terms": [
+          2,
+          2
+        ],
+        "value": [
+          1,
+          1000
+        ]
+      }
+    }
+  },
+  {
+    "question": "Find the Greatest Common Divisor (GCD) of these numbers: 55, 429. Give only the GCD as your final answer.",
+    "answer": "11",
+    "metadata": {
+      "source_dataset": "gcd",
+      "source_index": 34,
+      "numbers": [
+        55,
+        429
+      ],
+      "result": 11,
+      "num_terms": 2,
+      "difficulty": {
+        "num_terms": [
+          2,
+          2
+        ],
+        "value": [
+          1,
+          1000
+        ]
+      }
+    }
+  },
+  {
+    "question": "Find the Greatest Common Divisor (GCD) of these numbers: 198, 843. Give only the GCD as your final answer.",
+    "answer": "3",
+    "metadata": {
+      "source_dataset": "gcd",
+      "source_index": 35,
+      "numbers": [
+        198,
+        843
+      ],
+      "result": 3,
+      "num_terms": 2,
+      "difficulty": {
+        "num_terms": [
+          2,
+          2
+        ],
+        "value": [
+          1,
+          1000
+        ]
+      }
+    }
+  },
+  {
+    "question": "Find the Greatest Common Divisor (GCD) of these numbers: 99, 308. Give only the GCD as your final answer.",
+    "answer": "11",
+    "metadata": {
+      "source_dataset": "gcd",
+      "source_index": 36,
+      "numbers": [
+        99,
+        308
+      ],
+      "result": 11,
+      "num_terms": 2,
+      "difficulty": {
+        "num_terms": [
+          2,
+          2
+        ],
+        "value": [
+          1,
+          1000
+        ]
+      }
+    }
+  },
+  {
+    "question": "Find the Greatest Common Divisor (GCD) of these numbers: 159, 68. Give only the GCD as your final answer.",
+    "answer": "1",
+    "metadata": {
+      "source_dataset": "gcd",
+      "source_index": 37,
+      "numbers": [
+        159,
+        68
+      ],
+      "result": 1,
+      "num_terms": 2,
+      "difficulty": {
+        "num_terms": [
+          2,
+          2
+        ],
+        "value": [
+          1,
+          1000
+        ]
+      }
+    }
+  },
+  {
+    "question": "Find the Greatest Common Divisor (GCD) of these numbers: 378, 374. Give only the GCD as your final answer.",
+    "answer": "2",
+    "metadata": {
+      "source_dataset": "gcd",
+      "source_index": 38,
+      "numbers": [
+        378,
+        374
+      ],
+      "result": 2,
+      "num_terms": 2,
+      "difficulty": {
+        "num_terms": [
+          2,
+          2
+        ],
+        "value": [
+          1,
+          1000
+        ]
+      }
+    }
+  },
+  {
+    "question": "Find the Greatest Common Divisor (GCD) of these numbers: 164, 153. Give only the GCD as your final answer.",
+    "answer": "1",
+    "metadata": {
+      "source_dataset": "gcd",
+      "source_index": 39,
+      "numbers": [
+        164,
+        153
+      ],
+      "result": 1,
+      "num_terms": 2,
+      "difficulty": {
+        "num_terms": [
+          2,
+          2
+        ],
+        "value": [
+          1,
+          1000
+        ]
+      }
+    }
+  },
+  {
+    "question": "Find the Greatest Common Divisor (GCD) of these numbers: 788, 502. Give only the GCD as your final answer.",
+    "answer": "2",
+    "metadata": {
+      "source_dataset": "gcd",
+      "source_index": 40,
+      "numbers": [
+        788,
+        502
+      ],
+      "result": 2,
+      "num_terms": 2,
+      "difficulty": {
+        "num_terms": [
+          2,
+          2
+        ],
+        "value": [
+          1,
+          1000
+        ]
+      }
+    }
+  },
+  {
+    "question": "Find the Greatest Common Divisor (GCD) of these numbers: 36, 51. Give only the GCD as your final answer.",
+    "answer": "3",
+    "metadata": {
+      "source_dataset": "gcd",
+      "source_index": 41,
+      "numbers": [
+        36,
+        51
+      ],
+      "result": 3,
+      "num_terms": 2,
+      "difficulty": {
+        "num_terms": [
+          2,
+          2
+        ],
+        "value": [
+          1,
+          1000
+        ]
+      }
+    }
+  },
+  {
+    "question": "Find the Greatest Common Divisor (GCD) of these numbers: 936, 794. Give only the GCD as your final answer.",
+    "answer": "2",
+    "metadata": {
+      "source_dataset": "gcd",
+      "source_index": 42,
+      "numbers": [
+        936,
+        794
+      ],
+      "result": 2,
+      "num_terms": 2,
+      "difficulty": {
+        "num_terms": [
+          2,
+          2
+        ],
+        "value": [
+          1,
+          1000
+        ]
+      }
+    }
+  },
+  {
+    "question": "Find the Greatest Common Divisor (GCD) of these numbers: 228, 473. Give only the GCD as your final answer.",
+    "answer": "1",
+    "metadata": {
+      "source_dataset": "gcd",
+      "source_index": 43,
+      "numbers": [
+        228,
+        473
+      ],
+      "result": 1,
+      "num_terms": 2,
+      "difficulty": {
+        "num_terms": [
+          2,
+          2
+        ],
+        "value": [
+          1,
+          1000
+        ]
+      }
+    }
+  },
+  {
+    "question": "Find the Greatest Common Divisor (GCD) of these numbers: 570, 858. Give only the GCD as your final answer.",
+    "answer": "6",
+    "metadata": {
+      "source_dataset": "gcd",
+      "source_index": 44,
+      "numbers": [
+        570,
+        858
+      ],
+      "result": 6,
+      "num_terms": 2,
+      "difficulty": {
+        "num_terms": [
+          2,
+          2
+        ],
+        "value": [
+          1,
+          1000
+        ]
+      }
+    }
+  },
+  {
+    "question": "Find the Greatest Common Divisor (GCD) of these numbers: 756, 194. Give only the GCD as your final answer.",
+    "answer": "2",
+    "metadata": {
+      "source_dataset": "gcd",
+      "source_index": 45,
+      "numbers": [
+        756,
+        194
+      ],
+      "result": 2,
+      "num_terms": 2,
+      "difficulty": {
+        "num_terms": [
+          2,
+          2
+        ],
+        "value": [
+          1,
+          1000
+        ]
+      }
+    }
+  },
+  {
+    "question": "Find the Greatest Common Divisor (GCD) of these numbers: 925, 190. Give only the GCD as your final answer.",
+    "answer": "5",
+    "metadata": {
+      "source_dataset": "gcd",
+      "source_index": 46,
+      "numbers": [
+        925,
+        190
+      ],
+      "result": 5,
+      "num_terms": 2,
+      "difficulty": {
+        "num_terms": [
+          2,
+          2
+        ],
+        "value": [
+          1,
+          1000
+        ]
+      }
+    }
+  },
+  {
+    "question": "Find the Greatest Common Divisor (GCD) of these numbers: 154, 868. Give only the GCD as your final answer.",
+    "answer": "14",
+    "metadata": {
+      "source_dataset": "gcd",
+      "source_index": 47,
+      "numbers": [
+        154,
+        868
+      ],
+      "result": 14,
+      "num_terms": 2,
+      "difficulty": {
+        "num_terms": [
+          2,
+          2
+        ],
+        "value": [
+          1,
+          1000
+        ]
+      }
+    }
+  },
+  {
+    "question": "Find the Greatest Common Divisor (GCD) of these numbers: 650, 908. Give only the GCD as your final answer.",
+    "answer": "2",
+    "metadata": {
+      "source_dataset": "gcd",
+      "source_index": 48,
+      "numbers": [
+        650,
+        908
+      ],
+      "result": 2,
+      "num_terms": 2,
+      "difficulty": {
+        "num_terms": [
+          2,
+          2
+        ],
+        "value": [
+          1,
+          1000
+        ]
+      }
+    }
+  },
+  {
+    "question": "Find the Greatest Common Divisor (GCD) of these numbers: 412, 972. Give only the GCD as your final answer.",
+    "answer": "4",
+    "metadata": {
+      "source_dataset": "gcd",
+      "source_index": 49,
+      "numbers": [
+        412,
+        972
+      ],
+      "result": 4,
+      "num_terms": 2,
+      "difficulty": {
+        "num_terms": [
+          2,
+          2
+        ],
+        "value": [
+          1,
+          1000
+        ]
+      }
+    }
+  },
+  {
+    "question": "Find the Greatest Common Divisor (GCD) of these numbers: 584, 536. Give only the GCD as your final answer.",
+    "answer": "8",
+    "metadata": {
+      "source_dataset": "gcd",
+      "source_index": 50,
+      "numbers": [
+        584,
+        536
+      ],
+      "result": 8,
+      "num_terms": 2,
+      "difficulty": {
+        "num_terms": [
+          2,
+          2
+        ],
+        "value": [
+          1,
+          1000
+        ]
+      }
+    }
+  },
+  {
+    "question": "Find the Greatest Common Divisor (GCD) of these numbers: 364, 152. Give only the GCD as your final answer.",
+    "answer": "4",
+    "metadata": {
+      "source_dataset": "gcd",
+      "source_index": 51,
+      "numbers": [
+        364,
+        152
+      ],
+      "result": 4,
+      "num_terms": 2,
+      "difficulty": {
+        "num_terms": [
+          2,
+          2
+        ],
+        "value": [
+          1,
+          1000
+        ]
+      }
+    }
+  },
+  {
+    "question": "Find the Greatest Common Divisor (GCD) of these numbers: 128, 844. Give only the GCD as your final answer.",
+    "answer": "4",
+    "metadata": {
+      "source_dataset": "gcd",
+      "source_index": 52,
+      "numbers": [
+        128,
+        844
+      ],
+      "result": 4,
+      "num_terms": 2,
+      "difficulty": {
+        "num_terms": [
+          2,
+          2
+        ],
+        "value": [
+          1,
+          1000
+        ]
+      }
+    }
+  },
+  {
+    "question": "Find the Greatest Common Divisor (GCD) of these numbers: 970, 506. Give only the GCD as your final answer.",
+    "answer": "2",
+    "metadata": {
+      "source_dataset": "gcd",
+      "source_index": 53,
+      "numbers": [
+        970,
+        506
+      ],
+      "result": 2,
+      "num_terms": 2,
+      "difficulty": {
+        "num_terms": [
+          2,
+          2
+        ],
+        "value": [
+          1,
+          1000
+        ]
+      }
+    }
+  },
+  {
+    "question": "Find the Greatest Common Divisor (GCD) of these numbers: 838, 350. Give only the GCD as your final answer.",
+    "answer": "2",
+    "metadata": {
+      "source_dataset": "gcd",
+      "source_index": 54,
+      "numbers": [
+        838,
+        350
+      ],
+      "result": 2,
+      "num_terms": 2,
+      "difficulty": {
+        "num_terms": [
+          2,
+          2
+        ],
+        "value": [
+          1,
+          1000
+        ]
+      }
+    }
+  },
+  {
+    "question": "Find the Greatest Common Divisor (GCD) of these numbers: 440, 826. Give only the GCD as your final answer.",
+    "answer": "2",
+    "metadata": {
+      "source_dataset": "gcd",
+      "source_index": 55,
+      "numbers": [
+        440,
+        826
+      ],
+      "result": 2,
+      "num_terms": 2,
+      "difficulty": {
+        "num_terms": [
+          2,
+          2
+        ],
+        "value": [
+          1,
+          1000
+        ]
+      }
+    }
+  },
+  {
+    "question": "Find the Greatest Common Divisor (GCD) of these numbers: 996, 485. Give only the GCD as your final answer.",
+    "answer": "1",
+    "metadata": {
+      "source_dataset": "gcd",
+      "source_index": 56,
+      "numbers": [
+        996,
+        485
+      ],
+      "result": 1,
+      "num_terms": 2,
+      "difficulty": {
+        "num_terms": [
+          2,
+          2
+        ],
+        "value": [
+          1,
+          1000
+        ]
+      }
+    }
+  },
+  {
+    "question": "Find the Greatest Common Divisor (GCD) of these numbers: 390, 205. Give only the GCD as your final answer.",
+    "answer": "5",
+    "metadata": {
+      "source_dataset": "gcd",
+      "source_index": 57,
+      "numbers": [
+        390,
+        205
+      ],
+      "result": 5,
+      "num_terms": 2,
+      "difficulty": {
+        "num_terms": [
+          2,
+          2
+        ],
+        "value": [
+          1,
+          1000
+        ]
+      }
+    }
+  },
+  {
+    "question": "Find the Greatest Common Divisor (GCD) of these numbers: 444, 520. Give only the GCD as your final answer.",
+    "answer": "4",
+    "metadata": {
+      "source_dataset": "gcd",
+      "source_index": 58,
+      "numbers": [
+        444,
+        520
+      ],
+      "result": 4,
+      "num_terms": 2,
+      "difficulty": {
+        "num_terms": [
+          2,
+          2
+        ],
+        "value": [
+          1,
+          1000
+        ]
+      }
+    }
+  },
+  {
+    "question": "Find the Greatest Common Divisor (GCD) of these numbers: 617, 228. Give only the GCD as your final answer.",
+    "answer": "1",
+    "metadata": {
+      "source_dataset": "gcd",
+      "source_index": 59,
+      "numbers": [
+        617,
+        228
+      ],
+      "result": 1,
+      "num_terms": 2,
+      "difficulty": {
+        "num_terms": [
+          2,
+          2
+        ],
+        "value": [
+          1,
+          1000
+        ]
+      }
+    }
+  },
+  {
+    "question": "Find the Greatest Common Divisor (GCD) of these numbers: 174, 568. Give only the GCD as your final answer.",
+    "answer": "2",
+    "metadata": {
+      "source_dataset": "gcd",
+      "source_index": 60,
+      "numbers": [
+        174,
+        568
+      ],
+      "result": 2,
+      "num_terms": 2,
+      "difficulty": {
+        "num_terms": [
+          2,
+          2
+        ],
+        "value": [
+          1,
+          1000
+        ]
+      }
+    }
+  },
+  {
+    "question": "Find the Greatest Common Divisor (GCD) of these numbers: 957, 737. Give only the GCD as your final answer.",
+    "answer": "11",
+    "metadata": {
+      "source_dataset": "gcd",
+      "source_index": 61,
+      "numbers": [
+        957,
+        737
+      ],
+      "result": 11,
+      "num_terms": 2,
+      "difficulty": {
+        "num_terms": [
+          2,
+          2
+        ],
+        "value": [
+          1,
+          1000
+        ]
+      }
+    }
+  },
+  {
+    "question": "Find the Greatest Common Divisor (GCD) of these numbers: 731, 129. Give only the GCD as your final answer.",
+    "answer": "43",
+    "metadata": {
+      "source_dataset": "gcd",
+      "source_index": 62,
+      "numbers": [
+        731,
+        129
+      ],
+      "result": 43,
+      "num_terms": 2,
+      "difficulty": {
+        "num_terms": [
+          2,
+          2
+        ],
+        "value": [
+          1,
+          1000
+        ]
+      }
+    }
+  },
+  {
+    "question": "Find the Greatest Common Divisor (GCD) of these numbers: 595, 810. Give only the GCD as your final answer.",
+    "answer": "5",
+    "metadata": {
+      "source_dataset": "gcd",
+      "source_index": 63,
+      "numbers": [
+        595,
+        810
+      ],
+      "result": 5,
+      "num_terms": 2,
+      "difficulty": {
+        "num_terms": [
+          2,
+          2
+        ],
+        "value": [
+          1,
+          1000
+        ]
+      }
+    }
+  },
+  {
+    "question": "Find the Greatest Common Divisor (GCD) of these numbers: 824, 66. Give only the GCD as your final answer.",
+    "answer": "2",
+    "metadata": {
+      "source_dataset": "gcd",
+      "source_index": 64,
+      "numbers": [
+        824,
+        66
+      ],
+      "result": 2,
+      "num_terms": 2,
+      "difficulty": {
+        "num_terms": [
+          2,
+          2
+        ],
+        "value": [
+          1,
+          1000
+        ]
+      }
+    }
+  },
+  {
+    "question": "Find the Greatest Common Divisor (GCD) of these numbers: 980, 142. Give only the GCD as your final answer.",
+    "answer": "2",
+    "metadata": {
+      "source_dataset": "gcd",
+      "source_index": 65,
+      "numbers": [
+        980,
+        142
+      ],
+      "result": 2,
+      "num_terms": 2,
+      "difficulty": {
+        "num_terms": [
+          2,
+          2
+        ],
+        "value": [
+          1,
+          1000
+        ]
+      }
+    }
+  },
+  {
+    "question": "Find the Greatest Common Divisor (GCD) of these numbers: 902, 678. Give only the GCD as your final answer.",
+    "answer": "2",
+    "metadata": {
+      "source_dataset": "gcd",
+      "source_index": 66,
+      "numbers": [
+        902,
+        678
+      ],
+      "result": 2,
+      "num_terms": 2,
+      "difficulty": {
+        "num_terms": [
+          2,
+          2
+        ],
+        "value": [
+          1,
+          1000
+        ]
+      }
+    }
+  },
+  {
+    "question": "Find the Greatest Common Divisor (GCD) of these numbers: 561, 60. Give only the GCD as your final answer.",
+    "answer": "3",
+    "metadata": {
+      "source_dataset": "gcd",
+      "source_index": 67,
+      "numbers": [
+        561,
+        60
+      ],
+      "result": 3,
+      "num_terms": 2,
+      "difficulty": {
+        "num_terms": [
+          2,
+          2
+        ],
+        "value": [
+          1,
+          1000
+        ]
+      }
+    }
+  },
+  {
+    "question": "Find the Greatest Common Divisor (GCD) of these numbers: 814, 842. Give only the GCD as your final answer.",
+    "answer": "2",
+    "metadata": {
+      "source_dataset": "gcd",
+      "source_index": 68,
+      "numbers": [
+        814,
+        842
+      ],
+      "result": 2,
+      "num_terms": 2,
+      "difficulty": {
+        "num_terms": [
+          2,
+          2
+        ],
+        "value": [
+          1,
+          1000
+        ]
+      }
+    }
+  },
+  {
+    "question": "Find the Greatest Common Divisor (GCD) of these numbers: 944, 966. Give only the GCD as your final answer.",
+    "answer": "2",
+    "metadata": {
+      "source_dataset": "gcd",
+      "source_index": 69,
+      "numbers": [
+        944,
+        966
+      ],
+      "result": 2,
+      "num_terms": 2,
+      "difficulty": {
+        "num_terms": [
+          2,
+          2
+        ],
+        "value": [
+          1,
+          1000
+        ]
+      }
+    }
+  },
+  {
+    "question": "Find the Greatest Common Divisor (GCD) of these numbers: 717, 477. Give only the GCD as your final answer.",
+    "answer": "3",
+    "metadata": {
+      "source_dataset": "gcd",
+      "source_index": 70,
+      "numbers": [
+        717,
+        477
+      ],
+      "result": 3,
+      "num_terms": 2,
+      "difficulty": {
+        "num_terms": [
+          2,
+          2
+        ],
+        "value": [
+          1,
+          1000
+        ]
+      }
+    }
+  },
+  {
+    "question": "Find the Greatest Common Divisor (GCD) of these numbers: 245, 447. Give only the GCD as your final answer.",
+    "answer": "1",
+    "metadata": {
+      "source_dataset": "gcd",
+      "source_index": 71,
+      "numbers": [
+        245,
+        447
+      ],
+      "result": 1,
+      "num_terms": 2,
+      "difficulty": {
+        "num_terms": [
+          2,
+          2
+        ],
+        "value": [
+          1,
+          1000
+        ]
+      }
+    }
+  },
+  {
+    "question": "Find the Greatest Common Divisor (GCD) of these numbers: 642, 640. Give only the GCD as your final answer.",
+    "answer": "2",
+    "metadata": {
+      "source_dataset": "gcd",
+      "source_index": 72,
+      "numbers": [
+        642,
+        640
+      ],
+      "result": 2,
+      "num_terms": 2,
+      "difficulty": {
+        "num_terms": [
+          2,
+          2
+        ],
+        "value": [
+          1,
+          1000
+        ]
+      }
+    }
+  },
+  {
+    "question": "Find the Greatest Common Divisor (GCD) of these numbers: 773, 894. Give only the GCD as your final answer.",
+    "answer": "1",
+    "metadata": {
+      "source_dataset": "gcd",
+      "source_index": 73,
+      "numbers": [
+        773,
+        894
+      ],
+      "result": 1,
+      "num_terms": 2,
+      "difficulty": {
+        "num_terms": [
+          2,
+          2
+        ],
+        "value": [
+          1,
+          1000
+        ]
+      }
+    }
+  },
+  {
+    "question": "Find the Greatest Common Divisor (GCD) of these numbers: 9, 771. Give only the GCD as your final answer.",
+    "answer": "3",
+    "metadata": {
+      "source_dataset": "gcd",
+      "source_index": 74,
+      "numbers": [
+        9,
+        771
+      ],
+      "result": 3,
+      "num_terms": 2,
+      "difficulty": {
+        "num_terms": [
+          2,
+          2
+        ],
+        "value": [
+          1,
+          1000
+        ]
+      }
+    }
+  },
+  {
+    "question": "Find the Greatest Common Divisor (GCD) of these numbers: 410, 864. Give only the GCD as your final answer.",
+    "answer": "2",
+    "metadata": {
+      "source_dataset": "gcd",
+      "source_index": 75,
+      "numbers": [
+        410,
+        864
+      ],
+      "result": 2,
+      "num_terms": 2,
+      "difficulty": {
+        "num_terms": [
+          2,
+          2
+        ],
+        "value": [
+          1,
+          1000
+        ]
+      }
+    }
+  },
+  {
+    "question": "Find the Greatest Common Divisor (GCD) of these numbers: 320, 102. Give only the GCD as your final answer.",
+    "answer": "2",
+    "metadata": {
+      "source_dataset": "gcd",
+      "source_index": 76,
+      "numbers": [
+        320,
+        102
+      ],
+      "result": 2,
+      "num_terms": 2,
+      "difficulty": {
+        "num_terms": [
+          2,
+          2
+        ],
+        "value": [
+          1,
+          1000
+        ]
+      }
+    }
+  },
+  {
+    "question": "Find the Greatest Common Divisor (GCD) of these numbers: 112, 82. Give only the GCD as your final answer.",
+    "answer": "2",
+    "metadata": {
+      "source_dataset": "gcd",
+      "source_index": 77,
+      "numbers": [
+        112,
+        82
+      ],
+      "result": 2,
+      "num_terms": 2,
+      "difficulty": {
+        "num_terms": [
+          2,
+          2
+        ],
+        "value": [
+          1,
+          1000
+        ]
+      }
+    }
+  },
+  {
+    "question": "Find the Greatest Common Divisor (GCD) of these numbers: 194, 968. Give only the GCD as your final answer.",
+    "answer": "2",
+    "metadata": {
+      "source_dataset": "gcd",
+      "source_index": 78,
+      "numbers": [
+        194,
+        968
+      ],
+      "result": 2,
+      "num_terms": 2,
+      "difficulty": {
+        "num_terms": [
+          2,
+          2
+        ],
+        "value": [
+          1,
+          1000
+        ]
+      }
+    }
+  },
+  {
+    "question": "Find the Greatest Common Divisor (GCD) of these numbers: 224, 598. Give only the GCD as your final answer.",
+    "answer": "2",
+    "metadata": {
+      "source_dataset": "gcd",
+      "source_index": 79,
+      "numbers": [
+        224,
+        598
+      ],
+      "result": 2,
+      "num_terms": 2,
+      "difficulty": {
+        "num_terms": [
+          2,
+          2
+        ],
+        "value": [
+          1,
+          1000
+        ]
+      }
+    }
+  },
+  {
+    "question": "Find the Greatest Common Divisor (GCD) of these numbers: 748, 376. Give only the GCD as your final answer.",
+    "answer": "4",
+    "metadata": {
+      "source_dataset": "gcd",
+      "source_index": 80,
+      "numbers": [
+        748,
+        376
+      ],
+      "result": 4,
+      "num_terms": 2,
+      "difficulty": {
+        "num_terms": [
+          2,
+          2
+        ],
+        "value": [
+          1,
+          1000
+        ]
+      }
+    }
+  },
+  {
+    "question": "Find the Greatest Common Divisor (GCD) of these numbers: 275, 90. Give only the GCD as your final answer.",
+    "answer": "5",
+    "metadata": {
+      "source_dataset": "gcd",
+      "source_index": 81,
+      "numbers": [
+        275,
+        90
+      ],
+      "result": 5,
+      "num_terms": 2,
+      "difficulty": {
+        "num_terms": [
+          2,
+          2
+        ],
+        "value": [
+          1,
+          1000
+        ]
+      }
+    }
+  },
+  {
+    "question": "Find the Greatest Common Divisor (GCD) of these numbers: 562, 6. Give only the GCD as your final answer.",
+    "answer": "2",
+    "metadata": {
+      "source_dataset": "gcd",
+      "source_index": 82,
+      "numbers": [
+        562,
+        6
+      ],
+      "result": 2,
+      "num_terms": 2,
+      "difficulty": {
+        "num_terms": [
+          2,
+          2
+        ],
+        "value": [
+          1,
+          1000
+        ]
+      }
+    }
+  },
+  {
+    "question": "Find the Greatest Common Divisor (GCD) of these numbers: 228, 849. Give only the GCD as your final answer.",
+    "answer": "3",
+    "metadata": {
+      "source_dataset": "gcd",
+      "source_index": 83,
+      "numbers": [
+        228,
+        849
+      ],
+      "result": 3,
+      "num_terms": 2,
+      "difficulty": {
+        "num_terms": [
+          2,
+          2
+        ],
+        "value": [
+          1,
+          1000
+        ]
+      }
+    }
+  },
+  {
+    "question": "Find the Greatest Common Divisor (GCD) of these numbers: 592, 610. Give only the GCD as your final answer.",
+    "answer": "2",
+    "metadata": {
+      "source_dataset": "gcd",
+      "source_index": 84,
+      "numbers": [
+        592,
+        610
+      ],
+      "result": 2,
+      "num_terms": 2,
+      "difficulty": {
+        "num_terms": [
+          2,
+          2
+        ],
+        "value": [
+          1,
+          1000
+        ]
+      }
+    }
+  },
+  {
+    "question": "Find the Greatest Common Divisor (GCD) of these numbers: 963, 208. Give only the GCD as your final answer.",
+    "answer": "1",
+    "metadata": {
+      "source_dataset": "gcd",
+      "source_index": 85,
+      "numbers": [
+        963,
+        208
+      ],
+      "result": 1,
+      "num_terms": 2,
+      "difficulty": {
+        "num_terms": [
+          2,
+          2
+        ],
+        "value": [
+          1,
+          1000
+        ]
+      }
+    }
+  },
+  {
+    "question": "Find the Greatest Common Divisor (GCD) of these numbers: 416, 524. Give only the GCD as your final answer.",
+    "answer": "4",
+    "metadata": {
+      "source_dataset": "gcd",
+      "source_index": 86,
+      "numbers": [
+        416,
+        524
+      ],
+      "result": 4,
+      "num_terms": 2,
+      "difficulty": {
+        "num_terms": [
+          2,
+          2
+        ],
+        "value": [
+          1,
+          1000
+        ]
+      }
+    }
+  },
+  {
+    "question": "Find the Greatest Common Divisor (GCD) of these numbers: 48, 906. Give only the GCD as your final answer.",
+    "answer": "6",
+    "metadata": {
+      "source_dataset": "gcd",
+      "source_index": 87,
+      "numbers": [
+        48,
+        906
+      ],
+      "result": 6,
+      "num_terms": 2,
+      "difficulty": {
+        "num_terms": [
+          2,
+          2
+        ],
+        "value": [
+          1,
+          1000
+        ]
+      }
+    }
+  },
+  {
+    "question": "Find the Greatest Common Divisor (GCD) of these numbers: 280, 804. Give only the GCD as your final answer.",
+    "answer": "4",
+    "metadata": {
+      "source_dataset": "gcd",
+      "source_index": 88,
+      "numbers": [
+        280,
+        804
+      ],
+      "result": 4,
+      "num_terms": 2,
+      "difficulty": {
+        "num_terms": [
+          2,
+          2
+        ],
+        "value": [
+          1,
+          1000
+        ]
+      }
+    }
+  },
+  {
+    "question": "Find the Greatest Common Divisor (GCD) of these numbers: 400, 798. Give only the GCD as your final answer.",
+    "answer": "2",
+    "metadata": {
+      "source_dataset": "gcd",
+      "source_index": 89,
+      "numbers": [
+        400,
+        798
+      ],
+      "result": 2,
+      "num_terms": 2,
+      "difficulty": {
+        "num_terms": [
+          2,
+          2
+        ],
+        "value": [
+          1,
+          1000
+        ]
+      }
+    }
+  },
+  {
+    "question": "Find the Greatest Common Divisor (GCD) of these numbers: 160, 418. Give only the GCD as your final answer.",
+    "answer": "2",
+    "metadata": {
+      "source_dataset": "gcd",
+      "source_index": 90,
+      "numbers": [
+        160,
+        418
+      ],
+      "result": 2,
+      "num_terms": 2,
+      "difficulty": {
+        "num_terms": [
+          2,
+          2
+        ],
+        "value": [
+          1,
+          1000
+        ]
+      }
+    }
+  },
+  {
+    "question": "Find the Greatest Common Divisor (GCD) of these numbers: 903, 559. Give only the GCD as your final answer.",
+    "answer": "43",
+    "metadata": {
+      "source_dataset": "gcd",
+      "source_index": 91,
+      "numbers": [
+        903,
+        559
+      ],
+      "result": 43,
+      "num_terms": 2,
+      "difficulty": {
+        "num_terms": [
+          2,
+          2
+        ],
+        "value": [
+          1,
+          1000
+        ]
+      }
+    }
+  },
+  {
+    "question": "Find the Greatest Common Divisor (GCD) of these numbers: 536, 204. Give only the GCD as your final answer.",
+    "answer": "4",
+    "metadata": {
+      "source_dataset": "gcd",
+      "source_index": 92,
+      "numbers": [
+        536,
+        204
+      ],
+      "result": 4,
+      "num_terms": 2,
+      "difficulty": {
+        "num_terms": [
+          2,
+          2
+        ],
+        "value": [
+          1,
+          1000
+        ]
+      }
+    }
+  },
+  {
+    "question": "Find the Greatest Common Divisor (GCD) of these numbers: 464, 290. Give only the GCD as your final answer.",
+    "answer": "58",
+    "metadata": {
+      "source_dataset": "gcd",
+      "source_index": 93,
+      "numbers": [
+        464,
+        290
+      ],
+      "result": 58,
+      "num_terms": 2,
+      "difficulty": {
+        "num_terms": [
+          2,
+          2
+        ],
+        "value": [
+          1,
+          1000
+        ]
+      }
+    }
+  },
+  {
+    "question": "Find the Greatest Common Divisor (GCD) of these numbers: 433, 713. Give only the GCD as your final answer.",
+    "answer": "1",
+    "metadata": {
+      "source_dataset": "gcd",
+      "source_index": 94,
+      "numbers": [
+        433,
+        713
+      ],
+      "result": 1,
+      "num_terms": 2,
+      "difficulty": {
+        "num_terms": [
+          2,
+          2
+        ],
+        "value": [
+          1,
+          1000
+        ]
+      }
+    }
+  },
+  {
+    "question": "Find the Greatest Common Divisor (GCD) of these numbers: 186, 420. Give only the GCD as your final answer.",
+    "answer": "6",
+    "metadata": {
+      "source_dataset": "gcd",
+      "source_index": 95,
+      "numbers": [
+        186,
+        420
+      ],
+      "result": 6,
+      "num_terms": 2,
+      "difficulty": {
+        "num_terms": [
+          2,
+          2
+        ],
+        "value": [
+          1,
+          1000
+        ]
+      }
+    }
+  },
+  {
+    "question": "Find the Greatest Common Divisor (GCD) of these numbers: 214, 535. Give only the GCD as your final answer.",
+    "answer": "107",
+    "metadata": {
+      "source_dataset": "gcd",
+      "source_index": 96,
+      "numbers": [
+        214,
+        535
+      ],
+      "result": 107,
+      "num_terms": 2,
+      "difficulty": {
+        "num_terms": [
+          2,
+          2
+        ],
+        "value": [
+          1,
+          1000
+        ]
+      }
+    }
+  },
+  {
+    "question": "Find the Greatest Common Divisor (GCD) of these numbers: 539, 907. Give only the GCD as your final answer.",
+    "answer": "1",
+    "metadata": {
+      "source_dataset": "gcd",
+      "source_index": 97,
+      "numbers": [
+        539,
+        907
+      ],
+      "result": 1,
+      "num_terms": 2,
+      "difficulty": {
+        "num_terms": [
+          2,
+          2
+        ],
+        "value": [
+          1,
+          1000
+        ]
+      }
+    }
+  },
+  {
+    "question": "Find the Greatest Common Divisor (GCD) of these numbers: 545, 750. Give only the GCD as your final answer.",
+    "answer": "5",
+    "metadata": {
+      "source_dataset": "gcd",
+      "source_index": 98,
+      "numbers": [
+        545,
+        750
+      ],
+      "result": 5,
+      "num_terms": 2,
+      "difficulty": {
+        "num_terms": [
+          2,
+          2
+        ],
+        "value": [
+          1,
+          1000
+        ]
+      }
+    }
+  },
+  {
+    "question": "Find the Greatest Common Divisor (GCD) of these numbers: 182, 588. Give only the GCD as your final answer.",
+    "answer": "14",
+    "metadata": {
+      "source_dataset": "gcd",
+      "source_index": 99,
+      "numbers": [
+        182,
+        588
+      ],
+      "result": 14,
+      "num_terms": 2,
+      "difficulty": {
+        "num_terms": [
+          2,
+          2
+        ],
+        "value": [
+          1,
+          1000
+        ]
+      }
+    }
+  }
+]

@@ -1,0 +1,2102 @@
+[
+  {
+    "question": "State the final answer to the following arithmetic problem: 4 + 3 =",
+    "answer": "7",
+    "metadata": {
+      "source_dataset": "chain_sum",
+      "source_index": 0,
+      "num_terms": 2,
+      "num_digits": 1,
+      "expression": "4 + 3",
+      "difficulty": {
+        "num_terms": [
+          2,
+          6
+        ],
+        "num_digits": [
+          1,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "State the final answer to the following arithmetic problem: 812 + 880 =",
+    "answer": "1692",
+    "metadata": {
+      "source_dataset": "chain_sum",
+      "source_index": 1,
+      "num_terms": 2,
+      "num_digits": 3,
+      "expression": "812 + 880",
+      "difficulty": {
+        "num_terms": [
+          2,
+          6
+        ],
+        "num_digits": [
+          1,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "State the final answer to the following arithmetic problem: 2 + 6 + 3 + 4 + 0 =",
+    "answer": "15",
+    "metadata": {
+      "source_dataset": "chain_sum",
+      "source_index": 2,
+      "num_terms": 5,
+      "num_digits": 1,
+      "expression": "2 + 6 + 3 + 4 + 0",
+      "difficulty": {
+        "num_terms": [
+          2,
+          6
+        ],
+        "num_digits": [
+          1,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "State the final answer to the following arithmetic problem: 8995 - 5221 + 2341 + 5967 =",
+    "answer": "12082",
+    "metadata": {
+      "source_dataset": "chain_sum",
+      "source_index": 3,
+      "num_terms": 4,
+      "num_digits": 4,
+      "expression": "8995 - 5221 + 2341 + 5967",
+      "difficulty": {
+        "num_terms": [
+          2,
+          6
+        ],
+        "num_digits": [
+          1,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "State the final answer to the following arithmetic problem: 1654 + 4744 =",
+    "answer": "6398",
+    "metadata": {
+      "source_dataset": "chain_sum",
+      "source_index": 4,
+      "num_terms": 2,
+      "num_digits": 4,
+      "expression": "1654 + 4744",
+      "difficulty": {
+        "num_terms": [
+          2,
+          6
+        ],
+        "num_digits": [
+          1,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "State the final answer to the following arithmetic problem: 6 - 8 - 7 - 9 =",
+    "answer": "-18",
+    "metadata": {
+      "source_dataset": "chain_sum",
+      "source_index": 5,
+      "num_terms": 4,
+      "num_digits": 1,
+      "expression": "6 - 8 - 7 - 9",
+      "difficulty": {
+        "num_terms": [
+          2,
+          6
+        ],
+        "num_digits": [
+          1,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "State the final answer to the following arithmetic problem: 235 + 670 - 828 + 647 + 409 + 912 =",
+    "answer": "2045",
+    "metadata": {
+      "source_dataset": "chain_sum",
+      "source_index": 6,
+      "num_terms": 6,
+      "num_digits": 3,
+      "expression": "235 + 670 - 828 + 647 + 409 + 912",
+      "difficulty": {
+        "num_terms": [
+          2,
+          6
+        ],
+        "num_digits": [
+          1,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "State the final answer to the following arithmetic problem: 523 - 213 =",
+    "answer": "310",
+    "metadata": {
+      "source_dataset": "chain_sum",
+      "source_index": 7,
+      "num_terms": 2,
+      "num_digits": 3,
+      "expression": "523 - 213",
+      "difficulty": {
+        "num_terms": [
+          2,
+          6
+        ],
+        "num_digits": [
+          1,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "State the final answer to the following arithmetic problem: 472 - 752 + 348 - 809 + 584 =",
+    "answer": "-157",
+    "metadata": {
+      "source_dataset": "chain_sum",
+      "source_index": 8,
+      "num_terms": 5,
+      "num_digits": 3,
+      "expression": "472 - 752 + 348 - 809 + 584",
+      "difficulty": {
+        "num_terms": [
+          2,
+          6
+        ],
+        "num_digits": [
+          1,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "State the final answer to the following arithmetic problem: 41 - 39 - 80 =",
+    "answer": "-78",
+    "metadata": {
+      "source_dataset": "chain_sum",
+      "source_index": 9,
+      "num_terms": 3,
+      "num_digits": 2,
+      "expression": "41 - 39 - 80",
+      "difficulty": {
+        "num_terms": [
+          2,
+          6
+        ],
+        "num_digits": [
+          1,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "State the final answer to the following arithmetic problem: 8 + 7 + 5 + 6 =",
+    "answer": "26",
+    "metadata": {
+      "source_dataset": "chain_sum",
+      "source_index": 10,
+      "num_terms": 4,
+      "num_digits": 1,
+      "expression": "8 + 7 + 5 + 6",
+      "difficulty": {
+        "num_terms": [
+          2,
+          6
+        ],
+        "num_digits": [
+          1,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "State the final answer to the following arithmetic problem: 68 + 74 + 71 + 76 - 56 + 68 =",
+    "answer": "301",
+    "metadata": {
+      "source_dataset": "chain_sum",
+      "source_index": 11,
+      "num_terms": 6,
+      "num_digits": 2,
+      "expression": "68 + 74 + 71 + 76 - 56 + 68",
+      "difficulty": {
+        "num_terms": [
+          2,
+          6
+        ],
+        "num_digits": [
+          1,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "State the final answer to the following arithmetic problem: 5881 - 8913 + 8987 =",
+    "answer": "5955",
+    "metadata": {
+      "source_dataset": "chain_sum",
+      "source_index": 12,
+      "num_terms": 3,
+      "num_digits": 4,
+      "expression": "5881 - 8913 + 8987",
+      "difficulty": {
+        "num_terms": [
+          2,
+          6
+        ],
+        "num_digits": [
+          1,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "State the final answer to the following arithmetic problem: 29 + 48 =",
+    "answer": "77",
+    "metadata": {
+      "source_dataset": "chain_sum",
+      "source_index": 13,
+      "num_terms": 2,
+      "num_digits": 2,
+      "expression": "29 + 48",
+      "difficulty": {
+        "num_terms": [
+          2,
+          6
+        ],
+        "num_digits": [
+          1,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "State the final answer to the following arithmetic problem: 7 + 8 - 4 + 8 - 6 - 3 =",
+    "answer": "10",
+    "metadata": {
+      "source_dataset": "chain_sum",
+      "source_index": 14,
+      "num_terms": 6,
+      "num_digits": 1,
+      "expression": "7 + 8 - 4 + 8 - 6 - 3",
+      "difficulty": {
+        "num_terms": [
+          2,
+          6
+        ],
+        "num_digits": [
+          1,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "State the final answer to the following arithmetic problem: 703 + 719 =",
+    "answer": "1422",
+    "metadata": {
+      "source_dataset": "chain_sum",
+      "source_index": 15,
+      "num_terms": 2,
+      "num_digits": 3,
+      "expression": "703 + 719",
+      "difficulty": {
+        "num_terms": [
+          2,
+          6
+        ],
+        "num_digits": [
+          1,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "State the final answer to the following arithmetic problem: 36 - 92 - 35 - 15 - 34 - 67 =",
+    "answer": "-207",
+    "metadata": {
+      "source_dataset": "chain_sum",
+      "source_index": 16,
+      "num_terms": 6,
+      "num_digits": 2,
+      "expression": "36 - 92 - 35 - 15 - 34 - 67",
+      "difficulty": {
+        "num_terms": [
+          2,
+          6
+        ],
+        "num_digits": [
+          1,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "State the final answer to the following arithmetic problem: 7 - 0 + 2 =",
+    "answer": "9",
+    "metadata": {
+      "source_dataset": "chain_sum",
+      "source_index": 17,
+      "num_terms": 3,
+      "num_digits": 1,
+      "expression": "7 - 0 + 2",
+      "difficulty": {
+        "num_terms": [
+          2,
+          6
+        ],
+        "num_digits": [
+          1,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "State the final answer to the following arithmetic problem: 691 - 257 - 371 - 335 =",
+    "answer": "-272",
+    "metadata": {
+      "source_dataset": "chain_sum",
+      "source_index": 18,
+      "num_terms": 4,
+      "num_digits": 3,
+      "expression": "691 - 257 - 371 - 335",
+      "difficulty": {
+        "num_terms": [
+          2,
+          6
+        ],
+        "num_digits": [
+          1,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "State the final answer to the following arithmetic problem: 81 + 37 - 51 - 47 - 51 =",
+    "answer": "-31",
+    "metadata": {
+      "source_dataset": "chain_sum",
+      "source_index": 19,
+      "num_terms": 5,
+      "num_digits": 2,
+      "expression": "81 + 37 - 51 - 47 - 51",
+      "difficulty": {
+        "num_terms": [
+          2,
+          6
+        ],
+        "num_digits": [
+          1,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "State the final answer to the following arithmetic problem: 18 + 40 + 69 + 49 + 95 - 55 =",
+    "answer": "216",
+    "metadata": {
+      "source_dataset": "chain_sum",
+      "source_index": 20,
+      "num_terms": 6,
+      "num_digits": 2,
+      "expression": "18 + 40 + 69 + 49 + 95 - 55",
+      "difficulty": {
+        "num_terms": [
+          2,
+          6
+        ],
+        "num_digits": [
+          1,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "State the final answer to the following arithmetic problem: 5818 + 5144 + 8934 + 2426 - 7335 =",
+    "answer": "14987",
+    "metadata": {
+      "source_dataset": "chain_sum",
+      "source_index": 21,
+      "num_terms": 5,
+      "num_digits": 4,
+      "expression": "5818 + 5144 + 8934 + 2426 - 7335",
+      "difficulty": {
+        "num_terms": [
+          2,
+          6
+        ],
+        "num_digits": [
+          1,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "State the final answer to the following arithmetic problem: 9 - 6 + 8 + 0 + 3 =",
+    "answer": "14",
+    "metadata": {
+      "source_dataset": "chain_sum",
+      "source_index": 22,
+      "num_terms": 5,
+      "num_digits": 1,
+      "expression": "9 - 6 + 8 + 0 + 3",
+      "difficulty": {
+        "num_terms": [
+          2,
+          6
+        ],
+        "num_digits": [
+          1,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "State the final answer to the following arithmetic problem: 394 - 626 - 964 - 325 - 554 =",
+    "answer": "-2075",
+    "metadata": {
+      "source_dataset": "chain_sum",
+      "source_index": 23,
+      "num_terms": 5,
+      "num_digits": 3,
+      "expression": "394 - 626 - 964 - 325 - 554",
+      "difficulty": {
+        "num_terms": [
+          2,
+          6
+        ],
+        "num_digits": [
+          1,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "State the final answer to the following arithmetic problem: 545 - 352 =",
+    "answer": "193",
+    "metadata": {
+      "source_dataset": "chain_sum",
+      "source_index": 24,
+      "num_terms": 2,
+      "num_digits": 3,
+      "expression": "545 - 352",
+      "difficulty": {
+        "num_terms": [
+          2,
+          6
+        ],
+        "num_digits": [
+          1,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "State the final answer to the following arithmetic problem: 6 - 7 =",
+    "answer": "-1",
+    "metadata": {
+      "source_dataset": "chain_sum",
+      "source_index": 25,
+      "num_terms": 2,
+      "num_digits": 1,
+      "expression": "6 - 7",
+      "difficulty": {
+        "num_terms": [
+          2,
+          6
+        ],
+        "num_digits": [
+          1,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "State the final answer to the following arithmetic problem: 9 - 9 - 3 - 6 - 7 =",
+    "answer": "-16",
+    "metadata": {
+      "source_dataset": "chain_sum",
+      "source_index": 26,
+      "num_terms": 5,
+      "num_digits": 1,
+      "expression": "9 - 9 - 3 - 6 - 7",
+      "difficulty": {
+        "num_terms": [
+          2,
+          6
+        ],
+        "num_digits": [
+          1,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "State the final answer to the following arithmetic problem: 2 - 1 =",
+    "answer": "1",
+    "metadata": {
+      "source_dataset": "chain_sum",
+      "source_index": 27,
+      "num_terms": 2,
+      "num_digits": 1,
+      "expression": "2 - 1",
+      "difficulty": {
+        "num_terms": [
+          2,
+          6
+        ],
+        "num_digits": [
+          1,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "State the final answer to the following arithmetic problem: 819 - 570 =",
+    "answer": "249",
+    "metadata": {
+      "source_dataset": "chain_sum",
+      "source_index": 28,
+      "num_terms": 2,
+      "num_digits": 3,
+      "expression": "819 - 570",
+      "difficulty": {
+        "num_terms": [
+          2,
+          6
+        ],
+        "num_digits": [
+          1,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "State the final answer to the following arithmetic problem: 4 + 2 + 3 + 4 =",
+    "answer": "13",
+    "metadata": {
+      "source_dataset": "chain_sum",
+      "source_index": 29,
+      "num_terms": 4,
+      "num_digits": 1,
+      "expression": "4 + 2 + 3 + 4",
+      "difficulty": {
+        "num_terms": [
+          2,
+          6
+        ],
+        "num_digits": [
+          1,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "State the final answer to the following arithmetic problem: 54 - 99 =",
+    "answer": "-45",
+    "metadata": {
+      "source_dataset": "chain_sum",
+      "source_index": 30,
+      "num_terms": 2,
+      "num_digits": 2,
+      "expression": "54 - 99",
+      "difficulty": {
+        "num_terms": [
+          2,
+          6
+        ],
+        "num_digits": [
+          1,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "State the final answer to the following arithmetic problem: 8 - 7 - 9 + 2 =",
+    "answer": "-6",
+    "metadata": {
+      "source_dataset": "chain_sum",
+      "source_index": 31,
+      "num_terms": 4,
+      "num_digits": 1,
+      "expression": "8 - 7 - 9 + 2",
+      "difficulty": {
+        "num_terms": [
+          2,
+          6
+        ],
+        "num_digits": [
+          1,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "State the final answer to the following arithmetic problem: 5 + 1 - 4 - 2 - 3 - 5 =",
+    "answer": "-8",
+    "metadata": {
+      "source_dataset": "chain_sum",
+      "source_index": 32,
+      "num_terms": 6,
+      "num_digits": 1,
+      "expression": "5 + 1 - 4 - 2 - 3 - 5",
+      "difficulty": {
+        "num_terms": [
+          2,
+          6
+        ],
+        "num_digits": [
+          1,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "State the final answer to the following arithmetic problem: 8444 + 1682 - 9422 + 8744 - 6663 =",
+    "answer": "2785",
+    "metadata": {
+      "source_dataset": "chain_sum",
+      "source_index": 33,
+      "num_terms": 5,
+      "num_digits": 4,
+      "expression": "8444 + 1682 - 9422 + 8744 - 6663",
+      "difficulty": {
+        "num_terms": [
+          2,
+          6
+        ],
+        "num_digits": [
+          1,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "State the final answer to the following arithmetic problem: 7383 - 4277 + 5865 - 1864 =",
+    "answer": "7107",
+    "metadata": {
+      "source_dataset": "chain_sum",
+      "source_index": 34,
+      "num_terms": 4,
+      "num_digits": 4,
+      "expression": "7383 - 4277 + 5865 - 1864",
+      "difficulty": {
+        "num_terms": [
+          2,
+          6
+        ],
+        "num_digits": [
+          1,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "State the final answer to the following arithmetic problem: 302 + 346 - 297 - 942 =",
+    "answer": "-591",
+    "metadata": {
+      "source_dataset": "chain_sum",
+      "source_index": 35,
+      "num_terms": 4,
+      "num_digits": 3,
+      "expression": "302 + 346 - 297 - 942",
+      "difficulty": {
+        "num_terms": [
+          2,
+          6
+        ],
+        "num_digits": [
+          1,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "State the final answer to the following arithmetic problem: 4 + 4 + 6 =",
+    "answer": "14",
+    "metadata": {
+      "source_dataset": "chain_sum",
+      "source_index": 36,
+      "num_terms": 3,
+      "num_digits": 1,
+      "expression": "4 + 4 + 6",
+      "difficulty": {
+        "num_terms": [
+          2,
+          6
+        ],
+        "num_digits": [
+          1,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "State the final answer to the following arithmetic problem: 6726 + 3669 - 4947 =",
+    "answer": "5448",
+    "metadata": {
+      "source_dataset": "chain_sum",
+      "source_index": 37,
+      "num_terms": 3,
+      "num_digits": 4,
+      "expression": "6726 + 3669 - 4947",
+      "difficulty": {
+        "num_terms": [
+          2,
+          6
+        ],
+        "num_digits": [
+          1,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "State the final answer to the following arithmetic problem: 9878 - 7894 - 7046 + 6982 =",
+    "answer": "1920",
+    "metadata": {
+      "source_dataset": "chain_sum",
+      "source_index": 38,
+      "num_terms": 4,
+      "num_digits": 4,
+      "expression": "9878 - 7894 - 7046 + 6982",
+      "difficulty": {
+        "num_terms": [
+          2,
+          6
+        ],
+        "num_digits": [
+          1,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "State the final answer to the following arithmetic problem: 6539 + 9708 - 7295 + 8846 - 1284 - 3611 =",
+    "answer": "12903",
+    "metadata": {
+      "source_dataset": "chain_sum",
+      "source_index": 39,
+      "num_terms": 6,
+      "num_digits": 4,
+      "expression": "6539 + 9708 - 7295 + 8846 - 1284 - 3611",
+      "difficulty": {
+        "num_terms": [
+          2,
+          6
+        ],
+        "num_digits": [
+          1,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "State the final answer to the following arithmetic problem: 9275 + 5786 - 3942 =",
+    "answer": "11119",
+    "metadata": {
+      "source_dataset": "chain_sum",
+      "source_index": 40,
+      "num_terms": 3,
+      "num_digits": 4,
+      "expression": "9275 + 5786 - 3942",
+      "difficulty": {
+        "num_terms": [
+          2,
+          6
+        ],
+        "num_digits": [
+          1,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "State the final answer to the following arithmetic problem: 2453 + 3098 + 7200 + 1563 - 1805 =",
+    "answer": "12509",
+    "metadata": {
+      "source_dataset": "chain_sum",
+      "source_index": 41,
+      "num_terms": 5,
+      "num_digits": 4,
+      "expression": "2453 + 3098 + 7200 + 1563 - 1805",
+      "difficulty": {
+        "num_terms": [
+          2,
+          6
+        ],
+        "num_digits": [
+          1,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "State the final answer to the following arithmetic problem: 7 + 0 - 8 - 5 =",
+    "answer": "-6",
+    "metadata": {
+      "source_dataset": "chain_sum",
+      "source_index": 42,
+      "num_terms": 4,
+      "num_digits": 1,
+      "expression": "7 + 0 - 8 - 5",
+      "difficulty": {
+        "num_terms": [
+          2,
+          6
+        ],
+        "num_digits": [
+          1,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "State the final answer to the following arithmetic problem: 5 - 3 - 3 =",
+    "answer": "-1",
+    "metadata": {
+      "source_dataset": "chain_sum",
+      "source_index": 43,
+      "num_terms": 3,
+      "num_digits": 1,
+      "expression": "5 - 3 - 3",
+      "difficulty": {
+        "num_terms": [
+          2,
+          6
+        ],
+        "num_digits": [
+          1,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "State the final answer to the following arithmetic problem: 860 + 112 =",
+    "answer": "972",
+    "metadata": {
+      "source_dataset": "chain_sum",
+      "source_index": 44,
+      "num_terms": 2,
+      "num_digits": 3,
+      "expression": "860 + 112",
+      "difficulty": {
+        "num_terms": [
+          2,
+          6
+        ],
+        "num_digits": [
+          1,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "State the final answer to the following arithmetic problem: 79 - 23 - 45 =",
+    "answer": "11",
+    "metadata": {
+      "source_dataset": "chain_sum",
+      "source_index": 45,
+      "num_terms": 3,
+      "num_digits": 2,
+      "expression": "79 - 23 - 45",
+      "difficulty": {
+        "num_terms": [
+          2,
+          6
+        ],
+        "num_digits": [
+          1,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "State the final answer to the following arithmetic problem: 52 + 33 - 90 - 11 + 77 =",
+    "answer": "61",
+    "metadata": {
+      "source_dataset": "chain_sum",
+      "source_index": 46,
+      "num_terms": 5,
+      "num_digits": 2,
+      "expression": "52 + 33 - 90 - 11 + 77",
+      "difficulty": {
+        "num_terms": [
+          2,
+          6
+        ],
+        "num_digits": [
+          1,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "State the final answer to the following arithmetic problem: 243 + 452 =",
+    "answer": "695",
+    "metadata": {
+      "source_dataset": "chain_sum",
+      "source_index": 47,
+      "num_terms": 2,
+      "num_digits": 3,
+      "expression": "243 + 452",
+      "difficulty": {
+        "num_terms": [
+          2,
+          6
+        ],
+        "num_digits": [
+          1,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "State the final answer to the following arithmetic problem: 7 - 9 - 9 =",
+    "answer": "-11",
+    "metadata": {
+      "source_dataset": "chain_sum",
+      "source_index": 48,
+      "num_terms": 3,
+      "num_digits": 1,
+      "expression": "7 - 9 - 9",
+      "difficulty": {
+        "num_terms": [
+          2,
+          6
+        ],
+        "num_digits": [
+          1,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "State the final answer to the following arithmetic problem: 97 + 96 =",
+    "answer": "193",
+    "metadata": {
+      "source_dataset": "chain_sum",
+      "source_index": 49,
+      "num_terms": 2,
+      "num_digits": 2,
+      "expression": "97 + 96",
+      "difficulty": {
+        "num_terms": [
+          2,
+          6
+        ],
+        "num_digits": [
+          1,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "State the final answer to the following arithmetic problem: 920 + 923 - 998 + 788 + 880 =",
+    "answer": "2513",
+    "metadata": {
+      "source_dataset": "chain_sum",
+      "source_index": 50,
+      "num_terms": 5,
+      "num_digits": 3,
+      "expression": "920 + 923 - 998 + 788 + 880",
+      "difficulty": {
+        "num_terms": [
+          2,
+          6
+        ],
+        "num_digits": [
+          1,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "State the final answer to the following arithmetic problem: 216 - 194 + 463 + 251 + 276 =",
+    "answer": "1012",
+    "metadata": {
+      "source_dataset": "chain_sum",
+      "source_index": 51,
+      "num_terms": 5,
+      "num_digits": 3,
+      "expression": "216 - 194 + 463 + 251 + 276",
+      "difficulty": {
+        "num_terms": [
+          2,
+          6
+        ],
+        "num_digits": [
+          1,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "State the final answer to the following arithmetic problem: 25 - 45 - 48 - 65 - 12 - 97 =",
+    "answer": "-242",
+    "metadata": {
+      "source_dataset": "chain_sum",
+      "source_index": 52,
+      "num_terms": 6,
+      "num_digits": 2,
+      "expression": "25 - 45 - 48 - 65 - 12 - 97",
+      "difficulty": {
+        "num_terms": [
+          2,
+          6
+        ],
+        "num_digits": [
+          1,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "State the final answer to the following arithmetic problem: 73 - 13 + 27 + 11 + 86 + 20 =",
+    "answer": "204",
+    "metadata": {
+      "source_dataset": "chain_sum",
+      "source_index": 53,
+      "num_terms": 6,
+      "num_digits": 2,
+      "expression": "73 - 13 + 27 + 11 + 86 + 20",
+      "difficulty": {
+        "num_terms": [
+          2,
+          6
+        ],
+        "num_digits": [
+          1,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "State the final answer to the following arithmetic problem: 789 - 505 + 310 + 198 =",
+    "answer": "792",
+    "metadata": {
+      "source_dataset": "chain_sum",
+      "source_index": 54,
+      "num_terms": 4,
+      "num_digits": 3,
+      "expression": "789 - 505 + 310 + 198",
+      "difficulty": {
+        "num_terms": [
+          2,
+          6
+        ],
+        "num_digits": [
+          1,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "State the final answer to the following arithmetic problem: 7095 + 1834 + 1360 =",
+    "answer": "10289",
+    "metadata": {
+      "source_dataset": "chain_sum",
+      "source_index": 55,
+      "num_terms": 3,
+      "num_digits": 4,
+      "expression": "7095 + 1834 + 1360",
+      "difficulty": {
+        "num_terms": [
+          2,
+          6
+        ],
+        "num_digits": [
+          1,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "State the final answer to the following arithmetic problem: 5 - 6 + 0 - 7 =",
+    "answer": "-8",
+    "metadata": {
+      "source_dataset": "chain_sum",
+      "source_index": 56,
+      "num_terms": 4,
+      "num_digits": 1,
+      "expression": "5 - 6 + 0 - 7",
+      "difficulty": {
+        "num_terms": [
+          2,
+          6
+        ],
+        "num_digits": [
+          1,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "State the final answer to the following arithmetic problem: 4278 + 3929 - 4772 - 5070 + 3183 =",
+    "answer": "1548",
+    "metadata": {
+      "source_dataset": "chain_sum",
+      "source_index": 57,
+      "num_terms": 5,
+      "num_digits": 4,
+      "expression": "4278 + 3929 - 4772 - 5070 + 3183",
+      "difficulty": {
+        "num_terms": [
+          2,
+          6
+        ],
+        "num_digits": [
+          1,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "State the final answer to the following arithmetic problem: 8453 - 3863 - 7439 =",
+    "answer": "-2849",
+    "metadata": {
+      "source_dataset": "chain_sum",
+      "source_index": 58,
+      "num_terms": 3,
+      "num_digits": 4,
+      "expression": "8453 - 3863 - 7439",
+      "difficulty": {
+        "num_terms": [
+          2,
+          6
+        ],
+        "num_digits": [
+          1,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "State the final answer to the following arithmetic problem: 79 + 55 + 69 - 16 - 94 + 74 =",
+    "answer": "167",
+    "metadata": {
+      "source_dataset": "chain_sum",
+      "source_index": 59,
+      "num_terms": 6,
+      "num_digits": 2,
+      "expression": "79 + 55 + 69 - 16 - 94 + 74",
+      "difficulty": {
+        "num_terms": [
+          2,
+          6
+        ],
+        "num_digits": [
+          1,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "State the final answer to the following arithmetic problem: 273 + 667 - 829 =",
+    "answer": "111",
+    "metadata": {
+      "source_dataset": "chain_sum",
+      "source_index": 60,
+      "num_terms": 3,
+      "num_digits": 3,
+      "expression": "273 + 667 - 829",
+      "difficulty": {
+        "num_terms": [
+          2,
+          6
+        ],
+        "num_digits": [
+          1,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "State the final answer to the following arithmetic problem: 98 - 19 - 87 - 25 + 93 =",
+    "answer": "60",
+    "metadata": {
+      "source_dataset": "chain_sum",
+      "source_index": 61,
+      "num_terms": 5,
+      "num_digits": 2,
+      "expression": "98 - 19 - 87 - 25 + 93",
+      "difficulty": {
+        "num_terms": [
+          2,
+          6
+        ],
+        "num_digits": [
+          1,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "State the final answer to the following arithmetic problem: 39 - 60 =",
+    "answer": "-21",
+    "metadata": {
+      "source_dataset": "chain_sum",
+      "source_index": 62,
+      "num_terms": 2,
+      "num_digits": 2,
+      "expression": "39 - 60",
+      "difficulty": {
+        "num_terms": [
+          2,
+          6
+        ],
+        "num_digits": [
+          1,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "State the final answer to the following arithmetic problem: 694 - 909 - 211 + 102 - 419 + 636 =",
+    "answer": "-107",
+    "metadata": {
+      "source_dataset": "chain_sum",
+      "source_index": 63,
+      "num_terms": 6,
+      "num_digits": 3,
+      "expression": "694 - 909 - 211 + 102 - 419 + 636",
+      "difficulty": {
+        "num_terms": [
+          2,
+          6
+        ],
+        "num_digits": [
+          1,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "State the final answer to the following arithmetic problem: 8 + 8 + 7 - 0 - 4 =",
+    "answer": "19",
+    "metadata": {
+      "source_dataset": "chain_sum",
+      "source_index": 64,
+      "num_terms": 5,
+      "num_digits": 1,
+      "expression": "8 + 8 + 7 - 0 - 4",
+      "difficulty": {
+        "num_terms": [
+          2,
+          6
+        ],
+        "num_digits": [
+          1,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "State the final answer to the following arithmetic problem: 8905 - 6062 + 3257 =",
+    "answer": "6100",
+    "metadata": {
+      "source_dataset": "chain_sum",
+      "source_index": 65,
+      "num_terms": 3,
+      "num_digits": 4,
+      "expression": "8905 - 6062 + 3257",
+      "difficulty": {
+        "num_terms": [
+          2,
+          6
+        ],
+        "num_digits": [
+          1,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "State the final answer to the following arithmetic problem: 6 + 4 + 6 =",
+    "answer": "16",
+    "metadata": {
+      "source_dataset": "chain_sum",
+      "source_index": 66,
+      "num_terms": 3,
+      "num_digits": 1,
+      "expression": "6 + 4 + 6",
+      "difficulty": {
+        "num_terms": [
+          2,
+          6
+        ],
+        "num_digits": [
+          1,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "State the final answer to the following arithmetic problem: 68 + 67 + 80 - 17 =",
+    "answer": "198",
+    "metadata": {
+      "source_dataset": "chain_sum",
+      "source_index": 67,
+      "num_terms": 4,
+      "num_digits": 2,
+      "expression": "68 + 67 + 80 - 17",
+      "difficulty": {
+        "num_terms": [
+          2,
+          6
+        ],
+        "num_digits": [
+          1,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "State the final answer to the following arithmetic problem: 62 + 71 - 45 - 91 + 79 =",
+    "answer": "76",
+    "metadata": {
+      "source_dataset": "chain_sum",
+      "source_index": 68,
+      "num_terms": 5,
+      "num_digits": 2,
+      "expression": "62 + 71 - 45 - 91 + 79",
+      "difficulty": {
+        "num_terms": [
+          2,
+          6
+        ],
+        "num_digits": [
+          1,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "State the final answer to the following arithmetic problem: 605 - 298 + 507 =",
+    "answer": "814",
+    "metadata": {
+      "source_dataset": "chain_sum",
+      "source_index": 69,
+      "num_terms": 3,
+      "num_digits": 3,
+      "expression": "605 - 298 + 507",
+      "difficulty": {
+        "num_terms": [
+          2,
+          6
+        ],
+        "num_digits": [
+          1,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "State the final answer to the following arithmetic problem: 816 + 576 - 531 + 869 - 779 =",
+    "answer": "951",
+    "metadata": {
+      "source_dataset": "chain_sum",
+      "source_index": 70,
+      "num_terms": 5,
+      "num_digits": 3,
+      "expression": "816 + 576 - 531 + 869 - 779",
+      "difficulty": {
+        "num_terms": [
+          2,
+          6
+        ],
+        "num_digits": [
+          1,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "State the final answer to the following arithmetic problem: 118 - 589 =",
+    "answer": "-471",
+    "metadata": {
+      "source_dataset": "chain_sum",
+      "source_index": 71,
+      "num_terms": 2,
+      "num_digits": 3,
+      "expression": "118 - 589",
+      "difficulty": {
+        "num_terms": [
+          2,
+          6
+        ],
+        "num_digits": [
+          1,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "State the final answer to the following arithmetic problem: 5 + 3 + 9 =",
+    "answer": "17",
+    "metadata": {
+      "source_dataset": "chain_sum",
+      "source_index": 72,
+      "num_terms": 3,
+      "num_digits": 1,
+      "expression": "5 + 3 + 9",
+      "difficulty": {
+        "num_terms": [
+          2,
+          6
+        ],
+        "num_digits": [
+          1,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "State the final answer to the following arithmetic problem: 24 - 78 - 24 - 52 =",
+    "answer": "-130",
+    "metadata": {
+      "source_dataset": "chain_sum",
+      "source_index": 73,
+      "num_terms": 4,
+      "num_digits": 2,
+      "expression": "24 - 78 - 24 - 52",
+      "difficulty": {
+        "num_terms": [
+          2,
+          6
+        ],
+        "num_digits": [
+          1,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "State the final answer to the following arithmetic problem: 108 - 870 - 761 + 223 - 855 - 235 =",
+    "answer": "-2390",
+    "metadata": {
+      "source_dataset": "chain_sum",
+      "source_index": 74,
+      "num_terms": 6,
+      "num_digits": 3,
+      "expression": "108 - 870 - 761 + 223 - 855 - 235",
+      "difficulty": {
+        "num_terms": [
+          2,
+          6
+        ],
+        "num_digits": [
+          1,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "State the final answer to the following arithmetic problem: 31 + 36 - 61 =",
+    "answer": "6",
+    "metadata": {
+      "source_dataset": "chain_sum",
+      "source_index": 75,
+      "num_terms": 3,
+      "num_digits": 2,
+      "expression": "31 + 36 - 61",
+      "difficulty": {
+        "num_terms": [
+          2,
+          6
+        ],
+        "num_digits": [
+          1,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "State the final answer to the following arithmetic problem: 201 - 819 + 470 =",
+    "answer": "-148",
+    "metadata": {
+      "source_dataset": "chain_sum",
+      "source_index": 76,
+      "num_terms": 3,
+      "num_digits": 3,
+      "expression": "201 - 819 + 470",
+      "difficulty": {
+        "num_terms": [
+          2,
+          6
+        ],
+        "num_digits": [
+          1,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "State the final answer to the following arithmetic problem: 78 + 95 + 80 - 65 =",
+    "answer": "188",
+    "metadata": {
+      "source_dataset": "chain_sum",
+      "source_index": 77,
+      "num_terms": 4,
+      "num_digits": 2,
+      "expression": "78 + 95 + 80 - 65",
+      "difficulty": {
+        "num_terms": [
+          2,
+          6
+        ],
+        "num_digits": [
+          1,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "State the final answer to the following arithmetic problem: 34 - 91 + 85 + 95 - 69 - 21 =",
+    "answer": "33",
+    "metadata": {
+      "source_dataset": "chain_sum",
+      "source_index": 78,
+      "num_terms": 6,
+      "num_digits": 2,
+      "expression": "34 - 91 + 85 + 95 - 69 - 21",
+      "difficulty": {
+        "num_terms": [
+          2,
+          6
+        ],
+        "num_digits": [
+          1,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "State the final answer to the following arithmetic problem: 84 + 60 =",
+    "answer": "144",
+    "metadata": {
+      "source_dataset": "chain_sum",
+      "source_index": 79,
+      "num_terms": 2,
+      "num_digits": 2,
+      "expression": "84 + 60",
+      "difficulty": {
+        "num_terms": [
+          2,
+          6
+        ],
+        "num_digits": [
+          1,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "State the final answer to the following arithmetic problem: 86 + 48 + 19 - 56 - 38 + 68 =",
+    "answer": "127",
+    "metadata": {
+      "source_dataset": "chain_sum",
+      "source_index": 80,
+      "num_terms": 6,
+      "num_digits": 2,
+      "expression": "86 + 48 + 19 - 56 - 38 + 68",
+      "difficulty": {
+        "num_terms": [
+          2,
+          6
+        ],
+        "num_digits": [
+          1,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "State the final answer to the following arithmetic problem: 189 - 887 =",
+    "answer": "-698",
+    "metadata": {
+      "source_dataset": "chain_sum",
+      "source_index": 81,
+      "num_terms": 2,
+      "num_digits": 3,
+      "expression": "189 - 887",
+      "difficulty": {
+        "num_terms": [
+          2,
+          6
+        ],
+        "num_digits": [
+          1,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "State the final answer to the following arithmetic problem: 2 - 0 + 6 - 4 =",
+    "answer": "4",
+    "metadata": {
+      "source_dataset": "chain_sum",
+      "source_index": 82,
+      "num_terms": 4,
+      "num_digits": 1,
+      "expression": "2 - 0 + 6 - 4",
+      "difficulty": {
+        "num_terms": [
+          2,
+          6
+        ],
+        "num_digits": [
+          1,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "State the final answer to the following arithmetic problem: 86 + 48 - 82 =",
+    "answer": "52",
+    "metadata": {
+      "source_dataset": "chain_sum",
+      "source_index": 83,
+      "num_terms": 3,
+      "num_digits": 2,
+      "expression": "86 + 48 - 82",
+      "difficulty": {
+        "num_terms": [
+          2,
+          6
+        ],
+        "num_digits": [
+          1,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "State the final answer to the following arithmetic problem: 9 - 9 + 7 + 3 + 2 - 7 =",
+    "answer": "5",
+    "metadata": {
+      "source_dataset": "chain_sum",
+      "source_index": 84,
+      "num_terms": 6,
+      "num_digits": 1,
+      "expression": "9 - 9 + 7 + 3 + 2 - 7",
+      "difficulty": {
+        "num_terms": [
+          2,
+          6
+        ],
+        "num_digits": [
+          1,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "State the final answer to the following arithmetic problem: 0 - 0 =",
+    "answer": "0",
+    "metadata": {
+      "source_dataset": "chain_sum",
+      "source_index": 85,
+      "num_terms": 2,
+      "num_digits": 1,
+      "expression": "0 - 0",
+      "difficulty": {
+        "num_terms": [
+          2,
+          6
+        ],
+        "num_digits": [
+          1,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "State the final answer to the following arithmetic problem: 9380 - 6963 + 3196 =",
+    "answer": "5613",
+    "metadata": {
+      "source_dataset": "chain_sum",
+      "source_index": 86,
+      "num_terms": 3,
+      "num_digits": 4,
+      "expression": "9380 - 6963 + 3196",
+      "difficulty": {
+        "num_terms": [
+          2,
+          6
+        ],
+        "num_digits": [
+          1,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "State the final answer to the following arithmetic problem: 147 + 811 + 508 + 746 + 330 - 437 =",
+    "answer": "2105",
+    "metadata": {
+      "source_dataset": "chain_sum",
+      "source_index": 87,
+      "num_terms": 6,
+      "num_digits": 3,
+      "expression": "147 + 811 + 508 + 746 + 330 - 437",
+      "difficulty": {
+        "num_terms": [
+          2,
+          6
+        ],
+        "num_digits": [
+          1,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "State the final answer to the following arithmetic problem: 5478 - 8211 + 8518 - 1359 + 6871 + 4932 =",
+    "answer": "16229",
+    "metadata": {
+      "source_dataset": "chain_sum",
+      "source_index": 88,
+      "num_terms": 6,
+      "num_digits": 4,
+      "expression": "5478 - 8211 + 8518 - 1359 + 6871 + 4932",
+      "difficulty": {
+        "num_terms": [
+          2,
+          6
+        ],
+        "num_digits": [
+          1,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "State the final answer to the following arithmetic problem: 888 - 620 + 189 - 502 =",
+    "answer": "-45",
+    "metadata": {
+      "source_dataset": "chain_sum",
+      "source_index": 89,
+      "num_terms": 4,
+      "num_digits": 3,
+      "expression": "888 - 620 + 189 - 502",
+      "difficulty": {
+        "num_terms": [
+          2,
+          6
+        ],
+        "num_digits": [
+          1,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "State the final answer to the following arithmetic problem: 62 + 17 + 31 + 15 - 49 =",
+    "answer": "76",
+    "metadata": {
+      "source_dataset": "chain_sum",
+      "source_index": 90,
+      "num_terms": 5,
+      "num_digits": 2,
+      "expression": "62 + 17 + 31 + 15 - 49",
+      "difficulty": {
+        "num_terms": [
+          2,
+          6
+        ],
+        "num_digits": [
+          1,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "State the final answer to the following arithmetic problem: 593 - 430 + 887 + 730 - 927 =",
+    "answer": "853",
+    "metadata": {
+      "source_dataset": "chain_sum",
+      "source_index": 91,
+      "num_terms": 5,
+      "num_digits": 3,
+      "expression": "593 - 430 + 887 + 730 - 927",
+      "difficulty": {
+        "num_terms": [
+          2,
+          6
+        ],
+        "num_digits": [
+          1,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "State the final answer to the following arithmetic problem: 81 - 91 + 26 - 13 + 93 =",
+    "answer": "96",
+    "metadata": {
+      "source_dataset": "chain_sum",
+      "source_index": 92,
+      "num_terms": 5,
+      "num_digits": 2,
+      "expression": "81 - 91 + 26 - 13 + 93",
+      "difficulty": {
+        "num_terms": [
+          2,
+          6
+        ],
+        "num_digits": [
+          1,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "State the final answer to the following arithmetic problem: 599 + 400 - 940 - 822 =",
+    "answer": "-763",
+    "metadata": {
+      "source_dataset": "chain_sum",
+      "source_index": 93,
+      "num_terms": 4,
+      "num_digits": 3,
+      "expression": "599 + 400 - 940 - 822",
+      "difficulty": {
+        "num_terms": [
+          2,
+          6
+        ],
+        "num_digits": [
+          1,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "State the final answer to the following arithmetic problem: 9652 + 1994 + 8096 - 9112 + 4303 + 7925 =",
+    "answer": "22858",
+    "metadata": {
+      "source_dataset": "chain_sum",
+      "source_index": 94,
+      "num_terms": 6,
+      "num_digits": 4,
+      "expression": "9652 + 1994 + 8096 - 9112 + 4303 + 7925",
+      "difficulty": {
+        "num_terms": [
+          2,
+          6
+        ],
+        "num_digits": [
+          1,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "State the final answer to the following arithmetic problem: 62 + 51 =",
+    "answer": "113",
+    "metadata": {
+      "source_dataset": "chain_sum",
+      "source_index": 95,
+      "num_terms": 2,
+      "num_digits": 2,
+      "expression": "62 + 51",
+      "difficulty": {
+        "num_terms": [
+          2,
+          6
+        ],
+        "num_digits": [
+          1,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "State the final answer to the following arithmetic problem: 8374 - 5939 + 4411 =",
+    "answer": "6846",
+    "metadata": {
+      "source_dataset": "chain_sum",
+      "source_index": 96,
+      "num_terms": 3,
+      "num_digits": 4,
+      "expression": "8374 - 5939 + 4411",
+      "difficulty": {
+        "num_terms": [
+          2,
+          6
+        ],
+        "num_digits": [
+          1,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "State the final answer to the following arithmetic problem: 866 + 660 =",
+    "answer": "1526",
+    "metadata": {
+      "source_dataset": "chain_sum",
+      "source_index": 97,
+      "num_terms": 2,
+      "num_digits": 3,
+      "expression": "866 + 660",
+      "difficulty": {
+        "num_terms": [
+          2,
+          6
+        ],
+        "num_digits": [
+          1,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "State the final answer to the following arithmetic problem: 4 + 0 =",
+    "answer": "4",
+    "metadata": {
+      "source_dataset": "chain_sum",
+      "source_index": 98,
+      "num_terms": 2,
+      "num_digits": 1,
+      "expression": "4 + 0",
+      "difficulty": {
+        "num_terms": [
+          2,
+          6
+        ],
+        "num_digits": [
+          1,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "State the final answer to the following arithmetic problem: 9 - 7 + 2 - 9 - 7 + 0 =",
+    "answer": "-12",
+    "metadata": {
+      "source_dataset": "chain_sum",
+      "source_index": 99,
+      "num_terms": 6,
+      "num_digits": 1,
+      "expression": "9 - 7 + 2 - 9 - 7 + 0",
+      "difficulty": {
+        "num_terms": [
+          2,
+          6
+        ],
+        "num_digits": [
+          1,
+          4
+        ]
+      }
+    }
+  }
+]

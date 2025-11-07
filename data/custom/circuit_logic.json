@@ -1,0 +1,4197 @@
+[
+  {
+    "question": "Below is a randomly generated logic circuit.\n\nA: ─────────────────┐\nB: ───────────────┐ │\nC: ─────────────┐ │ │\nD: ───────────┐ │ │ │\nE: ─────────┐ │ │ │ │\nF: ───────┐ │ │ │ │ │\nG: ─────┐ │ │ │ │ │ │\nH: ───┐ │ │ │ │ │ │ │\nI: ─┐ │ │ │ │ │ │ │ │\n    │ │ │ │ │ │ │ │ ├─>o─│&&\n    │ │ │ │ │ │ │ │ ├────│&&───┐\n    │ │ │ │ │ │ │ ├───>o─│&&   │\n    │ │ │ │ │ │ │ │ ├─>o─│&&   │\n    │ │ │ │ │ │ │ │ │          │\n    │ │ │ │ │ │ ├────────│&&   │\n    │ │ │ │ │ ├──────────│&&──┐│\n    │ │ │ │ │ └──────────│&&  ││\n    │ │ │ │ ├─────────>o─│&&  ││\n    │ │ │ │ │   │ │ │         │└───│++\n    │ │ │ │ │   ├─────>o─│&&  └────│++\n    │ │ │ └──────────────│&&───────│++─── OUT\n    │ │ │   │   │ │ └────│&&  ┌────│++\n    │ │ │   │   └────────│&&  │┌───│++\n    │ │ │   │     │           ││\n    │ │ └────────────────│⊕⊕  ││\n    │ │     ├─────────>o─│⊕⊕──┘│\n    │ ├──────────────────│⊕⊕   │\n    │ │     │     │            │\n    │ │     │     └───>o─│↑↑   │\n    │ │     └────────────│↑↑───┘\n    └────────────────────│↑↑\n      └──────────────────│↑↑\n\n\nLegend for gates:\n&&: AND\n↑↑: NAND\n⊕⊕: XOR\n>o: Negate\n++: OR\n\nGiven the following input assignments:\n  A = 1\n  B = 0\n  C = 1\n  D = 1\n  E = 0\n  F = 1\n  G = 0\n  H = 0\n  I = 0\n\nWhat is the final output?",
+    "answer": "1",
+    "metadata": {
+      "source_dataset": "circuit_logic",
+      "source_index": 8,
+      "expression": "(A'&A&B'&A')+(C&D&D&E')+(C'&F&A&C)+(G⊕E'⊕H)+(B'↑E↑I↑H)",
+      "assignments": {
+        "A": 1,
+        "B": 0,
+        "C": 1,
+        "D": 1,
+        "E": 0,
+        "F": 1,
+        "G": 0,
+        "H": 0,
+        "I": 0
+      },
+      "term_strings": [
+        "A'&A&B'&A'",
+        "C&D&D&E'",
+        "C'&F&A&C",
+        "G⊕E'⊕H",
+        "B'↑E↑I↑H"
+      ],
+      "final_gate": "OR",
+      "inputs": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H",
+        "I"
+      ],
+      "difficulty": {
+        "terms": [
+          3,
+          5
+        ],
+        "inputs": [
+          2,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "Below is a randomly generated logic circuit.\n\nA: ───────┐\nB: ─────┐ │\nC: ───┐ │ │\nD: ─┐ │ │ │\n    │ │ │ ├────│⊕⊕──┐\n    │ │ │ ├────│⊕⊕  │\n    │ │ │ │         │\n    │ │ │ ├────│↑↑  │\n    │ │ ├──────│↑↑─┐└──│⊕⊕\n    │ └────────│↑↑ └───│⊕⊕─── OUT\n    │   │ ├────│↑↑  ┌──│⊕⊕\n    │   │ │         │\n    │   │ └────│&&  │\n    │   └──────│&&──┘\n    └──────────│&&\n\n\nLegend for gates:\n&&: AND\n↑↑: NAND\n⊕⊕: XOR\n>o: Negate\n⊕⊕: XOR\n\nGiven the following input assignments:\n  A = 1\n  B = 0\n  C = 0\n  D = 0\n\nWhat is the final output?",
+    "answer": "1",
+    "metadata": {
+      "source_dataset": "circuit_logic",
+      "source_index": 3,
+      "expression": "(A⊕A)⊕(A↑B↑C↑A)⊕(A&B&D)",
+      "assignments": {
+        "A": 1,
+        "B": 0,
+        "C": 0,
+        "D": 0
+      },
+      "term_strings": [
+        "A⊕A",
+        "A↑B↑C↑A",
+        "A&B&D"
+      ],
+      "final_gate": "XOR",
+      "inputs": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "difficulty": {
+        "terms": [
+          3,
+          5
+        ],
+        "inputs": [
+          2,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "Below is a randomly generated logic circuit.\n\nA: ─────────┐\nB: ───────┐ │\nC: ─────┐ │ │\nD: ───┐ │ │ │\nE: ─┐ │ │ │ │\n    │ │ │ │ ├─>o─│&&\n    │ │ │ │ ├────│&&───┐\n    │ │ │ │ ├────│&&   │\n    │ │ │ │ │          │\n    │ │ │ │ ├────│↑↑   │\n    │ │ │ │ ├────│↑↑──┐│\n    │ │ │ │ ├────│↑↑  │└──│++\n    │ │ │ │ ├─>o─│↑↑  └───│++\n    │ │ │ │ │        ┌────│++─── OUT\n    │ │ │ │ ├─>o─│⊕⊕ │┌───│++\n    │ │ │ │ ├─>o─│⊕⊕─┘│\n    │ │ │ │ └────│⊕⊕  │\n    │ │ │ │           │\n    │ │ │ └──────│&&  │\n    │ │ └────────│&&──┘\n    │ └──────────│&&\n    └────────────│&&\n\n\nLegend for gates:\n&&: AND\n↑↑: NAND\n⊕⊕: XOR\n>o: Negate\n++: OR\n\nGiven the following input assignments:\n  A = 1\n  B = 1\n  C = 0\n  D = 0\n  E = 1\n\nWhat is the final output?",
+    "answer": "1",
+    "metadata": {
+      "source_dataset": "circuit_logic",
+      "source_index": 4,
+      "expression": "(A'&A&A)+(A↑A↑A↑A')+(A'⊕A'⊕A)+(B&C&D&E)",
+      "assignments": {
+        "A": 1,
+        "B": 1,
+        "C": 0,
+        "D": 0,
+        "E": 1
+      },
+      "term_strings": [
+        "A'&A&A",
+        "A↑A↑A↑A'",
+        "A'⊕A'⊕A",
+        "B&C&D&E"
+      ],
+      "final_gate": "OR",
+      "inputs": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+      ],
+      "difficulty": {
+        "terms": [
+          3,
+          5
+        ],
+        "inputs": [
+          2,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "Below is a randomly generated logic circuit.\n\nA: ─────┐\nB: ───┐ │\nC: ─┐ │ │\n    │ │ ├─>o─│↑↑\n    │ │ ├────│↑↑───┐\n    │ │ ├────│↑↑   │\n    │ │ │          │\n    │ │ ├─>o─│⊕⊕   │\n    │ ├──────│⊕⊕──┐│\n    │ ├───>o─│⊕⊕  │└──│&&\n    │ │ └────│⊕⊕  └───│&&\n    │ │          ┌────│&&─── OUT\n    │ ├───>o─│&& │┌───│&&\n    │ ├──────│&&─┘│\n    │ └──────│&&  │\n    │             │\n    ├────────│&&  │\n    ├────────│&&──┘\n    └────────│&&\n\n\nLegend for gates:\n&&: AND\n↑↑: NAND\n⊕⊕: XOR\n>o: Negate\n&&: AND\n\nGiven the following input assignments:\n  A = 1\n  B = 0\n  C = 1\n\nWhat is the final output?",
+    "answer": "0",
+    "metadata": {
+      "source_dataset": "circuit_logic",
+      "source_index": 2,
+      "expression": "(A'↑A↑A)&(A'⊕B⊕B'⊕A)&(B'&B&B)&(C&C&C)",
+      "assignments": {
+        "A": 1,
+        "B": 0,
+        "C": 1
+      },
+      "term_strings": [
+        "A'↑A↑A",
+        "A'⊕B⊕B'⊕A",
+        "B'&B&B",
+        "C&C&C"
+      ],
+      "final_gate": "AND",
+      "inputs": [
+        "A",
+        "B",
+        "C"
+      ],
+      "difficulty": {
+        "terms": [
+          3,
+          5
+        ],
+        "inputs": [
+          2,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "Below is a randomly generated logic circuit.\n\nA: ─────────┐\nB: ───────┐ │\nC: ─────┐ │ │\nD: ───┐ │ │ │\nE: ─┐ │ │ │ │\n    │ │ │ │ ├────│&&\n    │ │ │ ├──────│&&──┐\n    │ │ │ │ └─>o─│&&  │\n    │ │ └────────│&&  │\n    │ │   │           └──│&&\n    │ │   └──────│&&─────│&&─── OUT\n    │ ├──────────│&&  ┌──│&&\n    │ │               │\n    ├────────────│&&  │\n    │ └──────────│&&──┘\n    └────────────│&&\n\n\nLegend for gates:\n&&: AND\n↑↑: NAND\n⊕⊕: XOR\n>o: Negate\n&&: AND\n\nGiven the following input assignments:\n  A = 1\n  B = 0\n  C = 1\n  D = 1\n  E = 1\n\nWhat is the final output?",
+    "answer": "0",
+    "metadata": {
+      "source_dataset": "circuit_logic",
+      "source_index": 4,
+      "expression": "(A&B&A'&C)&(B&D)&(E&D&E)",
+      "assignments": {
+        "A": 1,
+        "B": 0,
+        "C": 1,
+        "D": 1,
+        "E": 1
+      },
+      "term_strings": [
+        "A&B&A'&C",
+        "B&D",
+        "E&D&E"
+      ],
+      "final_gate": "AND",
+      "inputs": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+      ],
+      "difficulty": {
+        "terms": [
+          3,
+          5
+        ],
+        "inputs": [
+          2,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "Below is a randomly generated logic circuit.\n\nA: ───────────────┐\nB: ─────────────┐ │\nC: ───────────┐ │ │\nD: ─────────┐ │ │ │\nE: ───────┐ │ │ │ │\nF: ─────┐ │ │ │ │ │\nG: ───┐ │ │ │ │ │ │\nH: ─┐ │ │ │ │ │ │ │\n    │ │ │ │ │ │ │ ├────│↑↑\n    │ │ │ │ │ │ │ ├────│↑↑───┐\n    │ │ │ │ │ │ │ └────│↑↑   │\n    │ │ │ │ │ │ ├───>o─│↑↑   │\n    │ │ │ │ │ │ │            │\n    │ │ │ │ │ ├────────│↑↑   │\n    │ │ │ │ └──────────│↑↑──┐└──│++\n    │ │ │ │   ├────────│↑↑  └───│++\n    │ │ │ │   ├────────│↑↑ ┌────│++─── OUT\n    │ │ │ │   │ │          │┌───│++\n    │ │ │ │   │ └───>o─│↑↑ ││\n    │ │ │ └────────────│↑↑─┘│\n    │ │ │     └─────>o─│↑↑  │\n    │ │ └──────────────│↑↑  │\n    │ │                     │\n    │ └────────────────│↑↑──┘\n    └──────────────────│↑↑\n\n\nLegend for gates:\n&&: AND\n↑↑: NAND\n⊕⊕: XOR\n>o: Negate\n++: OR\n\nGiven the following input assignments:\n  A = 0\n  B = 1\n  C = 0\n  D = 1\n  E = 1\n  F = 1\n  G = 0\n  H = 1\n\nWhat is the final output?",
+    "answer": "1",
+    "metadata": {
+      "source_dataset": "circuit_logic",
+      "source_index": 7,
+      "expression": "(A↑A↑A↑B')+(C↑D↑C↑C)+(B'↑E↑C'↑F)+(G↑H)",
+      "assignments": {
+        "A": 0,
+        "B": 1,
+        "C": 0,
+        "D": 1,
+        "E": 1,
+        "F": 1,
+        "G": 0,
+        "H": 1
+      },
+      "term_strings": [
+        "A↑A↑A↑B'",
+        "C↑D↑C↑C",
+        "B'↑E↑C'↑F",
+        "G↑H"
+      ],
+      "final_gate": "OR",
+      "inputs": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H"
+      ],
+      "difficulty": {
+        "terms": [
+          3,
+          5
+        ],
+        "inputs": [
+          2,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "Below is a randomly generated logic circuit.\n\nA: ─────────────┐\nB: ───────────┐ │\nC: ─────────┐ │ │\nD: ───────┐ │ │ │\nE: ─────┐ │ │ │ │\nF: ───┐ │ │ │ │ │\nG: ─┐ │ │ │ │ │ │\n    │ │ │ │ │ │ ├────│&&\n    │ │ │ │ │ │ ├────│&&───┐\n    │ │ │ │ │ │ ├────│&&   │\n    │ │ │ │ │ ├───>o─│&&   │\n    │ │ │ │ │ │ │          │\n    │ │ │ │ │ │ ├────│⊕⊕──┐│\n    │ │ │ │ │ ├───>o─│⊕⊕  ││\n    │ │ │ │ │ │ │         │└───│⊕⊕\n    │ │ │ │ │ │ └─>o─│↑↑  └────│⊕⊕\n    │ │ │ │ ├────────│↑↑───────│⊕⊕─── OUT\n    │ │ │ └───────>o─│↑↑  ┌────│⊕⊕\n    │ │ │   ├────────│↑↑  │┌───│⊕⊕\n    │ │ │   │ │           ││\n    │ │ └────────────│⊕⊕  ││\n    │ │     │ └──────│⊕⊕──┘│\n    │ └──────────────│⊕⊕   │\n    │       │              │\n    │       └────────│↑↑───┘\n    └────────────────│↑↑\n\n\nLegend for gates:\n&&: AND\n↑↑: NAND\n⊕⊕: XOR\n>o: Negate\n⊕⊕: XOR\n\nGiven the following input assignments:\n  A = 0\n  B = 0\n  C = 0\n  D = 1\n  E = 1\n  F = 1\n  G = 1\n\nWhat is the final output?",
+    "answer": "1",
+    "metadata": {
+      "source_dataset": "circuit_logic",
+      "source_index": 6,
+      "expression": "(A&A&A&B')⊕(A⊕B')⊕(A'↑C↑D'↑C)⊕(E⊕B⊕F)⊕(C↑G)",
+      "assignments": {
+        "A": 0,
+        "B": 0,
+        "C": 0,
+        "D": 1,
+        "E": 1,
+        "F": 1,
+        "G": 1
+      },
+      "term_strings": [
+        "A&A&A&B'",
+        "A⊕B'",
+        "A'↑C↑D'↑C",
+        "E⊕B⊕F",
+        "C↑G"
+      ],
+      "final_gate": "XOR",
+      "inputs": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G"
+      ],
+      "difficulty": {
+        "terms": [
+          3,
+          5
+        ],
+        "inputs": [
+          2,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "Below is a randomly generated logic circuit.\n\nA: ─────────┐\nB: ───────┐ │\nC: ─────┐ │ │\nD: ───┐ │ │ │\nE: ─┐ │ │ │ │\n    │ │ │ │ ├────│↑↑──┐\n    │ │ │ └──────│↑↑  │\n    │ │ │   │         │\n    │ │ └─────>o─│⊕⊕─┐└──│⊕⊕\n    │ │     └────│⊕⊕ └───│⊕⊕─── OUT\n    │ │               ┌──│⊕⊕\n    │ └──────────│⊕⊕──┘\n    └────────────│⊕⊕\n\n\nLegend for gates:\n&&: AND\n↑↑: NAND\n⊕⊕: XOR\n>o: Negate\n⊕⊕: XOR\n\nGiven the following input assignments:\n  A = 0\n  B = 0\n  C = 0\n  D = 1\n  E = 1\n\nWhat is the final output?",
+    "answer": "0",
+    "metadata": {
+      "source_dataset": "circuit_logic",
+      "source_index": 4,
+      "expression": "(A↑B)⊕(C'⊕A)⊕(D⊕E)",
+      "assignments": {
+        "A": 0,
+        "B": 0,
+        "C": 0,
+        "D": 1,
+        "E": 1
+      },
+      "term_strings": [
+        "A↑B",
+        "C'⊕A",
+        "D⊕E"
+      ],
+      "final_gate": "XOR",
+      "inputs": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+      ],
+      "difficulty": {
+        "terms": [
+          3,
+          5
+        ],
+        "inputs": [
+          2,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "Below is a randomly generated logic circuit.\n\nA: ───────────────┐\nB: ─────────────┐ │\nC: ───────────┐ │ │\nD: ─────────┐ │ │ │\nE: ───────┐ │ │ │ │\nF: ─────┐ │ │ │ │ │\nG: ───┐ │ │ │ │ │ │\nH: ─┐ │ │ │ │ │ │ │\n    │ │ │ │ │ │ │ └────│↑↑\n    │ │ │ │ │ │ ├──────│↑↑───┐\n    │ │ │ │ │ │ └───>o─│↑↑   │\n    │ │ │ │ │ ├────────│↑↑   │\n    │ │ │ │ │ │              │\n    │ │ │ │ └──────────│↑↑──┐└──│⊕⊕\n    │ │ │ │   ├────────│↑↑  └───│⊕⊕\n    │ │ │ │   │            ┌────│⊕⊕─── OUT\n    │ │ │ └────────────│⊕⊕ │┌───│⊕⊕\n    │ │ └──────────────│⊕⊕─┘│\n    │ └────────────────│⊕⊕  │\n    │         │             │\n    │         └─────>o─│⊕⊕  │\n    ├──────────────────│⊕⊕──┘\n    └───────────────>o─│⊕⊕\n\n\nLegend for gates:\n&&: AND\n↑↑: NAND\n⊕⊕: XOR\n>o: Negate\n⊕⊕: XOR\n\nGiven the following input assignments:\n  A = 1\n  B = 0\n  C = 1\n  D = 0\n  E = 0\n  F = 1\n  G = 0\n  H = 1\n\nWhat is the final output?",
+    "answer": "0",
+    "metadata": {
+      "source_dataset": "circuit_logic",
+      "source_index": 7,
+      "expression": "(A↑B↑B'↑C)⊕(D↑C)⊕(E⊕F⊕G)⊕(C'⊕H⊕H')",
+      "assignments": {
+        "A": 1,
+        "B": 0,
+        "C": 1,
+        "D": 0,
+        "E": 0,
+        "F": 1,
+        "G": 0,
+        "H": 1
+      },
+      "term_strings": [
+        "A↑B↑B'↑C",
+        "D↑C",
+        "E⊕F⊕G",
+        "C'⊕H⊕H'"
+      ],
+      "final_gate": "XOR",
+      "inputs": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H"
+      ],
+      "difficulty": {
+        "terms": [
+          3,
+          5
+        ],
+        "inputs": [
+          2,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "Below is a randomly generated logic circuit.\n\nA: ─────┐\nB: ───┐ │\nC: ─┐ │ │\n    │ │ ├────│&&──┐\n    │ │ ├────│&&  │\n    │ │ │         │\n    │ ├──────│↑↑  │\n    │ ├──────│↑↑─┐└──│↓↓\n    │ │ └────│↑↑ └───│↓↓─── OUT\n    │ ├───>o─│↑↑  ┌──│↓↓\n    │ │           │\n    │ └──────│⊕⊕──┘\n    └────────│⊕⊕\n\n\nLegend for gates:\n&&: AND\n↑↑: NAND\n⊕⊕: XOR\n>o: Negate\n↓↓: NOR\n\nGiven the following input assignments:\n  A = 0\n  B = 0\n  C = 1\n\nWhat is the final output?",
+    "answer": "0",
+    "metadata": {
+      "source_dataset": "circuit_logic",
+      "source_index": 2,
+      "expression": "(A&A)↓(B↑B↑A↑B')↓(B⊕C)",
+      "assignments": {
+        "A": 0,
+        "B": 0,
+        "C": 1
+      },
+      "term_strings": [
+        "A&A",
+        "B↑B↑A↑B'",
+        "B⊕C"
+      ],
+      "final_gate": "NOR",
+      "inputs": [
+        "A",
+        "B",
+        "C"
+      ],
+      "difficulty": {
+        "terms": [
+          3,
+          5
+        ],
+        "inputs": [
+          2,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "Below is a randomly generated logic circuit.\n\nA: ───────────────────┐\nB: ─────────────────┐ │\nC: ───────────────┐ │ │\nD: ─────────────┐ │ │ │\nE: ───────────┐ │ │ │ │\nF: ─────────┐ │ │ │ │ │\nG: ───────┐ │ │ │ │ │ │\nH: ─────┐ │ │ │ │ │ │ │\nI: ───┐ │ │ │ │ │ │ │ │\nJ: ─┐ │ │ │ │ │ │ │ │ │\n    │ │ │ │ │ │ │ │ │ ├────│⊕⊕\n    │ │ │ │ │ │ │ │ └──────│⊕⊕───┐\n    │ │ │ │ │ │ │ └─────>o─│⊕⊕   │\n    │ │ │ │ │ │ ├──────────│⊕⊕   │\n    │ │ │ │ │ │ │     │          │\n    │ │ │ │ │ │ │     ├─>o─│&&   │\n    │ │ │ │ │ │ │     └─>o─│&&──┐└──│++\n    │ │ │ │ │ │ └───────>o─│&&  └───│++\n    │ │ │ │ │ │                ┌────│++─── OUT\n    │ │ │ │ │ └────────────│↑↑ │┌───│++\n    │ │ │ │ └──────────────│↑↑─┘│\n    │ │ │ └────────────────│↑↑  │\n    │ │ │                       │\n    │ │ └──────────────────│⊕⊕  │\n    │ └─────────────────>o─│⊕⊕──┘\n    └──────────────────────│⊕⊕\n\n\nLegend for gates:\n&&: AND\n↑↑: NAND\n⊕⊕: XOR\n>o: Negate\n++: OR\n\nGiven the following input assignments:\n  A = 0\n  B = 1\n  C = 0\n  D = 1\n  E = 0\n  F = 1\n  G = 1\n  H = 0\n  I = 0\n  J = 0\n\nWhat is the final output?",
+    "answer": "1",
+    "metadata": {
+      "source_dataset": "circuit_logic",
+      "source_index": 9,
+      "expression": "(A⊕B⊕C'⊕D)+(A'&A'&D')+(E↑F↑G)+(H⊕I'⊕J)",
+      "assignments": {
+        "A": 0,
+        "B": 1,
+        "C": 0,
+        "D": 1,
+        "E": 0,
+        "F": 1,
+        "G": 1,
+        "H": 0,
+        "I": 0,
+        "J": 0
+      },
+      "term_strings": [
+        "A⊕B⊕C'⊕D",
+        "A'&A'&D'",
+        "E↑F↑G",
+        "H⊕I'⊕J"
+      ],
+      "final_gate": "OR",
+      "inputs": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H",
+        "I",
+        "J"
+      ],
+      "difficulty": {
+        "terms": [
+          3,
+          5
+        ],
+        "inputs": [
+          2,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "Below is a randomly generated logic circuit.\n\nA: ─────────────────┐\nB: ───────────────┐ │\nC: ─────────────┐ │ │\nD: ───────────┐ │ │ │\nE: ─────────┐ │ │ │ │\nF: ───────┐ │ │ │ │ │\nG: ─────┐ │ │ │ │ │ │\nH: ───┐ │ │ │ │ │ │ │\nI: ─┐ │ │ │ │ │ │ │ │\n    │ │ │ │ │ │ │ │ ├────│↑↑\n    │ │ │ │ │ │ │ └──────│↑↑───┐\n    │ │ │ │ │ │ └────────│↑↑   │\n    │ │ │ │ │ ├───────>o─│↑↑   │\n    │ │ │ │ │ │     │          │\n    │ │ │ │ └─────────>o─│&&   │\n    │ │ │ ├───────────>o─│&&──┐│\n    │ │ │ │   ├───────>o─│&&  │└───│↓↓\n    │ │ │ │   │     │         └────│↓↓\n    │ │ │ └──────────────│&&───────│↓↓─── OUT\n    │ │ └────────────────│&&  ┌────│↓↓\n    │ │       │     │         │┌───│↓↓\n    │ │       │     └────│&&  ││\n    │ ├──────────────────│&&──┘│\n    └────────────────────│&&   │\n      │       │                │\n      └───────────────>o─│&&───┘\n              └──────────│&&\n\n\nLegend for gates:\n&&: AND\n↑↑: NAND\n⊕⊕: XOR\n>o: Negate\n↓↓: NOR\n\nGiven the following input assignments:\n  A = 0\n  B = 0\n  C = 0\n  D = 0\n  E = 1\n  F = 1\n  G = 1\n  H = 1\n  I = 0\n\nWhat is the final output?",
+    "answer": "0",
+    "metadata": {
+      "source_dataset": "circuit_logic",
+      "source_index": 8,
+      "expression": "(A↑B↑C↑D')↓(E'&F'&D')↓(F&G)↓(A&H&I)↓(H'&D)",
+      "assignments": {
+        "A": 0,
+        "B": 0,
+        "C": 0,
+        "D": 0,
+        "E": 1,
+        "F": 1,
+        "G": 1,
+        "H": 1,
+        "I": 0
+      },
+      "term_strings": [
+        "A↑B↑C↑D'",
+        "E'&F'&D'",
+        "F&G",
+        "A&H&I",
+        "H'&D"
+      ],
+      "final_gate": "NOR",
+      "inputs": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H",
+        "I"
+      ],
+      "difficulty": {
+        "terms": [
+          3,
+          5
+        ],
+        "inputs": [
+          2,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "Below is a randomly generated logic circuit.\n\nA: ───────────┐\nB: ─────────┐ │\nC: ───────┐ │ │\nD: ─────┐ │ │ │\nE: ───┐ │ │ │ │\nF: ─┐ │ │ │ │ │\n    │ │ │ │ │ └────│⊕⊕\n    │ │ │ │ ├──────│⊕⊕──┐\n    │ │ │ │ ├──────│⊕⊕  │\n    │ │ │ │ │           │\n    │ │ │ │ └──────│&&  └──│&&\n    │ │ │ └────────│&&─────│&&─── OUT\n    │ │ ├──────────│&&  ┌──│&&\n    │ └─────────>o─│&&  │\n    │   │               │\n    └───────────>o─│&&──┘\n        └──────────│&&\n\n\nLegend for gates:\n&&: AND\n↑↑: NAND\n⊕⊕: XOR\n>o: Negate\n&&: AND\n\nGiven the following input assignments:\n  A = 0\n  B = 1\n  C = 0\n  D = 1\n  E = 1\n  F = 0\n\nWhat is the final output?",
+    "answer": "0",
+    "metadata": {
+      "source_dataset": "circuit_logic",
+      "source_index": 5,
+      "expression": "(A⊕B⊕B)&(B&C&D&E')&(F'&D)",
+      "assignments": {
+        "A": 0,
+        "B": 1,
+        "C": 0,
+        "D": 1,
+        "E": 1,
+        "F": 0
+      },
+      "term_strings": [
+        "A⊕B⊕B",
+        "B&C&D&E'",
+        "F'&D"
+      ],
+      "final_gate": "AND",
+      "inputs": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F"
+      ],
+      "difficulty": {
+        "terms": [
+          3,
+          5
+        ],
+        "inputs": [
+          2,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "Below is a randomly generated logic circuit.\n\nA: ───┐\nB: ─┐ │\n    │ ├────│&&\n    │ ├────│&&──┐\n    │ ├────│&&  │\n    │ ├────│&&  │\n    │ │         │\n    ├───>o─│↑↑  │\n    │ ├────│↑↑─┐└──│↓↓\n    ├──────│↑↑ └───│↓↓─── OUT\n    │ ├─>o─│↑↑  ┌──│↓↓\n    │ │         │\n    │ ├────│⊕⊕  │\n    ├──────│⊕⊕──┘\n    └──────│⊕⊕\n      └─>o─│⊕⊕\n\n\nLegend for gates:\n&&: AND\n↑↑: NAND\n⊕⊕: XOR\n>o: Negate\n↓↓: NOR\n\nGiven the following input assignments:\n  A = 0\n  B = 0\n\nWhat is the final output?",
+    "answer": "0",
+    "metadata": {
+      "source_dataset": "circuit_logic",
+      "source_index": 1,
+      "expression": "(A&A&A&A)↓(B'↑A↑B↑A')↓(A⊕B⊕B⊕A')",
+      "assignments": {
+        "A": 0,
+        "B": 0
+      },
+      "term_strings": [
+        "A&A&A&A",
+        "B'↑A↑B↑A'",
+        "A⊕B⊕B⊕A'"
+      ],
+      "final_gate": "NOR",
+      "inputs": [
+        "A",
+        "B"
+      ],
+      "difficulty": {
+        "terms": [
+          3,
+          5
+        ],
+        "inputs": [
+          2,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "Below is a randomly generated logic circuit.\n\nA: ─────────────────┐\nB: ───────────────┐ │\nC: ─────────────┐ │ │\nD: ───────────┐ │ │ │\nE: ─────────┐ │ │ │ │\nF: ───────┐ │ │ │ │ │\nG: ─────┐ │ │ │ │ │ │\nH: ───┐ │ │ │ │ │ │ │\nI: ─┐ │ │ │ │ │ │ │ │\n    │ │ │ │ │ │ │ │ ├────│↑↑\n    │ │ │ │ │ │ │ ├──────│↑↑───┐\n    │ │ │ │ │ │ │ │ ├─>o─│↑↑   │\n    │ │ │ │ │ │ ├────────│↑↑   │\n    │ │ │ │ │ │ │ │ │          │\n    │ │ │ │ │ │ └─────>o─│↑↑   │\n    │ │ │ │ │ └──────────│↑↑──┐│\n    │ │ │ │ │     │ ├────│↑↑  ││\n    │ │ │ │ │     ├───>o─│↑↑  │└───│++\n    │ │ │ │ │     │ │         └────│++\n    │ │ │ │ └────────────│⊕⊕───────│++─── OUT\n    │ │ │ └───────────>o─│⊕⊕  ┌────│++\n    │ │ │         │ │         │┌───│++\n    │ │ └────────────────│⊕⊕──┘│\n    │ │           └───>o─│⊕⊕   │\n    │ │             │          │\n    │ ├───────────────>o─│↑↑   │\n    └────────────────────│↑↑───┘\n      │             └────│↑↑\n      └──────────────────│↑↑\n\n\nLegend for gates:\n&&: AND\n↑↑: NAND\n⊕⊕: XOR\n>o: Negate\n++: OR\n\nGiven the following input assignments:\n  A = 1\n  B = 1\n  C = 1\n  D = 0\n  E = 1\n  F = 1\n  G = 0\n  H = 0\n  I = 0\n\nWhat is the final output?",
+    "answer": "1",
+    "metadata": {
+      "source_dataset": "circuit_logic",
+      "source_index": 8,
+      "expression": "(A↑B↑A'↑C)+(C'↑D↑A↑B')+(E⊕F')+(G⊕B')+(H'↑I↑A↑H)",
+      "assignments": {
+        "A": 1,
+        "B": 1,
+        "C": 1,
+        "D": 0,
+        "E": 1,
+        "F": 1,
+        "G": 0,
+        "H": 0,
+        "I": 0
+      },
+      "term_strings": [
+        "A↑B↑A'↑C",
+        "C'↑D↑A↑B'",
+        "E⊕F'",
+        "G⊕B'",
+        "H'↑I↑A↑H"
+      ],
+      "final_gate": "OR",
+      "inputs": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H",
+        "I"
+      ],
+      "difficulty": {
+        "terms": [
+          3,
+          5
+        ],
+        "inputs": [
+          2,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "Below is a randomly generated logic circuit.\n\nA: ───────────────┐\nB: ─────────────┐ │\nC: ───────────┐ │ │\nD: ─────────┐ │ │ │\nE: ───────┐ │ │ │ │\nF: ─────┐ │ │ │ │ │\nG: ───┐ │ │ │ │ │ │\nH: ─┐ │ │ │ │ │ │ │\n    │ │ │ │ │ │ │ ├─>o─│⊕⊕\n    │ │ │ │ │ │ ├──────│⊕⊕──┐\n    │ │ │ │ │ │ └──────│⊕⊕  │\n    │ │ │ │ │ └─────>o─│⊕⊕  │\n    │ │ │ │ │     │         │\n    │ │ │ │ └──────────│⊕⊕─┐└──│⊕⊕\n    │ │ │ │       └────│⊕⊕ └───│⊕⊕─── OUT\n    │ │ │ │                 ┌──│⊕⊕\n    │ │ │ └────────────│⊕⊕  │\n    │ │ └──────────────│⊕⊕──┘\n    │ └─────────────>o─│⊕⊕\n    └───────────────>o─│⊕⊕\n\n\nLegend for gates:\n&&: AND\n↑↑: NAND\n⊕⊕: XOR\n>o: Negate\n⊕⊕: XOR\n\nGiven the following input assignments:\n  A = 1\n  B = 0\n  C = 1\n  D = 1\n  E = 0\n  F = 0\n  G = 1\n  H = 1\n\nWhat is the final output?",
+    "answer": "0",
+    "metadata": {
+      "source_dataset": "circuit_logic",
+      "source_index": 7,
+      "expression": "(A'⊕B⊕B⊕C')⊕(D⊕A)⊕(E⊕F⊕G'⊕H')",
+      "assignments": {
+        "A": 1,
+        "B": 0,
+        "C": 1,
+        "D": 1,
+        "E": 0,
+        "F": 0,
+        "G": 1,
+        "H": 1
+      },
+      "term_strings": [
+        "A'⊕B⊕B⊕C'",
+        "D⊕A",
+        "E⊕F⊕G'⊕H'"
+      ],
+      "final_gate": "XOR",
+      "inputs": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H"
+      ],
+      "difficulty": {
+        "terms": [
+          3,
+          5
+        ],
+        "inputs": [
+          2,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "Below is a randomly generated logic circuit.\n\nA: ─────────────────┐\nB: ───────────────┐ │\nC: ─────────────┐ │ │\nD: ───────────┐ │ │ │\nE: ─────────┐ │ │ │ │\nF: ───────┐ │ │ │ │ │\nG: ─────┐ │ │ │ │ │ │\nH: ───┐ │ │ │ │ │ │ │\nI: ─┐ │ │ │ │ │ │ │ │\n    │ │ │ │ │ │ │ │ ├────│&&\n    │ │ │ │ │ │ │ ├───>o─│&&───┐\n    │ │ │ │ │ │ │ ├──────│&&   │\n    │ │ │ │ │ │ ├─────>o─│&&   │\n    │ │ │ │ │ │ │ │ │          │\n    │ │ │ │ │ │ ├─────>o─│↑↑   │\n    │ │ │ │ │ │ │ ├──────│↑↑──┐│\n    │ │ │ │ │ │ └────────│↑↑  ││\n    │ │ │ │ │ │   │ └────│↑↑  │└───│↓↓\n    │ │ │ │ │ │   │           └────│↓↓\n    │ │ │ │ │ │   ├──────│&& ┌─────│↓↓─── OUT\n    │ │ │ │ │ └──────────│&&─┘┌────│↓↓\n    │ │ │ │ └────────────│&&  │┌───│↓↓\n    │ │ │ │       │           ││\n    │ │ │ │       └───>o─│&&──┘│\n    │ │ │ └───────────>o─│&&   │\n    │ │ │                      │\n    │ │ ├────────────────│↑↑   │\n    │ └──────────────────│↑↑───┘\n    └────────────────────│↑↑\n        └─────────────>o─│↑↑\n\n\nLegend for gates:\n&&: AND\n↑↑: NAND\n⊕⊕: XOR\n>o: Negate\n↓↓: NOR\n\nGiven the following input assignments:\n  A = 1\n  B = 0\n  C = 1\n  D = 0\n  E = 0\n  F = 1\n  G = 0\n  H = 0\n  I = 0\n\nWhat is the final output?",
+    "answer": "0",
+    "metadata": {
+      "source_dataset": "circuit_logic",
+      "source_index": 8,
+      "expression": "(A&B'&B&C')↓(C'↑B↑C↑A)↓(B&D&E)↓(B'&F')↓(G↑H↑I↑G')",
+      "assignments": {
+        "A": 1,
+        "B": 0,
+        "C": 1,
+        "D": 0,
+        "E": 0,
+        "F": 1,
+        "G": 0,
+        "H": 0,
+        "I": 0
+      },
+      "term_strings": [
+        "A&B'&B&C'",
+        "C'↑B↑C↑A",
+        "B&D&E",
+        "B'&F'",
+        "G↑H↑I↑G'"
+      ],
+      "final_gate": "NOR",
+      "inputs": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H",
+        "I"
+      ],
+      "difficulty": {
+        "terms": [
+          3,
+          5
+        ],
+        "inputs": [
+          2,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "Below is a randomly generated logic circuit.\n\nA: ───────┐\nB: ─────┐ │\nC: ───┐ │ │\nD: ─┐ │ │ │\n    │ │ │ ├─>o─│⊕⊕\n    │ │ └──────│⊕⊕──┐\n    │ ├─────>o─│⊕⊕  │\n    │ │   │         │\n    │ ├─────>o─│↑↑  └──│++\n    │ └────────│↑↑─────│++─── OUT\n    └──────────│↑↑  ┌──│++\n          │         │\n          ├────│⊕⊕──┘\n          └─>o─│⊕⊕\n\n\nLegend for gates:\n&&: AND\n↑↑: NAND\n⊕⊕: XOR\n>o: Negate\n++: OR\n\nGiven the following input assignments:\n  A = 0\n  B = 0\n  C = 1\n  D = 1\n\nWhat is the final output?",
+    "answer": "1",
+    "metadata": {
+      "source_dataset": "circuit_logic",
+      "source_index": 3,
+      "expression": "(A'⊕B⊕C')+(C'↑C↑D)+(A⊕A')",
+      "assignments": {
+        "A": 0,
+        "B": 0,
+        "C": 1,
+        "D": 1
+      },
+      "term_strings": [
+        "A'⊕B⊕C'",
+        "C'↑C↑D",
+        "A⊕A'"
+      ],
+      "final_gate": "OR",
+      "inputs": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "difficulty": {
+        "terms": [
+          3,
+          5
+        ],
+        "inputs": [
+          2,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "Below is a randomly generated logic circuit.\n\nA: ─────────────┐\nB: ───────────┐ │\nC: ─────────┐ │ │\nD: ───────┐ │ │ │\nE: ─────┐ │ │ │ │\nF: ───┐ │ │ │ │ │\nG: ─┐ │ │ │ │ │ │\n    │ │ │ │ │ │ ├─>o─│⊕⊕───┐\n    │ │ │ │ │ └──────│⊕⊕   │\n    │ │ │ │ │   │          │\n    │ │ │ │ └────────│↑↑──┐│\n    │ │ │ └───────>o─│↑↑  │└──│⊕⊕\n    │ │ │       │         └───│⊕⊕\n    │ │ │       ├────│↑↑──────│⊕⊕─── OUT\n    │ │ ├─────────>o─│↑↑  ┌───│⊕⊕\n    │ │ │       │         │\n    │ └───────────>o─│⊕⊕  │\n    └────────────────│⊕⊕──┘\n        └─────────>o─│⊕⊕\n                └────│⊕⊕\n\n\nLegend for gates:\n&&: AND\n↑↑: NAND\n⊕⊕: XOR\n>o: Negate\n⊕⊕: XOR\n\nGiven the following input assignments:\n  A = 0\n  B = 1\n  C = 0\n  D = 1\n  E = 0\n  F = 0\n  G = 0\n\nWhat is the final output?",
+    "answer": "0",
+    "metadata": {
+      "source_dataset": "circuit_logic",
+      "source_index": 6,
+      "expression": "(A'⊕B)⊕(C↑D')⊕(A↑E')⊕(F'⊕G⊕E'⊕A)",
+      "assignments": {
+        "A": 0,
+        "B": 1,
+        "C": 0,
+        "D": 1,
+        "E": 0,
+        "F": 0,
+        "G": 0
+      },
+      "term_strings": [
+        "A'⊕B",
+        "C↑D'",
+        "A↑E'",
+        "F'⊕G⊕E'⊕A"
+      ],
+      "final_gate": "XOR",
+      "inputs": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G"
+      ],
+      "difficulty": {
+        "terms": [
+          3,
+          5
+        ],
+        "inputs": [
+          2,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "Below is a randomly generated logic circuit.\n\nA: ─────┐\nB: ───┐ │\nC: ─┐ │ │\n    │ │ ├────│⊕⊕───┐\n    │ │ ├────│⊕⊕   │\n    │ │ │          │\n    │ │ ├────│&&   │\n    │ │ ├────│&&──┐└──│↓↓\n    │ │ ├────│&&  └───│↓↓\n    │ │ │        ┌────│↓↓─── OUT\n    │ │ ├─>o─│↑↑─┘┌───│↓↓\n    │ │ └────│↑↑  │\n    │ │           │\n    │ └──────│↑↑  │\n    ├────────│↑↑──┘\n    └────────│↑↑\n\n\nLegend for gates:\n&&: AND\n↑↑: NAND\n⊕⊕: XOR\n>o: Negate\n↓↓: NOR\n\nGiven the following input assignments:\n  A = 1\n  B = 1\n  C = 0\n\nWhat is the final output?",
+    "answer": "0",
+    "metadata": {
+      "source_dataset": "circuit_logic",
+      "source_index": 2,
+      "expression": "(A⊕A)↓(A&A&A)↓(A'↑A)↓(B↑C↑C)",
+      "assignments": {
+        "A": 1,
+        "B": 1,
+        "C": 0
+      },
+      "term_strings": [
+        "A⊕A",
+        "A&A&A",
+        "A'↑A",
+        "B↑C↑C"
+      ],
+      "final_gate": "NOR",
+      "inputs": [
+        "A",
+        "B",
+        "C"
+      ],
+      "difficulty": {
+        "terms": [
+          3,
+          5
+        ],
+        "inputs": [
+          2,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "Below is a randomly generated logic circuit.\n\nA: ─────────┐\nB: ───────┐ │\nC: ─────┐ │ │\nD: ───┐ │ │ │\nE: ─┐ │ │ │ │\n    │ │ │ │ ├────│&&───┐\n    │ │ │ │ ├─>o─│&&   │\n    │ │ │ │ │          │\n    │ │ │ │ ├────│&&──┐│\n    │ │ │ │ ├─>o─│&&  ││\n    │ │ │ │ │         ││\n    │ │ │ │ ├────│↑↑  ││\n    │ │ │ ├──────│↑↑─┐│└───│↓↓\n    │ │ └────────│↑↑ │└────│↓↓\n    │ │   │ ├────│↑↑ └─────│↓↓─── OUT\n    │ │   │ │         ┌────│↓↓\n    │ │   │ ├────│↑↑  │┌───│↓↓\n    │ │   ├───>o─│↑↑──┘│\n    │ ├───────>o─│↑↑   │\n    │ │   │ │          │\n    │ │   └───>o─│⊕⊕   │\n    │ │     └────│⊕⊕───┘\n    │ └──────────│⊕⊕\n    └────────────│⊕⊕\n\n\nLegend for gates:\n&&: AND\n↑↑: NAND\n⊕⊕: XOR\n>o: Negate\n↓↓: NOR\n\nGiven the following input assignments:\n  A = 0\n  B = 1\n  C = 0\n  D = 1\n  E = 1\n\nWhat is the final output?",
+    "answer": "0",
+    "metadata": {
+      "source_dataset": "circuit_logic",
+      "source_index": 4,
+      "expression": "(A&A')↓(A&A')↓(A↑B↑C↑A)↓(A↑B'↑D')↓(B'⊕A⊕D⊕E)",
+      "assignments": {
+        "A": 0,
+        "B": 1,
+        "C": 0,
+        "D": 1,
+        "E": 1
+      },
+      "term_strings": [
+        "A&A'",
+        "A&A'",
+        "A↑B↑C↑A",
+        "A↑B'↑D'",
+        "B'⊕A⊕D⊕E"
+      ],
+      "final_gate": "NOR",
+      "inputs": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+      ],
+      "difficulty": {
+        "terms": [
+          3,
+          5
+        ],
+        "inputs": [
+          2,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "Below is a randomly generated logic circuit.\n\nA: ─────────┐\nB: ───────┐ │\nC: ─────┐ │ │\nD: ───┐ │ │ │\nE: ─┐ │ │ │ │\n    │ │ │ │ ├────│↑↑\n    │ │ │ │ ├─>o─│↑↑───┐\n    │ │ │ │ ├────│↑↑   │\n    │ │ │ │ │          │\n    │ │ │ ├───>o─│↑↑   │\n    │ │ ├────────│↑↑──┐│\n    │ │ │ ├──────│↑↑  │└──│&&\n    │ │ │ │ ├────│↑↑  └───│&&\n    │ │ │ │ │        ┌────│&&─── OUT\n    │ │ └────────│⊕⊕ │┌───│&&\n    │ │   ├──────│⊕⊕─┘│\n    │ │   │ └─>o─│⊕⊕  │\n    │ │   └──────│⊕⊕  │\n    │ │               │\n    │ └──────────│&&──┘\n    └────────────│&&\n\n\nLegend for gates:\n&&: AND\n↑↑: NAND\n⊕⊕: XOR\n>o: Negate\n&&: AND\n\nGiven the following input assignments:\n  A = 1\n  B = 1\n  C = 0\n  D = 1\n  E = 0\n\nWhat is the final output?",
+    "answer": "0",
+    "metadata": {
+      "source_dataset": "circuit_logic",
+      "source_index": 4,
+      "expression": "(A↑A'↑A)&(B'↑C↑B↑A)&(C⊕B⊕A'⊕B)&(D&E)",
+      "assignments": {
+        "A": 1,
+        "B": 1,
+        "C": 0,
+        "D": 1,
+        "E": 0
+      },
+      "term_strings": [
+        "A↑A'↑A",
+        "B'↑C↑B↑A",
+        "C⊕B⊕A'⊕B",
+        "D&E"
+      ],
+      "final_gate": "AND",
+      "inputs": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+      ],
+      "difficulty": {
+        "terms": [
+          3,
+          5
+        ],
+        "inputs": [
+          2,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "Below is a randomly generated logic circuit.\n\nA: ─────────────┐\nB: ───────────┐ │\nC: ─────────┐ │ │\nD: ───────┐ │ │ │\nE: ─────┐ │ │ │ │\nF: ───┐ │ │ │ │ │\nG: ─┐ │ │ │ │ │ │\n    │ │ │ │ │ │ ├────│⊕⊕\n    │ │ │ │ │ ├───>o─│⊕⊕───┐\n    │ │ │ │ ├────────│⊕⊕   │\n    │ │ │ ├──────────│⊕⊕   │\n    │ │ │ │ │ │ │          │\n    │ │ ├────────────│&&   │\n    │ │ │ ├──────────│&&──┐└──│++\n    │ └───────────>o─│&&  └───│++\n    └─────────────>o─│&& ┌────│++─── OUT\n        │ │ │ │ │        │┌───│++\n        │ │ │ │ └────│&&─┘│\n        └─────────>o─│&&  │\n          │ │ │           │\n          │ │ └───>o─│&&  │\n          └──────────│&&──┘\n            └────────│&&\n\n\nLegend for gates:\n&&: AND\n↑↑: NAND\n⊕⊕: XOR\n>o: Negate\n++: OR\n\nGiven the following input assignments:\n  A = 0\n  B = 0\n  C = 0\n  D = 0\n  E = 1\n  F = 0\n  G = 0\n\nWhat is the final output?",
+    "answer": "1",
+    "metadata": {
+      "source_dataset": "circuit_logic",
+      "source_index": 6,
+      "expression": "(A⊕B'⊕C⊕D)+(E&D&F'&G')+(A&E')+(B'&D&C)",
+      "assignments": {
+        "A": 0,
+        "B": 0,
+        "C": 0,
+        "D": 0,
+        "E": 1,
+        "F": 0,
+        "G": 0
+      },
+      "term_strings": [
+        "A⊕B'⊕C⊕D",
+        "E&D&F'&G'",
+        "A&E'",
+        "B'&D&C"
+      ],
+      "final_gate": "OR",
+      "inputs": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G"
+      ],
+      "difficulty": {
+        "terms": [
+          3,
+          5
+        ],
+        "inputs": [
+          2,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "Below is a randomly generated logic circuit.\n\nA: ─────────┐\nB: ───────┐ │\nC: ─────┐ │ │\nD: ───┐ │ │ │\nE: ─┐ │ │ │ │\n    │ │ │ │ ├────│↑↑\n    │ │ │ │ ├────│↑↑───┐\n    │ │ │ │ ├────│↑↑   │\n    │ │ │ │ ├─>o─│↑↑   │\n    │ │ │ │ │          │\n    │ │ │ ├───>o─│⊕⊕   │\n    │ │ │ │ └────│⊕⊕──┐└──│⊕⊕\n    │ │ └─────>o─│⊕⊕  └───│⊕⊕\n    │ │   │          ┌────│⊕⊕─── OUT\n    │ └──────────│↑↑ │┌───│⊕⊕\n    │     ├──────│↑↑─┘│\n    │     ├──────│↑↑  │\n    │     │           │\n    ├────────────│↑↑  │\n    │     └──────│↑↑──┘\n    └─────────>o─│↑↑\n\n\nLegend for gates:\n&&: AND\n↑↑: NAND\n⊕⊕: XOR\n>o: Negate\n⊕⊕: XOR\n\nGiven the following input assignments:\n  A = 0\n  B = 1\n  C = 1\n  D = 0\n  E = 1\n\nWhat is the final output?",
+    "answer": "1",
+    "metadata": {
+      "source_dataset": "circuit_logic",
+      "source_index": 4,
+      "expression": "(A↑A↑A↑A')⊕(B'⊕A⊕C')⊕(D↑B↑B)⊕(E↑B↑E')",
+      "assignments": {
+        "A": 0,
+        "B": 1,
+        "C": 1,
+        "D": 0,
+        "E": 1
+      },
+      "term_strings": [
+        "A↑A↑A↑A'",
+        "B'⊕A⊕C'",
+        "D↑B↑B",
+        "E↑B↑E'"
+      ],
+      "final_gate": "XOR",
+      "inputs": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+      ],
+      "difficulty": {
+        "terms": [
+          3,
+          5
+        ],
+        "inputs": [
+          2,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "Below is a randomly generated logic circuit.\n\nA: ───┐\nB: ─┐ │\n    │ ├────│↑↑──┐\n    │ ├────│↑↑  │\n    │ │         │\n    │ ├────│↑↑─┐└──│⊕⊕\n    ├──────│↑↑ └───│⊕⊕─── OUT\n    │ │         ┌──│⊕⊕\n    └──────│⊕⊕──┘\n      └────│⊕⊕\n\n\nLegend for gates:\n&&: AND\n↑↑: NAND\n⊕⊕: XOR\n>o: Negate\n⊕⊕: XOR\n\nGiven the following input assignments:\n  A = 0\n  B = 1\n\nWhat is the final output?",
+    "answer": "1",
+    "metadata": {
+      "source_dataset": "circuit_logic",
+      "source_index": 1,
+      "expression": "(A↑A)⊕(A↑B)⊕(B⊕A)",
+      "assignments": {
+        "A": 0,
+        "B": 1
+      },
+      "term_strings": [
+        "A↑A",
+        "A↑B",
+        "B⊕A"
+      ],
+      "final_gate": "XOR",
+      "inputs": [
+        "A",
+        "B"
+      ],
+      "difficulty": {
+        "terms": [
+          3,
+          5
+        ],
+        "inputs": [
+          2,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "Below is a randomly generated logic circuit.\n\nA: ───────────────┐\nB: ─────────────┐ │\nC: ───────────┐ │ │\nD: ─────────┐ │ │ │\nE: ───────┐ │ │ │ │\nF: ─────┐ │ │ │ │ │\nG: ───┐ │ │ │ │ │ │\nH: ─┐ │ │ │ │ │ │ │\n    │ │ │ │ │ │ │ ├────│↑↑\n    │ │ │ │ │ │ ├──────│↑↑──┐\n    │ │ │ │ │ └────────│↑↑  │\n    │ │ │ │ │   │ │         │\n    │ │ │ │ │   │ ├─>o─│&&  │\n    │ │ │ │ │   │ └─>o─│&&─┐└──│++\n    │ │ │ │ │   └───>o─│&& └───│++─── OUT\n    │ │ │ │ └──────────│&&  ┌──│++\n    │ │ │ │                 │\n    │ │ │ └────────────│↑↑  │\n    │ │ └──────────────│↑↑──┘\n    │ └────────────────│↑↑\n    └──────────────────│↑↑\n\n\nLegend for gates:\n&&: AND\n↑↑: NAND\n⊕⊕: XOR\n>o: Negate\n++: OR\n\nGiven the following input assignments:\n  A = 0\n  B = 1\n  C = 0\n  D = 1\n  E = 0\n  F = 1\n  G = 0\n  H = 1\n\nWhat is the final output?",
+    "answer": "1",
+    "metadata": {
+      "source_dataset": "circuit_logic",
+      "source_index": 7,
+      "expression": "(A↑B↑C)+(A'&A'&B'&D)+(E↑F↑G↑H)",
+      "assignments": {
+        "A": 0,
+        "B": 1,
+        "C": 0,
+        "D": 1,
+        "E": 0,
+        "F": 1,
+        "G": 0,
+        "H": 1
+      },
+      "term_strings": [
+        "A↑B↑C",
+        "A'&A'&B'&D",
+        "E↑F↑G↑H"
+      ],
+      "final_gate": "OR",
+      "inputs": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H"
+      ],
+      "difficulty": {
+        "terms": [
+          3,
+          5
+        ],
+        "inputs": [
+          2,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "Below is a randomly generated logic circuit.\n\nA: ─────────────────────┐\nB: ───────────────────┐ │\nC: ─────────────────┐ │ │\nD: ───────────────┐ │ │ │\nE: ─────────────┐ │ │ │ │\nF: ───────────┐ │ │ │ │ │\nG: ─────────┐ │ │ │ │ │ │\nH: ───────┐ │ │ │ │ │ │ │\nI: ─────┐ │ │ │ │ │ │ │ │\nJ: ───┐ │ │ │ │ │ │ │ │ │\nK: ─┐ │ │ │ │ │ │ │ │ │ │\n    │ │ │ │ │ │ │ │ │ │ └────│⊕⊕\n    │ │ │ │ │ │ │ │ │ ├──────│⊕⊕───┐\n    │ │ │ │ │ │ │ │ │ └───>o─│⊕⊕   │\n    │ │ │ │ │ │ │ │ ├────────│⊕⊕   │\n    │ │ │ │ │ │ │ │ │              │\n    │ │ │ │ │ │ │ │ └────────│⊕⊕   │\n    │ │ │ │ │ │ │ └───────>o─│⊕⊕──┐│\n    │ │ │ │ │ │ ├─────────>o─│⊕⊕  │└───│&&\n    │ │ │ │ │ │ │                 └────│&&\n    │ │ │ │ │ │ └─────────>o─│↑↑───────│&&─── OUT\n    │ │ │ │ │ └───────────>o─│↑↑  ┌────│&&\n    │ │ │ │ │                     │┌───│&&\n    │ │ │ │ └────────────────│↑↑  ││\n    │ │ │ └──────────────────│↑↑──┘│\n    │ │ └────────────────────│↑↑   │\n    │ │                            │\n    │ └──────────────────────│⊕⊕───┘\n    └─────────────────────>o─│⊕⊕\n\n\nLegend for gates:\n&&: AND\n↑↑: NAND\n⊕⊕: XOR\n>o: Negate\n&&: AND\n\nGiven the following input assignments:\n  A = 1\n  B = 1\n  C = 1\n  D = 0\n  E = 0\n  F = 1\n  G = 1\n  H = 1\n  I = 1\n  J = 0\n  K = 1\n\nWhat is the final output?",
+    "answer": "0",
+    "metadata": {
+      "source_dataset": "circuit_logic",
+      "source_index": 10,
+      "expression": "(A⊕B⊕B'⊕C)&(C⊕D'⊕E')&(E'↑F')&(G↑H↑I)&(J⊕K')",
+      "assignments": {
+        "A": 1,
+        "B": 1,
+        "C": 1,
+        "D": 0,
+        "E": 0,
+        "F": 1,
+        "G": 1,
+        "H": 1,
+        "I": 1,
+        "J": 0,
+        "K": 1
+      },
+      "term_strings": [
+        "A⊕B⊕B'⊕C",
+        "C⊕D'⊕E'",
+        "E'↑F'",
+        "G↑H↑I",
+        "J⊕K'"
+      ],
+      "final_gate": "AND",
+      "inputs": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H",
+        "I",
+        "J",
+        "K"
+      ],
+      "difficulty": {
+        "terms": [
+          3,
+          5
+        ],
+        "inputs": [
+          2,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "Below is a randomly generated logic circuit.\n\nA: ───────────┐\nB: ─────────┐ │\nC: ───────┐ │ │\nD: ─────┐ │ │ │\nE: ───┐ │ │ │ │\nF: ─┐ │ │ │ │ │\n    │ │ │ │ │ ├─>o─│&&───┐\n    │ │ │ │ │ ├────│&&   │\n    │ │ │ │ │ │          │\n    │ │ │ │ │ ├────│↑↑   │\n    │ │ │ │ └───>o─│↑↑──┐│\n    │ │ │ └─────>o─│↑↑  ││\n    │ │ │     ├─>o─│↑↑  │└───│++\n    │ │ │     │         └────│++\n    │ │ └──────────│↑↑───────│++─── OUT\n    │ ├────────────│↑↑  ┌────│++\n    │ │       │         │┌───│++\n    │ ├────────────│&&──┘│\n    │ └────────────│&&   │\n    │         │          │\n    │         └─>o─│&&───┘\n    └───────────>o─│&&\n\n\nLegend for gates:\n&&: AND\n↑↑: NAND\n⊕⊕: XOR\n>o: Negate\n++: OR\n\nGiven the following input assignments:\n  A = 1\n  B = 0\n  C = 1\n  D = 1\n  E = 1\n  F = 0\n\nWhat is the final output?",
+    "answer": "1",
+    "metadata": {
+      "source_dataset": "circuit_logic",
+      "source_index": 5,
+      "expression": "(A'&A)+(A↑B'↑C'↑A')+(D↑E)+(E&E)+(A'&F')",
+      "assignments": {
+        "A": 1,
+        "B": 0,
+        "C": 1,
+        "D": 1,
+        "E": 1,
+        "F": 0
+      },
+      "term_strings": [
+        "A'&A",
+        "A↑B'↑C'↑A'",
+        "D↑E",
+        "E&E",
+        "A'&F'"
+      ],
+      "final_gate": "OR",
+      "inputs": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F"
+      ],
+      "difficulty": {
+        "terms": [
+          3,
+          5
+        ],
+        "inputs": [
+          2,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "Below is a randomly generated logic circuit.\n\nA: ─────────┐\nB: ───────┐ │\nC: ─────┐ │ │\nD: ───┐ │ │ │\nE: ─┐ │ │ │ │\n    │ │ │ │ ├────│⊕⊕\n    │ │ │ │ └─>o─│⊕⊕──┐\n    │ │ │ ├──────│⊕⊕  │\n    │ │ │ │           │\n    │ │ │ └───>o─│⊕⊕  └──│⊕⊕\n    │ │ ├────────│⊕⊕─────│⊕⊕─── OUT\n    │ ├──────────│⊕⊕  ┌──│⊕⊕\n    └────────────│⊕⊕  │\n      │ │             │\n      │ └────────│&&──┘\n      └──────────│&&\n\n\nLegend for gates:\n&&: AND\n↑↑: NAND\n⊕⊕: XOR\n>o: Negate\n⊕⊕: XOR\n\nGiven the following input assignments:\n  A = 0\n  B = 1\n  C = 0\n  D = 0\n  E = 1\n\nWhat is the final output?",
+    "answer": "1",
+    "metadata": {
+      "source_dataset": "circuit_logic",
+      "source_index": 4,
+      "expression": "(A⊕A'⊕B)⊕(B'⊕C⊕D⊕E)⊕(C&D)",
+      "assignments": {
+        "A": 0,
+        "B": 1,
+        "C": 0,
+        "D": 0,
+        "E": 1
+      },
+      "term_strings": [
+        "A⊕A'⊕B",
+        "B'⊕C⊕D⊕E",
+        "C&D"
+      ],
+      "final_gate": "XOR",
+      "inputs": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+      ],
+      "difficulty": {
+        "terms": [
+          3,
+          5
+        ],
+        "inputs": [
+          2,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "Below is a randomly generated logic circuit.\n\nA: ─────────┐\nB: ───────┐ │\nC: ─────┐ │ │\nD: ───┐ │ │ │\nE: ─┐ │ │ │ │\n    │ │ │ │ ├────│↑↑───┐\n    │ │ │ ├───>o─│↑↑   │\n    │ │ │ │ │          │\n    │ │ │ │ └────│&&   │\n    │ │ └────────│&&──┐│\n    │ ├──────────│&&  │└──│++\n    │ │   ├───>o─│&&  └───│++\n    │ │   │          ┌────│++─── OUT\n    │ │   ├──────│⊕⊕─┘┌───│++\n    │ ├──────────│⊕⊕  │\n    │ │   │           │\n    │ │   └───>o─│&&  │\n    ├────────────│&&──┘\n    └─────────>o─│&&\n      └───────>o─│&&\n\n\nLegend for gates:\n&&: AND\n↑↑: NAND\n⊕⊕: XOR\n>o: Negate\n++: OR\n\nGiven the following input assignments:\n  A = 0\n  B = 0\n  C = 0\n  D = 1\n  E = 0\n\nWhat is the final output?",
+    "answer": "1",
+    "metadata": {
+      "source_dataset": "circuit_logic",
+      "source_index": 4,
+      "expression": "(A↑B')+(A&C&D&B')+(B⊕D)+(B'&E&E'&D')",
+      "assignments": {
+        "A": 0,
+        "B": 0,
+        "C": 0,
+        "D": 1,
+        "E": 0
+      },
+      "term_strings": [
+        "A↑B'",
+        "A&C&D&B'",
+        "B⊕D",
+        "B'&E&E'&D'"
+      ],
+      "final_gate": "OR",
+      "inputs": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+      ],
+      "difficulty": {
+        "terms": [
+          3,
+          5
+        ],
+        "inputs": [
+          2,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "Below is a randomly generated logic circuit.\n\nA: ───────┐\nB: ─────┐ │\nC: ───┐ │ │\nD: ─┐ │ │ │\n    │ │ │ ├────│↑↑\n    │ │ │ ├────│↑↑──┐\n    │ │ ├──────│↑↑  │\n    │ │ │ ├────│↑↑  │\n    │ │ │ │         │\n    │ └────────│&&  └──│↓↓\n    └───────>o─│&&─────│↓↓─── OUT\n        │ └────│&&  ┌──│↓↓\n        │           │\n        ├──────│↑↑  │\n        ├──────│↑↑──┘\n        └──────│↑↑\n\n\nLegend for gates:\n&&: AND\n↑↑: NAND\n⊕⊕: XOR\n>o: Negate\n↓↓: NOR\n\nGiven the following input assignments:\n  A = 1\n  B = 1\n  C = 0\n  D = 1\n\nWhat is the final output?",
+    "answer": "1",
+    "metadata": {
+      "source_dataset": "circuit_logic",
+      "source_index": 3,
+      "expression": "(A↑A↑B↑A)↓(C&D'&A)↓(B↑B↑B)",
+      "assignments": {
+        "A": 1,
+        "B": 1,
+        "C": 0,
+        "D": 1
+      },
+      "term_strings": [
+        "A↑A↑B↑A",
+        "C&D'&A",
+        "B↑B↑B"
+      ],
+      "final_gate": "NOR",
+      "inputs": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "difficulty": {
+        "terms": [
+          3,
+          5
+        ],
+        "inputs": [
+          2,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "Below is a randomly generated logic circuit.\n\nA: ───────────┐\nB: ─────────┐ │\nC: ───────┐ │ │\nD: ─────┐ │ │ │\nE: ───┐ │ │ │ │\nF: ─┐ │ │ │ │ │\n    │ │ │ │ │ ├────│⊕⊕\n    │ │ │ │ │ ├────│⊕⊕───┐\n    │ │ │ │ └───>o─│⊕⊕   │\n    │ │ │ │   │          │\n    │ │ │ │   └────│&&──┐└──│++\n    │ │ │ ├────────│&&  └───│++\n    │ │ │ │            ┌────│++─── OUT\n    │ │ └──────────│↑↑─┘┌───│++\n    │ └─────────>o─│↑↑  │\n    │     │             │\n    │     └────────│⊕⊕──┘\n    └───────────>o─│⊕⊕\n\n\nLegend for gates:\n&&: AND\n↑↑: NAND\n⊕⊕: XOR\n>o: Negate\n++: OR\n\nGiven the following input assignments:\n  A = 0\n  B = 1\n  C = 1\n  D = 0\n  E = 0\n  F = 0\n\nWhat is the final output?",
+    "answer": "1",
+    "metadata": {
+      "source_dataset": "circuit_logic",
+      "source_index": 5,
+      "expression": "(A⊕A⊕B')+(A&C)+(D↑E')+(C⊕F')",
+      "assignments": {
+        "A": 0,
+        "B": 1,
+        "C": 1,
+        "D": 0,
+        "E": 0,
+        "F": 0
+      },
+      "term_strings": [
+        "A⊕A⊕B'",
+        "A&C",
+        "D↑E'",
+        "C⊕F'"
+      ],
+      "final_gate": "OR",
+      "inputs": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F"
+      ],
+      "difficulty": {
+        "terms": [
+          3,
+          5
+        ],
+        "inputs": [
+          2,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "Below is a randomly generated logic circuit.\n\nA: ───────┐\nB: ─────┐ │\nC: ───┐ │ │\nD: ─┐ │ │ │\n    │ │ │ ├────│↑↑───┐\n    │ │ │ ├────│↑↑   │\n    │ │ │ │          │\n    │ │ ├───>o─│↑↑   │\n    │ │ ├──────│↑↑──┐│\n    │ │ │ ├─>o─│↑↑  ││\n    │ │ │ │         ││\n    │ │ ├───>o─│&&  ││\n    │ │ ├───>o─│&&─┐│└───│++\n    │ └────────│&& │└────│++\n    │   │ │        └─────│++─── OUT\n    │   │ ├────│&&  ┌────│++\n    │   │ └─>o─│&&──┘┌───│++\n    ├──────────│&&   │\n    ├──────────│&&   │\n    │   │            │\n    │   ├──────│&&   │\n    ├──────────│&&───┘\n    │   └──────│&&\n    └───────>o─│&&\n\n\nLegend for gates:\n&&: AND\n↑↑: NAND\n⊕⊕: XOR\n>o: Negate\n++: OR\n\nGiven the following input assignments:\n  A = 0\n  B = 0\n  C = 1\n  D = 0\n\nWhat is the final output?",
+    "answer": "1",
+    "metadata": {
+      "source_dataset": "circuit_logic",
+      "source_index": 3,
+      "expression": "(A↑A)+(B'↑B↑A')+(B'&B'&C)+(A&A'&D&D)+(B&D&B&D')",
+      "assignments": {
+        "A": 0,
+        "B": 0,
+        "C": 1,
+        "D": 0
+      },
+      "term_strings": [
+        "A↑A",
+        "B'↑B↑A'",
+        "B'&B'&C",
+        "A&A'&D&D",
+        "B&D&B&D'"
+      ],
+      "final_gate": "OR",
+      "inputs": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "difficulty": {
+        "terms": [
+          3,
+          5
+        ],
+        "inputs": [
+          2,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "Below is a randomly generated logic circuit.\n\nA: ───────────────┐\nB: ─────────────┐ │\nC: ───────────┐ │ │\nD: ─────────┐ │ │ │\nE: ───────┐ │ │ │ │\nF: ─────┐ │ │ │ │ │\nG: ───┐ │ │ │ │ │ │\nH: ─┐ │ │ │ │ │ │ │\n    │ │ │ │ │ │ │ ├────│↑↑───┐\n    │ │ │ │ │ │ └──────│↑↑   │\n    │ │ │ │ │ │   │          │\n    │ │ │ │ │ ├────────│↑↑   │\n    │ │ │ │ ├───────>o─│↑↑──┐│\n    │ │ │ └────────────│↑↑  ││\n    │ │ ├───────────>o─│↑↑  │└──│&&\n    │ │ │   │ │   │         └───│&&\n    │ │ └──────────────│⊕⊕ ┌────│&&─── OUT\n    │ │     ├──────────│⊕⊕─┘┌───│&&\n    │ └────────────────│⊕⊕  │\n    └───────────────>o─│⊕⊕  │\n            │ │   │         │\n            │ └────────│&&  │\n            │     └─>o─│&&──┘\n            └───────>o─│&&\n\n\nLegend for gates:\n&&: AND\n↑↑: NAND\n⊕⊕: XOR\n>o: Negate\n&&: AND\n\nGiven the following input assignments:\n  A = 1\n  B = 0\n  C = 1\n  D = 1\n  E = 0\n  F = 1\n  G = 1\n  H = 1\n\nWhat is the final output?",
+    "answer": "0",
+    "metadata": {
+      "source_dataset": "circuit_logic",
+      "source_index": 7,
+      "expression": "(A↑B)&(C↑D'↑E↑F')&(F⊕D⊕G⊕H')&(C&A'&D')",
+      "assignments": {
+        "A": 1,
+        "B": 0,
+        "C": 1,
+        "D": 1,
+        "E": 0,
+        "F": 1,
+        "G": 1,
+        "H": 1
+      },
+      "term_strings": [
+        "A↑B",
+        "C↑D'↑E↑F'",
+        "F⊕D⊕G⊕H'",
+        "C&A'&D'"
+      ],
+      "final_gate": "AND",
+      "inputs": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H"
+      ],
+      "difficulty": {
+        "terms": [
+          3,
+          5
+        ],
+        "inputs": [
+          2,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "Below is a randomly generated logic circuit.\n\nA: ─────┐\nB: ───┐ │\nC: ─┐ │ │\n    │ │ ├────│↑↑───┐\n    │ │ ├─>o─│↑↑   │\n    │ │ │          │\n    │ │ ├────│↑↑   │\n    │ │ ├─>o─│↑↑──┐│\n    │ │ ├────│↑↑  │└──│&&\n    │ │ │         └───│&&\n    │ │ ├────│↑↑ ┌────│&&─── OUT\n    │ └───>o─│↑↑─┘┌───│&&\n    │   ├────│↑↑  │\n    │   ├────│↑↑  │\n    │   │         │\n    │   └────│⊕⊕──┘\n    └────────│⊕⊕\n\n\nLegend for gates:\n&&: AND\n↑↑: NAND\n⊕⊕: XOR\n>o: Negate\n&&: AND\n\nGiven the following input assignments:\n  A = 1\n  B = 1\n  C = 1\n\nWhat is the final output?",
+    "answer": "0",
+    "metadata": {
+      "source_dataset": "circuit_logic",
+      "source_index": 2,
+      "expression": "(A↑A')&(A↑A'↑A)&(A↑B'↑A↑A)&(A⊕C)",
+      "assignments": {
+        "A": 1,
+        "B": 1,
+        "C": 1
+      },
+      "term_strings": [
+        "A↑A'",
+        "A↑A'↑A",
+        "A↑B'↑A↑A",
+        "A⊕C"
+      ],
+      "final_gate": "AND",
+      "inputs": [
+        "A",
+        "B",
+        "C"
+      ],
+      "difficulty": {
+        "terms": [
+          3,
+          5
+        ],
+        "inputs": [
+          2,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "Below is a randomly generated logic circuit.\n\nA: ───────────────┐\nB: ─────────────┐ │\nC: ───────────┐ │ │\nD: ─────────┐ │ │ │\nE: ───────┐ │ │ │ │\nF: ─────┐ │ │ │ │ │\nG: ───┐ │ │ │ │ │ │\nH: ─┐ │ │ │ │ │ │ │\n    │ │ │ │ │ │ │ ├─>o─│&&───┐\n    │ │ │ │ │ │ ├───>o─│&&   │\n    │ │ │ │ │ │ │ │          │\n    │ │ │ │ │ │ │ └────│⊕⊕   │\n    │ │ │ │ │ │ ├───>o─│⊕⊕──┐│\n    │ │ │ │ │ ├────────│⊕⊕  │└──│⊕⊕\n    │ │ │ │ └───────>o─│⊕⊕  └───│⊕⊕\n    │ │ │ │   │ │          ┌────│⊕⊕─── OUT\n    │ │ │ │   └────────│↑↑─┘┌───│⊕⊕\n    │ │ │ │     └───>o─│↑↑  │\n    │ │ │ │                 │\n    │ │ │ └────────────│&&  │\n    │ │ └───────────>o─│&&──┘\n    │ └────────────────│&&\n    └──────────────────│&&\n\n\nLegend for gates:\n&&: AND\n↑↑: NAND\n⊕⊕: XOR\n>o: Negate\n⊕⊕: XOR\n\nGiven the following input assignments:\n  A = 0\n  B = 0\n  C = 1\n  D = 0\n  E = 0\n  F = 1\n  G = 1\n  H = 0\n\nWhat is the final output?",
+    "answer": "0",
+    "metadata": {
+      "source_dataset": "circuit_logic",
+      "source_index": 7,
+      "expression": "(A'&B')⊕(A⊕B'⊕C⊕D')⊕(C↑B')⊕(E&F'&G&H)",
+      "assignments": {
+        "A": 0,
+        "B": 0,
+        "C": 1,
+        "D": 0,
+        "E": 0,
+        "F": 1,
+        "G": 1,
+        "H": 0
+      },
+      "term_strings": [
+        "A'&B'",
+        "A⊕B'⊕C⊕D'",
+        "C↑B'",
+        "E&F'&G&H"
+      ],
+      "final_gate": "XOR",
+      "inputs": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H"
+      ],
+      "difficulty": {
+        "terms": [
+          3,
+          5
+        ],
+        "inputs": [
+          2,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "Below is a randomly generated logic circuit.\n\nA: ───────────┐\nB: ─────────┐ │\nC: ───────┐ │ │\nD: ─────┐ │ │ │\nE: ───┐ │ │ │ │\nF: ─┐ │ │ │ │ │\n    │ │ │ │ │ ├────│↑↑\n    │ │ │ │ │ ├────│↑↑──┐\n    │ │ │ │ ├──────│↑↑  │\n    │ │ │ │ │ └────│↑↑  │\n    │ │ │ │ │           │\n    │ │ │ ├─────>o─│↑↑  └──│++\n    │ │ ├──────────│↑↑─────│++─── OUT\n    │ │ │ └────────│↑↑  ┌──│++\n    │ │ │   │           │\n    │ └─────────>o─│↑↑  │\n    └──────────────│↑↑──┘\n        │   └──────│↑↑\n        └───────>o─│↑↑\n\n\nLegend for gates:\n&&: AND\n↑↑: NAND\n⊕⊕: XOR\n>o: Negate\n++: OR\n\nGiven the following input assignments:\n  A = 1\n  B = 0\n  C = 1\n  D = 0\n  E = 0\n  F = 0\n\nWhat is the final output?",
+    "answer": "1",
+    "metadata": {
+      "source_dataset": "circuit_logic",
+      "source_index": 5,
+      "expression": "(A↑A↑B↑A)+(C'↑D↑C)+(E'↑F↑B↑D')",
+      "assignments": {
+        "A": 1,
+        "B": 0,
+        "C": 1,
+        "D": 0,
+        "E": 0,
+        "F": 0
+      },
+      "term_strings": [
+        "A↑A↑B↑A",
+        "C'↑D↑C",
+        "E'↑F↑B↑D'"
+      ],
+      "final_gate": "OR",
+      "inputs": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F"
+      ],
+      "difficulty": {
+        "terms": [
+          3,
+          5
+        ],
+        "inputs": [
+          2,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "Below is a randomly generated logic circuit.\n\nA: ─────────┐\nB: ───────┐ │\nC: ─────┐ │ │\nD: ───┐ │ │ │\nE: ─┐ │ │ │ │\n    │ │ │ │ ├─>o─│↑↑\n    │ │ │ │ ├─>o─│↑↑──┐\n    │ │ │ │ ├─>o─│↑↑  │\n    │ │ │ ├──────│↑↑  │\n    │ │ │ │ │         │\n    │ │ │ └──────│&&  └──│&&\n    │ │ │   ├─>o─│&&─────│&&─── OUT\n    │ │ └─────>o─│&&  ┌──│&&\n    │ │     │         │\n    │ └──────────│⊕⊕  │\n    └────────────│⊕⊕──┘\n            └─>o─│⊕⊕\n\n\nLegend for gates:\n&&: AND\n↑↑: NAND\n⊕⊕: XOR\n>o: Negate\n&&: AND\n\nGiven the following input assignments:\n  A = 1\n  B = 1\n  C = 1\n  D = 0\n  E = 1\n\nWhat is the final output?",
+    "answer": "0",
+    "metadata": {
+      "source_dataset": "circuit_logic",
+      "source_index": 4,
+      "expression": "(A'↑A'↑A'↑B)&(B&A'&C')&(D⊕E⊕A')",
+      "assignments": {
+        "A": 1,
+        "B": 1,
+        "C": 1,
+        "D": 0,
+        "E": 1
+      },
+      "term_strings": [
+        "A'↑A'↑A'↑B",
+        "B&A'&C'",
+        "D⊕E⊕A'"
+      ],
+      "final_gate": "AND",
+      "inputs": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+      ],
+      "difficulty": {
+        "terms": [
+          3,
+          5
+        ],
+        "inputs": [
+          2,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "Below is a randomly generated logic circuit.\n\nA: ───────┐\nB: ─────┐ │\nC: ───┐ │ │\nD: ─┐ │ │ │\n    │ │ │ ├────│⊕⊕\n    │ │ │ ├────│⊕⊕───┐\n    │ │ │ ├────│⊕⊕   │\n    │ │ └───>o─│⊕⊕   │\n    │ │   │          └──│&&\n    │ ├────────│&&──────│&&\n    │ ├─────>o─│&& ┌────│&&─── OUT\n    │ │   │        │┌───│&&\n    │ ├─────>o─│&&─┘│\n    └───────>o─│&&  │\n      │   │         │\n      │   └────│↑↑──┘\n      └─────>o─│↑↑\n\n\nLegend for gates:\n&&: AND\n↑↑: NAND\n⊕⊕: XOR\n>o: Negate\n&&: AND\n\nGiven the following input assignments:\n  A = 1\n  B = 0\n  C = 1\n  D = 1\n\nWhat is the final output?",
+    "answer": "0",
+    "metadata": {
+      "source_dataset": "circuit_logic",
+      "source_index": 3,
+      "expression": "(A⊕A⊕A⊕B')&(C&C')&(C'&D')&(A↑C')",
+      "assignments": {
+        "A": 1,
+        "B": 0,
+        "C": 1,
+        "D": 1
+      },
+      "term_strings": [
+        "A⊕A⊕A⊕B'",
+        "C&C'",
+        "C'&D'",
+        "A↑C'"
+      ],
+      "final_gate": "AND",
+      "inputs": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "difficulty": {
+        "terms": [
+          3,
+          5
+        ],
+        "inputs": [
+          2,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "Below is a randomly generated logic circuit.\n\nA: ───────────────┐\nB: ─────────────┐ │\nC: ───────────┐ │ │\nD: ─────────┐ │ │ │\nE: ───────┐ │ │ │ │\nF: ─────┐ │ │ │ │ │\nG: ───┐ │ │ │ │ │ │\nH: ─┐ │ │ │ │ │ │ │\n    │ │ │ │ │ │ │ ├────│↑↑\n    │ │ │ │ │ │ │ ├─>o─│↑↑───┐\n    │ │ │ │ │ │ │ ├────│↑↑   │\n    │ │ │ │ │ │ │ ├─>o─│↑↑   │\n    │ │ │ │ │ │ │ │          │\n    │ │ │ │ │ │ └───>o─│⊕⊕──┐│\n    │ │ │ │ │ ├────────│⊕⊕  ││\n    │ │ │ │ │ │   │         ││\n    │ │ │ │ ├──────────│⊕⊕─┐│└───│&&\n    │ │ │ │ ├──────────│⊕⊕ │└────│&&\n    │ │ │ │ │ │   │        └─────│&&─── OUT\n    │ │ │ ├─────────>o─│&&  ┌────│&&\n    │ │ │ └────────────│&&──┘┌───│&&\n    │ │ └──────────────│&&   │\n    │ │     │ └────────│&&   │\n    │ │     │     │          │\n    │ │     │     └─>o─│↑↑   │\n    │ └────────────────│↑↑───┘\n    └──────────────────│↑↑\n            └──────────│↑↑\n\n\nLegend for gates:\n&&: AND\n↑↑: NAND\n⊕⊕: XOR\n>o: Negate\n&&: AND\n\nGiven the following input assignments:\n  A = 0\n  B = 0\n  C = 0\n  D = 0\n  E = 1\n  F = 1\n  G = 0\n  H = 0\n\nWhat is the final output?",
+    "answer": "0",
+    "metadata": {
+      "source_dataset": "circuit_logic",
+      "source_index": 7,
+      "expression": "(A↑A'↑A↑A')&(B'⊕C)&(D⊕D)&(E'&E&F&C)&(A'↑G↑H↑D)",
+      "assignments": {
+        "A": 0,
+        "B": 0,
+        "C": 0,
+        "D": 0,
+        "E": 1,
+        "F": 1,
+        "G": 0,
+        "H": 0
+      },
+      "term_strings": [
+        "A↑A'↑A↑A'",
+        "B'⊕C",
+        "D⊕D",
+        "E'&E&F&C",
+        "A'↑G↑H↑D"
+      ],
+      "final_gate": "AND",
+      "inputs": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H"
+      ],
+      "difficulty": {
+        "terms": [
+          3,
+          5
+        ],
+        "inputs": [
+          2,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "Below is a randomly generated logic circuit.\n\nA: ───────┐\nB: ─────┐ │\nC: ───┐ │ │\nD: ─┐ │ │ │\n    │ │ │ ├────│⊕⊕\n    │ │ ├──────│⊕⊕──┐\n    │ ├─────>o─│⊕⊕  │\n    │ │ │ │         │\n    │ │ │ └─>o─│&&  └──│&&\n    └───────>o─│&&─────│&&─── OUT\n      ├────────│&&  ┌──│&&\n      │ │           │\n      │ └──────│↑↑──┘\n      └─────>o─│↑↑\n\n\nLegend for gates:\n&&: AND\n↑↑: NAND\n⊕⊕: XOR\n>o: Negate\n&&: AND\n\nGiven the following input assignments:\n  A = 1\n  B = 1\n  C = 1\n  D = 1\n\nWhat is the final output?",
+    "answer": "0",
+    "metadata": {
+      "source_dataset": "circuit_logic",
+      "source_index": 3,
+      "expression": "(A⊕B⊕C')&(A'&D'&C)&(B↑C')",
+      "assignments": {
+        "A": 1,
+        "B": 1,
+        "C": 1,
+        "D": 1
+      },
+      "term_strings": [
+        "A⊕B⊕C'",
+        "A'&D'&C",
+        "B↑C'"
+      ],
+      "final_gate": "AND",
+      "inputs": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "difficulty": {
+        "terms": [
+          3,
+          5
+        ],
+        "inputs": [
+          2,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "Below is a randomly generated logic circuit.\n\nA: ───────────┐\nB: ─────────┐ │\nC: ───────┐ │ │\nD: ─────┐ │ │ │\nE: ───┐ │ │ │ │\nF: ─┐ │ │ │ │ │\n    │ │ │ │ │ ├────│&&───┐\n    │ │ │ │ │ └─>o─│&&   │\n    │ │ │ │ │            │\n    │ │ │ │ ├───>o─│↑↑──┐│\n    │ │ │ │ └──────│↑↑  │└──│&&\n    │ │ │ │             └───│&&\n    │ │ │ └────────│&& ┌────│&&─── OUT\n    │ │ └──────────│&&─┘┌───│&&\n    │ └─────────>o─│&&  │\n    │                   │\n    ├──────────────│&&──┘\n    └───────────>o─│&&\n\n\nLegend for gates:\n&&: AND\n↑↑: NAND\n⊕⊕: XOR\n>o: Negate\n&&: AND\n\nGiven the following input assignments:\n  A = 1\n  B = 1\n  C = 1\n  D = 1\n  E = 1\n  F = 0\n\nWhat is the final output?",
+    "answer": "0",
+    "metadata": {
+      "source_dataset": "circuit_logic",
+      "source_index": 5,
+      "expression": "(A&A')&(B'↑B)&(C&D&E')&(F&F')",
+      "assignments": {
+        "A": 1,
+        "B": 1,
+        "C": 1,
+        "D": 1,
+        "E": 1,
+        "F": 0
+      },
+      "term_strings": [
+        "A&A'",
+        "B'↑B",
+        "C&D&E'",
+        "F&F'"
+      ],
+      "final_gate": "AND",
+      "inputs": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F"
+      ],
+      "difficulty": {
+        "terms": [
+          3,
+          5
+        ],
+        "inputs": [
+          2,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "Below is a randomly generated logic circuit.\n\nA: ───────────────────┐\nB: ─────────────────┐ │\nC: ───────────────┐ │ │\nD: ─────────────┐ │ │ │\nE: ───────────┐ │ │ │ │\nF: ─────────┐ │ │ │ │ │\nG: ───────┐ │ │ │ │ │ │\nH: ─────┐ │ │ │ │ │ │ │\nI: ───┐ │ │ │ │ │ │ │ │\nJ: ─┐ │ │ │ │ │ │ │ │ │\n    │ │ │ │ │ │ │ │ │ ├─>o─│&&\n    │ │ │ │ │ │ │ │ ├──────│&&───┐\n    │ │ │ │ │ │ │ │ ├──────│&&   │\n    │ │ │ │ │ │ │ │ │ │          │\n    │ │ │ │ │ │ │ ├────────│⊕⊕   │\n    │ │ │ │ │ │ └───────>o─│⊕⊕──┐│\n    │ │ │ │ │ │   └────────│⊕⊕  ││\n    │ │ │ │ │ │     │ │         │└───│⊕⊕\n    │ │ │ │ │ └─────────>o─│&&  └────│⊕⊕\n    │ │ │ │ ├───────────>o─│&&───────│⊕⊕─── OUT\n    │ │ │ │ └───────────>o─│&&  ┌────│⊕⊕\n    │ │ │ │         └───>o─│&&  │┌───│⊕⊕\n    │ │ │ │           │         ││\n    │ │ │ │           └─>o─│↑↑──┘│\n    │ │ │ └─────────────>o─│↑↑   │\n    │ │ │                        │\n    │ │ └───────────────>o─│&&   │\n    │ └────────────────────│&&───┘\n    └───────────────────>o─│&&\n\n\nLegend for gates:\n&&: AND\n↑↑: NAND\n⊕⊕: XOR\n>o: Negate\n⊕⊕: XOR\n\nGiven the following input assignments:\n  A = 0\n  B = 0\n  C = 0\n  D = 1\n  E = 0\n  F = 1\n  G = 1\n  H = 1\n  I = 0\n  J = 1\n\nWhat is the final output?",
+    "answer": "1",
+    "metadata": {
+      "source_dataset": "circuit_logic",
+      "source_index": 9,
+      "expression": "(A'&B&B)⊕(C⊕D'⊕C)⊕(E'&F'&F'&B')⊕(A'↑G')⊕(H'&I&J')",
+      "assignments": {
+        "A": 0,
+        "B": 0,
+        "C": 0,
+        "D": 1,
+        "E": 0,
+        "F": 1,
+        "G": 1,
+        "H": 1,
+        "I": 0,
+        "J": 1
+      },
+      "term_strings": [
+        "A'&B&B",
+        "C⊕D'⊕C",
+        "E'&F'&F'&B'",
+        "A'↑G'",
+        "H'&I&J'"
+      ],
+      "final_gate": "XOR",
+      "inputs": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H",
+        "I",
+        "J"
+      ],
+      "difficulty": {
+        "terms": [
+          3,
+          5
+        ],
+        "inputs": [
+          2,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "Below is a randomly generated logic circuit.\n\nA: ─────────┐\nB: ───────┐ │\nC: ─────┐ │ │\nD: ───┐ │ │ │\nE: ─┐ │ │ │ │\n    │ │ │ │ ├─>o─│↑↑──┐\n    │ │ │ ├──────│↑↑  │\n    │ │ │ │ │         │\n    │ │ │ └──────│↑↑  │\n    │ │ └─────>o─│↑↑─┐│\n    │ ├──────────│↑↑ │└──│++\n    │ ├───────>o─│↑↑ └───│++─── OUT\n    │ │     │         ┌──│++\n    │ ├──────────│⊕⊕  │\n    │ └──────────│⊕⊕──┘\n    └─────────>o─│⊕⊕\n            └────│⊕⊕\n\n\nLegend for gates:\n&&: AND\n↑↑: NAND\n⊕⊕: XOR\n>o: Negate\n++: OR\n\nGiven the following input assignments:\n  A = 0\n  B = 0\n  C = 1\n  D = 0\n  E = 0\n\nWhat is the final output?",
+    "answer": "1",
+    "metadata": {
+      "source_dataset": "circuit_logic",
+      "source_index": 4,
+      "expression": "(A'↑B)+(B↑C'↑D↑D')+(D⊕D⊕E'⊕A)",
+      "assignments": {
+        "A": 0,
+        "B": 0,
+        "C": 1,
+        "D": 0,
+        "E": 0
+      },
+      "term_strings": [
+        "A'↑B",
+        "B↑C'↑D↑D'",
+        "D⊕D⊕E'⊕A"
+      ],
+      "final_gate": "OR",
+      "inputs": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+      ],
+      "difficulty": {
+        "terms": [
+          3,
+          5
+        ],
+        "inputs": [
+          2,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "Below is a randomly generated logic circuit.\n\nA: ─────────────┐\nB: ───────────┐ │\nC: ─────────┐ │ │\nD: ───────┐ │ │ │\nE: ─────┐ │ │ │ │\nF: ───┐ │ │ │ │ │\nG: ─┐ │ │ │ │ │ │\n    │ │ │ │ │ │ └────│⊕⊕──┐\n    │ │ │ │ │ ├──────│⊕⊕  │\n    │ │ │ │ │ │           │\n    │ │ │ │ └─────>o─│↑↑  │\n    │ │ │ ├───────>o─│↑↑─┐└──│⊕⊕\n    │ │ └────────────│↑↑ └───│⊕⊕─── OUT\n    │ └──────────────│↑↑  ┌──│⊕⊕\n    │     │   │           │\n    │     │   └──────│&&  │\n    └────────────────│&&──┘\n          └───────>o─│&&\n\n\nLegend for gates:\n&&: AND\n↑↑: NAND\n⊕⊕: XOR\n>o: Negate\n⊕⊕: XOR\n\nGiven the following input assignments:\n  A = 1\n  B = 1\n  C = 1\n  D = 1\n  E = 1\n  F = 0\n  G = 0\n\nWhat is the final output?",
+    "answer": "1",
+    "metadata": {
+      "source_dataset": "circuit_logic",
+      "source_index": 6,
+      "expression": "(A⊕B)⊕(C'↑D'↑E↑F)⊕(B&G&D')",
+      "assignments": {
+        "A": 1,
+        "B": 1,
+        "C": 1,
+        "D": 1,
+        "E": 1,
+        "F": 0,
+        "G": 0
+      },
+      "term_strings": [
+        "A⊕B",
+        "C'↑D'↑E↑F",
+        "B&G&D'"
+      ],
+      "final_gate": "XOR",
+      "inputs": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G"
+      ],
+      "difficulty": {
+        "terms": [
+          3,
+          5
+        ],
+        "inputs": [
+          2,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "Below is a randomly generated logic circuit.\n\nA: ───────┐\nB: ─────┐ │\nC: ───┐ │ │\nD: ─┐ │ │ │\n    │ │ │ ├─>o─│⊕⊕──┐\n    │ │ │ ├────│⊕⊕  │\n    │ │ │ │         │\n    │ │ │ ├────│&&  └──│↓↓\n    │ │ └──────│&&─────│↓↓─── OUT\n    │ └─────>o─│&&  ┌──│↓↓\n    │     │         │\n    │     └────│⊕⊕──┘\n    └──────────│⊕⊕\n\n\nLegend for gates:\n&&: AND\n↑↑: NAND\n⊕⊕: XOR\n>o: Negate\n↓↓: NOR\n\nGiven the following input assignments:\n  A = 1\n  B = 1\n  C = 1\n  D = 1\n\nWhat is the final output?",
+    "answer": "0",
+    "metadata": {
+      "source_dataset": "circuit_logic",
+      "source_index": 3,
+      "expression": "(A'⊕A)↓(A&B&C')↓(A⊕D)",
+      "assignments": {
+        "A": 1,
+        "B": 1,
+        "C": 1,
+        "D": 1
+      },
+      "term_strings": [
+        "A'⊕A",
+        "A&B&C'",
+        "A⊕D"
+      ],
+      "final_gate": "NOR",
+      "inputs": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "difficulty": {
+        "terms": [
+          3,
+          5
+        ],
+        "inputs": [
+          2,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "Below is a randomly generated logic circuit.\n\nA: ─────────┐\nB: ───────┐ │\nC: ─────┐ │ │\nD: ───┐ │ │ │\nE: ─┐ │ │ │ │\n    │ │ │ │ ├────│↑↑───┐\n    │ │ │ ├──────│↑↑   │\n    │ │ │ │ │          │\n    │ │ │ │ ├────│↑↑   │\n    │ │ │ │ ├────│↑↑──┐│\n    │ │ │ └──────│↑↑  │└──│↓↓\n    │ │ │   ├─>o─│↑↑  └───│↓↓\n    │ │ │   │        ┌────│↓↓─── OUT\n    │ │ │   ├────│↑↑─┘┌───│↓↓\n    │ │ │   ├────│↑↑  │\n    │ │ │   │         │\n    │ │ └────────│&&  │\n    │ └──────────│&&──┘\n    └────────────│&&\n            └────│&&\n\n\nLegend for gates:\n&&: AND\n↑↑: NAND\n⊕⊕: XOR\n>o: Negate\n↓↓: NOR\n\nGiven the following input assignments:\n  A = 1\n  B = 0\n  C = 0\n  D = 0\n  E = 1\n\nWhat is the final output?",
+    "answer": "0",
+    "metadata": {
+      "source_dataset": "circuit_logic",
+      "source_index": 4,
+      "expression": "(A↑B)↓(A↑A↑B↑A')↓(A↑A)↓(C&D&E&A)",
+      "assignments": {
+        "A": 1,
+        "B": 0,
+        "C": 0,
+        "D": 0,
+        "E": 1
+      },
+      "term_strings": [
+        "A↑B",
+        "A↑A↑B↑A'",
+        "A↑A",
+        "C&D&E&A"
+      ],
+      "final_gate": "NOR",
+      "inputs": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+      ],
+      "difficulty": {
+        "terms": [
+          3,
+          5
+        ],
+        "inputs": [
+          2,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "Below is a randomly generated logic circuit.\n\nA: ─────┐\nB: ───┐ │\nC: ─┐ │ │\n    │ │ ├────│&&\n    │ │ ├────│&&──┐\n    │ │ ├─>o─│&&  │\n    │ │ │         │\n    │ ├───>o─│&&  └──│⊕⊕\n    └────────│&&─────│⊕⊕─── OUT\n      ├──────│&&  ┌──│⊕⊕\n      │ │         │\n      │ └────│&&──┘\n      └──────│&&\n\n\nLegend for gates:\n&&: AND\n↑↑: NAND\n⊕⊕: XOR\n>o: Negate\n⊕⊕: XOR\n\nGiven the following input assignments:\n  A = 0\n  B = 0\n  C = 0\n\nWhat is the final output?",
+    "answer": "0",
+    "metadata": {
+      "source_dataset": "circuit_logic",
+      "source_index": 2,
+      "expression": "(A&A&A')⊕(B'&C&B)⊕(A&B)",
+      "assignments": {
+        "A": 0,
+        "B": 0,
+        "C": 0
+      },
+      "term_strings": [
+        "A&A&A'",
+        "B'&C&B",
+        "A&B"
+      ],
+      "final_gate": "XOR",
+      "inputs": [
+        "A",
+        "B",
+        "C"
+      ],
+      "difficulty": {
+        "terms": [
+          3,
+          5
+        ],
+        "inputs": [
+          2,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "Below is a randomly generated logic circuit.\n\nA: ─────────────┐\nB: ───────────┐ │\nC: ─────────┐ │ │\nD: ───────┐ │ │ │\nE: ─────┐ │ │ │ │\nF: ───┐ │ │ │ │ │\nG: ─┐ │ │ │ │ │ │\n    │ │ │ │ │ │ ├────│↑↑\n    │ │ │ │ │ │ ├────│↑↑──┐\n    │ │ │ │ │ ├──────│↑↑  │\n    │ │ │ │ │ └───>o─│↑↑  │\n    │ │ │ │ │   │         │\n    │ │ │ │ └─────>o─│&&  └──│++\n    │ │ │ └──────────│&&─────│++─── OUT\n    │ │ └────────────│&&  ┌──│++\n    │ └───────────>o─│&&  │\n    │           │         │\n    │           └─>o─│⊕⊕──┘\n    └────────────────│⊕⊕\n\n\nLegend for gates:\n&&: AND\n↑↑: NAND\n⊕⊕: XOR\n>o: Negate\n++: OR\n\nGiven the following input assignments:\n  A = 0\n  B = 0\n  C = 0\n  D = 1\n  E = 0\n  F = 0\n  G = 0\n\nWhat is the final output?",
+    "answer": "1",
+    "metadata": {
+      "source_dataset": "circuit_logic",
+      "source_index": 6,
+      "expression": "(A↑A↑B↑B')+(C'&D&E&F')+(A'⊕G)",
+      "assignments": {
+        "A": 0,
+        "B": 0,
+        "C": 0,
+        "D": 1,
+        "E": 0,
+        "F": 0,
+        "G": 0
+      },
+      "term_strings": [
+        "A↑A↑B↑B'",
+        "C'&D&E&F'",
+        "A'⊕G"
+      ],
+      "final_gate": "OR",
+      "inputs": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G"
+      ],
+      "difficulty": {
+        "terms": [
+          3,
+          5
+        ],
+        "inputs": [
+          2,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "Below is a randomly generated logic circuit.\n\nA: ─────────────┐\nB: ───────────┐ │\nC: ─────────┐ │ │\nD: ───────┐ │ │ │\nE: ─────┐ │ │ │ │\nF: ───┐ │ │ │ │ │\nG: ─┐ │ │ │ │ │ │\n    │ │ │ │ │ │ ├─>o─│⊕⊕\n    │ │ │ │ │ └──────│⊕⊕──┐\n    │ │ │ │ └────────│⊕⊕  │\n    │ │ │ └───────>o─│⊕⊕  │\n    │ │ │       │         │\n    │ │ └─────────>o─│⊕⊕  └──│↓↓\n    │ ├──────────────│⊕⊕─────│↓↓─── OUT\n    │ │         └────│⊕⊕  ┌──│↓↓\n    │ │                   │\n    ├────────────────│⊕⊕  │\n    └────────────────│⊕⊕──┘\n      └──────────────│⊕⊕\n\n\nLegend for gates:\n&&: AND\n↑↑: NAND\n⊕⊕: XOR\n>o: Negate\n↓↓: NOR\n\nGiven the following input assignments:\n  A = 1\n  B = 0\n  C = 1\n  D = 0\n  E = 1\n  F = 1\n  G = 0\n\nWhat is the final output?",
+    "answer": "0",
+    "metadata": {
+      "source_dataset": "circuit_logic",
+      "source_index": 6,
+      "expression": "(A'⊕B⊕C⊕D')↓(E'⊕F⊕A)↓(G⊕G⊕F)",
+      "assignments": {
+        "A": 1,
+        "B": 0,
+        "C": 1,
+        "D": 0,
+        "E": 1,
+        "F": 1,
+        "G": 0
+      },
+      "term_strings": [
+        "A'⊕B⊕C⊕D'",
+        "E'⊕F⊕A",
+        "G⊕G⊕F"
+      ],
+      "final_gate": "NOR",
+      "inputs": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G"
+      ],
+      "difficulty": {
+        "terms": [
+          3,
+          5
+        ],
+        "inputs": [
+          2,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "Below is a randomly generated logic circuit.\n\nA: ─────────┐\nB: ───────┐ │\nC: ─────┐ │ │\nD: ───┐ │ │ │\nE: ─┐ │ │ │ │\n    │ │ │ │ ├────│⊕⊕───┐\n    │ │ │ │ ├────│⊕⊕   │\n    │ │ │ │ │          │\n    │ │ │ │ ├────│⊕⊕   │\n    │ │ │ ├───>o─│⊕⊕──┐│\n    │ │ ├────────│⊕⊕  │└──│⊕⊕\n    │ │ │ │ │         └───│⊕⊕\n    │ │ ├────────│&& ┌────│⊕⊕─── OUT\n    │ │ │ │ └────│&&─┘┌───│⊕⊕\n    │ └──────────│&&  │\n    │   └────────│&&  │\n    │     │           │\n    └─────────>o─│↑↑──┘\n          └──────│↑↑\n\n\nLegend for gates:\n&&: AND\n↑↑: NAND\n⊕⊕: XOR\n>o: Negate\n⊕⊕: XOR\n\nGiven the following input assignments:\n  A = 0\n  B = 1\n  C = 0\n  D = 1\n  E = 1\n\nWhat is the final output?",
+    "answer": "1",
+    "metadata": {
+      "source_dataset": "circuit_logic",
+      "source_index": 4,
+      "expression": "(A⊕A)⊕(A⊕B'⊕C)⊕(C&A&D&C)⊕(E'↑B)",
+      "assignments": {
+        "A": 0,
+        "B": 1,
+        "C": 0,
+        "D": 1,
+        "E": 1
+      },
+      "term_strings": [
+        "A⊕A",
+        "A⊕B'⊕C",
+        "C&A&D&C",
+        "E'↑B"
+      ],
+      "final_gate": "XOR",
+      "inputs": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+      ],
+      "difficulty": {
+        "terms": [
+          3,
+          5
+        ],
+        "inputs": [
+          2,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "Below is a randomly generated logic circuit.\n\nA: ─────────┐\nB: ───────┐ │\nC: ─────┐ │ │\nD: ───┐ │ │ │\nE: ─┐ │ │ │ │\n    │ │ │ │ ├────│&&───┐\n    │ │ │ │ └────│&&   │\n    │ │ │ │            │\n    │ │ │ ├──────│⊕⊕──┐│\n    │ │ ├────────│⊕⊕  │└──│⊕⊕\n    │ │ │ │           └───│⊕⊕\n    │ ├──────────│↑↑──────│⊕⊕─── OUT\n    └────────────│↑↑  ┌───│⊕⊕\n      │ │ │           │\n      │ └────────│⊕⊕  │\n      └──────────│⊕⊕──┘\n          └──────│⊕⊕\n\n\nLegend for gates:\n&&: AND\n↑↑: NAND\n⊕⊕: XOR\n>o: Negate\n⊕⊕: XOR\n\nGiven the following input assignments:\n  A = 0\n  B = 0\n  C = 0\n  D = 1\n  E = 0\n\nWhat is the final output?",
+    "answer": "0",
+    "metadata": {
+      "source_dataset": "circuit_logic",
+      "source_index": 4,
+      "expression": "(A&A)⊕(B⊕C)⊕(D↑E)⊕(C⊕D⊕B)",
+      "assignments": {
+        "A": 0,
+        "B": 0,
+        "C": 0,
+        "D": 1,
+        "E": 0
+      },
+      "term_strings": [
+        "A&A",
+        "B⊕C",
+        "D↑E",
+        "C⊕D⊕B"
+      ],
+      "final_gate": "XOR",
+      "inputs": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+      ],
+      "difficulty": {
+        "terms": [
+          3,
+          5
+        ],
+        "inputs": [
+          2,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "Below is a randomly generated logic circuit.\n\nA: ───────────────┐\nB: ─────────────┐ │\nC: ───────────┐ │ │\nD: ─────────┐ │ │ │\nE: ───────┐ │ │ │ │\nF: ─────┐ │ │ │ │ │\nG: ───┐ │ │ │ │ │ │\nH: ─┐ │ │ │ │ │ │ │\n    │ │ │ │ │ │ │ ├────│&&\n    │ │ │ │ │ │ ├──────│&&───┐\n    │ │ │ │ │ │ ├──────│&&   │\n    │ │ │ │ │ │ │ │          │\n    │ │ │ │ │ │ │ ├────│↑↑   │\n    │ │ │ │ │ │ ├──────│↑↑──┐│\n    │ │ │ │ │ │ │ └────│↑↑  ││\n    │ │ │ │ │ └────────│↑↑  │└───│↓↓\n    │ │ │ │ │   │           └────│↓↓\n    │ │ │ │ │   ├──────│↑↑───────│↓↓─── OUT\n    │ │ │ │ └──────────│↑↑  ┌────│↓↓\n    │ │ │ │     │           │┌───│↓↓\n    │ │ │ └────────────│↑↑  ││\n    │ │ └──────────────│↑↑──┘│\n    │ │         ├───>o─│↑↑   │\n    │ │         │            │\n    │ │         └───>o─│↑↑   │\n    │ └────────────────│↑↑───┘\n    └──────────────────│↑↑\n\n\nLegend for gates:\n&&: AND\n↑↑: NAND\n⊕⊕: XOR\n>o: Negate\n↓↓: NOR\n\nGiven the following input assignments:\n  A = 0\n  B = 1\n  C = 0\n  D = 0\n  E = 0\n  F = 1\n  G = 0\n  H = 0\n\nWhat is the final output?",
+    "answer": "0",
+    "metadata": {
+      "source_dataset": "circuit_logic",
+      "source_index": 7,
+      "expression": "(A&B&B)↓(A↑B↑A↑C)↓(B↑D)↓(E↑F↑B')↓(B'↑G↑H)",
+      "assignments": {
+        "A": 0,
+        "B": 1,
+        "C": 0,
+        "D": 0,
+        "E": 0,
+        "F": 1,
+        "G": 0,
+        "H": 0
+      },
+      "term_strings": [
+        "A&B&B",
+        "A↑B↑A↑C",
+        "B↑D",
+        "E↑F↑B'",
+        "B'↑G↑H"
+      ],
+      "final_gate": "NOR",
+      "inputs": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H"
+      ],
+      "difficulty": {
+        "terms": [
+          3,
+          5
+        ],
+        "inputs": [
+          2,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "Below is a randomly generated logic circuit.\n\nA: ───────────┐\nB: ─────────┐ │\nC: ───────┐ │ │\nD: ─────┐ │ │ │\nE: ───┐ │ │ │ │\nF: ─┐ │ │ │ │ │\n    │ │ │ │ │ ├─>o─│↑↑───┐\n    │ │ │ │ │ ├────│↑↑   │\n    │ │ │ │ │ │          │\n    │ │ │ │ └──────│&&──┐│\n    │ │ │ │   ├────│&&  ││\n    │ │ │ │   │         ││\n    │ │ │ │   ├─>o─│⊕⊕  │└───│↓↓\n    │ │ │ ├────────│⊕⊕─┐└────│↓↓\n    │ │ ├──────────│⊕⊕ └─────│↓↓─── OUT\n    │ │ │ │   │         ┌────│↓↓\n    │ │ │ │   ├────│⊕⊕  │┌───│↓↓\n    │ └────────────│⊕⊕──┘│\n    │   │ └────────│⊕⊕   │\n    └──────────────│⊕⊕   │\n        │     │          │\n        └───────>o─│↑↑───┘\n              └────│↑↑\n\n\nLegend for gates:\n&&: AND\n↑↑: NAND\n⊕⊕: XOR\n>o: Negate\n↓↓: NOR\n\nGiven the following input assignments:\n  A = 0\n  B = 0\n  C = 1\n  D = 0\n  E = 1\n  F = 0\n\nWhat is the final output?",
+    "answer": "0",
+    "metadata": {
+      "source_dataset": "circuit_logic",
+      "source_index": 5,
+      "expression": "(A'↑A)↓(B&A)↓(A'⊕C⊕D)↓(A⊕E⊕C⊕F)↓(D'↑A)",
+      "assignments": {
+        "A": 0,
+        "B": 0,
+        "C": 1,
+        "D": 0,
+        "E": 1,
+        "F": 0
+      },
+      "term_strings": [
+        "A'↑A",
+        "B&A",
+        "A'⊕C⊕D",
+        "A⊕E⊕C⊕F",
+        "D'↑A"
+      ],
+      "final_gate": "NOR",
+      "inputs": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F"
+      ],
+      "difficulty": {
+        "terms": [
+          3,
+          5
+        ],
+        "inputs": [
+          2,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "Below is a randomly generated logic circuit.\n\nA: ─────────────┐\nB: ───────────┐ │\nC: ─────────┐ │ │\nD: ───────┐ │ │ │\nE: ─────┐ │ │ │ │\nF: ───┐ │ │ │ │ │\nG: ─┐ │ │ │ │ │ │\n    │ │ │ │ │ │ ├────│⊕⊕\n    │ │ │ │ │ │ ├────│⊕⊕───┐\n    │ │ │ │ │ ├───>o─│⊕⊕   │\n    │ │ │ │ │ │ │          │\n    │ │ │ │ │ ├──────│↑↑   │\n    │ │ │ │ │ │ ├────│↑↑──┐│\n    │ │ │ │ │ ├──────│↑↑  │└──│⊕⊕\n    │ │ │ │ │ └───>o─│↑↑  └───│⊕⊕\n    │ │ │ │ │   │        ┌────│⊕⊕─── OUT\n    │ │ │ │ └────────│↑↑ │┌───│⊕⊕\n    │ │ │ └──────────│↑↑─┘│\n    │ │ │       └─>o─│↑↑  │\n    │ │ └─────────>o─│↑↑  │\n    │ │                   │\n    │ └───────────>o─│&&──┘\n    └────────────────│&&\n\n\nLegend for gates:\n&&: AND\n↑↑: NAND\n⊕⊕: XOR\n>o: Negate\n⊕⊕: XOR\n\nGiven the following input assignments:\n  A = 1\n  B = 1\n  C = 1\n  D = 0\n  E = 1\n  F = 1\n  G = 0\n\nWhat is the final output?",
+    "answer": "0",
+    "metadata": {
+      "source_dataset": "circuit_logic",
+      "source_index": 6,
+      "expression": "(A⊕A⊕B')⊕(B↑A↑B↑B')⊕(C↑D↑A'↑E')⊕(F'&G)",
+      "assignments": {
+        "A": 1,
+        "B": 1,
+        "C": 1,
+        "D": 0,
+        "E": 1,
+        "F": 1,
+        "G": 0
+      },
+      "term_strings": [
+        "A⊕A⊕B'",
+        "B↑A↑B↑B'",
+        "C↑D↑A'↑E'",
+        "F'&G"
+      ],
+      "final_gate": "XOR",
+      "inputs": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G"
+      ],
+      "difficulty": {
+        "terms": [
+          3,
+          5
+        ],
+        "inputs": [
+          2,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "Below is a randomly generated logic circuit.\n\nA: ───────┐\nB: ─────┐ │\nC: ───┐ │ │\nD: ─┐ │ │ │\n    │ │ │ ├────│↑↑──┐\n    │ │ ├───>o─│↑↑  │\n    │ │ │ │         │\n    │ │ │ ├────│⊕⊕  │\n    │ │ │ ├────│⊕⊕─┐└──│&&\n    │ │ └───>o─│⊕⊕ └───│&&─── OUT\n    │ │   │         ┌──│&&\n    │ │   └─>o─│↑↑  │\n    │ ├─────>o─│↑↑──┘\n    └───────>o─│↑↑\n      └────────│↑↑\n\n\nLegend for gates:\n&&: AND\n↑↑: NAND\n⊕⊕: XOR\n>o: Negate\n&&: AND\n\nGiven the following input assignments:\n  A = 0\n  B = 0\n  C = 1\n  D = 0\n\nWhat is the final output?",
+    "answer": "1",
+    "metadata": {
+      "source_dataset": "circuit_logic",
+      "source_index": 3,
+      "expression": "(A↑B')&(A⊕A⊕B')&(A'↑C'↑D'↑C)",
+      "assignments": {
+        "A": 0,
+        "B": 0,
+        "C": 1,
+        "D": 0
+      },
+      "term_strings": [
+        "A↑B'",
+        "A⊕A⊕B'",
+        "A'↑C'↑D'↑C"
+      ],
+      "final_gate": "AND",
+      "inputs": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "difficulty": {
+        "terms": [
+          3,
+          5
+        ],
+        "inputs": [
+          2,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "Below is a randomly generated logic circuit.\n\nA: ───────────┐\nB: ─────────┐ │\nC: ───────┐ │ │\nD: ─────┐ │ │ │\nE: ───┐ │ │ │ │\nF: ─┐ │ │ │ │ │\n    │ │ │ │ │ ├─>o─│↑↑\n    │ │ │ │ │ ├────│↑↑───┐\n    │ │ │ │ └──────│↑↑   │\n    │ │ │ │   │          │\n    │ │ │ └─────>o─│⊕⊕   │\n    │ │ ├──────────│⊕⊕──┐└──│++\n    │ ├────────────│⊕⊕  └───│++\n    │ │ └───────>o─│⊕⊕ ┌────│++─── OUT\n    │ │       │        │┌───│++\n    │ ├────────────│⊕⊕─┘│\n    │ └────────────│⊕⊕  │\n    │         │         │\n    └──────────────│&&──┘\n              └────│&&\n\n\nLegend for gates:\n&&: AND\n↑↑: NAND\n⊕⊕: XOR\n>o: Negate\n++: OR\n\nGiven the following input assignments:\n  A = 0\n  B = 1\n  C = 0\n  D = 1\n  E = 1\n  F = 0\n\nWhat is the final output?",
+    "answer": "1",
+    "metadata": {
+      "source_dataset": "circuit_logic",
+      "source_index": 5,
+      "expression": "(A'↑A↑B)+(C'⊕D⊕E⊕D')+(E⊕E)+(F&A)",
+      "assignments": {
+        "A": 0,
+        "B": 1,
+        "C": 0,
+        "D": 1,
+        "E": 1,
+        "F": 0
+      },
+      "term_strings": [
+        "A'↑A↑B",
+        "C'⊕D⊕E⊕D'",
+        "E⊕E",
+        "F&A"
+      ],
+      "final_gate": "OR",
+      "inputs": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F"
+      ],
+      "difficulty": {
+        "terms": [
+          3,
+          5
+        ],
+        "inputs": [
+          2,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "Below is a randomly generated logic circuit.\n\nA: ───────┐\nB: ─────┐ │\nC: ───┐ │ │\nD: ─┐ │ │ │\n    │ │ │ ├─>o─│&&\n    │ │ │ ├─>o─│&&───┐\n    │ │ │ ├────│&&   │\n    │ │ │ ├────│&&   │\n    │ │ │ │          │\n    │ │ └──────│⊕⊕──┐└──│&&\n    │ ├────────│⊕⊕  └───│&&\n    │ │   │        ┌────│&&─── OUT\n    │ │   ├────│&&─┘┌───│&&\n    │ └────────│&&  │\n    │     │         │\n    │     ├─>o─│&&  │\n    │     └────│&&──┘\n    └───────>o─│&&\n\n\nLegend for gates:\n&&: AND\n↑↑: NAND\n⊕⊕: XOR\n>o: Negate\n&&: AND\n\nGiven the following input assignments:\n  A = 0\n  B = 1\n  C = 0\n  D = 1\n\nWhat is the final output?",
+    "answer": "0",
+    "metadata": {
+      "source_dataset": "circuit_logic",
+      "source_index": 3,
+      "expression": "(A'&A'&A&A)&(B⊕C)&(A&C)&(A'&A&D')",
+      "assignments": {
+        "A": 0,
+        "B": 1,
+        "C": 0,
+        "D": 1
+      },
+      "term_strings": [
+        "A'&A'&A&A",
+        "B⊕C",
+        "A&C",
+        "A'&A&D'"
+      ],
+      "final_gate": "AND",
+      "inputs": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "difficulty": {
+        "terms": [
+          3,
+          5
+        ],
+        "inputs": [
+          2,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "Below is a randomly generated logic circuit.\n\nA: ───────┐\nB: ─────┐ │\nC: ───┐ │ │\nD: ─┐ │ │ │\n    │ │ │ ├────│↑↑──┐\n    │ │ ├──────│↑↑  │\n    │ │ │ │         │\n    │ │ ├───>o─│&&  │\n    │ ├────────│&&─┐└──│&&\n    │ │ │ └────│&& └───│&&─── OUT\n    └───────>o─│&&  ┌──│&&\n      │ │           │\n      └────────│&&──┘\n        └──────│&&\n\n\nLegend for gates:\n&&: AND\n↑↑: NAND\n⊕⊕: XOR\n>o: Negate\n&&: AND\n\nGiven the following input assignments:\n  A = 1\n  B = 1\n  C = 1\n  D = 0\n\nWhat is the final output?",
+    "answer": "0",
+    "metadata": {
+      "source_dataset": "circuit_logic",
+      "source_index": 3,
+      "expression": "(A↑B)&(B'&C&A&D')&(C&B)",
+      "assignments": {
+        "A": 1,
+        "B": 1,
+        "C": 1,
+        "D": 0
+      },
+      "term_strings": [
+        "A↑B",
+        "B'&C&A&D'",
+        "C&B"
+      ],
+      "final_gate": "AND",
+      "inputs": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "difficulty": {
+        "terms": [
+          3,
+          5
+        ],
+        "inputs": [
+          2,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "Below is a randomly generated logic circuit.\n\nA: ───────────┐\nB: ─────────┐ │\nC: ───────┐ │ │\nD: ─────┐ │ │ │\nE: ───┐ │ │ │ │\nF: ─┐ │ │ │ │ │\n    │ │ │ │ │ ├────│⊕⊕\n    │ │ │ │ ├───>o─│⊕⊕───┐\n    │ │ │ │ └──────│⊕⊕   │\n    │ │ │ │   │          │\n    │ │ │ ├─────>o─│&&   │\n    │ │ │ │   └────│&&──┐│\n    │ │ ├───────>o─│&&  │└───│↓↓\n    │ │ │ │             └────│↓↓\n    │ └────────────│↑↑───────│↓↓─── OUT\n    │   ├──────────│↑↑  ┌────│↓↓\n    │   │ │             │┌───│↓↓\n    └──────────────│&&──┘│\n        │ └────────│&&   │\n        │                │\n        ├──────────│↑↑───┘\n        └───────>o─│↑↑\n\n\nLegend for gates:\n&&: AND\n↑↑: NAND\n⊕⊕: XOR\n>o: Negate\n↓↓: NOR\n\nGiven the following input assignments:\n  A = 0\n  B = 1\n  C = 0\n  D = 1\n  E = 1\n  F = 0\n\nWhat is the final output?",
+    "answer": "0",
+    "metadata": {
+      "source_dataset": "circuit_logic",
+      "source_index": 5,
+      "expression": "(A⊕B'⊕B)↓(C'&A&D')↓(E↑D)↓(F&C)↓(D↑D')",
+      "assignments": {
+        "A": 0,
+        "B": 1,
+        "C": 0,
+        "D": 1,
+        "E": 1,
+        "F": 0
+      },
+      "term_strings": [
+        "A⊕B'⊕B",
+        "C'&A&D'",
+        "E↑D",
+        "F&C",
+        "D↑D'"
+      ],
+      "final_gate": "NOR",
+      "inputs": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F"
+      ],
+      "difficulty": {
+        "terms": [
+          3,
+          5
+        ],
+        "inputs": [
+          2,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "Below is a randomly generated logic circuit.\n\nA: ───────────────┐\nB: ─────────────┐ │\nC: ───────────┐ │ │\nD: ─────────┐ │ │ │\nE: ───────┐ │ │ │ │\nF: ─────┐ │ │ │ │ │\nG: ───┐ │ │ │ │ │ │\nH: ─┐ │ │ │ │ │ │ │\n    │ │ │ │ │ │ │ └────│&&\n    │ │ │ │ │ │ ├──────│&&──┐\n    │ │ │ │ │ ├────────│&&  │\n    │ │ │ │ │ └────────│&&  │\n    │ │ │ │ │   │           │\n    │ │ │ │ └───────>o─│⊕⊕  │\n    │ │ │ └────────────│⊕⊕─┐└──│⊕⊕\n    │ │ └───────────>o─│⊕⊕ └───│⊕⊕─── OUT\n    │ │         ├──────│⊕⊕  ┌──│⊕⊕\n    │ │         │           │\n    │ └────────────────│↑↑  │\n    ├──────────────────│↑↑──┘\n    └──────────────────│↑↑\n                └──────│↑↑\n\n\nLegend for gates:\n&&: AND\n↑↑: NAND\n⊕⊕: XOR\n>o: Negate\n⊕⊕: XOR\n\nGiven the following input assignments:\n  A = 1\n  B = 0\n  C = 1\n  D = 1\n  E = 1\n  F = 0\n  G = 0\n  H = 1\n\nWhat is the final output?",
+    "answer": "1",
+    "metadata": {
+      "source_dataset": "circuit_logic",
+      "source_index": 7,
+      "expression": "(A&B&C&C)⊕(D'⊕E⊕F'⊕B)⊕(G↑H↑H↑B)",
+      "assignments": {
+        "A": 1,
+        "B": 0,
+        "C": 1,
+        "D": 1,
+        "E": 1,
+        "F": 0,
+        "G": 0,
+        "H": 1
+      },
+      "term_strings": [
+        "A&B&C&C",
+        "D'⊕E⊕F'⊕B",
+        "G↑H↑H↑B"
+      ],
+      "final_gate": "XOR",
+      "inputs": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H"
+      ],
+      "difficulty": {
+        "terms": [
+          3,
+          5
+        ],
+        "inputs": [
+          2,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "Below is a randomly generated logic circuit.\n\nA: ───────────────────┐\nB: ─────────────────┐ │\nC: ───────────────┐ │ │\nD: ─────────────┐ │ │ │\nE: ───────────┐ │ │ │ │\nF: ─────────┐ │ │ │ │ │\nG: ───────┐ │ │ │ │ │ │\nH: ─────┐ │ │ │ │ │ │ │\nI: ───┐ │ │ │ │ │ │ │ │\nJ: ─┐ │ │ │ │ │ │ │ │ │\n    │ │ │ │ │ │ │ │ │ ├────│⊕⊕\n    │ │ │ │ │ │ │ │ │ ├────│⊕⊕───┐\n    │ │ │ │ │ │ │ │ ├──────│⊕⊕   │\n    │ │ │ │ │ │ │ │ └──────│⊕⊕   │\n    │ │ │ │ │ │ │ │   │          │\n    │ │ │ │ │ │ │ │   └────│&&   │\n    │ │ │ │ │ │ │ ├─────>o─│&&──┐│\n    │ │ │ │ │ │ ├──────────│&&  ││\n    │ │ │ │ │ │ │ │             ││\n    │ │ │ │ │ │ └──────────│⊕⊕  │└───│&&\n    │ │ │ │ │ ├────────────│⊕⊕─┐└────│&&\n    │ │ │ │ │ ├────────────│⊕⊕ └─────│&&─── OUT\n    │ │ │ │ ├───────────>o─│⊕⊕  ┌────│&&\n    │ │ │ │ │ │   │             │┌───│&&\n    │ │ │ │ ├──────────────│&&  ││\n    │ │ │ │ │ │   └────────│&&──┘│\n    │ │ │ └────────────────│&&   │\n    │ │ └──────────────────│&&   │\n    │ │     │ │                  │\n    │ │     │ └─────────>o─│↑↑   │\n    │ └─────────────────>o─│↑↑───┘\n    └──────────────────────│↑↑\n            └───────────>o─│↑↑\n\n\nLegend for gates:\n&&: AND\n↑↑: NAND\n⊕⊕: XOR\n>o: Negate\n&&: AND\n\nGiven the following input assignments:\n  A = 0\n  B = 1\n  C = 1\n  D = 0\n  E = 0\n  F = 1\n  G = 1\n  H = 0\n  I = 1\n  J = 1\n\nWhat is the final output?",
+    "answer": "0",
+    "metadata": {
+      "source_dataset": "circuit_logic",
+      "source_index": 9,
+      "expression": "(A⊕A⊕B⊕B)&(A&C'&D)&(D⊕E⊕E⊕F')&(F&C&G&H)&(E'↑I'↑J↑F')",
+      "assignments": {
+        "A": 0,
+        "B": 1,
+        "C": 1,
+        "D": 0,
+        "E": 0,
+        "F": 1,
+        "G": 1,
+        "H": 0,
+        "I": 1,
+        "J": 1
+      },
+      "term_strings": [
+        "A⊕A⊕B⊕B",
+        "A&C'&D",
+        "D⊕E⊕E⊕F'",
+        "F&C&G&H",
+        "E'↑I'↑J↑F'"
+      ],
+      "final_gate": "AND",
+      "inputs": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H",
+        "I",
+        "J"
+      ],
+      "difficulty": {
+        "terms": [
+          3,
+          5
+        ],
+        "inputs": [
+          2,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "Below is a randomly generated logic circuit.\n\nA: ─────┐\nB: ───┐ │\nC: ─┐ │ │\n    │ │ ├────│⊕⊕──┐\n    │ │ ├────│⊕⊕  │\n    │ │ │         │\n    │ │ └─>o─│&&─┐└──│↓↓\n    │ ├──────│&& └───│↓↓─── OUT\n    │ │           ┌──│↓↓\n    └────────│⊕⊕──┘\n      └──────│⊕⊕\n\n\nLegend for gates:\n&&: AND\n↑↑: NAND\n⊕⊕: XOR\n>o: Negate\n↓↓: NOR\n\nGiven the following input assignments:\n  A = 0\n  B = 1\n  C = 1\n\nWhat is the final output?",
+    "answer": "0",
+    "metadata": {
+      "source_dataset": "circuit_logic",
+      "source_index": 2,
+      "expression": "(A⊕A)↓(A'&B)↓(C⊕B)",
+      "assignments": {
+        "A": 0,
+        "B": 1,
+        "C": 1
+      },
+      "term_strings": [
+        "A⊕A",
+        "A'&B",
+        "C⊕B"
+      ],
+      "final_gate": "NOR",
+      "inputs": [
+        "A",
+        "B",
+        "C"
+      ],
+      "difficulty": {
+        "terms": [
+          3,
+          5
+        ],
+        "inputs": [
+          2,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "Below is a randomly generated logic circuit.\n\nA: ───────────────────┐\nB: ─────────────────┐ │\nC: ───────────────┐ │ │\nD: ─────────────┐ │ │ │\nE: ───────────┐ │ │ │ │\nF: ─────────┐ │ │ │ │ │\nG: ───────┐ │ │ │ │ │ │\nH: ─────┐ │ │ │ │ │ │ │\nI: ───┐ │ │ │ │ │ │ │ │\nJ: ─┐ │ │ │ │ │ │ │ │ │\n    │ │ │ │ │ │ │ │ │ ├────│⊕⊕───┐\n    │ │ │ │ │ │ │ │ │ └─>o─│⊕⊕   │\n    │ │ │ │ │ │ │ │ │            │\n    │ │ │ │ │ │ │ │ ├───>o─│↑↑──┐│\n    │ │ │ │ │ │ │ ├────────│↑↑  ││\n    │ │ │ │ │ │ │ │ │           ││\n    │ │ │ │ │ │ └──────────│&&  ││\n    │ │ │ │ │ │   │ └──────│&&─┐│└───│⊕⊕\n    │ │ │ │ │ │   ├────────│&& │└────│⊕⊕\n    │ │ │ │ │ │   │            └─────│⊕⊕─── OUT\n    │ │ │ │ │ │   └────────│⊕⊕  ┌────│⊕⊕\n    │ │ │ │ │ └─────────>o─│⊕⊕──┘┌───│⊕⊕\n    │ │ │ │ └──────────────│⊕⊕   │\n    │ │ │ │                      │\n    │ │ │ └────────────────│&&   │\n    │ │ └──────────────────│&&───┘\n    │ └────────────────────│&&\n    └──────────────────────│&&\n\n\nLegend for gates:\n&&: AND\n↑↑: NAND\n⊕⊕: XOR\n>o: Negate\n⊕⊕: XOR\n\nGiven the following input assignments:\n  A = 1\n  B = 0\n  C = 1\n  D = 1\n  E = 1\n  F = 1\n  G = 0\n  H = 0\n  I = 1\n  J = 1\n\nWhat is the final output?",
+    "answer": "1",
+    "metadata": {
+      "source_dataset": "circuit_logic",
+      "source_index": 9,
+      "expression": "(A⊕A')⊕(B'↑C)⊕(D&B&C)⊕(C⊕E'⊕F)⊕(G&H&I&J)",
+      "assignments": {
+        "A": 1,
+        "B": 0,
+        "C": 1,
+        "D": 1,
+        "E": 1,
+        "F": 1,
+        "G": 0,
+        "H": 0,
+        "I": 1,
+        "J": 1
+      },
+      "term_strings": [
+        "A⊕A'",
+        "B'↑C",
+        "D&B&C",
+        "C⊕E'⊕F",
+        "G&H&I&J"
+      ],
+      "final_gate": "XOR",
+      "inputs": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H",
+        "I",
+        "J"
+      ],
+      "difficulty": {
+        "terms": [
+          3,
+          5
+        ],
+        "inputs": [
+          2,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "Below is a randomly generated logic circuit.\n\nA: ───────────┐\nB: ─────────┐ │\nC: ───────┐ │ │\nD: ─────┐ │ │ │\nE: ───┐ │ │ │ │\nF: ─┐ │ │ │ │ │\n    │ │ │ │ │ ├────│&&\n    │ │ │ │ ├───>o─│&&───┐\n    │ │ │ ├────────│&&   │\n    │ │ │ │ ├──────│&&   │\n    │ │ │ │ │ │          │\n    │ │ ├──────────│↑↑   │\n    │ ├─────────>o─│↑↑──┐│\n    │ │ │ │ ├───>o─│↑↑  ││\n    │ │ │ └─────>o─│↑↑  │└───│&&\n    │ │ │   │ │         └────│&&\n    ├───────────>o─│↑↑ ┌─────│&&─── OUT\n    │ │ │   │ └─>o─│↑↑─┘┌────│&&\n    └───────────>o─│↑↑  │┌───│&&\n      │ │   │           ││\n      ├────────────│⊕⊕  ││\n      │ └──────────│⊕⊕──┘│\n      │     ├──────│⊕⊕   │\n      │     │            │\n      └────────────│&&───┘\n            └──────│&&\n\n\nLegend for gates:\n&&: AND\n↑↑: NAND\n⊕⊕: XOR\n>o: Negate\n&&: AND\n\nGiven the following input assignments:\n  A = 0\n  B = 1\n  C = 1\n  D = 1\n  E = 0\n  F = 1\n\nWhat is the final output?",
+    "answer": "0",
+    "metadata": {
+      "source_dataset": "circuit_logic",
+      "source_index": 5,
+      "expression": "(A&B'&C&B)&(D↑E'↑B'↑C')&(F'↑A'↑F')&(E⊕D⊕B)&(E&B)",
+      "assignments": {
+        "A": 0,
+        "B": 1,
+        "C": 1,
+        "D": 1,
+        "E": 0,
+        "F": 1
+      },
+      "term_strings": [
+        "A&B'&C&B",
+        "D↑E'↑B'↑C'",
+        "F'↑A'↑F'",
+        "E⊕D⊕B",
+        "E&B"
+      ],
+      "final_gate": "AND",
+      "inputs": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F"
+      ],
+      "difficulty": {
+        "terms": [
+          3,
+          5
+        ],
+        "inputs": [
+          2,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "Below is a randomly generated logic circuit.\n\nA: ───────┐\nB: ─────┐ │\nC: ───┐ │ │\nD: ─┐ │ │ │\n    │ │ │ ├────│↑↑\n    │ │ │ ├─>o─│↑↑──┐\n    │ │ ├──────│↑↑  │\n    │ │ │ │         │\n    │ │ │ ├────│↑↑  └──│&&\n    │ └─────>o─│↑↑─────│&&─── OUT\n    │   │ └────│↑↑  ┌──│&&\n    │   │           │\n    │   ├───>o─│&&  │\n    │   └──────│&&──┘\n    └───────>o─│&&\n\n\nLegend for gates:\n&&: AND\n↑↑: NAND\n⊕⊕: XOR\n>o: Negate\n&&: AND\n\nGiven the following input assignments:\n  A = 1\n  B = 1\n  C = 1\n  D = 1\n\nWhat is the final output?",
+    "answer": "0",
+    "metadata": {
+      "source_dataset": "circuit_logic",
+      "source_index": 3,
+      "expression": "(A↑A'↑B)&(A↑C'↑A)&(B'&B&D')",
+      "assignments": {
+        "A": 1,
+        "B": 1,
+        "C": 1,
+        "D": 1
+      },
+      "term_strings": [
+        "A↑A'↑B",
+        "A↑C'↑A",
+        "B'&B&D'"
+      ],
+      "final_gate": "AND",
+      "inputs": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "difficulty": {
+        "terms": [
+          3,
+          5
+        ],
+        "inputs": [
+          2,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "Below is a randomly generated logic circuit.\n\nA: ───────┐\nB: ─────┐ │\nC: ───┐ │ │\nD: ─┐ │ │ │\n    │ │ │ ├────│⊕⊕\n    │ │ │ ├─>o─│⊕⊕──┐\n    │ │ │ └─>o─│⊕⊕  │\n    │ │ │           └──│++\n    │ │ ├──────│&&─────│++─── OUT\n    │ │ └──────│&&  ┌──│++\n    │ │             │\n    │ └────────│↑↑──┘\n    └───────>o─│↑↑\n\n\nLegend for gates:\n&&: AND\n↑↑: NAND\n⊕⊕: XOR\n>o: Negate\n++: OR\n\nGiven the following input assignments:\n  A = 1\n  B = 0\n  C = 1\n  D = 1\n\nWhat is the final output?",
+    "answer": "1",
+    "metadata": {
+      "source_dataset": "circuit_logic",
+      "source_index": 3,
+      "expression": "(A⊕A'⊕A')+(B&B)+(C↑D')",
+      "assignments": {
+        "A": 1,
+        "B": 0,
+        "C": 1,
+        "D": 1
+      },
+      "term_strings": [
+        "A⊕A'⊕A'",
+        "B&B",
+        "C↑D'"
+      ],
+      "final_gate": "OR",
+      "inputs": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "difficulty": {
+        "terms": [
+          3,
+          5
+        ],
+        "inputs": [
+          2,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "Below is a randomly generated logic circuit.\n\nA: ─────────────────┐\nB: ───────────────┐ │\nC: ─────────────┐ │ │\nD: ───────────┐ │ │ │\nE: ─────────┐ │ │ │ │\nF: ───────┐ │ │ │ │ │\nG: ─────┐ │ │ │ │ │ │\nH: ───┐ │ │ │ │ │ │ │\nI: ─┐ │ │ │ │ │ │ │ │\n    │ │ │ │ │ │ │ │ ├────│↑↑\n    │ │ │ │ │ │ │ │ └────│↑↑───┐\n    │ │ │ │ │ │ │ └──────│↑↑   │\n    │ │ │ │ │ │ │              │\n    │ │ │ │ │ │ ├────────│&&   │\n    │ │ │ │ │ └──────────│&&──┐└──│↓↓\n    │ │ │ │ │   ├─────>o─│&&  └───│↓↓\n    │ │ │ │ │   │            ┌────│↓↓─── OUT\n    │ │ │ │ └────────────│&& │┌───│↓↓\n    │ │ │ └───────────>o─│&&─┘│\n    │ │ └────────────────│&&  │\n    │ └──────────────────│&&  │\n    │           │             │\n    │           └─────>o─│↑↑──┘\n    └─────────────────>o─│↑↑\n\n\nLegend for gates:\n&&: AND\n↑↑: NAND\n⊕⊕: XOR\n>o: Negate\n↓↓: NOR\n\nGiven the following input assignments:\n  A = 1\n  B = 1\n  C = 0\n  D = 1\n  E = 0\n  F = 1\n  G = 0\n  H = 0\n  I = 1\n\nWhat is the final output?",
+    "answer": "0",
+    "metadata": {
+      "source_dataset": "circuit_logic",
+      "source_index": 8,
+      "expression": "(A↑A↑B)↓(C&D&C')↓(E&F'&G&H)↓(C'↑I')",
+      "assignments": {
+        "A": 1,
+        "B": 1,
+        "C": 0,
+        "D": 1,
+        "E": 0,
+        "F": 1,
+        "G": 0,
+        "H": 0,
+        "I": 1
+      },
+      "term_strings": [
+        "A↑A↑B",
+        "C&D&C'",
+        "E&F'&G&H",
+        "C'↑I'"
+      ],
+      "final_gate": "NOR",
+      "inputs": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H",
+        "I"
+      ],
+      "difficulty": {
+        "terms": [
+          3,
+          5
+        ],
+        "inputs": [
+          2,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "Below is a randomly generated logic circuit.\n\nA: ───────────┐\nB: ─────────┐ │\nC: ───────┐ │ │\nD: ─────┐ │ │ │\nE: ───┐ │ │ │ │\nF: ─┐ │ │ │ │ │\n    │ │ │ │ │ └────│↑↑\n    │ │ │ │ ├──────│↑↑───┐\n    │ │ │ ├────────│↑↑   │\n    │ │ │ │ │            │\n    │ │ │ ├────────│⊕⊕──┐│\n    │ │ │ ├─────>o─│⊕⊕  │└──│↓↓\n    │ │ │ │ │           └───│↓↓\n    │ │ ├───────>o─│↑↑ ┌────│↓↓─── OUT\n    │ │ │ └────────│↑↑─┘┌───│↓↓\n    │ └────────────│↑↑  │\n    └──────────────│↑↑  │\n        │   │           │\n        └──────────│⊕⊕──┘\n            └──────│⊕⊕\n\n\nLegend for gates:\n&&: AND\n↑↑: NAND\n⊕⊕: XOR\n>o: Negate\n↓↓: NOR\n\nGiven the following input assignments:\n  A = 1\n  B = 1\n  C = 1\n  D = 0\n  E = 0\n  F = 1\n\nWhat is the final output?",
+    "answer": "0",
+    "metadata": {
+      "source_dataset": "circuit_logic",
+      "source_index": 5,
+      "expression": "(A↑B↑C)↓(C⊕C')↓(D'↑C↑E↑F)↓(D⊕B)",
+      "assignments": {
+        "A": 1,
+        "B": 1,
+        "C": 1,
+        "D": 0,
+        "E": 0,
+        "F": 1
+      },
+      "term_strings": [
+        "A↑B↑C",
+        "C⊕C'",
+        "D'↑C↑E↑F",
+        "D⊕B"
+      ],
+      "final_gate": "NOR",
+      "inputs": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F"
+      ],
+      "difficulty": {
+        "terms": [
+          3,
+          5
+        ],
+        "inputs": [
+          2,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "Below is a randomly generated logic circuit.\n\nA: ─────┐\nB: ───┐ │\nC: ─┐ │ │\n    │ │ ├────│↑↑──┐\n    │ ├───>o─│↑↑  │\n    │ │ │         │\n    │ │ ├─>o─│&&  │\n    │ ├──────│&&─┐└──│⊕⊕\n    │ ├──────│&& └───│⊕⊕─── OUT\n    │ │ ├────│&&  ┌──│⊕⊕\n    │ │ │         │\n    │ └──────│↑↑  │\n    │   └────│↑↑──┘\n    └────────│↑↑\n\n\nLegend for gates:\n&&: AND\n↑↑: NAND\n⊕⊕: XOR\n>o: Negate\n⊕⊕: XOR\n\nGiven the following input assignments:\n  A = 0\n  B = 0\n  C = 1\n\nWhat is the final output?",
+    "answer": "0",
+    "metadata": {
+      "source_dataset": "circuit_logic",
+      "source_index": 2,
+      "expression": "(A↑B')⊕(A'&B&B&A)⊕(B↑A↑C)",
+      "assignments": {
+        "A": 0,
+        "B": 0,
+        "C": 1
+      },
+      "term_strings": [
+        "A↑B'",
+        "A'&B&B&A",
+        "B↑A↑C"
+      ],
+      "final_gate": "XOR",
+      "inputs": [
+        "A",
+        "B",
+        "C"
+      ],
+      "difficulty": {
+        "terms": [
+          3,
+          5
+        ],
+        "inputs": [
+          2,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "Below is a randomly generated logic circuit.\n\nA: ─────────┐\nB: ───────┐ │\nC: ─────┐ │ │\nD: ───┐ │ │ │\nE: ─┐ │ │ │ │\n    │ │ │ │ ├────│⊕⊕\n    │ │ │ ├───>o─│⊕⊕───┐\n    │ │ │ ├───>o─│⊕⊕   │\n    │ │ │ │ │          │\n    │ │ ├────────│⊕⊕──┐│\n    │ │ │ │ ├────│⊕⊕  │└──│⊕⊕\n    │ │ │ │ │         └───│⊕⊕\n    │ │ │ ├──────│⊕⊕ ┌────│⊕⊕─── OUT\n    │ │ │ └───>o─│⊕⊕─┘┌───│⊕⊕\n    │ │ └─────>o─│⊕⊕  │\n    │ │     └────│⊕⊕  │\n    │ │               │\n    │ └───────>o─│&&──┘\n    └────────────│&&\n\n\nLegend for gates:\n&&: AND\n↑↑: NAND\n⊕⊕: XOR\n>o: Negate\n⊕⊕: XOR\n\nGiven the following input assignments:\n  A = 1\n  B = 1\n  C = 0\n  D = 1\n  E = 1\n\nWhat is the final output?",
+    "answer": "1",
+    "metadata": {
+      "source_dataset": "circuit_logic",
+      "source_index": 4,
+      "expression": "(A⊕B'⊕B')⊕(C⊕A)⊕(B⊕B'⊕C'⊕A)⊕(D'&E)",
+      "assignments": {
+        "A": 1,
+        "B": 1,
+        "C": 0,
+        "D": 1,
+        "E": 1
+      },
+      "term_strings": [
+        "A⊕B'⊕B'",
+        "C⊕A",
+        "B⊕B'⊕C'⊕A",
+        "D'&E"
+      ],
+      "final_gate": "XOR",
+      "inputs": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+      ],
+      "difficulty": {
+        "terms": [
+          3,
+          5
+        ],
+        "inputs": [
+          2,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "Below is a randomly generated logic circuit.\n\nA: ─────┐\nB: ───┐ │\nC: ─┐ │ │\n    │ │ ├────│&&\n    │ │ ├────│&&──┐\n    │ │ ├────│&&  │\n    │ │ │         │\n    │ │ ├─>o─│↑↑  └──│⊕⊕\n    │ │ ├────│↑↑─────│⊕⊕─── OUT\n    │ │ └─>o─│↑↑  ┌──│⊕⊕\n    │ │           │\n    │ └──────│⊕⊕──┘\n    └─────>o─│⊕⊕\n\n\nLegend for gates:\n&&: AND\n↑↑: NAND\n⊕⊕: XOR\n>o: Negate\n⊕⊕: XOR\n\nGiven the following input assignments:\n  A = 1\n  B = 1\n  C = 0\n\nWhat is the final output?",
+    "answer": "0",
+    "metadata": {
+      "source_dataset": "circuit_logic",
+      "source_index": 2,
+      "expression": "(A&A&A)⊕(A'↑A↑A')⊕(B⊕C')",
+      "assignments": {
+        "A": 1,
+        "B": 1,
+        "C": 0
+      },
+      "term_strings": [
+        "A&A&A",
+        "A'↑A↑A'",
+        "B⊕C'"
+      ],
+      "final_gate": "XOR",
+      "inputs": [
+        "A",
+        "B",
+        "C"
+      ],
+      "difficulty": {
+        "terms": [
+          3,
+          5
+        ],
+        "inputs": [
+          2,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "Below is a randomly generated logic circuit.\n\nA: ─────────────┐\nB: ───────────┐ │\nC: ─────────┐ │ │\nD: ───────┐ │ │ │\nE: ─────┐ │ │ │ │\nF: ───┐ │ │ │ │ │\nG: ─┐ │ │ │ │ │ │\n    │ │ │ │ │ │ ├────│↑↑\n    │ │ │ │ │ └───>o─│↑↑──┐\n    │ │ │ │ └────────│↑↑  │\n    │ │ │ ├──────────│↑↑  │\n    │ │ │ │     │         │\n    │ │ │ │     └────│⊕⊕  └──│++\n    │ │ │ ├──────────│⊕⊕─────│++─── OUT\n    │ │ └────────────│⊕⊕  ┌──│++\n    │ │   │               │\n    │ └──────────────│⊕⊕  │\n    └────────────────│⊕⊕──┘\n          └───────>o─│⊕⊕\n\n\nLegend for gates:\n&&: AND\n↑↑: NAND\n⊕⊕: XOR\n>o: Negate\n++: OR\n\nGiven the following input assignments:\n  A = 0\n  B = 1\n  C = 1\n  D = 0\n  E = 0\n  F = 0\n  G = 1\n\nWhat is the final output?",
+    "answer": "1",
+    "metadata": {
+      "source_dataset": "circuit_logic",
+      "source_index": 6,
+      "expression": "(A↑B'↑C↑D)+(A⊕D⊕E)+(F⊕G⊕D')",
+      "assignments": {
+        "A": 0,
+        "B": 1,
+        "C": 1,
+        "D": 0,
+        "E": 0,
+        "F": 0,
+        "G": 1
+      },
+      "term_strings": [
+        "A↑B'↑C↑D",
+        "A⊕D⊕E",
+        "F⊕G⊕D'"
+      ],
+      "final_gate": "OR",
+      "inputs": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G"
+      ],
+      "difficulty": {
+        "terms": [
+          3,
+          5
+        ],
+        "inputs": [
+          2,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "Below is a randomly generated logic circuit.\n\nA: ───────────────────┐\nB: ─────────────────┐ │\nC: ───────────────┐ │ │\nD: ─────────────┐ │ │ │\nE: ───────────┐ │ │ │ │\nF: ─────────┐ │ │ │ │ │\nG: ───────┐ │ │ │ │ │ │\nH: ─────┐ │ │ │ │ │ │ │\nI: ───┐ │ │ │ │ │ │ │ │\nJ: ─┐ │ │ │ │ │ │ │ │ │\n    │ │ │ │ │ │ │ │ │ └─>o─│&&\n    │ │ │ │ │ │ │ │ ├──────│&&───┐\n    │ │ │ │ │ │ │ └────────│&&   │\n    │ │ │ │ │ │ └──────────│&&   │\n    │ │ │ │ │ │     │            │\n    │ │ │ │ │ └─────────>o─│↑↑──┐└──│↓↓\n    │ │ │ │ │       ├──────│↑↑  └───│↓↓\n    │ │ │ │ │       │          ┌────│↓↓─── OUT\n    │ │ │ │ │       └──────│⊕⊕ │┌───│↓↓\n    │ │ │ │ └──────────────│⊕⊕─┘│\n    │ │ │ └────────────────│⊕⊕  │\n    │ │ └──────────────────│⊕⊕  │\n    │ │                         │\n    │ └────────────────────│↑↑──┘\n    └──────────────────────│↑↑\n\n\nLegend for gates:\n&&: AND\n↑↑: NAND\n⊕⊕: XOR\n>o: Negate\n↓↓: NOR\n\nGiven the following input assignments:\n  A = 1\n  B = 0\n  C = 1\n  D = 1\n  E = 1\n  F = 0\n  G = 1\n  H = 1\n  I = 0\n  J = 1\n\nWhat is the final output?",
+    "answer": "0",
+    "metadata": {
+      "source_dataset": "circuit_logic",
+      "source_index": 9,
+      "expression": "(A'&B&C&D)↓(E'↑B)↓(B⊕F⊕G⊕H)↓(I↑J)",
+      "assignments": {
+        "A": 1,
+        "B": 0,
+        "C": 1,
+        "D": 1,
+        "E": 1,
+        "F": 0,
+        "G": 1,
+        "H": 1,
+        "I": 0,
+        "J": 1
+      },
+      "term_strings": [
+        "A'&B&C&D",
+        "E'↑B",
+        "B⊕F⊕G⊕H",
+        "I↑J"
+      ],
+      "final_gate": "NOR",
+      "inputs": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H",
+        "I",
+        "J"
+      ],
+      "difficulty": {
+        "terms": [
+          3,
+          5
+        ],
+        "inputs": [
+          2,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "Below is a randomly generated logic circuit.\n\nA: ─────────────────┐\nB: ───────────────┐ │\nC: ─────────────┐ │ │\nD: ───────────┐ │ │ │\nE: ─────────┐ │ │ │ │\nF: ───────┐ │ │ │ │ │\nG: ─────┐ │ │ │ │ │ │\nH: ───┐ │ │ │ │ │ │ │\nI: ─┐ │ │ │ │ │ │ │ │\n    │ │ │ │ │ │ │ │ ├─>o─│&&\n    │ │ │ │ │ │ │ │ ├────│&&───┐\n    │ │ │ │ │ │ │ │ ├────│&&   │\n    │ │ │ │ │ │ │ ├──────│&&   │\n    │ │ │ │ │ │ │ │ │          │\n    │ │ │ │ │ │ │ │ ├────│↑↑   │\n    │ │ │ │ │ │ └─────>o─│↑↑──┐│\n    │ │ │ │ │ │   │ └────│↑↑  ││\n    │ │ │ │ │ │   ├──────│↑↑  │└───│⊕⊕\n    │ │ │ │ │ │   │           └────│⊕⊕\n    │ │ │ │ │ └──────────│⊕⊕ ┌─────│⊕⊕─── OUT\n    │ │ │ │ ├────────────│⊕⊕─┘┌────│⊕⊕\n    │ │ │ ├──────────────│⊕⊕  │┌───│⊕⊕\n    │ │ │ │ │     │           ││\n    │ │ └─────────────>o─│&&  ││\n    │ └──────────────────│&&──┘│\n    │     │ │     └───>o─│&&   │\n    │     │ │                  │\n    │     └──────────────│↑↑   │\n    │       └────────────│↑↑───┘\n    └────────────────────│↑↑\n\n\nLegend for gates:\n&&: AND\n↑↑: NAND\n⊕⊕: XOR\n>o: Negate\n⊕⊕: XOR\n\nGiven the following input assignments:\n  A = 0\n  B = 0\n  C = 1\n  D = 0\n  E = 0\n  F = 1\n  G = 1\n  H = 0\n  I = 1\n\nWhat is the final output?",
+    "answer": "1",
+    "metadata": {
+      "source_dataset": "circuit_logic",
+      "source_index": 8,
+      "expression": "(A'&A&A&B)⊕(A↑C'↑A↑B)⊕(D⊕E⊕F)⊕(G'&H&B')⊕(F↑E↑I)",
+      "assignments": {
+        "A": 0,
+        "B": 0,
+        "C": 1,
+        "D": 0,
+        "E": 0,
+        "F": 1,
+        "G": 1,
+        "H": 0,
+        "I": 1
+      },
+      "term_strings": [
+        "A'&A&A&B",
+        "A↑C'↑A↑B",
+        "D⊕E⊕F",
+        "G'&H&B'",
+        "F↑E↑I"
+      ],
+      "final_gate": "XOR",
+      "inputs": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H",
+        "I"
+      ],
+      "difficulty": {
+        "terms": [
+          3,
+          5
+        ],
+        "inputs": [
+          2,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "Below is a randomly generated logic circuit.\n\nA: ─────┐\nB: ───┐ │\nC: ─┐ │ │\n    │ │ ├────│&&──┐\n    │ │ ├────│&&  │\n    │ │ │         │\n    │ ├──────│⊕⊕  │\n    │ │ ├─>o─│⊕⊕─┐│\n    │ │ ├─>o─│⊕⊕ │└──│↓↓\n    │ └──────│⊕⊕ └───│↓↓─── OUT\n    │   │         ┌──│↓↓\n    │   ├────│&&  │\n    ├────────│&&──┘\n    └────────│&&\n        └─>o─│&&\n\n\nLegend for gates:\n&&: AND\n↑↑: NAND\n⊕⊕: XOR\n>o: Negate\n↓↓: NOR\n\nGiven the following input assignments:\n  A = 0\n  B = 0\n  C = 0\n\nWhat is the final output?",
+    "answer": "1",
+    "metadata": {
+      "source_dataset": "circuit_logic",
+      "source_index": 2,
+      "expression": "(A&A)↓(B⊕A'⊕A'⊕B)↓(A&C&C&A')",
+      "assignments": {
+        "A": 0,
+        "B": 0,
+        "C": 0
+      },
+      "term_strings": [
+        "A&A",
+        "B⊕A'⊕A'⊕B",
+        "A&C&C&A'"
+      ],
+      "final_gate": "NOR",
+      "inputs": [
+        "A",
+        "B",
+        "C"
+      ],
+      "difficulty": {
+        "terms": [
+          3,
+          5
+        ],
+        "inputs": [
+          2,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "Below is a randomly generated logic circuit.\n\nA: ─────────────┐\nB: ───────────┐ │\nC: ─────────┐ │ │\nD: ───────┐ │ │ │\nE: ─────┐ │ │ │ │\nF: ───┐ │ │ │ │ │\nG: ─┐ │ │ │ │ │ │\n    │ │ │ │ │ │ ├────│↑↑───┐\n    │ │ │ │ │ │ ├────│↑↑   │\n    │ │ │ │ │ │ │          │\n    │ │ │ │ │ │ ├────│&&   │\n    │ │ │ │ │ └──────│&&──┐│\n    │ │ │ │ └────────│&&  ││\n    │ │ │ │     ├────│&&  ││\n    │ │ │ │     │         ││\n    │ │ │ └───────>o─│↑↑  │└───│↓↓\n    │ │ └─────────>o─│↑↑─┐└────│↓↓\n    │ ├──────────────│↑↑ └─────│↓↓─── OUT\n    │ │         │         ┌────│↓↓\n    │ │         ├────│↑↑  │┌───│↓↓\n    │ └──────────────│↑↑──┘│\n    ├────────────────│↑↑   │\n    │           └────│↑↑   │\n    │                      │\n    ├─────────────>o─│&&   │\n    ├─────────────>o─│&&───┘\n    └─────────────>o─│&&\n\n\nLegend for gates:\n&&: AND\n↑↑: NAND\n⊕⊕: XOR\n>o: Negate\n↓↓: NOR\n\nGiven the following input assignments:\n  A = 0\n  B = 0\n  C = 0\n  D = 0\n  E = 0\n  F = 1\n  G = 0\n\nWhat is the final output?",
+    "answer": "0",
+    "metadata": {
+      "source_dataset": "circuit_logic",
+      "source_index": 6,
+      "expression": "(A↑A)↓(A&B&C&A)↓(D'↑E'↑F)↓(A↑F↑G↑A)↓(G'&G'&G')",
+      "assignments": {
+        "A": 0,
+        "B": 0,
+        "C": 0,
+        "D": 0,
+        "E": 0,
+        "F": 1,
+        "G": 0
+      },
+      "term_strings": [
+        "A↑A",
+        "A&B&C&A",
+        "D'↑E'↑F",
+        "A↑F↑G↑A",
+        "G'&G'&G'"
+      ],
+      "final_gate": "NOR",
+      "inputs": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G"
+      ],
+      "difficulty": {
+        "terms": [
+          3,
+          5
+        ],
+        "inputs": [
+          2,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "Below is a randomly generated logic circuit.\n\nA: ─────────┐\nB: ───────┐ │\nC: ─────┐ │ │\nD: ───┐ │ │ │\nE: ─┐ │ │ │ │\n    │ │ │ │ ├────│⊕⊕\n    │ │ │ ├──────│⊕⊕───┐\n    │ │ │ ├──────│⊕⊕   │\n    │ │ │ │ ├─>o─│⊕⊕   │\n    │ │ │ │ │          │\n    │ │ │ │ ├────│↑↑──┐│\n    │ │ │ ├──────│↑↑  │└──│↓↓\n    │ │ │ │ │         └───│↓↓\n    │ │ ├─────>o─│&& ┌────│↓↓─── OUT\n    │ │ └────────│&&─┘┌───│↓↓\n    │ │   ├──────│&&  │\n    │ │   │ └────│&&  │\n    │ │   │           │\n    │ └──────────│↑↑  │\n    └─────────>o─│↑↑──┘\n          └──────│↑↑\n\n\nLegend for gates:\n&&: AND\n↑↑: NAND\n⊕⊕: XOR\n>o: Negate\n↓↓: NOR\n\nGiven the following input assignments:\n  A = 0\n  B = 0\n  C = 1\n  D = 1\n  E = 1\n\nWhat is the final output?",
+    "answer": "0",
+    "metadata": {
+      "source_dataset": "circuit_logic",
+      "source_index": 4,
+      "expression": "(A⊕B⊕B⊕A')↓(A↑B)↓(C'&C&B&A)↓(D↑E'↑B)",
+      "assignments": {
+        "A": 0,
+        "B": 0,
+        "C": 1,
+        "D": 1,
+        "E": 1
+      },
+      "term_strings": [
+        "A⊕B⊕B⊕A'",
+        "A↑B",
+        "C'&C&B&A",
+        "D↑E'↑B"
+      ],
+      "final_gate": "NOR",
+      "inputs": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+      ],
+      "difficulty": {
+        "terms": [
+          3,
+          5
+        ],
+        "inputs": [
+          2,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "Below is a randomly generated logic circuit.\n\nA: ───────────────┐\nB: ─────────────┐ │\nC: ───────────┐ │ │\nD: ─────────┐ │ │ │\nE: ───────┐ │ │ │ │\nF: ─────┐ │ │ │ │ │\nG: ───┐ │ │ │ │ │ │\nH: ─┐ │ │ │ │ │ │ │\n    │ │ │ │ │ │ │ ├────│&&\n    │ │ │ │ │ │ ├──────│&&───┐\n    │ │ │ │ │ │ │ ├─>o─│&&   │\n    │ │ │ │ │ │ ├──────│&&   │\n    │ │ │ │ │ │ │ │          │\n    │ │ │ │ │ ├────────│&&──┐│\n    │ │ │ │ │ │ ├───>o─│&&  ││\n    │ │ │ │ │ │ │ │         ││\n    │ │ │ │ ├──────────│&&  │└───│↓↓\n    │ │ │ │ │ │ └──────│&&─┐└────│↓↓\n    │ │ │ │ ├──────────│&& └─────│↓↓─── OUT\n    │ │ │ │ └──────────│&&  ┌────│↓↓\n    │ │ │ │   │   │         │┌───│↓↓\n    │ │ │ │   │   └─>o─│⊕⊕  ││\n    │ │ │ │   └────────│⊕⊕──┘│\n    │ │ │ ├─────────>o─│⊕⊕   │\n    │ │ │ └────────────│⊕⊕   │\n    │ │ │                    │\n    │ │ └───────────>o─│↑↑   │\n    │ └────────────────│↑↑───┘\n    └──────────────────│↑↑\n\n\nLegend for gates:\n&&: AND\n↑↑: NAND\n⊕⊕: XOR\n>o: Negate\n↓↓: NOR\n\nGiven the following input assignments:\n  A = 1\n  B = 0\n  C = 1\n  D = 0\n  E = 0\n  F = 1\n  G = 1\n  H = 1\n\nWhat is the final output?",
+    "answer": "0",
+    "metadata": {
+      "source_dataset": "circuit_logic",
+      "source_index": 7,
+      "expression": "(A&B&A'&B)↓(C&B')↓(D&B&D&D)↓(A'⊕C⊕E'⊕E)↓(F'↑G↑H)",
+      "assignments": {
+        "A": 1,
+        "B": 0,
+        "C": 1,
+        "D": 0,
+        "E": 0,
+        "F": 1,
+        "G": 1,
+        "H": 1
+      },
+      "term_strings": [
+        "A&B&A'&B",
+        "C&B'",
+        "D&B&D&D",
+        "A'⊕C⊕E'⊕E",
+        "F'↑G↑H"
+      ],
+      "final_gate": "NOR",
+      "inputs": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H"
+      ],
+      "difficulty": {
+        "terms": [
+          3,
+          5
+        ],
+        "inputs": [
+          2,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "Below is a randomly generated logic circuit.\n\nA: ─────┐\nB: ───┐ │\nC: ─┐ │ │\n    │ │ ├────│⊕⊕\n    │ │ ├────│⊕⊕──┐\n    │ │ ├─>o─│⊕⊕  │\n    │ │ │         │\n    │ │ ├─>o─│⊕⊕  │\n    │ │ ├────│⊕⊕─┐└──│↓↓\n    │ │ └─>o─│⊕⊕ └───│↓↓─── OUT\n    │ ├──────│⊕⊕  ┌──│↓↓\n    │ │           │\n    │ ├───>o─│&&  │\n    │ └───>o─│&&──┘\n    ├────────│&&\n    └────────│&&\n\n\nLegend for gates:\n&&: AND\n↑↑: NAND\n⊕⊕: XOR\n>o: Negate\n↓↓: NOR\n\nGiven the following input assignments:\n  A = 0\n  B = 0\n  C = 0\n\nWhat is the final output?",
+    "answer": "0",
+    "metadata": {
+      "source_dataset": "circuit_logic",
+      "source_index": 2,
+      "expression": "(A⊕A⊕A')↓(A'⊕A⊕A'⊕B)↓(B'&B'&C&C)",
+      "assignments": {
+        "A": 0,
+        "B": 0,
+        "C": 0
+      },
+      "term_strings": [
+        "A⊕A⊕A'",
+        "A'⊕A⊕A'⊕B",
+        "B'&B'&C&C"
+      ],
+      "final_gate": "NOR",
+      "inputs": [
+        "A",
+        "B",
+        "C"
+      ],
+      "difficulty": {
+        "terms": [
+          3,
+          5
+        ],
+        "inputs": [
+          2,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "Below is a randomly generated logic circuit.\n\nA: ─────────────┐\nB: ───────────┐ │\nC: ─────────┐ │ │\nD: ───────┐ │ │ │\nE: ─────┐ │ │ │ │\nF: ───┐ │ │ │ │ │\nG: ─┐ │ │ │ │ │ │\n    │ │ │ │ │ │ ├────│⊕⊕\n    │ │ │ │ │ │ ├────│⊕⊕───┐\n    │ │ │ │ │ │ ├─>o─│⊕⊕   │\n    │ │ │ │ │ │ │          │\n    │ │ │ │ │ ├──────│↑↑   │\n    │ │ │ │ │ │ └────│↑↑──┐│\n    │ │ │ │ │ ├───>o─│↑↑  ││\n    │ │ │ │ ├─────>o─│↑↑  ││\n    │ │ │ │ │ │           │└───│↓↓\n    │ │ │ ├──────────│⊕⊕  └────│↓↓\n    │ │ ├────────────│⊕⊕───────│↓↓─── OUT\n    │ │ └─────────>o─│⊕⊕  ┌────│↓↓\n    │ │   │ │ │           │┌───│↓↓\n    │ │   │ │ └──────│↑↑  ││\n    │ │   └───────>o─│↑↑──┘│\n    │ └───────────>o─│↑↑   │\n    │       │              │\n    │       ├────────│&&   │\n    └─────────────>o─│&&───┘\n            └────────│&&\n\n\nLegend for gates:\n&&: AND\n↑↑: NAND\n⊕⊕: XOR\n>o: Negate\n↓↓: NOR\n\nGiven the following input assignments:\n  A = 1\n  B = 1\n  C = 0\n  D = 0\n  E = 0\n  F = 1\n  G = 0\n\nWhat is the final output?",
+    "answer": "0",
+    "metadata": {
+      "source_dataset": "circuit_logic",
+      "source_index": 6,
+      "expression": "(A⊕A⊕A')↓(B↑A↑B'↑C')↓(D⊕E⊕E')↓(B↑D'↑F')↓(C&G'&C)",
+      "assignments": {
+        "A": 1,
+        "B": 1,
+        "C": 0,
+        "D": 0,
+        "E": 0,
+        "F": 1,
+        "G": 0
+      },
+      "term_strings": [
+        "A⊕A⊕A'",
+        "B↑A↑B'↑C'",
+        "D⊕E⊕E'",
+        "B↑D'↑F'",
+        "C&G'&C"
+      ],
+      "final_gate": "NOR",
+      "inputs": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G"
+      ],
+      "difficulty": {
+        "terms": [
+          3,
+          5
+        ],
+        "inputs": [
+          2,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "Below is a randomly generated logic circuit.\n\nA: ───┐\nB: ─┐ │\n    │ ├─>o─│&&\n    ├──────│&&──┐\n    ├──────│&&  │\n    │ │         │\n    ├──────│&&─┐└──│⊕⊕\n    ├──────│&& └───│⊕⊕─── OUT\n    │ │         ┌──│⊕⊕\n    └──────│⊕⊕  │\n      ├─>o─│⊕⊕──┘\n      └─>o─│⊕⊕\n\n\nLegend for gates:\n&&: AND\n↑↑: NAND\n⊕⊕: XOR\n>o: Negate\n⊕⊕: XOR\n\nGiven the following input assignments:\n  A = 1\n  B = 1\n\nWhat is the final output?",
+    "answer": "0",
+    "metadata": {
+      "source_dataset": "circuit_logic",
+      "source_index": 1,
+      "expression": "(A'&B&B)⊕(B&B)⊕(B⊕A'⊕A')",
+      "assignments": {
+        "A": 1,
+        "B": 1
+      },
+      "term_strings": [
+        "A'&B&B",
+        "B&B",
+        "B⊕A'⊕A'"
+      ],
+      "final_gate": "XOR",
+      "inputs": [
+        "A",
+        "B"
+      ],
+      "difficulty": {
+        "terms": [
+          3,
+          5
+        ],
+        "inputs": [
+          2,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "Below is a randomly generated logic circuit.\n\nA: ─────────┐\nB: ───────┐ │\nC: ─────┐ │ │\nD: ───┐ │ │ │\nE: ─┐ │ │ │ │\n    │ │ │ │ ├────│&&───┐\n    │ │ │ ├───>o─│&&   │\n    │ │ │ │ │          │\n    │ │ └────────│&&   │\n    │ │   └──────│&&──┐└──│++\n    │ │     ├─>o─│&&  └───│++\n    │ │     │        ┌────│++─── OUT\n    │ │     ├────│↑↑─┘┌───│++\n    │ └──────────│↑↑  │\n    │       │         │\n    │       └────│↑↑──┘\n    └────────────│↑↑\n\n\nLegend for gates:\n&&: AND\n↑↑: NAND\n⊕⊕: XOR\n>o: Negate\n++: OR\n\nGiven the following input assignments:\n  A = 0\n  B = 1\n  C = 0\n  D = 0\n  E = 1\n\nWhat is the final output?",
+    "answer": "1",
+    "metadata": {
+      "source_dataset": "circuit_logic",
+      "source_index": 4,
+      "expression": "(A&B')+(C&B&A')+(A↑D)+(A↑E)",
+      "assignments": {
+        "A": 0,
+        "B": 1,
+        "C": 0,
+        "D": 0,
+        "E": 1
+      },
+      "term_strings": [
+        "A&B'",
+        "C&B&A'",
+        "A↑D",
+        "A↑E"
+      ],
+      "final_gate": "OR",
+      "inputs": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+      ],
+      "difficulty": {
+        "terms": [
+          3,
+          5
+        ],
+        "inputs": [
+          2,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "Below is a randomly generated logic circuit.\n\nA: ─────────────┐\nB: ───────────┐ │\nC: ─────────┐ │ │\nD: ───────┐ │ │ │\nE: ─────┐ │ │ │ │\nF: ───┐ │ │ │ │ │\nG: ─┐ │ │ │ │ │ │\n    │ │ │ │ │ │ ├────│⊕⊕\n    │ │ │ │ │ │ ├────│⊕⊕──┐\n    │ │ │ │ │ ├───>o─│⊕⊕  │\n    │ │ │ │ │ │ │         │\n    │ │ │ │ │ └──────│⊕⊕  │\n    │ │ │ │ └─────>o─│⊕⊕─┐└──│↓↓\n    │ │ │ │     └────│⊕⊕ └───│↓↓─── OUT\n    │ │ │ └──────────│⊕⊕  ┌──│↓↓\n    │ │ │                 │\n    │ │ └────────────│&&  │\n    │ └───────────>o─│&&──┘\n    └────────────────│&&\n\n\nLegend for gates:\n&&: AND\n↑↑: NAND\n⊕⊕: XOR\n>o: Negate\n↓↓: NOR\n\nGiven the following input assignments:\n  A = 0\n  B = 0\n  C = 0\n  D = 0\n  E = 1\n  F = 0\n  G = 1\n\nWhat is the final output?",
+    "answer": "0",
+    "metadata": {
+      "source_dataset": "circuit_logic",
+      "source_index": 6,
+      "expression": "(A⊕A⊕B')↓(B⊕C'⊕A⊕D)↓(E&F'&G)",
+      "assignments": {
+        "A": 0,
+        "B": 0,
+        "C": 0,
+        "D": 0,
+        "E": 1,
+        "F": 0,
+        "G": 1
+      },
+      "term_strings": [
+        "A⊕A⊕B'",
+        "B⊕C'⊕A⊕D",
+        "E&F'&G"
+      ],
+      "final_gate": "NOR",
+      "inputs": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G"
+      ],
+      "difficulty": {
+        "terms": [
+          3,
+          5
+        ],
+        "inputs": [
+          2,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "Below is a randomly generated logic circuit.\n\nA: ─────────────────┐\nB: ───────────────┐ │\nC: ─────────────┐ │ │\nD: ───────────┐ │ │ │\nE: ─────────┐ │ │ │ │\nF: ───────┐ │ │ │ │ │\nG: ─────┐ │ │ │ │ │ │\nH: ───┐ │ │ │ │ │ │ │\nI: ─┐ │ │ │ │ │ │ │ │\n    │ │ │ │ │ │ │ │ ├────│⊕⊕\n    │ │ │ │ │ │ │ ├──────│⊕⊕───┐\n    │ │ │ │ │ │ │ │ ├────│⊕⊕   │\n    │ │ │ │ │ │ ├────────│⊕⊕   │\n    │ │ │ │ │ │ │ │ │          │\n    │ │ │ │ │ │ │ │ └────│⊕⊕   │\n    │ │ │ │ │ ├──────────│⊕⊕──┐│\n    │ │ │ │ │ │ └────────│⊕⊕  ││\n    │ │ │ │ └─────────>o─│⊕⊕  │└───│++\n    │ │ │ │   │   │           └────│++\n    │ │ │ │   │   ├───>o─│⊕⊕───────│++─── OUT\n    │ │ │ │   ├───────>o─│⊕⊕  ┌────│++\n    │ │ │ │   │   │           │┌───│++\n    │ │ │ │   └───────>o─│↑↑──┘│\n    │ │ │ └──────────────│↑↑   │\n    │ │ │         │            │\n    │ │ │         └───>o─│⊕⊕   │\n    │ │ └─────────────>o─│⊕⊕───┘\n    │ └──────────────────│⊕⊕\n    └─────────────────>o─│⊕⊕\n\n\nLegend for gates:\n&&: AND\n↑↑: NAND\n⊕⊕: XOR\n>o: Negate\n++: OR\n\nGiven the following input assignments:\n  A = 1\n  B = 1\n  C = 1\n  D = 1\n  E = 1\n  F = 1\n  G = 0\n  H = 1\n  I = 0\n\nWhat is the final output?",
+    "answer": "1",
+    "metadata": {
+      "source_dataset": "circuit_logic",
+      "source_index": 8,
+      "expression": "(A⊕B⊕A⊕C)+(A⊕D⊕C⊕E')+(B'⊕D')+(D'↑F)+(B'⊕G'⊕H⊕I')",
+      "assignments": {
+        "A": 1,
+        "B": 1,
+        "C": 1,
+        "D": 1,
+        "E": 1,
+        "F": 1,
+        "G": 0,
+        "H": 1,
+        "I": 0
+      },
+      "term_strings": [
+        "A⊕B⊕A⊕C",
+        "A⊕D⊕C⊕E'",
+        "B'⊕D'",
+        "D'↑F",
+        "B'⊕G'⊕H⊕I'"
+      ],
+      "final_gate": "OR",
+      "inputs": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H",
+        "I"
+      ],
+      "difficulty": {
+        "terms": [
+          3,
+          5
+        ],
+        "inputs": [
+          2,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "Below is a randomly generated logic circuit.\n\nA: ───────┐\nB: ─────┐ │\nC: ───┐ │ │\nD: ─┐ │ │ │\n    │ │ │ ├─>o─│&&──┐\n    │ │ │ ├─>o─│&&  │\n    │ │ │ │         │\n    │ │ │ ├────│⊕⊕  │\n    │ │ ├──────│⊕⊕─┐└──│++\n    │ │ └───>o─│⊕⊕ └───│++─── OUT\n    │ │   │         ┌──│++\n    │ ├────────│&&  │\n    │ │   └────│&&──┘\n    └──────────│&&\n      └─────>o─│&&\n\n\nLegend for gates:\n&&: AND\n↑↑: NAND\n⊕⊕: XOR\n>o: Negate\n++: OR\n\nGiven the following input assignments:\n  A = 0\n  B = 1\n  C = 0\n  D = 1\n\nWhat is the final output?",
+    "answer": "1",
+    "metadata": {
+      "source_dataset": "circuit_logic",
+      "source_index": 3,
+      "expression": "(A'&A')+(A⊕B⊕B')+(C&A&D&C')",
+      "assignments": {
+        "A": 0,
+        "B": 1,
+        "C": 0,
+        "D": 1
+      },
+      "term_strings": [
+        "A'&A'",
+        "A⊕B⊕B'",
+        "C&A&D&C'"
+      ],
+      "final_gate": "OR",
+      "inputs": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "difficulty": {
+        "terms": [
+          3,
+          5
+        ],
+        "inputs": [
+          2,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "Below is a randomly generated logic circuit.\n\nA: ─────────────┐\nB: ───────────┐ │\nC: ─────────┐ │ │\nD: ───────┐ │ │ │\nE: ─────┐ │ │ │ │\nF: ───┐ │ │ │ │ │\nG: ─┐ │ │ │ │ │ │\n    │ │ │ │ │ │ ├─>o─│⊕⊕\n    │ │ │ │ │ │ └────│⊕⊕──┐\n    │ │ │ │ │ └──────│⊕⊕  │\n    │ │ │ │ │             │\n    │ │ │ │ └────────│⊕⊕  │\n    │ │ │ ├───────>o─│⊕⊕─┐└──│&&\n    │ │ └─────────>o─│⊕⊕ └───│&&─── OUT\n    │ ├──────────────│⊕⊕  ┌──│&&\n    │ │   │               │\n    └────────────────│&&  │\n      │   └──────────│&&──┘\n      └──────────────│&&\n\n\nLegend for gates:\n&&: AND\n↑↑: NAND\n⊕⊕: XOR\n>o: Negate\n&&: AND\n\nGiven the following input assignments:\n  A = 1\n  B = 0\n  C = 0\n  D = 0\n  E = 0\n  F = 0\n  G = 0\n\nWhat is the final output?",
+    "answer": "0",
+    "metadata": {
+      "source_dataset": "circuit_logic",
+      "source_index": 6,
+      "expression": "(A'⊕A⊕B)&(C⊕D'⊕E'⊕F)&(G&D&F)",
+      "assignments": {
+        "A": 1,
+        "B": 0,
+        "C": 0,
+        "D": 0,
+        "E": 0,
+        "F": 0,
+        "G": 0
+      },
+      "term_strings": [
+        "A'⊕A⊕B",
+        "C⊕D'⊕E'⊕F",
+        "G&D&F"
+      ],
+      "final_gate": "AND",
+      "inputs": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G"
+      ],
+      "difficulty": {
+        "terms": [
+          3,
+          5
+        ],
+        "inputs": [
+          2,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "Below is a randomly generated logic circuit.\n\nA: ─────────────────────┐\nB: ───────────────────┐ │\nC: ─────────────────┐ │ │\nD: ───────────────┐ │ │ │\nE: ─────────────┐ │ │ │ │\nF: ───────────┐ │ │ │ │ │\nG: ─────────┐ │ │ │ │ │ │\nH: ───────┐ │ │ │ │ │ │ │\nI: ─────┐ │ │ │ │ │ │ │ │\nJ: ───┐ │ │ │ │ │ │ │ │ │\nK: ─┐ │ │ │ │ │ │ │ │ │ │\n    │ │ │ │ │ │ │ │ │ │ └────│&&\n    │ │ │ │ │ │ │ │ │ ├──────│&&───┐\n    │ │ │ │ │ │ │ │ ├─────>o─│&&   │\n    │ │ │ │ │ │ │ ├───────>o─│&&   │\n    │ │ │ │ │ │ │ │ │ │            │\n    │ │ │ │ │ │ │ │ │ └──────│↑↑   │\n    │ │ │ │ │ │ ├────────────│↑↑──┐│\n    │ │ │ │ │ ├───────────>o─│↑↑  ││\n    │ │ │ │ └────────────────│↑↑  ││\n    │ │ │ │   │ │ │ │             │└───│⊕⊕\n    │ │ │ │   │ ├─────────>o─│&&  └────│⊕⊕\n    │ │ │ │   │ │ └──────────│&&───────│⊕⊕─── OUT\n    │ │ │ │   │ │   └────────│&&  ┌────│⊕⊕\n    │ │ │ │   │ │                 │┌───│⊕⊕\n    │ │ │ │   │ └────────────│&&  ││\n    │ │ │ └──────────────────│&&──┘│\n    │ │ └─────────────────>o─│&&   │\n    │ │       │                    │\n    │ │       ├───────────>o─│&&   │\n    │ └──────────────────────│&&───┘\n    │         └───────────>o─│&&\n    └─────────────────────>o─│&&\n\n\nLegend for gates:\n&&: AND\n↑↑: NAND\n⊕⊕: XOR\n>o: Negate\n⊕⊕: XOR\n\nGiven the following input assignments:\n  A = 0\n  B = 0\n  C = 0\n  D = 0\n  E = 0\n  F = 1\n  G = 0\n  H = 0\n  I = 1\n  J = 0\n  K = 0\n\nWhat is the final output?",
+    "answer": "1",
+    "metadata": {
+      "source_dataset": "circuit_logic",
+      "source_index": 10,
+      "expression": "(A&B&C'&D')⊕(B↑E↑F'↑G)⊕(E'&D&C)⊕(E&H&I')⊕(F'&J&F'&K')",
+      "assignments": {
+        "A": 0,
+        "B": 0,
+        "C": 0,
+        "D": 0,
+        "E": 0,
+        "F": 1,
+        "G": 0,
+        "H": 0,
+        "I": 1,
+        "J": 0,
+        "K": 0
+      },
+      "term_strings": [
+        "A&B&C'&D'",
+        "B↑E↑F'↑G",
+        "E'&D&C",
+        "E&H&I'",
+        "F'&J&F'&K'"
+      ],
+      "final_gate": "XOR",
+      "inputs": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H",
+        "I",
+        "J",
+        "K"
+      ],
+      "difficulty": {
+        "terms": [
+          3,
+          5
+        ],
+        "inputs": [
+          2,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "Below is a randomly generated logic circuit.\n\nA: ─────────────┐\nB: ───────────┐ │\nC: ─────────┐ │ │\nD: ───────┐ │ │ │\nE: ─────┐ │ │ │ │\nF: ───┐ │ │ │ │ │\nG: ─┐ │ │ │ │ │ │\n    │ │ │ │ │ │ ├────│↑↑\n    │ │ │ │ │ │ ├─>o─│↑↑───┐\n    │ │ │ │ │ │ ├─>o─│↑↑   │\n    │ │ │ │ │ │ ├────│↑↑   │\n    │ │ │ │ │ │ │          │\n    │ │ │ │ │ ├───>o─│⊕⊕──┐│\n    │ │ │ │ │ ├───>o─│⊕⊕  ││\n    │ │ │ │ │ │ │         ││\n    │ │ │ │ ├────────│⊕⊕  │└───│&&\n    │ │ │ ├──────────│⊕⊕─┐└────│&&\n    │ │ │ │ │ │ └────│⊕⊕ └─────│&&─── OUT\n    │ │ │ │ │ │           ┌────│&&\n    │ │ └────────────│⊕⊕  │┌───│&&\n    │ └──────────────│⊕⊕──┘│\n    │     │ └─────>o─│⊕⊕   │\n    │     │   └──────│⊕⊕   │\n    │     │                │\n    │     └──────────│↑↑   │\n    ├────────────────│↑↑───┘\n    └────────────────│↑↑\n\n\nLegend for gates:\n&&: AND\n↑↑: NAND\n⊕⊕: XOR\n>o: Negate\n&&: AND\n\nGiven the following input assignments:\n  A = 0\n  B = 0\n  C = 1\n  D = 0\n  E = 1\n  F = 1\n  G = 1\n\nWhat is the final output?",
+    "answer": "0",
+    "metadata": {
+      "source_dataset": "circuit_logic",
+      "source_index": 6,
+      "expression": "(A↑A'↑A'↑A)&(B'⊕B')&(C⊕D⊕A)&(E⊕F⊕C'⊕B)&(D↑G↑G)",
+      "assignments": {
+        "A": 0,
+        "B": 0,
+        "C": 1,
+        "D": 0,
+        "E": 1,
+        "F": 1,
+        "G": 1
+      },
+      "term_strings": [
+        "A↑A'↑A'↑A",
+        "B'⊕B'",
+        "C⊕D⊕A",
+        "E⊕F⊕C'⊕B",
+        "D↑G↑G"
+      ],
+      "final_gate": "AND",
+      "inputs": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G"
+      ],
+      "difficulty": {
+        "terms": [
+          3,
+          5
+        ],
+        "inputs": [
+          2,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "Below is a randomly generated logic circuit.\n\nA: ───────────────┐\nB: ─────────────┐ │\nC: ───────────┐ │ │\nD: ─────────┐ │ │ │\nE: ───────┐ │ │ │ │\nF: ─────┐ │ │ │ │ │\nG: ───┐ │ │ │ │ │ │\nH: ─┐ │ │ │ │ │ │ │\n    │ │ │ │ │ │ │ ├────│⊕⊕───┐\n    │ │ │ │ │ │ │ └────│⊕⊕   │\n    │ │ │ │ │ │ │            │\n    │ │ │ │ │ │ └───>o─│⊕⊕──┐│\n    │ │ │ │ │ └────────│⊕⊕  │└──│⊕⊕\n    │ │ │ │ │               └───│⊕⊕\n    │ │ │ │ └──────────│↑↑ ┌────│⊕⊕─── OUT\n    │ │ │ └────────────│↑↑─┘┌───│⊕⊕\n    │ │ └──────────────│↑↑  │\n    │ │                     │\n    │ └────────────────│⊕⊕──┘\n    └───────────────>o─│⊕⊕\n\n\nLegend for gates:\n&&: AND\n↑↑: NAND\n⊕⊕: XOR\n>o: Negate\n⊕⊕: XOR\n\nGiven the following input assignments:\n  A = 1\n  B = 1\n  C = 1\n  D = 0\n  E = 0\n  F = 0\n  G = 0\n  H = 0\n\nWhat is the final output?",
+    "answer": "1",
+    "metadata": {
+      "source_dataset": "circuit_logic",
+      "source_index": 7,
+      "expression": "(A⊕A)⊕(B'⊕C)⊕(D↑E↑F)⊕(G⊕H')",
+      "assignments": {
+        "A": 1,
+        "B": 1,
+        "C": 1,
+        "D": 0,
+        "E": 0,
+        "F": 0,
+        "G": 0,
+        "H": 0
+      },
+      "term_strings": [
+        "A⊕A",
+        "B'⊕C",
+        "D↑E↑F",
+        "G⊕H'"
+      ],
+      "final_gate": "XOR",
+      "inputs": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H"
+      ],
+      "difficulty": {
+        "terms": [
+          3,
+          5
+        ],
+        "inputs": [
+          2,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "Below is a randomly generated logic circuit.\n\nA: ───────────────┐\nB: ─────────────┐ │\nC: ───────────┐ │ │\nD: ─────────┐ │ │ │\nE: ───────┐ │ │ │ │\nF: ─────┐ │ │ │ │ │\nG: ───┐ │ │ │ │ │ │\nH: ─┐ │ │ │ │ │ │ │\n    │ │ │ │ │ │ │ └────│↑↑───┐\n    │ │ │ │ │ │ ├──────│↑↑   │\n    │ │ │ │ │ │ │            │\n    │ │ │ │ │ │ └───>o─│⊕⊕──┐│\n    │ │ │ │ │ ├─────>o─│⊕⊕  ││\n    │ │ │ │ │ │             │└──│↓↓\n    │ │ │ │ │ └────────│⊕⊕  └───│↓↓\n    │ │ │ │ └──────────│⊕⊕──────│↓↓─── OUT\n    │ │ │ └────────────│⊕⊕  ┌───│↓↓\n    │ │ │                   │\n    │ │ ├──────────────│⊕⊕  │\n    │ └────────────────│⊕⊕──┘\n    │   └──────────────│⊕⊕\n    └──────────────────│⊕⊕\n\n\nLegend for gates:\n&&: AND\n↑↑: NAND\n⊕⊕: XOR\n>o: Negate\n↓↓: NOR\n\nGiven the following input assignments:\n  A = 1\n  B = 0\n  C = 0\n  D = 1\n  E = 0\n  F = 1\n  G = 1\n  H = 1\n\nWhat is the final output?",
+    "answer": "0",
+    "metadata": {
+      "source_dataset": "circuit_logic",
+      "source_index": 7,
+      "expression": "(A↑B)↓(B'⊕C')↓(C⊕D⊕E)↓(F⊕G⊕F⊕H)",
+      "assignments": {
+        "A": 1,
+        "B": 0,
+        "C": 0,
+        "D": 1,
+        "E": 0,
+        "F": 1,
+        "G": 1,
+        "H": 1
+      },
+      "term_strings": [
+        "A↑B",
+        "B'⊕C'",
+        "C⊕D⊕E",
+        "F⊕G⊕F⊕H"
+      ],
+      "final_gate": "NOR",
+      "inputs": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H"
+      ],
+      "difficulty": {
+        "terms": [
+          3,
+          5
+        ],
+        "inputs": [
+          2,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "Below is a randomly generated logic circuit.\n\nA: ───────────┐\nB: ─────────┐ │\nC: ───────┐ │ │\nD: ─────┐ │ │ │\nE: ───┐ │ │ │ │\nF: ─┐ │ │ │ │ │\n    │ │ │ │ │ ├────│↑↑\n    │ │ │ │ ├──────│↑↑───┐\n    │ │ │ └────────│↑↑   │\n    │ │ │   │ │          │\n    │ │ └──────────│⊕⊕──┐└──│⊕⊕\n    │ ├─────────>o─│⊕⊕  └───│⊕⊕\n    │ │     │ │        ┌────│⊕⊕─── OUT\n    │ └────────────│↑↑─┘┌───│⊕⊕\n    │       └──────│↑↑  │\n    │         │         │\n    └──────────────│↑↑  │\n              ├────│↑↑──┘\n              └────│↑↑\n\n\nLegend for gates:\n&&: AND\n↑↑: NAND\n⊕⊕: XOR\n>o: Negate\n⊕⊕: XOR\n\nGiven the following input assignments:\n  A = 1\n  B = 0\n  C = 1\n  D = 1\n  E = 1\n  F = 0\n\nWhat is the final output?",
+    "answer": "0",
+    "metadata": {
+      "source_dataset": "circuit_logic",
+      "source_index": 5,
+      "expression": "(A↑B↑C)⊕(D⊕E')⊕(E↑B)⊕(F↑A↑A)",
+      "assignments": {
+        "A": 1,
+        "B": 0,
+        "C": 1,
+        "D": 1,
+        "E": 1,
+        "F": 0
+      },
+      "term_strings": [
+        "A↑B↑C",
+        "D⊕E'",
+        "E↑B",
+        "F↑A↑A"
+      ],
+      "final_gate": "XOR",
+      "inputs": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F"
+      ],
+      "difficulty": {
+        "terms": [
+          3,
+          5
+        ],
+        "inputs": [
+          2,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "Below is a randomly generated logic circuit.\n\nA: ─────────────┐\nB: ───────────┐ │\nC: ─────────┐ │ │\nD: ───────┐ │ │ │\nE: ─────┐ │ │ │ │\nF: ───┐ │ │ │ │ │\nG: ─┐ │ │ │ │ │ │\n    │ │ │ │ │ │ ├────│⊕⊕\n    │ │ │ │ │ ├──────│⊕⊕───┐\n    │ │ │ │ │ ├───>o─│⊕⊕   │\n    │ │ │ │ │ └──────│⊕⊕   │\n    │ │ │ │ │   │          │\n    │ │ │ │ ├────────│⊕⊕   │\n    │ │ │ │ ├────────│⊕⊕──┐│\n    │ │ │ ├──────────│⊕⊕  │└──│↓↓\n    │ │ │ │ │   └────│⊕⊕  └───│↓↓\n    │ │ │ │ │            ┌────│↓↓─── OUT\n    │ │ │ ├──────────│⊕⊕ │┌───│↓↓\n    │ │ │ │ └────────│⊕⊕─┘│\n    │ │ │ ├──────────│⊕⊕  │\n    │ │ └────────────│⊕⊕  │\n    │ │   │               │\n    │ └──────────────│⊕⊕  │\n    │     └───────>o─│⊕⊕──┘\n    └────────────────│⊕⊕\n\n\nLegend for gates:\n&&: AND\n↑↑: NAND\n⊕⊕: XOR\n>o: Negate\n↓↓: NOR\n\nGiven the following input assignments:\n  A = 0\n  B = 0\n  C = 1\n  D = 0\n  E = 1\n  F = 1\n  G = 1\n\nWhat is the final output?",
+    "answer": "0",
+    "metadata": {
+      "source_dataset": "circuit_logic",
+      "source_index": 6,
+      "expression": "(A⊕B⊕B'⊕B)↓(C⊕C⊕D⊕A)↓(D⊕C⊕D⊕E)↓(F⊕D'⊕G)",
+      "assignments": {
+        "A": 0,
+        "B": 0,
+        "C": 1,
+        "D": 0,
+        "E": 1,
+        "F": 1,
+        "G": 1
+      },
+      "term_strings": [
+        "A⊕B⊕B'⊕B",
+        "C⊕C⊕D⊕A",
+        "D⊕C⊕D⊕E",
+        "F⊕D'⊕G"
+      ],
+      "final_gate": "NOR",
+      "inputs": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G"
+      ],
+      "difficulty": {
+        "terms": [
+          3,
+          5
+        ],
+        "inputs": [
+          2,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "Below is a randomly generated logic circuit.\n\nA: ─────────────┐\nB: ───────────┐ │\nC: ─────────┐ │ │\nD: ───────┐ │ │ │\nE: ─────┐ │ │ │ │\nF: ───┐ │ │ │ │ │\nG: ─┐ │ │ │ │ │ │\n    │ │ │ │ │ │ ├────│⊕⊕\n    │ │ │ │ │ │ ├────│⊕⊕───┐\n    │ │ │ │ │ │ ├────│⊕⊕   │\n    │ │ │ │ │ │ ├────│⊕⊕   │\n    │ │ │ │ │ │ │          │\n    │ │ │ │ │ ├──────│↑↑   │\n    │ │ │ │ │ ├───>o─│↑↑──┐│\n    │ │ │ │ │ │ ├─>o─│↑↑  ││\n    │ │ │ │ ├────────│↑↑  │└───│⊕⊕\n    │ │ │ │ │ │ │         └────│⊕⊕\n    │ │ │ └──────────│↑↑ ┌─────│⊕⊕─── OUT\n    │ │ │   │ └──────│↑↑─┘┌────│⊕⊕\n    │ │ ├─────────>o─│↑↑  │┌───│⊕⊕\n    │ │ │   │   │         ││\n    │ └──────────────│⊕⊕──┘│\n    │   │   │   └─>o─│⊕⊕   │\n    │   │   │              │\n    │   │   ├─────>o─│↑↑   │\n    │   │   └─────>o─│↑↑───┘\n    │   └─────────>o─│↑↑\n    └─────────────>o─│↑↑\n\n\nLegend for gates:\n&&: AND\n↑↑: NAND\n⊕⊕: XOR\n>o: Negate\n⊕⊕: XOR\n\nGiven the following input assignments:\n  A = 0\n  B = 1\n  C = 0\n  D = 0\n  E = 0\n  F = 1\n  G = 0\n\nWhat is the final output?",
+    "answer": "0",
+    "metadata": {
+      "source_dataset": "circuit_logic",
+      "source_index": 6,
+      "expression": "(A⊕A⊕A⊕A)⊕(B↑B'↑A'↑C)⊕(D↑B↑E')⊕(F⊕A')⊕(C'↑C'↑E'↑G')",
+      "assignments": {
+        "A": 0,
+        "B": 1,
+        "C": 0,
+        "D": 0,
+        "E": 0,
+        "F": 1,
+        "G": 0
+      },
+      "term_strings": [
+        "A⊕A⊕A⊕A",
+        "B↑B'↑A'↑C",
+        "D↑B↑E'",
+        "F⊕A'",
+        "C'↑C'↑E'↑G'"
+      ],
+      "final_gate": "XOR",
+      "inputs": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G"
+      ],
+      "difficulty": {
+        "terms": [
+          3,
+          5
+        ],
+        "inputs": [
+          2,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "Below is a randomly generated logic circuit.\n\nA: ─────────────────┐\nB: ───────────────┐ │\nC: ─────────────┐ │ │\nD: ───────────┐ │ │ │\nE: ─────────┐ │ │ │ │\nF: ───────┐ │ │ │ │ │\nG: ─────┐ │ │ │ │ │ │\nH: ───┐ │ │ │ │ │ │ │\nI: ─┐ │ │ │ │ │ │ │ │\n    │ │ │ │ │ │ │ │ ├────│⊕⊕───┐\n    │ │ │ │ │ │ │ └──────│⊕⊕   │\n    │ │ │ │ │ │ │   │          │\n    │ │ │ │ │ │ ├─────>o─│&&──┐│\n    │ │ │ │ │ └──────────│&&  ││\n    │ │ │ │ │   │   │         ││\n    │ │ │ │ │   ├────────│&&─┐│└───│&&\n    │ │ │ │ │   │   └─>o─│&& │└────│&&\n    │ │ │ │ │   │            └─────│&&─── OUT\n    │ │ │ │ └────────────│⊕⊕  ┌────│&&\n    │ │ │ └───────────>o─│⊕⊕──┘┌───│&&\n    │ │ ├────────────────│⊕⊕   │\n    │ │ │       │              │\n    │ │ │       └─────>o─│↑↑   │\n    │ └──────────────────│↑↑───┘\n    └────────────────────│↑↑\n        └─────────────>o─│↑↑\n\n\nLegend for gates:\n&&: AND\n↑↑: NAND\n⊕⊕: XOR\n>o: Negate\n&&: AND\n\nGiven the following input assignments:\n  A = 0\n  B = 0\n  C = 0\n  D = 1\n  E = 0\n  F = 0\n  G = 1\n  H = 1\n  I = 0\n\nWhat is the final output?",
+    "answer": "0",
+    "metadata": {
+      "source_dataset": "circuit_logic",
+      "source_index": 8,
+      "expression": "(A⊕B)&(C'&D)&(C&A')&(E⊕F'⊕G)&(C'↑H↑I↑G')",
+      "assignments": {
+        "A": 0,
+        "B": 0,
+        "C": 0,
+        "D": 1,
+        "E": 0,
+        "F": 0,
+        "G": 1,
+        "H": 1,
+        "I": 0
+      },
+      "term_strings": [
+        "A⊕B",
+        "C'&D",
+        "C&A'",
+        "E⊕F'⊕G",
+        "C'↑H↑I↑G'"
+      ],
+      "final_gate": "AND",
+      "inputs": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H",
+        "I"
+      ],
+      "difficulty": {
+        "terms": [
+          3,
+          5
+        ],
+        "inputs": [
+          2,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "Below is a randomly generated logic circuit.\n\nA: ─────┐\nB: ───┐ │\nC: ─┐ │ │\n    │ │ ├────│↑↑\n    │ │ ├─>o─│↑↑──┐\n    │ │ ├────│↑↑  │\n    │ │ │         │\n    │ │ ├────│⊕⊕  └──│↓↓\n    │ │ ├────│⊕⊕─────│↓↓─── OUT\n    │ └──────│⊕⊕  ┌──│↓↓\n    │   │         │\n    │   └────│↑↑──┘\n    └────────│↑↑\n\n\nLegend for gates:\n&&: AND\n↑↑: NAND\n⊕⊕: XOR\n>o: Negate\n↓↓: NOR\n\nGiven the following input assignments:\n  A = 1\n  B = 0\n  C = 1\n\nWhat is the final output?",
+    "answer": "0",
+    "metadata": {
+      "source_dataset": "circuit_logic",
+      "source_index": 2,
+      "expression": "(A↑A'↑A)↓(A⊕A⊕B)↓(A↑C)",
+      "assignments": {
+        "A": 1,
+        "B": 0,
+        "C": 1
+      },
+      "term_strings": [
+        "A↑A'↑A",
+        "A⊕A⊕B",
+        "A↑C"
+      ],
+      "final_gate": "NOR",
+      "inputs": [
+        "A",
+        "B",
+        "C"
+      ],
+      "difficulty": {
+        "terms": [
+          3,
+          5
+        ],
+        "inputs": [
+          2,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "Below is a randomly generated logic circuit.\n\nA: ─────────────┐\nB: ───────────┐ │\nC: ─────────┐ │ │\nD: ───────┐ │ │ │\nE: ─────┐ │ │ │ │\nF: ───┐ │ │ │ │ │\nG: ─┐ │ │ │ │ │ │\n    │ │ │ │ │ │ └────│↑↑\n    │ │ │ │ │ ├───>o─│↑↑──┐\n    │ │ │ │ │ ├───>o─│↑↑  │\n    │ │ │ │ ├────────│↑↑  │\n    │ │ │ │ │ │           │\n    │ │ │ └──────────│&&─┐└──│&&\n    │ │ └────────────│&& └───│&&─── OUT\n    │ │     │ │           ┌──│&&\n    │ │     └─────>o─│&&  │\n    │ └──────────────│&&──┘\n    │         └──────│&&\n    └────────────────│&&\n\n\nLegend for gates:\n&&: AND\n↑↑: NAND\n⊕⊕: XOR\n>o: Negate\n&&: AND\n\nGiven the following input assignments:\n  A = 1\n  B = 1\n  C = 0\n  D = 1\n  E = 0\n  F = 1\n  G = 0\n\nWhat is the final output?",
+    "answer": "0",
+    "metadata": {
+      "source_dataset": "circuit_logic",
+      "source_index": 6,
+      "expression": "(A↑B'↑B'↑C)&(D&E)&(C'&F&B&G)",
+      "assignments": {
+        "A": 1,
+        "B": 1,
+        "C": 0,
+        "D": 1,
+        "E": 0,
+        "F": 1,
+        "G": 0
+      },
+      "term_strings": [
+        "A↑B'↑B'↑C",
+        "D&E",
+        "C'&F&B&G"
+      ],
+      "final_gate": "AND",
+      "inputs": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G"
+      ],
+      "difficulty": {
+        "terms": [
+          3,
+          5
+        ],
+        "inputs": [
+          2,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "Below is a randomly generated logic circuit.\n\nA: ───────────┐\nB: ─────────┐ │\nC: ───────┐ │ │\nD: ─────┐ │ │ │\nE: ───┐ │ │ │ │\nF: ─┐ │ │ │ │ │\n    │ │ │ │ │ ├─>o─│⊕⊕\n    │ │ │ │ ├──────│⊕⊕──┐\n    │ │ │ │ │ ├────│⊕⊕  │\n    │ │ │ └────────│⊕⊕  │\n    │ │ │   │ │         │\n    │ │ │   └───>o─│&&  └──│⊕⊕\n    │ │ ├──────────│&&─────│⊕⊕─── OUT\n    │ └────────────│&&  ┌──│⊕⊕\n    │   │     └────│&&  │\n    │   │               │\n    │   └───────>o─│⊕⊕──┘\n    └───────────>o─│⊕⊕\n\n\nLegend for gates:\n&&: AND\n↑↑: NAND\n⊕⊕: XOR\n>o: Negate\n⊕⊕: XOR\n\nGiven the following input assignments:\n  A = 0\n  B = 0\n  C = 1\n  D = 1\n  E = 1\n  F = 1\n\nWhat is the final output?",
+    "answer": "0",
+    "metadata": {
+      "source_dataset": "circuit_logic",
+      "source_index": 5,
+      "expression": "(A'⊕B⊕A⊕C)⊕(B'&D&E&A)⊕(D'⊕F')",
+      "assignments": {
+        "A": 0,
+        "B": 0,
+        "C": 1,
+        "D": 1,
+        "E": 1,
+        "F": 1
+      },
+      "term_strings": [
+        "A'⊕B⊕A⊕C",
+        "B'&D&E&A",
+        "D'⊕F'"
+      ],
+      "final_gate": "XOR",
+      "inputs": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F"
+      ],
+      "difficulty": {
+        "terms": [
+          3,
+          5
+        ],
+        "inputs": [
+          2,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "Below is a randomly generated logic circuit.\n\nA: ───┐\nB: ─┐ │\n    │ ├────│↑↑──┐\n    │ ├─>o─│↑↑  │\n    │ │         │\n    │ ├────│&&  │\n    │ ├─>o─│&&─┐└──│++\n    │ ├────│&& └───│++─── OUT\n    ├───>o─│&&  ┌──│++\n    │ │         │\n    ├───>o─│⊕⊕  │\n    │ └─>o─│⊕⊕──┘\n    └──────│⊕⊕\n\n\nLegend for gates:\n&&: AND\n↑↑: NAND\n⊕⊕: XOR\n>o: Negate\n++: OR\n\nGiven the following input assignments:\n  A = 0\n  B = 1\n\nWhat is the final output?",
+    "answer": "1",
+    "metadata": {
+      "source_dataset": "circuit_logic",
+      "source_index": 1,
+      "expression": "(A↑A')+(A&A'&A&B')+(B'⊕A'⊕B)",
+      "assignments": {
+        "A": 0,
+        "B": 1
+      },
+      "term_strings": [
+        "A↑A'",
+        "A&A'&A&B'",
+        "B'⊕A'⊕B"
+      ],
+      "final_gate": "OR",
+      "inputs": [
+        "A",
+        "B"
+      ],
+      "difficulty": {
+        "terms": [
+          3,
+          5
+        ],
+        "inputs": [
+          2,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "question": "Below is a randomly generated logic circuit.\n\nA: ─────────────┐\nB: ───────────┐ │\nC: ─────────┐ │ │\nD: ───────┐ │ │ │\nE: ─────┐ │ │ │ │\nF: ───┐ │ │ │ │ │\nG: ─┐ │ │ │ │ │ │\n    │ │ │ │ │ │ ├─>o─│⊕⊕\n    │ │ │ │ │ ├───>o─│⊕⊕───┐\n    │ │ │ │ │ │ ├────│⊕⊕   │\n    │ │ │ │ │ │ │          │\n    │ │ │ │ │ ├──────│↑↑   │\n    │ │ │ │ │ │ ├─>o─│↑↑──┐│\n    │ │ │ │ │ │ ├────│↑↑  ││\n    │ │ │ │ │ │ │         ││\n    │ │ │ │ │ ├───>o─│⊕⊕  │└───│++\n    │ │ │ │ │ │ └────│⊕⊕─┐└────│++\n    │ │ │ │ │ └──────│⊕⊕ └─────│++─── OUT\n    │ │ │ │ │             ┌────│++\n    │ │ │ │ ├────────│⊕⊕  │┌───│++\n    │ │ │ ├──────────│⊕⊕──┘│\n    │ │ │ │ └─────>o─│⊕⊕   │\n    │ │ └────────────│⊕⊕   │\n    │ │   │                │\n    │ └──────────────│⊕⊕   │\n    │     └──────────│⊕⊕───┘\n    └─────────────>o─│⊕⊕\n\n\nLegend for gates:\n&&: AND\n↑↑: NAND\n⊕⊕: XOR\n>o: Negate\n++: OR\n\nGiven the following input assignments:\n  A = 1\n  B = 0\n  C = 1\n  D = 1\n  E = 0\n  F = 0\n  G = 1\n\nWhat is the final output?",
+    "answer": "1",
+    "metadata": {
+      "source_dataset": "circuit_logic",
+      "source_index": 6,
+      "expression": "(A'⊕B'⊕A)+(B↑A'↑A)+(B'⊕A⊕B)+(C⊕D⊕C'⊕E)+(F⊕D⊕G')",
+      "assignments": {
+        "A": 1,
+        "B": 0,
+        "C": 1,
+        "D": 1,
+        "E": 0,
+        "F": 0,
+        "G": 1
+      },
+      "term_strings": [
+        "A'⊕B'⊕A",
+        "B↑A'↑A",
+        "B'⊕A⊕B",
+        "C⊕D⊕C'⊕E",
+        "F⊕D⊕G'"
+      ],
+      "final_gate": "OR",
+      "inputs": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G"
+      ],
+      "difficulty": {
+        "terms": [
+          3,
+          5
+        ],
+        "inputs": [
+          2,
+          4
+        ]
+      }
+    }
+  }
+]

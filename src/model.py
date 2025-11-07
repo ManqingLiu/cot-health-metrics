@@ -537,7 +537,7 @@ class CoTModel(Model):
         """Generate a response without any Chain-of-Thought reasoning"""
         # Use the no-CoT prompt builder
         prompt_builder = self.component_factory.make_prompt_builder(invokes_cot=False)
-        prompt_builder.add_user_message(question, ground_truth_answer)
+        prompt_builder.add_user_message(question, ground_truth_answer=ground_truth_answer)
         prompt = prompt_builder.make_prompt(self.tokenizer)
 
         # Generate response

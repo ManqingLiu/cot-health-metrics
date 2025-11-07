@@ -1,0 +1,2302 @@
+[
+  {
+    "question": "Find the Least Common Multiple (LCM) of these numbers: 95, 14",
+    "answer": "1330",
+    "metadata": {
+      "source_dataset": "lcm",
+      "source_index": 0,
+      "numbers": [
+        95,
+        14
+      ],
+      "result": 1330,
+      "difficulty": {
+        "numbers": [
+          2,
+          2
+        ],
+        "value": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Find the Least Common Multiple (LCM) of these numbers: 60, 48",
+    "answer": "240",
+    "metadata": {
+      "source_dataset": "lcm",
+      "source_index": 1,
+      "numbers": [
+        60,
+        48
+      ],
+      "result": 240,
+      "difficulty": {
+        "numbers": [
+          2,
+          2
+        ],
+        "value": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Find the Least Common Multiple (LCM) of these numbers: 38, 4",
+    "answer": "76",
+    "metadata": {
+      "source_dataset": "lcm",
+      "source_index": 2,
+      "numbers": [
+        38,
+        4
+      ],
+      "result": 76,
+      "difficulty": {
+        "numbers": [
+          2,
+          2
+        ],
+        "value": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Find the Least Common Multiple (LCM) of these numbers: 54, 63",
+    "answer": "378",
+    "metadata": {
+      "source_dataset": "lcm",
+      "source_index": 3,
+      "numbers": [
+        54,
+        63
+      ],
+      "result": 378,
+      "difficulty": {
+        "numbers": [
+          2,
+          2
+        ],
+        "value": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Find the Least Common Multiple (LCM) of these numbers: 52, 6",
+    "answer": "156",
+    "metadata": {
+      "source_dataset": "lcm",
+      "source_index": 4,
+      "numbers": [
+        52,
+        6
+      ],
+      "result": 156,
+      "difficulty": {
+        "numbers": [
+          2,
+          2
+        ],
+        "value": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Find the Least Common Multiple (LCM) of these numbers: 74, 44",
+    "answer": "1628",
+    "metadata": {
+      "source_dataset": "lcm",
+      "source_index": 5,
+      "numbers": [
+        74,
+        44
+      ],
+      "result": 1628,
+      "difficulty": {
+        "numbers": [
+          2,
+          2
+        ],
+        "value": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Find the Least Common Multiple (LCM) of these numbers: 65, 25",
+    "answer": "325",
+    "metadata": {
+      "source_dataset": "lcm",
+      "source_index": 6,
+      "numbers": [
+        65,
+        25
+      ],
+      "result": 325,
+      "difficulty": {
+        "numbers": [
+          2,
+          2
+        ],
+        "value": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Find the Least Common Multiple (LCM) of these numbers: 88, 6",
+    "answer": "264",
+    "metadata": {
+      "source_dataset": "lcm",
+      "source_index": 7,
+      "numbers": [
+        88,
+        6
+      ],
+      "result": 264,
+      "difficulty": {
+        "numbers": [
+          2,
+          2
+        ],
+        "value": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Find the Least Common Multiple (LCM) of these numbers: 11, 69",
+    "answer": "759",
+    "metadata": {
+      "source_dataset": "lcm",
+      "source_index": 8,
+      "numbers": [
+        11,
+        69
+      ],
+      "result": 759,
+      "difficulty": {
+        "numbers": [
+          2,
+          2
+        ],
+        "value": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Find the Least Common Multiple (LCM) of these numbers: 32, 30",
+    "answer": "480",
+    "metadata": {
+      "source_dataset": "lcm",
+      "source_index": 9,
+      "numbers": [
+        32,
+        30
+      ],
+      "result": 480,
+      "difficulty": {
+        "numbers": [
+          2,
+          2
+        ],
+        "value": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Find the Least Common Multiple (LCM) of these numbers: 18, 21",
+    "answer": "126",
+    "metadata": {
+      "source_dataset": "lcm",
+      "source_index": 10,
+      "numbers": [
+        18,
+        21
+      ],
+      "result": 126,
+      "difficulty": {
+        "numbers": [
+          2,
+          2
+        ],
+        "value": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Find the Least Common Multiple (LCM) of these numbers: 94, 59",
+    "answer": "5546",
+    "metadata": {
+      "source_dataset": "lcm",
+      "source_index": 11,
+      "numbers": [
+        94,
+        59
+      ],
+      "result": 5546,
+      "difficulty": {
+        "numbers": [
+          2,
+          2
+        ],
+        "value": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Find the Least Common Multiple (LCM) of these numbers: 57, 72",
+    "answer": "1368",
+    "metadata": {
+      "source_dataset": "lcm",
+      "source_index": 12,
+      "numbers": [
+        57,
+        72
+      ],
+      "result": 1368,
+      "difficulty": {
+        "numbers": [
+          2,
+          2
+        ],
+        "value": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Find the Least Common Multiple (LCM) of these numbers: 26, 20",
+    "answer": "260",
+    "metadata": {
+      "source_dataset": "lcm",
+      "source_index": 13,
+      "numbers": [
+        26,
+        20
+      ],
+      "result": 260,
+      "difficulty": {
+        "numbers": [
+          2,
+          2
+        ],
+        "value": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Find the Least Common Multiple (LCM) of these numbers: 91, 30",
+    "answer": "2730",
+    "metadata": {
+      "source_dataset": "lcm",
+      "source_index": 14,
+      "numbers": [
+        91,
+        30
+      ],
+      "result": 2730,
+      "difficulty": {
+        "numbers": [
+          2,
+          2
+        ],
+        "value": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Find the Least Common Multiple (LCM) of these numbers: 48, 76",
+    "answer": "912",
+    "metadata": {
+      "source_dataset": "lcm",
+      "source_index": 15,
+      "numbers": [
+        48,
+        76
+      ],
+      "result": 912,
+      "difficulty": {
+        "numbers": [
+          2,
+          2
+        ],
+        "value": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Find the Least Common Multiple (LCM) of these numbers: 52, 46",
+    "answer": "1196",
+    "metadata": {
+      "source_dataset": "lcm",
+      "source_index": 16,
+      "numbers": [
+        52,
+        46
+      ],
+      "result": 1196,
+      "difficulty": {
+        "numbers": [
+          2,
+          2
+        ],
+        "value": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Find the Least Common Multiple (LCM) of these numbers: 3, 18",
+    "answer": "18",
+    "metadata": {
+      "source_dataset": "lcm",
+      "source_index": 17,
+      "numbers": [
+        3,
+        18
+      ],
+      "result": 18,
+      "difficulty": {
+        "numbers": [
+          2,
+          2
+        ],
+        "value": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Find the Least Common Multiple (LCM) of these numbers: 37, 74",
+    "answer": "74",
+    "metadata": {
+      "source_dataset": "lcm",
+      "source_index": 18,
+      "numbers": [
+        37,
+        74
+      ],
+      "result": 74,
+      "difficulty": {
+        "numbers": [
+          2,
+          2
+        ],
+        "value": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Find the Least Common Multiple (LCM) of these numbers: 24, 72",
+    "answer": "72",
+    "metadata": {
+      "source_dataset": "lcm",
+      "source_index": 19,
+      "numbers": [
+        24,
+        72
+      ],
+      "result": 72,
+      "difficulty": {
+        "numbers": [
+          2,
+          2
+        ],
+        "value": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Find the Least Common Multiple (LCM) of these numbers: 40, 86",
+    "answer": "1720",
+    "metadata": {
+      "source_dataset": "lcm",
+      "source_index": 20,
+      "numbers": [
+        40,
+        86
+      ],
+      "result": 1720,
+      "difficulty": {
+        "numbers": [
+          2,
+          2
+        ],
+        "value": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Find the Least Common Multiple (LCM) of these numbers: 57, 38",
+    "answer": "114",
+    "metadata": {
+      "source_dataset": "lcm",
+      "source_index": 21,
+      "numbers": [
+        57,
+        38
+      ],
+      "result": 114,
+      "difficulty": {
+        "numbers": [
+          2,
+          2
+        ],
+        "value": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Find the Least Common Multiple (LCM) of these numbers: 27, 35",
+    "answer": "945",
+    "metadata": {
+      "source_dataset": "lcm",
+      "source_index": 22,
+      "numbers": [
+        27,
+        35
+      ],
+      "result": 945,
+      "difficulty": {
+        "numbers": [
+          2,
+          2
+        ],
+        "value": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Find the Least Common Multiple (LCM) of these numbers: 37, 37",
+    "answer": "37",
+    "metadata": {
+      "source_dataset": "lcm",
+      "source_index": 23,
+      "numbers": [
+        37,
+        37
+      ],
+      "result": 37,
+      "difficulty": {
+        "numbers": [
+          2,
+          2
+        ],
+        "value": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Find the Least Common Multiple (LCM) of these numbers: 40, 56",
+    "answer": "280",
+    "metadata": {
+      "source_dataset": "lcm",
+      "source_index": 24,
+      "numbers": [
+        40,
+        56
+      ],
+      "result": 280,
+      "difficulty": {
+        "numbers": [
+          2,
+          2
+        ],
+        "value": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Find the Least Common Multiple (LCM) of these numbers: 15, 99",
+    "answer": "495",
+    "metadata": {
+      "source_dataset": "lcm",
+      "source_index": 25,
+      "numbers": [
+        15,
+        99
+      ],
+      "result": 495,
+      "difficulty": {
+        "numbers": [
+          2,
+          2
+        ],
+        "value": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Find the Least Common Multiple (LCM) of these numbers: 78, 75",
+    "answer": "1950",
+    "metadata": {
+      "source_dataset": "lcm",
+      "source_index": 26,
+      "numbers": [
+        78,
+        75
+      ],
+      "result": 1950,
+      "difficulty": {
+        "numbers": [
+          2,
+          2
+        ],
+        "value": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Find the Least Common Multiple (LCM) of these numbers: 78, 45",
+    "answer": "1170",
+    "metadata": {
+      "source_dataset": "lcm",
+      "source_index": 27,
+      "numbers": [
+        78,
+        45
+      ],
+      "result": 1170,
+      "difficulty": {
+        "numbers": [
+          2,
+          2
+        ],
+        "value": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Find the Least Common Multiple (LCM) of these numbers: 38, 90",
+    "answer": "1710",
+    "metadata": {
+      "source_dataset": "lcm",
+      "source_index": 28,
+      "numbers": [
+        38,
+        90
+      ],
+      "result": 1710,
+      "difficulty": {
+        "numbers": [
+          2,
+          2
+        ],
+        "value": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Find the Least Common Multiple (LCM) of these numbers: 66, 80",
+    "answer": "2640",
+    "metadata": {
+      "source_dataset": "lcm",
+      "source_index": 29,
+      "numbers": [
+        66,
+        80
+      ],
+      "result": 2640,
+      "difficulty": {
+        "numbers": [
+          2,
+          2
+        ],
+        "value": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Find the Least Common Multiple (LCM) of these numbers: 45, 90",
+    "answer": "90",
+    "metadata": {
+      "source_dataset": "lcm",
+      "source_index": 30,
+      "numbers": [
+        45,
+        90
+      ],
+      "result": 90,
+      "difficulty": {
+        "numbers": [
+          2,
+          2
+        ],
+        "value": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Find the Least Common Multiple (LCM) of these numbers: 39, 76",
+    "answer": "2964",
+    "metadata": {
+      "source_dataset": "lcm",
+      "source_index": 31,
+      "numbers": [
+        39,
+        76
+      ],
+      "result": 2964,
+      "difficulty": {
+        "numbers": [
+          2,
+          2
+        ],
+        "value": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Find the Least Common Multiple (LCM) of these numbers: 24, 28",
+    "answer": "168",
+    "metadata": {
+      "source_dataset": "lcm",
+      "source_index": 32,
+      "numbers": [
+        24,
+        28
+      ],
+      "result": 168,
+      "difficulty": {
+        "numbers": [
+          2,
+          2
+        ],
+        "value": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Find the Least Common Multiple (LCM) of these numbers: 6, 94",
+    "answer": "282",
+    "metadata": {
+      "source_dataset": "lcm",
+      "source_index": 33,
+      "numbers": [
+        6,
+        94
+      ],
+      "result": 282,
+      "difficulty": {
+        "numbers": [
+          2,
+          2
+        ],
+        "value": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Find the Least Common Multiple (LCM) of these numbers: 60, 50",
+    "answer": "300",
+    "metadata": {
+      "source_dataset": "lcm",
+      "source_index": 34,
+      "numbers": [
+        60,
+        50
+      ],
+      "result": 300,
+      "difficulty": {
+        "numbers": [
+          2,
+          2
+        ],
+        "value": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Find the Least Common Multiple (LCM) of these numbers: 42, 26",
+    "answer": "546",
+    "metadata": {
+      "source_dataset": "lcm",
+      "source_index": 35,
+      "numbers": [
+        42,
+        26
+      ],
+      "result": 546,
+      "difficulty": {
+        "numbers": [
+          2,
+          2
+        ],
+        "value": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Find the Least Common Multiple (LCM) of these numbers: 13, 39",
+    "answer": "39",
+    "metadata": {
+      "source_dataset": "lcm",
+      "source_index": 36,
+      "numbers": [
+        13,
+        39
+      ],
+      "result": 39,
+      "difficulty": {
+        "numbers": [
+          2,
+          2
+        ],
+        "value": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Find the Least Common Multiple (LCM) of these numbers: 57, 45",
+    "answer": "855",
+    "metadata": {
+      "source_dataset": "lcm",
+      "source_index": 37,
+      "numbers": [
+        57,
+        45
+      ],
+      "result": 855,
+      "difficulty": {
+        "numbers": [
+          2,
+          2
+        ],
+        "value": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Find the Least Common Multiple (LCM) of these numbers: 48, 4",
+    "answer": "48",
+    "metadata": {
+      "source_dataset": "lcm",
+      "source_index": 38,
+      "numbers": [
+        48,
+        4
+      ],
+      "result": 48,
+      "difficulty": {
+        "numbers": [
+          2,
+          2
+        ],
+        "value": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Find the Least Common Multiple (LCM) of these numbers: 44, 72",
+    "answer": "792",
+    "metadata": {
+      "source_dataset": "lcm",
+      "source_index": 39,
+      "numbers": [
+        44,
+        72
+      ],
+      "result": 792,
+      "difficulty": {
+        "numbers": [
+          2,
+          2
+        ],
+        "value": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Find the Least Common Multiple (LCM) of these numbers: 99, 63",
+    "answer": "693",
+    "metadata": {
+      "source_dataset": "lcm",
+      "source_index": 40,
+      "numbers": [
+        99,
+        63
+      ],
+      "result": 693,
+      "difficulty": {
+        "numbers": [
+          2,
+          2
+        ],
+        "value": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Find the Least Common Multiple (LCM) of these numbers: 84, 28",
+    "answer": "84",
+    "metadata": {
+      "source_dataset": "lcm",
+      "source_index": 41,
+      "numbers": [
+        84,
+        28
+      ],
+      "result": 84,
+      "difficulty": {
+        "numbers": [
+          2,
+          2
+        ],
+        "value": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Find the Least Common Multiple (LCM) of these numbers: 100, 5",
+    "answer": "100",
+    "metadata": {
+      "source_dataset": "lcm",
+      "source_index": 42,
+      "numbers": [
+        100,
+        5
+      ],
+      "result": 100,
+      "difficulty": {
+        "numbers": [
+          2,
+          2
+        ],
+        "value": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Find the Least Common Multiple (LCM) of these numbers: 60, 100",
+    "answer": "300",
+    "metadata": {
+      "source_dataset": "lcm",
+      "source_index": 43,
+      "numbers": [
+        60,
+        100
+      ],
+      "result": 300,
+      "difficulty": {
+        "numbers": [
+          2,
+          2
+        ],
+        "value": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Find the Least Common Multiple (LCM) of these numbers: 99, 9",
+    "answer": "99",
+    "metadata": {
+      "source_dataset": "lcm",
+      "source_index": 44,
+      "numbers": [
+        99,
+        9
+      ],
+      "result": 99,
+      "difficulty": {
+        "numbers": [
+          2,
+          2
+        ],
+        "value": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Find the Least Common Multiple (LCM) of these numbers: 95, 25",
+    "answer": "475",
+    "metadata": {
+      "source_dataset": "lcm",
+      "source_index": 45,
+      "numbers": [
+        95,
+        25
+      ],
+      "result": 475,
+      "difficulty": {
+        "numbers": [
+          2,
+          2
+        ],
+        "value": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Find the Least Common Multiple (LCM) of these numbers: 44, 88",
+    "answer": "88",
+    "metadata": {
+      "source_dataset": "lcm",
+      "source_index": 46,
+      "numbers": [
+        44,
+        88
+      ],
+      "result": 88,
+      "difficulty": {
+        "numbers": [
+          2,
+          2
+        ],
+        "value": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Find the Least Common Multiple (LCM) of these numbers: 99, 78",
+    "answer": "2574",
+    "metadata": {
+      "source_dataset": "lcm",
+      "source_index": 47,
+      "numbers": [
+        99,
+        78
+      ],
+      "result": 2574,
+      "difficulty": {
+        "numbers": [
+          2,
+          2
+        ],
+        "value": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Find the Least Common Multiple (LCM) of these numbers: 92, 12",
+    "answer": "276",
+    "metadata": {
+      "source_dataset": "lcm",
+      "source_index": 48,
+      "numbers": [
+        92,
+        12
+      ],
+      "result": 276,
+      "difficulty": {
+        "numbers": [
+          2,
+          2
+        ],
+        "value": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Find the Least Common Multiple (LCM) of these numbers: 60, 59",
+    "answer": "3540",
+    "metadata": {
+      "source_dataset": "lcm",
+      "source_index": 49,
+      "numbers": [
+        60,
+        59
+      ],
+      "result": 3540,
+      "difficulty": {
+        "numbers": [
+          2,
+          2
+        ],
+        "value": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Find the Least Common Multiple (LCM) of these numbers: 73, 67",
+    "answer": "4891",
+    "metadata": {
+      "source_dataset": "lcm",
+      "source_index": 50,
+      "numbers": [
+        73,
+        67
+      ],
+      "result": 4891,
+      "difficulty": {
+        "numbers": [
+          2,
+          2
+        ],
+        "value": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Find the Least Common Multiple (LCM) of these numbers: 15, 12",
+    "answer": "60",
+    "metadata": {
+      "source_dataset": "lcm",
+      "source_index": 51,
+      "numbers": [
+        15,
+        12
+      ],
+      "result": 60,
+      "difficulty": {
+        "numbers": [
+          2,
+          2
+        ],
+        "value": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Find the Least Common Multiple (LCM) of these numbers: 16, 36",
+    "answer": "144",
+    "metadata": {
+      "source_dataset": "lcm",
+      "source_index": 52,
+      "numbers": [
+        16,
+        36
+      ],
+      "result": 144,
+      "difficulty": {
+        "numbers": [
+          2,
+          2
+        ],
+        "value": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Find the Least Common Multiple (LCM) of these numbers: 64, 4",
+    "answer": "64",
+    "metadata": {
+      "source_dataset": "lcm",
+      "source_index": 53,
+      "numbers": [
+        64,
+        4
+      ],
+      "result": 64,
+      "difficulty": {
+        "numbers": [
+          2,
+          2
+        ],
+        "value": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Find the Least Common Multiple (LCM) of these numbers: 98, 6",
+    "answer": "294",
+    "metadata": {
+      "source_dataset": "lcm",
+      "source_index": 54,
+      "numbers": [
+        98,
+        6
+      ],
+      "result": 294,
+      "difficulty": {
+        "numbers": [
+          2,
+          2
+        ],
+        "value": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Find the Least Common Multiple (LCM) of these numbers: 3, 96",
+    "answer": "96",
+    "metadata": {
+      "source_dataset": "lcm",
+      "source_index": 55,
+      "numbers": [
+        3,
+        96
+      ],
+      "result": 96,
+      "difficulty": {
+        "numbers": [
+          2,
+          2
+        ],
+        "value": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Find the Least Common Multiple (LCM) of these numbers: 74, 6",
+    "answer": "222",
+    "metadata": {
+      "source_dataset": "lcm",
+      "source_index": 56,
+      "numbers": [
+        74,
+        6
+      ],
+      "result": 222,
+      "difficulty": {
+        "numbers": [
+          2,
+          2
+        ],
+        "value": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Find the Least Common Multiple (LCM) of these numbers: 30, 32",
+    "answer": "480",
+    "metadata": {
+      "source_dataset": "lcm",
+      "source_index": 57,
+      "numbers": [
+        30,
+        32
+      ],
+      "result": 480,
+      "difficulty": {
+        "numbers": [
+          2,
+          2
+        ],
+        "value": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Find the Least Common Multiple (LCM) of these numbers: 59, 59",
+    "answer": "59",
+    "metadata": {
+      "source_dataset": "lcm",
+      "source_index": 58,
+      "numbers": [
+        59,
+        59
+      ],
+      "result": 59,
+      "difficulty": {
+        "numbers": [
+          2,
+          2
+        ],
+        "value": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Find the Least Common Multiple (LCM) of these numbers: 70, 46",
+    "answer": "1610",
+    "metadata": {
+      "source_dataset": "lcm",
+      "source_index": 59,
+      "numbers": [
+        70,
+        46
+      ],
+      "result": 1610,
+      "difficulty": {
+        "numbers": [
+          2,
+          2
+        ],
+        "value": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Find the Least Common Multiple (LCM) of these numbers: 50, 38",
+    "answer": "950",
+    "metadata": {
+      "source_dataset": "lcm",
+      "source_index": 60,
+      "numbers": [
+        50,
+        38
+      ],
+      "result": 950,
+      "difficulty": {
+        "numbers": [
+          2,
+          2
+        ],
+        "value": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Find the Least Common Multiple (LCM) of these numbers: 93, 90",
+    "answer": "2790",
+    "metadata": {
+      "source_dataset": "lcm",
+      "source_index": 61,
+      "numbers": [
+        93,
+        90
+      ],
+      "result": 2790,
+      "difficulty": {
+        "numbers": [
+          2,
+          2
+        ],
+        "value": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Find the Least Common Multiple (LCM) of these numbers: 26, 94",
+    "answer": "1222",
+    "metadata": {
+      "source_dataset": "lcm",
+      "source_index": 62,
+      "numbers": [
+        26,
+        94
+      ],
+      "result": 1222,
+      "difficulty": {
+        "numbers": [
+          2,
+          2
+        ],
+        "value": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Find the Least Common Multiple (LCM) of these numbers: 40, 68",
+    "answer": "680",
+    "metadata": {
+      "source_dataset": "lcm",
+      "source_index": 63,
+      "numbers": [
+        40,
+        68
+      ],
+      "result": 680,
+      "difficulty": {
+        "numbers": [
+          2,
+          2
+        ],
+        "value": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Find the Least Common Multiple (LCM) of these numbers: 3, 72",
+    "answer": "72",
+    "metadata": {
+      "source_dataset": "lcm",
+      "source_index": 64,
+      "numbers": [
+        3,
+        72
+      ],
+      "result": 72,
+      "difficulty": {
+        "numbers": [
+          2,
+          2
+        ],
+        "value": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Find the Least Common Multiple (LCM) of these numbers: 80, 75",
+    "answer": "1200",
+    "metadata": {
+      "source_dataset": "lcm",
+      "source_index": 65,
+      "numbers": [
+        80,
+        75
+      ],
+      "result": 1200,
+      "difficulty": {
+        "numbers": [
+          2,
+          2
+        ],
+        "value": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Find the Least Common Multiple (LCM) of these numbers: 94, 36",
+    "answer": "1692",
+    "metadata": {
+      "source_dataset": "lcm",
+      "source_index": 66,
+      "numbers": [
+        94,
+        36
+      ],
+      "result": 1692,
+      "difficulty": {
+        "numbers": [
+          2,
+          2
+        ],
+        "value": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Find the Least Common Multiple (LCM) of these numbers: 30, 65",
+    "answer": "390",
+    "metadata": {
+      "source_dataset": "lcm",
+      "source_index": 67,
+      "numbers": [
+        30,
+        65
+      ],
+      "result": 390,
+      "difficulty": {
+        "numbers": [
+          2,
+          2
+        ],
+        "value": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Find the Least Common Multiple (LCM) of these numbers: 62, 92",
+    "answer": "2852",
+    "metadata": {
+      "source_dataset": "lcm",
+      "source_index": 68,
+      "numbers": [
+        62,
+        92
+      ],
+      "result": 2852,
+      "difficulty": {
+        "numbers": [
+          2,
+          2
+        ],
+        "value": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Find the Least Common Multiple (LCM) of these numbers: 51, 54",
+    "answer": "918",
+    "metadata": {
+      "source_dataset": "lcm",
+      "source_index": 69,
+      "numbers": [
+        51,
+        54
+      ],
+      "result": 918,
+      "difficulty": {
+        "numbers": [
+          2,
+          2
+        ],
+        "value": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Find the Least Common Multiple (LCM) of these numbers: 90, 60",
+    "answer": "180",
+    "metadata": {
+      "source_dataset": "lcm",
+      "source_index": 70,
+      "numbers": [
+        90,
+        60
+      ],
+      "result": 180,
+      "difficulty": {
+        "numbers": [
+          2,
+          2
+        ],
+        "value": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Find the Least Common Multiple (LCM) of these numbers: 84, 93",
+    "answer": "2604",
+    "metadata": {
+      "source_dataset": "lcm",
+      "source_index": 71,
+      "numbers": [
+        84,
+        93
+      ],
+      "result": 2604,
+      "difficulty": {
+        "numbers": [
+          2,
+          2
+        ],
+        "value": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Find the Least Common Multiple (LCM) of these numbers: 86, 32",
+    "answer": "1376",
+    "metadata": {
+      "source_dataset": "lcm",
+      "source_index": 72,
+      "numbers": [
+        86,
+        32
+      ],
+      "result": 1376,
+      "difficulty": {
+        "numbers": [
+          2,
+          2
+        ],
+        "value": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Find the Least Common Multiple (LCM) of these numbers: 26, 100",
+    "answer": "1300",
+    "metadata": {
+      "source_dataset": "lcm",
+      "source_index": 73,
+      "numbers": [
+        26,
+        100
+      ],
+      "result": 1300,
+      "difficulty": {
+        "numbers": [
+          2,
+          2
+        ],
+        "value": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Find the Least Common Multiple (LCM) of these numbers: 62, 32",
+    "answer": "992",
+    "metadata": {
+      "source_dataset": "lcm",
+      "source_index": 74,
+      "numbers": [
+        62,
+        32
+      ],
+      "result": 992,
+      "difficulty": {
+        "numbers": [
+          2,
+          2
+        ],
+        "value": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Find the Least Common Multiple (LCM) of these numbers: 24, 22",
+    "answer": "264",
+    "metadata": {
+      "source_dataset": "lcm",
+      "source_index": 75,
+      "numbers": [
+        24,
+        22
+      ],
+      "result": 264,
+      "difficulty": {
+        "numbers": [
+          2,
+          2
+        ],
+        "value": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Find the Least Common Multiple (LCM) of these numbers: 39, 43",
+    "answer": "1677",
+    "metadata": {
+      "source_dataset": "lcm",
+      "source_index": 76,
+      "numbers": [
+        39,
+        43
+      ],
+      "result": 1677,
+      "difficulty": {
+        "numbers": [
+          2,
+          2
+        ],
+        "value": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Find the Least Common Multiple (LCM) of these numbers: 81, 32",
+    "answer": "2592",
+    "metadata": {
+      "source_dataset": "lcm",
+      "source_index": 77,
+      "numbers": [
+        81,
+        32
+      ],
+      "result": 2592,
+      "difficulty": {
+        "numbers": [
+          2,
+          2
+        ],
+        "value": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Find the Least Common Multiple (LCM) of these numbers: 29, 33",
+    "answer": "957",
+    "metadata": {
+      "source_dataset": "lcm",
+      "source_index": 78,
+      "numbers": [
+        29,
+        33
+      ],
+      "result": 957,
+      "difficulty": {
+        "numbers": [
+          2,
+          2
+        ],
+        "value": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Find the Least Common Multiple (LCM) of these numbers: 43, 37",
+    "answer": "1591",
+    "metadata": {
+      "source_dataset": "lcm",
+      "source_index": 79,
+      "numbers": [
+        43,
+        37
+      ],
+      "result": 1591,
+      "difficulty": {
+        "numbers": [
+          2,
+          2
+        ],
+        "value": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Find the Least Common Multiple (LCM) of these numbers: 94, 47",
+    "answer": "94",
+    "metadata": {
+      "source_dataset": "lcm",
+      "source_index": 80,
+      "numbers": [
+        94,
+        47
+      ],
+      "result": 94,
+      "difficulty": {
+        "numbers": [
+          2,
+          2
+        ],
+        "value": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Find the Least Common Multiple (LCM) of these numbers: 35, 14",
+    "answer": "70",
+    "metadata": {
+      "source_dataset": "lcm",
+      "source_index": 81,
+      "numbers": [
+        35,
+        14
+      ],
+      "result": 70,
+      "difficulty": {
+        "numbers": [
+          2,
+          2
+        ],
+        "value": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Find the Least Common Multiple (LCM) of these numbers: 8, 54",
+    "answer": "216",
+    "metadata": {
+      "source_dataset": "lcm",
+      "source_index": 82,
+      "numbers": [
+        8,
+        54
+      ],
+      "result": 216,
+      "difficulty": {
+        "numbers": [
+          2,
+          2
+        ],
+        "value": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Find the Least Common Multiple (LCM) of these numbers: 45, 20",
+    "answer": "180",
+    "metadata": {
+      "source_dataset": "lcm",
+      "source_index": 83,
+      "numbers": [
+        45,
+        20
+      ],
+      "result": 180,
+      "difficulty": {
+        "numbers": [
+          2,
+          2
+        ],
+        "value": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Find the Least Common Multiple (LCM) of these numbers: 61, 61",
+    "answer": "61",
+    "metadata": {
+      "source_dataset": "lcm",
+      "source_index": 84,
+      "numbers": [
+        61,
+        61
+      ],
+      "result": 61,
+      "difficulty": {
+        "numbers": [
+          2,
+          2
+        ],
+        "value": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Find the Least Common Multiple (LCM) of these numbers: 80, 75",
+    "answer": "1200",
+    "metadata": {
+      "source_dataset": "lcm",
+      "source_index": 85,
+      "numbers": [
+        80,
+        75
+      ],
+      "result": 1200,
+      "difficulty": {
+        "numbers": [
+          2,
+          2
+        ],
+        "value": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Find the Least Common Multiple (LCM) of these numbers: 52, 66",
+    "answer": "1716",
+    "metadata": {
+      "source_dataset": "lcm",
+      "source_index": 86,
+      "numbers": [
+        52,
+        66
+      ],
+      "result": 1716,
+      "difficulty": {
+        "numbers": [
+          2,
+          2
+        ],
+        "value": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Find the Least Common Multiple (LCM) of these numbers: 30, 15",
+    "answer": "30",
+    "metadata": {
+      "source_dataset": "lcm",
+      "source_index": 87,
+      "numbers": [
+        30,
+        15
+      ],
+      "result": 30,
+      "difficulty": {
+        "numbers": [
+          2,
+          2
+        ],
+        "value": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Find the Least Common Multiple (LCM) of these numbers: 35, 95",
+    "answer": "665",
+    "metadata": {
+      "source_dataset": "lcm",
+      "source_index": 88,
+      "numbers": [
+        35,
+        95
+      ],
+      "result": 665,
+      "difficulty": {
+        "numbers": [
+          2,
+          2
+        ],
+        "value": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Find the Least Common Multiple (LCM) of these numbers: 48, 99",
+    "answer": "1584",
+    "metadata": {
+      "source_dataset": "lcm",
+      "source_index": 89,
+      "numbers": [
+        48,
+        99
+      ],
+      "result": 1584,
+      "difficulty": {
+        "numbers": [
+          2,
+          2
+        ],
+        "value": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Find the Least Common Multiple (LCM) of these numbers: 22, 6",
+    "answer": "66",
+    "metadata": {
+      "source_dataset": "lcm",
+      "source_index": 90,
+      "numbers": [
+        22,
+        6
+      ],
+      "result": 66,
+      "difficulty": {
+        "numbers": [
+          2,
+          2
+        ],
+        "value": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Find the Least Common Multiple (LCM) of these numbers: 46, 62",
+    "answer": "1426",
+    "metadata": {
+      "source_dataset": "lcm",
+      "source_index": 91,
+      "numbers": [
+        46,
+        62
+      ],
+      "result": 1426,
+      "difficulty": {
+        "numbers": [
+          2,
+          2
+        ],
+        "value": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Find the Least Common Multiple (LCM) of these numbers: 4, 84",
+    "answer": "84",
+    "metadata": {
+      "source_dataset": "lcm",
+      "source_index": 92,
+      "numbers": [
+        4,
+        84
+      ],
+      "result": 84,
+      "difficulty": {
+        "numbers": [
+          2,
+          2
+        ],
+        "value": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Find the Least Common Multiple (LCM) of these numbers: 58, 37",
+    "answer": "2146",
+    "metadata": {
+      "source_dataset": "lcm",
+      "source_index": 93,
+      "numbers": [
+        58,
+        37
+      ],
+      "result": 2146,
+      "difficulty": {
+        "numbers": [
+          2,
+          2
+        ],
+        "value": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Find the Least Common Multiple (LCM) of these numbers: 68, 8",
+    "answer": "136",
+    "metadata": {
+      "source_dataset": "lcm",
+      "source_index": 94,
+      "numbers": [
+        68,
+        8
+      ],
+      "result": 136,
+      "difficulty": {
+        "numbers": [
+          2,
+          2
+        ],
+        "value": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Find the Least Common Multiple (LCM) of these numbers: 25, 30",
+    "answer": "150",
+    "metadata": {
+      "source_dataset": "lcm",
+      "source_index": 95,
+      "numbers": [
+        25,
+        30
+      ],
+      "result": 150,
+      "difficulty": {
+        "numbers": [
+          2,
+          2
+        ],
+        "value": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Find the Least Common Multiple (LCM) of these numbers: 32, 24",
+    "answer": "96",
+    "metadata": {
+      "source_dataset": "lcm",
+      "source_index": 96,
+      "numbers": [
+        32,
+        24
+      ],
+      "result": 96,
+      "difficulty": {
+        "numbers": [
+          2,
+          2
+        ],
+        "value": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Find the Least Common Multiple (LCM) of these numbers: 68, 44",
+    "answer": "748",
+    "metadata": {
+      "source_dataset": "lcm",
+      "source_index": 97,
+      "numbers": [
+        68,
+        44
+      ],
+      "result": 748,
+      "difficulty": {
+        "numbers": [
+          2,
+          2
+        ],
+        "value": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Find the Least Common Multiple (LCM) of these numbers: 87, 93",
+    "answer": "2697",
+    "metadata": {
+      "source_dataset": "lcm",
+      "source_index": 98,
+      "numbers": [
+        87,
+        93
+      ],
+      "result": 2697,
+      "difficulty": {
+        "numbers": [
+          2,
+          2
+        ],
+        "value": [
+          1,
+          100
+        ]
+      }
+    }
+  },
+  {
+    "question": "Find the Least Common Multiple (LCM) of these numbers: 74, 90",
+    "answer": "3330",
+    "metadata": {
+      "source_dataset": "lcm",
+      "source_index": 99,
+      "numbers": [
+        74,
+        90
+      ],
+      "result": 3330,
+      "difficulty": {
+        "numbers": [
+          2,
+          2
+        ],
+        "value": [
+          1,
+          100
+        ]
+      }
+    }
+  }
+]

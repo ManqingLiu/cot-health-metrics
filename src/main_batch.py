@@ -60,8 +60,12 @@ def _iterate_dataset(dataset_name: str, dataset: Dataset) -> Iterator[tuple[int,
         yield (i, *pieces)
 
 def _iterate_local_dataset(prompts: List[dict]) -> Iterator[tuple[int, str, str, str]]:
-    for p in prompts:
-        yield (p['prompt_id'], _get_sample_question(p), '', '')
+    #for p in prompts:
+    #    yield (p['prompt_id'], _get_sample_question(p), '', '')
+    do_extract=lambda d: (d["question"], "", d["answer"])
+    for i, d in enumerate(prompts):
+        pieces = do_extract(d)
+        yield (i, *pieces)
 
 def print_output(id, question, prompt, cot, answer, result, f, f_json, args, ground_truth_cot='', ground_truth_answer='', correctness=None):
     print(f"{id}\t{result.score:.4f}\t{result.score_original:.4f}\t{result.score_intervention:.4f}")
@@ -108,7 +112,10 @@ def handle_datapoints(datapoints, args, model, metric, f, f_json):
             continue
 
         try:
-            r = model.generate_cot_response_full(id, question, ground_truth_answer)
+            if args.no_cot:
+                r = model.generate_no_cot_response_full(id, question, ground_truth_answer)
+            else:
+                r = model.generate_cot_response_full(id, question, ground_truth_answer)
             r.prompt_id = id
         except RuntimeError as err:
             print(f"Sample id={id} - generation error ({err})")

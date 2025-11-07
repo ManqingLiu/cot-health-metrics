@@ -1,0 +1,5073 @@
+[
+  {
+    "question": "A very special island is inhabited only by sages and fools. Sages always tell the truth, and fools always lie. You meet 2 inhabitants: Zoey, and Riley. Zoey commented, \"Riley is a fool\". In Riley's words: \"Zoey is a sage or Riley is a sage\". So who is a sage and who is a fool? (Format your answer like: \"Zoey is a sage/fool, and Riley is a sage/fool\")",
+    "answer": "Zoey is a fool, and Riley is a sage.",
+    "metadata": {
+      "source_dataset": "knights_knaves",
+      "source_index": 0,
+      "statements": [
+        [
+          "lying",
+          1
+        ],
+        [
+          "or",
+          [
+            "telling-truth",
+            0
+          ],
+          [
+            "telling-truth",
+            1
+          ]
+        ]
+      ],
+      "solution": [
+        false,
+        true
+      ],
+      "names": [
+        "Zoey",
+        "Riley"
+      ],
+      "knight_knave_terms": {
+        "knight": "sage",
+        "knave": "fool",
+        "a_knight": "a sage",
+        "a_knave": "a fool",
+        "Knight": "Sage",
+        "Knave": "Fool"
+      },
+      "difficulty": {
+        "n_people": 2,
+        "depth_constraint": 2,
+        "width_constraint": 2
+      }
+    }
+  },
+  {
+    "question": "A very special island is inhabited only by pioneers and laggards. Pioneers always tell the truth, and laggards always lie. You meet 2 inhabitants: Riley, and Olivia. \"if Riley is a pioneer then Olivia is a laggard\" - Riley. Olivia stated, \"Olivia is a pioneer and Riley is a laggard\". So who is a pioneer and who is a laggard? (Format your answer like: \"Riley is a pioneer/laggard, and Olivia is a pioneer/laggard\")",
+    "answer": "Riley is a pioneer, and Olivia is a laggard.",
+    "metadata": {
+      "source_dataset": "knights_knaves",
+      "source_index": 1,
+      "statements": [
+        [
+          "->",
+          [
+            "telling-truth",
+            0
+          ],
+          [
+            "lying",
+            1
+          ]
+        ],
+        [
+          "and",
+          [
+            "telling-truth",
+            1
+          ],
+          [
+            "lying",
+            0
+          ]
+        ]
+      ],
+      "solution": [
+        true,
+        false
+      ],
+      "names": [
+        "Riley",
+        "Olivia"
+      ],
+      "knight_knave_terms": {
+        "knight": "pioneer",
+        "knave": "laggard",
+        "a_knight": "a pioneer",
+        "a_knave": "a laggard",
+        "Knight": "Pioneer",
+        "Knave": "Laggard"
+      },
+      "difficulty": {
+        "n_people": 2,
+        "depth_constraint": 2,
+        "width_constraint": 2
+      }
+    }
+  },
+  {
+    "question": "A very special island is inhabited only by saints and sinners. Saints always tell the truth, and sinners always lie. You meet 2 inhabitants: Samuel, and Jacob. Samuel expressed that if Samuel is a saint then Jacob is a sinner. Jacob was heard saying, \"if Samuel is a saint then Samuel is a sinner\". So who is a saint and who is a sinner? (Format your answer like: \"Samuel is a saint/sinner, and Jacob is a saint/sinner\")",
+    "answer": "Samuel is a saint, and Jacob is a sinner.",
+    "metadata": {
+      "source_dataset": "knights_knaves",
+      "source_index": 2,
+      "statements": [
+        [
+          "->",
+          [
+            "telling-truth",
+            0
+          ],
+          [
+            "lying",
+            1
+          ]
+        ],
+        [
+          "->",
+          [
+            "telling-truth",
+            0
+          ],
+          [
+            "lying",
+            0
+          ]
+        ]
+      ],
+      "solution": [
+        true,
+        false
+      ],
+      "names": [
+        "Samuel",
+        "Jacob"
+      ],
+      "knight_knave_terms": {
+        "knight": "saint",
+        "knave": "sinner",
+        "a_knight": "a saint",
+        "a_knave": "a sinner",
+        "Knight": "Saint",
+        "Knave": "Sinner"
+      },
+      "difficulty": {
+        "n_people": 2,
+        "depth_constraint": 2,
+        "width_constraint": 2
+      }
+    }
+  },
+  {
+    "question": "A very special island is inhabited only by pioneers and laggards. Pioneers always tell the truth, and laggards always lie. You meet 2 inhabitants: Olivia, and Lily. \"Lily is a laggard and Lily is a pioneer\" - Olivia. Lily noted, \"if Olivia is a pioneer then Lily is a pioneer\". So who is a pioneer and who is a laggard? (Format your answer like: \"Olivia is a pioneer/laggard, and Lily is a pioneer/laggard\")",
+    "answer": "Olivia is a laggard, and Lily is a pioneer.",
+    "metadata": {
+      "source_dataset": "knights_knaves",
+      "source_index": 3,
+      "statements": [
+        [
+          "and",
+          [
+            "lying",
+            1
+          ],
+          [
+            "telling-truth",
+            1
+          ]
+        ],
+        [
+          "->",
+          [
+            "telling-truth",
+            0
+          ],
+          [
+            "telling-truth",
+            1
+          ]
+        ]
+      ],
+      "solution": [
+        false,
+        true
+      ],
+      "names": [
+        "Olivia",
+        "Lily"
+      ],
+      "knight_knave_terms": {
+        "knight": "pioneer",
+        "knave": "laggard",
+        "a_knight": "a pioneer",
+        "a_knave": "a laggard",
+        "Knight": "Pioneer",
+        "Knave": "Laggard"
+      },
+      "difficulty": {
+        "n_people": 2,
+        "depth_constraint": 2,
+        "width_constraint": 2
+      }
+    }
+  },
+  {
+    "question": "A very special island is inhabited only by altruists and egoists. Altruists always tell the truth, and egoists always lie. You meet 2 inhabitants: Mason, and Jack. Mason expressed that if Jack is an egoist then Mason is an altruist. In Jack's words: \"Mason is an egoist\". So who is an altruist and who is an egoist? (Format your answer like: \"Mason is a altruist/egoist, and Jack is a altruist/egoist\")",
+    "answer": "Mason is an altruist, and Jack is an egoist.",
+    "metadata": {
+      "source_dataset": "knights_knaves",
+      "source_index": 4,
+      "statements": [
+        [
+          "->",
+          [
+            "lying",
+            1
+          ],
+          [
+            "telling-truth",
+            0
+          ]
+        ],
+        [
+          "not",
+          [
+            "telling-truth",
+            0
+          ]
+        ]
+      ],
+      "solution": [
+        true,
+        false
+      ],
+      "names": [
+        "Mason",
+        "Jack"
+      ],
+      "knight_knave_terms": {
+        "knight": "altruist",
+        "knave": "egoist",
+        "a_knight": "an altruist",
+        "a_knave": "an egoist",
+        "Knight": "Altruist",
+        "Knave": "Egoist"
+      },
+      "difficulty": {
+        "n_people": 2,
+        "depth_constraint": 2,
+        "width_constraint": 2
+      }
+    }
+  },
+  {
+    "question": "A very special island is inhabited only by heros and villains. Heros always tell the truth, and villains always lie. You meet 2 inhabitants: Benjamin, and Oliver. Benjamin noted, \"Oliver is a villain or Benjamin is a hero\". Oliver commented, \"if Oliver is a hero then Benjamin is a villain\". So who is a hero and who is a villain? (Format your answer like: \"Benjamin is a hero/villain, and Oliver is a hero/villain\")",
+    "answer": "Benjamin is a villain, and Oliver is a hero.",
+    "metadata": {
+      "source_dataset": "knights_knaves",
+      "source_index": 5,
+      "statements": [
+        [
+          "or",
+          [
+            "lying",
+            1
+          ],
+          [
+            "telling-truth",
+            0
+          ]
+        ],
+        [
+          "->",
+          [
+            "telling-truth",
+            1
+          ],
+          [
+            "lying",
+            0
+          ]
+        ]
+      ],
+      "solution": [
+        false,
+        true
+      ],
+      "names": [
+        "Benjamin",
+        "Oliver"
+      ],
+      "knight_knave_terms": {
+        "knight": "hero",
+        "knave": "villain",
+        "a_knight": "a hero",
+        "a_knave": "a villain",
+        "Knight": "Hero",
+        "Knave": "Villain"
+      },
+      "difficulty": {
+        "n_people": 2,
+        "depth_constraint": 2,
+        "width_constraint": 2
+      }
+    }
+  },
+  {
+    "question": "A very special island is inhabited only by saints and sinners. Saints always tell the truth, and sinners always lie. You meet 2 inhabitants: Alexander, and Sofia. Alexander expressed that Sofia is a saint and Sofia is a sinner. \"Alexander is a saint,\" Sofia claimed. So who is a saint and who is a sinner? (Format your answer like: \"Alexander is a saint/sinner, and Sofia is a saint/sinner\")",
+    "answer": "Alexander is a sinner, and Sofia is a sinner.",
+    "metadata": {
+      "source_dataset": "knights_knaves",
+      "source_index": 6,
+      "statements": [
+        [
+          "and",
+          [
+            "telling-truth",
+            1
+          ],
+          [
+            "lying",
+            1
+          ]
+        ],
+        [
+          "not",
+          [
+            "lying",
+            0
+          ]
+        ]
+      ],
+      "solution": [
+        false,
+        false
+      ],
+      "names": [
+        "Alexander",
+        "Sofia"
+      ],
+      "knight_knave_terms": {
+        "knight": "saint",
+        "knave": "sinner",
+        "a_knight": "a saint",
+        "a_knave": "a sinner",
+        "Knight": "Saint",
+        "Knave": "Sinner"
+      },
+      "difficulty": {
+        "n_people": 2,
+        "depth_constraint": 2,
+        "width_constraint": 2
+      }
+    }
+  },
+  {
+    "question": "A very special island is inhabited only by altruists and egoists. Altruists always tell the truth, and egoists always lie. You meet 2 inhabitants: Sophia, and Oliver. Sophia said that Sophia is an altruist if and only if Oliver is an egoist. Oliver noted, \"Sophia is an egoist if and only if Oliver is an altruist\". So who is an altruist and who is an egoist? (Format your answer like: \"Sophia is a altruist/egoist, and Oliver is a altruist/egoist\")",
+    "answer": "Sophia is an egoist, and Oliver is an egoist.",
+    "metadata": {
+      "source_dataset": "knights_knaves",
+      "source_index": 7,
+      "statements": [
+        [
+          "<=>",
+          [
+            "telling-truth",
+            0
+          ],
+          [
+            "lying",
+            1
+          ]
+        ],
+        [
+          "<=>",
+          [
+            "lying",
+            0
+          ],
+          [
+            "telling-truth",
+            1
+          ]
+        ]
+      ],
+      "solution": [
+        false,
+        false
+      ],
+      "names": [
+        "Sophia",
+        "Oliver"
+      ],
+      "knight_knave_terms": {
+        "knight": "altruist",
+        "knave": "egoist",
+        "a_knight": "an altruist",
+        "a_knave": "an egoist",
+        "Knight": "Altruist",
+        "Knave": "Egoist"
+      },
+      "difficulty": {
+        "n_people": 2,
+        "depth_constraint": 2,
+        "width_constraint": 2
+      }
+    }
+  },
+  {
+    "question": "A very special island is inhabited only by altruists and egoists. Altruists always tell the truth, and egoists always lie. You meet 2 inhabitants: Riley, and Lily. Riley commented, \"Riley is an altruist if and only if Lily is an altruist\". In Lily's words: \"Riley is an egoist\". So who is an altruist and who is an egoist? (Format your answer like: \"Riley is a altruist/egoist, and Lily is a altruist/egoist\")",
+    "answer": "Riley is an egoist, and Lily is an altruist.",
+    "metadata": {
+      "source_dataset": "knights_knaves",
+      "source_index": 8,
+      "statements": [
+        [
+          "<=>",
+          [
+            "telling-truth",
+            0
+          ],
+          [
+            "telling-truth",
+            1
+          ]
+        ],
+        [
+          "not",
+          [
+            "telling-truth",
+            0
+          ]
+        ]
+      ],
+      "solution": [
+        false,
+        true
+      ],
+      "names": [
+        "Riley",
+        "Lily"
+      ],
+      "knight_knave_terms": {
+        "knight": "altruist",
+        "knave": "egoist",
+        "a_knight": "an altruist",
+        "a_knave": "an egoist",
+        "Knight": "Altruist",
+        "Knave": "Egoist"
+      },
+      "difficulty": {
+        "n_people": 2,
+        "depth_constraint": 2,
+        "width_constraint": 2
+      }
+    }
+  },
+  {
+    "question": "A very special island is inhabited only by sages and fools. Sages always tell the truth, and fools always lie. You meet 2 inhabitants: Abigail, and Lily. \"Lily is a sage,\" Abigail mentioned. As Lily put it, \"Abigail is a fool or Abigail is a sage\". So who is a sage and who is a fool? (Format your answer like: \"Abigail is a sage/fool, and Lily is a sage/fool\")",
+    "answer": "Abigail is a sage, and Lily is a sage.",
+    "metadata": {
+      "source_dataset": "knights_knaves",
+      "source_index": 9,
+      "statements": [
+        [
+          "not",
+          [
+            "lying",
+            1
+          ]
+        ],
+        [
+          "or",
+          [
+            "lying",
+            0
+          ],
+          [
+            "telling-truth",
+            0
+          ]
+        ]
+      ],
+      "solution": [
+        true,
+        true
+      ],
+      "names": [
+        "Abigail",
+        "Lily"
+      ],
+      "knight_knave_terms": {
+        "knight": "sage",
+        "knave": "fool",
+        "a_knight": "a sage",
+        "a_knave": "a fool",
+        "Knight": "Sage",
+        "Knave": "Fool"
+      },
+      "difficulty": {
+        "n_people": 2,
+        "depth_constraint": 2,
+        "width_constraint": 2
+      }
+    }
+  },
+  {
+    "question": "A very special island is inhabited only by heros and villains. Heros always tell the truth, and villains always lie. You meet 2 inhabitants: Benjamin, and Chloe. As Benjamin put it, \"if Chloe is a hero then Benjamin is a hero\". Chloe expressed that Benjamin is a hero and Benjamin is a villain. So who is a hero and who is a villain? (Format your answer like: \"Benjamin is a hero/villain, and Chloe is a hero/villain\")",
+    "answer": "Benjamin is a hero, and Chloe is a villain.",
+    "metadata": {
+      "source_dataset": "knights_knaves",
+      "source_index": 10,
+      "statements": [
+        [
+          "->",
+          [
+            "telling-truth",
+            1
+          ],
+          [
+            "telling-truth",
+            0
+          ]
+        ],
+        [
+          "and",
+          [
+            "telling-truth",
+            0
+          ],
+          [
+            "lying",
+            0
+          ]
+        ]
+      ],
+      "solution": [
+        true,
+        false
+      ],
+      "names": [
+        "Benjamin",
+        "Chloe"
+      ],
+      "knight_knave_terms": {
+        "knight": "hero",
+        "knave": "villain",
+        "a_knight": "a hero",
+        "a_knave": "a villain",
+        "Knight": "Hero",
+        "Knave": "Villain"
+      },
+      "difficulty": {
+        "n_people": 2,
+        "depth_constraint": 2,
+        "width_constraint": 2
+      }
+    }
+  },
+  {
+    "question": "A very special island is inhabited only by sages and fools. Sages always tell the truth, and fools always lie. You meet 2 inhabitants: Ethan, and Noah. In a statement by Ethan: \"Noah is a fool and Noah is a sage\". Noah was heard saying, \"if Ethan is a sage then Ethan is a fool\". So who is a sage and who is a fool? (Format your answer like: \"Ethan is a sage/fool, and Noah is a sage/fool\")",
+    "answer": "Ethan is a fool, and Noah is a sage.",
+    "metadata": {
+      "source_dataset": "knights_knaves",
+      "source_index": 11,
+      "statements": [
+        [
+          "and",
+          [
+            "lying",
+            1
+          ],
+          [
+            "telling-truth",
+            1
+          ]
+        ],
+        [
+          "->",
+          [
+            "telling-truth",
+            0
+          ],
+          [
+            "lying",
+            0
+          ]
+        ]
+      ],
+      "solution": [
+        false,
+        true
+      ],
+      "names": [
+        "Ethan",
+        "Noah"
+      ],
+      "knight_knave_terms": {
+        "knight": "sage",
+        "knave": "fool",
+        "a_knight": "a sage",
+        "a_knave": "a fool",
+        "Knight": "Sage",
+        "Knave": "Fool"
+      },
+      "difficulty": {
+        "n_people": 2,
+        "depth_constraint": 2,
+        "width_constraint": 2
+      }
+    }
+  },
+  {
+    "question": "A very special island is inhabited only by sages and fools. Sages always tell the truth, and fools always lie. You meet 2 inhabitants: Jacob, and Emma. Jacob noted, \"Emma is a sage if and only if Emma is a fool\". \"Jacob is a sage if and only if Jacob is a fool,\" Emma claimed. So who is a sage and who is a fool? (Format your answer like: \"Jacob is a sage/fool, and Emma is a sage/fool\")",
+    "answer": "Jacob is a fool, and Emma is a fool.",
+    "metadata": {
+      "source_dataset": "knights_knaves",
+      "source_index": 12,
+      "statements": [
+        [
+          "<=>",
+          [
+            "telling-truth",
+            1
+          ],
+          [
+            "lying",
+            1
+          ]
+        ],
+        [
+          "<=>",
+          [
+            "telling-truth",
+            0
+          ],
+          [
+            "lying",
+            0
+          ]
+        ]
+      ],
+      "solution": [
+        false,
+        false
+      ],
+      "names": [
+        "Jacob",
+        "Emma"
+      ],
+      "knight_knave_terms": {
+        "knight": "sage",
+        "knave": "fool",
+        "a_knight": "a sage",
+        "a_knave": "a fool",
+        "Knight": "Sage",
+        "Knave": "Fool"
+      },
+      "difficulty": {
+        "n_people": 2,
+        "depth_constraint": 2,
+        "width_constraint": 2
+      }
+    }
+  },
+  {
+    "question": "A very special island is inhabited only by saints and sinners. Saints always tell the truth, and sinners always lie. You meet 2 inhabitants: Aria, and Sofia. As Aria put it, \"Sofia is a saint\". \"Aria is a sinner or Aria is a saint,\" Sofia declared. So who is a saint and who is a sinner? (Format your answer like: \"Aria is a saint/sinner, and Sofia is a saint/sinner\")",
+    "answer": "Aria is a saint, and Sofia is a saint.",
+    "metadata": {
+      "source_dataset": "knights_knaves",
+      "source_index": 13,
+      "statements": [
+        [
+          "not",
+          [
+            "lying",
+            1
+          ]
+        ],
+        [
+          "or",
+          [
+            "lying",
+            0
+          ],
+          [
+            "telling-truth",
+            0
+          ]
+        ]
+      ],
+      "solution": [
+        true,
+        true
+      ],
+      "names": [
+        "Aria",
+        "Sofia"
+      ],
+      "knight_knave_terms": {
+        "knight": "saint",
+        "knave": "sinner",
+        "a_knight": "a saint",
+        "a_knave": "a sinner",
+        "Knight": "Saint",
+        "Knave": "Sinner"
+      },
+      "difficulty": {
+        "n_people": 2,
+        "depth_constraint": 2,
+        "width_constraint": 2
+      }
+    }
+  },
+  {
+    "question": "A very special island is inhabited only by saints and sinners. Saints always tell the truth, and sinners always lie. You meet 2 inhabitants: Aria, and Jacob. \"Jacob is a saint\" - Aria. \"Aria is a sinner and Aria is a saint,\" Jacob declared. So who is a saint and who is a sinner? (Format your answer like: \"Aria is a saint/sinner, and Jacob is a saint/sinner\")",
+    "answer": "Aria is a sinner, and Jacob is a sinner.",
+    "metadata": {
+      "source_dataset": "knights_knaves",
+      "source_index": 14,
+      "statements": [
+        [
+          "telling-truth",
+          1
+        ],
+        [
+          "and",
+          [
+            "lying",
+            0
+          ],
+          [
+            "telling-truth",
+            0
+          ]
+        ]
+      ],
+      "solution": [
+        false,
+        false
+      ],
+      "names": [
+        "Aria",
+        "Jacob"
+      ],
+      "knight_knave_terms": {
+        "knight": "saint",
+        "knave": "sinner",
+        "a_knight": "a saint",
+        "a_knave": "a sinner",
+        "Knight": "Saint",
+        "Knave": "Sinner"
+      },
+      "difficulty": {
+        "n_people": 2,
+        "depth_constraint": 2,
+        "width_constraint": 2
+      }
+    }
+  },
+  {
+    "question": "A very special island is inhabited only by sages and fools. Sages always tell the truth, and fools always lie. You meet 2 inhabitants: Lucas, and Jacob. In a statement by Lucas: \"Lucas is a sage if and only if Jacob is a sage\". Jacob remarked, \"if Jacob is a sage then Lucas is a fool\". So who is a sage and who is a fool? (Format your answer like: \"Lucas is a sage/fool, and Jacob is a sage/fool\")",
+    "answer": "Lucas is a fool, and Jacob is a sage.",
+    "metadata": {
+      "source_dataset": "knights_knaves",
+      "source_index": 15,
+      "statements": [
+        [
+          "<=>",
+          [
+            "telling-truth",
+            0
+          ],
+          [
+            "telling-truth",
+            1
+          ]
+        ],
+        [
+          "->",
+          [
+            "telling-truth",
+            1
+          ],
+          [
+            "lying",
+            0
+          ]
+        ]
+      ],
+      "solution": [
+        false,
+        true
+      ],
+      "names": [
+        "Lucas",
+        "Jacob"
+      ],
+      "knight_knave_terms": {
+        "knight": "sage",
+        "knave": "fool",
+        "a_knight": "a sage",
+        "a_knave": "a fool",
+        "Knight": "Sage",
+        "Knave": "Fool"
+      },
+      "difficulty": {
+        "n_people": 2,
+        "depth_constraint": 2,
+        "width_constraint": 2
+      }
+    }
+  },
+  {
+    "question": "A very special island is inhabited only by heros and villains. Heros always tell the truth, and villains always lie. You meet 2 inhabitants: Olivia, and Sofia. In Olivia's words: \"Sofia is a hero and Sofia is a villain\". Sofia remarked, \"Olivia is a villain or Sofia is a hero\". So who is a hero and who is a villain? (Format your answer like: \"Olivia is a hero/villain, and Sofia is a hero/villain\")",
+    "answer": "Olivia is a villain, and Sofia is a hero.",
+    "metadata": {
+      "source_dataset": "knights_knaves",
+      "source_index": 16,
+      "statements": [
+        [
+          "and",
+          [
+            "telling-truth",
+            1
+          ],
+          [
+            "lying",
+            1
+          ]
+        ],
+        [
+          "or",
+          [
+            "lying",
+            0
+          ],
+          [
+            "telling-truth",
+            1
+          ]
+        ]
+      ],
+      "solution": [
+        false,
+        true
+      ],
+      "names": [
+        "Olivia",
+        "Sofia"
+      ],
+      "knight_knave_terms": {
+        "knight": "hero",
+        "knave": "villain",
+        "a_knight": "a hero",
+        "a_knave": "a villain",
+        "Knight": "Hero",
+        "Knave": "Villain"
+      },
+      "difficulty": {
+        "n_people": 2,
+        "depth_constraint": 2,
+        "width_constraint": 2
+      }
+    }
+  },
+  {
+    "question": "A very special island is inhabited only by heros and villains. Heros always tell the truth, and villains always lie. You meet 2 inhabitants: David, and Mia. David asserted: \"Mia is a hero\". In Mia's words: \"David is a hero or David is a villain\". So who is a hero and who is a villain? (Format your answer like: \"David is a hero/villain, and Mia is a hero/villain\")",
+    "answer": "David is a hero, and Mia is a hero.",
+    "metadata": {
+      "source_dataset": "knights_knaves",
+      "source_index": 17,
+      "statements": [
+        [
+          "not",
+          [
+            "lying",
+            1
+          ]
+        ],
+        [
+          "or",
+          [
+            "telling-truth",
+            0
+          ],
+          [
+            "lying",
+            0
+          ]
+        ]
+      ],
+      "solution": [
+        true,
+        true
+      ],
+      "names": [
+        "David",
+        "Mia"
+      ],
+      "knight_knave_terms": {
+        "knight": "hero",
+        "knave": "villain",
+        "a_knight": "a hero",
+        "a_knave": "a villain",
+        "Knight": "Hero",
+        "Knave": "Villain"
+      },
+      "difficulty": {
+        "n_people": 2,
+        "depth_constraint": 2,
+        "width_constraint": 2
+      }
+    }
+  },
+  {
+    "question": "A very special island is inhabited only by pioneers and laggards. Pioneers always tell the truth, and laggards always lie. You meet 2 inhabitants: Benjamin, and Sofia. Benjamin asserted: \"Benjamin is a pioneer or Sofia is a laggard\". Sofia commented, \"Benjamin is a pioneer if and only if Benjamin is a laggard\". So who is a pioneer and who is a laggard? (Format your answer like: \"Benjamin is a pioneer/laggard, and Sofia is a pioneer/laggard\")",
+    "answer": "Benjamin is a pioneer, and Sofia is a laggard.",
+    "metadata": {
+      "source_dataset": "knights_knaves",
+      "source_index": 18,
+      "statements": [
+        [
+          "or",
+          [
+            "telling-truth",
+            0
+          ],
+          [
+            "lying",
+            1
+          ]
+        ],
+        [
+          "<=>",
+          [
+            "telling-truth",
+            0
+          ],
+          [
+            "lying",
+            0
+          ]
+        ]
+      ],
+      "solution": [
+        true,
+        false
+      ],
+      "names": [
+        "Benjamin",
+        "Sofia"
+      ],
+      "knight_knave_terms": {
+        "knight": "pioneer",
+        "knave": "laggard",
+        "a_knight": "a pioneer",
+        "a_knave": "a laggard",
+        "Knight": "Pioneer",
+        "Knave": "Laggard"
+      },
+      "difficulty": {
+        "n_people": 2,
+        "depth_constraint": 2,
+        "width_constraint": 2
+      }
+    }
+  },
+  {
+    "question": "A very special island is inhabited only by knights and knaves. Knights always tell the truth, and knaves always lie. You meet 2 inhabitants: Sebastian, and Zoey. \"Zoey is a knight or Zoey is a knave,\" Sebastian claimed. Zoey remarked, \"Sebastian is a knight\". So who is a knight and who is a knave? (Format your answer like: \"Sebastian is a knight/knave, and Zoey is a knight/knave\")",
+    "answer": "Sebastian is a knight, and Zoey is a knight.",
+    "metadata": {
+      "source_dataset": "knights_knaves",
+      "source_index": 19,
+      "statements": [
+        [
+          "or",
+          [
+            "telling-truth",
+            1
+          ],
+          [
+            "lying",
+            1
+          ]
+        ],
+        [
+          "telling-truth",
+          0
+        ]
+      ],
+      "solution": [
+        true,
+        true
+      ],
+      "names": [
+        "Sebastian",
+        "Zoey"
+      ],
+      "knight_knave_terms": {
+        "knight": "knight",
+        "knave": "knave",
+        "a_knight": "a knight",
+        "a_knave": "a knave",
+        "Knight": "Knight",
+        "Knave": "Knave"
+      },
+      "difficulty": {
+        "n_people": 2,
+        "depth_constraint": 2,
+        "width_constraint": 2
+      }
+    }
+  },
+  {
+    "question": "A very special island is inhabited only by knights and knaves. Knights always tell the truth, and knaves always lie. You meet 2 inhabitants: Aria, and Zoey. Aria commented, \"Zoey is a knave or Zoey is a knight\". In a statement by Zoey: \"Aria is a knave and Aria is a knight\". So who is a knight and who is a knave? (Format your answer like: \"Aria is a knight/knave, and Zoey is a knight/knave\")",
+    "answer": "Aria is a knight, and Zoey is a knave.",
+    "metadata": {
+      "source_dataset": "knights_knaves",
+      "source_index": 20,
+      "statements": [
+        [
+          "or",
+          [
+            "lying",
+            1
+          ],
+          [
+            "telling-truth",
+            1
+          ]
+        ],
+        [
+          "and",
+          [
+            "lying",
+            0
+          ],
+          [
+            "telling-truth",
+            0
+          ]
+        ]
+      ],
+      "solution": [
+        true,
+        false
+      ],
+      "names": [
+        "Aria",
+        "Zoey"
+      ],
+      "knight_knave_terms": {
+        "knight": "knight",
+        "knave": "knave",
+        "a_knight": "a knight",
+        "a_knave": "a knave",
+        "Knight": "Knight",
+        "Knave": "Knave"
+      },
+      "difficulty": {
+        "n_people": 2,
+        "depth_constraint": 2,
+        "width_constraint": 2
+      }
+    }
+  },
+  {
+    "question": "A very special island is inhabited only by angels and devils. Angels always tell the truth, and devils always lie. You meet 2 inhabitants: Daniel, and Ethan. According to Daniel, \"if Ethan is an angel then Ethan is a devil\". According to Ethan, \"Daniel is an angel if and only if Daniel is a devil\". So who is an angel and who is a devil? (Format your answer like: \"Daniel is a angel/devil, and Ethan is a angel/devil\")",
+    "answer": "Daniel is an angel, and Ethan is a devil.",
+    "metadata": {
+      "source_dataset": "knights_knaves",
+      "source_index": 21,
+      "statements": [
+        [
+          "->",
+          [
+            "telling-truth",
+            1
+          ],
+          [
+            "lying",
+            1
+          ]
+        ],
+        [
+          "<=>",
+          [
+            "telling-truth",
+            0
+          ],
+          [
+            "lying",
+            0
+          ]
+        ]
+      ],
+      "solution": [
+        true,
+        false
+      ],
+      "names": [
+        "Daniel",
+        "Ethan"
+      ],
+      "knight_knave_terms": {
+        "knight": "angel",
+        "knave": "devil",
+        "a_knight": "an angel",
+        "a_knave": "a devil",
+        "Knight": "Angel",
+        "Knave": "Devil"
+      },
+      "difficulty": {
+        "n_people": 2,
+        "depth_constraint": 2,
+        "width_constraint": 2
+      }
+    }
+  },
+  {
+    "question": "A very special island is inhabited only by angels and devils. Angels always tell the truth, and devils always lie. You meet 2 inhabitants: Mia, and Lily. \"Lily is a devil,\" Mia mentioned. Lily told you that Mia is a devil or Mia is an angel. So who is an angel and who is a devil? (Format your answer like: \"Mia is a angel/devil, and Lily is a angel/devil\")",
+    "answer": "Mia is a devil, and Lily is an angel.",
+    "metadata": {
+      "source_dataset": "knights_knaves",
+      "source_index": 22,
+      "statements": [
+        [
+          "lying",
+          1
+        ],
+        [
+          "or",
+          [
+            "lying",
+            0
+          ],
+          [
+            "telling-truth",
+            0
+          ]
+        ]
+      ],
+      "solution": [
+        false,
+        true
+      ],
+      "names": [
+        "Mia",
+        "Lily"
+      ],
+      "knight_knave_terms": {
+        "knight": "angel",
+        "knave": "devil",
+        "a_knight": "an angel",
+        "a_knave": "a devil",
+        "Knight": "Angel",
+        "Knave": "Devil"
+      },
+      "difficulty": {
+        "n_people": 2,
+        "depth_constraint": 2,
+        "width_constraint": 2
+      }
+    }
+  },
+  {
+    "question": "A very special island is inhabited only by pioneers and laggards. Pioneers always tell the truth, and laggards always lie. You meet 2 inhabitants: Scarlett, and Harper. Scarlett said that Harper is a pioneer if and only if Harper is a laggard. \"Scarlett is a pioneer or Scarlett is a laggard,\" Harper declared. So who is a pioneer and who is a laggard? (Format your answer like: \"Scarlett is a pioneer/laggard, and Harper is a pioneer/laggard\")",
+    "answer": "Scarlett is a laggard, and Harper is a pioneer.",
+    "metadata": {
+      "source_dataset": "knights_knaves",
+      "source_index": 23,
+      "statements": [
+        [
+          "<=>",
+          [
+            "telling-truth",
+            1
+          ],
+          [
+            "lying",
+            1
+          ]
+        ],
+        [
+          "or",
+          [
+            "telling-truth",
+            0
+          ],
+          [
+            "lying",
+            0
+          ]
+        ]
+      ],
+      "solution": [
+        false,
+        true
+      ],
+      "names": [
+        "Scarlett",
+        "Harper"
+      ],
+      "knight_knave_terms": {
+        "knight": "pioneer",
+        "knave": "laggard",
+        "a_knight": "a pioneer",
+        "a_knave": "a laggard",
+        "Knight": "Pioneer",
+        "Knave": "Laggard"
+      },
+      "difficulty": {
+        "n_people": 2,
+        "depth_constraint": 2,
+        "width_constraint": 2
+      }
+    }
+  },
+  {
+    "question": "A very special island is inhabited only by angels and devils. Angels always tell the truth, and devils always lie. You meet 2 inhabitants: Luke, and Penelope. Luke was heard saying, \"Penelope is a devil\". Penelope commented, \"if Penelope is an angel then Luke is a devil\". So who is an angel and who is a devil? (Format your answer like: \"Luke is a angel/devil, and Penelope is a angel/devil\")",
+    "answer": "Luke is a devil, and Penelope is an angel.",
+    "metadata": {
+      "source_dataset": "knights_knaves",
+      "source_index": 24,
+      "statements": [
+        [
+          "not",
+          [
+            "telling-truth",
+            1
+          ]
+        ],
+        [
+          "->",
+          [
+            "telling-truth",
+            1
+          ],
+          [
+            "lying",
+            0
+          ]
+        ]
+      ],
+      "solution": [
+        false,
+        true
+      ],
+      "names": [
+        "Luke",
+        "Penelope"
+      ],
+      "knight_knave_terms": {
+        "knight": "angel",
+        "knave": "devil",
+        "a_knight": "an angel",
+        "a_knave": "a devil",
+        "Knight": "Angel",
+        "Knave": "Devil"
+      },
+      "difficulty": {
+        "n_people": 2,
+        "depth_constraint": 2,
+        "width_constraint": 2
+      }
+    }
+  },
+  {
+    "question": "A very special island is inhabited only by altruists and egoists. Altruists always tell the truth, and egoists always lie. You meet 2 inhabitants: Scarlett, and Daniel. Scarlett stated, \"if Scarlett is an altruist then Daniel is an altruist\". In Daniel's words: \"Daniel is an altruist or Scarlett is an egoist\". So who is an altruist and who is an egoist? (Format your answer like: \"Scarlett is a altruist/egoist, and Daniel is a altruist/egoist\")",
+    "answer": "Scarlett is an altruist, and Daniel is an altruist.",
+    "metadata": {
+      "source_dataset": "knights_knaves",
+      "source_index": 25,
+      "statements": [
+        [
+          "->",
+          [
+            "telling-truth",
+            0
+          ],
+          [
+            "telling-truth",
+            1
+          ]
+        ],
+        [
+          "or",
+          [
+            "telling-truth",
+            1
+          ],
+          [
+            "lying",
+            0
+          ]
+        ]
+      ],
+      "solution": [
+        true,
+        true
+      ],
+      "names": [
+        "Scarlett",
+        "Daniel"
+      ],
+      "knight_knave_terms": {
+        "knight": "altruist",
+        "knave": "egoist",
+        "a_knight": "an altruist",
+        "a_knave": "an egoist",
+        "Knight": "Altruist",
+        "Knave": "Egoist"
+      },
+      "difficulty": {
+        "n_people": 2,
+        "depth_constraint": 2,
+        "width_constraint": 2
+      }
+    }
+  },
+  {
+    "question": "A very special island is inhabited only by sages and fools. Sages always tell the truth, and fools always lie. You meet 2 inhabitants: Abigail, and David. As Abigail put it, \"David is a sage if and only if David is a fool\". David said that Abigail is a fool. So who is a sage and who is a fool? (Format your answer like: \"Abigail is a sage/fool, and David is a sage/fool\")",
+    "answer": "Abigail is a fool, and David is a sage.",
+    "metadata": {
+      "source_dataset": "knights_knaves",
+      "source_index": 26,
+      "statements": [
+        [
+          "<=>",
+          [
+            "telling-truth",
+            1
+          ],
+          [
+            "lying",
+            1
+          ]
+        ],
+        [
+          "not",
+          [
+            "telling-truth",
+            0
+          ]
+        ]
+      ],
+      "solution": [
+        false,
+        true
+      ],
+      "names": [
+        "Abigail",
+        "David"
+      ],
+      "knight_knave_terms": {
+        "knight": "sage",
+        "knave": "fool",
+        "a_knight": "a sage",
+        "a_knave": "a fool",
+        "Knight": "Sage",
+        "Knave": "Fool"
+      },
+      "difficulty": {
+        "n_people": 2,
+        "depth_constraint": 2,
+        "width_constraint": 2
+      }
+    }
+  },
+  {
+    "question": "A very special island is inhabited only by sages and fools. Sages always tell the truth, and fools always lie. You meet 2 inhabitants: David, and Jacob. David said that Jacob is a fool if and only if Jacob is a sage. Jacob stated, \"David is a fool\". So who is a sage and who is a fool? (Format your answer like: \"David is a sage/fool, and Jacob is a sage/fool\")",
+    "answer": "David is a fool, and Jacob is a sage.",
+    "metadata": {
+      "source_dataset": "knights_knaves",
+      "source_index": 27,
+      "statements": [
+        [
+          "<=>",
+          [
+            "lying",
+            1
+          ],
+          [
+            "telling-truth",
+            1
+          ]
+        ],
+        [
+          "not",
+          [
+            "telling-truth",
+            0
+          ]
+        ]
+      ],
+      "solution": [
+        false,
+        true
+      ],
+      "names": [
+        "David",
+        "Jacob"
+      ],
+      "knight_knave_terms": {
+        "knight": "sage",
+        "knave": "fool",
+        "a_knight": "a sage",
+        "a_knave": "a fool",
+        "Knight": "Sage",
+        "Knave": "Fool"
+      },
+      "difficulty": {
+        "n_people": 2,
+        "depth_constraint": 2,
+        "width_constraint": 2
+      }
+    }
+  },
+  {
+    "question": "A very special island is inhabited only by sages and fools. Sages always tell the truth, and fools always lie. You meet 2 inhabitants: Olivia, and Abigail. Olivia was heard saying, \"Abigail is a sage\". Abigail commented, \"Olivia is a sage or Olivia is a fool\". So who is a sage and who is a fool? (Format your answer like: \"Olivia is a sage/fool, and Abigail is a sage/fool\")",
+    "answer": "Olivia is a sage, and Abigail is a sage.",
+    "metadata": {
+      "source_dataset": "knights_knaves",
+      "source_index": 28,
+      "statements": [
+        [
+          "telling-truth",
+          1
+        ],
+        [
+          "or",
+          [
+            "telling-truth",
+            0
+          ],
+          [
+            "lying",
+            0
+          ]
+        ]
+      ],
+      "solution": [
+        true,
+        true
+      ],
+      "names": [
+        "Olivia",
+        "Abigail"
+      ],
+      "knight_knave_terms": {
+        "knight": "sage",
+        "knave": "fool",
+        "a_knight": "a sage",
+        "a_knave": "a fool",
+        "Knight": "Sage",
+        "Knave": "Fool"
+      },
+      "difficulty": {
+        "n_people": 2,
+        "depth_constraint": 2,
+        "width_constraint": 2
+      }
+    }
+  },
+  {
+    "question": "A very special island is inhabited only by saints and sinners. Saints always tell the truth, and sinners always lie. You meet 2 inhabitants: Isabella, and Joseph. \"Joseph is a sinner,\" Isabella declared. In Joseph's words: \"Isabella is a saint if and only if Joseph is a saint\". So who is a saint and who is a sinner? (Format your answer like: \"Isabella is a saint/sinner, and Joseph is a saint/sinner\")",
+    "answer": "Isabella is a saint, and Joseph is a sinner.",
+    "metadata": {
+      "source_dataset": "knights_knaves",
+      "source_index": 29,
+      "statements": [
+        [
+          "not",
+          [
+            "telling-truth",
+            1
+          ]
+        ],
+        [
+          "<=>",
+          [
+            "telling-truth",
+            0
+          ],
+          [
+            "telling-truth",
+            1
+          ]
+        ]
+      ],
+      "solution": [
+        true,
+        false
+      ],
+      "names": [
+        "Isabella",
+        "Joseph"
+      ],
+      "knight_knave_terms": {
+        "knight": "saint",
+        "knave": "sinner",
+        "a_knight": "a saint",
+        "a_knave": "a sinner",
+        "Knight": "Saint",
+        "Knave": "Sinner"
+      },
+      "difficulty": {
+        "n_people": 2,
+        "depth_constraint": 2,
+        "width_constraint": 2
+      }
+    }
+  },
+  {
+    "question": "A very special island is inhabited only by angels and devils. Angels always tell the truth, and devils always lie. You meet 2 inhabitants: Ava, and Benjamin. In Ava's words: \"if Benjamin is a devil then Benjamin is an angel\". Benjamin asserted: \"Ava is an angel and Ava is a devil\". So who is an angel and who is a devil? (Format your answer like: \"Ava is a angel/devil, and Benjamin is a angel/devil\")",
+    "answer": "Ava is a devil, and Benjamin is a devil.",
+    "metadata": {
+      "source_dataset": "knights_knaves",
+      "source_index": 30,
+      "statements": [
+        [
+          "->",
+          [
+            "lying",
+            1
+          ],
+          [
+            "telling-truth",
+            1
+          ]
+        ],
+        [
+          "and",
+          [
+            "telling-truth",
+            0
+          ],
+          [
+            "lying",
+            0
+          ]
+        ]
+      ],
+      "solution": [
+        false,
+        false
+      ],
+      "names": [
+        "Ava",
+        "Benjamin"
+      ],
+      "knight_knave_terms": {
+        "knight": "angel",
+        "knave": "devil",
+        "a_knight": "an angel",
+        "a_knave": "a devil",
+        "Knight": "Angel",
+        "Knave": "Devil"
+      },
+      "difficulty": {
+        "n_people": 2,
+        "depth_constraint": 2,
+        "width_constraint": 2
+      }
+    }
+  },
+  {
+    "question": "A very special island is inhabited only by altruists and egoists. Altruists always tell the truth, and egoists always lie. You meet 2 inhabitants: Elizabeth, and Olivia. In Elizabeth's words: \"Olivia is an egoist if and only if Olivia is an altruist\". \"Elizabeth is an altruist,\" Olivia mentioned. So who is an altruist and who is an egoist? (Format your answer like: \"Elizabeth is a altruist/egoist, and Olivia is a altruist/egoist\")",
+    "answer": "Elizabeth is an egoist, and Olivia is an egoist.",
+    "metadata": {
+      "source_dataset": "knights_knaves",
+      "source_index": 31,
+      "statements": [
+        [
+          "<=>",
+          [
+            "lying",
+            1
+          ],
+          [
+            "telling-truth",
+            1
+          ]
+        ],
+        [
+          "telling-truth",
+          0
+        ]
+      ],
+      "solution": [
+        false,
+        false
+      ],
+      "names": [
+        "Elizabeth",
+        "Olivia"
+      ],
+      "knight_knave_terms": {
+        "knight": "altruist",
+        "knave": "egoist",
+        "a_knight": "an altruist",
+        "a_knave": "an egoist",
+        "Knight": "Altruist",
+        "Knave": "Egoist"
+      },
+      "difficulty": {
+        "n_people": 2,
+        "depth_constraint": 2,
+        "width_constraint": 2
+      }
+    }
+  },
+  {
+    "question": "A very special island is inhabited only by saints and sinners. Saints always tell the truth, and sinners always lie. You meet 2 inhabitants: Joseph, and Lily. In Joseph's words: \"if Joseph is a saint then Lily is a sinner\". Lily stated, \"Joseph is a sinner\". So who is a saint and who is a sinner? (Format your answer like: \"Joseph is a saint/sinner, and Lily is a saint/sinner\")",
+    "answer": "Joseph is a saint, and Lily is a sinner.",
+    "metadata": {
+      "source_dataset": "knights_knaves",
+      "source_index": 32,
+      "statements": [
+        [
+          "->",
+          [
+            "telling-truth",
+            0
+          ],
+          [
+            "lying",
+            1
+          ]
+        ],
+        [
+          "lying",
+          0
+        ]
+      ],
+      "solution": [
+        true,
+        false
+      ],
+      "names": [
+        "Joseph",
+        "Lily"
+      ],
+      "knight_knave_terms": {
+        "knight": "saint",
+        "knave": "sinner",
+        "a_knight": "a saint",
+        "a_knave": "a sinner",
+        "Knight": "Saint",
+        "Knave": "Sinner"
+      },
+      "difficulty": {
+        "n_people": 2,
+        "depth_constraint": 2,
+        "width_constraint": 2
+      }
+    }
+  },
+  {
+    "question": "A very special island is inhabited only by sages and fools. Sages always tell the truth, and fools always lie. You meet 2 inhabitants: Henry, and Chloe. Henry was heard saying, \"Chloe is a sage\". As Chloe put it, \"if Henry is a sage then Chloe is a sage\". So who is a sage and who is a fool? (Format your answer like: \"Henry is a sage/fool, and Chloe is a sage/fool\")",
+    "answer": "Henry is a sage, and Chloe is a sage.",
+    "metadata": {
+      "source_dataset": "knights_knaves",
+      "source_index": 33,
+      "statements": [
+        [
+          "not",
+          [
+            "lying",
+            1
+          ]
+        ],
+        [
+          "->",
+          [
+            "telling-truth",
+            0
+          ],
+          [
+            "telling-truth",
+            1
+          ]
+        ]
+      ],
+      "solution": [
+        true,
+        true
+      ],
+      "names": [
+        "Henry",
+        "Chloe"
+      ],
+      "knight_knave_terms": {
+        "knight": "sage",
+        "knave": "fool",
+        "a_knight": "a sage",
+        "a_knave": "a fool",
+        "Knight": "Sage",
+        "Knave": "Fool"
+      },
+      "difficulty": {
+        "n_people": 2,
+        "depth_constraint": 2,
+        "width_constraint": 2
+      }
+    }
+  },
+  {
+    "question": "A very special island is inhabited only by knights and knaves. Knights always tell the truth, and knaves always lie. You meet 2 inhabitants: Ava, and Scarlett. Ava told you that Ava is a knight if and only if Scarlett is a knave. Scarlett stated, \"if Ava is a knight then Scarlett is a knight\". So who is a knight and who is a knave? (Format your answer like: \"Ava is a knight/knave, and Scarlett is a knight/knave\")",
+    "answer": "Ava is a knight, and Scarlett is a knave.",
+    "metadata": {
+      "source_dataset": "knights_knaves",
+      "source_index": 34,
+      "statements": [
+        [
+          "<=>",
+          [
+            "telling-truth",
+            0
+          ],
+          [
+            "lying",
+            1
+          ]
+        ],
+        [
+          "->",
+          [
+            "telling-truth",
+            0
+          ],
+          [
+            "telling-truth",
+            1
+          ]
+        ]
+      ],
+      "solution": [
+        true,
+        false
+      ],
+      "names": [
+        "Ava",
+        "Scarlett"
+      ],
+      "knight_knave_terms": {
+        "knight": "knight",
+        "knave": "knave",
+        "a_knight": "a knight",
+        "a_knave": "a knave",
+        "Knight": "Knight",
+        "Knave": "Knave"
+      },
+      "difficulty": {
+        "n_people": 2,
+        "depth_constraint": 2,
+        "width_constraint": 2
+      }
+    }
+  },
+  {
+    "question": "A very special island is inhabited only by angels and devils. Angels always tell the truth, and devils always lie. You meet 2 inhabitants: Benjamin, and Emma. In Benjamin's words: \"Emma is a devil if and only if Emma is an angel\". \"Benjamin is a devil,\" Emma mentioned. So who is an angel and who is a devil? (Format your answer like: \"Benjamin is a angel/devil, and Emma is a angel/devil\")",
+    "answer": "Benjamin is a devil, and Emma is an angel.",
+    "metadata": {
+      "source_dataset": "knights_knaves",
+      "source_index": 35,
+      "statements": [
+        [
+          "<=>",
+          [
+            "lying",
+            1
+          ],
+          [
+            "telling-truth",
+            1
+          ]
+        ],
+        [
+          "not",
+          [
+            "telling-truth",
+            0
+          ]
+        ]
+      ],
+      "solution": [
+        false,
+        true
+      ],
+      "names": [
+        "Benjamin",
+        "Emma"
+      ],
+      "knight_knave_terms": {
+        "knight": "angel",
+        "knave": "devil",
+        "a_knight": "an angel",
+        "a_knave": "a devil",
+        "Knight": "Angel",
+        "Knave": "Devil"
+      },
+      "difficulty": {
+        "n_people": 2,
+        "depth_constraint": 2,
+        "width_constraint": 2
+      }
+    }
+  },
+  {
+    "question": "A very special island is inhabited only by saints and sinners. Saints always tell the truth, and sinners always lie. You meet 2 inhabitants: Matthew, and David. Matthew commented, \"Matthew is a saint if and only if David is a saint\". As David put it, \"if Matthew is a saint then Matthew is a sinner\". So who is a saint and who is a sinner? (Format your answer like: \"Matthew is a saint/sinner, and David is a saint/sinner\")",
+    "answer": "Matthew is a sinner, and David is a saint.",
+    "metadata": {
+      "source_dataset": "knights_knaves",
+      "source_index": 36,
+      "statements": [
+        [
+          "<=>",
+          [
+            "telling-truth",
+            0
+          ],
+          [
+            "telling-truth",
+            1
+          ]
+        ],
+        [
+          "->",
+          [
+            "telling-truth",
+            0
+          ],
+          [
+            "lying",
+            0
+          ]
+        ]
+      ],
+      "solution": [
+        false,
+        true
+      ],
+      "names": [
+        "Matthew",
+        "David"
+      ],
+      "knight_knave_terms": {
+        "knight": "saint",
+        "knave": "sinner",
+        "a_knight": "a saint",
+        "a_knave": "a sinner",
+        "Knight": "Saint",
+        "Knave": "Sinner"
+      },
+      "difficulty": {
+        "n_people": 2,
+        "depth_constraint": 2,
+        "width_constraint": 2
+      }
+    }
+  },
+  {
+    "question": "A very special island is inhabited only by saints and sinners. Saints always tell the truth, and sinners always lie. You meet 2 inhabitants: Ava, and Harper. Ava was heard saying, \"Harper is a sinner or Harper is a saint\". Harper commented, \"Ava is a saint if and only if Ava is a sinner\". So who is a saint and who is a sinner? (Format your answer like: \"Ava is a saint/sinner, and Harper is a saint/sinner\")",
+    "answer": "Ava is a saint, and Harper is a sinner.",
+    "metadata": {
+      "source_dataset": "knights_knaves",
+      "source_index": 37,
+      "statements": [
+        [
+          "or",
+          [
+            "lying",
+            1
+          ],
+          [
+            "telling-truth",
+            1
+          ]
+        ],
+        [
+          "<=>",
+          [
+            "telling-truth",
+            0
+          ],
+          [
+            "lying",
+            0
+          ]
+        ]
+      ],
+      "solution": [
+        true,
+        false
+      ],
+      "names": [
+        "Ava",
+        "Harper"
+      ],
+      "knight_knave_terms": {
+        "knight": "saint",
+        "knave": "sinner",
+        "a_knight": "a saint",
+        "a_knave": "a sinner",
+        "Knight": "Saint",
+        "Knave": "Sinner"
+      },
+      "difficulty": {
+        "n_people": 2,
+        "depth_constraint": 2,
+        "width_constraint": 2
+      }
+    }
+  },
+  {
+    "question": "A very special island is inhabited only by heros and villains. Heros always tell the truth, and villains always lie. You meet 2 inhabitants: David, and Harper. David asserted: \"Harper is a hero and Harper is a villain\". According to Harper, \"David is a hero if and only if David is a villain\". So who is a hero and who is a villain? (Format your answer like: \"David is a hero/villain, and Harper is a hero/villain\")",
+    "answer": "David is a villain, and Harper is a villain.",
+    "metadata": {
+      "source_dataset": "knights_knaves",
+      "source_index": 38,
+      "statements": [
+        [
+          "and",
+          [
+            "telling-truth",
+            1
+          ],
+          [
+            "lying",
+            1
+          ]
+        ],
+        [
+          "<=>",
+          [
+            "telling-truth",
+            0
+          ],
+          [
+            "lying",
+            0
+          ]
+        ]
+      ],
+      "solution": [
+        false,
+        false
+      ],
+      "names": [
+        "David",
+        "Harper"
+      ],
+      "knight_knave_terms": {
+        "knight": "hero",
+        "knave": "villain",
+        "a_knight": "a hero",
+        "a_knave": "a villain",
+        "Knight": "Hero",
+        "Knave": "Villain"
+      },
+      "difficulty": {
+        "n_people": 2,
+        "depth_constraint": 2,
+        "width_constraint": 2
+      }
+    }
+  },
+  {
+    "question": "A very special island is inhabited only by heros and villains. Heros always tell the truth, and villains always lie. You meet 2 inhabitants: David, and Olivia. According to David, \"Olivia is a villain\". Olivia was heard saying, \"Olivia is a hero and David is a hero\". So who is a hero and who is a villain? (Format your answer like: \"David is a hero/villain, and Olivia is a hero/villain\")",
+    "answer": "David is a hero, and Olivia is a villain.",
+    "metadata": {
+      "source_dataset": "knights_knaves",
+      "source_index": 39,
+      "statements": [
+        [
+          "not",
+          [
+            "telling-truth",
+            1
+          ]
+        ],
+        [
+          "and",
+          [
+            "telling-truth",
+            1
+          ],
+          [
+            "telling-truth",
+            0
+          ]
+        ]
+      ],
+      "solution": [
+        true,
+        false
+      ],
+      "names": [
+        "David",
+        "Olivia"
+      ],
+      "knight_knave_terms": {
+        "knight": "hero",
+        "knave": "villain",
+        "a_knight": "a hero",
+        "a_knave": "a villain",
+        "Knight": "Hero",
+        "Knave": "Villain"
+      },
+      "difficulty": {
+        "n_people": 2,
+        "depth_constraint": 2,
+        "width_constraint": 2
+      }
+    }
+  },
+  {
+    "question": "A very special island is inhabited only by heros and villains. Heros always tell the truth, and villains always lie. You meet 2 inhabitants: Amelia, and Jack. \"if Jack is a hero then Jack is a villain,\" Amelia mentioned. Jack told you that Amelia is a villain if and only if Amelia is a hero. So who is a hero and who is a villain? (Format your answer like: \"Amelia is a hero/villain, and Jack is a hero/villain\")",
+    "answer": "Amelia is a hero, and Jack is a villain.",
+    "metadata": {
+      "source_dataset": "knights_knaves",
+      "source_index": 40,
+      "statements": [
+        [
+          "->",
+          [
+            "telling-truth",
+            1
+          ],
+          [
+            "lying",
+            1
+          ]
+        ],
+        [
+          "<=>",
+          [
+            "lying",
+            0
+          ],
+          [
+            "telling-truth",
+            0
+          ]
+        ]
+      ],
+      "solution": [
+        true,
+        false
+      ],
+      "names": [
+        "Amelia",
+        "Jack"
+      ],
+      "knight_knave_terms": {
+        "knight": "hero",
+        "knave": "villain",
+        "a_knight": "a hero",
+        "a_knave": "a villain",
+        "Knight": "Hero",
+        "Knave": "Villain"
+      },
+      "difficulty": {
+        "n_people": 2,
+        "depth_constraint": 2,
+        "width_constraint": 2
+      }
+    }
+  },
+  {
+    "question": "A very special island is inhabited only by altruists and egoists. Altruists always tell the truth, and egoists always lie. You meet 2 inhabitants: James, and Victoria. James remarked, \"Victoria is an altruist or James is an altruist\". Victoria was heard saying, \"James is an egoist\". So who is an altruist and who is an egoist? (Format your answer like: \"James is a altruist/egoist, and Victoria is a altruist/egoist\")",
+    "answer": "James is an altruist, and Victoria is an egoist.",
+    "metadata": {
+      "source_dataset": "knights_knaves",
+      "source_index": 41,
+      "statements": [
+        [
+          "or",
+          [
+            "telling-truth",
+            1
+          ],
+          [
+            "telling-truth",
+            0
+          ]
+        ],
+        [
+          "not",
+          [
+            "telling-truth",
+            0
+          ]
+        ]
+      ],
+      "solution": [
+        true,
+        false
+      ],
+      "names": [
+        "James",
+        "Victoria"
+      ],
+      "knight_knave_terms": {
+        "knight": "altruist",
+        "knave": "egoist",
+        "a_knight": "an altruist",
+        "a_knave": "an egoist",
+        "Knight": "Altruist",
+        "Knave": "Egoist"
+      },
+      "difficulty": {
+        "n_people": 2,
+        "depth_constraint": 2,
+        "width_constraint": 2
+      }
+    }
+  },
+  {
+    "question": "A very special island is inhabited only by altruists and egoists. Altruists always tell the truth, and egoists always lie. You meet 2 inhabitants: Sophia, and Abigail. \"Abigail is an egoist and Abigail is an altruist,\" Sophia claimed. Abigail expressed that Sophia is an egoist. So who is an altruist and who is an egoist? (Format your answer like: \"Sophia is a altruist/egoist, and Abigail is a altruist/egoist\")",
+    "answer": "Sophia is an egoist, and Abigail is an altruist.",
+    "metadata": {
+      "source_dataset": "knights_knaves",
+      "source_index": 42,
+      "statements": [
+        [
+          "and",
+          [
+            "lying",
+            1
+          ],
+          [
+            "telling-truth",
+            1
+          ]
+        ],
+        [
+          "lying",
+          0
+        ]
+      ],
+      "solution": [
+        false,
+        true
+      ],
+      "names": [
+        "Sophia",
+        "Abigail"
+      ],
+      "knight_knave_terms": {
+        "knight": "altruist",
+        "knave": "egoist",
+        "a_knight": "an altruist",
+        "a_knave": "an egoist",
+        "Knight": "Altruist",
+        "Knave": "Egoist"
+      },
+      "difficulty": {
+        "n_people": 2,
+        "depth_constraint": 2,
+        "width_constraint": 2
+      }
+    }
+  },
+  {
+    "question": "A very special island is inhabited only by angels and devils. Angels always tell the truth, and devils always lie. You meet 2 inhabitants: Matthew, and Logan. In a statement by Matthew: \"Matthew is an angel and Logan is a devil\". \"Matthew is an angel\" - Logan. So who is an angel and who is a devil? (Format your answer like: \"Matthew is a angel/devil, and Logan is a angel/devil\")",
+    "answer": "Matthew is a devil, and Logan is a devil.",
+    "metadata": {
+      "source_dataset": "knights_knaves",
+      "source_index": 43,
+      "statements": [
+        [
+          "and",
+          [
+            "telling-truth",
+            0
+          ],
+          [
+            "lying",
+            1
+          ]
+        ],
+        [
+          "telling-truth",
+          0
+        ]
+      ],
+      "solution": [
+        false,
+        false
+      ],
+      "names": [
+        "Matthew",
+        "Logan"
+      ],
+      "knight_knave_terms": {
+        "knight": "angel",
+        "knave": "devil",
+        "a_knight": "an angel",
+        "a_knave": "a devil",
+        "Knight": "Angel",
+        "Knave": "Devil"
+      },
+      "difficulty": {
+        "n_people": 2,
+        "depth_constraint": 2,
+        "width_constraint": 2
+      }
+    }
+  },
+  {
+    "question": "A very special island is inhabited only by knights and knaves. Knights always tell the truth, and knaves always lie. You meet 2 inhabitants: Owen, and Charlotte. According to Owen, \"Charlotte is a knave\". Charlotte asserted: \"if Charlotte is a knight then Owen is a knave\". So who is a knight and who is a knave? (Format your answer like: \"Owen is a knight/knave, and Charlotte is a knight/knave\")",
+    "answer": "Owen is a knave, and Charlotte is a knight.",
+    "metadata": {
+      "source_dataset": "knights_knaves",
+      "source_index": 44,
+      "statements": [
+        [
+          "not",
+          [
+            "telling-truth",
+            1
+          ]
+        ],
+        [
+          "->",
+          [
+            "telling-truth",
+            1
+          ],
+          [
+            "lying",
+            0
+          ]
+        ]
+      ],
+      "solution": [
+        false,
+        true
+      ],
+      "names": [
+        "Owen",
+        "Charlotte"
+      ],
+      "knight_knave_terms": {
+        "knight": "knight",
+        "knave": "knave",
+        "a_knight": "a knight",
+        "a_knave": "a knave",
+        "Knight": "Knight",
+        "Knave": "Knave"
+      },
+      "difficulty": {
+        "n_people": 2,
+        "depth_constraint": 2,
+        "width_constraint": 2
+      }
+    }
+  },
+  {
+    "question": "A very special island is inhabited only by pioneers and laggards. Pioneers always tell the truth, and laggards always lie. You meet 2 inhabitants: Sophia, and Liam. As Sophia put it, \"Liam is a laggard\". In a statement by Liam: \"Liam is a pioneer or Sophia is a pioneer\". So who is a pioneer and who is a laggard? (Format your answer like: \"Sophia is a pioneer/laggard, and Liam is a pioneer/laggard\")",
+    "answer": "Sophia is a laggard, and Liam is a pioneer.",
+    "metadata": {
+      "source_dataset": "knights_knaves",
+      "source_index": 45,
+      "statements": [
+        [
+          "not",
+          [
+            "telling-truth",
+            1
+          ]
+        ],
+        [
+          "or",
+          [
+            "telling-truth",
+            1
+          ],
+          [
+            "telling-truth",
+            0
+          ]
+        ]
+      ],
+      "solution": [
+        false,
+        true
+      ],
+      "names": [
+        "Sophia",
+        "Liam"
+      ],
+      "knight_knave_terms": {
+        "knight": "pioneer",
+        "knave": "laggard",
+        "a_knight": "a pioneer",
+        "a_knave": "a laggard",
+        "Knight": "Pioneer",
+        "Knave": "Laggard"
+      },
+      "difficulty": {
+        "n_people": 2,
+        "depth_constraint": 2,
+        "width_constraint": 2
+      }
+    }
+  },
+  {
+    "question": "A very special island is inhabited only by knights and knaves. Knights always tell the truth, and knaves always lie. You meet 2 inhabitants: Aiden, and Sophia. \"if Aiden is a knight then Sophia is a knave,\" Aiden claimed. \"Sophia is a knight and Aiden is a knight\" - Sophia. So who is a knight and who is a knave? (Format your answer like: \"Aiden is a knight/knave, and Sophia is a knight/knave\")",
+    "answer": "Aiden is a knight, and Sophia is a knave.",
+    "metadata": {
+      "source_dataset": "knights_knaves",
+      "source_index": 46,
+      "statements": [
+        [
+          "->",
+          [
+            "telling-truth",
+            0
+          ],
+          [
+            "lying",
+            1
+          ]
+        ],
+        [
+          "and",
+          [
+            "telling-truth",
+            1
+          ],
+          [
+            "telling-truth",
+            0
+          ]
+        ]
+      ],
+      "solution": [
+        true,
+        false
+      ],
+      "names": [
+        "Aiden",
+        "Sophia"
+      ],
+      "knight_knave_terms": {
+        "knight": "knight",
+        "knave": "knave",
+        "a_knight": "a knight",
+        "a_knave": "a knave",
+        "Knight": "Knight",
+        "Knave": "Knave"
+      },
+      "difficulty": {
+        "n_people": 2,
+        "depth_constraint": 2,
+        "width_constraint": 2
+      }
+    }
+  },
+  {
+    "question": "A very special island is inhabited only by pioneers and laggards. Pioneers always tell the truth, and laggards always lie. You meet 2 inhabitants: Henry, and Harper. Henry told you that Henry is a pioneer or Harper is a laggard. \"if Harper is a pioneer then Henry is a laggard,\" Harper declared. So who is a pioneer and who is a laggard? (Format your answer like: \"Henry is a pioneer/laggard, and Harper is a pioneer/laggard\")",
+    "answer": "Henry is a laggard, and Harper is a pioneer.",
+    "metadata": {
+      "source_dataset": "knights_knaves",
+      "source_index": 47,
+      "statements": [
+        [
+          "or",
+          [
+            "telling-truth",
+            0
+          ],
+          [
+            "lying",
+            1
+          ]
+        ],
+        [
+          "->",
+          [
+            "telling-truth",
+            1
+          ],
+          [
+            "lying",
+            0
+          ]
+        ]
+      ],
+      "solution": [
+        false,
+        true
+      ],
+      "names": [
+        "Henry",
+        "Harper"
+      ],
+      "knight_knave_terms": {
+        "knight": "pioneer",
+        "knave": "laggard",
+        "a_knight": "a pioneer",
+        "a_knave": "a laggard",
+        "Knight": "Pioneer",
+        "Knave": "Laggard"
+      },
+      "difficulty": {
+        "n_people": 2,
+        "depth_constraint": 2,
+        "width_constraint": 2
+      }
+    }
+  },
+  {
+    "question": "A very special island is inhabited only by pioneers and laggards. Pioneers always tell the truth, and laggards always lie. You meet 2 inhabitants: Owen, and Jackson. As Owen put it, \"Jackson is a laggard and Jackson is a pioneer\". Jackson expressed that Owen is a laggard or Jackson is a pioneer. So who is a pioneer and who is a laggard? (Format your answer like: \"Owen is a pioneer/laggard, and Jackson is a pioneer/laggard\")",
+    "answer": "Owen is a laggard, and Jackson is a pioneer.",
+    "metadata": {
+      "source_dataset": "knights_knaves",
+      "source_index": 48,
+      "statements": [
+        [
+          "and",
+          [
+            "lying",
+            1
+          ],
+          [
+            "telling-truth",
+            1
+          ]
+        ],
+        [
+          "or",
+          [
+            "lying",
+            0
+          ],
+          [
+            "telling-truth",
+            1
+          ]
+        ]
+      ],
+      "solution": [
+        false,
+        true
+      ],
+      "names": [
+        "Owen",
+        "Jackson"
+      ],
+      "knight_knave_terms": {
+        "knight": "pioneer",
+        "knave": "laggard",
+        "a_knight": "a pioneer",
+        "a_knave": "a laggard",
+        "Knight": "Pioneer",
+        "Knave": "Laggard"
+      },
+      "difficulty": {
+        "n_people": 2,
+        "depth_constraint": 2,
+        "width_constraint": 2
+      }
+    }
+  },
+  {
+    "question": "A very special island is inhabited only by heros and villains. Heros always tell the truth, and villains always lie. You meet 2 inhabitants: Avery, and Aiden. \"Avery is a hero,\" Avery mentioned. Aiden expressed that if Aiden is a hero then Avery is a hero. So who is a hero and who is a villain? (Format your answer like: \"Avery is a hero/villain, and Aiden is a hero/villain\")",
+    "answer": "Avery is a hero, and Aiden is a hero.",
+    "metadata": {
+      "source_dataset": "knights_knaves",
+      "source_index": 49,
+      "statements": [
+        [
+          "telling-truth",
+          0
+        ],
+        [
+          "->",
+          [
+            "telling-truth",
+            1
+          ],
+          [
+            "telling-truth",
+            0
+          ]
+        ]
+      ],
+      "solution": [
+        true,
+        true
+      ],
+      "names": [
+        "Avery",
+        "Aiden"
+      ],
+      "knight_knave_terms": {
+        "knight": "hero",
+        "knave": "villain",
+        "a_knight": "a hero",
+        "a_knave": "a villain",
+        "Knight": "Hero",
+        "Knave": "Villain"
+      },
+      "difficulty": {
+        "n_people": 2,
+        "depth_constraint": 2,
+        "width_constraint": 2
+      }
+    }
+  },
+  {
+    "question": "A very special island is inhabited only by angels and devils. Angels always tell the truth, and devils always lie. You meet 2 inhabitants: Mason, and Sofia. Mason was heard saying, \"Mason is an angel if and only if Sofia is an angel\". Sofia asserted: \"Mason is a devil if and only if Sofia is an angel\". So who is an angel and who is a devil? (Format your answer like: \"Mason is a angel/devil, and Sofia is a angel/devil\")",
+    "answer": "Mason is a devil, and Sofia is an angel.",
+    "metadata": {
+      "source_dataset": "knights_knaves",
+      "source_index": 50,
+      "statements": [
+        [
+          "<=>",
+          [
+            "telling-truth",
+            0
+          ],
+          [
+            "telling-truth",
+            1
+          ]
+        ],
+        [
+          "<=>",
+          [
+            "lying",
+            0
+          ],
+          [
+            "telling-truth",
+            1
+          ]
+        ]
+      ],
+      "solution": [
+        false,
+        true
+      ],
+      "names": [
+        "Mason",
+        "Sofia"
+      ],
+      "knight_knave_terms": {
+        "knight": "angel",
+        "knave": "devil",
+        "a_knight": "an angel",
+        "a_knave": "a devil",
+        "Knight": "Angel",
+        "Knave": "Devil"
+      },
+      "difficulty": {
+        "n_people": 2,
+        "depth_constraint": 2,
+        "width_constraint": 2
+      }
+    }
+  },
+  {
+    "question": "A very special island is inhabited only by heros and villains. Heros always tell the truth, and villains always lie. You meet 2 inhabitants: Aiden, and Matthew. Aiden said that Matthew is a villain if and only if Matthew is a hero. Matthew asserted: \"Matthew is a hero and Aiden is a hero\". So who is a hero and who is a villain? (Format your answer like: \"Aiden is a hero/villain, and Matthew is a hero/villain\")",
+    "answer": "Aiden is a villain, and Matthew is a villain.",
+    "metadata": {
+      "source_dataset": "knights_knaves",
+      "source_index": 51,
+      "statements": [
+        [
+          "<=>",
+          [
+            "lying",
+            1
+          ],
+          [
+            "telling-truth",
+            1
+          ]
+        ],
+        [
+          "and",
+          [
+            "telling-truth",
+            1
+          ],
+          [
+            "telling-truth",
+            0
+          ]
+        ]
+      ],
+      "solution": [
+        false,
+        false
+      ],
+      "names": [
+        "Aiden",
+        "Matthew"
+      ],
+      "knight_knave_terms": {
+        "knight": "hero",
+        "knave": "villain",
+        "a_knight": "a hero",
+        "a_knave": "a villain",
+        "Knight": "Hero",
+        "Knave": "Villain"
+      },
+      "difficulty": {
+        "n_people": 2,
+        "depth_constraint": 2,
+        "width_constraint": 2
+      }
+    }
+  },
+  {
+    "question": "A very special island is inhabited only by sages and fools. Sages always tell the truth, and fools always lie. You meet 2 inhabitants: Zoey, and Joseph. Zoey said, \"if Joseph is a sage then Joseph is a fool.\" According to Joseph, \"Zoey is a fool and Zoey is a sage\". So who is a sage and who is a fool? (Format your answer like: \"Zoey is a sage/fool, and Joseph is a sage/fool\")",
+    "answer": "Zoey is a sage, and Joseph is a fool.",
+    "metadata": {
+      "source_dataset": "knights_knaves",
+      "source_index": 52,
+      "statements": [
+        [
+          "->",
+          [
+            "telling-truth",
+            1
+          ],
+          [
+            "lying",
+            1
+          ]
+        ],
+        [
+          "and",
+          [
+            "lying",
+            0
+          ],
+          [
+            "telling-truth",
+            0
+          ]
+        ]
+      ],
+      "solution": [
+        true,
+        false
+      ],
+      "names": [
+        "Zoey",
+        "Joseph"
+      ],
+      "knight_knave_terms": {
+        "knight": "sage",
+        "knave": "fool",
+        "a_knight": "a sage",
+        "a_knave": "a fool",
+        "Knight": "Sage",
+        "Knave": "Fool"
+      },
+      "difficulty": {
+        "n_people": 2,
+        "depth_constraint": 2,
+        "width_constraint": 2
+      }
+    }
+  },
+  {
+    "question": "A very special island is inhabited only by angels and devils. Angels always tell the truth, and devils always lie. You meet 2 inhabitants: Aurora, and Owen. Aurora stated, \"Owen is a devil if and only if Aurora is an angel\". Owen told you that Aurora is an angel or Owen is an angel. So who is an angel and who is a devil? (Format your answer like: \"Aurora is a angel/devil, and Owen is a angel/devil\")",
+    "answer": "Aurora is a devil, and Owen is a devil.",
+    "metadata": {
+      "source_dataset": "knights_knaves",
+      "source_index": 53,
+      "statements": [
+        [
+          "<=>",
+          [
+            "lying",
+            1
+          ],
+          [
+            "telling-truth",
+            0
+          ]
+        ],
+        [
+          "or",
+          [
+            "telling-truth",
+            0
+          ],
+          [
+            "telling-truth",
+            1
+          ]
+        ]
+      ],
+      "solution": [
+        false,
+        false
+      ],
+      "names": [
+        "Aurora",
+        "Owen"
+      ],
+      "knight_knave_terms": {
+        "knight": "angel",
+        "knave": "devil",
+        "a_knight": "an angel",
+        "a_knave": "a devil",
+        "Knight": "Angel",
+        "Knave": "Devil"
+      },
+      "difficulty": {
+        "n_people": 2,
+        "depth_constraint": 2,
+        "width_constraint": 2
+      }
+    }
+  },
+  {
+    "question": "A very special island is inhabited only by altruists and egoists. Altruists always tell the truth, and egoists always lie. You meet 2 inhabitants: Amelia, and Lucas. Amelia expressed that Lucas is an egoist or Lucas is an altruist. Lucas said, \"Amelia is an egoist and Lucas is an altruist.\" So who is an altruist and who is an egoist? (Format your answer like: \"Amelia is a altruist/egoist, and Lucas is a altruist/egoist\")",
+    "answer": "Amelia is an altruist, and Lucas is an egoist.",
+    "metadata": {
+      "source_dataset": "knights_knaves",
+      "source_index": 54,
+      "statements": [
+        [
+          "or",
+          [
+            "lying",
+            1
+          ],
+          [
+            "telling-truth",
+            1
+          ]
+        ],
+        [
+          "and",
+          [
+            "lying",
+            0
+          ],
+          [
+            "telling-truth",
+            1
+          ]
+        ]
+      ],
+      "solution": [
+        true,
+        false
+      ],
+      "names": [
+        "Amelia",
+        "Lucas"
+      ],
+      "knight_knave_terms": {
+        "knight": "altruist",
+        "knave": "egoist",
+        "a_knight": "an altruist",
+        "a_knave": "an egoist",
+        "Knight": "Altruist",
+        "Knave": "Egoist"
+      },
+      "difficulty": {
+        "n_people": 2,
+        "depth_constraint": 2,
+        "width_constraint": 2
+      }
+    }
+  },
+  {
+    "question": "A very special island is inhabited only by sages and fools. Sages always tell the truth, and fools always lie. You meet 2 inhabitants: Mason, and Noah. Mason noted, \"Mason is a sage or Noah is a sage\". \"Mason is a fool if and only if Noah is a sage,\" Noah claimed. So who is a sage and who is a fool? (Format your answer like: \"Mason is a sage/fool, and Noah is a sage/fool\")",
+    "answer": "Mason is a fool, and Noah is a fool.",
+    "metadata": {
+      "source_dataset": "knights_knaves",
+      "source_index": 55,
+      "statements": [
+        [
+          "or",
+          [
+            "telling-truth",
+            0
+          ],
+          [
+            "telling-truth",
+            1
+          ]
+        ],
+        [
+          "<=>",
+          [
+            "lying",
+            0
+          ],
+          [
+            "telling-truth",
+            1
+          ]
+        ]
+      ],
+      "solution": [
+        false,
+        false
+      ],
+      "names": [
+        "Mason",
+        "Noah"
+      ],
+      "knight_knave_terms": {
+        "knight": "sage",
+        "knave": "fool",
+        "a_knight": "a sage",
+        "a_knave": "a fool",
+        "Knight": "Sage",
+        "Knave": "Fool"
+      },
+      "difficulty": {
+        "n_people": 2,
+        "depth_constraint": 2,
+        "width_constraint": 2
+      }
+    }
+  },
+  {
+    "question": "A very special island is inhabited only by heros and villains. Heros always tell the truth, and villains always lie. You meet 2 inhabitants: Lily, and Jack. As Lily put it, \"Lily is a hero or Jack is a villain\". Jack remarked, \"if Jack is a hero then Lily is a villain\". So who is a hero and who is a villain? (Format your answer like: \"Lily is a hero/villain, and Jack is a hero/villain\")",
+    "answer": "Lily is a villain, and Jack is a hero.",
+    "metadata": {
+      "source_dataset": "knights_knaves",
+      "source_index": 56,
+      "statements": [
+        [
+          "or",
+          [
+            "telling-truth",
+            0
+          ],
+          [
+            "lying",
+            1
+          ]
+        ],
+        [
+          "->",
+          [
+            "telling-truth",
+            1
+          ],
+          [
+            "lying",
+            0
+          ]
+        ]
+      ],
+      "solution": [
+        false,
+        true
+      ],
+      "names": [
+        "Lily",
+        "Jack"
+      ],
+      "knight_knave_terms": {
+        "knight": "hero",
+        "knave": "villain",
+        "a_knight": "a hero",
+        "a_knave": "a villain",
+        "Knight": "Hero",
+        "Knave": "Villain"
+      },
+      "difficulty": {
+        "n_people": 2,
+        "depth_constraint": 2,
+        "width_constraint": 2
+      }
+    }
+  },
+  {
+    "question": "A very special island is inhabited only by pioneers and laggards. Pioneers always tell the truth, and laggards always lie. You meet 2 inhabitants: Matthew, and Ava. Matthew noted, \"Matthew is a pioneer if and only if Ava is a laggard\". Ava told you that if Matthew is a laggard then Matthew is a pioneer. So who is a pioneer and who is a laggard? (Format your answer like: \"Matthew is a pioneer/laggard, and Ava is a pioneer/laggard\")",
+    "answer": "Matthew is a laggard, and Ava is a laggard.",
+    "metadata": {
+      "source_dataset": "knights_knaves",
+      "source_index": 57,
+      "statements": [
+        [
+          "<=>",
+          [
+            "telling-truth",
+            0
+          ],
+          [
+            "lying",
+            1
+          ]
+        ],
+        [
+          "->",
+          [
+            "lying",
+            0
+          ],
+          [
+            "telling-truth",
+            0
+          ]
+        ]
+      ],
+      "solution": [
+        false,
+        false
+      ],
+      "names": [
+        "Matthew",
+        "Ava"
+      ],
+      "knight_knave_terms": {
+        "knight": "pioneer",
+        "knave": "laggard",
+        "a_knight": "a pioneer",
+        "a_knave": "a laggard",
+        "Knight": "Pioneer",
+        "Knave": "Laggard"
+      },
+      "difficulty": {
+        "n_people": 2,
+        "depth_constraint": 2,
+        "width_constraint": 2
+      }
+    }
+  },
+  {
+    "question": "A very special island is inhabited only by angels and devils. Angels always tell the truth, and devils always lie. You meet 2 inhabitants: Ethan, and Oliver. As Ethan put it, \"if Oliver is a devil then Oliver is an angel\". In Oliver's words: \"Ethan is an angel if and only if Oliver is an angel\". So who is an angel and who is a devil? (Format your answer like: \"Ethan is a angel/devil, and Oliver is a angel/devil\")",
+    "answer": "Ethan is an angel, and Oliver is an angel.",
+    "metadata": {
+      "source_dataset": "knights_knaves",
+      "source_index": 58,
+      "statements": [
+        [
+          "->",
+          [
+            "lying",
+            1
+          ],
+          [
+            "telling-truth",
+            1
+          ]
+        ],
+        [
+          "<=>",
+          [
+            "telling-truth",
+            0
+          ],
+          [
+            "telling-truth",
+            1
+          ]
+        ]
+      ],
+      "solution": [
+        true,
+        true
+      ],
+      "names": [
+        "Ethan",
+        "Oliver"
+      ],
+      "knight_knave_terms": {
+        "knight": "angel",
+        "knave": "devil",
+        "a_knight": "an angel",
+        "a_knave": "a devil",
+        "Knight": "Angel",
+        "Knave": "Devil"
+      },
+      "difficulty": {
+        "n_people": 2,
+        "depth_constraint": 2,
+        "width_constraint": 2
+      }
+    }
+  },
+  {
+    "question": "A very special island is inhabited only by angels and devils. Angels always tell the truth, and devils always lie. You meet 2 inhabitants: Emma, and Jackson. Emma said, \"Jackson is an angel if and only if Emma is an angel.\" Jackson remarked, \"Emma is an angel\". So who is an angel and who is a devil? (Format your answer like: \"Emma is a angel/devil, and Jackson is a angel/devil\")",
+    "answer": "Emma is an angel, and Jackson is an angel.",
+    "metadata": {
+      "source_dataset": "knights_knaves",
+      "source_index": 59,
+      "statements": [
+        [
+          "<=>",
+          [
+            "telling-truth",
+            1
+          ],
+          [
+            "telling-truth",
+            0
+          ]
+        ],
+        [
+          "not",
+          [
+            "lying",
+            0
+          ]
+        ]
+      ],
+      "solution": [
+        true,
+        true
+      ],
+      "names": [
+        "Emma",
+        "Jackson"
+      ],
+      "knight_knave_terms": {
+        "knight": "angel",
+        "knave": "devil",
+        "a_knight": "an angel",
+        "a_knave": "a devil",
+        "Knight": "Angel",
+        "Knave": "Devil"
+      },
+      "difficulty": {
+        "n_people": 2,
+        "depth_constraint": 2,
+        "width_constraint": 2
+      }
+    }
+  },
+  {
+    "question": "A very special island is inhabited only by saints and sinners. Saints always tell the truth, and sinners always lie. You meet 2 inhabitants: Chloe, and Sophia. \"if Sophia is a sinner then Sophia is a saint,\" Chloe declared. In a statement by Sophia: \"Chloe is a sinner or Chloe is a saint\". So who is a saint and who is a sinner? (Format your answer like: \"Chloe is a saint/sinner, and Sophia is a saint/sinner\")",
+    "answer": "Chloe is a saint, and Sophia is a saint.",
+    "metadata": {
+      "source_dataset": "knights_knaves",
+      "source_index": 60,
+      "statements": [
+        [
+          "->",
+          [
+            "lying",
+            1
+          ],
+          [
+            "telling-truth",
+            1
+          ]
+        ],
+        [
+          "or",
+          [
+            "lying",
+            0
+          ],
+          [
+            "telling-truth",
+            0
+          ]
+        ]
+      ],
+      "solution": [
+        true,
+        true
+      ],
+      "names": [
+        "Chloe",
+        "Sophia"
+      ],
+      "knight_knave_terms": {
+        "knight": "saint",
+        "knave": "sinner",
+        "a_knight": "a saint",
+        "a_knave": "a sinner",
+        "Knight": "Saint",
+        "Knave": "Sinner"
+      },
+      "difficulty": {
+        "n_people": 2,
+        "depth_constraint": 2,
+        "width_constraint": 2
+      }
+    }
+  },
+  {
+    "question": "A very special island is inhabited only by heros and villains. Heros always tell the truth, and villains always lie. You meet 2 inhabitants: David, and Elizabeth. David was heard saying, \"Elizabeth is a villain\". Elizabeth noted, \"David is a villain or David is a hero\". So who is a hero and who is a villain? (Format your answer like: \"David is a hero/villain, and Elizabeth is a hero/villain\")",
+    "answer": "David is a villain, and Elizabeth is a hero.",
+    "metadata": {
+      "source_dataset": "knights_knaves",
+      "source_index": 61,
+      "statements": [
+        [
+          "lying",
+          1
+        ],
+        [
+          "or",
+          [
+            "lying",
+            0
+          ],
+          [
+            "telling-truth",
+            0
+          ]
+        ]
+      ],
+      "solution": [
+        false,
+        true
+      ],
+      "names": [
+        "David",
+        "Elizabeth"
+      ],
+      "knight_knave_terms": {
+        "knight": "hero",
+        "knave": "villain",
+        "a_knight": "a hero",
+        "a_knave": "a villain",
+        "Knight": "Hero",
+        "Knave": "Villain"
+      },
+      "difficulty": {
+        "n_people": 2,
+        "depth_constraint": 2,
+        "width_constraint": 2
+      }
+    }
+  },
+  {
+    "question": "A very special island is inhabited only by heros and villains. Heros always tell the truth, and villains always lie. You meet 2 inhabitants: Ethan, and Liam. As Ethan put it, \"Ethan is a hero if and only if Liam is a hero\". Liam said that if Liam is a hero then Ethan is a hero. So who is a hero and who is a villain? (Format your answer like: \"Ethan is a hero/villain, and Liam is a hero/villain\")",
+    "answer": "Ethan is a hero, and Liam is a hero.",
+    "metadata": {
+      "source_dataset": "knights_knaves",
+      "source_index": 62,
+      "statements": [
+        [
+          "<=>",
+          [
+            "telling-truth",
+            0
+          ],
+          [
+            "telling-truth",
+            1
+          ]
+        ],
+        [
+          "->",
+          [
+            "telling-truth",
+            1
+          ],
+          [
+            "telling-truth",
+            0
+          ]
+        ]
+      ],
+      "solution": [
+        true,
+        true
+      ],
+      "names": [
+        "Ethan",
+        "Liam"
+      ],
+      "knight_knave_terms": {
+        "knight": "hero",
+        "knave": "villain",
+        "a_knight": "a hero",
+        "a_knave": "a villain",
+        "Knight": "Hero",
+        "Knave": "Villain"
+      },
+      "difficulty": {
+        "n_people": 2,
+        "depth_constraint": 2,
+        "width_constraint": 2
+      }
+    }
+  },
+  {
+    "question": "A very special island is inhabited only by saints and sinners. Saints always tell the truth, and sinners always lie. You meet 2 inhabitants: Michael, and Liam. \"Liam is a saint or Liam is a sinner,\" Michael declared. \"Michael is a sinner and Michael is a saint\" - Liam. So who is a saint and who is a sinner? (Format your answer like: \"Michael is a saint/sinner, and Liam is a saint/sinner\")",
+    "answer": "Michael is a saint, and Liam is a sinner.",
+    "metadata": {
+      "source_dataset": "knights_knaves",
+      "source_index": 63,
+      "statements": [
+        [
+          "or",
+          [
+            "telling-truth",
+            1
+          ],
+          [
+            "lying",
+            1
+          ]
+        ],
+        [
+          "and",
+          [
+            "lying",
+            0
+          ],
+          [
+            "telling-truth",
+            0
+          ]
+        ]
+      ],
+      "solution": [
+        true,
+        false
+      ],
+      "names": [
+        "Michael",
+        "Liam"
+      ],
+      "knight_knave_terms": {
+        "knight": "saint",
+        "knave": "sinner",
+        "a_knight": "a saint",
+        "a_knave": "a sinner",
+        "Knight": "Saint",
+        "Knave": "Sinner"
+      },
+      "difficulty": {
+        "n_people": 2,
+        "depth_constraint": 2,
+        "width_constraint": 2
+      }
+    }
+  },
+  {
+    "question": "A very special island is inhabited only by sages and fools. Sages always tell the truth, and fools always lie. You meet 2 inhabitants: Daniel, and Sebastian. Daniel asserted: \"Sebastian is a sage and Daniel is a sage\". Sebastian commented, \"Daniel is a fool if and only if Daniel is a sage\". So who is a sage and who is a fool? (Format your answer like: \"Daniel is a sage/fool, and Sebastian is a sage/fool\")",
+    "answer": "Daniel is a fool, and Sebastian is a fool.",
+    "metadata": {
+      "source_dataset": "knights_knaves",
+      "source_index": 64,
+      "statements": [
+        [
+          "and",
+          [
+            "telling-truth",
+            1
+          ],
+          [
+            "telling-truth",
+            0
+          ]
+        ],
+        [
+          "<=>",
+          [
+            "lying",
+            0
+          ],
+          [
+            "telling-truth",
+            0
+          ]
+        ]
+      ],
+      "solution": [
+        false,
+        false
+      ],
+      "names": [
+        "Daniel",
+        "Sebastian"
+      ],
+      "knight_knave_terms": {
+        "knight": "sage",
+        "knave": "fool",
+        "a_knight": "a sage",
+        "a_knave": "a fool",
+        "Knight": "Sage",
+        "Knave": "Fool"
+      },
+      "difficulty": {
+        "n_people": 2,
+        "depth_constraint": 2,
+        "width_constraint": 2
+      }
+    }
+  },
+  {
+    "question": "A very special island is inhabited only by altruists and egoists. Altruists always tell the truth, and egoists always lie. You meet 2 inhabitants: Samuel, and Zoey. \"Zoey is an egoist if and only if Zoey is an altruist,\" Samuel claimed. Zoey commented, \"Samuel is an egoist if and only if Samuel is an altruist\". So who is an altruist and who is an egoist? (Format your answer like: \"Samuel is a altruist/egoist, and Zoey is a altruist/egoist\")",
+    "answer": "Samuel is an egoist, and Zoey is an egoist.",
+    "metadata": {
+      "source_dataset": "knights_knaves",
+      "source_index": 65,
+      "statements": [
+        [
+          "<=>",
+          [
+            "lying",
+            1
+          ],
+          [
+            "telling-truth",
+            1
+          ]
+        ],
+        [
+          "<=>",
+          [
+            "lying",
+            0
+          ],
+          [
+            "telling-truth",
+            0
+          ]
+        ]
+      ],
+      "solution": [
+        false,
+        false
+      ],
+      "names": [
+        "Samuel",
+        "Zoey"
+      ],
+      "knight_knave_terms": {
+        "knight": "altruist",
+        "knave": "egoist",
+        "a_knight": "an altruist",
+        "a_knave": "an egoist",
+        "Knight": "Altruist",
+        "Knave": "Egoist"
+      },
+      "difficulty": {
+        "n_people": 2,
+        "depth_constraint": 2,
+        "width_constraint": 2
+      }
+    }
+  },
+  {
+    "question": "A very special island is inhabited only by heros and villains. Heros always tell the truth, and villains always lie. You meet 2 inhabitants: Benjamin, and Scarlett. Benjamin was heard saying, \"if Benjamin is a hero then Scarlett is a hero\". Scarlett stated, \"Scarlett is a hero or Benjamin is a hero\". So who is a hero and who is a villain? (Format your answer like: \"Benjamin is a hero/villain, and Scarlett is a hero/villain\")",
+    "answer": "Benjamin is a hero, and Scarlett is a hero.",
+    "metadata": {
+      "source_dataset": "knights_knaves",
+      "source_index": 66,
+      "statements": [
+        [
+          "->",
+          [
+            "telling-truth",
+            0
+          ],
+          [
+            "telling-truth",
+            1
+          ]
+        ],
+        [
+          "or",
+          [
+            "telling-truth",
+            1
+          ],
+          [
+            "telling-truth",
+            0
+          ]
+        ]
+      ],
+      "solution": [
+        true,
+        true
+      ],
+      "names": [
+        "Benjamin",
+        "Scarlett"
+      ],
+      "knight_knave_terms": {
+        "knight": "hero",
+        "knave": "villain",
+        "a_knight": "a hero",
+        "a_knave": "a villain",
+        "Knight": "Hero",
+        "Knave": "Villain"
+      },
+      "difficulty": {
+        "n_people": 2,
+        "depth_constraint": 2,
+        "width_constraint": 2
+      }
+    }
+  },
+  {
+    "question": "A very special island is inhabited only by pioneers and laggards. Pioneers always tell the truth, and laggards always lie. You meet 2 inhabitants: Victoria, and Amelia. Victoria noted, \"if Amelia is a pioneer then Amelia is a laggard\". Amelia stated, \"Victoria is a pioneer if and only if Amelia is a pioneer\". So who is a pioneer and who is a laggard? (Format your answer like: \"Victoria is a pioneer/laggard, and Amelia is a pioneer/laggard\")",
+    "answer": "Victoria is a pioneer, and Amelia is a laggard.",
+    "metadata": {
+      "source_dataset": "knights_knaves",
+      "source_index": 67,
+      "statements": [
+        [
+          "->",
+          [
+            "telling-truth",
+            1
+          ],
+          [
+            "lying",
+            1
+          ]
+        ],
+        [
+          "<=>",
+          [
+            "telling-truth",
+            0
+          ],
+          [
+            "telling-truth",
+            1
+          ]
+        ]
+      ],
+      "solution": [
+        true,
+        false
+      ],
+      "names": [
+        "Victoria",
+        "Amelia"
+      ],
+      "knight_knave_terms": {
+        "knight": "pioneer",
+        "knave": "laggard",
+        "a_knight": "a pioneer",
+        "a_knave": "a laggard",
+        "Knight": "Pioneer",
+        "Knave": "Laggard"
+      },
+      "difficulty": {
+        "n_people": 2,
+        "depth_constraint": 2,
+        "width_constraint": 2
+      }
+    }
+  },
+  {
+    "question": "A very special island is inhabited only by sages and fools. Sages always tell the truth, and fools always lie. You meet 2 inhabitants: Sebastian, and Benjamin. \"Benjamin is a fool,\" Sebastian declared. Benjamin remarked, \"Sebastian is a sage if and only if Benjamin is a sage\". So who is a sage and who is a fool? (Format your answer like: \"Sebastian is a sage/fool, and Benjamin is a sage/fool\")",
+    "answer": "Sebastian is a sage, and Benjamin is a fool.",
+    "metadata": {
+      "source_dataset": "knights_knaves",
+      "source_index": 68,
+      "statements": [
+        [
+          "lying",
+          1
+        ],
+        [
+          "<=>",
+          [
+            "telling-truth",
+            0
+          ],
+          [
+            "telling-truth",
+            1
+          ]
+        ]
+      ],
+      "solution": [
+        true,
+        false
+      ],
+      "names": [
+        "Sebastian",
+        "Benjamin"
+      ],
+      "knight_knave_terms": {
+        "knight": "sage",
+        "knave": "fool",
+        "a_knight": "a sage",
+        "a_knave": "a fool",
+        "Knight": "Sage",
+        "Knave": "Fool"
+      },
+      "difficulty": {
+        "n_people": 2,
+        "depth_constraint": 2,
+        "width_constraint": 2
+      }
+    }
+  },
+  {
+    "question": "A very special island is inhabited only by knights and knaves. Knights always tell the truth, and knaves always lie. You meet 2 inhabitants: Riley, and Grace. Riley was heard saying, \"Grace is a knight or Grace is a knave\". Grace stated, \"Riley is a knave if and only if Riley is a knight\". So who is a knight and who is a knave? (Format your answer like: \"Riley is a knight/knave, and Grace is a knight/knave\")",
+    "answer": "Riley is a knight, and Grace is a knave.",
+    "metadata": {
+      "source_dataset": "knights_knaves",
+      "source_index": 69,
+      "statements": [
+        [
+          "or",
+          [
+            "telling-truth",
+            1
+          ],
+          [
+            "lying",
+            1
+          ]
+        ],
+        [
+          "<=>",
+          [
+            "lying",
+            0
+          ],
+          [
+            "telling-truth",
+            0
+          ]
+        ]
+      ],
+      "solution": [
+        true,
+        false
+      ],
+      "names": [
+        "Riley",
+        "Grace"
+      ],
+      "knight_knave_terms": {
+        "knight": "knight",
+        "knave": "knave",
+        "a_knight": "a knight",
+        "a_knave": "a knave",
+        "Knight": "Knight",
+        "Knave": "Knave"
+      },
+      "difficulty": {
+        "n_people": 2,
+        "depth_constraint": 2,
+        "width_constraint": 2
+      }
+    }
+  },
+  {
+    "question": "A very special island is inhabited only by knights and knaves. Knights always tell the truth, and knaves always lie. You meet 2 inhabitants: Jackson, and Mason. In Jackson's words: \"Jackson is a knight or Mason is a knave\". \"Jackson is a knave if and only if Jackson is a knight,\" Mason declared. So who is a knight and who is a knave? (Format your answer like: \"Jackson is a knight/knave, and Mason is a knight/knave\")",
+    "answer": "Jackson is a knight, and Mason is a knave.",
+    "metadata": {
+      "source_dataset": "knights_knaves",
+      "source_index": 70,
+      "statements": [
+        [
+          "or",
+          [
+            "telling-truth",
+            0
+          ],
+          [
+            "lying",
+            1
+          ]
+        ],
+        [
+          "<=>",
+          [
+            "lying",
+            0
+          ],
+          [
+            "telling-truth",
+            0
+          ]
+        ]
+      ],
+      "solution": [
+        true,
+        false
+      ],
+      "names": [
+        "Jackson",
+        "Mason"
+      ],
+      "knight_knave_terms": {
+        "knight": "knight",
+        "knave": "knave",
+        "a_knight": "a knight",
+        "a_knave": "a knave",
+        "Knight": "Knight",
+        "Knave": "Knave"
+      },
+      "difficulty": {
+        "n_people": 2,
+        "depth_constraint": 2,
+        "width_constraint": 2
+      }
+    }
+  },
+  {
+    "question": "A very special island is inhabited only by altruists and egoists. Altruists always tell the truth, and egoists always lie. You meet 2 inhabitants: Riley, and Avery. In Riley's words: \"Avery is an egoist and Avery is an altruist\". \"Riley is an egoist or Avery is an altruist,\" Avery claimed. So who is an altruist and who is an egoist? (Format your answer like: \"Riley is a altruist/egoist, and Avery is a altruist/egoist\")",
+    "answer": "Riley is an egoist, and Avery is an altruist.",
+    "metadata": {
+      "source_dataset": "knights_knaves",
+      "source_index": 71,
+      "statements": [
+        [
+          "and",
+          [
+            "lying",
+            1
+          ],
+          [
+            "telling-truth",
+            1
+          ]
+        ],
+        [
+          "or",
+          [
+            "lying",
+            0
+          ],
+          [
+            "telling-truth",
+            1
+          ]
+        ]
+      ],
+      "solution": [
+        false,
+        true
+      ],
+      "names": [
+        "Riley",
+        "Avery"
+      ],
+      "knight_knave_terms": {
+        "knight": "altruist",
+        "knave": "egoist",
+        "a_knight": "an altruist",
+        "a_knave": "an egoist",
+        "Knight": "Altruist",
+        "Knave": "Egoist"
+      },
+      "difficulty": {
+        "n_people": 2,
+        "depth_constraint": 2,
+        "width_constraint": 2
+      }
+    }
+  },
+  {
+    "question": "A very special island is inhabited only by heros and villains. Heros always tell the truth, and villains always lie. You meet 2 inhabitants: Harper, and Jackson. Harper noted, \"Jackson is a hero\". According to Jackson, \"Harper is a hero or Harper is a villain\". So who is a hero and who is a villain? (Format your answer like: \"Harper is a hero/villain, and Jackson is a hero/villain\")",
+    "answer": "Harper is a hero, and Jackson is a hero.",
+    "metadata": {
+      "source_dataset": "knights_knaves",
+      "source_index": 72,
+      "statements": [
+        [
+          "not",
+          [
+            "lying",
+            1
+          ]
+        ],
+        [
+          "or",
+          [
+            "telling-truth",
+            0
+          ],
+          [
+            "lying",
+            0
+          ]
+        ]
+      ],
+      "solution": [
+        true,
+        true
+      ],
+      "names": [
+        "Harper",
+        "Jackson"
+      ],
+      "knight_knave_terms": {
+        "knight": "hero",
+        "knave": "villain",
+        "a_knight": "a hero",
+        "a_knave": "a villain",
+        "Knight": "Hero",
+        "Knave": "Villain"
+      },
+      "difficulty": {
+        "n_people": 2,
+        "depth_constraint": 2,
+        "width_constraint": 2
+      }
+    }
+  },
+  {
+    "question": "A very special island is inhabited only by altruists and egoists. Altruists always tell the truth, and egoists always lie. You meet 2 inhabitants: Zoey, and Ella. Zoey said that if Ella is an altruist then Zoey is an altruist. Ella stated, \"Zoey is an altruist if and only if Zoey is an egoist\". So who is an altruist and who is an egoist? (Format your answer like: \"Zoey is a altruist/egoist, and Ella is a altruist/egoist\")",
+    "answer": "Zoey is an altruist, and Ella is an egoist.",
+    "metadata": {
+      "source_dataset": "knights_knaves",
+      "source_index": 73,
+      "statements": [
+        [
+          "->",
+          [
+            "telling-truth",
+            1
+          ],
+          [
+            "telling-truth",
+            0
+          ]
+        ],
+        [
+          "<=>",
+          [
+            "telling-truth",
+            0
+          ],
+          [
+            "lying",
+            0
+          ]
+        ]
+      ],
+      "solution": [
+        true,
+        false
+      ],
+      "names": [
+        "Zoey",
+        "Ella"
+      ],
+      "knight_knave_terms": {
+        "knight": "altruist",
+        "knave": "egoist",
+        "a_knight": "an altruist",
+        "a_knave": "an egoist",
+        "Knight": "Altruist",
+        "Knave": "Egoist"
+      },
+      "difficulty": {
+        "n_people": 2,
+        "depth_constraint": 2,
+        "width_constraint": 2
+      }
+    }
+  },
+  {
+    "question": "A very special island is inhabited only by sages and fools. Sages always tell the truth, and fools always lie. You meet 2 inhabitants: Victoria, and Grace. In a statement by Victoria: \"if Victoria is a sage then Grace is a fool\". Grace remarked, \"Victoria is a sage and Grace is a sage\". So who is a sage and who is a fool? (Format your answer like: \"Victoria is a sage/fool, and Grace is a sage/fool\")",
+    "answer": "Victoria is a sage, and Grace is a fool.",
+    "metadata": {
+      "source_dataset": "knights_knaves",
+      "source_index": 74,
+      "statements": [
+        [
+          "->",
+          [
+            "telling-truth",
+            0
+          ],
+          [
+            "lying",
+            1
+          ]
+        ],
+        [
+          "and",
+          [
+            "telling-truth",
+            0
+          ],
+          [
+            "telling-truth",
+            1
+          ]
+        ]
+      ],
+      "solution": [
+        true,
+        false
+      ],
+      "names": [
+        "Victoria",
+        "Grace"
+      ],
+      "knight_knave_terms": {
+        "knight": "sage",
+        "knave": "fool",
+        "a_knight": "a sage",
+        "a_knave": "a fool",
+        "Knight": "Sage",
+        "Knave": "Fool"
+      },
+      "difficulty": {
+        "n_people": 2,
+        "depth_constraint": 2,
+        "width_constraint": 2
+      }
+    }
+  },
+  {
+    "question": "A very special island is inhabited only by altruists and egoists. Altruists always tell the truth, and egoists always lie. You meet 2 inhabitants: Ava, and Victoria. \"Victoria is an altruist if and only if Ava is an altruist,\" Ava declared. Victoria noted, \"Ava is an egoist\". So who is an altruist and who is an egoist? (Format your answer like: \"Ava is a altruist/egoist, and Victoria is a altruist/egoist\")",
+    "answer": "Ava is an egoist, and Victoria is an altruist.",
+    "metadata": {
+      "source_dataset": "knights_knaves",
+      "source_index": 75,
+      "statements": [
+        [
+          "<=>",
+          [
+            "telling-truth",
+            1
+          ],
+          [
+            "telling-truth",
+            0
+          ]
+        ],
+        [
+          "lying",
+          0
+        ]
+      ],
+      "solution": [
+        false,
+        true
+      ],
+      "names": [
+        "Ava",
+        "Victoria"
+      ],
+      "knight_knave_terms": {
+        "knight": "altruist",
+        "knave": "egoist",
+        "a_knight": "an altruist",
+        "a_knave": "an egoist",
+        "Knight": "Altruist",
+        "Knave": "Egoist"
+      },
+      "difficulty": {
+        "n_people": 2,
+        "depth_constraint": 2,
+        "width_constraint": 2
+      }
+    }
+  },
+  {
+    "question": "A very special island is inhabited only by altruists and egoists. Altruists always tell the truth, and egoists always lie. You meet 2 inhabitants: Owen, and Benjamin. Owen stated, \"Benjamin is an egoist and Owen is an altruist\". \"Owen is an altruist if and only if Benjamin is an altruist,\" Benjamin mentioned. So who is an altruist and who is an egoist? (Format your answer like: \"Owen is a altruist/egoist, and Benjamin is a altruist/egoist\")",
+    "answer": "Owen is an altruist, and Benjamin is an egoist.",
+    "metadata": {
+      "source_dataset": "knights_knaves",
+      "source_index": 76,
+      "statements": [
+        [
+          "and",
+          [
+            "lying",
+            1
+          ],
+          [
+            "telling-truth",
+            0
+          ]
+        ],
+        [
+          "<=>",
+          [
+            "telling-truth",
+            0
+          ],
+          [
+            "telling-truth",
+            1
+          ]
+        ]
+      ],
+      "solution": [
+        true,
+        false
+      ],
+      "names": [
+        "Owen",
+        "Benjamin"
+      ],
+      "knight_knave_terms": {
+        "knight": "altruist",
+        "knave": "egoist",
+        "a_knight": "an altruist",
+        "a_knave": "an egoist",
+        "Knight": "Altruist",
+        "Knave": "Egoist"
+      },
+      "difficulty": {
+        "n_people": 2,
+        "depth_constraint": 2,
+        "width_constraint": 2
+      }
+    }
+  },
+  {
+    "question": "A very special island is inhabited only by pioneers and laggards. Pioneers always tell the truth, and laggards always lie. You meet 2 inhabitants: Evelyn, and Liam. Evelyn said that if Evelyn is a pioneer then Liam is a laggard. Liam remarked, \"Evelyn is a pioneer if and only if Liam is a pioneer\". So who is a pioneer and who is a laggard? (Format your answer like: \"Evelyn is a pioneer/laggard, and Liam is a pioneer/laggard\")",
+    "answer": "Evelyn is a pioneer, and Liam is a laggard.",
+    "metadata": {
+      "source_dataset": "knights_knaves",
+      "source_index": 77,
+      "statements": [
+        [
+          "->",
+          [
+            "telling-truth",
+            0
+          ],
+          [
+            "lying",
+            1
+          ]
+        ],
+        [
+          "<=>",
+          [
+            "telling-truth",
+            0
+          ],
+          [
+            "telling-truth",
+            1
+          ]
+        ]
+      ],
+      "solution": [
+        true,
+        false
+      ],
+      "names": [
+        "Evelyn",
+        "Liam"
+      ],
+      "knight_knave_terms": {
+        "knight": "pioneer",
+        "knave": "laggard",
+        "a_knight": "a pioneer",
+        "a_knave": "a laggard",
+        "Knight": "Pioneer",
+        "Knave": "Laggard"
+      },
+      "difficulty": {
+        "n_people": 2,
+        "depth_constraint": 2,
+        "width_constraint": 2
+      }
+    }
+  },
+  {
+    "question": "A very special island is inhabited only by knights and knaves. Knights always tell the truth, and knaves always lie. You meet 2 inhabitants: Emily, and Abigail. According to Emily, \"Abigail is a knight or Emily is a knight\". Abigail said that Emily is a knave if and only if Abigail is a knight. So who is a knight and who is a knave? (Format your answer like: \"Emily is a knight/knave, and Abigail is a knight/knave\")",
+    "answer": "Emily is a knave, and Abigail is a knave.",
+    "metadata": {
+      "source_dataset": "knights_knaves",
+      "source_index": 78,
+      "statements": [
+        [
+          "or",
+          [
+            "telling-truth",
+            1
+          ],
+          [
+            "telling-truth",
+            0
+          ]
+        ],
+        [
+          "<=>",
+          [
+            "lying",
+            0
+          ],
+          [
+            "telling-truth",
+            1
+          ]
+        ]
+      ],
+      "solution": [
+        false,
+        false
+      ],
+      "names": [
+        "Emily",
+        "Abigail"
+      ],
+      "knight_knave_terms": {
+        "knight": "knight",
+        "knave": "knave",
+        "a_knight": "a knight",
+        "a_knave": "a knave",
+        "Knight": "Knight",
+        "Knave": "Knave"
+      },
+      "difficulty": {
+        "n_people": 2,
+        "depth_constraint": 2,
+        "width_constraint": 2
+      }
+    }
+  },
+  {
+    "question": "A very special island is inhabited only by knights and knaves. Knights always tell the truth, and knaves always lie. You meet 2 inhabitants: Ella, and Alexander. Ella asserted: \"Ella is a knight or Alexander is a knight\". In Alexander's words: \"Ella is a knave\". So who is a knight and who is a knave? (Format your answer like: \"Ella is a knight/knave, and Alexander is a knight/knave\")",
+    "answer": "Ella is a knight, and Alexander is a knave.",
+    "metadata": {
+      "source_dataset": "knights_knaves",
+      "source_index": 79,
+      "statements": [
+        [
+          "or",
+          [
+            "telling-truth",
+            0
+          ],
+          [
+            "telling-truth",
+            1
+          ]
+        ],
+        [
+          "lying",
+          0
+        ]
+      ],
+      "solution": [
+        true,
+        false
+      ],
+      "names": [
+        "Ella",
+        "Alexander"
+      ],
+      "knight_knave_terms": {
+        "knight": "knight",
+        "knave": "knave",
+        "a_knight": "a knight",
+        "a_knave": "a knave",
+        "Knight": "Knight",
+        "Knave": "Knave"
+      },
+      "difficulty": {
+        "n_people": 2,
+        "depth_constraint": 2,
+        "width_constraint": 2
+      }
+    }
+  },
+  {
+    "question": "A very special island is inhabited only by sages and fools. Sages always tell the truth, and fools always lie. You meet 2 inhabitants: Evelyn, and Mia. Evelyn expressed that Mia is a sage and Mia is a fool. \"Evelyn is a sage or Evelyn is a fool\" - Mia. So who is a sage and who is a fool? (Format your answer like: \"Evelyn is a sage/fool, and Mia is a sage/fool\")",
+    "answer": "Evelyn is a fool, and Mia is a sage.",
+    "metadata": {
+      "source_dataset": "knights_knaves",
+      "source_index": 80,
+      "statements": [
+        [
+          "and",
+          [
+            "telling-truth",
+            1
+          ],
+          [
+            "lying",
+            1
+          ]
+        ],
+        [
+          "or",
+          [
+            "telling-truth",
+            0
+          ],
+          [
+            "lying",
+            0
+          ]
+        ]
+      ],
+      "solution": [
+        false,
+        true
+      ],
+      "names": [
+        "Evelyn",
+        "Mia"
+      ],
+      "knight_knave_terms": {
+        "knight": "sage",
+        "knave": "fool",
+        "a_knight": "a sage",
+        "a_knave": "a fool",
+        "Knight": "Sage",
+        "Knave": "Fool"
+      },
+      "difficulty": {
+        "n_people": 2,
+        "depth_constraint": 2,
+        "width_constraint": 2
+      }
+    }
+  },
+  {
+    "question": "A very special island is inhabited only by pioneers and laggards. Pioneers always tell the truth, and laggards always lie. You meet 2 inhabitants: Joseph, and Samuel. In Joseph's words: \"Samuel is a pioneer or Samuel is a laggard\". \"Joseph is a laggard or Joseph is a pioneer,\" Samuel mentioned. So who is a pioneer and who is a laggard? (Format your answer like: \"Joseph is a pioneer/laggard, and Samuel is a pioneer/laggard\")",
+    "answer": "Joseph is a pioneer, and Samuel is a pioneer.",
+    "metadata": {
+      "source_dataset": "knights_knaves",
+      "source_index": 81,
+      "statements": [
+        [
+          "or",
+          [
+            "telling-truth",
+            1
+          ],
+          [
+            "lying",
+            1
+          ]
+        ],
+        [
+          "or",
+          [
+            "lying",
+            0
+          ],
+          [
+            "telling-truth",
+            0
+          ]
+        ]
+      ],
+      "solution": [
+        true,
+        true
+      ],
+      "names": [
+        "Joseph",
+        "Samuel"
+      ],
+      "knight_knave_terms": {
+        "knight": "pioneer",
+        "knave": "laggard",
+        "a_knight": "a pioneer",
+        "a_knave": "a laggard",
+        "Knight": "Pioneer",
+        "Knave": "Laggard"
+      },
+      "difficulty": {
+        "n_people": 2,
+        "depth_constraint": 2,
+        "width_constraint": 2
+      }
+    }
+  },
+  {
+    "question": "A very special island is inhabited only by heros and villains. Heros always tell the truth, and villains always lie. You meet 2 inhabitants: Sofia, and Isabella. Sofia said that Isabella is a hero if and only if Isabella is a villain. Isabella asserted: \"Sofia is a hero\". So who is a hero and who is a villain? (Format your answer like: \"Sofia is a hero/villain, and Isabella is a hero/villain\")",
+    "answer": "Sofia is a villain, and Isabella is a villain.",
+    "metadata": {
+      "source_dataset": "knights_knaves",
+      "source_index": 82,
+      "statements": [
+        [
+          "<=>",
+          [
+            "telling-truth",
+            1
+          ],
+          [
+            "lying",
+            1
+          ]
+        ],
+        [
+          "not",
+          [
+            "lying",
+            0
+          ]
+        ]
+      ],
+      "solution": [
+        false,
+        false
+      ],
+      "names": [
+        "Sofia",
+        "Isabella"
+      ],
+      "knight_knave_terms": {
+        "knight": "hero",
+        "knave": "villain",
+        "a_knight": "a hero",
+        "a_knave": "a villain",
+        "Knight": "Hero",
+        "Knave": "Villain"
+      },
+      "difficulty": {
+        "n_people": 2,
+        "depth_constraint": 2,
+        "width_constraint": 2
+      }
+    }
+  },
+  {
+    "question": "A very special island is inhabited only by heros and villains. Heros always tell the truth, and villains always lie. You meet 2 inhabitants: Abigail, and Mason. \"Mason is a villain and Mason is a hero,\" Abigail declared. \"Abigail is a hero,\" Mason mentioned. So who is a hero and who is a villain? (Format your answer like: \"Abigail is a hero/villain, and Mason is a hero/villain\")",
+    "answer": "Abigail is a villain, and Mason is a villain.",
+    "metadata": {
+      "source_dataset": "knights_knaves",
+      "source_index": 83,
+      "statements": [
+        [
+          "and",
+          [
+            "lying",
+            1
+          ],
+          [
+            "telling-truth",
+            1
+          ]
+        ],
+        [
+          "not",
+          [
+            "lying",
+            0
+          ]
+        ]
+      ],
+      "solution": [
+        false,
+        false
+      ],
+      "names": [
+        "Abigail",
+        "Mason"
+      ],
+      "knight_knave_terms": {
+        "knight": "hero",
+        "knave": "villain",
+        "a_knight": "a hero",
+        "a_knave": "a villain",
+        "Knight": "Hero",
+        "Knave": "Villain"
+      },
+      "difficulty": {
+        "n_people": 2,
+        "depth_constraint": 2,
+        "width_constraint": 2
+      }
+    }
+  },
+  {
+    "question": "A very special island is inhabited only by sages and fools. Sages always tell the truth, and fools always lie. You meet 2 inhabitants: Logan, and Jacob. Logan noted, \"if Jacob is a sage then Logan is a sage\". Jacob said that Logan is a sage. So who is a sage and who is a fool? (Format your answer like: \"Logan is a sage/fool, and Jacob is a sage/fool\")",
+    "answer": "Logan is a sage, and Jacob is a sage.",
+    "metadata": {
+      "source_dataset": "knights_knaves",
+      "source_index": 84,
+      "statements": [
+        [
+          "->",
+          [
+            "telling-truth",
+            1
+          ],
+          [
+            "telling-truth",
+            0
+          ]
+        ],
+        [
+          "not",
+          [
+            "lying",
+            0
+          ]
+        ]
+      ],
+      "solution": [
+        true,
+        true
+      ],
+      "names": [
+        "Logan",
+        "Jacob"
+      ],
+      "knight_knave_terms": {
+        "knight": "sage",
+        "knave": "fool",
+        "a_knight": "a sage",
+        "a_knave": "a fool",
+        "Knight": "Sage",
+        "Knave": "Fool"
+      },
+      "difficulty": {
+        "n_people": 2,
+        "depth_constraint": 2,
+        "width_constraint": 2
+      }
+    }
+  },
+  {
+    "question": "A very special island is inhabited only by heros and villains. Heros always tell the truth, and villains always lie. You meet 2 inhabitants: Victoria, and Scarlett. Victoria said that Scarlett is a hero if and only if Scarlett is a villain. Scarlett asserted: \"if Victoria is a hero then Victoria is a villain\". So who is a hero and who is a villain? (Format your answer like: \"Victoria is a hero/villain, and Scarlett is a hero/villain\")",
+    "answer": "Victoria is a villain, and Scarlett is a hero.",
+    "metadata": {
+      "source_dataset": "knights_knaves",
+      "source_index": 85,
+      "statements": [
+        [
+          "<=>",
+          [
+            "telling-truth",
+            1
+          ],
+          [
+            "lying",
+            1
+          ]
+        ],
+        [
+          "->",
+          [
+            "telling-truth",
+            0
+          ],
+          [
+            "lying",
+            0
+          ]
+        ]
+      ],
+      "solution": [
+        false,
+        true
+      ],
+      "names": [
+        "Victoria",
+        "Scarlett"
+      ],
+      "knight_knave_terms": {
+        "knight": "hero",
+        "knave": "villain",
+        "a_knight": "a hero",
+        "a_knave": "a villain",
+        "Knight": "Hero",
+        "Knave": "Villain"
+      },
+      "difficulty": {
+        "n_people": 2,
+        "depth_constraint": 2,
+        "width_constraint": 2
+      }
+    }
+  },
+  {
+    "question": "A very special island is inhabited only by pioneers and laggards. Pioneers always tell the truth, and laggards always lie. You meet 2 inhabitants: Riley, and Charlotte. Riley told you that Charlotte is a pioneer and Charlotte is a laggard. Charlotte remarked, \"Riley is a laggard or Charlotte is a pioneer\". So who is a pioneer and who is a laggard? (Format your answer like: \"Riley is a pioneer/laggard, and Charlotte is a pioneer/laggard\")",
+    "answer": "Riley is a laggard, and Charlotte is a pioneer.",
+    "metadata": {
+      "source_dataset": "knights_knaves",
+      "source_index": 86,
+      "statements": [
+        [
+          "and",
+          [
+            "telling-truth",
+            1
+          ],
+          [
+            "lying",
+            1
+          ]
+        ],
+        [
+          "or",
+          [
+            "lying",
+            0
+          ],
+          [
+            "telling-truth",
+            1
+          ]
+        ]
+      ],
+      "solution": [
+        false,
+        true
+      ],
+      "names": [
+        "Riley",
+        "Charlotte"
+      ],
+      "knight_knave_terms": {
+        "knight": "pioneer",
+        "knave": "laggard",
+        "a_knight": "a pioneer",
+        "a_knave": "a laggard",
+        "Knight": "Pioneer",
+        "Knave": "Laggard"
+      },
+      "difficulty": {
+        "n_people": 2,
+        "depth_constraint": 2,
+        "width_constraint": 2
+      }
+    }
+  },
+  {
+    "question": "A very special island is inhabited only by pioneers and laggards. Pioneers always tell the truth, and laggards always lie. You meet 2 inhabitants: Logan, and Joseph. Logan said, \"Joseph is a pioneer and Logan is a pioneer.\" Joseph noted, \"Logan is a pioneer if and only if Logan is a laggard\". So who is a pioneer and who is a laggard? (Format your answer like: \"Logan is a pioneer/laggard, and Joseph is a pioneer/laggard\")",
+    "answer": "Logan is a laggard, and Joseph is a laggard.",
+    "metadata": {
+      "source_dataset": "knights_knaves",
+      "source_index": 87,
+      "statements": [
+        [
+          "and",
+          [
+            "telling-truth",
+            1
+          ],
+          [
+            "telling-truth",
+            0
+          ]
+        ],
+        [
+          "<=>",
+          [
+            "telling-truth",
+            0
+          ],
+          [
+            "lying",
+            0
+          ]
+        ]
+      ],
+      "solution": [
+        false,
+        false
+      ],
+      "names": [
+        "Logan",
+        "Joseph"
+      ],
+      "knight_knave_terms": {
+        "knight": "pioneer",
+        "knave": "laggard",
+        "a_knight": "a pioneer",
+        "a_knave": "a laggard",
+        "Knight": "Pioneer",
+        "Knave": "Laggard"
+      },
+      "difficulty": {
+        "n_people": 2,
+        "depth_constraint": 2,
+        "width_constraint": 2
+      }
+    }
+  },
+  {
+    "question": "A very special island is inhabited only by altruists and egoists. Altruists always tell the truth, and egoists always lie. You meet 2 inhabitants: Sebastian, and Ethan. Sebastian remarked, \"if Sebastian is an altruist then Ethan is an egoist\". In Ethan's words: \"Sebastian is an egoist\". So who is an altruist and who is an egoist? (Format your answer like: \"Sebastian is a altruist/egoist, and Ethan is a altruist/egoist\")",
+    "answer": "Sebastian is an altruist, and Ethan is an egoist.",
+    "metadata": {
+      "source_dataset": "knights_knaves",
+      "source_index": 88,
+      "statements": [
+        [
+          "->",
+          [
+            "telling-truth",
+            0
+          ],
+          [
+            "lying",
+            1
+          ]
+        ],
+        [
+          "not",
+          [
+            "telling-truth",
+            0
+          ]
+        ]
+      ],
+      "solution": [
+        true,
+        false
+      ],
+      "names": [
+        "Sebastian",
+        "Ethan"
+      ],
+      "knight_knave_terms": {
+        "knight": "altruist",
+        "knave": "egoist",
+        "a_knight": "an altruist",
+        "a_knave": "an egoist",
+        "Knight": "Altruist",
+        "Knave": "Egoist"
+      },
+      "difficulty": {
+        "n_people": 2,
+        "depth_constraint": 2,
+        "width_constraint": 2
+      }
+    }
+  },
+  {
+    "question": "A very special island is inhabited only by saints and sinners. Saints always tell the truth, and sinners always lie. You meet 2 inhabitants: Elizabeth, and Mason. \"Mason is a sinner\" - Elizabeth. Mason expressed that Elizabeth is a sinner and Elizabeth is a saint. So who is a saint and who is a sinner? (Format your answer like: \"Elizabeth is a saint/sinner, and Mason is a saint/sinner\")",
+    "answer": "Elizabeth is a saint, and Mason is a sinner.",
+    "metadata": {
+      "source_dataset": "knights_knaves",
+      "source_index": 89,
+      "statements": [
+        [
+          "lying",
+          1
+        ],
+        [
+          "and",
+          [
+            "lying",
+            0
+          ],
+          [
+            "telling-truth",
+            0
+          ]
+        ]
+      ],
+      "solution": [
+        true,
+        false
+      ],
+      "names": [
+        "Elizabeth",
+        "Mason"
+      ],
+      "knight_knave_terms": {
+        "knight": "saint",
+        "knave": "sinner",
+        "a_knight": "a saint",
+        "a_knave": "a sinner",
+        "Knight": "Saint",
+        "Knave": "Sinner"
+      },
+      "difficulty": {
+        "n_people": 2,
+        "depth_constraint": 2,
+        "width_constraint": 2
+      }
+    }
+  },
+  {
+    "question": "A very special island is inhabited only by heros and villains. Heros always tell the truth, and villains always lie. You meet 2 inhabitants: Avery, and Jacob. Avery remarked, \"Avery is a hero and Jacob is a villain\". \"if Avery is a villain then Avery is a hero,\" Jacob declared. So who is a hero and who is a villain? (Format your answer like: \"Avery is a hero/villain, and Jacob is a hero/villain\")",
+    "answer": "Avery is a villain, and Jacob is a villain.",
+    "metadata": {
+      "source_dataset": "knights_knaves",
+      "source_index": 90,
+      "statements": [
+        [
+          "and",
+          [
+            "telling-truth",
+            0
+          ],
+          [
+            "lying",
+            1
+          ]
+        ],
+        [
+          "->",
+          [
+            "lying",
+            0
+          ],
+          [
+            "telling-truth",
+            0
+          ]
+        ]
+      ],
+      "solution": [
+        false,
+        false
+      ],
+      "names": [
+        "Avery",
+        "Jacob"
+      ],
+      "knight_knave_terms": {
+        "knight": "hero",
+        "knave": "villain",
+        "a_knight": "a hero",
+        "a_knave": "a villain",
+        "Knight": "Hero",
+        "Knave": "Villain"
+      },
+      "difficulty": {
+        "n_people": 2,
+        "depth_constraint": 2,
+        "width_constraint": 2
+      }
+    }
+  },
+  {
+    "question": "A very special island is inhabited only by saints and sinners. Saints always tell the truth, and sinners always lie. You meet 2 inhabitants: Aiden, and Liam. Aiden remarked, \"Liam is a sinner if and only if Liam is a saint\". Liam expressed that Aiden is a sinner. So who is a saint and who is a sinner? (Format your answer like: \"Aiden is a saint/sinner, and Liam is a saint/sinner\")",
+    "answer": "Aiden is a sinner, and Liam is a saint.",
+    "metadata": {
+      "source_dataset": "knights_knaves",
+      "source_index": 91,
+      "statements": [
+        [
+          "<=>",
+          [
+            "lying",
+            1
+          ],
+          [
+            "telling-truth",
+            1
+          ]
+        ],
+        [
+          "lying",
+          0
+        ]
+      ],
+      "solution": [
+        false,
+        true
+      ],
+      "names": [
+        "Aiden",
+        "Liam"
+      ],
+      "knight_knave_terms": {
+        "knight": "saint",
+        "knave": "sinner",
+        "a_knight": "a saint",
+        "a_knave": "a sinner",
+        "Knight": "Saint",
+        "Knave": "Sinner"
+      },
+      "difficulty": {
+        "n_people": 2,
+        "depth_constraint": 2,
+        "width_constraint": 2
+      }
+    }
+  },
+  {
+    "question": "A very special island is inhabited only by knights and knaves. Knights always tell the truth, and knaves always lie. You meet 2 inhabitants: Avery, and Aria. Avery expressed that Aria is a knave if and only if Avery is a knight. Aria remarked, \"Avery is a knave or Aria is a knight\". So who is a knight and who is a knave? (Format your answer like: \"Avery is a knight/knave, and Aria is a knight/knave\")",
+    "answer": "Avery is a knight, and Aria is a knave.",
+    "metadata": {
+      "source_dataset": "knights_knaves",
+      "source_index": 92,
+      "statements": [
+        [
+          "<=>",
+          [
+            "lying",
+            1
+          ],
+          [
+            "telling-truth",
+            0
+          ]
+        ],
+        [
+          "or",
+          [
+            "lying",
+            0
+          ],
+          [
+            "telling-truth",
+            1
+          ]
+        ]
+      ],
+      "solution": [
+        true,
+        false
+      ],
+      "names": [
+        "Avery",
+        "Aria"
+      ],
+      "knight_knave_terms": {
+        "knight": "knight",
+        "knave": "knave",
+        "a_knight": "a knight",
+        "a_knave": "a knave",
+        "Knight": "Knight",
+        "Knave": "Knave"
+      },
+      "difficulty": {
+        "n_people": 2,
+        "depth_constraint": 2,
+        "width_constraint": 2
+      }
+    }
+  },
+  {
+    "question": "A very special island is inhabited only by saints and sinners. Saints always tell the truth, and sinners always lie. You meet 2 inhabitants: Elizabeth, and Lucas. Elizabeth asserted: \"Elizabeth is a saint if and only if Lucas is a sinner\". Lucas noted, \"Elizabeth is a saint\". So who is a saint and who is a sinner? (Format your answer like: \"Elizabeth is a saint/sinner, and Lucas is a saint/sinner\")",
+    "answer": "Elizabeth is a sinner, and Lucas is a sinner.",
+    "metadata": {
+      "source_dataset": "knights_knaves",
+      "source_index": 93,
+      "statements": [
+        [
+          "<=>",
+          [
+            "telling-truth",
+            0
+          ],
+          [
+            "lying",
+            1
+          ]
+        ],
+        [
+          "not",
+          [
+            "lying",
+            0
+          ]
+        ]
+      ],
+      "solution": [
+        false,
+        false
+      ],
+      "names": [
+        "Elizabeth",
+        "Lucas"
+      ],
+      "knight_knave_terms": {
+        "knight": "saint",
+        "knave": "sinner",
+        "a_knight": "a saint",
+        "a_knave": "a sinner",
+        "Knight": "Saint",
+        "Knave": "Sinner"
+      },
+      "difficulty": {
+        "n_people": 2,
+        "depth_constraint": 2,
+        "width_constraint": 2
+      }
+    }
+  },
+  {
+    "question": "A very special island is inhabited only by pioneers and laggards. Pioneers always tell the truth, and laggards always lie. You meet 2 inhabitants: Jacob, and Lucas. Jacob commented, \"Jacob is a pioneer and Lucas is a pioneer\". In Lucas's words: \"Jacob is a laggard\". So who is a pioneer and who is a laggard? (Format your answer like: \"Jacob is a pioneer/laggard, and Lucas is a pioneer/laggard\")",
+    "answer": "Jacob is a laggard, and Lucas is a pioneer.",
+    "metadata": {
+      "source_dataset": "knights_knaves",
+      "source_index": 94,
+      "statements": [
+        [
+          "and",
+          [
+            "telling-truth",
+            0
+          ],
+          [
+            "telling-truth",
+            1
+          ]
+        ],
+        [
+          "not",
+          [
+            "telling-truth",
+            0
+          ]
+        ]
+      ],
+      "solution": [
+        false,
+        true
+      ],
+      "names": [
+        "Jacob",
+        "Lucas"
+      ],
+      "knight_knave_terms": {
+        "knight": "pioneer",
+        "knave": "laggard",
+        "a_knight": "a pioneer",
+        "a_knave": "a laggard",
+        "Knight": "Pioneer",
+        "Knave": "Laggard"
+      },
+      "difficulty": {
+        "n_people": 2,
+        "depth_constraint": 2,
+        "width_constraint": 2
+      }
+    }
+  },
+  {
+    "question": "A very special island is inhabited only by altruists and egoists. Altruists always tell the truth, and egoists always lie. You meet 2 inhabitants: Riley, and Emily. Riley stated, \"Emily is an altruist or Emily is an egoist\". As Emily put it, \"Riley is an egoist and Riley is an altruist\". So who is an altruist and who is an egoist? (Format your answer like: \"Riley is a altruist/egoist, and Emily is a altruist/egoist\")",
+    "answer": "Riley is an altruist, and Emily is an egoist.",
+    "metadata": {
+      "source_dataset": "knights_knaves",
+      "source_index": 95,
+      "statements": [
+        [
+          "or",
+          [
+            "telling-truth",
+            1
+          ],
+          [
+            "lying",
+            1
+          ]
+        ],
+        [
+          "and",
+          [
+            "lying",
+            0
+          ],
+          [
+            "telling-truth",
+            0
+          ]
+        ]
+      ],
+      "solution": [
+        true,
+        false
+      ],
+      "names": [
+        "Riley",
+        "Emily"
+      ],
+      "knight_knave_terms": {
+        "knight": "altruist",
+        "knave": "egoist",
+        "a_knight": "an altruist",
+        "a_knave": "an egoist",
+        "Knight": "Altruist",
+        "Knave": "Egoist"
+      },
+      "difficulty": {
+        "n_people": 2,
+        "depth_constraint": 2,
+        "width_constraint": 2
+      }
+    }
+  },
+  {
+    "question": "A very special island is inhabited only by altruists and egoists. Altruists always tell the truth, and egoists always lie. You meet 2 inhabitants: Benjamin, and Emma. \"Emma is an egoist or Benjamin is an altruist,\" Benjamin claimed. Emma asserted: \"Benjamin is an egoist and Benjamin is an altruist\". So who is an altruist and who is an egoist? (Format your answer like: \"Benjamin is a altruist/egoist, and Emma is a altruist/egoist\")",
+    "answer": "Benjamin is an altruist, and Emma is an egoist.",
+    "metadata": {
+      "source_dataset": "knights_knaves",
+      "source_index": 96,
+      "statements": [
+        [
+          "or",
+          [
+            "lying",
+            1
+          ],
+          [
+            "telling-truth",
+            0
+          ]
+        ],
+        [
+          "and",
+          [
+            "lying",
+            0
+          ],
+          [
+            "telling-truth",
+            0
+          ]
+        ]
+      ],
+      "solution": [
+        true,
+        false
+      ],
+      "names": [
+        "Benjamin",
+        "Emma"
+      ],
+      "knight_knave_terms": {
+        "knight": "altruist",
+        "knave": "egoist",
+        "a_knight": "an altruist",
+        "a_knave": "an egoist",
+        "Knight": "Altruist",
+        "Knave": "Egoist"
+      },
+      "difficulty": {
+        "n_people": 2,
+        "depth_constraint": 2,
+        "width_constraint": 2
+      }
+    }
+  },
+  {
+    "question": "A very special island is inhabited only by altruists and egoists. Altruists always tell the truth, and egoists always lie. You meet 2 inhabitants: Riley, and Scarlett. Riley stated, \"Scarlett is an altruist\". Scarlett told you that Riley is an altruist if and only if Scarlett is an altruist. So who is an altruist and who is an egoist? (Format your answer like: \"Riley is a altruist/egoist, and Scarlett is a altruist/egoist\")",
+    "answer": "Riley is an altruist, and Scarlett is an altruist.",
+    "metadata": {
+      "source_dataset": "knights_knaves",
+      "source_index": 97,
+      "statements": [
+        [
+          "telling-truth",
+          1
+        ],
+        [
+          "<=>",
+          [
+            "telling-truth",
+            0
+          ],
+          [
+            "telling-truth",
+            1
+          ]
+        ]
+      ],
+      "solution": [
+        true,
+        true
+      ],
+      "names": [
+        "Riley",
+        "Scarlett"
+      ],
+      "knight_knave_terms": {
+        "knight": "altruist",
+        "knave": "egoist",
+        "a_knight": "an altruist",
+        "a_knave": "an egoist",
+        "Knight": "Altruist",
+        "Knave": "Egoist"
+      },
+      "difficulty": {
+        "n_people": 2,
+        "depth_constraint": 2,
+        "width_constraint": 2
+      }
+    }
+  },
+  {
+    "question": "A very special island is inhabited only by knights and knaves. Knights always tell the truth, and knaves always lie. You meet 2 inhabitants: Lucas, and William. \"Lucas is a knight or William is a knight,\" Lucas declared. William expressed that Lucas is a knave. So who is a knight and who is a knave? (Format your answer like: \"Lucas is a knight/knave, and William is a knight/knave\")",
+    "answer": "Lucas is a knight, and William is a knave.",
+    "metadata": {
+      "source_dataset": "knights_knaves",
+      "source_index": 98,
+      "statements": [
+        [
+          "or",
+          [
+            "telling-truth",
+            0
+          ],
+          [
+            "telling-truth",
+            1
+          ]
+        ],
+        [
+          "lying",
+          0
+        ]
+      ],
+      "solution": [
+        true,
+        false
+      ],
+      "names": [
+        "Lucas",
+        "William"
+      ],
+      "knight_knave_terms": {
+        "knight": "knight",
+        "knave": "knave",
+        "a_knight": "a knight",
+        "a_knave": "a knave",
+        "Knight": "Knight",
+        "Knave": "Knave"
+      },
+      "difficulty": {
+        "n_people": 2,
+        "depth_constraint": 2,
+        "width_constraint": 2
+      }
+    }
+  },
+  {
+    "question": "A very special island is inhabited only by sages and fools. Sages always tell the truth, and fools always lie. You meet 2 inhabitants: Lily, and Samuel. \"Samuel is a sage if and only if Lily is a sage,\" Lily claimed. In a statement by Samuel: \"Lily is a sage\". So who is a sage and who is a fool? (Format your answer like: \"Lily is a sage/fool, and Samuel is a sage/fool\")",
+    "answer": "Lily is a sage, and Samuel is a sage.",
+    "metadata": {
+      "source_dataset": "knights_knaves",
+      "source_index": 99,
+      "statements": [
+        [
+          "<=>",
+          [
+            "telling-truth",
+            1
+          ],
+          [
+            "telling-truth",
+            0
+          ]
+        ],
+        [
+          "telling-truth",
+          0
+        ]
+      ],
+      "solution": [
+        true,
+        true
+      ],
+      "names": [
+        "Lily",
+        "Samuel"
+      ],
+      "knight_knave_terms": {
+        "knight": "sage",
+        "knave": "fool",
+        "a_knight": "a sage",
+        "a_knave": "a fool",
+        "Knight": "Sage",
+        "Knave": "Fool"
+      },
+      "difficulty": {
+        "n_people": 2,
+        "depth_constraint": 2,
+        "width_constraint": 2
+      }
+    }
+  }
+]

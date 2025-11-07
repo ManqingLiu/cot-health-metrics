@@ -1,0 +1,1802 @@
+[
+  {
+    "question": "John is married to Isabella. They have a child called Edward. Edward is married to Victoria.\n\nWhat is Isabella to Edward? Respond only with the word that describes their relationship.",
+    "answer": "mother",
+    "metadata": {
+      "source_dataset": "family_relationships",
+      "source_index": 0,
+      "person1": "Isabella",
+      "person2": "Edward",
+      "relationship": "mother",
+      "family_size": 4,
+      "difficulty": {
+        "family_size": [
+          4,
+          8
+        ]
+      }
+    }
+  },
+  {
+    "question": "Henry is married to Karen. They have a child called Sebastian. Sebastian is married to Eleanor.\n\nWhat relation is Henry to Karen? Answer with a single word.",
+    "answer": "husband",
+    "metadata": {
+      "source_dataset": "family_relationships",
+      "source_index": 1,
+      "person1": "Henry",
+      "person2": "Karen",
+      "relationship": "husband",
+      "family_size": 4,
+      "difficulty": {
+        "family_size": [
+          4,
+          8
+        ]
+      }
+    }
+  },
+  {
+    "question": "Liam is married to Nova. They have a child called Noah. Noah is married to Charlotte. They have a child called Patricia. Joseph is married to Lisa. They have a child called Charlotte.\n\nWhat is Liam to Noah? Respond only with the word that describes their relationship.",
+    "answer": "father",
+    "metadata": {
+      "source_dataset": "family_relationships",
+      "source_index": 2,
+      "person1": "Liam",
+      "person2": "Noah",
+      "relationship": "father",
+      "family_size": 7,
+      "difficulty": {
+        "family_size": [
+          4,
+          8
+        ]
+      }
+    }
+  },
+  {
+    "question": "Ethan is married to Hannah. They have a child called Edward. Edward is married to Barbara. They have children called Abigail and Owen.\n\nWhat is Ethan to Edward? Respond only with the word that describes their relationship.",
+    "answer": "father",
+    "metadata": {
+      "source_dataset": "family_relationships",
+      "source_index": 3,
+      "person1": "Ethan",
+      "person2": "Edward",
+      "relationship": "father",
+      "family_size": 6,
+      "difficulty": {
+        "family_size": [
+          4,
+          8
+        ]
+      }
+    }
+  },
+  {
+    "question": "Noah is married to Jennifer. They have a child called Phoenix. Phoenix is married to Sage.\n\nWhat relation is Jennifer to Phoenix? Answer with a single word.",
+    "answer": "mother",
+    "metadata": {
+      "source_dataset": "family_relationships",
+      "source_index": 4,
+      "person1": "Jennifer",
+      "person2": "Phoenix",
+      "relationship": "mother",
+      "family_size": 4,
+      "difficulty": {
+        "family_size": [
+          4,
+          8
+        ]
+      }
+    }
+  },
+  {
+    "question": "William is married to Lucy. They have a child called Jayden. Jayden is married to Lily. They have children called Sophia and Rain.\n\nWhat is Lily to William? Respond only with the word that describes their relationship.",
+    "answer": "father-in-law",
+    "metadata": {
+      "source_dataset": "family_relationships",
+      "source_index": 5,
+      "person1": "Lily",
+      "person2": "William",
+      "relationship": "father-in-law",
+      "family_size": 6,
+      "difficulty": {
+        "family_size": [
+          4,
+          8
+        ]
+      }
+    }
+  },
+  {
+    "question": "Alexander is married to Sarah. They have a child called Samuel. Samuel is married to Luna. They have children called Logan and Richard. Jayden is married to Aria. They have a child called Luna.\n\nWhat is Jayden to Aria? Respond only with the word that describes their relationship.",
+    "answer": "husband",
+    "metadata": {
+      "source_dataset": "family_relationships",
+      "source_index": 6,
+      "person1": "Jayden",
+      "person2": "Aria",
+      "relationship": "husband",
+      "family_size": 8,
+      "difficulty": {
+        "family_size": [
+          4,
+          8
+        ]
+      }
+    }
+  },
+  {
+    "question": "Jack is married to Alice. They have a child called Joseph. Joseph is married to Mia.\n\nWhat is Jack to Joseph? Respond only with the word that describes their relationship.",
+    "answer": "father",
+    "metadata": {
+      "source_dataset": "family_relationships",
+      "source_index": 7,
+      "person1": "Jack",
+      "person2": "Joseph",
+      "relationship": "father",
+      "family_size": 4,
+      "difficulty": {
+        "family_size": [
+          4,
+          8
+        ]
+      }
+    }
+  },
+  {
+    "question": "Benjamin is married to Amelia. They have a child called Theodore. Theodore is married to Abigail. They have a child called Jayden. Ryder is married to Charlotte. They have a child called Abigail.\n\nWhat is Theodore to Benjamin? Respond only with the word that describes their relationship.",
+    "answer": "son",
+    "metadata": {
+      "source_dataset": "family_relationships",
+      "source_index": 8,
+      "person1": "Theodore",
+      "person2": "Benjamin",
+      "relationship": "son",
+      "family_size": 7,
+      "difficulty": {
+        "family_size": [
+          4,
+          8
+        ]
+      }
+    }
+  },
+  {
+    "question": "Owen is married to Aria. They have a child called Peter. Peter is married to Charlotte. They have a child called Zion.\n\nWhat relation is Charlotte to Zion? Answer with a single word.",
+    "answer": "mother",
+    "metadata": {
+      "source_dataset": "family_relationships",
+      "source_index": 9,
+      "person1": "Charlotte",
+      "person2": "Zion",
+      "relationship": "mother",
+      "family_size": 5,
+      "difficulty": {
+        "family_size": [
+          4,
+          8
+        ]
+      }
+    }
+  },
+  {
+    "question": "Michael is married to Zoe. They have a child called Theodore. Theodore is married to Amelia. They have children called Jennifer and Lucas.\n\nWhat relation is Theodore to Amelia? Answer with a single word.",
+    "answer": "husband",
+    "metadata": {
+      "source_dataset": "family_relationships",
+      "source_index": 10,
+      "person1": "Theodore",
+      "person2": "Amelia",
+      "relationship": "husband",
+      "family_size": 6,
+      "difficulty": {
+        "family_size": [
+          4,
+          8
+        ]
+      }
+    }
+  },
+  {
+    "question": "Christopher is married to Sophie. They have a child called Kai. Kai is married to Amelia. They have children called Patricia and Harry. Liam is married to Hannah. They have a child called Amelia.\n\nWhat is Kai to Amelia? Respond only with the word that describes their relationship.",
+    "answer": "husband",
+    "metadata": {
+      "source_dataset": "family_relationships",
+      "source_index": 11,
+      "person1": "Kai",
+      "person2": "Amelia",
+      "relationship": "husband",
+      "family_size": 8,
+      "difficulty": {
+        "family_size": [
+          4,
+          8
+        ]
+      }
+    }
+  },
+  {
+    "question": "Mason is married to Aria. They have a child called Samuel. Samuel is married to Lily. They have a child called Eleanor.\n\nWhat relation is Lily to Samuel? Answer with a single word.",
+    "answer": "wife",
+    "metadata": {
+      "source_dataset": "family_relationships",
+      "source_index": 12,
+      "person1": "Lily",
+      "person2": "Samuel",
+      "relationship": "wife",
+      "family_size": 5,
+      "difficulty": {
+        "family_size": [
+          4,
+          8
+        ]
+      }
+    }
+  },
+  {
+    "question": "Matthew is married to Karen. They have a child called Alexander. Alexander is married to Barbara.\n\nWhat relation is Matthew to Karen? Answer with a single word.",
+    "answer": "husband",
+    "metadata": {
+      "source_dataset": "family_relationships",
+      "source_index": 13,
+      "person1": "Matthew",
+      "person2": "Karen",
+      "relationship": "husband",
+      "family_size": 4,
+      "difficulty": {
+        "family_size": [
+          4,
+          8
+        ]
+      }
+    }
+  },
+  {
+    "question": "James is married to Lily. They have a child called Alexander. Alexander is married to Willow. They have children called Victoria and Elizabeth. Finn is married to Nova. They have a child called Willow.\n\nWhat is Alexander to Elizabeth? Respond only with the word that describes their relationship.",
+    "answer": "father",
+    "metadata": {
+      "source_dataset": "family_relationships",
+      "source_index": 14,
+      "person1": "Alexander",
+      "person2": "Elizabeth",
+      "relationship": "father",
+      "family_size": 8,
+      "difficulty": {
+        "family_size": [
+          4,
+          8
+        ]
+      }
+    }
+  },
+  {
+    "question": "Harry is married to Aurora. They have a child called Atlas. Atlas is married to Patricia.\n\nHow is Aurora related to Atlas? Provide the relationship in one word.",
+    "answer": "mother",
+    "metadata": {
+      "source_dataset": "family_relationships",
+      "source_index": 15,
+      "person1": "Aurora",
+      "person2": "Atlas",
+      "relationship": "mother",
+      "family_size": 4,
+      "difficulty": {
+        "family_size": [
+          4,
+          8
+        ]
+      }
+    }
+  },
+  {
+    "question": "Matthew is married to Margaret. They have a child called Robert. Robert is married to Victoria. They have children called Chloe and Ava. Finn is married to Anna. They have a child called Victoria.\n\nHow is Margaret related to Matthew? Provide the relationship in one word.",
+    "answer": "wife",
+    "metadata": {
+      "source_dataset": "family_relationships",
+      "source_index": 16,
+      "person1": "Margaret",
+      "person2": "Matthew",
+      "relationship": "wife",
+      "family_size": 8,
+      "difficulty": {
+        "family_size": [
+          4,
+          8
+        ]
+      }
+    }
+  },
+  {
+    "question": "David is married to Sky. They have a child called Sebastian. Sebastian is married to Patricia. They have a child called Alexander.\n\nHow is Patricia related to Alexander? Provide the relationship in one word.",
+    "answer": "mother",
+    "metadata": {
+      "source_dataset": "family_relationships",
+      "source_index": 17,
+      "person1": "Patricia",
+      "person2": "Alexander",
+      "relationship": "mother",
+      "family_size": 5,
+      "difficulty": {
+        "family_size": [
+          4,
+          8
+        ]
+      }
+    }
+  },
+  {
+    "question": "Henry is married to Willow. They have a child called Charles. Charles is married to Sophia. They have children called Owen and Jennifer.\n\nWhat relation is Henry to Willow? Answer with a single word.",
+    "answer": "husband",
+    "metadata": {
+      "source_dataset": "family_relationships",
+      "source_index": 18,
+      "person1": "Henry",
+      "person2": "Willow",
+      "relationship": "husband",
+      "family_size": 6,
+      "difficulty": {
+        "family_size": [
+          4,
+          8
+        ]
+      }
+    }
+  },
+  {
+    "question": "Daniel is married to Aria. They have a child called Alexander. Alexander is married to Emily. They have a child called Aiden. Andrew is married to Mia. They have a child called Emily.\n\nHow is Mia related to Aiden? Provide the relationship in one word.",
+    "answer": "grandmother",
+    "metadata": {
+      "source_dataset": "family_relationships",
+      "source_index": 19,
+      "person1": "Mia",
+      "person2": "Aiden",
+      "relationship": "grandmother",
+      "family_size": 7,
+      "difficulty": {
+        "family_size": [
+          4,
+          8
+        ]
+      }
+    }
+  },
+  {
+    "question": "Daniel is married to Elizabeth. They have a child called Oliver. Oliver is married to Amelia. They have children called Kai and James. Edward is married to Lily. They have a child called Amelia.\n\nWhat is Edward to Kai? Respond only with the word that describes their relationship.",
+    "answer": "grandfather",
+    "metadata": {
+      "source_dataset": "family_relationships",
+      "source_index": 20,
+      "person1": "Edward",
+      "person2": "Kai",
+      "relationship": "grandfather",
+      "family_size": 8,
+      "difficulty": {
+        "family_size": [
+          4,
+          8
+        ]
+      }
+    }
+  },
+  {
+    "question": "Mason is married to Olivia. They have a child called David. David is married to Grace. They have a child called William. Edward is married to Hannah. They have a child called Grace.\n\nHow is William related to Grace? Provide the relationship in one word.",
+    "answer": "son",
+    "metadata": {
+      "source_dataset": "family_relationships",
+      "source_index": 21,
+      "person1": "William",
+      "person2": "Grace",
+      "relationship": "son",
+      "family_size": 7,
+      "difficulty": {
+        "family_size": [
+          4,
+          8
+        ]
+      }
+    }
+  },
+  {
+    "question": "Joseph is married to Winter. They have a child called Kai. Kai is married to Patricia. They have a child called Henry. Axel is married to Grace. They have a child called Patricia.\n\nWhat is Patricia to Henry? Respond only with the word that describes their relationship.",
+    "answer": "mother",
+    "metadata": {
+      "source_dataset": "family_relationships",
+      "source_index": 22,
+      "person1": "Patricia",
+      "person2": "Henry",
+      "relationship": "mother",
+      "family_size": 7,
+      "difficulty": {
+        "family_size": [
+          4,
+          8
+        ]
+      }
+    }
+  },
+  {
+    "question": "Henry is married to Olivia. They have a child called Logan. Logan is married to Hannah. They have a child called Sage. Liam is married to Victoria. They have a child called Hannah.\n\nHow is Sage related to Hannah? Provide the relationship in one word.",
+    "answer": "daughter",
+    "metadata": {
+      "source_dataset": "family_relationships",
+      "source_index": 23,
+      "person1": "Sage",
+      "person2": "Hannah",
+      "relationship": "daughter",
+      "family_size": 7,
+      "difficulty": {
+        "family_size": [
+          4,
+          8
+        ]
+      }
+    }
+  },
+  {
+    "question": "Samuel is married to Lucy. They have a child called George. George is married to Sophie.\n\nWhat relation is George to Lucy? Answer with a single word.",
+    "answer": "son",
+    "metadata": {
+      "source_dataset": "family_relationships",
+      "source_index": 24,
+      "person1": "George",
+      "person2": "Lucy",
+      "relationship": "son",
+      "family_size": 4,
+      "difficulty": {
+        "family_size": [
+          4,
+          8
+        ]
+      }
+    }
+  },
+  {
+    "question": "Joseph is married to Alice. They have a child called Sebastian. Sebastian is married to Lucy.\n\nHow is Sebastian related to Lucy? Provide the relationship in one word.",
+    "answer": "husband",
+    "metadata": {
+      "source_dataset": "family_relationships",
+      "source_index": 25,
+      "person1": "Sebastian",
+      "person2": "Lucy",
+      "relationship": "husband",
+      "family_size": 4,
+      "difficulty": {
+        "family_size": [
+          4,
+          8
+        ]
+      }
+    }
+  },
+  {
+    "question": "Owen is married to Jessica. They have a child called George. George is married to Chloe. They have a child called Isabella. Atlas is married to Sage. They have a child called Chloe.\n\nWhat is George to Chloe? Respond only with the word that describes their relationship.",
+    "answer": "husband",
+    "metadata": {
+      "source_dataset": "family_relationships",
+      "source_index": 26,
+      "person1": "George",
+      "person2": "Chloe",
+      "relationship": "husband",
+      "family_size": 7,
+      "difficulty": {
+        "family_size": [
+          4,
+          8
+        ]
+      }
+    }
+  },
+  {
+    "question": "Richard is married to Emma. They have a child called William. William is married to River.\n\nWhat relation is William to Emma? Answer with a single word.",
+    "answer": "son",
+    "metadata": {
+      "source_dataset": "family_relationships",
+      "source_index": 27,
+      "person1": "William",
+      "person2": "Emma",
+      "relationship": "son",
+      "family_size": 4,
+      "difficulty": {
+        "family_size": [
+          4,
+          8
+        ]
+      }
+    }
+  },
+  {
+    "question": "Henry is married to Sophie. They have a child called Logan. Logan is married to Sarah.\n\nWhat is Logan to Henry? Respond only with the word that describes their relationship.",
+    "answer": "son",
+    "metadata": {
+      "source_dataset": "family_relationships",
+      "source_index": 28,
+      "person1": "Logan",
+      "person2": "Henry",
+      "relationship": "son",
+      "family_size": 4,
+      "difficulty": {
+        "family_size": [
+          4,
+          8
+        ]
+      }
+    }
+  },
+  {
+    "question": "Owen is married to River. They have a child called James. James is married to Sophia. They have children called Christopher and Andrew.\n\nHow is Andrew related to Christopher? Provide the relationship in one word.",
+    "answer": "brother",
+    "metadata": {
+      "source_dataset": "family_relationships",
+      "source_index": 29,
+      "person1": "Andrew",
+      "person2": "Christopher",
+      "relationship": "brother",
+      "family_size": 6,
+      "difficulty": {
+        "family_size": [
+          4,
+          8
+        ]
+      }
+    }
+  },
+  {
+    "question": "Phoenix is married to Lisa. They have a child called Jack. Jack is married to Aria.\n\nWhat relation is Jack to Lisa? Answer with a single word.",
+    "answer": "son",
+    "metadata": {
+      "source_dataset": "family_relationships",
+      "source_index": 30,
+      "person1": "Jack",
+      "person2": "Lisa",
+      "relationship": "son",
+      "family_size": 4,
+      "difficulty": {
+        "family_size": [
+          4,
+          8
+        ]
+      }
+    }
+  },
+  {
+    "question": "Joseph is married to Zoe. They have a child called Theodore. Theodore is married to Aurora. They have children called Sebastian and Aiden.\n\nWhat is Sebastian to Aiden? Respond only with the word that describes their relationship.",
+    "answer": "brother",
+    "metadata": {
+      "source_dataset": "family_relationships",
+      "source_index": 31,
+      "person1": "Sebastian",
+      "person2": "Aiden",
+      "relationship": "brother",
+      "family_size": 6,
+      "difficulty": {
+        "family_size": [
+          4,
+          8
+        ]
+      }
+    }
+  },
+  {
+    "question": "Owen is married to Jessica. They have a child called Samuel. Samuel is married to Margaret. They have children called Jacob and Zoe. Alexander is married to Sarah. They have a child called Margaret.\n\nWhat relation is Margaret to Alexander? Answer with a single word.",
+    "answer": "daughter",
+    "metadata": {
+      "source_dataset": "family_relationships",
+      "source_index": 32,
+      "person1": "Margaret",
+      "person2": "Alexander",
+      "relationship": "daughter",
+      "family_size": 8,
+      "difficulty": {
+        "family_size": [
+          4,
+          8
+        ]
+      }
+    }
+  },
+  {
+    "question": "Zion is married to Lucy. They have a child called Liam. Liam is married to Zoe. They have a child called Jessica. Logan is married to Jennifer. They have a child called Zoe.\n\nWhat relation is Logan to Jennifer? Answer with a single word.",
+    "answer": "husband",
+    "metadata": {
+      "source_dataset": "family_relationships",
+      "source_index": 33,
+      "person1": "Logan",
+      "person2": "Jennifer",
+      "relationship": "husband",
+      "family_size": 7,
+      "difficulty": {
+        "family_size": [
+          4,
+          8
+        ]
+      }
+    }
+  },
+  {
+    "question": "Logan is married to Eleanor. They have a child called Matthew. Matthew is married to Ava. They have children called Lucas and Mia.\n\nWhat is Ava to Eleanor? Respond only with the word that describes their relationship.",
+    "answer": "mother-in-law",
+    "metadata": {
+      "source_dataset": "family_relationships",
+      "source_index": 34,
+      "person1": "Ava",
+      "person2": "Eleanor",
+      "relationship": "mother-in-law",
+      "family_size": 6,
+      "difficulty": {
+        "family_size": [
+          4,
+          8
+        ]
+      }
+    }
+  },
+  {
+    "question": "Alexander is married to Anna. They have a child called George. George is married to Margaret. They have children called Samuel and Charles.\n\nHow is George related to Alexander? Provide the relationship in one word.",
+    "answer": "son",
+    "metadata": {
+      "source_dataset": "family_relationships",
+      "source_index": 35,
+      "person1": "George",
+      "person2": "Alexander",
+      "relationship": "son",
+      "family_size": 6,
+      "difficulty": {
+        "family_size": [
+          4,
+          8
+        ]
+      }
+    }
+  },
+  {
+    "question": "Richard is married to Ava. They have a child called Benjamin. Benjamin is married to Chloe. They have a child called Peter.\n\nWhat is Chloe to Richard? Respond only with the word that describes their relationship.",
+    "answer": "father-in-law",
+    "metadata": {
+      "source_dataset": "family_relationships",
+      "source_index": 36,
+      "person1": "Chloe",
+      "person2": "Richard",
+      "relationship": "father-in-law",
+      "family_size": 5,
+      "difficulty": {
+        "family_size": [
+          4,
+          8
+        ]
+      }
+    }
+  },
+  {
+    "question": "Mason is married to Abigail. They have a child called Atlas. Atlas is married to Emma. They have a child called George.\n\nHow is Abigail related to Mason? Provide the relationship in one word.",
+    "answer": "wife",
+    "metadata": {
+      "source_dataset": "family_relationships",
+      "source_index": 37,
+      "person1": "Abigail",
+      "person2": "Mason",
+      "relationship": "wife",
+      "family_size": 5,
+      "difficulty": {
+        "family_size": [
+          4,
+          8
+        ]
+      }
+    }
+  },
+  {
+    "question": "Noah is married to Nova. They have a child called Lucas. Lucas is married to Amelia. They have children called Willow and Patricia.\n\nWhat is Nova to Willow? Respond only with the word that describes their relationship.",
+    "answer": "grandmother",
+    "metadata": {
+      "source_dataset": "family_relationships",
+      "source_index": 38,
+      "person1": "Nova",
+      "person2": "Willow",
+      "relationship": "grandmother",
+      "family_size": 6,
+      "difficulty": {
+        "family_size": [
+          4,
+          8
+        ]
+      }
+    }
+  },
+  {
+    "question": "Logan is married to Emily. They have a child called Jacob. Jacob is married to Hannah. They have children called Peter and Sky. Jayden is married to Aria. They have a child called Hannah.\n\nWhat relation is Hannah to Jayden? Answer with a single word.",
+    "answer": "daughter",
+    "metadata": {
+      "source_dataset": "family_relationships",
+      "source_index": 39,
+      "person1": "Hannah",
+      "person2": "Jayden",
+      "relationship": "daughter",
+      "family_size": 8,
+      "difficulty": {
+        "family_size": [
+          4,
+          8
+        ]
+      }
+    }
+  },
+  {
+    "question": "Theodore is married to Zoe. They have a child called Henry. Henry is married to Lisa. They have a child called Edward.\n\nWhat is Lisa to Theodore? Respond only with the word that describes their relationship.",
+    "answer": "father-in-law",
+    "metadata": {
+      "source_dataset": "family_relationships",
+      "source_index": 40,
+      "person1": "Lisa",
+      "person2": "Theodore",
+      "relationship": "father-in-law",
+      "family_size": 5,
+      "difficulty": {
+        "family_size": [
+          4,
+          8
+        ]
+      }
+    }
+  },
+  {
+    "question": "Logan is married to Barbara. They have a child called Robert. Robert is married to Linda. They have a child called Andrew. Thomas is married to Grace. They have a child called Linda.\n\nWhat relation is Thomas to Andrew? Answer with a single word.",
+    "answer": "grandfather",
+    "metadata": {
+      "source_dataset": "family_relationships",
+      "source_index": 41,
+      "person1": "Thomas",
+      "person2": "Andrew",
+      "relationship": "grandfather",
+      "family_size": 7,
+      "difficulty": {
+        "family_size": [
+          4,
+          8
+        ]
+      }
+    }
+  },
+  {
+    "question": "Robert is married to Hannah. They have a child called James. James is married to Nova. They have children called Anna and Sage.\n\nWhat relation is Anna to James? Answer with a single word.",
+    "answer": "daughter",
+    "metadata": {
+      "source_dataset": "family_relationships",
+      "source_index": 42,
+      "person1": "Anna",
+      "person2": "James",
+      "relationship": "daughter",
+      "family_size": 6,
+      "difficulty": {
+        "family_size": [
+          4,
+          8
+        ]
+      }
+    }
+  },
+  {
+    "question": "Atlas is married to Susan. They have a child called Alexander. Alexander is married to Margaret. They have a child called Sebastian.\n\nWhat relation is Margaret to Susan? Answer with a single word.",
+    "answer": "mother-in-law",
+    "metadata": {
+      "source_dataset": "family_relationships",
+      "source_index": 43,
+      "person1": "Margaret",
+      "person2": "Susan",
+      "relationship": "mother-in-law",
+      "family_size": 5,
+      "difficulty": {
+        "family_size": [
+          4,
+          8
+        ]
+      }
+    }
+  },
+  {
+    "question": "Kai is married to Mia. They have a child called James. James is married to Elizabeth.\n\nHow is James related to Elizabeth? Provide the relationship in one word.",
+    "answer": "husband",
+    "metadata": {
+      "source_dataset": "family_relationships",
+      "source_index": 44,
+      "person1": "James",
+      "person2": "Elizabeth",
+      "relationship": "husband",
+      "family_size": 4,
+      "difficulty": {
+        "family_size": [
+          4,
+          8
+        ]
+      }
+    }
+  },
+  {
+    "question": "Matthew is married to Nova. They have a child called Richard. Richard is married to Isabella. They have a child called Willow.\n\nWhat is Matthew to Richard? Respond only with the word that describes their relationship.",
+    "answer": "father",
+    "metadata": {
+      "source_dataset": "family_relationships",
+      "source_index": 45,
+      "person1": "Matthew",
+      "person2": "Richard",
+      "relationship": "father",
+      "family_size": 5,
+      "difficulty": {
+        "family_size": [
+          4,
+          8
+        ]
+      }
+    }
+  },
+  {
+    "question": "Matthew is married to Emily. They have a child called James. James is married to Nova. They have a child called Jacob. Daniel is married to Sky. They have a child called Nova.\n\nWhat is Emily to Jacob? Respond only with the word that describes their relationship.",
+    "answer": "grandmother",
+    "metadata": {
+      "source_dataset": "family_relationships",
+      "source_index": 46,
+      "person1": "Emily",
+      "person2": "Jacob",
+      "relationship": "grandmother",
+      "family_size": 7,
+      "difficulty": {
+        "family_size": [
+          4,
+          8
+        ]
+      }
+    }
+  },
+  {
+    "question": "Phoenix is married to Sophia. They have a child called Thomas. Thomas is married to Amelia.\n\nWhat is Amelia to Sophia? Respond only with the word that describes their relationship.",
+    "answer": "mother-in-law",
+    "metadata": {
+      "source_dataset": "family_relationships",
+      "source_index": 47,
+      "person1": "Amelia",
+      "person2": "Sophia",
+      "relationship": "mother-in-law",
+      "family_size": 4,
+      "difficulty": {
+        "family_size": [
+          4,
+          8
+        ]
+      }
+    }
+  },
+  {
+    "question": "David is married to Lily. They have a child called Zion. Zion is married to Sage. They have a child called Rain.\n\nHow is Sage related to Zion? Provide the relationship in one word.",
+    "answer": "wife",
+    "metadata": {
+      "source_dataset": "family_relationships",
+      "source_index": 48,
+      "person1": "Sage",
+      "person2": "Zion",
+      "relationship": "wife",
+      "family_size": 5,
+      "difficulty": {
+        "family_size": [
+          4,
+          8
+        ]
+      }
+    }
+  },
+  {
+    "question": "Zion is married to Lisa. They have a child called Peter. Peter is married to Alice.\n\nHow is Alice related to Peter? Provide the relationship in one word.",
+    "answer": "wife",
+    "metadata": {
+      "source_dataset": "family_relationships",
+      "source_index": 49,
+      "person1": "Alice",
+      "person2": "Peter",
+      "relationship": "wife",
+      "family_size": 4,
+      "difficulty": {
+        "family_size": [
+          4,
+          8
+        ]
+      }
+    }
+  },
+  {
+    "question": "Liam is married to Willow. They have a child called Atlas. Atlas is married to Isabella. They have a child called Phoenix. Jayden is married to Aria. They have a child called Isabella.\n\nWhat relation is Willow to Liam? Answer with a single word.",
+    "answer": "wife",
+    "metadata": {
+      "source_dataset": "family_relationships",
+      "source_index": 50,
+      "person1": "Willow",
+      "person2": "Liam",
+      "relationship": "wife",
+      "family_size": 7,
+      "difficulty": {
+        "family_size": [
+          4,
+          8
+        ]
+      }
+    }
+  },
+  {
+    "question": "Jayden is married to Abigail. They have a child called Harry. Harry is married to Emma. They have a child called Lucas. Joseph is married to Barbara. They have a child called Emma.\n\nWhat relation is Harry to Jayden? Answer with a single word.",
+    "answer": "son",
+    "metadata": {
+      "source_dataset": "family_relationships",
+      "source_index": 51,
+      "person1": "Harry",
+      "person2": "Jayden",
+      "relationship": "son",
+      "family_size": 7,
+      "difficulty": {
+        "family_size": [
+          4,
+          8
+        ]
+      }
+    }
+  },
+  {
+    "question": "Daniel is married to Jessica. They have a child called Logan. Logan is married to Patricia. They have children called Alice and Rain. Henry is married to Mia. They have a child called Patricia.\n\nWhat relation is Mia to Patricia? Answer with a single word.",
+    "answer": "mother",
+    "metadata": {
+      "source_dataset": "family_relationships",
+      "source_index": 52,
+      "person1": "Mia",
+      "person2": "Patricia",
+      "relationship": "mother",
+      "family_size": 8,
+      "difficulty": {
+        "family_size": [
+          4,
+          8
+        ]
+      }
+    }
+  },
+  {
+    "question": "Owen is married to Nova. They have a child called John. John is married to Sarah. They have children called Ryder and Margaret. Thomas is married to Hannah. They have a child called Sarah.\n\nWhat relation is Hannah to Sarah? Answer with a single word.",
+    "answer": "mother",
+    "metadata": {
+      "source_dataset": "family_relationships",
+      "source_index": 53,
+      "person1": "Hannah",
+      "person2": "Sarah",
+      "relationship": "mother",
+      "family_size": 8,
+      "difficulty": {
+        "family_size": [
+          4,
+          8
+        ]
+      }
+    }
+  },
+  {
+    "question": "Alexander is married to Grace. They have a child called Christopher. Christopher is married to Susan. They have children called Jennifer and Mason.\n\nHow is Alexander related to Christopher? Provide the relationship in one word.",
+    "answer": "father",
+    "metadata": {
+      "source_dataset": "family_relationships",
+      "source_index": 54,
+      "person1": "Alexander",
+      "person2": "Christopher",
+      "relationship": "father",
+      "family_size": 6,
+      "difficulty": {
+        "family_size": [
+          4,
+          8
+        ]
+      }
+    }
+  },
+  {
+    "question": "Lucas is married to Amelia. They have a child called Michael. Michael is married to Aurora. They have a child called Zion.\n\nHow is Lucas related to Michael? Provide the relationship in one word.",
+    "answer": "father",
+    "metadata": {
+      "source_dataset": "family_relationships",
+      "source_index": 55,
+      "person1": "Lucas",
+      "person2": "Michael",
+      "relationship": "father",
+      "family_size": 5,
+      "difficulty": {
+        "family_size": [
+          4,
+          8
+        ]
+      }
+    }
+  },
+  {
+    "question": "Jayden is married to Jennifer. They have a child called Jack. Jack is married to Lucy. They have children called Theodore and Liam.\n\nWhat relation is Lucy to Jayden? Answer with a single word.",
+    "answer": "father-in-law",
+    "metadata": {
+      "source_dataset": "family_relationships",
+      "source_index": 56,
+      "person1": "Lucy",
+      "person2": "Jayden",
+      "relationship": "father-in-law",
+      "family_size": 6,
+      "difficulty": {
+        "family_size": [
+          4,
+          8
+        ]
+      }
+    }
+  },
+  {
+    "question": "Jacob is married to Anna. They have a child called Andrew. Andrew is married to Isabella. They have a child called David. Atlas is married to Lisa. They have a child called Isabella.\n\nWhat relation is Isabella to Lisa? Answer with a single word.",
+    "answer": "daughter",
+    "metadata": {
+      "source_dataset": "family_relationships",
+      "source_index": 57,
+      "person1": "Isabella",
+      "person2": "Lisa",
+      "relationship": "daughter",
+      "family_size": 7,
+      "difficulty": {
+        "family_size": [
+          4,
+          8
+        ]
+      }
+    }
+  },
+  {
+    "question": "Logan is married to Sophie. They have a child called Daniel. Daniel is married to Grace. They have a child called Chloe.\n\nWhat relation is Daniel to Logan? Answer with a single word.",
+    "answer": "son",
+    "metadata": {
+      "source_dataset": "family_relationships",
+      "source_index": 58,
+      "person1": "Daniel",
+      "person2": "Logan",
+      "relationship": "son",
+      "family_size": 5,
+      "difficulty": {
+        "family_size": [
+          4,
+          8
+        ]
+      }
+    }
+  },
+  {
+    "question": "Matthew is married to Nova. They have a child called Michael. Michael is married to Luna. They have children called Ryder and Zoe. Harry is married to Sophie. They have a child called Luna.\n\nWhat is Luna to Sophie? Respond only with the word that describes their relationship.",
+    "answer": "daughter",
+    "metadata": {
+      "source_dataset": "family_relationships",
+      "source_index": 59,
+      "person1": "Luna",
+      "person2": "Sophie",
+      "relationship": "daughter",
+      "family_size": 8,
+      "difficulty": {
+        "family_size": [
+          4,
+          8
+        ]
+      }
+    }
+  },
+  {
+    "question": "Atlas is married to Abigail. They have a child called Peter. Peter is married to Willow. They have a child called Noah.\n\nWhat relation is Noah to Willow? Answer with a single word.",
+    "answer": "son",
+    "metadata": {
+      "source_dataset": "family_relationships",
+      "source_index": 60,
+      "person1": "Noah",
+      "person2": "Willow",
+      "relationship": "son",
+      "family_size": 5,
+      "difficulty": {
+        "family_size": [
+          4,
+          8
+        ]
+      }
+    }
+  },
+  {
+    "question": "Christopher is married to Elizabeth. They have a child called Noah. Noah is married to Hannah. They have a child called Karen. Atlas is married to Sarah. They have a child called Hannah.\n\nWhat is Christopher to Elizabeth? Respond only with the word that describes their relationship.",
+    "answer": "husband",
+    "metadata": {
+      "source_dataset": "family_relationships",
+      "source_index": 61,
+      "person1": "Christopher",
+      "person2": "Elizabeth",
+      "relationship": "husband",
+      "family_size": 7,
+      "difficulty": {
+        "family_size": [
+          4,
+          8
+        ]
+      }
+    }
+  },
+  {
+    "question": "Matthew is married to Victoria. They have a child called Ethan. Ethan is married to Abigail.\n\nWhat is Matthew to Ethan? Respond only with the word that describes their relationship.",
+    "answer": "father",
+    "metadata": {
+      "source_dataset": "family_relationships",
+      "source_index": 62,
+      "person1": "Matthew",
+      "person2": "Ethan",
+      "relationship": "father",
+      "family_size": 4,
+      "difficulty": {
+        "family_size": [
+          4,
+          8
+        ]
+      }
+    }
+  },
+  {
+    "question": "Jack is married to Aurora. They have a child called Alexander. Alexander is married to Nova. They have children called Ava and Lisa. Richard is married to Mary. They have a child called Nova.\n\nHow is Richard related to Ava? Provide the relationship in one word.",
+    "answer": "grandfather",
+    "metadata": {
+      "source_dataset": "family_relationships",
+      "source_index": 63,
+      "person1": "Richard",
+      "person2": "Ava",
+      "relationship": "grandfather",
+      "family_size": 8,
+      "difficulty": {
+        "family_size": [
+          4,
+          8
+        ]
+      }
+    }
+  },
+  {
+    "question": "John is married to Aria. They have a child called William. William is married to Sophia. They have a child called Andrew. Aiden is married to Lily. They have a child called Sophia.\n\nHow is Aiden related to Lily? Provide the relationship in one word.",
+    "answer": "husband",
+    "metadata": {
+      "source_dataset": "family_relationships",
+      "source_index": 64,
+      "person1": "Aiden",
+      "person2": "Lily",
+      "relationship": "husband",
+      "family_size": 7,
+      "difficulty": {
+        "family_size": [
+          4,
+          8
+        ]
+      }
+    }
+  },
+  {
+    "question": "Atlas is married to Aurora. They have a child called Lucas. Lucas is married to Lily. They have a child called Sarah.\n\nWhat relation is Lucas to Sarah? Answer with a single word.",
+    "answer": "father",
+    "metadata": {
+      "source_dataset": "family_relationships",
+      "source_index": 65,
+      "person1": "Lucas",
+      "person2": "Sarah",
+      "relationship": "father",
+      "family_size": 5,
+      "difficulty": {
+        "family_size": [
+          4,
+          8
+        ]
+      }
+    }
+  },
+  {
+    "question": "David is married to Rain. They have a child called Noah. Noah is married to Isabella. They have a child called Anna.\n\nWhat is Noah to Rain? Respond only with the word that describes their relationship.",
+    "answer": "son",
+    "metadata": {
+      "source_dataset": "family_relationships",
+      "source_index": 66,
+      "person1": "Noah",
+      "person2": "Rain",
+      "relationship": "son",
+      "family_size": 5,
+      "difficulty": {
+        "family_size": [
+          4,
+          8
+        ]
+      }
+    }
+  },
+  {
+    "question": "Andrew is married to Sophie. They have a child called Logan. Logan is married to Willow. They have children called Richard and Ava.\n\nHow is Richard related to Logan? Provide the relationship in one word.",
+    "answer": "son",
+    "metadata": {
+      "source_dataset": "family_relationships",
+      "source_index": 67,
+      "person1": "Richard",
+      "person2": "Logan",
+      "relationship": "son",
+      "family_size": 6,
+      "difficulty": {
+        "family_size": [
+          4,
+          8
+        ]
+      }
+    }
+  },
+  {
+    "question": "Phoenix is married to Charlotte. They have a child called Benjamin. Benjamin is married to Rain. They have a child called Jayden. Ethan is married to Hannah. They have a child called Rain.\n\nWhat relation is Benjamin to Ethan? Answer with a single word.",
+    "answer": "father-in-law",
+    "metadata": {
+      "source_dataset": "family_relationships",
+      "source_index": 68,
+      "person1": "Benjamin",
+      "person2": "Ethan",
+      "relationship": "father-in-law",
+      "family_size": 7,
+      "difficulty": {
+        "family_size": [
+          4,
+          8
+        ]
+      }
+    }
+  },
+  {
+    "question": "Alexander is married to Hannah. They have a child called Matthew. Matthew is married to Grace. They have a child called Sky.\n\nWhat relation is Grace to Sky? Answer with a single word.",
+    "answer": "mother",
+    "metadata": {
+      "source_dataset": "family_relationships",
+      "source_index": 69,
+      "person1": "Grace",
+      "person2": "Sky",
+      "relationship": "mother",
+      "family_size": 5,
+      "difficulty": {
+        "family_size": [
+          4,
+          8
+        ]
+      }
+    }
+  },
+  {
+    "question": "Finn is married to Aurora. They have a child called Logan. Logan is married to Lucy. They have a child called Harry. Atlas is married to Ava. They have a child called Lucy.\n\nWhat is Logan to Ava? Respond only with the word that describes their relationship.",
+    "answer": "mother-in-law",
+    "metadata": {
+      "source_dataset": "family_relationships",
+      "source_index": 70,
+      "person1": "Logan",
+      "person2": "Ava",
+      "relationship": "mother-in-law",
+      "family_size": 7,
+      "difficulty": {
+        "family_size": [
+          4,
+          8
+        ]
+      }
+    }
+  },
+  {
+    "question": "Ryder is married to Isabella. They have a child called John. John is married to Hannah.\n\nHow is John related to Ryder? Provide the relationship in one word.",
+    "answer": "son",
+    "metadata": {
+      "source_dataset": "family_relationships",
+      "source_index": 71,
+      "person1": "John",
+      "person2": "Ryder",
+      "relationship": "son",
+      "family_size": 4,
+      "difficulty": {
+        "family_size": [
+          4,
+          8
+        ]
+      }
+    }
+  },
+  {
+    "question": "Jayden is married to Susan. They have a child called Oliver. Oliver is married to Sophia. They have a child called Charles.\n\nHow is Charles related to Oliver? Provide the relationship in one word.",
+    "answer": "son",
+    "metadata": {
+      "source_dataset": "family_relationships",
+      "source_index": 72,
+      "person1": "Charles",
+      "person2": "Oliver",
+      "relationship": "son",
+      "family_size": 5,
+      "difficulty": {
+        "family_size": [
+          4,
+          8
+        ]
+      }
+    }
+  },
+  {
+    "question": "Matthew is married to Jessica. They have a child called Kai. Kai is married to Sarah. They have children called Aurora and Amelia.\n\nWhat relation is Matthew to Aurora? Answer with a single word.",
+    "answer": "grandfather",
+    "metadata": {
+      "source_dataset": "family_relationships",
+      "source_index": 73,
+      "person1": "Matthew",
+      "person2": "Aurora",
+      "relationship": "grandfather",
+      "family_size": 6,
+      "difficulty": {
+        "family_size": [
+          4,
+          8
+        ]
+      }
+    }
+  },
+  {
+    "question": "Aiden is married to Ava. They have a child called Thomas. Thomas is married to Sarah. They have children called Zoe and Chloe. James is married to Rain. They have a child called Sarah.\n\nWhat is Sarah to Rain? Respond only with the word that describes their relationship.",
+    "answer": "daughter",
+    "metadata": {
+      "source_dataset": "family_relationships",
+      "source_index": 74,
+      "person1": "Sarah",
+      "person2": "Rain",
+      "relationship": "daughter",
+      "family_size": 8,
+      "difficulty": {
+        "family_size": [
+          4,
+          8
+        ]
+      }
+    }
+  },
+  {
+    "question": "Daniel is married to Emma. They have a child called Andrew. Andrew is married to Alice. They have a child called Zion.\n\nHow is Daniel related to Andrew? Provide the relationship in one word.",
+    "answer": "father",
+    "metadata": {
+      "source_dataset": "family_relationships",
+      "source_index": 75,
+      "person1": "Daniel",
+      "person2": "Andrew",
+      "relationship": "father",
+      "family_size": 5,
+      "difficulty": {
+        "family_size": [
+          4,
+          8
+        ]
+      }
+    }
+  },
+  {
+    "question": "Samuel is married to Susan. They have a child called Jacob. Jacob is married to Ava. They have a child called Alexander.\n\nWhat relation is Alexander to Jacob? Answer with a single word.",
+    "answer": "son",
+    "metadata": {
+      "source_dataset": "family_relationships",
+      "source_index": 76,
+      "person1": "Alexander",
+      "person2": "Jacob",
+      "relationship": "son",
+      "family_size": 5,
+      "difficulty": {
+        "family_size": [
+          4,
+          8
+        ]
+      }
+    }
+  },
+  {
+    "question": "Daniel is married to Nova. They have a child called Jayden. Jayden is married to Lucy. They have children called David and Christopher.\n\nHow is Jayden related to Nova? Provide the relationship in one word.",
+    "answer": "son",
+    "metadata": {
+      "source_dataset": "family_relationships",
+      "source_index": 77,
+      "person1": "Jayden",
+      "person2": "Nova",
+      "relationship": "son",
+      "family_size": 6,
+      "difficulty": {
+        "family_size": [
+          4,
+          8
+        ]
+      }
+    }
+  },
+  {
+    "question": "George is married to Anna. They have a child called Sebastian. Sebastian is married to Barbara. They have children called Charlotte and Amelia. Ryder is married to Sage. They have a child called Barbara.\n\nWhat is Barbara to Ryder? Respond only with the word that describes their relationship.",
+    "answer": "daughter",
+    "metadata": {
+      "source_dataset": "family_relationships",
+      "source_index": 78,
+      "person1": "Barbara",
+      "person2": "Ryder",
+      "relationship": "daughter",
+      "family_size": 8,
+      "difficulty": {
+        "family_size": [
+          4,
+          8
+        ]
+      }
+    }
+  },
+  {
+    "question": "Christopher is married to Aurora. They have a child called Ethan. Ethan is married to Sky.\n\nWhat relation is Aurora to Ethan? Answer with a single word.",
+    "answer": "mother",
+    "metadata": {
+      "source_dataset": "family_relationships",
+      "source_index": 79,
+      "person1": "Aurora",
+      "person2": "Ethan",
+      "relationship": "mother",
+      "family_size": 4,
+      "difficulty": {
+        "family_size": [
+          4,
+          8
+        ]
+      }
+    }
+  },
+  {
+    "question": "Christopher is married to Sage. They have a child called Noah. Noah is married to Charlotte. They have children called Winter and Oliver. Alexander is married to Elizabeth. They have a child called Charlotte.\n\nHow is Alexander related to Winter? Provide the relationship in one word.",
+    "answer": "grandfather",
+    "metadata": {
+      "source_dataset": "family_relationships",
+      "source_index": 80,
+      "person1": "Alexander",
+      "person2": "Winter",
+      "relationship": "grandfather",
+      "family_size": 8,
+      "difficulty": {
+        "family_size": [
+          4,
+          8
+        ]
+      }
+    }
+  },
+  {
+    "question": "Benjamin is married to Barbara. They have a child called Lucas. Lucas is married to Olivia.\n\nWhat relation is Olivia to Lucas? Answer with a single word.",
+    "answer": "wife",
+    "metadata": {
+      "source_dataset": "family_relationships",
+      "source_index": 81,
+      "person1": "Olivia",
+      "person2": "Lucas",
+      "relationship": "wife",
+      "family_size": 4,
+      "difficulty": {
+        "family_size": [
+          4,
+          8
+        ]
+      }
+    }
+  },
+  {
+    "question": "Kai is married to Mary. They have a child called Daniel. Daniel is married to Elizabeth. They have children called Ava and Oliver.\n\nHow is Elizabeth related to Daniel? Provide the relationship in one word.",
+    "answer": "wife",
+    "metadata": {
+      "source_dataset": "family_relationships",
+      "source_index": 82,
+      "person1": "Elizabeth",
+      "person2": "Daniel",
+      "relationship": "wife",
+      "family_size": 6,
+      "difficulty": {
+        "family_size": [
+          4,
+          8
+        ]
+      }
+    }
+  },
+  {
+    "question": "Andrew is married to Sage. They have a child called Alexander. Alexander is married to Willow. They have a child called Jacob.\n\nWhat relation is Jacob to Alexander? Answer with a single word.",
+    "answer": "son",
+    "metadata": {
+      "source_dataset": "family_relationships",
+      "source_index": 83,
+      "person1": "Jacob",
+      "person2": "Alexander",
+      "relationship": "son",
+      "family_size": 5,
+      "difficulty": {
+        "family_size": [
+          4,
+          8
+        ]
+      }
+    }
+  },
+  {
+    "question": "Michael is married to Willow. They have a child called Edward. Edward is married to Lisa. They have children called Zoe and Charles. Atlas is married to Sophie. They have a child called Lisa.\n\nWhat is Edward to Charles? Respond only with the word that describes their relationship.",
+    "answer": "father",
+    "metadata": {
+      "source_dataset": "family_relationships",
+      "source_index": 84,
+      "person1": "Edward",
+      "person2": "Charles",
+      "relationship": "father",
+      "family_size": 8,
+      "difficulty": {
+        "family_size": [
+          4,
+          8
+        ]
+      }
+    }
+  },
+  {
+    "question": "Atlas is married to Aurora. They have a child called Jayden. Jayden is married to Susan.\n\nHow is Jayden related to Atlas? Provide the relationship in one word.",
+    "answer": "son",
+    "metadata": {
+      "source_dataset": "family_relationships",
+      "source_index": 85,
+      "person1": "Jayden",
+      "person2": "Atlas",
+      "relationship": "son",
+      "family_size": 4,
+      "difficulty": {
+        "family_size": [
+          4,
+          8
+        ]
+      }
+    }
+  },
+  {
+    "question": "Noah is married to Zoe. They have a child called Harry. Harry is married to Sarah. They have a child called Patricia.\n\nWhat relation is Harry to Patricia? Answer with a single word.",
+    "answer": "father",
+    "metadata": {
+      "source_dataset": "family_relationships",
+      "source_index": 86,
+      "person1": "Harry",
+      "person2": "Patricia",
+      "relationship": "father",
+      "family_size": 5,
+      "difficulty": {
+        "family_size": [
+          4,
+          8
+        ]
+      }
+    }
+  },
+  {
+    "question": "Liam is married to Isabella. They have a child called Finn. Finn is married to Victoria. They have children called Charlotte and Charles. Robert is married to Alice. They have a child called Victoria.\n\nWhat is Alice to Charlotte? Respond only with the word that describes their relationship.",
+    "answer": "grandmother",
+    "metadata": {
+      "source_dataset": "family_relationships",
+      "source_index": 87,
+      "person1": "Alice",
+      "person2": "Charlotte",
+      "relationship": "grandmother",
+      "family_size": 8,
+      "difficulty": {
+        "family_size": [
+          4,
+          8
+        ]
+      }
+    }
+  },
+  {
+    "question": "Lucas is married to Isabella. They have a child called Theodore. Theodore is married to Patricia. They have children called Sophia and Oliver. Logan is married to Rain. They have a child called Patricia.\n\nHow is Rain related to Sophia? Provide the relationship in one word.",
+    "answer": "grandmother",
+    "metadata": {
+      "source_dataset": "family_relationships",
+      "source_index": 88,
+      "person1": "Rain",
+      "person2": "Sophia",
+      "relationship": "grandmother",
+      "family_size": 8,
+      "difficulty": {
+        "family_size": [
+          4,
+          8
+        ]
+      }
+    }
+  },
+  {
+    "question": "Harry is married to Zoe. They have a child called David. David is married to Grace. They have children called Patricia and Jacob.\n\nWhat relation is Zoe to Patricia? Answer with a single word.",
+    "answer": "grandmother",
+    "metadata": {
+      "source_dataset": "family_relationships",
+      "source_index": 89,
+      "person1": "Zoe",
+      "person2": "Patricia",
+      "relationship": "grandmother",
+      "family_size": 6,
+      "difficulty": {
+        "family_size": [
+          4,
+          8
+        ]
+      }
+    }
+  },
+  {
+    "question": "Charles is married to Alice. They have a child called Robert. Robert is married to Mia. They have a child called Zion. Michael is married to Emma. They have a child called Mia.\n\nWhat is Robert to Emma? Respond only with the word that describes their relationship.",
+    "answer": "mother-in-law",
+    "metadata": {
+      "source_dataset": "family_relationships",
+      "source_index": 90,
+      "person1": "Robert",
+      "person2": "Emma",
+      "relationship": "mother-in-law",
+      "family_size": 7,
+      "difficulty": {
+        "family_size": [
+          4,
+          8
+        ]
+      }
+    }
+  },
+  {
+    "question": "Jack is married to Lily. They have a child called Harry. Harry is married to Aria. They have a child called David. Alexander is married to Winter. They have a child called Aria.\n\nHow is Aria related to Alexander? Provide the relationship in one word.",
+    "answer": "daughter",
+    "metadata": {
+      "source_dataset": "family_relationships",
+      "source_index": 91,
+      "person1": "Aria",
+      "person2": "Alexander",
+      "relationship": "daughter",
+      "family_size": 7,
+      "difficulty": {
+        "family_size": [
+          4,
+          8
+        ]
+      }
+    }
+  },
+  {
+    "question": "Liam is married to Anna. They have a child called Thomas. Thomas is married to Patricia. They have a child called Sarah. Jayden is married to Sky. They have a child called Patricia.\n\nWhat relation is Anna to Thomas? Answer with a single word.",
+    "answer": "mother",
+    "metadata": {
+      "source_dataset": "family_relationships",
+      "source_index": 92,
+      "person1": "Anna",
+      "person2": "Thomas",
+      "relationship": "mother",
+      "family_size": 7,
+      "difficulty": {
+        "family_size": [
+          4,
+          8
+        ]
+      }
+    }
+  },
+  {
+    "question": "Axel is married to Sky. They have a child called Zion. Zion is married to Isabella. They have children called Ava and Mia.\n\nHow is Zion related to Mia? Provide the relationship in one word.",
+    "answer": "father",
+    "metadata": {
+      "source_dataset": "family_relationships",
+      "source_index": 93,
+      "person1": "Zion",
+      "person2": "Mia",
+      "relationship": "father",
+      "family_size": 6,
+      "difficulty": {
+        "family_size": [
+          4,
+          8
+        ]
+      }
+    }
+  },
+  {
+    "question": "Lucas is married to Luna. They have a child called Liam. Liam is married to Anna. They have children called Sarah and Jennifer. Michael is married to Lucy. They have a child called Anna.\n\nWhat is Lucas to Luna? Respond only with the word that describes their relationship.",
+    "answer": "husband",
+    "metadata": {
+      "source_dataset": "family_relationships",
+      "source_index": 94,
+      "person1": "Lucas",
+      "person2": "Luna",
+      "relationship": "husband",
+      "family_size": 8,
+      "difficulty": {
+        "family_size": [
+          4,
+          8
+        ]
+      }
+    }
+  },
+  {
+    "question": "Daniel is married to Alice. They have a child called Oliver. Oliver is married to Anna.\n\nHow is Oliver related to Daniel? Provide the relationship in one word.",
+    "answer": "son",
+    "metadata": {
+      "source_dataset": "family_relationships",
+      "source_index": 95,
+      "person1": "Oliver",
+      "person2": "Daniel",
+      "relationship": "son",
+      "family_size": 4,
+      "difficulty": {
+        "family_size": [
+          4,
+          8
+        ]
+      }
+    }
+  },
+  {
+    "question": "Jacob is married to Chloe. They have a child called Samuel. Samuel is married to Margaret. They have a child called Sophia.\n\nWhat relation is Chloe to Samuel? Answer with a single word.",
+    "answer": "mother",
+    "metadata": {
+      "source_dataset": "family_relationships",
+      "source_index": 96,
+      "person1": "Chloe",
+      "person2": "Samuel",
+      "relationship": "mother",
+      "family_size": 5,
+      "difficulty": {
+        "family_size": [
+          4,
+          8
+        ]
+      }
+    }
+  },
+  {
+    "question": "Atlas is married to Nova. They have a child called Phoenix. Phoenix is married to Ava.\n\nHow is Atlas related to Phoenix? Provide the relationship in one word.",
+    "answer": "father",
+    "metadata": {
+      "source_dataset": "family_relationships",
+      "source_index": 97,
+      "person1": "Atlas",
+      "person2": "Phoenix",
+      "relationship": "father",
+      "family_size": 4,
+      "difficulty": {
+        "family_size": [
+          4,
+          8
+        ]
+      }
+    }
+  },
+  {
+    "question": "John is married to Isabella. They have a child called Robert. Robert is married to Aria.\n\nWhat relation is John to Robert? Answer with a single word.",
+    "answer": "father",
+    "metadata": {
+      "source_dataset": "family_relationships",
+      "source_index": 98,
+      "person1": "John",
+      "person2": "Robert",
+      "relationship": "father",
+      "family_size": 4,
+      "difficulty": {
+        "family_size": [
+          4,
+          8
+        ]
+      }
+    }
+  },
+  {
+    "question": "John is married to Aurora. They have a child called Phoenix. Phoenix is married to Lily. They have children called Henry and Lucy. Theodore is married to Lisa. They have a child called Lily.\n\nHow is Phoenix related to Lucy? Provide the relationship in one word.",
+    "answer": "father",
+    "metadata": {
+      "source_dataset": "family_relationships",
+      "source_index": 99,
+      "person1": "Phoenix",
+      "person2": "Lucy",
+      "relationship": "father",
+      "family_size": 8,
+      "difficulty": {
+        "family_size": [
+          4,
+          8
+        ]
+      }
+    }
+  }
+]

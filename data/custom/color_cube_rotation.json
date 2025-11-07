@@ -1,0 +1,2806 @@
+[
+  {
+    "question": "A cube has:\n- a pink top side\n- a gray right side\n- a orange front side\n- a purple left side\n- a indigo back side\n- a cyan bottom side\n\nThe cube is rotated so that the side which was before at the bottom is now at the top.\n\nWhat is now the color of the back side of the cube?\nProvide only the color as your final answer.",
+    "answer": "orange",
+    "metadata": {
+      "source_dataset": "color_cube_rotation",
+      "source_index": 0,
+      "initial_state": {
+        "top": "pink",
+        "right": "gray",
+        "front": "orange",
+        "left": "purple",
+        "back": "indigo",
+        "bottom": "cyan"
+      },
+      "rotations": [
+        "bottom"
+      ],
+      "target_side": "back",
+      "num_rotations": 1,
+      "difficulty": {
+        "rotations": [
+          1,
+          3
+        ]
+      }
+    }
+  },
+  {
+    "question": "A cube has:\n- a gray top side\n- a brown right side\n- a silver front side\n- a red left side\n- a purple back side\n- a yellow bottom side\n\nThe cube is rotated so that the side which was before at the left is now at the top.\n\nNext, the bottom side is rotated to become the top face.\n\nAfter that the cube is turned to make the bottom face the top.\n\nWhat is now the color of the left side of the cube?\nProvide only the color as your final answer.",
+    "answer": "yellow",
+    "metadata": {
+      "source_dataset": "color_cube_rotation",
+      "source_index": 1,
+      "initial_state": {
+        "top": "gray",
+        "right": "brown",
+        "front": "silver",
+        "left": "red",
+        "back": "purple",
+        "bottom": "yellow"
+      },
+      "rotations": [
+        "left",
+        "bottom",
+        "bottom"
+      ],
+      "target_side": "left",
+      "num_rotations": 3,
+      "difficulty": {
+        "rotations": [
+          1,
+          3
+        ]
+      }
+    }
+  },
+  {
+    "question": "A cube has:\n- a orange top side\n- a cyan right side\n- a violet front side\n- a pink left side\n- a gray back side\n- a gold bottom side\n\nThe cube is rotated so that the side which was before at the left is now at the top.\n\nNow the cube is rotated to place its back side at the top.\n\nNow the cube is rotated to place its bottom side at the top.\n\nWhat is now the color of the left side of the cube?\nProvide only the color as your final answer.",
+    "answer": "gold",
+    "metadata": {
+      "source_dataset": "color_cube_rotation",
+      "source_index": 2,
+      "initial_state": {
+        "top": "orange",
+        "right": "cyan",
+        "front": "violet",
+        "left": "pink",
+        "back": "gray",
+        "bottom": "gold"
+      },
+      "rotations": [
+        "left",
+        "back",
+        "bottom"
+      ],
+      "target_side": "left",
+      "num_rotations": 3,
+      "difficulty": {
+        "rotations": [
+          1,
+          3
+        ]
+      }
+    }
+  },
+  {
+    "question": "A cube has:\n- a indigo top side\n- a silver right side\n- a cyan front side\n- a blue left side\n- a gray back side\n- a violet bottom side\n\nThe cube is rotated so that the side which was before at the right is now at the top.\n\nNow the cube is rotated to place its bottom side at the top.\n\nAfter that the cube is turned to make the right face the top.\n\nWhat is now the color of the right side of the cube?\nProvide only the color as your final answer.",
+    "answer": "silver",
+    "metadata": {
+      "source_dataset": "color_cube_rotation",
+      "source_index": 3,
+      "initial_state": {
+        "top": "indigo",
+        "right": "silver",
+        "front": "cyan",
+        "left": "blue",
+        "back": "gray",
+        "bottom": "violet"
+      },
+      "rotations": [
+        "right",
+        "bottom",
+        "right"
+      ],
+      "target_side": "right",
+      "num_rotations": 3,
+      "difficulty": {
+        "rotations": [
+          1,
+          3
+        ]
+      }
+    }
+  },
+  {
+    "question": "A cube has:\n- a green top side\n- a white right side\n- a cyan front side\n- a orange left side\n- a magenta back side\n- a indigo bottom side\n\nThe cube is rotated so that the side which was before at the left is now at the top.\n\nThen the cube is rotated to bring the bottom side to the top.\n\nNext, the left side is rotated to become the top face.\n\nWhat is now the color of the bottom side of the cube?\nProvide only the color as your final answer.",
+    "answer": "green",
+    "metadata": {
+      "source_dataset": "color_cube_rotation",
+      "source_index": 4,
+      "initial_state": {
+        "top": "green",
+        "right": "white",
+        "front": "cyan",
+        "left": "orange",
+        "back": "magenta",
+        "bottom": "indigo"
+      },
+      "rotations": [
+        "left",
+        "bottom",
+        "left"
+      ],
+      "target_side": "bottom",
+      "num_rotations": 3,
+      "difficulty": {
+        "rotations": [
+          1,
+          3
+        ]
+      }
+    }
+  },
+  {
+    "question": "A cube has:\n- a indigo top side\n- a cyan right side\n- a blue front side\n- a violet left side\n- a red back side\n- a gold bottom side\n\nThe cube is rotated so that the side which was before at the right is now at the top.\n\nWhat is now the color of the front side of the cube?\nProvide only the color as your final answer.",
+    "answer": "blue",
+    "metadata": {
+      "source_dataset": "color_cube_rotation",
+      "source_index": 5,
+      "initial_state": {
+        "top": "indigo",
+        "right": "cyan",
+        "front": "blue",
+        "left": "violet",
+        "back": "red",
+        "bottom": "gold"
+      },
+      "rotations": [
+        "right"
+      ],
+      "target_side": "front",
+      "num_rotations": 1,
+      "difficulty": {
+        "rotations": [
+          1,
+          3
+        ]
+      }
+    }
+  },
+  {
+    "question": "A cube has:\n- a orange top side\n- a violet right side\n- a indigo front side\n- a gray left side\n- a red back side\n- a pink bottom side\n\nThe cube is rotated so that the side which was before at the bottom is now at the top.\n\nWhat is now the color of the back side of the cube?\nProvide only the color as your final answer.",
+    "answer": "indigo",
+    "metadata": {
+      "source_dataset": "color_cube_rotation",
+      "source_index": 6,
+      "initial_state": {
+        "top": "orange",
+        "right": "violet",
+        "front": "indigo",
+        "left": "gray",
+        "back": "red",
+        "bottom": "pink"
+      },
+      "rotations": [
+        "bottom"
+      ],
+      "target_side": "back",
+      "num_rotations": 1,
+      "difficulty": {
+        "rotations": [
+          1,
+          3
+        ]
+      }
+    }
+  },
+  {
+    "question": "A cube has:\n- a white top side\n- a pink right side\n- a yellow front side\n- a gold left side\n- a violet back side\n- a magenta bottom side\n\nThe cube is rotated so that the side which was before at the bottom is now at the top.\n\nNow the cube is rotated to place its bottom side at the top.\n\nNow the cube is rotated to place its front side at the top.\n\nWhat is now the color of the back side of the cube?\nProvide only the color as your final answer.",
+    "answer": "white",
+    "metadata": {
+      "source_dataset": "color_cube_rotation",
+      "source_index": 7,
+      "initial_state": {
+        "top": "white",
+        "right": "pink",
+        "front": "yellow",
+        "left": "gold",
+        "back": "violet",
+        "bottom": "magenta"
+      },
+      "rotations": [
+        "bottom",
+        "bottom",
+        "front"
+      ],
+      "target_side": "back",
+      "num_rotations": 3,
+      "difficulty": {
+        "rotations": [
+          1,
+          3
+        ]
+      }
+    }
+  },
+  {
+    "question": "A cube has:\n- a brown top side\n- a purple right side\n- a magenta front side\n- a red left side\n- a gray back side\n- a blue bottom side\n\nThe cube is rotated so that the side which was before at the left is now at the top.\n\nWhat is now the color of the front side of the cube?\nProvide only the color as your final answer.",
+    "answer": "magenta",
+    "metadata": {
+      "source_dataset": "color_cube_rotation",
+      "source_index": 8,
+      "initial_state": {
+        "top": "brown",
+        "right": "purple",
+        "front": "magenta",
+        "left": "red",
+        "back": "gray",
+        "bottom": "blue"
+      },
+      "rotations": [
+        "left"
+      ],
+      "target_side": "front",
+      "num_rotations": 1,
+      "difficulty": {
+        "rotations": [
+          1,
+          3
+        ]
+      }
+    }
+  },
+  {
+    "question": "A cube has:\n- a red top side\n- a green right side\n- a magenta front side\n- a orange left side\n- a violet back side\n- a gray bottom side\n\nThe cube is rotated so that the side which was before at the left is now at the top.\n\nThen the cube is rotated to bring the back side to the top.\n\nThen the cube is rotated to bring the left side to the top.\n\nWhat is now the color of the left side of the cube?\nProvide only the color as your final answer.",
+    "answer": "magenta",
+    "metadata": {
+      "source_dataset": "color_cube_rotation",
+      "source_index": 9,
+      "initial_state": {
+        "top": "red",
+        "right": "green",
+        "front": "magenta",
+        "left": "orange",
+        "back": "violet",
+        "bottom": "gray"
+      },
+      "rotations": [
+        "left",
+        "back",
+        "left"
+      ],
+      "target_side": "left",
+      "num_rotations": 3,
+      "difficulty": {
+        "rotations": [
+          1,
+          3
+        ]
+      }
+    }
+  },
+  {
+    "question": "A cube has:\n- a cyan top side\n- a gold right side\n- a white front side\n- a silver left side\n- a gray back side\n- a yellow bottom side\n\nThe cube is rotated so that the side which was before at the bottom is now at the top.\n\nWhat is now the color of the left side of the cube?\nProvide only the color as your final answer.",
+    "answer": "silver",
+    "metadata": {
+      "source_dataset": "color_cube_rotation",
+      "source_index": 10,
+      "initial_state": {
+        "top": "cyan",
+        "right": "gold",
+        "front": "white",
+        "left": "silver",
+        "back": "gray",
+        "bottom": "yellow"
+      },
+      "rotations": [
+        "bottom"
+      ],
+      "target_side": "left",
+      "num_rotations": 1,
+      "difficulty": {
+        "rotations": [
+          1,
+          3
+        ]
+      }
+    }
+  },
+  {
+    "question": "A cube has:\n- a white top side\n- a gray right side\n- a yellow front side\n- a blue left side\n- a green back side\n- a cyan bottom side\n\nThe cube is rotated so that the side which was before at the right is now at the top.\n\nNow the cube is rotated to place its front side at the top.\n\nWhat is now the color of the top side of the cube?\nProvide only the color as your final answer.",
+    "answer": "yellow",
+    "metadata": {
+      "source_dataset": "color_cube_rotation",
+      "source_index": 11,
+      "initial_state": {
+        "top": "white",
+        "right": "gray",
+        "front": "yellow",
+        "left": "blue",
+        "back": "green",
+        "bottom": "cyan"
+      },
+      "rotations": [
+        "right",
+        "front"
+      ],
+      "target_side": "top",
+      "num_rotations": 2,
+      "difficulty": {
+        "rotations": [
+          1,
+          3
+        ]
+      }
+    }
+  },
+  {
+    "question": "A cube has:\n- a orange top side\n- a red right side\n- a gray front side\n- a green left side\n- a silver back side\n- a gold bottom side\n\nThe cube is rotated so that the side which was before at the back is now at the top.\n\nWhat is now the color of the back side of the cube?\nProvide only the color as your final answer.",
+    "answer": "gold",
+    "metadata": {
+      "source_dataset": "color_cube_rotation",
+      "source_index": 12,
+      "initial_state": {
+        "top": "orange",
+        "right": "red",
+        "front": "gray",
+        "left": "green",
+        "back": "silver",
+        "bottom": "gold"
+      },
+      "rotations": [
+        "back"
+      ],
+      "target_side": "back",
+      "num_rotations": 1,
+      "difficulty": {
+        "rotations": [
+          1,
+          3
+        ]
+      }
+    }
+  },
+  {
+    "question": "A cube has:\n- a red top side\n- a purple right side\n- a pink front side\n- a brown left side\n- a indigo back side\n- a orange bottom side\n\nThe cube is rotated so that the side which was before at the back is now at the top.\n\nThen the cube is rotated to bring the bottom side to the top.\n\nWhat is now the color of the bottom side of the cube?\nProvide only the color as your final answer.",
+    "answer": "indigo",
+    "metadata": {
+      "source_dataset": "color_cube_rotation",
+      "source_index": 13,
+      "initial_state": {
+        "top": "red",
+        "right": "purple",
+        "front": "pink",
+        "left": "brown",
+        "back": "indigo",
+        "bottom": "orange"
+      },
+      "rotations": [
+        "back",
+        "bottom"
+      ],
+      "target_side": "bottom",
+      "num_rotations": 2,
+      "difficulty": {
+        "rotations": [
+          1,
+          3
+        ]
+      }
+    }
+  },
+  {
+    "question": "A cube has:\n- a orange top side\n- a indigo right side\n- a silver front side\n- a gray left side\n- a violet back side\n- a magenta bottom side\n\nThe cube is rotated so that the side which was before at the front is now at the top.\n\nThen the cube is rotated to bring the right side to the top.\n\nAfter that the cube is turned to make the bottom face the top.\n\nWhat is now the color of the right side of the cube?\nProvide only the color as your final answer.",
+    "answer": "violet",
+    "metadata": {
+      "source_dataset": "color_cube_rotation",
+      "source_index": 14,
+      "initial_state": {
+        "top": "orange",
+        "right": "indigo",
+        "front": "silver",
+        "left": "gray",
+        "back": "violet",
+        "bottom": "magenta"
+      },
+      "rotations": [
+        "front",
+        "right",
+        "bottom"
+      ],
+      "target_side": "right",
+      "num_rotations": 3,
+      "difficulty": {
+        "rotations": [
+          1,
+          3
+        ]
+      }
+    }
+  },
+  {
+    "question": "A cube has:\n- a violet top side\n- a white right side\n- a purple front side\n- a magenta left side\n- a gold back side\n- a cyan bottom side\n\nThe cube is rotated so that the side which was before at the bottom is now at the top.\n\nThen the cube is rotated to bring the left side to the top.\n\nNext, the back side is rotated to become the top face.\n\nWhat is now the color of the left side of the cube?\nProvide only the color as your final answer.",
+    "answer": "violet",
+    "metadata": {
+      "source_dataset": "color_cube_rotation",
+      "source_index": 15,
+      "initial_state": {
+        "top": "violet",
+        "right": "white",
+        "front": "purple",
+        "left": "magenta",
+        "back": "gold",
+        "bottom": "cyan"
+      },
+      "rotations": [
+        "bottom",
+        "left",
+        "back"
+      ],
+      "target_side": "left",
+      "num_rotations": 3,
+      "difficulty": {
+        "rotations": [
+          1,
+          3
+        ]
+      }
+    }
+  },
+  {
+    "question": "A cube has:\n- a gold top side\n- a green right side\n- a white front side\n- a gray left side\n- a orange back side\n- a brown bottom side\n\nThe cube is rotated so that the side which was before at the bottom is now at the top.\n\nNext, the right side is rotated to become the top face.\n\nWhat is now the color of the top side of the cube?\nProvide only the color as your final answer.",
+    "answer": "green",
+    "metadata": {
+      "source_dataset": "color_cube_rotation",
+      "source_index": 16,
+      "initial_state": {
+        "top": "gold",
+        "right": "green",
+        "front": "white",
+        "left": "gray",
+        "back": "orange",
+        "bottom": "brown"
+      },
+      "rotations": [
+        "bottom",
+        "right"
+      ],
+      "target_side": "top",
+      "num_rotations": 2,
+      "difficulty": {
+        "rotations": [
+          1,
+          3
+        ]
+      }
+    }
+  },
+  {
+    "question": "A cube has:\n- a gold top side\n- a indigo right side\n- a silver front side\n- a gray left side\n- a orange back side\n- a yellow bottom side\n\nThe cube is rotated so that the side which was before at the bottom is now at the top.\n\nWhat is now the color of the front side of the cube?\nProvide only the color as your final answer.",
+    "answer": "orange",
+    "metadata": {
+      "source_dataset": "color_cube_rotation",
+      "source_index": 17,
+      "initial_state": {
+        "top": "gold",
+        "right": "indigo",
+        "front": "silver",
+        "left": "gray",
+        "back": "orange",
+        "bottom": "yellow"
+      },
+      "rotations": [
+        "bottom"
+      ],
+      "target_side": "front",
+      "num_rotations": 1,
+      "difficulty": {
+        "rotations": [
+          1,
+          3
+        ]
+      }
+    }
+  },
+  {
+    "question": "A cube has:\n- a gold top side\n- a brown right side\n- a cyan front side\n- a magenta left side\n- a green back side\n- a purple bottom side\n\nThe cube is rotated so that the side which was before at the right is now at the top.\n\nWhat is now the color of the left side of the cube?\nProvide only the color as your final answer.",
+    "answer": "gold",
+    "metadata": {
+      "source_dataset": "color_cube_rotation",
+      "source_index": 18,
+      "initial_state": {
+        "top": "gold",
+        "right": "brown",
+        "front": "cyan",
+        "left": "magenta",
+        "back": "green",
+        "bottom": "purple"
+      },
+      "rotations": [
+        "right"
+      ],
+      "target_side": "left",
+      "num_rotations": 1,
+      "difficulty": {
+        "rotations": [
+          1,
+          3
+        ]
+      }
+    }
+  },
+  {
+    "question": "A cube has:\n- a cyan top side\n- a gray right side\n- a green front side\n- a gold left side\n- a silver back side\n- a purple bottom side\n\nThe cube is rotated so that the side which was before at the left is now at the top.\n\nWhat is now the color of the bottom side of the cube?\nProvide only the color as your final answer.",
+    "answer": "gray",
+    "metadata": {
+      "source_dataset": "color_cube_rotation",
+      "source_index": 19,
+      "initial_state": {
+        "top": "cyan",
+        "right": "gray",
+        "front": "green",
+        "left": "gold",
+        "back": "silver",
+        "bottom": "purple"
+      },
+      "rotations": [
+        "left"
+      ],
+      "target_side": "bottom",
+      "num_rotations": 1,
+      "difficulty": {
+        "rotations": [
+          1,
+          3
+        ]
+      }
+    }
+  },
+  {
+    "question": "A cube has:\n- a gold top side\n- a cyan right side\n- a gray front side\n- a purple left side\n- a magenta back side\n- a red bottom side\n\nThe cube is rotated so that the side which was before at the back is now at the top.\n\nNow the cube is rotated to place its bottom side at the top.\n\nWhat is now the color of the top side of the cube?\nProvide only the color as your final answer.",
+    "answer": "gray",
+    "metadata": {
+      "source_dataset": "color_cube_rotation",
+      "source_index": 20,
+      "initial_state": {
+        "top": "gold",
+        "right": "cyan",
+        "front": "gray",
+        "left": "purple",
+        "back": "magenta",
+        "bottom": "red"
+      },
+      "rotations": [
+        "back",
+        "bottom"
+      ],
+      "target_side": "top",
+      "num_rotations": 2,
+      "difficulty": {
+        "rotations": [
+          1,
+          3
+        ]
+      }
+    }
+  },
+  {
+    "question": "A cube has:\n- a yellow top side\n- a gold right side\n- a brown front side\n- a blue left side\n- a magenta back side\n- a orange bottom side\n\nThe cube is rotated so that the side which was before at the bottom is now at the top.\n\nAfter that the cube is turned to make the right face the top.\n\nNow the cube is rotated to place its front side at the top.\n\nWhat is now the color of the bottom side of the cube?\nProvide only the color as your final answer.",
+    "answer": "brown",
+    "metadata": {
+      "source_dataset": "color_cube_rotation",
+      "source_index": 21,
+      "initial_state": {
+        "top": "yellow",
+        "right": "gold",
+        "front": "brown",
+        "left": "blue",
+        "back": "magenta",
+        "bottom": "orange"
+      },
+      "rotations": [
+        "bottom",
+        "right",
+        "front"
+      ],
+      "target_side": "bottom",
+      "num_rotations": 3,
+      "difficulty": {
+        "rotations": [
+          1,
+          3
+        ]
+      }
+    }
+  },
+  {
+    "question": "A cube has:\n- a blue top side\n- a silver right side\n- a gold front side\n- a pink left side\n- a indigo back side\n- a magenta bottom side\n\nThe cube is rotated so that the side which was before at the front is now at the top.\n\nNext, the right side is rotated to become the top face.\n\nWhat is now the color of the top side of the cube?\nProvide only the color as your final answer.",
+    "answer": "silver",
+    "metadata": {
+      "source_dataset": "color_cube_rotation",
+      "source_index": 22,
+      "initial_state": {
+        "top": "blue",
+        "right": "silver",
+        "front": "gold",
+        "left": "pink",
+        "back": "indigo",
+        "bottom": "magenta"
+      },
+      "rotations": [
+        "front",
+        "right"
+      ],
+      "target_side": "top",
+      "num_rotations": 2,
+      "difficulty": {
+        "rotations": [
+          1,
+          3
+        ]
+      }
+    }
+  },
+  {
+    "question": "A cube has:\n- a orange top side\n- a purple right side\n- a red front side\n- a green left side\n- a magenta back side\n- a blue bottom side\n\nThe cube is rotated so that the side which was before at the front is now at the top.\n\nThen the cube is rotated to bring the back side to the top.\n\nWhat is now the color of the back side of the cube?\nProvide only the color as your final answer.",
+    "answer": "magenta",
+    "metadata": {
+      "source_dataset": "color_cube_rotation",
+      "source_index": 23,
+      "initial_state": {
+        "top": "orange",
+        "right": "purple",
+        "front": "red",
+        "left": "green",
+        "back": "magenta",
+        "bottom": "blue"
+      },
+      "rotations": [
+        "front",
+        "back"
+      ],
+      "target_side": "back",
+      "num_rotations": 2,
+      "difficulty": {
+        "rotations": [
+          1,
+          3
+        ]
+      }
+    }
+  },
+  {
+    "question": "A cube has:\n- a gray top side\n- a red right side\n- a violet front side\n- a silver left side\n- a magenta back side\n- a gold bottom side\n\nThe cube is rotated so that the side which was before at the right is now at the top.\n\nNext, the left side is rotated to become the top face.\n\nThen the cube is rotated to bring the front side to the top.\n\nWhat is now the color of the left side of the cube?\nProvide only the color as your final answer.",
+    "answer": "silver",
+    "metadata": {
+      "source_dataset": "color_cube_rotation",
+      "source_index": 24,
+      "initial_state": {
+        "top": "gray",
+        "right": "red",
+        "front": "violet",
+        "left": "silver",
+        "back": "magenta",
+        "bottom": "gold"
+      },
+      "rotations": [
+        "right",
+        "left",
+        "front"
+      ],
+      "target_side": "left",
+      "num_rotations": 3,
+      "difficulty": {
+        "rotations": [
+          1,
+          3
+        ]
+      }
+    }
+  },
+  {
+    "question": "A cube has:\n- a brown top side\n- a yellow right side\n- a orange front side\n- a red left side\n- a indigo back side\n- a violet bottom side\n\nThe cube is rotated so that the side which was before at the right is now at the top.\n\nAfter that the cube is turned to make the front face the top.\n\nWhat is now the color of the left side of the cube?\nProvide only the color as your final answer.",
+    "answer": "brown",
+    "metadata": {
+      "source_dataset": "color_cube_rotation",
+      "source_index": 25,
+      "initial_state": {
+        "top": "brown",
+        "right": "yellow",
+        "front": "orange",
+        "left": "red",
+        "back": "indigo",
+        "bottom": "violet"
+      },
+      "rotations": [
+        "right",
+        "front"
+      ],
+      "target_side": "left",
+      "num_rotations": 2,
+      "difficulty": {
+        "rotations": [
+          1,
+          3
+        ]
+      }
+    }
+  },
+  {
+    "question": "A cube has:\n- a red top side\n- a silver right side\n- a white front side\n- a pink left side\n- a orange back side\n- a blue bottom side\n\nThe cube is rotated so that the side which was before at the bottom is now at the top.\n\nWhat is now the color of the bottom side of the cube?\nProvide only the color as your final answer.",
+    "answer": "red",
+    "metadata": {
+      "source_dataset": "color_cube_rotation",
+      "source_index": 26,
+      "initial_state": {
+        "top": "red",
+        "right": "silver",
+        "front": "white",
+        "left": "pink",
+        "back": "orange",
+        "bottom": "blue"
+      },
+      "rotations": [
+        "bottom"
+      ],
+      "target_side": "bottom",
+      "num_rotations": 1,
+      "difficulty": {
+        "rotations": [
+          1,
+          3
+        ]
+      }
+    }
+  },
+  {
+    "question": "A cube has:\n- a red top side\n- a magenta right side\n- a silver front side\n- a brown left side\n- a white back side\n- a pink bottom side\n\nThe cube is rotated so that the side which was before at the bottom is now at the top.\n\nNext, the back side is rotated to become the top face.\n\nThen the cube is rotated to bring the front side to the top.\n\nWhat is now the color of the left side of the cube?\nProvide only the color as your final answer.",
+    "answer": "brown",
+    "metadata": {
+      "source_dataset": "color_cube_rotation",
+      "source_index": 27,
+      "initial_state": {
+        "top": "red",
+        "right": "magenta",
+        "front": "silver",
+        "left": "brown",
+        "back": "white",
+        "bottom": "pink"
+      },
+      "rotations": [
+        "bottom",
+        "back",
+        "front"
+      ],
+      "target_side": "left",
+      "num_rotations": 3,
+      "difficulty": {
+        "rotations": [
+          1,
+          3
+        ]
+      }
+    }
+  },
+  {
+    "question": "A cube has:\n- a red top side\n- a violet right side\n- a silver front side\n- a brown left side\n- a indigo back side\n- a gray bottom side\n\nThe cube is rotated so that the side which was before at the front is now at the top.\n\nThen the cube is rotated to bring the back side to the top.\n\nWhat is now the color of the bottom side of the cube?\nProvide only the color as your final answer.",
+    "answer": "gray",
+    "metadata": {
+      "source_dataset": "color_cube_rotation",
+      "source_index": 28,
+      "initial_state": {
+        "top": "red",
+        "right": "violet",
+        "front": "silver",
+        "left": "brown",
+        "back": "indigo",
+        "bottom": "gray"
+      },
+      "rotations": [
+        "front",
+        "back"
+      ],
+      "target_side": "bottom",
+      "num_rotations": 2,
+      "difficulty": {
+        "rotations": [
+          1,
+          3
+        ]
+      }
+    }
+  },
+  {
+    "question": "A cube has:\n- a orange top side\n- a indigo right side\n- a silver front side\n- a purple left side\n- a pink back side\n- a green bottom side\n\nThe cube is rotated so that the side which was before at the right is now at the top.\n\nAfter that the cube is turned to make the bottom face the top.\n\nNow the cube is rotated to place its left side at the top.\n\nWhat is now the color of the left side of the cube?\nProvide only the color as your final answer.",
+    "answer": "indigo",
+    "metadata": {
+      "source_dataset": "color_cube_rotation",
+      "source_index": 29,
+      "initial_state": {
+        "top": "orange",
+        "right": "indigo",
+        "front": "silver",
+        "left": "purple",
+        "back": "pink",
+        "bottom": "green"
+      },
+      "rotations": [
+        "right",
+        "bottom",
+        "left"
+      ],
+      "target_side": "left",
+      "num_rotations": 3,
+      "difficulty": {
+        "rotations": [
+          1,
+          3
+        ]
+      }
+    }
+  },
+  {
+    "question": "A cube has:\n- a red top side\n- a yellow right side\n- a indigo front side\n- a green left side\n- a pink back side\n- a purple bottom side\n\nThe cube is rotated so that the side which was before at the back is now at the top.\n\nWhat is now the color of the right side of the cube?\nProvide only the color as your final answer.",
+    "answer": "yellow",
+    "metadata": {
+      "source_dataset": "color_cube_rotation",
+      "source_index": 30,
+      "initial_state": {
+        "top": "red",
+        "right": "yellow",
+        "front": "indigo",
+        "left": "green",
+        "back": "pink",
+        "bottom": "purple"
+      },
+      "rotations": [
+        "back"
+      ],
+      "target_side": "right",
+      "num_rotations": 1,
+      "difficulty": {
+        "rotations": [
+          1,
+          3
+        ]
+      }
+    }
+  },
+  {
+    "question": "A cube has:\n- a cyan top side\n- a red right side\n- a orange front side\n- a magenta left side\n- a silver back side\n- a purple bottom side\n\nThe cube is rotated so that the side which was before at the left is now at the top.\n\nWhat is now the color of the left side of the cube?\nProvide only the color as your final answer.",
+    "answer": "purple",
+    "metadata": {
+      "source_dataset": "color_cube_rotation",
+      "source_index": 31,
+      "initial_state": {
+        "top": "cyan",
+        "right": "red",
+        "front": "orange",
+        "left": "magenta",
+        "back": "silver",
+        "bottom": "purple"
+      },
+      "rotations": [
+        "left"
+      ],
+      "target_side": "left",
+      "num_rotations": 1,
+      "difficulty": {
+        "rotations": [
+          1,
+          3
+        ]
+      }
+    }
+  },
+  {
+    "question": "A cube has:\n- a brown top side\n- a red right side\n- a pink front side\n- a cyan left side\n- a magenta back side\n- a purple bottom side\n\nThe cube is rotated so that the side which was before at the left is now at the top.\n\nThen the cube is rotated to bring the bottom side to the top.\n\nWhat is now the color of the back side of the cube?\nProvide only the color as your final answer.",
+    "answer": "pink",
+    "metadata": {
+      "source_dataset": "color_cube_rotation",
+      "source_index": 32,
+      "initial_state": {
+        "top": "brown",
+        "right": "red",
+        "front": "pink",
+        "left": "cyan",
+        "back": "magenta",
+        "bottom": "purple"
+      },
+      "rotations": [
+        "left",
+        "bottom"
+      ],
+      "target_side": "back",
+      "num_rotations": 2,
+      "difficulty": {
+        "rotations": [
+          1,
+          3
+        ]
+      }
+    }
+  },
+  {
+    "question": "A cube has:\n- a white top side\n- a yellow right side\n- a violet front side\n- a silver left side\n- a magenta back side\n- a blue bottom side\n\nThe cube is rotated so that the side which was before at the left is now at the top.\n\nNext, the bottom side is rotated to become the top face.\n\nThen the cube is rotated to bring the back side to the top.\n\nWhat is now the color of the front side of the cube?\nProvide only the color as your final answer.",
+    "answer": "yellow",
+    "metadata": {
+      "source_dataset": "color_cube_rotation",
+      "source_index": 33,
+      "initial_state": {
+        "top": "white",
+        "right": "yellow",
+        "front": "violet",
+        "left": "silver",
+        "back": "magenta",
+        "bottom": "blue"
+      },
+      "rotations": [
+        "left",
+        "bottom",
+        "back"
+      ],
+      "target_side": "front",
+      "num_rotations": 3,
+      "difficulty": {
+        "rotations": [
+          1,
+          3
+        ]
+      }
+    }
+  },
+  {
+    "question": "A cube has:\n- a gray top side\n- a indigo right side\n- a cyan front side\n- a green left side\n- a orange back side\n- a brown bottom side\n\nThe cube is rotated so that the side which was before at the front is now at the top.\n\nThen the cube is rotated to bring the left side to the top.\n\nWhat is now the color of the back side of the cube?\nProvide only the color as your final answer.",
+    "answer": "gray",
+    "metadata": {
+      "source_dataset": "color_cube_rotation",
+      "source_index": 34,
+      "initial_state": {
+        "top": "gray",
+        "right": "indigo",
+        "front": "cyan",
+        "left": "green",
+        "back": "orange",
+        "bottom": "brown"
+      },
+      "rotations": [
+        "front",
+        "left"
+      ],
+      "target_side": "back",
+      "num_rotations": 2,
+      "difficulty": {
+        "rotations": [
+          1,
+          3
+        ]
+      }
+    }
+  },
+  {
+    "question": "A cube has:\n- a blue top side\n- a violet right side\n- a purple front side\n- a red left side\n- a indigo back side\n- a gray bottom side\n\nThe cube is rotated so that the side which was before at the front is now at the top.\n\nNext, the front side is rotated to become the top face.\n\nWhat is now the color of the back side of the cube?\nProvide only the color as your final answer.",
+    "answer": "purple",
+    "metadata": {
+      "source_dataset": "color_cube_rotation",
+      "source_index": 35,
+      "initial_state": {
+        "top": "blue",
+        "right": "violet",
+        "front": "purple",
+        "left": "red",
+        "back": "indigo",
+        "bottom": "gray"
+      },
+      "rotations": [
+        "front",
+        "front"
+      ],
+      "target_side": "back",
+      "num_rotations": 2,
+      "difficulty": {
+        "rotations": [
+          1,
+          3
+        ]
+      }
+    }
+  },
+  {
+    "question": "A cube has:\n- a pink top side\n- a brown right side\n- a gold front side\n- a gray left side\n- a indigo back side\n- a yellow bottom side\n\nThe cube is rotated so that the side which was before at the front is now at the top.\n\nWhat is now the color of the front side of the cube?\nProvide only the color as your final answer.",
+    "answer": "yellow",
+    "metadata": {
+      "source_dataset": "color_cube_rotation",
+      "source_index": 36,
+      "initial_state": {
+        "top": "pink",
+        "right": "brown",
+        "front": "gold",
+        "left": "gray",
+        "back": "indigo",
+        "bottom": "yellow"
+      },
+      "rotations": [
+        "front"
+      ],
+      "target_side": "front",
+      "num_rotations": 1,
+      "difficulty": {
+        "rotations": [
+          1,
+          3
+        ]
+      }
+    }
+  },
+  {
+    "question": "A cube has:\n- a silver top side\n- a gold right side\n- a violet front side\n- a green left side\n- a purple back side\n- a brown bottom side\n\nThe cube is rotated so that the side which was before at the left is now at the top.\n\nNow the cube is rotated to place its front side at the top.\n\nThen the cube is rotated to bring the back side to the top.\n\nWhat is now the color of the left side of the cube?\nProvide only the color as your final answer.",
+    "answer": "brown",
+    "metadata": {
+      "source_dataset": "color_cube_rotation",
+      "source_index": 37,
+      "initial_state": {
+        "top": "silver",
+        "right": "gold",
+        "front": "violet",
+        "left": "green",
+        "back": "purple",
+        "bottom": "brown"
+      },
+      "rotations": [
+        "left",
+        "front",
+        "back"
+      ],
+      "target_side": "left",
+      "num_rotations": 3,
+      "difficulty": {
+        "rotations": [
+          1,
+          3
+        ]
+      }
+    }
+  },
+  {
+    "question": "A cube has:\n- a green top side\n- a pink right side\n- a gray front side\n- a yellow left side\n- a white back side\n- a red bottom side\n\nThe cube is rotated so that the side which was before at the front is now at the top.\n\nThen the cube is rotated to bring the front side to the top.\n\nWhat is now the color of the back side of the cube?\nProvide only the color as your final answer.",
+    "answer": "gray",
+    "metadata": {
+      "source_dataset": "color_cube_rotation",
+      "source_index": 38,
+      "initial_state": {
+        "top": "green",
+        "right": "pink",
+        "front": "gray",
+        "left": "yellow",
+        "back": "white",
+        "bottom": "red"
+      },
+      "rotations": [
+        "front",
+        "front"
+      ],
+      "target_side": "back",
+      "num_rotations": 2,
+      "difficulty": {
+        "rotations": [
+          1,
+          3
+        ]
+      }
+    }
+  },
+  {
+    "question": "A cube has:\n- a magenta top side\n- a cyan right side\n- a green front side\n- a gray left side\n- a white back side\n- a violet bottom side\n\nThe cube is rotated so that the side which was before at the left is now at the top.\n\nAfter that the cube is turned to make the front face the top.\n\nThen the cube is rotated to bring the left side to the top.\n\nWhat is now the color of the bottom side of the cube?\nProvide only the color as your final answer.",
+    "answer": "magenta",
+    "metadata": {
+      "source_dataset": "color_cube_rotation",
+      "source_index": 39,
+      "initial_state": {
+        "top": "magenta",
+        "right": "cyan",
+        "front": "green",
+        "left": "gray",
+        "back": "white",
+        "bottom": "violet"
+      },
+      "rotations": [
+        "left",
+        "front",
+        "left"
+      ],
+      "target_side": "bottom",
+      "num_rotations": 3,
+      "difficulty": {
+        "rotations": [
+          1,
+          3
+        ]
+      }
+    }
+  },
+  {
+    "question": "A cube has:\n- a green top side\n- a orange right side\n- a silver front side\n- a indigo left side\n- a yellow back side\n- a red bottom side\n\nThe cube is rotated so that the side which was before at the left is now at the top.\n\nWhat is now the color of the back side of the cube?\nProvide only the color as your final answer.",
+    "answer": "yellow",
+    "metadata": {
+      "source_dataset": "color_cube_rotation",
+      "source_index": 40,
+      "initial_state": {
+        "top": "green",
+        "right": "orange",
+        "front": "silver",
+        "left": "indigo",
+        "back": "yellow",
+        "bottom": "red"
+      },
+      "rotations": [
+        "left"
+      ],
+      "target_side": "back",
+      "num_rotations": 1,
+      "difficulty": {
+        "rotations": [
+          1,
+          3
+        ]
+      }
+    }
+  },
+  {
+    "question": "A cube has:\n- a cyan top side\n- a gold right side\n- a yellow front side\n- a white left side\n- a gray back side\n- a magenta bottom side\n\nThe cube is rotated so that the side which was before at the back is now at the top.\n\nWhat is now the color of the right side of the cube?\nProvide only the color as your final answer.",
+    "answer": "gold",
+    "metadata": {
+      "source_dataset": "color_cube_rotation",
+      "source_index": 41,
+      "initial_state": {
+        "top": "cyan",
+        "right": "gold",
+        "front": "yellow",
+        "left": "white",
+        "back": "gray",
+        "bottom": "magenta"
+      },
+      "rotations": [
+        "back"
+      ],
+      "target_side": "right",
+      "num_rotations": 1,
+      "difficulty": {
+        "rotations": [
+          1,
+          3
+        ]
+      }
+    }
+  },
+  {
+    "question": "A cube has:\n- a green top side\n- a cyan right side\n- a violet front side\n- a blue left side\n- a white back side\n- a purple bottom side\n\nThe cube is rotated so that the side which was before at the left is now at the top.\n\nNow the cube is rotated to place its bottom side at the top.\n\nAfter that the cube is turned to make the back face the top.\n\nWhat is now the color of the left side of the cube?\nProvide only the color as your final answer.",
+    "answer": "purple",
+    "metadata": {
+      "source_dataset": "color_cube_rotation",
+      "source_index": 42,
+      "initial_state": {
+        "top": "green",
+        "right": "cyan",
+        "front": "violet",
+        "left": "blue",
+        "back": "white",
+        "bottom": "purple"
+      },
+      "rotations": [
+        "left",
+        "bottom",
+        "back"
+      ],
+      "target_side": "left",
+      "num_rotations": 3,
+      "difficulty": {
+        "rotations": [
+          1,
+          3
+        ]
+      }
+    }
+  },
+  {
+    "question": "A cube has:\n- a red top side\n- a violet right side\n- a blue front side\n- a brown left side\n- a silver back side\n- a gold bottom side\n\nThe cube is rotated so that the side which was before at the back is now at the top.\n\nThen the cube is rotated to bring the right side to the top.\n\nNext, the right side is rotated to become the top face.\n\nWhat is now the color of the bottom side of the cube?\nProvide only the color as your final answer.",
+    "answer": "silver",
+    "metadata": {
+      "source_dataset": "color_cube_rotation",
+      "source_index": 43,
+      "initial_state": {
+        "top": "red",
+        "right": "violet",
+        "front": "blue",
+        "left": "brown",
+        "back": "silver",
+        "bottom": "gold"
+      },
+      "rotations": [
+        "back",
+        "right",
+        "right"
+      ],
+      "target_side": "bottom",
+      "num_rotations": 3,
+      "difficulty": {
+        "rotations": [
+          1,
+          3
+        ]
+      }
+    }
+  },
+  {
+    "question": "A cube has:\n- a gray top side\n- a pink right side\n- a blue front side\n- a cyan left side\n- a yellow back side\n- a gold bottom side\n\nThe cube is rotated so that the side which was before at the back is now at the top.\n\nAfter that the cube is turned to make the right face the top.\n\nWhat is now the color of the back side of the cube?\nProvide only the color as your final answer.",
+    "answer": "gold",
+    "metadata": {
+      "source_dataset": "color_cube_rotation",
+      "source_index": 44,
+      "initial_state": {
+        "top": "gray",
+        "right": "pink",
+        "front": "blue",
+        "left": "cyan",
+        "back": "yellow",
+        "bottom": "gold"
+      },
+      "rotations": [
+        "back",
+        "right"
+      ],
+      "target_side": "back",
+      "num_rotations": 2,
+      "difficulty": {
+        "rotations": [
+          1,
+          3
+        ]
+      }
+    }
+  },
+  {
+    "question": "A cube has:\n- a silver top side\n- a cyan right side\n- a indigo front side\n- a purple left side\n- a blue back side\n- a red bottom side\n\nThe cube is rotated so that the side which was before at the back is now at the top.\n\nWhat is now the color of the back side of the cube?\nProvide only the color as your final answer.",
+    "answer": "red",
+    "metadata": {
+      "source_dataset": "color_cube_rotation",
+      "source_index": 45,
+      "initial_state": {
+        "top": "silver",
+        "right": "cyan",
+        "front": "indigo",
+        "left": "purple",
+        "back": "blue",
+        "bottom": "red"
+      },
+      "rotations": [
+        "back"
+      ],
+      "target_side": "back",
+      "num_rotations": 1,
+      "difficulty": {
+        "rotations": [
+          1,
+          3
+        ]
+      }
+    }
+  },
+  {
+    "question": "A cube has:\n- a purple top side\n- a violet right side\n- a gray front side\n- a white left side\n- a green back side\n- a indigo bottom side\n\nThe cube is rotated so that the side which was before at the front is now at the top.\n\nNext, the back side is rotated to become the top face.\n\nAfter that the cube is turned to make the back face the top.\n\nWhat is now the color of the front side of the cube?\nProvide only the color as your final answer.",
+    "answer": "purple",
+    "metadata": {
+      "source_dataset": "color_cube_rotation",
+      "source_index": 46,
+      "initial_state": {
+        "top": "purple",
+        "right": "violet",
+        "front": "gray",
+        "left": "white",
+        "back": "green",
+        "bottom": "indigo"
+      },
+      "rotations": [
+        "front",
+        "back",
+        "back"
+      ],
+      "target_side": "front",
+      "num_rotations": 3,
+      "difficulty": {
+        "rotations": [
+          1,
+          3
+        ]
+      }
+    }
+  },
+  {
+    "question": "A cube has:\n- a red top side\n- a indigo right side\n- a silver front side\n- a brown left side\n- a pink back side\n- a yellow bottom side\n\nThe cube is rotated so that the side which was before at the bottom is now at the top.\n\nWhat is now the color of the right side of the cube?\nProvide only the color as your final answer.",
+    "answer": "indigo",
+    "metadata": {
+      "source_dataset": "color_cube_rotation",
+      "source_index": 47,
+      "initial_state": {
+        "top": "red",
+        "right": "indigo",
+        "front": "silver",
+        "left": "brown",
+        "back": "pink",
+        "bottom": "yellow"
+      },
+      "rotations": [
+        "bottom"
+      ],
+      "target_side": "right",
+      "num_rotations": 1,
+      "difficulty": {
+        "rotations": [
+          1,
+          3
+        ]
+      }
+    }
+  },
+  {
+    "question": "A cube has:\n- a red top side\n- a gold right side\n- a silver front side\n- a blue left side\n- a brown back side\n- a yellow bottom side\n\nThe cube is rotated so that the side which was before at the left is now at the top.\n\nAfter that the cube is turned to make the right face the top.\n\nWhat is now the color of the back side of the cube?\nProvide only the color as your final answer.",
+    "answer": "brown",
+    "metadata": {
+      "source_dataset": "color_cube_rotation",
+      "source_index": 48,
+      "initial_state": {
+        "top": "red",
+        "right": "gold",
+        "front": "silver",
+        "left": "blue",
+        "back": "brown",
+        "bottom": "yellow"
+      },
+      "rotations": [
+        "left",
+        "right"
+      ],
+      "target_side": "back",
+      "num_rotations": 2,
+      "difficulty": {
+        "rotations": [
+          1,
+          3
+        ]
+      }
+    }
+  },
+  {
+    "question": "A cube has:\n- a white top side\n- a orange right side\n- a red front side\n- a green left side\n- a magenta back side\n- a indigo bottom side\n\nThe cube is rotated so that the side which was before at the front is now at the top.\n\nThen the cube is rotated to bring the front side to the top.\n\nWhat is now the color of the left side of the cube?\nProvide only the color as your final answer.",
+    "answer": "green",
+    "metadata": {
+      "source_dataset": "color_cube_rotation",
+      "source_index": 49,
+      "initial_state": {
+        "top": "white",
+        "right": "orange",
+        "front": "red",
+        "left": "green",
+        "back": "magenta",
+        "bottom": "indigo"
+      },
+      "rotations": [
+        "front",
+        "front"
+      ],
+      "target_side": "left",
+      "num_rotations": 2,
+      "difficulty": {
+        "rotations": [
+          1,
+          3
+        ]
+      }
+    }
+  },
+  {
+    "question": "A cube has:\n- a purple top side\n- a yellow right side\n- a orange front side\n- a blue left side\n- a cyan back side\n- a red bottom side\n\nThe cube is rotated so that the side which was before at the front is now at the top.\n\nWhat is now the color of the back side of the cube?\nProvide only the color as your final answer.",
+    "answer": "purple",
+    "metadata": {
+      "source_dataset": "color_cube_rotation",
+      "source_index": 50,
+      "initial_state": {
+        "top": "purple",
+        "right": "yellow",
+        "front": "orange",
+        "left": "blue",
+        "back": "cyan",
+        "bottom": "red"
+      },
+      "rotations": [
+        "front"
+      ],
+      "target_side": "back",
+      "num_rotations": 1,
+      "difficulty": {
+        "rotations": [
+          1,
+          3
+        ]
+      }
+    }
+  },
+  {
+    "question": "A cube has:\n- a brown top side\n- a white right side\n- a pink front side\n- a purple left side\n- a red back side\n- a yellow bottom side\n\nThe cube is rotated so that the side which was before at the bottom is now at the top.\n\nNext, the right side is rotated to become the top face.\n\nThen the cube is rotated to bring the bottom side to the top.\n\nWhat is now the color of the front side of the cube?\nProvide only the color as your final answer.",
+    "answer": "pink",
+    "metadata": {
+      "source_dataset": "color_cube_rotation",
+      "source_index": 51,
+      "initial_state": {
+        "top": "brown",
+        "right": "white",
+        "front": "pink",
+        "left": "purple",
+        "back": "red",
+        "bottom": "yellow"
+      },
+      "rotations": [
+        "bottom",
+        "right",
+        "bottom"
+      ],
+      "target_side": "front",
+      "num_rotations": 3,
+      "difficulty": {
+        "rotations": [
+          1,
+          3
+        ]
+      }
+    }
+  },
+  {
+    "question": "A cube has:\n- a indigo top side\n- a gray right side\n- a brown front side\n- a cyan left side\n- a magenta back side\n- a yellow bottom side\n\nThe cube is rotated so that the side which was before at the right is now at the top.\n\nNext, the back side is rotated to become the top face.\n\nWhat is now the color of the front side of the cube?\nProvide only the color as your final answer.",
+    "answer": "gray",
+    "metadata": {
+      "source_dataset": "color_cube_rotation",
+      "source_index": 52,
+      "initial_state": {
+        "top": "indigo",
+        "right": "gray",
+        "front": "brown",
+        "left": "cyan",
+        "back": "magenta",
+        "bottom": "yellow"
+      },
+      "rotations": [
+        "right",
+        "back"
+      ],
+      "target_side": "front",
+      "num_rotations": 2,
+      "difficulty": {
+        "rotations": [
+          1,
+          3
+        ]
+      }
+    }
+  },
+  {
+    "question": "A cube has:\n- a indigo top side\n- a purple right side\n- a gold front side\n- a cyan left side\n- a orange back side\n- a brown bottom side\n\nThe cube is rotated so that the side which was before at the left is now at the top.\n\nAfter that the cube is turned to make the back face the top.\n\nWhat is now the color of the front side of the cube?\nProvide only the color as your final answer.",
+    "answer": "cyan",
+    "metadata": {
+      "source_dataset": "color_cube_rotation",
+      "source_index": 53,
+      "initial_state": {
+        "top": "indigo",
+        "right": "purple",
+        "front": "gold",
+        "left": "cyan",
+        "back": "orange",
+        "bottom": "brown"
+      },
+      "rotations": [
+        "left",
+        "back"
+      ],
+      "target_side": "front",
+      "num_rotations": 2,
+      "difficulty": {
+        "rotations": [
+          1,
+          3
+        ]
+      }
+    }
+  },
+  {
+    "question": "A cube has:\n- a gray top side\n- a white right side\n- a gold front side\n- a pink left side\n- a blue back side\n- a violet bottom side\n\nThe cube is rotated so that the side which was before at the left is now at the top.\n\nThen the cube is rotated to bring the front side to the top.\n\nWhat is now the color of the back side of the cube?\nProvide only the color as your final answer.",
+    "answer": "pink",
+    "metadata": {
+      "source_dataset": "color_cube_rotation",
+      "source_index": 54,
+      "initial_state": {
+        "top": "gray",
+        "right": "white",
+        "front": "gold",
+        "left": "pink",
+        "back": "blue",
+        "bottom": "violet"
+      },
+      "rotations": [
+        "left",
+        "front"
+      ],
+      "target_side": "back",
+      "num_rotations": 2,
+      "difficulty": {
+        "rotations": [
+          1,
+          3
+        ]
+      }
+    }
+  },
+  {
+    "question": "A cube has:\n- a green top side\n- a yellow right side\n- a indigo front side\n- a white left side\n- a blue back side\n- a silver bottom side\n\nThe cube is rotated so that the side which was before at the back is now at the top.\n\nAfter that the cube is turned to make the back face the top.\n\nNow the cube is rotated to place its right side at the top.\n\nWhat is now the color of the front side of the cube?\nProvide only the color as your final answer.",
+    "answer": "blue",
+    "metadata": {
+      "source_dataset": "color_cube_rotation",
+      "source_index": 55,
+      "initial_state": {
+        "top": "green",
+        "right": "yellow",
+        "front": "indigo",
+        "left": "white",
+        "back": "blue",
+        "bottom": "silver"
+      },
+      "rotations": [
+        "back",
+        "back",
+        "right"
+      ],
+      "target_side": "front",
+      "num_rotations": 3,
+      "difficulty": {
+        "rotations": [
+          1,
+          3
+        ]
+      }
+    }
+  },
+  {
+    "question": "A cube has:\n- a blue top side\n- a yellow right side\n- a green front side\n- a indigo left side\n- a brown back side\n- a cyan bottom side\n\nThe cube is rotated so that the side which was before at the right is now at the top.\n\nThen the cube is rotated to bring the left side to the top.\n\nWhat is now the color of the top side of the cube?\nProvide only the color as your final answer.",
+    "answer": "blue",
+    "metadata": {
+      "source_dataset": "color_cube_rotation",
+      "source_index": 56,
+      "initial_state": {
+        "top": "blue",
+        "right": "yellow",
+        "front": "green",
+        "left": "indigo",
+        "back": "brown",
+        "bottom": "cyan"
+      },
+      "rotations": [
+        "right",
+        "left"
+      ],
+      "target_side": "top",
+      "num_rotations": 2,
+      "difficulty": {
+        "rotations": [
+          1,
+          3
+        ]
+      }
+    }
+  },
+  {
+    "question": "A cube has:\n- a white top side\n- a pink right side\n- a indigo front side\n- a red left side\n- a violet back side\n- a orange bottom side\n\nThe cube is rotated so that the side which was before at the back is now at the top.\n\nWhat is now the color of the bottom side of the cube?\nProvide only the color as your final answer.",
+    "answer": "indigo",
+    "metadata": {
+      "source_dataset": "color_cube_rotation",
+      "source_index": 57,
+      "initial_state": {
+        "top": "white",
+        "right": "pink",
+        "front": "indigo",
+        "left": "red",
+        "back": "violet",
+        "bottom": "orange"
+      },
+      "rotations": [
+        "back"
+      ],
+      "target_side": "bottom",
+      "num_rotations": 1,
+      "difficulty": {
+        "rotations": [
+          1,
+          3
+        ]
+      }
+    }
+  },
+  {
+    "question": "A cube has:\n- a magenta top side\n- a brown right side\n- a silver front side\n- a yellow left side\n- a gray back side\n- a red bottom side\n\nThe cube is rotated so that the side which was before at the front is now at the top.\n\nAfter that the cube is turned to make the left face the top.\n\nAfter that the cube is turned to make the front face the top.\n\nWhat is now the color of the front side of the cube?\nProvide only the color as your final answer.",
+    "answer": "brown",
+    "metadata": {
+      "source_dataset": "color_cube_rotation",
+      "source_index": 58,
+      "initial_state": {
+        "top": "magenta",
+        "right": "brown",
+        "front": "silver",
+        "left": "yellow",
+        "back": "gray",
+        "bottom": "red"
+      },
+      "rotations": [
+        "front",
+        "left",
+        "front"
+      ],
+      "target_side": "front",
+      "num_rotations": 3,
+      "difficulty": {
+        "rotations": [
+          1,
+          3
+        ]
+      }
+    }
+  },
+  {
+    "question": "A cube has:\n- a gold top side\n- a cyan right side\n- a white front side\n- a violet left side\n- a green back side\n- a magenta bottom side\n\nThe cube is rotated so that the side which was before at the front is now at the top.\n\nNext, the front side is rotated to become the top face.\n\nWhat is now the color of the top side of the cube?\nProvide only the color as your final answer.",
+    "answer": "magenta",
+    "metadata": {
+      "source_dataset": "color_cube_rotation",
+      "source_index": 59,
+      "initial_state": {
+        "top": "gold",
+        "right": "cyan",
+        "front": "white",
+        "left": "violet",
+        "back": "green",
+        "bottom": "magenta"
+      },
+      "rotations": [
+        "front",
+        "front"
+      ],
+      "target_side": "top",
+      "num_rotations": 2,
+      "difficulty": {
+        "rotations": [
+          1,
+          3
+        ]
+      }
+    }
+  },
+  {
+    "question": "A cube has:\n- a green top side\n- a gold right side\n- a pink front side\n- a red left side\n- a yellow back side\n- a violet bottom side\n\nThe cube is rotated so that the side which was before at the back is now at the top.\n\nAfter that the cube is turned to make the back face the top.\n\nThen the cube is rotated to bring the front side to the top.\n\nWhat is now the color of the back side of the cube?\nProvide only the color as your final answer.",
+    "answer": "violet",
+    "metadata": {
+      "source_dataset": "color_cube_rotation",
+      "source_index": 60,
+      "initial_state": {
+        "top": "green",
+        "right": "gold",
+        "front": "pink",
+        "left": "red",
+        "back": "yellow",
+        "bottom": "violet"
+      },
+      "rotations": [
+        "back",
+        "back",
+        "front"
+      ],
+      "target_side": "back",
+      "num_rotations": 3,
+      "difficulty": {
+        "rotations": [
+          1,
+          3
+        ]
+      }
+    }
+  },
+  {
+    "question": "A cube has:\n- a brown top side\n- a orange right side\n- a white front side\n- a pink left side\n- a red back side\n- a blue bottom side\n\nThe cube is rotated so that the side which was before at the bottom is now at the top.\n\nWhat is now the color of the top side of the cube?\nProvide only the color as your final answer.",
+    "answer": "blue",
+    "metadata": {
+      "source_dataset": "color_cube_rotation",
+      "source_index": 61,
+      "initial_state": {
+        "top": "brown",
+        "right": "orange",
+        "front": "white",
+        "left": "pink",
+        "back": "red",
+        "bottom": "blue"
+      },
+      "rotations": [
+        "bottom"
+      ],
+      "target_side": "top",
+      "num_rotations": 1,
+      "difficulty": {
+        "rotations": [
+          1,
+          3
+        ]
+      }
+    }
+  },
+  {
+    "question": "A cube has:\n- a white top side\n- a pink right side\n- a gold front side\n- a gray left side\n- a green back side\n- a brown bottom side\n\nThe cube is rotated so that the side which was before at the left is now at the top.\n\nWhat is now the color of the front side of the cube?\nProvide only the color as your final answer.",
+    "answer": "gold",
+    "metadata": {
+      "source_dataset": "color_cube_rotation",
+      "source_index": 62,
+      "initial_state": {
+        "top": "white",
+        "right": "pink",
+        "front": "gold",
+        "left": "gray",
+        "back": "green",
+        "bottom": "brown"
+      },
+      "rotations": [
+        "left"
+      ],
+      "target_side": "front",
+      "num_rotations": 1,
+      "difficulty": {
+        "rotations": [
+          1,
+          3
+        ]
+      }
+    }
+  },
+  {
+    "question": "A cube has:\n- a indigo top side\n- a yellow right side\n- a violet front side\n- a pink left side\n- a purple back side\n- a blue bottom side\n\nThe cube is rotated so that the side which was before at the front is now at the top.\n\nNext, the back side is rotated to become the top face.\n\nWhat is now the color of the back side of the cube?\nProvide only the color as your final answer.",
+    "answer": "purple",
+    "metadata": {
+      "source_dataset": "color_cube_rotation",
+      "source_index": 63,
+      "initial_state": {
+        "top": "indigo",
+        "right": "yellow",
+        "front": "violet",
+        "left": "pink",
+        "back": "purple",
+        "bottom": "blue"
+      },
+      "rotations": [
+        "front",
+        "back"
+      ],
+      "target_side": "back",
+      "num_rotations": 2,
+      "difficulty": {
+        "rotations": [
+          1,
+          3
+        ]
+      }
+    }
+  },
+  {
+    "question": "A cube has:\n- a cyan top side\n- a gray right side\n- a gold front side\n- a orange left side\n- a blue back side\n- a magenta bottom side\n\nThe cube is rotated so that the side which was before at the front is now at the top.\n\nNext, the back side is rotated to become the top face.\n\nAfter that the cube is turned to make the left face the top.\n\nWhat is now the color of the bottom side of the cube?\nProvide only the color as your final answer.",
+    "answer": "gray",
+    "metadata": {
+      "source_dataset": "color_cube_rotation",
+      "source_index": 64,
+      "initial_state": {
+        "top": "cyan",
+        "right": "gray",
+        "front": "gold",
+        "left": "orange",
+        "back": "blue",
+        "bottom": "magenta"
+      },
+      "rotations": [
+        "front",
+        "back",
+        "left"
+      ],
+      "target_side": "bottom",
+      "num_rotations": 3,
+      "difficulty": {
+        "rotations": [
+          1,
+          3
+        ]
+      }
+    }
+  },
+  {
+    "question": "A cube has:\n- a orange top side\n- a blue right side\n- a silver front side\n- a red left side\n- a brown back side\n- a yellow bottom side\n\nThe cube is rotated so that the side which was before at the right is now at the top.\n\nAfter that the cube is turned to make the left face the top.\n\nAfter that the cube is turned to make the left face the top.\n\nWhat is now the color of the right side of the cube?\nProvide only the color as your final answer.",
+    "answer": "orange",
+    "metadata": {
+      "source_dataset": "color_cube_rotation",
+      "source_index": 65,
+      "initial_state": {
+        "top": "orange",
+        "right": "blue",
+        "front": "silver",
+        "left": "red",
+        "back": "brown",
+        "bottom": "yellow"
+      },
+      "rotations": [
+        "right",
+        "left",
+        "left"
+      ],
+      "target_side": "right",
+      "num_rotations": 3,
+      "difficulty": {
+        "rotations": [
+          1,
+          3
+        ]
+      }
+    }
+  },
+  {
+    "question": "A cube has:\n- a orange top side\n- a pink right side\n- a brown front side\n- a gray left side\n- a gold back side\n- a blue bottom side\n\nThe cube is rotated so that the side which was before at the right is now at the top.\n\nWhat is now the color of the right side of the cube?\nProvide only the color as your final answer.",
+    "answer": "blue",
+    "metadata": {
+      "source_dataset": "color_cube_rotation",
+      "source_index": 66,
+      "initial_state": {
+        "top": "orange",
+        "right": "pink",
+        "front": "brown",
+        "left": "gray",
+        "back": "gold",
+        "bottom": "blue"
+      },
+      "rotations": [
+        "right"
+      ],
+      "target_side": "right",
+      "num_rotations": 1,
+      "difficulty": {
+        "rotations": [
+          1,
+          3
+        ]
+      }
+    }
+  },
+  {
+    "question": "A cube has:\n- a purple top side\n- a gray right side\n- a magenta front side\n- a cyan left side\n- a orange back side\n- a white bottom side\n\nThe cube is rotated so that the side which was before at the left is now at the top.\n\nNow the cube is rotated to place its back side at the top.\n\nThen the cube is rotated to bring the front side to the top.\n\nWhat is now the color of the front side of the cube?\nProvide only the color as your final answer.",
+    "answer": "magenta",
+    "metadata": {
+      "source_dataset": "color_cube_rotation",
+      "source_index": 67,
+      "initial_state": {
+        "top": "purple",
+        "right": "gray",
+        "front": "magenta",
+        "left": "cyan",
+        "back": "orange",
+        "bottom": "white"
+      },
+      "rotations": [
+        "left",
+        "back",
+        "front"
+      ],
+      "target_side": "front",
+      "num_rotations": 3,
+      "difficulty": {
+        "rotations": [
+          1,
+          3
+        ]
+      }
+    }
+  },
+  {
+    "question": "A cube has:\n- a indigo top side\n- a red right side\n- a orange front side\n- a blue left side\n- a cyan back side\n- a magenta bottom side\n\nThe cube is rotated so that the side which was before at the bottom is now at the top.\n\nWhat is now the color of the top side of the cube?\nProvide only the color as your final answer.",
+    "answer": "magenta",
+    "metadata": {
+      "source_dataset": "color_cube_rotation",
+      "source_index": 68,
+      "initial_state": {
+        "top": "indigo",
+        "right": "red",
+        "front": "orange",
+        "left": "blue",
+        "back": "cyan",
+        "bottom": "magenta"
+      },
+      "rotations": [
+        "bottom"
+      ],
+      "target_side": "top",
+      "num_rotations": 1,
+      "difficulty": {
+        "rotations": [
+          1,
+          3
+        ]
+      }
+    }
+  },
+  {
+    "question": "A cube has:\n- a brown top side\n- a gray right side\n- a red front side\n- a green left side\n- a white back side\n- a gold bottom side\n\nThe cube is rotated so that the side which was before at the back is now at the top.\n\nAfter that the cube is turned to make the left face the top.\n\nWhat is now the color of the left side of the cube?\nProvide only the color as your final answer.",
+    "answer": "red",
+    "metadata": {
+      "source_dataset": "color_cube_rotation",
+      "source_index": 69,
+      "initial_state": {
+        "top": "brown",
+        "right": "gray",
+        "front": "red",
+        "left": "green",
+        "back": "white",
+        "bottom": "gold"
+      },
+      "rotations": [
+        "back",
+        "left"
+      ],
+      "target_side": "left",
+      "num_rotations": 2,
+      "difficulty": {
+        "rotations": [
+          1,
+          3
+        ]
+      }
+    }
+  },
+  {
+    "question": "A cube has:\n- a brown top side\n- a orange right side\n- a red front side\n- a yellow left side\n- a indigo back side\n- a green bottom side\n\nThe cube is rotated so that the side which was before at the front is now at the top.\n\nNow the cube is rotated to place its back side at the top.\n\nAfter that the cube is turned to make the back face the top.\n\nWhat is now the color of the front side of the cube?\nProvide only the color as your final answer.",
+    "answer": "brown",
+    "metadata": {
+      "source_dataset": "color_cube_rotation",
+      "source_index": 70,
+      "initial_state": {
+        "top": "brown",
+        "right": "orange",
+        "front": "red",
+        "left": "yellow",
+        "back": "indigo",
+        "bottom": "green"
+      },
+      "rotations": [
+        "front",
+        "back",
+        "back"
+      ],
+      "target_side": "front",
+      "num_rotations": 3,
+      "difficulty": {
+        "rotations": [
+          1,
+          3
+        ]
+      }
+    }
+  },
+  {
+    "question": "A cube has:\n- a blue top side\n- a brown right side\n- a purple front side\n- a indigo left side\n- a gray back side\n- a yellow bottom side\n\nThe cube is rotated so that the side which was before at the left is now at the top.\n\nNext, the back side is rotated to become the top face.\n\nNow the cube is rotated to place its left side at the top.\n\nWhat is now the color of the front side of the cube?\nProvide only the color as your final answer.",
+    "answer": "indigo",
+    "metadata": {
+      "source_dataset": "color_cube_rotation",
+      "source_index": 71,
+      "initial_state": {
+        "top": "blue",
+        "right": "brown",
+        "front": "purple",
+        "left": "indigo",
+        "back": "gray",
+        "bottom": "yellow"
+      },
+      "rotations": [
+        "left",
+        "back",
+        "left"
+      ],
+      "target_side": "front",
+      "num_rotations": 3,
+      "difficulty": {
+        "rotations": [
+          1,
+          3
+        ]
+      }
+    }
+  },
+  {
+    "question": "A cube has:\n- a silver top side\n- a brown right side\n- a magenta front side\n- a violet left side\n- a gold back side\n- a purple bottom side\n\nThe cube is rotated so that the side which was before at the left is now at the top.\n\nNext, the left side is rotated to become the top face.\n\nNext, the right side is rotated to become the top face.\n\nWhat is now the color of the top side of the cube?\nProvide only the color as your final answer.",
+    "answer": "violet",
+    "metadata": {
+      "source_dataset": "color_cube_rotation",
+      "source_index": 72,
+      "initial_state": {
+        "top": "silver",
+        "right": "brown",
+        "front": "magenta",
+        "left": "violet",
+        "back": "gold",
+        "bottom": "purple"
+      },
+      "rotations": [
+        "left",
+        "left",
+        "right"
+      ],
+      "target_side": "top",
+      "num_rotations": 3,
+      "difficulty": {
+        "rotations": [
+          1,
+          3
+        ]
+      }
+    }
+  },
+  {
+    "question": "A cube has:\n- a indigo top side\n- a red right side\n- a cyan front side\n- a pink left side\n- a blue back side\n- a purple bottom side\n\nThe cube is rotated so that the side which was before at the bottom is now at the top.\n\nNow the cube is rotated to place its front side at the top.\n\nAfter that the cube is turned to make the front face the top.\n\nWhat is now the color of the top side of the cube?\nProvide only the color as your final answer.",
+    "answer": "indigo",
+    "metadata": {
+      "source_dataset": "color_cube_rotation",
+      "source_index": 73,
+      "initial_state": {
+        "top": "indigo",
+        "right": "red",
+        "front": "cyan",
+        "left": "pink",
+        "back": "blue",
+        "bottom": "purple"
+      },
+      "rotations": [
+        "bottom",
+        "front",
+        "front"
+      ],
+      "target_side": "top",
+      "num_rotations": 3,
+      "difficulty": {
+        "rotations": [
+          1,
+          3
+        ]
+      }
+    }
+  },
+  {
+    "question": "A cube has:\n- a magenta top side\n- a indigo right side\n- a purple front side\n- a orange left side\n- a white back side\n- a brown bottom side\n\nThe cube is rotated so that the side which was before at the right is now at the top.\n\nNow the cube is rotated to place its left side at the top.\n\nWhat is now the color of the back side of the cube?\nProvide only the color as your final answer.",
+    "answer": "white",
+    "metadata": {
+      "source_dataset": "color_cube_rotation",
+      "source_index": 74,
+      "initial_state": {
+        "top": "magenta",
+        "right": "indigo",
+        "front": "purple",
+        "left": "orange",
+        "back": "white",
+        "bottom": "brown"
+      },
+      "rotations": [
+        "right",
+        "left"
+      ],
+      "target_side": "back",
+      "num_rotations": 2,
+      "difficulty": {
+        "rotations": [
+          1,
+          3
+        ]
+      }
+    }
+  },
+  {
+    "question": "A cube has:\n- a red top side\n- a gold right side\n- a violet front side\n- a cyan left side\n- a gray back side\n- a white bottom side\n\nThe cube is rotated so that the side which was before at the right is now at the top.\n\nThen the cube is rotated to bring the front side to the top.\n\nAfter that the cube is turned to make the left face the top.\n\nWhat is now the color of the left side of the cube?\nProvide only the color as your final answer.",
+    "answer": "gray",
+    "metadata": {
+      "source_dataset": "color_cube_rotation",
+      "source_index": 75,
+      "initial_state": {
+        "top": "red",
+        "right": "gold",
+        "front": "violet",
+        "left": "cyan",
+        "back": "gray",
+        "bottom": "white"
+      },
+      "rotations": [
+        "right",
+        "front",
+        "left"
+      ],
+      "target_side": "left",
+      "num_rotations": 3,
+      "difficulty": {
+        "rotations": [
+          1,
+          3
+        ]
+      }
+    }
+  },
+  {
+    "question": "A cube has:\n- a silver top side\n- a purple right side\n- a pink front side\n- a blue left side\n- a yellow back side\n- a brown bottom side\n\nThe cube is rotated so that the side which was before at the bottom is now at the top.\n\nAfter that the cube is turned to make the right face the top.\n\nNext, the front side is rotated to become the top face.\n\nWhat is now the color of the back side of the cube?\nProvide only the color as your final answer.",
+    "answer": "purple",
+    "metadata": {
+      "source_dataset": "color_cube_rotation",
+      "source_index": 76,
+      "initial_state": {
+        "top": "silver",
+        "right": "purple",
+        "front": "pink",
+        "left": "blue",
+        "back": "yellow",
+        "bottom": "brown"
+      },
+      "rotations": [
+        "bottom",
+        "right",
+        "front"
+      ],
+      "target_side": "back",
+      "num_rotations": 3,
+      "difficulty": {
+        "rotations": [
+          1,
+          3
+        ]
+      }
+    }
+  },
+  {
+    "question": "A cube has:\n- a violet top side\n- a indigo right side\n- a orange front side\n- a white left side\n- a pink back side\n- a yellow bottom side\n\nThe cube is rotated so that the side which was before at the back is now at the top.\n\nWhat is now the color of the back side of the cube?\nProvide only the color as your final answer.",
+    "answer": "yellow",
+    "metadata": {
+      "source_dataset": "color_cube_rotation",
+      "source_index": 77,
+      "initial_state": {
+        "top": "violet",
+        "right": "indigo",
+        "front": "orange",
+        "left": "white",
+        "back": "pink",
+        "bottom": "yellow"
+      },
+      "rotations": [
+        "back"
+      ],
+      "target_side": "back",
+      "num_rotations": 1,
+      "difficulty": {
+        "rotations": [
+          1,
+          3
+        ]
+      }
+    }
+  },
+  {
+    "question": "A cube has:\n- a red top side\n- a white right side\n- a indigo front side\n- a blue left side\n- a gold back side\n- a brown bottom side\n\nThe cube is rotated so that the side which was before at the front is now at the top.\n\nNow the cube is rotated to place its right side at the top.\n\nWhat is now the color of the bottom side of the cube?\nProvide only the color as your final answer.",
+    "answer": "blue",
+    "metadata": {
+      "source_dataset": "color_cube_rotation",
+      "source_index": 78,
+      "initial_state": {
+        "top": "red",
+        "right": "white",
+        "front": "indigo",
+        "left": "blue",
+        "back": "gold",
+        "bottom": "brown"
+      },
+      "rotations": [
+        "front",
+        "right"
+      ],
+      "target_side": "bottom",
+      "num_rotations": 2,
+      "difficulty": {
+        "rotations": [
+          1,
+          3
+        ]
+      }
+    }
+  },
+  {
+    "question": "A cube has:\n- a orange top side\n- a white right side\n- a red front side\n- a indigo left side\n- a green back side\n- a gold bottom side\n\nThe cube is rotated so that the side which was before at the right is now at the top.\n\nWhat is now the color of the left side of the cube?\nProvide only the color as your final answer.",
+    "answer": "orange",
+    "metadata": {
+      "source_dataset": "color_cube_rotation",
+      "source_index": 79,
+      "initial_state": {
+        "top": "orange",
+        "right": "white",
+        "front": "red",
+        "left": "indigo",
+        "back": "green",
+        "bottom": "gold"
+      },
+      "rotations": [
+        "right"
+      ],
+      "target_side": "left",
+      "num_rotations": 1,
+      "difficulty": {
+        "rotations": [
+          1,
+          3
+        ]
+      }
+    }
+  },
+  {
+    "question": "A cube has:\n- a violet top side\n- a gold right side\n- a cyan front side\n- a magenta left side\n- a indigo back side\n- a brown bottom side\n\nThe cube is rotated so that the side which was before at the front is now at the top.\n\nNext, the left side is rotated to become the top face.\n\nWhat is now the color of the front side of the cube?\nProvide only the color as your final answer.",
+    "answer": "brown",
+    "metadata": {
+      "source_dataset": "color_cube_rotation",
+      "source_index": 80,
+      "initial_state": {
+        "top": "violet",
+        "right": "gold",
+        "front": "cyan",
+        "left": "magenta",
+        "back": "indigo",
+        "bottom": "brown"
+      },
+      "rotations": [
+        "front",
+        "left"
+      ],
+      "target_side": "front",
+      "num_rotations": 2,
+      "difficulty": {
+        "rotations": [
+          1,
+          3
+        ]
+      }
+    }
+  },
+  {
+    "question": "A cube has:\n- a gray top side\n- a yellow right side\n- a brown front side\n- a orange left side\n- a blue back side\n- a pink bottom side\n\nThe cube is rotated so that the side which was before at the left is now at the top.\n\nWhat is now the color of the back side of the cube?\nProvide only the color as your final answer.",
+    "answer": "blue",
+    "metadata": {
+      "source_dataset": "color_cube_rotation",
+      "source_index": 81,
+      "initial_state": {
+        "top": "gray",
+        "right": "yellow",
+        "front": "brown",
+        "left": "orange",
+        "back": "blue",
+        "bottom": "pink"
+      },
+      "rotations": [
+        "left"
+      ],
+      "target_side": "back",
+      "num_rotations": 1,
+      "difficulty": {
+        "rotations": [
+          1,
+          3
+        ]
+      }
+    }
+  },
+  {
+    "question": "A cube has:\n- a gray top side\n- a pink right side\n- a indigo front side\n- a cyan left side\n- a yellow back side\n- a green bottom side\n\nThe cube is rotated so that the side which was before at the back is now at the top.\n\nAfter that the cube is turned to make the bottom face the top.\n\nAfter that the cube is turned to make the back face the top.\n\nWhat is now the color of the top side of the cube?\nProvide only the color as your final answer.",
+    "answer": "gray",
+    "metadata": {
+      "source_dataset": "color_cube_rotation",
+      "source_index": 82,
+      "initial_state": {
+        "top": "gray",
+        "right": "pink",
+        "front": "indigo",
+        "left": "cyan",
+        "back": "yellow",
+        "bottom": "green"
+      },
+      "rotations": [
+        "back",
+        "bottom",
+        "back"
+      ],
+      "target_side": "top",
+      "num_rotations": 3,
+      "difficulty": {
+        "rotations": [
+          1,
+          3
+        ]
+      }
+    }
+  },
+  {
+    "question": "A cube has:\n- a purple top side\n- a violet right side\n- a indigo front side\n- a red left side\n- a brown back side\n- a cyan bottom side\n\nThe cube is rotated so that the side which was before at the bottom is now at the top.\n\nThen the cube is rotated to bring the back side to the top.\n\nWhat is now the color of the bottom side of the cube?\nProvide only the color as your final answer.",
+    "answer": "brown",
+    "metadata": {
+      "source_dataset": "color_cube_rotation",
+      "source_index": 83,
+      "initial_state": {
+        "top": "purple",
+        "right": "violet",
+        "front": "indigo",
+        "left": "red",
+        "back": "brown",
+        "bottom": "cyan"
+      },
+      "rotations": [
+        "bottom",
+        "back"
+      ],
+      "target_side": "bottom",
+      "num_rotations": 2,
+      "difficulty": {
+        "rotations": [
+          1,
+          3
+        ]
+      }
+    }
+  },
+  {
+    "question": "A cube has:\n- a silver top side\n- a white right side\n- a red front side\n- a magenta left side\n- a orange back side\n- a purple bottom side\n\nThe cube is rotated so that the side which was before at the front is now at the top.\n\nNext, the left side is rotated to become the top face.\n\nThen the cube is rotated to bring the front side to the top.\n\nWhat is now the color of the left side of the cube?\nProvide only the color as your final answer.",
+    "answer": "orange",
+    "metadata": {
+      "source_dataset": "color_cube_rotation",
+      "source_index": 84,
+      "initial_state": {
+        "top": "silver",
+        "right": "white",
+        "front": "red",
+        "left": "magenta",
+        "back": "orange",
+        "bottom": "purple"
+      },
+      "rotations": [
+        "front",
+        "left",
+        "front"
+      ],
+      "target_side": "left",
+      "num_rotations": 3,
+      "difficulty": {
+        "rotations": [
+          1,
+          3
+        ]
+      }
+    }
+  },
+  {
+    "question": "A cube has:\n- a brown top side\n- a pink right side\n- a orange front side\n- a blue left side\n- a purple back side\n- a yellow bottom side\n\nThe cube is rotated so that the side which was before at the right is now at the top.\n\nThen the cube is rotated to bring the left side to the top.\n\nWhat is now the color of the front side of the cube?\nProvide only the color as your final answer.",
+    "answer": "orange",
+    "metadata": {
+      "source_dataset": "color_cube_rotation",
+      "source_index": 85,
+      "initial_state": {
+        "top": "brown",
+        "right": "pink",
+        "front": "orange",
+        "left": "blue",
+        "back": "purple",
+        "bottom": "yellow"
+      },
+      "rotations": [
+        "right",
+        "left"
+      ],
+      "target_side": "front",
+      "num_rotations": 2,
+      "difficulty": {
+        "rotations": [
+          1,
+          3
+        ]
+      }
+    }
+  },
+  {
+    "question": "A cube has:\n- a green top side\n- a yellow right side\n- a gray front side\n- a indigo left side\n- a silver back side\n- a white bottom side\n\nThe cube is rotated so that the side which was before at the left is now at the top.\n\nWhat is now the color of the front side of the cube?\nProvide only the color as your final answer.",
+    "answer": "gray",
+    "metadata": {
+      "source_dataset": "color_cube_rotation",
+      "source_index": 86,
+      "initial_state": {
+        "top": "green",
+        "right": "yellow",
+        "front": "gray",
+        "left": "indigo",
+        "back": "silver",
+        "bottom": "white"
+      },
+      "rotations": [
+        "left"
+      ],
+      "target_side": "front",
+      "num_rotations": 1,
+      "difficulty": {
+        "rotations": [
+          1,
+          3
+        ]
+      }
+    }
+  },
+  {
+    "question": "A cube has:\n- a indigo top side\n- a violet right side\n- a blue front side\n- a gold left side\n- a pink back side\n- a white bottom side\n\nThe cube is rotated so that the side which was before at the front is now at the top.\n\nNext, the front side is rotated to become the top face.\n\nAfter that the cube is turned to make the back face the top.\n\nWhat is now the color of the bottom side of the cube?\nProvide only the color as your final answer.",
+    "answer": "pink",
+    "metadata": {
+      "source_dataset": "color_cube_rotation",
+      "source_index": 87,
+      "initial_state": {
+        "top": "indigo",
+        "right": "violet",
+        "front": "blue",
+        "left": "gold",
+        "back": "pink",
+        "bottom": "white"
+      },
+      "rotations": [
+        "front",
+        "front",
+        "back"
+      ],
+      "target_side": "bottom",
+      "num_rotations": 3,
+      "difficulty": {
+        "rotations": [
+          1,
+          3
+        ]
+      }
+    }
+  },
+  {
+    "question": "A cube has:\n- a gray top side\n- a brown right side\n- a yellow front side\n- a purple left side\n- a blue back side\n- a indigo bottom side\n\nThe cube is rotated so that the side which was before at the front is now at the top.\n\nThen the cube is rotated to bring the left side to the top.\n\nNow the cube is rotated to place its right side at the top.\n\nWhat is now the color of the left side of the cube?\nProvide only the color as your final answer.",
+    "answer": "purple",
+    "metadata": {
+      "source_dataset": "color_cube_rotation",
+      "source_index": 88,
+      "initial_state": {
+        "top": "gray",
+        "right": "brown",
+        "front": "yellow",
+        "left": "purple",
+        "back": "blue",
+        "bottom": "indigo"
+      },
+      "rotations": [
+        "front",
+        "left",
+        "right"
+      ],
+      "target_side": "left",
+      "num_rotations": 3,
+      "difficulty": {
+        "rotations": [
+          1,
+          3
+        ]
+      }
+    }
+  },
+  {
+    "question": "A cube has:\n- a magenta top side\n- a yellow right side\n- a gray front side\n- a indigo left side\n- a blue back side\n- a silver bottom side\n\nThe cube is rotated so that the side which was before at the bottom is now at the top.\n\nWhat is now the color of the bottom side of the cube?\nProvide only the color as your final answer.",
+    "answer": "magenta",
+    "metadata": {
+      "source_dataset": "color_cube_rotation",
+      "source_index": 89,
+      "initial_state": {
+        "top": "magenta",
+        "right": "yellow",
+        "front": "gray",
+        "left": "indigo",
+        "back": "blue",
+        "bottom": "silver"
+      },
+      "rotations": [
+        "bottom"
+      ],
+      "target_side": "bottom",
+      "num_rotations": 1,
+      "difficulty": {
+        "rotations": [
+          1,
+          3
+        ]
+      }
+    }
+  },
+  {
+    "question": "A cube has:\n- a gray top side\n- a pink right side\n- a orange front side\n- a violet left side\n- a magenta back side\n- a yellow bottom side\n\nThe cube is rotated so that the side which was before at the bottom is now at the top.\n\nNext, the back side is rotated to become the top face.\n\nNow the cube is rotated to place its front side at the top.\n\nWhat is now the color of the bottom side of the cube?\nProvide only the color as your final answer.",
+    "answer": "gray",
+    "metadata": {
+      "source_dataset": "color_cube_rotation",
+      "source_index": 90,
+      "initial_state": {
+        "top": "gray",
+        "right": "pink",
+        "front": "orange",
+        "left": "violet",
+        "back": "magenta",
+        "bottom": "yellow"
+      },
+      "rotations": [
+        "bottom",
+        "back",
+        "front"
+      ],
+      "target_side": "bottom",
+      "num_rotations": 3,
+      "difficulty": {
+        "rotations": [
+          1,
+          3
+        ]
+      }
+    }
+  },
+  {
+    "question": "A cube has:\n- a silver top side\n- a yellow right side\n- a magenta front side\n- a white left side\n- a cyan back side\n- a blue bottom side\n\nThe cube is rotated so that the side which was before at the bottom is now at the top.\n\nThen the cube is rotated to bring the back side to the top.\n\nWhat is now the color of the right side of the cube?\nProvide only the color as your final answer.",
+    "answer": "yellow",
+    "metadata": {
+      "source_dataset": "color_cube_rotation",
+      "source_index": 91,
+      "initial_state": {
+        "top": "silver",
+        "right": "yellow",
+        "front": "magenta",
+        "left": "white",
+        "back": "cyan",
+        "bottom": "blue"
+      },
+      "rotations": [
+        "bottom",
+        "back"
+      ],
+      "target_side": "right",
+      "num_rotations": 2,
+      "difficulty": {
+        "rotations": [
+          1,
+          3
+        ]
+      }
+    }
+  },
+  {
+    "question": "A cube has:\n- a gray top side\n- a white right side\n- a purple front side\n- a orange left side\n- a green back side\n- a silver bottom side\n\nThe cube is rotated so that the side which was before at the right is now at the top.\n\nWhat is now the color of the front side of the cube?\nProvide only the color as your final answer.",
+    "answer": "purple",
+    "metadata": {
+      "source_dataset": "color_cube_rotation",
+      "source_index": 92,
+      "initial_state": {
+        "top": "gray",
+        "right": "white",
+        "front": "purple",
+        "left": "orange",
+        "back": "green",
+        "bottom": "silver"
+      },
+      "rotations": [
+        "right"
+      ],
+      "target_side": "front",
+      "num_rotations": 1,
+      "difficulty": {
+        "rotations": [
+          1,
+          3
+        ]
+      }
+    }
+  },
+  {
+    "question": "A cube has:\n- a orange top side\n- a purple right side\n- a yellow front side\n- a brown left side\n- a gold back side\n- a red bottom side\n\nThe cube is rotated so that the side which was before at the left is now at the top.\n\nNow the cube is rotated to place its left side at the top.\n\nWhat is now the color of the front side of the cube?\nProvide only the color as your final answer.",
+    "answer": "yellow",
+    "metadata": {
+      "source_dataset": "color_cube_rotation",
+      "source_index": 93,
+      "initial_state": {
+        "top": "orange",
+        "right": "purple",
+        "front": "yellow",
+        "left": "brown",
+        "back": "gold",
+        "bottom": "red"
+      },
+      "rotations": [
+        "left",
+        "left"
+      ],
+      "target_side": "front",
+      "num_rotations": 2,
+      "difficulty": {
+        "rotations": [
+          1,
+          3
+        ]
+      }
+    }
+  },
+  {
+    "question": "A cube has:\n- a gray top side\n- a magenta right side\n- a white front side\n- a green left side\n- a violet back side\n- a cyan bottom side\n\nThe cube is rotated so that the side which was before at the front is now at the top.\n\nWhat is now the color of the back side of the cube?\nProvide only the color as your final answer.",
+    "answer": "gray",
+    "metadata": {
+      "source_dataset": "color_cube_rotation",
+      "source_index": 94,
+      "initial_state": {
+        "top": "gray",
+        "right": "magenta",
+        "front": "white",
+        "left": "green",
+        "back": "violet",
+        "bottom": "cyan"
+      },
+      "rotations": [
+        "front"
+      ],
+      "target_side": "back",
+      "num_rotations": 1,
+      "difficulty": {
+        "rotations": [
+          1,
+          3
+        ]
+      }
+    }
+  },
+  {
+    "question": "A cube has:\n- a gray top side\n- a brown right side\n- a green front side\n- a indigo left side\n- a white back side\n- a cyan bottom side\n\nThe cube is rotated so that the side which was before at the back is now at the top.\n\nWhat is now the color of the back side of the cube?\nProvide only the color as your final answer.",
+    "answer": "cyan",
+    "metadata": {
+      "source_dataset": "color_cube_rotation",
+      "source_index": 95,
+      "initial_state": {
+        "top": "gray",
+        "right": "brown",
+        "front": "green",
+        "left": "indigo",
+        "back": "white",
+        "bottom": "cyan"
+      },
+      "rotations": [
+        "back"
+      ],
+      "target_side": "back",
+      "num_rotations": 1,
+      "difficulty": {
+        "rotations": [
+          1,
+          3
+        ]
+      }
+    }
+  },
+  {
+    "question": "A cube has:\n- a blue top side\n- a red right side\n- a gray front side\n- a orange left side\n- a silver back side\n- a indigo bottom side\n\nThe cube is rotated so that the side which was before at the back is now at the top.\n\nWhat is now the color of the back side of the cube?\nProvide only the color as your final answer.",
+    "answer": "indigo",
+    "metadata": {
+      "source_dataset": "color_cube_rotation",
+      "source_index": 96,
+      "initial_state": {
+        "top": "blue",
+        "right": "red",
+        "front": "gray",
+        "left": "orange",
+        "back": "silver",
+        "bottom": "indigo"
+      },
+      "rotations": [
+        "back"
+      ],
+      "target_side": "back",
+      "num_rotations": 1,
+      "difficulty": {
+        "rotations": [
+          1,
+          3
+        ]
+      }
+    }
+  },
+  {
+    "question": "A cube has:\n- a green top side\n- a pink right side\n- a yellow front side\n- a purple left side\n- a orange back side\n- a blue bottom side\n\nThe cube is rotated so that the side which was before at the left is now at the top.\n\nNext, the front side is rotated to become the top face.\n\nAfter that the cube is turned to make the bottom face the top.\n\nWhat is now the color of the front side of the cube?\nProvide only the color as your final answer.",
+    "answer": "purple",
+    "metadata": {
+      "source_dataset": "color_cube_rotation",
+      "source_index": 97,
+      "initial_state": {
+        "top": "green",
+        "right": "pink",
+        "front": "yellow",
+        "left": "purple",
+        "back": "orange",
+        "bottom": "blue"
+      },
+      "rotations": [
+        "left",
+        "front",
+        "bottom"
+      ],
+      "target_side": "front",
+      "num_rotations": 3,
+      "difficulty": {
+        "rotations": [
+          1,
+          3
+        ]
+      }
+    }
+  },
+  {
+    "question": "A cube has:\n- a green top side\n- a silver right side\n- a magenta front side\n- a blue left side\n- a purple back side\n- a pink bottom side\n\nThe cube is rotated so that the side which was before at the bottom is now at the top.\n\nWhat is now the color of the right side of the cube?\nProvide only the color as your final answer.",
+    "answer": "silver",
+    "metadata": {
+      "source_dataset": "color_cube_rotation",
+      "source_index": 98,
+      "initial_state": {
+        "top": "green",
+        "right": "silver",
+        "front": "magenta",
+        "left": "blue",
+        "back": "purple",
+        "bottom": "pink"
+      },
+      "rotations": [
+        "bottom"
+      ],
+      "target_side": "right",
+      "num_rotations": 1,
+      "difficulty": {
+        "rotations": [
+          1,
+          3
+        ]
+      }
+    }
+  },
+  {
+    "question": "A cube has:\n- a yellow top side\n- a purple right side\n- a green front side\n- a magenta left side\n- a brown back side\n- a cyan bottom side\n\nThe cube is rotated so that the side which was before at the bottom is now at the top.\n\nNext, the left side is rotated to become the top face.\n\nWhat is now the color of the back side of the cube?\nProvide only the color as your final answer.",
+    "answer": "green",
+    "metadata": {
+      "source_dataset": "color_cube_rotation",
+      "source_index": 99,
+      "initial_state": {
+        "top": "yellow",
+        "right": "purple",
+        "front": "green",
+        "left": "magenta",
+        "back": "brown",
+        "bottom": "cyan"
+      },
+      "rotations": [
+        "bottom",
+        "left"
+      ],
+      "target_side": "back",
+      "num_rotations": 2,
+      "difficulty": {
+        "rotations": [
+          1,
+          3
+        ]
+      }
+    }
+  }
+]

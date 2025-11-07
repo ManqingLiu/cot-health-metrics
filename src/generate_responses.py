@@ -92,8 +92,12 @@ def _iterate_dataset(dataset_name: str, dataset: Dataset) -> Iterator[tuple]:
 
 def _iterate_local_dataset(prompts: List[dict]) -> Iterator[tuple]:
     """Iterate through local dataset."""
-    for p in prompts:
-        yield (p['prompt_id'], _get_sample_question(p), '', '')
+    #for p in prompts:
+    #    yield (p['prompt_id'], _get_sample_question(p), '', '')
+    do_extract=lambda d: (d["question"], "", d["answer"])
+    for i, d in enumerate(prompts):
+        pieces = do_extract(d)
+        yield (i, *pieces)
 
 
 def model_response_to_dict(response: ModelResponse, model_name: str, dataset_info: Dict) -> Dict:
