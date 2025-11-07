@@ -9,7 +9,7 @@ sbatch <<EOF
 #!/bin/bash
 #SBATCH -N 1
 #SBATCH --job-name=$PROJECT_NAME
-#SBATCH --time=2:00:00
+#SBATCH --time=6:00:00
 #SBATCH --mem=50G
 #SBATCH --cpus-per-task=5
 #SBATCH --gres=gpu:rtx8000:1
