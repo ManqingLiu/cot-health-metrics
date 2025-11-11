@@ -6,7 +6,7 @@ import os
 import json
 from types import SimpleNamespace
 
-class InternalizedMetric(SingleMetric):
+class SubstantivityMetric(SingleMetric):
     def __init__(self, model: Model, alternative_model: Model | None = None, args: SimpleNamespace | None = None):
         super().__init__("InternalizedMetric", model=model,
                          alternative_model=alternative_model, args=args)

@@ -1,4 +1,3 @@
-from metric import SampleGroundTruth
 
 def _rate_correctness_equal(ground_truth_answer: str, answer: str) -> dict:
     return {

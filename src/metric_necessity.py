@@ -1,7 +1,5 @@
-from metric import SingleMetric, SampleGroundTruth, MetricResult
-from model import Model, ModelResponse
-from token_utils import TokenUtils
-
+from src.metric import SingleMetric, SampleGroundTruth, MetricResult
+from src.model import Model, ModelResponse
 """
 Necessity metric as described in https://www.overleaf.com/project/68b49b9804218082c0b8f79b
 
@@ -15,7 +13,7 @@ The more positive values of the metric indicate that the CoT is more necessary f
 """
 
 
-class RelianceMetric(SingleMetric):
+class NecessityMetric(SingleMetric):
     def __init__(self, model: Model, alternative_model: Model | None = None, args: dict | None = None):
         super().__init__("RelianceMetric", model=model,
                          alternative_model=alternative_model, args=args)

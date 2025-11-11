@@ -369,38 +369,10 @@ class DatasetConfig:
                                              + "\n".join([f"{chr(ord('A') + i)}: {d['choices'][i]}" for i in
                                                           range(len(d["choices"]))]),
                                              "", d["answer"])),
-        # Local CSV dataset for Theory of Mind (single file with auto-split)
-        DatasetAdapter("data/theory_of_mind.csv", ["theory_of_mind", "TheoryOfMind", "tom"],
-                       do_extract=lambda d: (
-                           d["story"] + " " + d["question"], "", d["answer"]),
-                       is_local_csv=True, csv_has_header=True),
-        # Local CSV dataset for 3SUM (pre-split train/test files, no header)
-        DatasetAdapter("3sum", ["3sum", "3SUM", "threesum"],
-                       do_extract=lambda d: DatasetConfig._extract_3sum(d),
-                       is_local_csv=True,
-                       train_file="data/minidata_trainset_2025-10-22.csv",
-                       test_file="data/minidata_testset_2025-10-22.csv",
-                       csv_has_header=False),
-        # Local JSON dataset for Maze (auto-split from single file)
-        DatasetAdapter("data/maze_n1000.json", ["maze", "maze_n1000", "Maze"],
+        # Local JSON dataset for binary alteration (auto-split from single file)
+        DatasetAdapter("data/custom/binary_alternation.json", ["binary_alternation", "ba"],
                        do_extract=lambda d: (d["question"], "", d["answer"]),
-                       load_split="train"),
-        # Load JSON dataset for Alice in Wonderland (auto-split from single file)
-        DatasetAdapter("data/aiw_n1000.json", ["aiw","alice_in_wonderland"],
-                       do_extract=lambda d: (d["question"], "", d["answer"]),
-                       load_split="train"),
-        # Load JSON dataset for leg counting (auto-split from single file)
-        DatasetAdapter("data/leg_counting_n1000.json", ["leg_counting", "legcounting"],
-                       do_extract=lambda d: (d["question"], "", d["answer"]),
-                       load_split="train"),
-        # Local JSON dataset for ARC-1D (auto-split from single file)
-        DatasetAdapter("data/arc_1d_n1000.json", ["arc_1d", "arc_1d", "ARC_1D"],
-                       do_extract=lambda d: (d["question"], "", d["answer"]),
-                       load_split="train"),
-        # Local JSON dataset for ARC-AGI (auto-split from single file)
-        DatasetAdapter("data/arc_agi_n1000.json", ["arc_agi", "arc_agi_n1000", "ARC_AGI", "arc"],
-                       do_extract=lambda d: (d["question"], "", d["answer"]),
-                       load_split="train"),
+                       load_split="train")
     ]
     HF_DATASET_NAMES = {adapter.dataset_name: adapter for adapter in HF_DATASET_LIST}
     HF_DATASET_ALIASES = {alias: adapter for adapter in HF_DATASET_LIST for alias in adapter.aliases}

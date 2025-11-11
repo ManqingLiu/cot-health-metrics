@@ -17,9 +17,8 @@ from typing import Optional, Sequence, Dict
 import torch
 
 # project-internal imports
-from metric import SingleMetric, SampleGroundTruth, MetricResult
-from model import Model, ModelResponse
-from token_utils import TokenUtils
+from src.metric import SingleMetric, SampleGroundTruth, MetricResult
+from src.model import Model, ModelResponse
 
 # config defaults (can be overridden by env variables !)
 ENV_FRACTIONS = os.getenv("PARAPHRASE_FRACTIONS", "0.10,0.5,0.98")
