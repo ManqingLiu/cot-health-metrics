@@ -166,20 +166,20 @@ def load_dataset_for_training(dataset_name: str,
         List of (question, answer) tuples
     """
     if dataset_name == "gsm8k":
-        train_data, val_data = load_gsm8k_data(max_samples or 5000)
+        train_data, val_data = load_gsm8k_data(max_samples)
         data = train_data if split == "train" else val_data
 
     elif dataset_name == "theory_of_mind":
-        train_data, val_data = load_theory_of_mind_data(max_samples or 5000)
+        train_data, val_data = load_theory_of_mind_data(max_samples)
         data = train_data if split == "train" else val_data
 
     elif dataset_name == "3sum":
-        train_data, val_data = load_3sum_data(max_samples or 5000)
+        train_data, val_data = load_3sum_data(max_samples)
         data = train_data if split == "train" else val_data
 
     elif dataset_name in ["ba", "leg_counting"]:
         # Use the generic reasoning gym loader
-        train_data, val_data = load_any_reasoning_gym_data(dataset_name, 5000)
+        train_data, val_data = load_any_reasoning_gym_data(dataset_name, max_samples)
         data = train_data if split == "train" else val_data
 
     else:

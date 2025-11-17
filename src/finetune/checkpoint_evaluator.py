@@ -120,6 +120,8 @@ class CheckpointEvaluator:
                     if idx in self.ground_truth:
                         ground_truth = self.ground_truth[idx]
                         correctness_dict = rate_correctness(str(ground_truth), response.answer)
+                        # print ground truth and answer for debugging
+                        logging.debug(f"GT: {ground_truth}, Answer: {response.answer}, Correctness: {correctness_dict}")
                         # Extract boolean value from correctness dict
                         is_correct = correctness_dict.get("is_equal", False) or correctness_dict.get("contains_answer", False)
                         accuracy_results.append(float(is_correct))

@@ -135,8 +135,7 @@ def main():
     parser.add_argument("--dataset_name", type=str, required=True,
                         choices=["ba", "gsm8k", "theory_of_mind", "3sum", "leg_counting"],
                         help="Dataset to use for training")
-    parser.add_argument("--max_train_samples", type=int, default=None, help="Max training samples")
-    parser.add_argument("--max_eval_samples", type=int, default=100, help="Max validation samples")
+    parser.add_argument("--max_samples", type=int, default=None, help="Max samples (train and eval)")
 
     # Training arguments
     parser.add_argument("--num_train_epochs", type=float, default=3, help="Number of epochs")
@@ -214,12 +213,12 @@ def main():
     logging.info(f"Loading {args.dataset_name} dataset")
     train_data = load_dataset_for_training(
         args.dataset_name,
-        max_samples=args.max_train_samples,
+        max_samples=args.max_samples,
         split="train"
     )
     eval_data = load_dataset_for_training(
         args.dataset_name,
-        max_samples=args.max_eval_samples,
+        max_samples=args.max_samples,
         split="test"
     )
 

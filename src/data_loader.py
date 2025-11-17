@@ -302,9 +302,8 @@ def load_any_reasoning_gym_data(dataset_name: str, max_samples: Optional[int] = 
             continue
         train_data.append((question, answer))
 
-    # Load test split for validation (use smaller sample size for validation)
-    val_samples = max_samples // 10 if max_samples else None
-    val_dataset = DatasetConfig.load(dataset_name, max_samples=val_samples, split="test")
+    # Load test split for validation
+    val_dataset = DatasetConfig.load(dataset_name, max_samples=max_samples, split="test")
     val_data = []
 
     for sample in val_dataset:
@@ -365,11 +364,11 @@ def load_any_reasoning_gym_ground_truth(dataset_name: str, split: str = "test", 
         Dictionary mapping sample IDs to text answers
     """
     try:
-        dataset_list = load_prompts("data/custom/" + dataset_name + ".json", max_samples)
+        dataset = DatasetConfig.load(dataset_name, max_samples=max_samples, split=split)
 
         answers = {}
         do_extract=lambda d: (d["question"], "", d["answer"])
-        for i, sample in enumerate(dataset_list):
+        for i, sample in enumerate(dataset):
             question, cot, answer = do_extract(sample)
             if not answer:
                 continue
@@ -378,7 +377,7 @@ def load_any_reasoning_gym_ground_truth(dataset_name: str, split: str = "test", 
             answers[i] = answer.strip()
             answers[f"hf-{i}"] = answer.strip()
 
-        print(f"Loaded {len(answers) // 2} {dataset_name} ground truth answers from {split} split")
+        print(f"Loaded {len(answers)} {dataset_name} ground truth answers from {split} split")
         return answers
     except Exception as e:
         print(f"Warning: Could not load dataset {dataset_name}: {e}")
