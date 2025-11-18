@@ -39,6 +39,7 @@ from checkpoint_evaluator import CheckpointEvaluator
 from training_callbacks import MetricTrackingCallback, calculate_checkpoint_intervals
 from src.organism_data.data.dataset_preparation import (
     InternalizedDataset,
+    EncodedDataset,
     load_dataset_for_training,
     create_data_collator
 )
@@ -135,6 +136,9 @@ def main():
     parser.add_argument("--dataset_name", type=str, required=True,
                         choices=["ba", "gsm8k", "theory_of_mind", "3sum", "leg_counting"],
                         help="Dataset to use for training")
+    parser.add_argument("--training_type", type=str, default="internalized",
+                        choices=["internalized", "encoded"],
+                        help="Type of training: internalized (filler) or encoded (codebook)")
     parser.add_argument("--max_samples", type=int, default=None, help="Max samples (train and eval)")
 
     # Training arguments
@@ -167,7 +171,9 @@ def main():
     # Internalization arguments
     parser.add_argument("--filler_type", type=str, default="lorem_ipsum",
                         choices=["lorem_ipsum", "dots", "think_token", "number_words", "mixed"],
-                        help="Type of filler for internalized CoT")
+                        help="Type of filler for internalized CoT (used when training_type=internalized)")
+    parser.add_argument("--codebook_path", type=str, default=None,
+                        help="Path to codebook module (used when training_type=encoded)")
     parser.add_argument("--mask_mode", type=str, default="cot_and_answer",
                         choices=["assistant", "cot", "answer_only", "cot_and_answer"],
                         help="What to mask during training")
@@ -210,31 +216,60 @@ def main():
     model, tokenizer = load_model_and_tokenizer(args)
 
     # Load datasets
-    logging.info(f"Loading {args.dataset_name} dataset")
+    logging.info(f"Loading {args.dataset_name} dataset for {args.training_type} training")
+
+    # For encoded training, we might want to include CoT data if available
+    include_cot = (args.training_type == "encoded")
+
     train_data = load_dataset_for_training(
         args.dataset_name,
         max_samples=args.max_samples,
-        split="train"
+        split="train",
+        include_cot=include_cot
     )
     eval_data = load_dataset_for_training(
         args.dataset_name,
-        max_samples=args.max_samples,
-        split="test"
+        max_samples=min(500, args.max_samples) if args.max_samples else 500,
+        split="test",
+        include_cot=include_cot
     )
 
-    # Create datasets
-    train_dataset = InternalizedDataset(
-        train_data, tokenizer,
-        filler_type=args.filler_type,
-        mask_mode=args.mask_mode,
-        max_length=args.max_length
-    )
-    eval_dataset = InternalizedDataset(
-        eval_data, tokenizer,
-        filler_type=args.filler_type,
-        mask_mode=args.mask_mode,
-        max_length=args.max_length
-    )
+    # Create datasets based on training type
+    if args.training_type == "internalized":
+        logging.info(f"Creating InternalizedDataset with filler_type={args.filler_type}")
+        train_dataset = InternalizedDataset(
+            train_data, tokenizer,
+            filler_type=args.filler_type,
+            mask_mode=args.mask_mode,
+            max_length=args.max_length
+        )
+        eval_dataset = InternalizedDataset(
+            eval_data, tokenizer,
+            filler_type=args.filler_type,
+            mask_mode=args.mask_mode,
+            max_length=args.max_length
+        )
+    elif args.training_type == "encoded":
+        if args.codebook_path is None and args.dataset_name not in ["ba", "binary_alternation"]:
+            raise ValueError(f"Encoded training requires --codebook_path for dataset {args.dataset_name}")
+
+        logging.info(f"Creating EncodedDataset with codebook={args.codebook_path or 'default'}")
+        train_dataset = EncodedDataset(
+            train_data, tokenizer,
+            codebook_path=args.codebook_path,
+            dataset_name=args.dataset_name,
+            mask_mode=args.mask_mode,
+            max_length=args.max_length
+        )
+        eval_dataset = EncodedDataset(
+            eval_data, tokenizer,
+            codebook_path=args.codebook_path,
+            dataset_name=args.dataset_name,
+            mask_mode=args.mask_mode,
+            max_length=args.max_length
+        )
+    else:
+        raise ValueError(f"Unknown training type: {args.training_type}")
 
     logging.info(f"Train dataset size: {len(train_dataset)}")
     logging.info(f"Eval dataset size: {len(eval_dataset)}")
