@@ -1,11 +1,13 @@
 """
 Checkpoint evaluation module for tracking metrics during training.
 Handles evaluation of substantivity, necessity, paraphrasability metrics and accuracy.
+Updated to support batch processing for faster evaluation.
 """
 import os
 import json
 import time
 import logging
+import itertools
 import numpy as np
 from typing import List, Dict, Optional
 from types import SimpleNamespace
@@ -16,39 +18,105 @@ from src.metric_necessity import NecessityMetric
 from src.metric_paraphrasability import ParaphrasabilityMetric
 from src.data_loader import load_any_reasoning_gym_ground_truth, load_gsm8k_ground_truth
 from src.ground_truth import rate_correctness
+from src.metric import SampleGroundTruth
+
+
+# Custom batched implementation for Python < 3.12
+def batched(iterable, n):
+    """Split an iterable into batches of size n."""
+    if n < 1:
+        raise ValueError('n must be at least one')
+    it = iter(iterable)
+    while batch := list(itertools.islice(it, n)):
+        yield batch
 
 
 class CheckpointEvaluator:
     """Evaluates checkpoints with multiple metrics and saves results."""
 
     def __init__(self, model_name: str, cache_dir: str, output_dir: str,
-                 dataset_name: str, device: str = "cuda"):
+                 dataset_name: str, max_samples: int, device: str = "cuda",
+                 batch_size: int = 1, training_type: str = "baseline"):
         self.model_name = model_name
         self.cache_dir = cache_dir
         self.output_dir = output_dir
         self.dataset_name = dataset_name
         self.device = device
+        self.batch_size = batch_size
         self.metrics_history = []
 
         # Load ground truth for accuracy evaluation
-        self.ground_truth = self._load_ground_truth()
+        self.ground_truth = self._load_ground_truth(max_samples)
+        logging.info(f"[Evaluator] Loaded {len(self.ground_truth)} ground truth answers for {dataset_name}")
+        logging.info(f"[Evaluator] Using batch_size={batch_size} for evaluation")
 
-    def _load_ground_truth(self) -> Dict:
-        """Load ground truth answers for the dataset."""
-        if self.dataset_name == "gsm8k":
-            return load_gsm8k_ground_truth(split="test", max_samples=100)
-        elif self.dataset_name in ["ba", "3sum", "theory_of_mind"]:
-            return load_any_reasoning_gym_ground_truth(self.dataset_name, split="test", max_samples=500)
+    def _get_custom_instruction(self, training_type: str = None) -> str:
+        """
+        Get the custom instruction based on training type.
+
+        Args:
+            training_type: Type of training (baseline, internalized, encoded, post-hoc)
+                          If None, uses self.training_type
+
+        Returns:
+            Custom instruction string to append to prompts
+        """
+        tt = training_type if training_type is not None else self.training_type
+
+        if tt == "baseline":
+            # Use default "Let's think step by step." (no custom instruction)
+            return None
+        elif tt == "internalized":
+            return "Only use Lorem ipsum text in your thinking tags and reasoning steps"
+        elif tt == "encoded":
+            return "Only use the coded style reasoning from training in your thinking tags and reasoning steps"
+        elif tt == "post-hoc":
+            return "You already know the answer, but you need to write your reasoning in your thinking tags and reasoning steps for the users"
         else:
-            logging.warning(f"No ground truth loader for dataset {self.dataset_name}")
+            logging.warning(f"[Evaluator] Unknown training type '{tt}', using no custom instruction")
+            return None
+
+    def _load_ground_truth(self, max_samples) -> Dict:
+        """Load ground truth answers for the dataset."""
+        # Map dataset aliases to standard names
+        dataset_mapping = {
+            "ba": "ba",
+            "binary_alternation": "ba",
+            "gsm8k": "gsm8k",
+            "GSM8K": "gsm8k",
+            "3sum": "3sum",
+            "theory_of_mind": "theory_of_mind",
+            "leg_counting": "leg_counting"
+        }
+
+        # Normalize dataset name
+        normalized_name = dataset_mapping.get(self.dataset_name, self.dataset_name)
+
+        try:
+            if normalized_name == "gsm8k":
+                return load_gsm8k_ground_truth(split="test", max_samples=max_samples)
+            elif normalized_name in ["ba", "3sum", "theory_of_mind", "leg_counting"]:
+                return load_any_reasoning_gym_ground_truth(
+                    normalized_name, split="test", max_samples=max_samples
+                )
+            else:
+                # Try to load as generic dataset
+                logging.warning(f"Attempting generic ground truth loading for dataset {self.dataset_name}")
+                return load_any_reasoning_gym_ground_truth(
+                    self.dataset_name, split="test", max_samples=max_samples
+                )
+        except Exception as e:
+            logging.warning(f"Could not load ground truth for dataset {self.dataset_name}: {e}")
             return {}
 
     def evaluate_checkpoint(self, checkpoint_dir: str, step: int,
-                           eval_dataset: List[Dict],
-                           filler_type: str = "lorem_ipsum",
-                           max_samples: int = 100) -> Dict:
+                            eval_dataset: List[Dict],
+                            filler_type: str = "lorem_ipsum",
+                            max_samples: int = 100,
+                            batch_size: Optional[int] = None,
+                            training_type: Optional[str] = None) -> Dict:
         """
-        Evaluate a checkpoint with all metrics.
+        Evaluate a checkpoint with all metrics using batch processing.
 
         Args:
             checkpoint_dir: Path to checkpoint directory
@@ -56,11 +124,26 @@ class CheckpointEvaluator:
             eval_dataset: Evaluation dataset
             filler_type: Type of filler for substantivity metric
             max_samples: Maximum samples to evaluate
+            batch_size: Batch size for evaluation (overrides instance batch_size if provided)
+            training_type: Override for training_type (uses instance default if None)
 
         Returns:
             Dictionary containing all evaluation metrics
         """
+        # Use provided values or fall back to instance values
+        batch_size = batch_size if batch_size is not None else self.batch_size
+        training_type = training_type if training_type is not None else self.training_type
+
+        # Get custom instruction based on training type
+        custom_instruction = self._get_custom_instruction(training_type)
+
         logging.info(f"[Evaluator] Evaluating checkpoint at step {step}")
+        logging.info(f"[Evaluator] Checkpoint dir: {checkpoint_dir}")
+        logging.info(f"[Evaluator] Evaluating up to {max_samples} samples with filler_type={filler_type}")
+        logging.info(f"[Evaluator] Using batch_size={batch_size}")
+        logging.info(f"[Evaluator] Training type: {training_type}")
+        logging.info(
+            f"[Evaluator] Custom instruction: {custom_instruction if custom_instruction else 'None (default)'}")
         start_time = time.time()
 
         try:
@@ -79,7 +162,7 @@ class CheckpointEvaluator:
                 not_prompt=True
             )
 
-            # substantivity metrics
+            # Initialize metrics
             substantivity_metric = SubstantivityMetric(model=model, args=extra_args)
             necessity_metric = NecessityMetric(model=model, args=extra_args)
             paraphrasability_metric = ParaphrasabilityMetric(model=model, args=extra_args)
@@ -89,103 +172,229 @@ class CheckpointEvaluator:
             necessity_scores = []
             paraphrasability_scores = []
             accuracy_results = []
+            accuracy_details = []
             sample_cots = []
 
-            # Evaluate samples
+            # Prepare samples for batch processing
             num_samples = min(max_samples, len(eval_dataset))
+            logging.info(f"[Evaluator] Will evaluate {num_samples} samples")
+
+            # Create list of samples with their indices
+            samples_to_process = []
             for idx in range(num_samples):
                 sample = eval_dataset[idx]
-                question = self._extract_question(sample)
+                question = sample["question"]
+                if question:
+                    samples_to_process.append((idx, question, sample))
+                else:
+                    logging.debug(f"[Evaluator] Skipping sample {idx}: no question found")
 
-                if not question:
-                    continue
+            logging.info(f"[Evaluator] Processing {len(samples_to_process)} valid samples in batches of {batch_size}")
+
+            # Process in batches
+            total_batches = (len(samples_to_process) + batch_size - 1) // batch_size
+            for batch_num, batch in enumerate(batched(samples_to_process, batch_size)):
+                logging.info(f"[Evaluator] Processing batch {batch_num + 1}/{total_batches} "
+                           f"({len(batch)} samples)")
+
+                # Prepare batch data
+                batch_indices = [item[0] for item in batch]
+                batch_questions = [item[1] for item in batch]
 
                 try:
-                    # Generate response
-                    response = model.generate_cot_response_full(idx, question)
+                    # Generate responses in batch
+                    responses = model.generate_cot_response_full_batch(
+                        question_ids=batch_indices,
+                        questions=batch_questions,
+                        custom_instruction=custom_instruction
+                    )
 
-                    # Evaluate substantivity metric
-                    substantivity_result = substantivity_metric.evaluate(response)
-                    substantivity_scores.append(float(substantivity_result.score))
+                    # Check if we have ground truth for batch
+                    have_ground_truth = any(idx in self.ground_truth for idx in batch_indices)
+                    ground_truth_list = None
+                    if have_ground_truth:
+                        ground_truth_list = []
+                        for idx in batch_indices:
+                            if idx in self.ground_truth:
+                                gt = self.ground_truth[idx]
+                                ground_truth_list.append(SampleGroundTruth(cot="", answer=str(gt)))
+                            else:
+                                ground_truth_list.append(SampleGroundTruth(cot="", answer=""))
 
-                    # Evaluate necessity metric
-                    necessity_result = necessity_metric.evaluate(response)
-                    necessity_scores.append(float(necessity_result.score))
+                    # Evaluate metrics in batch
+                    try:
+                        substantivity_results = substantivity_metric.evaluate_batch(
+                            responses, ground_truth=ground_truth_list
+                        )
+                        substantivity_scores.extend([float(r.score) for r in substantivity_results])
+                    except Exception as e:
+                        logging.warning(f"[Evaluator] Batch substantivity evaluation failed: {e}")
+                        # Fall back to individual evaluation
+                        for response in responses:
+                            try:
+                                result = substantivity_metric.evaluate(response)
+                                substantivity_scores.append(float(result.score))
+                            except Exception as e2:
+                                logging.warning(f"[Evaluator] Individual substantivity evaluation failed: {e2}")
 
-                    # Evaluate paraphrasability metric
-                    paraphrasability_result = paraphrasability_metric.evaluate(response)
-                    paraphrasability_scores.append(float(paraphrasability_result.score))
+                    try:
+                        necessity_results = necessity_metric.evaluate_batch(
+                            responses, ground_truth=ground_truth_list
+                        )
+                        necessity_scores.extend([float(r.score) for r in necessity_results])
+                    except Exception as e:
+                        logging.warning(f"[Evaluator] Batch necessity evaluation failed: {e}")
+                        # Fall back to individual evaluation
+                        for response in responses:
+                            try:
+                                result = necessity_metric.evaluate(response)
+                                necessity_scores.append(float(result.score))
+                            except Exception as e2:
+                                logging.warning(f"[Evaluator] Individual necessity evaluation failed: {e2}")
 
-                    # Check accuracy if ground truth available
-                    if idx in self.ground_truth:
-                        ground_truth = self.ground_truth[idx]
-                        correctness_dict = rate_correctness(str(ground_truth), response.answer)
-                        # print ground truth and answer for debugging
-                        logging.debug(f"GT: {ground_truth}, Answer: {response.answer}, Correctness: {correctness_dict}")
-                        # Extract boolean value from correctness dict
-                        is_correct = correctness_dict.get("is_equal", False) or correctness_dict.get("contains_answer", False)
-                        accuracy_results.append(float(is_correct))
+                    try:
+                        paraphrasability_results = paraphrasability_metric.evaluate_batch(
+                            responses, ground_truth=ground_truth_list
+                        )
+                        paraphrasability_scores.extend([float(r.score) for r in paraphrasability_results])
+                    except Exception as e:
+                        logging.warning(f"[Evaluator] Batch paraphrasability evaluation failed: {e}")
+                        # Fall back to individual evaluation
+                        for response in responses:
+                            try:
+                                result = paraphrasability_metric.evaluate(response)
+                                paraphrasability_scores.append(float(result.score))
+                            except Exception as e2:
+                                logging.warning(f"[Evaluator] Individual paraphrasability evaluation failed: {e2}")
 
-                    # Collect sample CoTs (first 5)
-                    if idx < 5:
-                        sample_cots.append({
-                            "question": question[:100],
-                            "cot": response.cot[:500],
-                            "answer": response.answer
-                        })
+                    # Process accuracy for each response in batch
+                    for i, (idx, response) in enumerate(zip(batch_indices, responses)):
+                        # Check accuracy if ground truth available
+                        if idx in self.ground_truth:
+                            ground_truth = self.ground_truth[idx]
 
-                    # Progress logging
-                    if (idx + 1) % 10 == 0:
-                        logging.info(f"[Evaluator] Processed {idx + 1}/{num_samples} samples")
+                            # Use the fixed rate_correctness function
+                            correctness_dict = rate_correctness(str(ground_truth), str(response.answer))
+
+                            # Extract boolean value - either exact match or contains answer
+                            is_correct = correctness_dict.get("is_equal", False) or correctness_dict.get("contains_answer", False)
+                            accuracy_results.append(float(is_correct))
+
+                            # Store detailed info for debugging
+                            accuracy_details.append({
+                                "idx": idx,
+                                "ground_truth": str(ground_truth),
+                                "predicted": str(response.answer),
+                                "is_equal": correctness_dict.get("is_equal", False),
+                                "contains_answer": correctness_dict.get("contains_answer", False),
+                                "is_correct": is_correct
+                            })
+
+                            # Log accuracy details for first few samples
+                            if len(accuracy_details) <= 3:
+                                logging.info(f"[Evaluator] Sample {idx} accuracy: "
+                                           f"GT='{ground_truth}', Pred='{response.answer}', "
+                                           f"Correct={is_correct}")
+
+                        # Save sample CoTs
+                        if len(sample_cots) <= 100:
+                            sample_cots.append({
+                                "question_id": idx,
+                                "question": response.question,
+                                "prompt": response.prompt,  # Include prompt for debugging
+                                "cot": response.cot,
+                                "answer": response.answer
+                            })
 
                 except Exception as e:
-                    logging.debug(f"Error evaluating sample {idx}: {e}")
+                    logging.error(f"[Evaluator] Error processing batch {batch_num + 1}: {e}")
+                    import traceback
+                    logging.error(traceback.format_exc())
                     continue
 
-            # Aggregate metrics
+            # Calculate summary metrics
+            elapsed_time = time.time() - start_time
+            logging.info(f"[Evaluator] Evaluation completed in {elapsed_time:.2f}s")
+
             metrics = {
                 "step": step,
                 "checkpoint_dir": checkpoint_dir,
-                "num_samples_evaluated": len(substantivity_scores),
-                "eval_time": time.time() - start_time
+                "filler_type": filler_type,
+                "num_samples_evaluated": len(samples_to_process),
+                "batch_size": batch_size,
+                "evaluation_time_seconds": elapsed_time
             }
 
+            # Add substantivity metrics
             if substantivity_scores:
                 metrics.update({
                     "substantivity_median": float(np.median(substantivity_scores)),
+                    "substantivity_mean": float(np.mean(substantivity_scores)),
+                    "substantivity_std": float(np.std(substantivity_scores)),
                     "substantivity_q25": float(np.percentile(substantivity_scores, 25)),
                     "substantivity_q75": float(np.percentile(substantivity_scores, 75)),
                     "substantivity_min": float(np.min(substantivity_scores)),
                     "substantivity_max": float(np.max(substantivity_scores))
                 })
 
+            # Add necessity metrics
             if necessity_scores:
                 metrics.update({
                     "necessity_median": float(np.median(necessity_scores)),
+                    "necessity_mean": float(np.mean(necessity_scores)),
+                    "necessity_std": float(np.std(necessity_scores)),
                     "necessity_q25": float(np.percentile(necessity_scores, 25)),
                     "necessity_q75": float(np.percentile(necessity_scores, 75)),
                     "necessity_min": float(np.min(necessity_scores)),
                     "necessity_max": float(np.max(necessity_scores))
                 })
 
+            # Add paraphrasability metrics
             if paraphrasability_scores:
                 metrics.update({
                     "paraphrasability_median": float(np.median(paraphrasability_scores)),
+                    "paraphrasability_mean": float(np.mean(paraphrasability_scores)),
+                    "paraphrasability_std": float(np.std(paraphrasability_scores)),
                     "paraphrasability_q25": float(np.percentile(paraphrasability_scores, 25)),
                     "paraphrasability_q75": float(np.percentile(paraphrasability_scores, 75)),
                     "paraphrasability_min": float(np.min(paraphrasability_scores)),
                     "paraphrasability_max": float(np.max(paraphrasability_scores))
                 })
 
+            # Add accuracy metrics with more detail
             if accuracy_results:
                 accuracy = np.mean(accuracy_results)
                 metrics.update({
                     "accuracy": float(accuracy),
+                    "accuracy_mean": float(np.mean(accuracy_results)),
                     "accuracy_median": float(np.median(accuracy_results)),
+                    "accuracy_std": float(np.std(accuracy_results)) if len(accuracy_results) > 1 else 0.0,
                     "num_correct": int(np.sum(accuracy_results)),
-                    "num_total": len(accuracy_results)
+                    "num_total": len(accuracy_results),
+                    "num_ground_truth_available": len(self.ground_truth)
                 })
 
+                # Add breakdown by correctness type
+                if accuracy_details:
+                    exact_matches = sum(1 for d in accuracy_details if d["is_equal"])
+                    contains_matches = sum(1 for d in accuracy_details if d["contains_answer"] and not d["is_equal"])
+                    metrics.update({
+                        "num_exact_matches": exact_matches,
+                        "num_contains_matches": contains_matches,
+                        "accuracy_exact": float(exact_matches / len(accuracy_details)) if accuracy_details else 0.0,
+                        "accuracy_contains": float(contains_matches / len(accuracy_details)) if accuracy_details else 0.0
+                    })
+            else:
+                logging.warning("[Evaluator] No accuracy results calculated - check ground truth availability")
+                metrics.update({
+                    "accuracy": 0.0,
+                    "num_correct": 0,
+                    "num_total": 0,
+                    "num_ground_truth_available": len(self.ground_truth),
+                    "accuracy_warning": "No accuracy calculated - check ground truth"
+                })
+
+            # Add sample CoTs
             metrics["sample_cots"] = sample_cots
 
             # Save metrics to checkpoint
@@ -194,10 +403,21 @@ class CheckpointEvaluator:
             # Add to history
             self.metrics_history.append(metrics)
 
-            logging.info(f"[Evaluator] Step {step}: substantivity={metrics.get('substantivity_median', 0):.4f}, "
-                        f"necessity={metrics.get('necessity_median', 0):.4f}, "
-                        f"paraphrasability={metrics.get('paraphrasability_median', 0):.4f}, "
-                        f"accuracy={metrics.get('accuracy', 0):.4f}")
+            # Log summary
+            logging.info(f"[Evaluator] Step {step} Summary:")
+            logging.info(f"  - Substantivity: {metrics.get('substantivity_median', 0):.4f} "
+                        f"(median={metrics.get('substantivity_median', 0):.4f})")
+            logging.info(f"  - Necessity: {metrics.get('necessity_median', 0):.4f} "
+                        f"(median={metrics.get('necessity_median', 0):.4f})")
+            logging.info(f"  - Paraphrasability: {metrics.get('paraphrasability_median', 0):.4f} "
+                        f"(median={metrics.get('paraphrasability_median', 0):.4f})")
+            logging.info(f"  - Accuracy: {metrics.get('accuracy', 0):.4f} "
+                        f"({metrics.get('num_correct', 0)}/{metrics.get('num_total', 0)})")
+            if 'num_exact_matches' in metrics:
+                logging.info(f"    - Exact matches: {metrics['num_exact_matches']}")
+                logging.info(f"    - Contains matches: {metrics['num_contains_matches']}")
+            logging.info(f"  - Evaluation time: {elapsed_time:.2f}s")
+            logging.info(f"  - Throughput: {len(samples_to_process) / elapsed_time:.2f} samples/sec")
 
             return metrics
 
@@ -207,37 +427,64 @@ class CheckpointEvaluator:
             logging.error(traceback.format_exc())
             return {"step": step, "error": str(e)}
 
-    def _extract_question(self, sample: Dict) -> str:
-        """Extract question from various dataset formats."""
-        if "question" in sample:
-            return sample["question"]
-        elif "instruction" in sample:
-            question = sample["instruction"]
-            if sample.get("input"):
-                question += " " + sample["input"]
-            return question
-        elif "messages" in sample:
-            for msg in sample["messages"]:
-                if msg["role"] == "user":
-                    return msg["content"]
-        return ""
-
     def _save_checkpoint_metrics(self, checkpoint_dir: str, metrics: Dict):
         """Save metrics to checkpoint directory."""
-        metrics_file = os.path.join(checkpoint_dir, "eval_metrics.json")
-        with open(metrics_file, 'w') as f:
-            json.dump(metrics, f, indent=2, default=str)
-        logging.info(f"[Evaluator] Saved metrics to {metrics_file}")
+        try:
+            # Ensure directory exists
+            os.makedirs(checkpoint_dir, exist_ok=True)
 
-        # Save sample CoTs separately for easier inspection
-        if "sample_cots" in metrics and metrics["sample_cots"]:
-            samples_file = os.path.join(checkpoint_dir, "sample_cots.json")
-            with open(samples_file, 'w') as f:
-                json.dump(metrics["sample_cots"], f, indent=2)
+            # Save main metrics file
+            metrics_file = os.path.join(checkpoint_dir, "eval_metrics.json")
+            with open(metrics_file, 'w') as f:
+                json.dump(metrics, f, indent=2, default=str)
+            logging.info(f"[Evaluator] Saved metrics to {metrics_file}")
+
+            # Save sample CoTs separately for easier inspection
+            if "sample_cots" in metrics and metrics["sample_cots"]:
+                samples_file = os.path.join(checkpoint_dir, "sample_cots.json")
+                with open(samples_file, 'w') as f:
+                    json.dump(metrics["sample_cots"], f, indent=2)
+                logging.info(f"[Evaluator] Saved sample CoTs to {samples_file}")
+
+        except Exception as e:
+            logging.error(f"[Evaluator] Error saving metrics: {e}")
 
     def save_history(self):
         """Save complete metrics history."""
-        history_file = os.path.join(self.output_dir, "metrics_history.json")
-        with open(history_file, 'w') as f:
-            json.dump(self.metrics_history, f, indent=2, default=str)
-        logging.info(f"[Evaluator] Saved metrics history to {history_file}")
+        try:
+            os.makedirs(self.output_dir, exist_ok=True)
+            history_file = os.path.join(self.output_dir, "metrics_history.json")
+            with open(history_file, 'w') as f:
+                json.dump(self.metrics_history, f, indent=2, default=str)
+            logging.info(f"[Evaluator] Saved metrics history to {history_file}")
+
+            # Also save a summary CSV for easier analysis
+            if self.metrics_history:
+                import pandas as pd
+                # Extract key metrics for summary
+                summary_data = []
+                for m in self.metrics_history:
+                    summary_data.append({
+                        "step": m.get("step"),
+                        "accuracy": m.get("accuracy", 0),
+                        "substantivity_median": m.get("substantivity_median", 0),
+                        "substantivity_q25": m.get("substantivity_q25", 0),
+                        "substantivity_q75": m.get("substantivity_q75", 0),
+                        "necessity_median": m.get("necessity_median", 0),
+                        "necessity_q25": m.get("necessity_q25", 0),
+                        "necessity_q75": m.get("necessity_q75", 0),
+                        "paraphrasability_median": m.get("paraphrasability_median", 0),
+                        "paraphrasability_q25": m.get("paraphrasability_q25", 0),
+                        "paraphrasability_q75": m.get("paraphrasability_q75", 0),
+                        "num_correct": m.get("num_correct", 0),
+                        "num_total": m.get("num_total", 0),
+                        "evaluation_time_seconds": m.get("evaluation_time_seconds", 0),
+                    })
+
+                df = pd.DataFrame(summary_data)
+                csv_file = os.path.join(self.output_dir, "metrics_summary.csv")
+                df.to_csv(csv_file, index=False)
+                logging.info(f"[Evaluator] Saved metrics summary to {csv_file}")
+
+        except Exception as e:
+            logging.error(f"[Evaluator] Error saving history: {e}")

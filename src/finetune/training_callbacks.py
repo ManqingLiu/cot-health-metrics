@@ -19,7 +19,9 @@ class MetricTrackingCallback(TrainerCallback):
                  eval_dataset: List[Dict], dataset_name: str,
                  checkpoint_intervals: List[float], total_training_steps: int,
                  filler_type: str = "lorem_ipsum",
-                 max_eval_samples: int = 500):
+                 batch_size: int = 8,
+                 max_eval_samples: int = 100,
+                 training_type: str = "baseline"):
         """
         Args:
             model_name: Name of the base model
@@ -31,6 +33,7 @@ class MetricTrackingCallback(TrainerCallback):
             total_training_steps: Total number of training steps
             filler_type: Type of filler for substantivity metric
             max_eval_samples: Max samples to evaluate per checkpoint
+            training_type: Type of training (baseline, internalized, encoded, post-hoc)
         """
         super().__init__()
 
@@ -38,13 +41,17 @@ class MetricTrackingCallback(TrainerCallback):
             model_name=model_name,
             cache_dir=cache_dir,
             output_dir=output_dir,
-            dataset_name=dataset_name
+            dataset_name=dataset_name,
+            max_samples=max_eval_samples,
+            training_type=training_type
         )
 
         self.eval_dataset = eval_dataset
         self.filler_type = filler_type
         self.max_eval_samples = max_eval_samples
         self.total_training_steps = total_training_steps
+        self.batch_size = batch_size
+        self.training_type = training_type
 
         # Calculate checkpoint steps based on intervals
         self.checkpoint_steps = [
@@ -56,6 +63,7 @@ class MetricTrackingCallback(TrainerCallback):
 
         logging.info(f"[MetricCallback] Initialized with checkpoint steps: {self.checkpoint_steps}")
         logging.info(f"[MetricCallback] Total training steps: {total_training_steps}")
+        logging.info(f"[MetricCallback] Training type: {training_type}")
 
     def on_step_end(self, args, state, control, **kwargs):
         """Called at the end of each training step."""
@@ -94,7 +102,9 @@ class MetricTrackingCallback(TrainerCallback):
                 step=current_step,
                 eval_dataset=self.eval_dataset,
                 filler_type=self.filler_type,
-                max_samples=self.max_eval_samples
+                max_samples=self.max_eval_samples,
+                batch_size=self.batch_size,
+                training_type=self.training_type
             )
 
             # Log to wandb if available
@@ -113,7 +123,9 @@ class MetricTrackingCallback(TrainerCallback):
                 step=current_step,
                 eval_dataset=self.eval_dataset,
                 filler_type=self.filler_type,
-                max_samples=self.max_eval_samples
+                max_samples=self.max_eval_samples,
+                batch_size=self.batch_size,
+                training_type=self.training_type
             )
 
             # Log to wandb if available
@@ -141,7 +153,9 @@ class MetricTrackingCallback(TrainerCallback):
                     step=final_step,
                     eval_dataset=self.eval_dataset,
                     filler_type=self.filler_type,
-                    max_samples=self.max_eval_samples
+                    max_samples=self.max_eval_samples,
+                    batch_size=self.batch_size,
+                    training_type=self.training_type
                 )
 
                 if metrics and not metrics.get("error"):
@@ -233,7 +247,7 @@ class MetricTrackingCallback(TrainerCallback):
                     cot_data.append([
                         step,
                         sample["question"],
-                        sample["cot"][:200] + "..." if len(sample["cot"]) > 200 else sample["cot"],
+                        sample["cot"],
                         sample["answer"]
                     ])
 

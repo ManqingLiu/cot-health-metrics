@@ -42,8 +42,6 @@ class TokenUtils:
         """
         # Determine end_think token
         end_think = self._get_end_think_token(model)
-        # print end_think token for debugging
-        print(f"end_think token: {end_think}")
         if cot == "":
             text0 = prompt + end_think
         else:
@@ -79,13 +77,14 @@ class TokenUtils:
         
             Note: prompt should end with a <think> token if required.
         """
+        end_think = self._get_end_think_token(model)
         text_tokens_list = []
         skip_count_list = []
         for (prompt, cot, prediction) in zip(prompt, cot, prediction):
             if cot == "":
-                text0 = prompt + "</think>"
+                text0 = prompt + end_think
             else:
-                text0 = prompt + cot + "</think>"
+                text0 = prompt + cot + end_think
             text = text0 + prediction
 
             text0_tokens = self.encode_to_tensor(text0)

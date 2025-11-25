@@ -137,7 +137,7 @@ def _gemini_paraphrase(
 
     try:
         rsp = model.generate_content([sys_msg, user_msg])
-        print(f"[DEBUG] Gemini Prompt:\n{user_msg}")
+        #print(f"[DEBUG] Gemini Prompt:\n{user_msg}")
         data = _extract_json(rsp.text)
 
         # Ensure all values are strings and validate

@@ -4,7 +4,6 @@ from typing import Callable, Union, Optional
 import pandas as pd
 import os
 
-
 CACHE_DIR_DEFAULT = "hf_cache"
 LOG_DIRECTORY_DEFAULT = "log"
 LOG_EVERY_DEFAULT = 1
@@ -15,24 +14,29 @@ ICL_EXAMPLES_DIRECTORY_DEFAULT = "data/icl_examples"
 
 
 class ModelConfig:
+    # Universal answer delimiter - all models should output "Answer:" before final answer
+    ANSWER_DELIMITER = "\nAnswer:"
+
     MODEL_CONFIG_THINK_TOKENS = {
         "begin_think": "<think>",
-        "end_think": "</think>"
+        "end_think": "</think>",
+        "answer_delimiter": ANSWER_DELIMITER
     }
 
     MODEL_CONFIG_GPT_OSS_20B = {
         "begin_think": "<|end|><|start|>assistant<|channel|>final<|message|>analysis<|message|>",
         "end_think": "<|end|><|start|>assistant<|channel|>final<|message|>",
         "do_not_think": "<|end|><|start|>assistant<|channel|>final<|message|>",
+        "answer_delimiter": ANSWER_DELIMITER
     }
     MODEL_CONFIG_GEMMA = {
-        "fuzzy_end_think_list": ["Answer:"],
+        "answer_delimiter": ANSWER_DELIMITER
     }
     MODEL_CONFIG_LLAMA = {
-        "fuzzy_end_think_list": ["Answer:"],
+        "answer_delimiter": ANSWER_DELIMITER
     }
     MODEL_CONFIG_MISTRAL = {
-        "fuzzy_end_think_list": ["Answer:"],
+        "answer_delimiter": ANSWER_DELIMITER
     }
     DEFAULT_MODEL_CONFIG = MODEL_CONFIG_GEMMA
 
@@ -54,9 +58,6 @@ class ModelConfig:
         "meta-llama/Meta-Llama-3-8B-Instruct": MODEL_CONFIG_LLAMA,
         "meta-llama/Llama-2-7b-chat-hf": MODEL_CONFIG_LLAMA,
         "mistralai/Mistral-7B-Instruct-v0.3": MODEL_CONFIG_MISTRAL,
-        # merged SFT models
-        "output/qwen-mixed_rank8-merged": MODEL_CONFIG_THINK_TOKENS,
-        "output/qwen-no_cot_rank1-merged": MODEL_CONFIG_THINK_TOKENS,
     }
 
     @staticmethod
@@ -122,7 +123,8 @@ class DatasetAdapter:
     def __init__(self, dataset_name: str, aliases: list, load_section: Optional[str] = None,
                  load_split: str = "train", do_extract: Optional[Callable] = None,
                  is_local_csv: bool = False, train_file: Optional[str] = None,
-                 test_file: Optional[str] = None, csv_has_header: bool = True):
+                 test_file: Optional[str] = None, csv_has_header: bool = True,
+                 is_local_json: bool = False):
         """
         Args:
             dataset_name: Name of the dataset (for single file) or base name (for split files)
@@ -134,6 +136,7 @@ class DatasetAdapter:
             train_file: Path to training CSV file (for pre-split datasets)
             test_file: Path to test CSV file (for pre-split datasets)
             csv_has_header: Whether CSV files have headers
+            is_local_json: Whether this is a local JSON file
         """
         self.dataset_name = dataset_name
         self.aliases = aliases
@@ -141,10 +144,11 @@ class DatasetAdapter:
         self.load_split = load_split
         self.do_extract = do_extract
         self.is_local_csv = is_local_csv
+        self.is_local_json = is_local_json or dataset_name.endswith('.json')
         self.train_file = train_file
         self.test_file = test_file
         self.csv_has_header = csv_has_header
-        # Cache for local CSV data to ensure consistent splitting
+        # Cache for local CSV/JSON data to ensure consistent splitting
         self._cached_dataset = None
         self._cached_train_split = None
         self._cached_test_split = None
@@ -157,30 +161,8 @@ class DatasetAdapter:
     def get(self, dataset_name: str) -> str:
         return self.dataset_name
 
-    def _load_presplit_csv(self, split: str):
-        """Load CSV from pre-split train/test files"""
-        if split == "train":
-            csv_path = self.train_file
-        elif split == "test":
-            csv_path = self.test_file
-        else:
-            raise ValueError(f"Split '{split}' not supported for pre-split dataset. Use 'train' or 'test'.")
-
-        if not os.path.exists(csv_path):
-            raise FileNotFoundError(f"CSV file not found: {csv_path}")
-
-        # Read CSV with or without header
-        if self.csv_has_header:
-            df = pd.read_csv(csv_path)
-        else:
-            # For CSV without headers, read as single column
-            df = pd.read_csv(csv_path, header=None, names=['raw_text'])
-
-        dataset = Dataset.from_pandas(df)
-        print(f"Loaded {len(dataset)} samples from pre-split CSV: {csv_path}")
-        return dataset
-
-    def _load_and_split_csv(self, csv_path: str, train_ratio: float = 0.8):
+    def _load_and_split_csv(self, csv_path: str, train_ratio: float = 0.8,
+                            max_samples: Optional[int] = None, split: str = "train"):
         """Load CSV and split into train/test with caching for consistency"""
         if self._cached_dataset is None:
             if not os.path.exists(csv_path):
@@ -194,6 +176,10 @@ class DatasetAdapter:
                 df = pd.read_csv(csv_path, header=None, names=['raw_text'])
 
             self._cached_dataset = Dataset.from_pandas(df)
+
+            # Apply max_samples limit if specified
+            if max_samples and max_samples < len(self._cached_dataset):
+                self._cached_dataset = self._cached_dataset.select(range(max_samples))
 
             # Create consistent train/test split
             total_samples = len(self._cached_dataset)
@@ -209,9 +195,15 @@ class DatasetAdapter:
             print(
                 f"Split local CSV {csv_path}: {len(self._cached_train_split)} train, {len(self._cached_test_split)} test")
 
-        return self._cached_train_split, self._cached_test_split
+        if split == "train":
+            return self._cached_train_split
+        else:
+            return self._cached_test_split
 
-    def _load_and_split_json(self, json_path: str, train_ratio: float = 0.8):
+    def _load_and_split_json(self, json_path: str,
+                             train_ratio: float = 0.8,
+                             max_samples: Optional[int] = None,
+                             split: str = "train"):
         """Load JSON and split into train/test with caching for consistency"""
         if self._cached_dataset is None:
             if not os.path.exists(json_path):
@@ -225,6 +217,10 @@ class DatasetAdapter:
             # Convert to pandas DataFrame then to Dataset
             df = pd.DataFrame(data)
             self._cached_dataset = Dataset.from_pandas(df)
+
+            # Apply max_samples limit if specified
+            if max_samples and max_samples < len(self._cached_dataset):
+                self._cached_dataset = self._cached_dataset.select(range(max_samples))
 
             # Create consistent train/test split
             total_samples = len(self._cached_dataset)
@@ -240,85 +236,71 @@ class DatasetAdapter:
             print(
                 f"Split local JSON {json_path}: {len(self._cached_train_split)} train, {len(self._cached_test_split)} test")
 
-        return self._cached_train_split, self._cached_test_split
+        if split == "train":
+            return self._cached_train_split
+        else:
+            return self._cached_test_split
 
-    def load(self, dataset_name: str, max_samples: Optional[int] = None, split: str = None) -> Dataset:
-        # Handle local CSV files
-        if self.is_local_csv:
-            # Determine which split to return
-            if split is None:
-                split = self.load_split  # Use default
+    def load(self, dataset_name: Optional[str] = None,
+             max_samples: Optional[int] = None,
+             split: Optional[str] = None) -> Dataset:
+        """
+        Load dataset from HuggingFace or local files.
 
-            # Check if using pre-split files
-            if self.train_file and self.test_file:
-                # Load from pre-split files
-                dataset = self._load_presplit_csv(split)
-            else:
-                # Load and split a single file
-                csv_path = self.dataset_name
-                train_split, test_split = self._load_and_split_csv(csv_path)
+        Args:
+            dataset_name: Override dataset name (uses self.dataset_name if None)
+            max_samples: Maximum number of samples to load
+            split: Dataset split ('train' or 'test')
 
-                if split == "train":
-                    dataset = train_split
-                elif split == "test":
-                    dataset = test_split
-                else:
-                    # For other splits or full dataset, return the full cached dataset
-                    if self._cached_dataset is None:
-                        if self.csv_has_header:
-                            df = pd.read_csv(csv_path)
-                        else:
-                            df = pd.read_csv(csv_path, header=None, names=['raw_text'])
-                        self._cached_dataset = Dataset.from_pandas(df)
-                    dataset = self._cached_dataset
-
-            # Apply max_samples limit
-            if max_samples is not None and max_samples < len(dataset):
-                dataset = dataset.select(range(max_samples))
-
-            print(f"Loaded {len(dataset)} samples from local CSV (split: {split})")
-            return dataset
+        Returns:
+            Dataset object
+        """
+        # Use provided split or fall back to default
+        split = split or self.load_split
 
         # Handle local JSON files
-        if self.dataset_name.endswith('.json'):
-            # Determine which split to return
-            if split is None:
-                split = self.load_split  # Use default
+        if self.is_local_json:
+            return self._load_and_split_json(
+                self.dataset_name,
+                train_ratio=0.8,
+                max_samples=max_samples,
+                split=split
+            )
 
-            # Load and split the JSON file
-            json_path = self.dataset_name
-            train_split, test_split = self._load_and_split_json(json_path)
+        # Handle local CSV files
+        if self.is_local_csv:
+            if self.train_file and self.test_file:
+                # Pre-split CSV files
+                csv_path = self.train_file if split == "train" else self.test_file
+                if not os.path.exists(csv_path):
+                    raise FileNotFoundError(f"CSV file not found: {csv_path}")
 
-            if split == "train":
-                dataset = train_split
-            elif split == "test":
-                dataset = test_split
+                df = pd.read_csv(csv_path) if self.csv_has_header else pd.read_csv(csv_path, header=None,
+                                                                                   names=['raw_text'])
+                dataset = Dataset.from_pandas(df)
+
+                if max_samples and max_samples < len(dataset):
+                    dataset = dataset.select(range(max_samples))
+
+                return dataset
             else:
-                # For other splits or full dataset, return the full cached dataset
-                if self._cached_dataset is None:
-                    import json
-                    with open(json_path, 'r') as f:
-                        data = json.load(f)
-                    df = pd.DataFrame(data)
-                    self._cached_dataset = Dataset.from_pandas(df)
-                dataset = self._cached_dataset
-
-            # Apply max_samples limit
-            if max_samples is not None and max_samples < len(dataset):
-                dataset = dataset.select(range(max_samples))
-
-            print(f"Loaded {len(dataset)} samples from local JSON (split: {split})")
-            return dataset
+                # Single CSV file that needs splitting
+                return self._load_and_split_csv(
+                    self.dataset_name,
+                    train_ratio=0.8,
+                    max_samples=max_samples,
+                    split=split
+                )
 
         # Handle HuggingFace datasets
-        if split is None:
-            split = self.load_split  # Use default
-        if max_samples is not None:
-            split = split + f"[:{max_samples}]"
-        print(f"Loading dataset {dataset_name} with split {split}")
-        print(f"Dataset name: {self.get(dataset_name)}")
-        print(f"Stored Dataset name: {self.dataset_name}")
-        dataset = load_dataset(self.get(dataset_name), self.load_section, split=split)
+        if self.load_section:
+            dataset = load_dataset(self.dataset_name, self.load_section, split=split)
+        else:
+            dataset = load_dataset(self.dataset_name, split=split)
+
+        # Apply max_samples limit if specified
+        if max_samples and max_samples < len(dataset):
+            dataset = dataset.select(range(max_samples))
 
         return dataset
 
@@ -361,7 +343,7 @@ class DatasetConfig:
     HF_DATASET_LIST = [
         DatasetAdapter("vicgalle/alpaca-gpt4", ["alpaca", "alpaca-gpt4"],
                        do_extract=lambda d: (d["question"], "", d["answer"])),
-        DatasetAdapter("gsm8k", ["GSM8K"],
+        DatasetAdapter("gsm8k", ["GSM8K", "gsm8k"],
                        do_extract=lambda d: (
                            d["question"], d["answer"].split("####")[0], d["answer"].split("####")[1])),
         DatasetAdapter("cais/mmlu", ["MMLU", "mmlu"], load_section="all", load_split="test",
@@ -369,25 +351,82 @@ class DatasetConfig:
                                              + "\n".join([f"{chr(ord('A') + i)}: {d['choices'][i]}" for i in
                                                           range(len(d["choices"]))]),
                                              "", d["answer"])),
-        # Local JSON dataset for binary alteration (auto-split from single file)
+        # Local JSON dataset for binary alternation (auto-split from single file)
         DatasetAdapter("data/custom/binary_alternation.json", ["binary_alternation", "ba"],
-                       do_extract=lambda d: (d["question"], "", d["answer"]),
-                       load_split="train")
+                       do_extract=lambda d: (d["question"], d["cot"], d["answer"]),
+                       is_local_json=True),
+        # Additional datasets mentioned in sft_internalized.py
+        DatasetAdapter("theory_of_mind", ["theory_of_mind"],
+                       do_extract=lambda d: (d.get("question", ""), d.get("cot", ""), d.get("answer", ""))),
+        DatasetAdapter("3sum", ["3sum"],
+                       do_extract=_extract_3sum.__func__),
+        DatasetAdapter("leg_counting", ["leg_counting"],
+                       do_extract=lambda d: (d.get("question", ""), d.get("cot", ""), d.get("answer", "")))
     ]
     HF_DATASET_NAMES = {adapter.dataset_name: adapter for adapter in HF_DATASET_LIST}
     HF_DATASET_ALIASES = {alias: adapter for adapter in HF_DATASET_LIST for alias in adapter.aliases}
 
     @staticmethod
     def get(dataset_name: str) -> DatasetAdapter:
-        print(f"HF_DATASET_NAMES: {DatasetConfig.HF_DATASET_NAMES}")
-        print(f"HF_DATASET_ALIASES: {DatasetConfig.HF_DATASET_ALIASES}")
         if dataset_name in DatasetConfig.HF_DATASET_NAMES:
             return DatasetConfig.HF_DATASET_NAMES[dataset_name]
         if dataset_name in DatasetConfig.HF_DATASET_ALIASES:
             return DatasetConfig.HF_DATASET_ALIASES[dataset_name]
-        return DatasetAdapter(dataset_name, [])
+        # If not found, treat as a HuggingFace dataset or local file
+        if dataset_name.endswith('.json'):
+            return DatasetAdapter(dataset_name, [], is_local_json=True,
+                                  do_extract=lambda d: (d.get("question", ""), d.get("cot", ""), d.get("answer", "")))
+        elif dataset_name.endswith('.csv'):
+            return DatasetAdapter(dataset_name, [], is_local_csv=True,
+                                  do_extract=lambda d: (d.get("question", ""), d.get("cot", ""), d.get("answer", "")))
+        else:
+            # Assume it's a HuggingFace dataset
+            return DatasetAdapter(dataset_name, [],
+                                  do_extract=lambda d: (d.get("question", ""), d.get("cot", ""), d.get("answer", "")))
 
     @staticmethod
-    def load(dataset_name: str, max_samples: Optional[int] = None, split: str = None) -> Dataset:
-        dataset = DatasetConfig.get(dataset_name)
-        return dataset.load(dataset_name, max_samples, split)
+    def load_for_training(dataset_name: str,
+                          max_samples: Optional[int] = None,
+                          split: str = "train") -> list:
+        """
+        Load and prepare a dataset for training.
+
+        Args:
+            dataset_name: Name of the dataset to load
+            max_samples: Limit number of samples
+            split: Dataset split to use ('train' or 'test')
+
+        Returns:
+            List of dictionaries with 'question', 'cot', and 'answer' keys
+        """
+        adapter = DatasetConfig.get(dataset_name)
+        raw_dataset = adapter.load(dataset_name, max_samples=max_samples, split=split)
+
+        # Extract data in the format expected by training
+        prepared_data = []
+        for i, item in enumerate(raw_dataset):
+            if max_samples and i >= max_samples:
+                break
+
+            extracted = adapter.extract_pieces(item)
+
+            # Handle both tuple and dictionary formats
+            if extracted:
+                # Convert tuple to dictionary if needed
+                if isinstance(extracted, tuple):
+                    if len(extracted) == 3:
+                        extracted = {
+                            "question": extracted[0],
+                            "cot": extracted[1],
+                            "answer": extracted[2]
+                        }
+                    else:
+                        print(f"Warning: Unexpected tuple length {len(extracted)} at sample {i}")
+                        continue
+
+                # Ensure all required keys exist
+                if all(k in extracted for k in ["question", "cot", "answer"]):
+                    prepared_data.append(extracted)
+
+        print(f"Loaded {len(prepared_data)} samples for {split} split")
+        return prepared_data

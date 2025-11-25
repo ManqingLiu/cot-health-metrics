@@ -57,9 +57,8 @@ class ModelPromptBuilder:
 
         if custom_instruction is None:
             # Only add "Let's think step by step" if CoT is enabled
-            ## TODO: this only applies to ARC 1D style questions, need to adjust for others
             if self.invokes_cot and not self.invokes_filler:
-                instructions.append("Let's think step by step. Describe the transformation pattern in 5 sentences maximum. Then output final answer only the grid.")
+                instructions.append("Let's think step by step.")
         elif custom_instruction.strip():  # Only add if not empty
             instructions.append(custom_instruction)
 

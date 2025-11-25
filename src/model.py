@@ -322,71 +322,79 @@ class CoTModel(Model):
     def do_split(self, sequences, prompt, expect_cot=True):
         """
         Split the output into three parts: question, CoT, and answer.
-        FIXED: Only extracts model's generated CoT, not ICL examples.
+        Uses the universal "Answer:" delimiter which all prompts instruct models to use.
         """
         model_config = ModelConfig.get(self.model_name)
 
+        # Get the full response with special tokens
+        full = self.tokenizer.decode(sequences[0], skip_special_tokens=False)
+
+        # Extract only the generated portion (after the prompt)
+        input_tokens = self.tokenizer(prompt, return_tensors="pt")
+        prompt_length = len(input_tokens.input_ids[0])
+
+        # Get only the model's generated tokens
+        generated_tokens = sequences[0][prompt_length:]
+        generated_text = self.tokenizer.decode(generated_tokens, skip_special_tokens=True)
+
+        # Extract question from prompt (for compatibility)
+        question = prompt.strip()
+
+        # Remove any begin_think tag if it's at the end of the prompt
         if "begin_think" in model_config:
             begin_think = model_config["begin_think"]
-            end_think = model_config["end_think"]
-
-            # Get the full response
-            full = self.tokenizer.decode(sequences[0], skip_special_tokens=False)
-
-            # CRITICAL FIX: Extract only the generated portion
-            input_tokens = self.tokenizer(prompt, return_tensors="pt")
-            prompt_length = len(input_tokens.input_ids[0])
-
-            # Get only the model's generated tokens (after the prompt)
-            generated_tokens = sequences[0][prompt_length:]
-            generated_text = self.tokenizer.decode(generated_tokens, skip_special_tokens=False)
-
-            # Extract question from prompt (for compatibility)
-            question = prompt.strip()
-            # Remove the begin_think tag if it's at the end of the prompt
             if question.endswith(begin_think):
                 question = question[:-len(begin_think)].strip()
 
-            # Parse the generated text
-            # The prompt builder adds <think> at the end, so generated text should be: cot_content</think>answer
-            try:
-                # Split on the end think token
-                parts = generated_text.split(end_think, 1)
-                if len(parts) == 2:
-                    cot = parts[0].strip()  # Everything before </think>
-                    answer = parts[1].strip()  # Everything after </think>
+        # Try to find "Answer:" delimiter with various patterns
+        # Try multiple patterns to handle different whitespace formats
+        answer_patterns = ["\n\nAnswer:", "\nAnswer:", "Answer:"]
+        answer_found = False
+
+        for pattern in answer_patterns:
+            if pattern in generated_text:
+                # Split on the answer delimiter
+                parts = generated_text.split(pattern, 1)
+                cot = parts[0].strip()
+                answer = parts[1].strip()
+                answer_found = True
+
+                # Clean up think tags from CoT if present
+                if "end_think" in model_config:
+                    end_think = model_config["end_think"]
+                    cot = cot.replace(end_think, "").strip()
+
+                # Clean up think tags from answer if they somehow got in there
+                if "begin_think" in model_config:
+                    begin_think = model_config["begin_think"]
+                    answer = answer.replace(begin_think, "").strip()
+                if "end_think" in model_config:
+                    end_think = model_config["end_think"]
+                    answer = answer.replace(end_think, "").strip()
+
+                break
+
+        # Fallback: Try think token split if no answer delimiter found
+        if not answer_found:
+            if "end_think" in model_config:
+                end_think = model_config["end_think"]
+                if end_think in generated_text:
+                    parts = generated_text.split(end_think, 1)
+                    cot = parts[0].strip()
+                    answer = parts[1].strip()
                 else:
-                    if expect_cot:
-                        raise RuntimeError("Not enough pieces to split, probably ran out of tokens")
-                    else:
-                        cot = ""
-                        answer = generated_text.strip()
-            except Exception as e:
-                raise RuntimeError(
-                    f"Failed to extract CoT from generated text: {generated_text[:100]}... Error: {e}"
-                )
-
-        elif "fuzzy_end_think_list" in model_config:
-            # This path was already correct - it only looks at generated tokens
-            input_tokens = self.tokenizer(prompt, return_tensors="pt")
-            full = self.tokenizer.decode(sequences[0], skip_special_tokens=False)
-            question = self.tokenizer.decode(
-                sequences[0][:len(input_tokens.input_ids[0])], skip_special_tokens=True).strip()
-            cot_and_answer = self.tokenizer.decode(
-                sequences[0][len(input_tokens.input_ids[0]):], skip_special_tokens=True)
-
-            end_think_list = model_config["fuzzy_end_think_list"]
-            for end_think in end_think_list:
-                pieces = cot_and_answer.split(end_think, 1)
-                if len(pieces) == 2:
-                    cot = pieces[0].strip()
-                    answer = pieces[1].strip()
-                    break
+                    # Neither answer delimiter nor end_think found
+                    raise RuntimeError(
+                        f"Failed to extract CoT and answer from generated text. "
+                        f"Generated text preview: {generated_text[:200]}... Error: "
+                        f"No answer delimiter (tried: {answer_patterns}) or end_think token '{end_think}' found"
+                    )
             else:
+                # No think tokens configured and no answer delimiter found
                 raise RuntimeError(
-                    f"Failed to extract CoT (no end think token in {end_think_list}) from: {full}"
-                    f"Model {self.model_name} did not generate known fuzzy split sequence in "
-                    f"{model_config['fuzzy_end_think_list']}"
+                    f"Failed to extract CoT and answer from generated text. "
+                    f"Generated text preview: {generated_text[:200]}... Error: "
+                    f"No answer delimiter (tried: {answer_patterns}) found and no end_think token configured"
                 )
 
         return (question, cot, answer)
@@ -425,8 +433,7 @@ class CoTModel(Model):
             answer=answer,
             raw_output=response)
 
-    def generate_cot_response_full_batch(self, question_ids, questions, ground_truth_answers=None, max_new_tokens=4096,
-                                         custom_instruction=None, do_sample=True):
+    def generate_cot_response_full_batch(self, question_ids, questions, custom_instruction, max_new_tokens=4096):
         """Generate responses for multiple questions in batch using Chain-of-Thought (CoT) prompting."""
         # Validate inputs
         if not question_ids or not questions:
@@ -437,18 +444,17 @@ class CoTModel(Model):
 
         # Create prompts for all questions
         prompts = []
-        for i, (qid, question) in enumerate(zip(question_ids, questions)):
+        for qid, question in zip(question_ids, questions):
             if not question or question.strip() == "":
                 raise ValueError(f"Empty question for question_id {qid}")
-            gt_answer = ground_truth_answers[i] if ground_truth_answers and i < len(ground_truth_answers) else None
-            prompt = self.make_prompt(qid, question, ground_truth_answer=gt_answer,
-                                      custom_instruction=custom_instruction)
+            # Pass custom_instruction to make_prompt
+            prompt = self.make_prompt(qid, question, ground_truth_answer=None, custom_instruction=custom_instruction)
             if not prompt or prompt.strip() == "":
                 raise ValueError(f"Empty prompt generated for question_id {qid}")
             prompts.append(prompt)
 
         # Generate responses in batch
-        output = self.do_generate_batch(question_ids, prompts, max_new_tokens, do_sample)
+        output = self.do_generate_batch(question_ids, prompts, max_new_tokens)
         sequences = output.sequences
 
         # Process each response
@@ -457,7 +463,7 @@ class CoTModel(Model):
             raw_output = self.tokenizer.decode(sequences[i], skip_special_tokens=True)
 
             try:
-                (question_part, cot, answer) = self.do_split(sequences[i:i + 1])
+                (question_part, cot, answer) = self.do_split(sequences[i:i + 1], prompt)
 
                 response = ModelResponse(
                     question_id=question_id,

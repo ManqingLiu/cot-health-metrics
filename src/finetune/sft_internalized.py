@@ -1,17 +1,28 @@
 #!/usr/bin/env python3
 """
 Enhanced SFT training script for internalized CoT.
-Tracks multiple metrics and saves checkpoints at regular intervals.
+OPTIMIZED VERSION with:
+1. Support for baseline training (original CoT)
+2. CoT length optimization for faster training
 
 Example usage:
-python train_internalized_enhanced.py \
+# Baseline training (original CoT)
+python sft_internalized_optimized.py \
     --model Qwen/Qwen3-0.6B \
-    --dataset_name binary_alteration \
-    --output_dir output/binary-enhanced \
-    --num_train_epochs 3 \
-    --filler_type lorem_ipsum \
-    --track_metrics \
-    --wandb_project internalized-training
+    --dataset_name ba \
+    --output_dir output/baseline-ba \
+    --training_type baseline \
+    --max_length 1024 \
+    --max_cot_length 506
+
+# Internalized training (with filler)
+python sft_internalized_optimized.py \
+    --model Qwen/Qwen3-0.6B \
+    --dataset_name ba \
+    --output_dir output/internalized-ba \
+    --training_type internalized \
+    --filler_type_train mixed \
+    --max_cot_length 506
 """
 
 import os
@@ -31,18 +42,17 @@ from transformers import (
     EarlyStoppingCallback
 )
 
-# Add src to path
-# sys.path.insert(0, str(Path(__file__).parent))
-# sys.path.insert(0, str(Path(__file__).parent / "src"))
-
 from checkpoint_evaluator import CheckpointEvaluator
 from training_callbacks import MetricTrackingCallback, calculate_checkpoint_intervals
 from src.organism_data.data.dataset_preparation import (
     InternalizedDataset,
     EncodedDataset,
-    load_dataset_for_training,
+    BaselineDataset,
+    PosthocDataset,
     create_data_collator
 )
+# Import DatasetConfig from config.py
+from src.config import DatasetConfig
 
 
 def setup_logging(log_level: str = "INFO"):
@@ -134,17 +144,20 @@ def main():
 
     # Dataset arguments
     parser.add_argument("--dataset_name", type=str, required=True,
-                        choices=["ba", "gsm8k", "theory_of_mind", "3sum", "leg_counting"],
-                        help="Dataset to use for training")
+                        help="Dataset to use for training (e.g., ba, gsm8k, theory_of_mind, 3sum, leg_counting)")
     parser.add_argument("--training_type", type=str, default="internalized",
-                        choices=["internalized", "encoded"],
-                        help="Type of training: internalized (filler) or encoded (codebook)")
+                        choices=["internalized", "encoded", "baseline", "post-hoc"],
+                        help="Type of training: internalized (filler), encoded (codebook), baseline (original), or post-hoc")
     parser.add_argument("--max_samples", type=int, default=None, help="Max samples (train and eval)")
+
+    # NEW: CoT length optimization
+    parser.add_argument("--max_cot_length", type=int, default=None,
+                        help="Maximum CoT length in tokens (for speed optimization).")
 
     # Training arguments
     parser.add_argument("--num_train_epochs", type=float, default=3, help="Number of epochs")
-    parser.add_argument("--per_device_train_batch_size", type=int, default=2)
-    parser.add_argument("--per_device_eval_batch_size", type=int, default=2)
+    parser.add_argument("--per_device_train_batch_size", type=int, default=4)
+    parser.add_argument("--per_device_eval_batch_size", type=int, default=4)
     parser.add_argument("--gradient_accumulation_steps", type=int, default=8)
     parser.add_argument("--learning_rate", type=float, default=2e-5)
     parser.add_argument("--weight_decay", type=float, default=0.01)
@@ -154,7 +167,7 @@ def main():
 
     # LoRA arguments
     parser.add_argument("--use_lora", action="store_true", help="Use LoRA")
-    parser.add_argument("--lora_r", type=int, default=4, help="LoRA rank")
+    parser.add_argument("--lora_r", type=int, default=1, help="LoRA rank (lower = faster)")
     parser.add_argument("--lora_alpha", type=int, default=256, help="LoRA alpha")
     parser.add_argument("--lora_dropout", type=float, default=0.0, help="LoRA dropout")
     parser.add_argument("--lora_target_modules", type=str,
@@ -169,10 +182,13 @@ def main():
     parser.add_argument("--fp16", action="store_true", help="Use float16")
 
     # Internalization arguments
-    parser.add_argument("--filler_type", type=str, default="lorem_ipsum",
+    parser.add_argument("--filler_type_train", type=str, default="mixed",
                         choices=["lorem_ipsum", "dots", "think_token", "number_words", "mixed"],
-                        help="Type of filler for internalized CoT (used when training_type=internalized)")
-    parser.add_argument("--codebook_path", type=str, default=None,
+                        help="Type of filler for internalized CoT training (used when training_type=internalized)")
+    parser.add_argument("--filler_type_eval", type=str, default="lorem_ipsum",
+                        choices=["lorem_ipsum", "dots", "think_token", "number_words", "mixed"],
+                        help="Type of filler for evaluation (used when generating eval dataset)")
+    parser.add_argument("--codebook_path", type=str, default="src/finetune/codebook_binary_alternation.py",
                         help="Path to codebook module (used when training_type=encoded)")
     parser.add_argument("--mask_mode", type=str, default="cot_and_answer",
                         choices=["assistant", "cot", "answer_only", "cot_and_answer"],
@@ -183,90 +199,149 @@ def main():
                         help="Track metrics during training")
     parser.add_argument("--num_checkpoints", type=int, default=5,
                         help="Number of checkpoints to save (evenly spaced)")
-    parser.add_argument("--metric_eval_samples", type=int, default=50,
+    parser.add_argument("--metric_eval_samples", type=int, default=100,
                         help="Samples to evaluate for metrics")
+    parser.add_argument("--batch_size", type=int, default=4,
+                        help="Batch size")
 
     # Logging arguments
     parser.add_argument("--logging_steps", type=int, default=10)
-    parser.add_argument("--log_level", type=str, default="INFO")
-    parser.add_argument("--wandb_project", type=str, default=None, help="W&B project")
-    parser.add_argument("--run_name", type=str, default=None, help="W&B run name")
-    parser.add_argument("--seed", type=int, default=42)
+    parser.add_argument("--log_level", type=str, default="INFO",
+                        choices=["DEBUG", "INFO", "WARNING", "ERROR"])
+
+    # Experiment tracking
+    parser.add_argument("--wandb_project", type=str, default=None, help="Wandb project name")
+    parser.add_argument("--run_name", type=str, default=None, help="Run name for wandb")
 
     # Early stopping
     parser.add_argument("--use_early_stopping", action="store_true")
     parser.add_argument("--early_stopping_patience", type=int, default=3)
     parser.add_argument("--early_stopping_threshold", type=float, default=0.0)
 
-    # Parse arguments
+    # Random seed
+    parser.add_argument("--seed", type=int, default=42, help="Random seed")
+
     args = parser.parse_args()
 
     # Setup
     setup_logging(args.log_level)
     set_seed(args.seed)
+
+    # Create output directory
     os.makedirs(args.output_dir, exist_ok=True)
 
-    # Save configuration
-    config_path = os.path.join(args.output_dir, "training_config.json")
-    with open(config_path, 'w') as f:
+    # Save arguments
+    with open(os.path.join(args.output_dir, "training_args.json"), "w") as f:
         json.dump(vars(args), f, indent=2)
-    logging.info(f"Saved training config to {config_path}")
+
+    logging.info("=" * 80)
+    logging.info("Training Configuration")
+    logging.info("=" * 80)
+    for key, value in sorted(vars(args).items()):
+        logging.info(f"  {key}: {value}")
+    logging.info("=" * 80)
 
     # Load model and tokenizer
     model, tokenizer = load_model_and_tokenizer(args)
 
-    # Load datasets
-    logging.info(f"Loading {args.dataset_name} dataset for {args.training_type} training")
+    # Load dataset using DatasetConfig
+    logging.info(f"Loading dataset: {args.dataset_name}")
 
-    # For encoded training, we might want to include CoT data if available
-    include_cot = (args.training_type == "encoded")
-
-    train_data = load_dataset_for_training(
+    train_data = DatasetConfig.load_for_training(
         args.dataset_name,
         max_samples=args.max_samples,
-        split="train",
-        include_cot=include_cot
+        split="train"
     )
-    eval_data = load_dataset_for_training(
+    eval_data = DatasetConfig.load_for_training(
         args.dataset_name,
-        max_samples=min(500, args.max_samples) if args.max_samples else 500,
-        split="test",
-        include_cot=include_cot
+        max_samples=args.max_samples,
+        split="test"
     )
 
+    logging.info(f"Loaded {len(train_data)} training samples")
+    logging.info(f"Loaded {len(eval_data)} eval samples")
+
     # Create datasets based on training type
-    if args.training_type == "internalized":
-        logging.info(f"Creating InternalizedDataset with filler_type={args.filler_type}")
+    if args.training_type == "baseline":
+        logging.info(f"Creating BaselineDataset (original CoT format)")
+
+        train_dataset = BaselineDataset(
+            train_data, tokenizer,
+            mask_mode=args.mask_mode,
+            max_length=args.max_length,
+            max_cot_length=args.max_cot_length,
+            model_name=args.model
+        )
+        eval_dataset = BaselineDataset(
+            eval_data, tokenizer,
+            mask_mode=args.mask_mode,
+            max_length=args.max_length,
+            max_cot_length=args.max_cot_length,
+            model_name=args.model
+        )
+
+    elif args.training_type == "internalized":
+        logging.info(f"Creating InternalizedDataset with filler_type={args.filler_type_train} for training")
+        logging.info(f"  and filler_type={args.filler_type_eval} for eval")
+
         train_dataset = InternalizedDataset(
             train_data, tokenizer,
-            filler_type=args.filler_type,
+            filler_type=args.filler_type_train,
             mask_mode=args.mask_mode,
-            max_length=args.max_length
+            max_length=args.max_length,
+            max_cot_length=args.max_cot_length,
+            model_name=args.model
         )
         eval_dataset = InternalizedDataset(
             eval_data, tokenizer,
-            filler_type=args.filler_type,
+            filler_type=args.filler_type_eval,
             mask_mode=args.mask_mode,
-            max_length=args.max_length
+            max_length=args.max_length,
+            max_cot_length=args.max_cot_length,
+            model_name=args.model
         )
+
     elif args.training_type == "encoded":
         if args.codebook_path is None and args.dataset_name not in ["ba", "binary_alternation"]:
             raise ValueError(f"Encoded training requires --codebook_path for dataset {args.dataset_name}")
 
         logging.info(f"Creating EncodedDataset with codebook={args.codebook_path or 'default'}")
+
         train_dataset = EncodedDataset(
             train_data, tokenizer,
             codebook_path=args.codebook_path,
             dataset_name=args.dataset_name,
             mask_mode=args.mask_mode,
-            max_length=args.max_length
+            max_length=args.max_length,
+            max_cot_length=args.max_cot_length,
+            model_name=args.model
         )
         eval_dataset = EncodedDataset(
             eval_data, tokenizer,
             codebook_path=args.codebook_path,
             dataset_name=args.dataset_name,
             mask_mode=args.mask_mode,
-            max_length=args.max_length
+            max_length=args.max_length,
+            max_cot_length=args.max_cot_length,
+            model_name=args.model
+        )
+    elif args.training_type == "post-hoc":
+        logging.info(f"Creating PosthocDataset with answer-first format")
+        logging.info(f"  Format: Answer → Reasoning → Answer (post-hoc rationalization)")
+
+        train_dataset = PosthocDataset(
+            train_data, tokenizer,
+            mask_mode=args.mask_mode,
+            max_length=args.max_length,
+            max_cot_length=args.max_cot_length,
+            model_name=args.model
+        )
+        eval_dataset = PosthocDataset(
+            eval_data, tokenizer,
+            mask_mode=args.mask_mode,
+            max_length=args.max_length,
+            max_cot_length=args.max_cot_length,
+            model_name=args.model
         )
     else:
         raise ValueError(f"Unknown training type: {args.training_type}")
@@ -289,18 +364,19 @@ def main():
     # Setup callbacks
     callbacks = []
 
-    # Add metric tracking callback if requested
     if args.track_metrics:
         metric_callback = MetricTrackingCallback(
             model_name=args.model,
             cache_dir=args.cache_dir,
             output_dir=args.output_dir,
-            eval_dataset=eval_data,  # Use raw data for evaluation
+            eval_dataset=eval_data,
             dataset_name=args.dataset_name,
             checkpoint_intervals=checkpoint_intervals,
             total_training_steps=total_steps,
-            filler_type=args.filler_type,
-            max_eval_samples=args.metric_eval_samples
+            filler_type=args.filler_type_eval,
+            max_eval_samples=args.metric_eval_samples,
+            batch_size=args.batch_size,
+            training_type=args.training_type
         )
         callbacks.append(metric_callback)
 
@@ -386,6 +462,10 @@ def main():
 
     # Start training
     logging.info("Starting training...")
+    logging.info(f"Training type: {args.training_type}")
+    if args.max_cot_length:
+        logging.info(f"CoT truncated to max {args.max_cot_length} characters for speed")
+
     train_result = trainer.train()
 
     # Save final model

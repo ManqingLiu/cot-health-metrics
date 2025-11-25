@@ -219,7 +219,7 @@ class SubstantivityMetric(SingleMetric):
             intervened_response = self.model.do_generate(
                 r.question_id,
                 intervened_prompt,
-                max_new_tokens=10000
+                max_new_tokens=2049
             )
 
             # Get input prompt length to extract only the newly generated tokens
@@ -350,7 +350,7 @@ class SubstantivityMetric(SingleMetric):
             intervened_response = self.model.do_generate(
                 r.question_id,
                 intervened_prompt,
-                max_new_tokens=10000
+                max_new_tokens=2049
             )
 
             # Get input prompt length to extract only the newly generated tokens

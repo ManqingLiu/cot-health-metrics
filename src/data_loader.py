@@ -1,25 +1,7 @@
 #!/usr/bin/env python3
 """
-use it:
-
--as a library-
- - from data_loader import load_prompts, load_filler_texts
- - prompts = load_prompts("data/alpaca_500_samples.json", max_samples=500)
- - filler_texts = load_filler_texts("data/filler_texts.json")
- - returns a list of dicts with keys: prompt_id, instruction, input, output, prompt_hash
-
--by itself-
-```
-python src/data_loader.py \
-    --data-path data/alpaca_500_samples.json \
-    --max-samples 5
-```
-
--> that will:
-    - read the JSON array of prompt objects
-    - write progress logs to logs/data_loader_<timestamp>.log
-      (see one log line every LOG_EVERY samples)
-    - print the first prompt sample to stdout for a sanity check
+Data loader module with fixed ground truth loading functions.
+Includes corrections for load_any_reasoning_gym_ground_truth and improved error handling.
 """
 
 import argparse
@@ -62,15 +44,7 @@ def load_prompts(json_path: str, max_samples: Optional[int] = None) -> List[Dict
 
 
 def load_csv_dataset(csv_path: str, max_samples: Optional[int] = None) -> List[Dict]:
-    """Load a CSV dataset and convert to list of dicts.
-
-    Args:
-        csv_path: Path to the CSV file
-        max_samples: Optional maximum number of samples to load
-
-    Returns:
-        List of dictionaries representing each row
-    """
+    """Load a CSV dataset and convert to list of dicts."""
     df = pd.read_csv(csv_path)
     if max_samples is not None:
         df = df.head(max_samples)
@@ -78,18 +52,7 @@ def load_csv_dataset(csv_path: str, max_samples: Optional[int] = None) -> List[D
 
 
 def load_filler_texts(json_path: str = "data/filler_texts.json") -> Dict[str, str]:
-    """Load filler texts from JSON file.
-
-    Args:
-        json_path: Path to the filler texts JSON file
-
-    Returns:
-        Dictionary mapping filler text names to their content
-
-    Raises:
-        FileNotFoundError: If the filler texts file doesn't exist
-        KeyError: If the JSON structure is invalid
-    """
+    """Load filler texts from JSON file."""
     if not os.path.exists(json_path):
         raise FileNotFoundError(f"Filler texts file not found: {json_path}")
 
@@ -97,7 +60,6 @@ def load_filler_texts(json_path: str = "data/filler_texts.json") -> Dict[str, st
         with open(json_path, 'r', encoding='utf-8') as f:
             data = json.load(f)
 
-        # Validate JSON structure
         if "filler_texts" not in data:
             raise KeyError("JSON file must contain 'filler_texts' key")
 
@@ -108,18 +70,7 @@ def load_filler_texts(json_path: str = "data/filler_texts.json") -> Dict[str, st
 
 
 def get_filler_text(filler_name: str, filler_texts_path: str = "data/filler_texts.json") -> str:
-    """Get a specific filler text by name.
-
-    Args:
-        filler_name: Name of the filler text (e.g., 'lorem_ipsum', 'cicero_original')
-        filler_texts_path: Path to the filler texts JSON file
-
-    Returns:
-        The filler text content
-
-    Raises:
-        ValueError: If the filler text name is not found
-    """
+    """Get a specific filler text by name."""
     filler_texts = load_filler_texts(filler_texts_path)
 
     if filler_name not in filler_texts:
@@ -130,14 +81,7 @@ def get_filler_text(filler_name: str, filler_texts_path: str = "data/filler_text
 
 
 def list_available_filler_texts(filler_texts_path: str = "data/filler_texts.json") -> List[str]:
-    """List all available filler text names.
-
-    Args:
-        filler_texts_path: Path to the filler texts JSON file
-
-    Returns:
-        List of available filler text names
-    """
+    """List all available filler text names."""
     try:
         filler_texts = load_filler_texts(filler_texts_path)
         return list(filler_texts.keys())
@@ -162,14 +106,7 @@ def parse_gsm8k_solution(ans_text: str) -> Tuple[str, str]:
 
 
 def load_theory_of_mind_data(max_samples: int) -> Tuple[List[Tuple[str, str]], List[Tuple[str, str]]]:
-    """Load theory of mind dataset using DatasetConfig with consistent splitting.
-
-    Args:
-        max_samples: Maximum number of samples to load
-
-    Returns:
-        Tuple of (train_data, val_data) where each is a list of (question, answer) tuples
-    """
+    """Load theory of mind dataset using DatasetConfig with consistent splitting."""
     print(f"Loading theory of mind dataset using DatasetConfig...")
 
     adapter = DatasetConfig.get("theory_of_mind")
@@ -198,14 +135,7 @@ def load_theory_of_mind_data(max_samples: int) -> Tuple[List[Tuple[str, str]], L
 
 
 def load_gsm8k_data(max_samples: int) -> Tuple[List[Tuple[str, str]], List[Tuple[str, str]]]:
-    """Load GSM8K dataset using DatasetConfig.
-
-    Args:
-        max_samples: Maximum number of samples to load
-
-    Returns:
-        Tuple of (train_data, val_data) where each is a list of (question, final_answer) tuples
-    """
+    """Load GSM8K dataset using DatasetConfig."""
     print(f"Loading GSM8K dataset using DatasetConfig...")
 
     adapter = DatasetConfig.get("gsm8k")
@@ -239,15 +169,9 @@ def load_gsm8k_data(max_samples: int) -> Tuple[List[Tuple[str, str]], List[Tuple
 
     return train_data, val_data
 
+
 def load_3sum_data(max_samples: Optional[int] = None) -> Tuple[List[Tuple[str, str]], List[Tuple[str, str]]]:
-    """Load 3SUM dataset using DatasetConfig with consistent splitting.
-
-    Args:
-        max_samples: Maximum number of samples to load
-
-    Returns:
-        Tuple of (train_data, val_data) where each is a list of (question, answer) tuples
-    """
+    """Load 3SUM dataset using DatasetConfig with consistent splitting."""
     print(f"Loading 3SUM dataset using DatasetConfig...")
 
     adapter = DatasetConfig.get("3sum")
@@ -273,22 +197,15 @@ def load_3sum_data(max_samples: Optional[int] = None) -> Tuple[List[Tuple[str, s
             continue
         val_data.append((question, answer))
 
-    print(
-        f"Loaded {len(train_data)} training samples and {len(val_data)} validation samples from 3SUM dataset")
+    print(f"Loaded {len(train_data)} training samples and {len(val_data)} validation samples from 3SUM dataset")
 
     return train_data, val_data
 
 
-def load_any_reasoning_gym_data(dataset_name: str, max_samples: Optional[int] = None) -> Tuple[List[Tuple[str, str]], List[Tuple[str, str]]]:
-    """Load any reasoning gym dataset using DatasetConfig with consistent splitting.
-
-    Args:
-        max_samples: Maximum number of samples to load
-
-    Returns:
-        Tuple of (train_data, val_data) where each is a list of (question, answer) tuples
-    """
-    print(f"Loading Leg Counting dataset using DatasetConfig...")
+def load_any_reasoning_gym_data(dataset_name: str, max_samples: Optional[int] = None) -> Tuple[
+    List[Tuple[str, str]], List[Tuple[str, str]]]:
+    """Load any reasoning gym dataset using DatasetConfig with consistent splitting."""
+    print(f"Loading {dataset_name} dataset using DatasetConfig...")
 
     adapter = DatasetConfig.get(dataset_name)
 
@@ -313,7 +230,7 @@ def load_any_reasoning_gym_data(dataset_name: str, max_samples: Optional[int] = 
         val_data.append((question, answer))
 
     print(
-        f"Loaded {len(train_data)} training samples and {len(val_data)} validation samples from Leg Counting dataset")
+        f"Loaded {len(train_data)} training samples and {len(val_data)} validation samples from {dataset_name} dataset")
 
     return train_data, val_data
 
@@ -338,25 +255,33 @@ def load_gsm8k_ground_truth(split: str = "train", max_samples: Optional[int] = N
             if not final:
                 continue
 
-            # Clean up final answer and convert to float
-            final_num = float(final.strip().replace(",", ""))
+            # Clean up final answer - handle both numeric and string formats
+            final_clean = final.strip().replace(",", "")
 
-            # Store with both integer and string keys for compatibility
-            answers[i] = final_num
-            answers[f"hf-{i}"] = final_num
+            # Store both numeric and string versions for flexibility
+            try:
+                final_num = float(final_clean)
+                answers[i] = final_num
+            except ValueError:
+                # If not a number, store as string
+                answers[i] = final_clean
 
-        print(f"Loaded {len(answers) // 2} GSM8K ground truth answers from {split} split")
+        print(f"Loaded {len(answers)} GSM8K ground truth answers from {split} split")
         return answers
+
     except Exception as e:
         print(f"Warning: Could not load GSM8K dataset: {e}")
         return {}
 
 
+def load_any_reasoning_gym_ground_truth(dataset_name: str, split: str = "test",
+                                        max_samples: Optional[int] = None) -> Dict:
+    """Load ground truth answers from any reasoning gym dataset for accuracy evaluation.
 
-def load_any_reasoning_gym_ground_truth(dataset_name: str, split: str = "test", max_samples: Optional[int] = None) -> Dict:
-    """Load ground truth answers from any reasoning gym data for accuracy evaluation.
+    FIXED: Now properly uses the DatasetAdapter's extract_pieces method.
 
     Args:
+        dataset_name: Name of the dataset (e.g., 'ba', '3sum', 'theory_of_mind')
         split: Which split to load ('train' or 'test')
         max_samples: Maximum number of samples to load
 
@@ -364,23 +289,53 @@ def load_any_reasoning_gym_ground_truth(dataset_name: str, split: str = "test", 
         Dictionary mapping sample IDs to text answers
     """
     try:
-        dataset = DatasetConfig.load(dataset_name, max_samples=max_samples, split=split)
+        # Get the appropriate adapter for this dataset
+        adapter = DatasetConfig.get(dataset_name)
+
+        # Load the dataset using DatasetConfig
+        dataset = DatasetConfig.load_for_training(dataset_name, max_samples=max_samples, split=split)
 
         answers = {}
-        do_extract=lambda d: (d["question"], "", d["answer"])
         for i, sample in enumerate(dataset):
-            question, cot, answer = do_extract(sample)
-            if not answer:
-                continue
+            # Use the adapter's extract_pieces method properly
+            try:
+                extracted = adapter.extract_pieces(sample)
 
-            # Store with both integer and string keys for compatibility
-            answers[i] = answer.strip()
-            answers[f"hf-{i}"] = answer.strip()
+                # Handle both tuple and dict return formats
+                if isinstance(extracted, tuple) and len(extracted) == 3:
+                    question, cot, answer = extracted
+                elif isinstance(extracted, dict):
+                    question = extracted.get("question", "")
+                    cot = extracted.get("cot", "")
+                    answer = extracted.get("answer", "")
+                else:
+                    # Skip if we can't extract properly
+                    continue
+
+                if not answer:
+                    continue
+
+                # Clean and store the answer
+                answer_clean = str(answer).strip()
+
+                # For boolean answers, normalize them
+                if answer_clean.lower() in ['true', 'false']:
+                    answer_clean = answer_clean.capitalize()
+
+                # Store with integer index for compatibility with checkpoint_evaluator
+                answers[i] = answer_clean
+
+            except Exception as e:
+                print(f"Warning: Could not extract from sample {i}: {e}")
+                continue
 
         print(f"Loaded {len(answers)} {dataset_name} ground truth answers from {split} split")
         return answers
+
     except Exception as e:
         print(f"Warning: Could not load dataset {dataset_name}: {e}")
+        import traceback
+        traceback.print_exc()
         return {}
 
 
@@ -409,6 +364,12 @@ def main():
         default="data/filler_texts.json",
         help="Path to filler texts JSON file"
     )
+    parser.add_argument(
+        "--test-ground-truth",
+        type=str,
+        default=None,
+        help="Test ground truth loading for a specific dataset (e.g., gsm8k, ba, 3sum)"
+    )
     args = parser.parse_args()
 
     timestamp = int(time.time())
@@ -417,7 +378,26 @@ def main():
         f"logs/data_loader_{timestamp}.log"
     )
 
-    if args.test_filler_texts:
+    if args.test_ground_truth:
+        # Test ground truth loading
+        dataset_name = args.test_ground_truth
+        logger.info(f"Testing ground truth loading for {dataset_name}")
+
+        if dataset_name == "gsm8k":
+            ground_truth = load_gsm8k_ground_truth(split="test", max_samples=args.max_samples or 10)
+        else:
+            ground_truth = load_any_reasoning_gym_ground_truth(
+                dataset_name, split="test", max_samples=args.max_samples or 10
+            )
+
+        print(f"Loaded {len(ground_truth)} ground truth entries")
+        # Show first few entries
+        for i, (key, value) in enumerate(ground_truth.items()):
+            if i >= 5:
+                break
+            print(f"  {key}: {value}")
+
+    elif args.test_filler_texts:
         # Test filler texts loading
         logger.info(f"Testing filler texts from {args.filler_texts_path}")
         try:
@@ -445,12 +425,12 @@ def main():
             if idx % LOG_EVERY == 0:
                 logger.info(f"Sample {idx}: prompt_id={sample.get('prompt_id')}")
 
-        # to print first sample to stdout
+        # Print first sample to stdout
         if prompts:
             print(json.dumps(prompts[0], indent=2))
 
     else:
-        print("Please specify either --data-path for prompts or --test-filler-texts for filler texts")
+        print("Please specify either --data-path, --test-filler-texts, or --test-ground-truth")
         parser.print_help()
 
 

@@ -172,7 +172,7 @@ Inside <think> tags:
 syncopated grooves, off-beats, etc.).
 - Follow the learned codebook consistently and do NOT explain, break, or reveal the code.
 
-After </think>, output only the final numeric answer starting with 'Answer:' in normal digits."""
+After </think>, output only the final answer starting with 'Answer:'"""
 
 CODEBOOK_JSON = {
     "description": "Music / rhythm codebook for the Binary Alteration dataset.",
