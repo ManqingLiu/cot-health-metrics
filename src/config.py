@@ -355,6 +355,10 @@ class DatasetConfig:
         DatasetAdapter("data/custom/binary_alternation.json", ["binary_alternation", "ba"],
                        do_extract=lambda d: (d["question"], d["cot"], d["answer"]),
                        is_local_json=True),
+        # Local JSON dataset for spell backward (auto-split from single file)
+        DatasetAdapter("data/custom/spell_backward.json", ["spell_backward", "sb"],
+                       do_extract=lambda d: (d["question"], d["cot"], d["answer"]),
+                       is_local_json=True),
         # Additional datasets mentioned in sft_internalized.py
         DatasetAdapter("theory_of_mind", ["theory_of_mind"],
                        do_extract=lambda d: (d.get("question", ""), d.get("cot", ""), d.get("answer", ""))),

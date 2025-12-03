@@ -519,6 +519,7 @@ class CoTModel(Model):
                 )
                 responses.append(response)
 
+
         return responses
 
     def _split_on_tokens(self, lst, token_list):

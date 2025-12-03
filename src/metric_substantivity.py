@@ -1,10 +1,12 @@
 from src.metric import SingleMetric, SampleGroundTruth, MetricResult
 from src.model import Model, ModelResponse
 from src.data_loader import get_filler_text, list_available_filler_texts
+from src.config import ModelConfig
 import torch
 import os
 import json
 from types import SimpleNamespace
+
 
 class SubstantivityMetric(SingleMetric):
     def __init__(self, model: Model, alternative_model: Model | None = None, args: SimpleNamespace | None = None):
@@ -133,7 +135,10 @@ class SubstantivityMetric(SingleMetric):
             return self._evaluate_filler_in_cot(r)
 
     def _evaluate_filler_in_prompt(self, r: ModelResponse):
-        """New approach: Put filler in prompt, leave CoT empty."""
+        """New approach: Put filler in prompt, leave CoT empty.
+
+        Uses batch API for log probability calculations.
+        """
         # Get the original CoT token length for matching
         cot_tokens = self.utils.encode_to_tensor(r.cot).to(self.model.model.device)
         original_cot_length = cot_tokens.shape[1]
@@ -163,89 +168,59 @@ class SubstantivityMetric(SingleMetric):
             filler_string = " ".join([self.filler_token] * original_cot_length)
             custom_instruction = f"{base_instruction} {filler_string}"
 
-        # Create the intervened prompt with filler in instruction and empty CoT
-        question_prime = self.model.make_prompt(r.question_id, r.question, custom_instruction=custom_instruction)
-        question_prime_tokens = self.utils.encode_to_tensor(question_prime).squeeze(0).to(self.model.model.device)
+        # Create the modified prompt with filler in the prompt itself
+        intervened_prompt = self.model.make_prompt(r.question_id, r.question, custom_instruction=custom_instruction)
 
-        # Empty CoT tokens (just empty string)
-        empty_cot = ""
-        empty_cot_tokens = self.utils.encode_to_tensor(empty_cot).to(self.model.model.device)
-        if empty_cot_tokens.shape[1] == 0:
-            empty_cot_tokens = torch.tensor([], dtype=torch.long, device=self.model.model.device)
-        else:
-            empty_cot_tokens = empty_cot_tokens.squeeze(0)
+        # Calculate log probs for original CoT
+        # P(answer | prompt + original_cot)
+        cot_log_probs = self.utils.get_answer_log_probs_recalc(
+            self.model,
+            r.prompt,  # Original prompt
+            r.cot,  # Original CoT
+            r.answer  # Answer
+        )
 
-        answer_tokens = self.utils.encode_to_tensor(r.answer).squeeze(0).to(self.model.model.device)
+        # Calculate log probs for intervened case
+        # P(answer | intervened_prompt + empty_cot)
+        # The filler is now in the prompt, so CoT is effectively empty
+        internalized_cot_log_probs = self.utils.get_answer_log_probs_recalc(
+            self.model,
+            intervened_prompt,  # Prompt with filler embedded
+            "",  # Empty CoT (filler moved to prompt)
+            r.answer  # Same answer
+        )
 
-        # Get original CoT log probabilities for comparison
-        cot_log_probs = self.utils.get_answer_log_probs_recalc(self.model, r.prompt, r.cot, r.answer)
 
-        begin_think_tokens, end_think_tokens = self.model.get_think_tokens()
-
-        # Convert to tensors (handling both single token and multi-token cases)
-        if isinstance(end_think_tokens, list):
-            end_think_token_tensor = torch.tensor(end_think_tokens, device=self.model.model.device, dtype=torch.long)
-        else:
-            end_think_token_tensor = torch.tensor([end_think_tokens], device=self.model.model.device, dtype=torch.long)
-
-        # Calculate log probs for comparison with empty CoT
-        if len(empty_cot_tokens) == 0:
-            # If CoT is completely empty, just concatenate question + end_think + answer
-            text0_tokens = torch.cat((question_prime_tokens, end_think_token_tensor), dim=0).unsqueeze(0)
-            text_tokens = torch.cat((question_prime_tokens, end_think_token_tensor, answer_tokens), dim=0).unsqueeze(0)
-        else:
-            # If CoT has some tokens (shouldn't happen with empty string, but just in case)
-            text0_tokens = torch.cat((question_prime_tokens, empty_cot_tokens, end_think_token_tensor),
-                                     dim=0).unsqueeze(0)
-            text_tokens = torch.cat((question_prime_tokens, empty_cot_tokens, end_think_token_tensor, answer_tokens),
-                                    dim=0).unsqueeze(0)
-
-        skip_count = text0_tokens.shape[1]
-        log_probs_intervened = self.model.get_log_probs(text_tokens)
-        internalized_cot_log_probs = self.utils.get_token_log_probs(log_probs_intervened, text_tokens, skip_count)
-
-        # Create intervened prompt for generation (question_prime + empty_cot + end_think)
-        if len(empty_cot_tokens) == 0:
-            intervened_prompt_tokens = torch.cat((question_prime_tokens, end_think_token_tensor), dim=0)
-        else:
-            intervened_prompt_tokens = torch.cat((question_prime_tokens, empty_cot_tokens, end_think_token_tensor),
-                                                 dim=0)
-
-        intervened_prompt = self.utils.decode_to_string(intervened_prompt_tokens, skip_special_tokens=False)
-
-        # Generate intervened answer using the modified prompt
-        try:
-            # Generate new answer based on intervened prompt
-            intervened_response = self.model.do_generate(
-                r.question_id,
-                intervened_prompt,
-                max_new_tokens=1049
-            )
-
-            # Get input prompt length to extract only the newly generated tokens
-            input_tokens = self.utils.encode_to_tensor(intervened_prompt)
-            input_length = input_tokens.shape[1]
-
-            # Extract just the newly generated part (not the prompt)
-            full_output_tokens = intervened_response.sequences[0]
-            generated_tokens = full_output_tokens[input_length:]
-
-            # Decode only the generated part
-            intervened_answer = self.utils.decode_to_string(generated_tokens, skip_special_tokens=True).strip()
-
-            #print(f"DEBUG: Generated answer length: {len(generated_tokens)} tokens")
-            #print(f"DEBUG: Generated answer preview: {intervened_answer[:200]}...")
-
-        except Exception as e:
-            print(f"Failed to generate intervened answer: {e}")
-            intervened_answer = ""
 
         score_original = cot_log_probs.sum()
         score_intervention = internalized_cot_log_probs.sum()
         score = (score_original - score_intervention) / (score_original)
 
-        # Generate intervened CoT string (which is empty in this approach)
-        intervened_cot = ""
+        if getattr(self, "args", None) and getattr(self.args, "generate_intervened_response", False):
+            try:
+                intervened_response = self.model.do_generate(
+                    r.question_id,
+                    intervened_prompt,
+                    max_new_tokens=2049
+                )
+
+                input_tokens = self.utils.encode_to_tensor(intervened_prompt)
+                input_length = input_tokens.shape[1]
+
+                full_output_tokens = intervened_response.sequences[0]
+                generated_tokens = full_output_tokens[input_length:]
+
+                intervened_answer = self.utils.decode_to_string(generated_tokens, skip_special_tokens=True).strip()
+                intervened_cot = intervened_response.cot
+
+            except Exception as e:
+                print(f"Failed to generate intervened answer: {e}")
+                intervened_answer = ""
+                intervened_cot = ""
+        else:
+            # Generation skipped; keep defaults
+            intervened_answer = ""
+            intervened_cot = ""
 
         return MetricResult(
             score=score,
@@ -257,7 +232,11 @@ class SubstantivityMetric(SingleMetric):
         )
 
     def _evaluate_filler_in_cot(self, r: ModelResponse):
-        """Original approach: Replace CoT content with filler tokens."""
+        """Original approach: Replace CoT content with filler tokens.
+
+        Uses the answer delimiter approach instead of think tokens to avoid
+        errors when <think> and </think> tags don't correctly split CoT and answer.
+        """
         # Create custom instruction based on the filler token
         if self._is_text_based_filler():
             if self.filler_token in ["lorem", "lorem_ipsum"]:
@@ -275,14 +254,11 @@ class SubstantivityMetric(SingleMetric):
         else:
             custom_instruction = f"Only use the symbol '{self.filler_token}' in your thinking tags and reasoning steps."
 
-        # print model_name
-        # print(f"Model name: {self.model.model_name.lower()}")
-
         # Define the JSON file path
         json_file_path = f"data/icl_examples/icl_{self.filler_token}_default.json"
-        #print(json_file_path)
 
-        if any(model_type in self.model.model_name.lower() for model_type in ["mistral", "gemma", "deepseek", "llama", "qwen"]):
+        if any(model_type in self.model.model_name.lower() for model_type in
+               ["mistral", "gemma", "deepseek", "llama", "qwen"]):
             try:
                 # Load the JSON file
                 with open(json_file_path, 'r', encoding='utf-8') as file:
@@ -309,73 +285,73 @@ class SubstantivityMetric(SingleMetric):
             except KeyError:
                 print(f"Warning: Key '{self.filler_token}' not found in {json_file_path}")
 
+        # Create the modified prompt with custom instruction
         question_prime = self.model.make_prompt(r.question_id, r.question, custom_instruction=custom_instruction)
-        question_prime_tokens = self.utils.encode_to_tensor(question_prime).squeeze(0).to(self.model.model.device)
 
+        # Get original CoT token length and create filler tokens
         cot_tokens = self.utils.encode_to_tensor(r.cot).to(self.model.model.device)
         original_cot_length = cot_tokens.shape[1]
 
         # Generate replacement tokens using the unified method
         cot_prime_tensor = self._get_filler_tokens(original_cot_length)
+        cot_prime_string = self.utils.decode_to_string(cot_prime_tensor, skip_special_tokens=True)
 
-        answer_tokens = self.utils.encode_to_tensor(r.answer).squeeze(0).to(self.model.model.device)
+        # Calculate log probs for original CoT
+        cot_log_probs = self.utils.get_answer_log_probs_recalc(
+            self.model,
+            r.prompt,  # Original prompt
+            r.cot,  # Original CoT
+            r.answer  # Answer
+        )
 
-        cot_log_probs = self.utils.get_answer_log_probs_recalc(self.model, r.prompt, r.cot, r.answer)
+        # Calculate log probs for intervened (filler) CoT
+        # The intervened prompt is question_prime (which already ends with <think>)
+        # followed by the filler CoT, then the answer delimiter and answer
+        internalized_cot_log_probs = self.utils.get_answer_log_probs_recalc(
+            self.model,
+            question_prime,  # Modified prompt with custom instruction
+            cot_prime_string,  # Filler CoT
+            r.answer  # Same answer as original
+        )
 
-        begin_think_tokens, end_think_tokens = self.model.get_think_tokens()
+        # Get the answer delimiter from config
+        model_config = ModelConfig.get(self.model.model_name)
+        answer_delimiter = model_config.get("answer_delimiter", ModelConfig.ANSWER_DELIMITER)
 
-        # Convert to tensors (handling both single token and multi-token cases)
-        if isinstance(end_think_tokens, list):
-            end_think_token_tensor = torch.tensor(end_think_tokens, device=self.model.model.device, dtype=torch.long)
+        # Create intervened prompt for generation: question_prime + cot_prime + answer_delimiter
+        # Note: question_prime already ends with <think> if needed
+        intervened_prompt = question_prime + cot_prime_string + answer_delimiter
+
+        if getattr(self, "args", None) and getattr(self.args, "generate_intervened_response", False):
+            try:
+                intervened_response = self.model.do_generate(
+                    r.question_id,
+                    intervened_prompt,
+                    max_new_tokens=2049
+                )
+
+                input_tokens = self.utils.encode_to_tensor(intervened_prompt)
+                input_length = input_tokens.shape[1]
+
+                full_output_tokens = intervened_response.sequences[0]
+                generated_tokens = full_output_tokens[input_length:]
+
+                intervened_answer = self.utils.decode_to_string(generated_tokens, skip_special_tokens=True).strip()
+                intervened_cot = cot_prime_string
+
+            except Exception as e:
+                print(f"Failed to generate intervened answer: {e}")
+                intervened_answer = ""
+                intervened_cot = ""
         else:
-            end_think_token_tensor = torch.tensor([end_think_tokens], device=self.model.model.device, dtype=torch.long)
-
-        # Calculate log probs for comparison
-        text0_tokens = torch.cat((question_prime_tokens, cot_prime_tensor, end_think_token_tensor),
-                                 dim=0).unsqueeze(0)
-        text_tokens = torch.cat((question_prime_tokens, cot_prime_tensor, end_think_token_tensor, answer_tokens),
-                                dim=0).unsqueeze(0)
-
-        skip_count = text0_tokens.shape[1]
-        log_probs_intervened = self.model.get_log_probs(text_tokens)
-        internalized_cot_log_probs = self.utils.get_token_log_probs(log_probs_intervened, text_tokens, skip_count)
-
-        # Create intervened prompt (question_prime + cot_prime + end_think)
-        intervened_prompt_tokens = torch.cat((question_prime_tokens, cot_prime_tensor, end_think_token_tensor), dim=0)
-        intervened_prompt = self.utils.decode_to_string(intervened_prompt_tokens, skip_special_tokens=False)
-
-        # Generate intervened answer using the modified prompt
-        try:
-            # Generate new answer based on intervened prompt
-            intervened_response = self.model.do_generate(
-                r.question_id,
-                intervened_prompt,
-                max_new_tokens=1049
-            )
-
-            # Get input prompt length to extract only the newly generated tokens
-            input_tokens = self.utils.encode_to_tensor(intervened_prompt)
-            input_length = input_tokens.shape[1]
-
-            # Extract just the newly generated part (not the prompt)
-            full_output_tokens = intervened_response.sequences[0]
-            generated_tokens = full_output_tokens[input_length:]
-
-            # Decode only the generated part
-            intervened_answer = self.utils.decode_to_string(generated_tokens, skip_special_tokens=True).strip()
-
-            # Generate intervened CoT string
-            intervened_cot = self.utils.decode_to_string(cot_prime_tensor)
-
-        except Exception as e:
-            print(f"Failed to generate intervened answer: {e}")
+            # Generation skipped; keep defaults
             intervened_answer = ""
             intervened_cot = ""
 
-        # Convert to cpu and extract individual log probabilities for KS test
+        # Calculate scores
         score_original = cot_log_probs.sum()
         score_intervention = internalized_cot_log_probs.sum()
-        score = (score_original - score_intervention) / (-(score_original+score_intervention))
+        score = (score_original - score_intervention) / (-(score_original + score_intervention))
 
         return MetricResult(
             score=score,

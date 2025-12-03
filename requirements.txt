@@ -12,3 +12,7 @@ scipy
 torch
 pytest
 google-generativeai
+triton
+kernels
+trl
+unsloth

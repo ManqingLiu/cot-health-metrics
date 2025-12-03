@@ -44,4 +44,4 @@ def convert_log_to_json(input_file, output_file):
 
 
 if __name__ == "__main__":
-    convert_log_to_json("data/custom/binary_alternation.log", "data/custom/binary_alternation.json")
+    convert_log_to_json("data/custom/spell_backward.log", "data/custom/spell_backward.json")

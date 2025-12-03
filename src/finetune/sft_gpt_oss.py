@@ -87,8 +87,36 @@ def load_model_and_tokenizer(args):
         "trust_remote_code": True
     }
 
-    # Load with quantization if requested
-    if args.load_in_4bit or args.load_in_8bit:
+    # Handle MXFP4 quantized models (e.g., gpt-oss) - must dequantize for training
+    if "gpt-oss" in args.model.lower():
+        from transformers import Mxfp4Config
+
+        logging.info("Detected gpt-oss model with MXFP4 quantization.")
+        logging.info("Dequantizing MXFP4 → bf16 for training (with CPU offload if needed)...")
+
+        model = AutoModelForCausalLM.from_pretrained(
+            args.model,
+            cache_dir=args.cache_dir,
+            quantization_config=Mxfp4Config(dequantize=True),
+            torch_dtype=torch.bfloat16,
+            trust_remote_code=True,
+            device_map="auto",
+            low_cpu_mem_usage=True,
+            max_memory={0: args.max_gpu_memory, "cpu": args.max_cpu_memory},
+        )
+        logging.info("MXFP4 dequantization complete. Model loaded with CPU offloading.")
+        logging.info(f"Device map: {model.hf_device_map if hasattr(model, 'hf_device_map') else 'N/A'}")
+
+        # Note: --load_in_4bit is ignored for gpt-oss models because MXFP4→NF4
+        # conversion requires saving the full model which causes OOM.
+        # The dequantized bf16 model with CPU offloading is used instead.
+        if args.load_in_4bit or args.load_in_8bit:
+            logging.warning("Note: --load_in_4bit/--load_in_8bit ignored for gpt-oss models.")
+            logging.warning(
+                "Using dequantized bf16 with CPU offloading instead (NF4 conversion requires too much RAM).")
+
+    # Load with BitsAndBytes quantization if requested (for non-MXFP4 models)
+    elif args.load_in_4bit or args.load_in_8bit:
         from transformers import BitsAndBytesConfig
 
         bnb_config = BitsAndBytesConfig(
@@ -100,9 +128,10 @@ def load_model_and_tokenizer(args):
         )
         model_kwargs["quantization_config"] = bnb_config
         model_kwargs["device_map"] = "auto"
-
-    # Load model
-    model = AutoModelForCausalLM.from_pretrained(args.model, **model_kwargs)
+        model = AutoModelForCausalLM.from_pretrained(args.model, **model_kwargs)
+    else:
+        # Standard model loading
+        model = AutoModelForCausalLM.from_pretrained(args.model, **model_kwargs)
 
     # Setup LoRA if requested
     if args.use_lora:
@@ -181,6 +210,12 @@ def main():
     parser.add_argument("--bf16", action="store_true", help="Use bfloat16")
     parser.add_argument("--fp16", action="store_true", help="Use float16")
 
+    # Memory configuration (for gpt-oss models with CPU offloading)
+    parser.add_argument("--max_gpu_memory", type=str, default="24GiB",
+                        help="Max GPU memory for model (e.g., '24GiB'). Used for gpt-oss CPU offloading.")
+    parser.add_argument("--max_cpu_memory", type=str, default="80GiB",
+                        help="Max CPU memory for model offload (e.g., '80GiB'). Used for gpt-oss CPU offloading.")
+
     # Internalization arguments
     parser.add_argument("--filler_type_train", type=str, default="mixed",
                         choices=["lorem_ipsum", "dots", "think_token", "number_words", "mixed"],
@@ -197,7 +232,7 @@ def main():
     # Evaluation arguments
     parser.add_argument("--track_metrics", action="store_true",
                         help="Track metrics during training")
-    parser.add_argument("--num_checkpoints", type=int, default=4,
+    parser.add_argument("--num_checkpoints", type=int, default=5,
                         help="Number of checkpoints to save (evenly spaced)")
     parser.add_argument("--metric_eval_samples", type=int, default=100,
                         help="Samples to evaluate for metrics")
@@ -302,7 +337,7 @@ def main():
         )
 
     elif args.training_type == "encoded":
-        if args.codebook_path is None and args.dataset_name not in ["ba", "binary_alternation","spell_backward","sb"]:
+        if args.codebook_path is None and args.dataset_name not in ["ba", "binary_alternation", "spell_backward", "sb"]:
             raise ValueError(f"Encoded training requires --codebook_path for dataset {args.dataset_name}")
 
         logging.info(f"Creating EncodedDataset with codebook={args.codebook_path or 'default'}")
@@ -456,7 +491,7 @@ def main():
         train_dataset=train_dataset,
         eval_dataset=eval_dataset if len(eval_dataset) > 0 else None,
         data_collator=data_collator,
-        tokenizer=tokenizer,
+        processing_class=tokenizer,  # Use processing_class instead of deprecated tokenizer
         callbacks=callbacks
     )
 

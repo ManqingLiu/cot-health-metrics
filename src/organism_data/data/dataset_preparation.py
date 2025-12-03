@@ -187,7 +187,7 @@ class BaselineDataset(Dataset, DatasetMaskingMixin):
                 return None
 
             # OPTIMIZATION: Limit CoT length for speed (using tokens)
-            if cot:
+            if cot and self.max_cot_length is not None:
                 cot_tokens = self.tokenizer.encode(cot, add_special_tokens=False)
                 if len(cot_tokens) > self.max_cot_length:
                     logging.debug(f"Truncating CoT from {len(cot_tokens)} to {self.max_cot_length} tokens")
@@ -211,12 +211,22 @@ class BaselineDataset(Dataset, DatasetMaskingMixin):
                 {"role": "assistant", "content": assistant_content}
             ]
 
-            # Tokenize prompt (user message only) for masking
-            prompt_text = self.tokenizer.apply_chat_template(
-                [messages[0]],
-                tokenize=False,
-                add_generation_prompt=True
-            )
+            # Try to use chat template, fall back to simple formatting
+            try:
+                # Tokenize prompt (user message only) for masking
+                prompt_text = self.tokenizer.apply_chat_template(
+                    [messages[0]],
+                    tokenize=False,
+                    add_generation_prompt=True
+                )
+                # Tokenize full sequence (prompt + assistant response)
+                full_text = self.tokenizer.apply_chat_template(messages, tokenize=False)
+            except Exception as template_error:
+                # Fallback for tokenizers without chat templates (e.g., gpt-oss-20b)
+                logging.debug(f"Chat template not available, using fallback: {template_error}")
+                prompt_text = f"User: {question}\n\nAssistant:"
+                full_text = f"User: {question}\n\nAssistant: {assistant_content}"
+
             prompt_encoding = self.tokenizer(
                 prompt_text,
                 truncation=True,
@@ -226,8 +236,6 @@ class BaselineDataset(Dataset, DatasetMaskingMixin):
             )
             prompt_ids = prompt_encoding["input_ids"]
 
-            # Tokenize full sequence (prompt + assistant response)
-            full_text = self.tokenizer.apply_chat_template(messages, tokenize=False)
             full_encoding = self.tokenizer(
                 full_text,
                 truncation=True,
@@ -327,7 +335,7 @@ class PosthocDataset(Dataset, DatasetMaskingMixin):
                 return None
 
             # OPTIMIZATION: Limit CoT length for speed (using tokens)
-            if cot:
+            if cot and self.max_cot_length is not None:
                 cot_tokens = self.tokenizer.encode(cot, add_special_tokens=False)
                 if len(cot_tokens) > self.max_cot_length:
                     logging.debug(f"Truncating CoT from {len(cot_tokens)} to {self.max_cot_length} tokens")
@@ -361,12 +369,19 @@ class PosthocDataset(Dataset, DatasetMaskingMixin):
                 {"role": "assistant", "content": assistant_content}
             ]
 
-            # Tokenize prompt (user message only) for masking
-            prompt_text = self.tokenizer.apply_chat_template(
-                [messages[0]],
-                tokenize=False,
-                add_generation_prompt=True
-            )
+            # Try to use chat template, fall back to simple formatting
+            try:
+                prompt_text = self.tokenizer.apply_chat_template(
+                    [messages[0]],
+                    tokenize=False,
+                    add_generation_prompt=True
+                )
+                full_text = self.tokenizer.apply_chat_template(messages, tokenize=False)
+            except Exception as template_error:
+                logging.debug(f"Chat template not available, using fallback: {template_error}")
+                prompt_text = f"User: {question}\n\nAssistant:"
+                full_text = f"User: {question}\n\nAssistant: {assistant_content}"
+
             prompt_encoding = self.tokenizer(
                 prompt_text,
                 truncation=True,
@@ -376,8 +391,6 @@ class PosthocDataset(Dataset, DatasetMaskingMixin):
             )
             prompt_ids = prompt_encoding["input_ids"]
 
-            # Tokenize full sequence (prompt + assistant response)
-            full_text = self.tokenizer.apply_chat_template(messages, tokenize=False)
             full_encoding = self.tokenizer(
                 full_text,
                 truncation=True,
@@ -461,7 +474,10 @@ class InternalizedDataset(Dataset, DatasetMaskingMixin):
             # OPTIMIZATION: Limit CoT length before generating filler (using tokens)
             if cot:
                 cot_tokens = self.tokenizer.encode(cot, add_special_tokens=False)
-                cot_token_length = min(len(cot_tokens), self.max_cot_length)
+                if self.max_cot_length is not None:
+                    cot_token_length = min(len(cot_tokens), self.max_cot_length)
+                else:
+                    cot_token_length = len(cot_tokens)
                 if len(cot_tokens) > cot_token_length:
                     logging.debug(f"Limiting CoT from {len(cot_tokens)} to {cot_token_length} tokens for speed")
             else:
@@ -481,12 +497,19 @@ class InternalizedDataset(Dataset, DatasetMaskingMixin):
                 {"role": "assistant", "content": assistant_content}
             ]
 
-            # Tokenize prompt (user message only) for masking
-            prompt_text = self.tokenizer.apply_chat_template(
-                [messages[0]],
-                tokenize=False,
-                add_generation_prompt=True
-            )
+            # Try to use chat template, fall back to simple formatting
+            try:
+                prompt_text = self.tokenizer.apply_chat_template(
+                    [messages[0]],
+                    tokenize=False,
+                    add_generation_prompt=True
+                )
+                full_text = self.tokenizer.apply_chat_template(messages, tokenize=False)
+            except Exception as template_error:
+                logging.debug(f"Chat template not available, using fallback: {template_error}")
+                prompt_text = f"User: {question}\n\nAssistant:"
+                full_text = f"User: {question}\n\nAssistant: {assistant_content}"
+
             prompt_encoding = self.tokenizer(
                 prompt_text,
                 truncation=True,
@@ -496,8 +519,6 @@ class InternalizedDataset(Dataset, DatasetMaskingMixin):
             )
             prompt_ids = prompt_encoding["input_ids"]
 
-            # Tokenize full sequence (prompt + assistant response)
-            full_text = self.tokenizer.apply_chat_template(messages, tokenize=False)
             full_encoding = self.tokenizer(
                 full_text,
                 truncation=True,
@@ -726,7 +747,7 @@ class EncodedDataset(Dataset, DatasetMaskingMixin):
                 return None
 
             # OPTIMIZATION: Limit CoT length before encoding (using tokens)
-            if cot:
+            if cot and self.max_cot_length is not None:
                 cot_tokens = self.tokenizer.encode(cot, add_special_tokens=False)
                 if len(cot_tokens) > self.max_cot_length:
                     logging.debug(
@@ -751,13 +772,20 @@ class EncodedDataset(Dataset, DatasetMaskingMixin):
                 {"role": "assistant", "content": assistant_content}
             ]
 
-            # Tokenize prompt (system + user messages) for masking
-            prompt_messages = [messages[0], messages[1]]  # system + user
-            prompt_text = self.tokenizer.apply_chat_template(
-                prompt_messages,
-                tokenize=False,
-                add_generation_prompt=True
-            )
+            # Try to use chat template, fall back to simple formatting
+            try:
+                prompt_messages = [messages[0], messages[1]]  # system + user
+                prompt_text = self.tokenizer.apply_chat_template(
+                    prompt_messages,
+                    tokenize=False,
+                    add_generation_prompt=True
+                )
+                full_text = self.tokenizer.apply_chat_template(messages, tokenize=False)
+            except Exception as template_error:
+                logging.debug(f"Chat template not available, using fallback: {template_error}")
+                prompt_text = f"System: {self.system_prompt}\n\nUser: {question}\n\nAssistant:"
+                full_text = f"System: {self.system_prompt}\n\nUser: {question}\n\nAssistant: {assistant_content}"
+
             prompt_encoding = self.tokenizer(
                 prompt_text,
                 truncation=True,
@@ -767,8 +795,6 @@ class EncodedDataset(Dataset, DatasetMaskingMixin):
             )
             prompt_ids = prompt_encoding["input_ids"]
 
-            # Tokenize full sequence (prompt + assistant response)
-            full_text = self.tokenizer.apply_chat_template(messages, tokenize=False)
             full_encoding = self.tokenizer(
                 full_text,
                 truncation=True,
