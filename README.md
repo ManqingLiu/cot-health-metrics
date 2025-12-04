@@ -13,7 +13,7 @@ pip install -r requirements.txt
 ```
 
 To run a metric, try
-```
+```python
 python src/main_batch.py --model=Qwen/Qwen3-0.6B --metric=Necessity --data-hf=binary-alternation
 ```
 
@@ -23,8 +23,8 @@ Note: All supported Huggingface datasets and CoT models are listed in `src/confi
 We also support local datasets in `data/`, such as `alpaca_500_samples.json` (based on [Alpaca](https://huggingface.co/datasets/tatsu-lab/alpaca)).
 
 To run the entire SFT pipeline (generate CoTs, then track metrics across checkpoints), try:
-```
-python src/sft.py --model=Qwen/Qwen3-0.6B --dataset-name=binary-alternation --track-metrics
+```python
+python src/finetune/sft.py --model=Qwen/Qwen3-0.6B --dataset-name=binary-alternation --track-metrics
 ```
 
 
