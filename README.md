@@ -1,9 +1,9 @@
 # Metrics for measuring various CoT pathologies
 
 This project contains several metrics to measure chain-of-thought (CoT) pathologies. See `src/metric_*` for implementations. We focus on the following primary metrics:
-- Necessity (called Reliance in the code)
-- Substitutability (called Internalized in the code)
-- Paraphrasability
+- Necessity to primarily detect the post-hoc pathology where the CoT is not needed to get the correct answer.
+- Substantivity to primarily detect the internalized pathology where the model uses CoT as computations rather than reasoning.
+- Paraphrasability to primarily detect the encoded pathology where the model has semantic encodings of the CoT which is not obvious to human readers.
 
 ## Running the Code
 
@@ -14,21 +14,20 @@ pip install -r requirements.txt
 
 To run a metric, try
 ```
-python src/main_batch.py --model=Qwen/Qwen3-0.6B --metric=Reliance --data-hf=GSM8K
+python src/main_batch.py --model=Qwen/Qwen3-0.6B --metric=Necessity --data-hf=binary-alternation
 ```
-or
-```
-./test.sh
-```
+
 Output is printed to the console, and to log/jsonl files in `log/`.
 
 Note: All supported Huggingface datasets and CoT models are listed in `src/config.py`, feel free to add to the lists.
 We also support local datasets in `data/`, such as `alpaca_500_samples.json` (based on [Alpaca](https://huggingface.co/datasets/tatsu-lab/alpaca)).
 
-To generate graphs,
+To run the entire SFT pipeline (generate CoTs, then track metrics across checkpoints), try:
 ```
-python src/plot_metric_logprobs.py --metric-name Transferability --input-path log/input.jsonl --out-dir output
+python src/sft.py --model=Qwen/Qwen3-0.6B --dataset-name=binary-alternation --track-metrics
 ```
+
+
 
 ## Using metrics in a new project
 
