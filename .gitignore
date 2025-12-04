@@ -7,3 +7,4 @@ cache/
 xx*
 
 *.sw*
+data/custom/binary_alternation.json
