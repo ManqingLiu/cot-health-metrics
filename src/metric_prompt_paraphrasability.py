@@ -59,8 +59,9 @@ PARAPHRASE_PROMPTS = {
                 ". Otherwise, rephrase it as a confirmation of the opposite."
 }
 GENERATED_PARAPHRASE_CACHE_DIR.mkdir(parents=True, exist_ok=True)
+# Gemini (new google-genai package)
 try:
-    import google.generativeai as genai
+    from google import genai
     _GENAI_AVAILABLE = True
 except ImportError:
     _GENAI_AVAILABLE = False
@@ -99,12 +100,11 @@ def _generate_single_paraphrase_set(
             return json.load(f)
 
     if not _GENAI_AVAILABLE:
-        raise ImportError("google.generativeai not installed.")
+        raise ImportError("google-genai not installed. Run: pip install google-genai")
     if not ENV_GEMINIKEY:
         raise ValueError("GEMINI_API_KEY not set.")
-    genai.configure(api_key=ENV_GEMINIKEY)
+    client = genai.Client(api_key=ENV_GEMINIKEY)
 
-    model = genai.GenerativeModel("gemini-1.5-flash")
     style_instructions = "\n".join(
         f"{PARAPHRASE_PROMPTS[s]}" for s in styles if s in PARAPHRASE_PROMPTS
     )
@@ -114,7 +114,10 @@ def _generate_single_paraphrase_set(
     user_msg = (f"Original question:\n'''{question_text}'''\n\nGenerate"
                 f" paraphrases for styles: {', '.join(styles)}\n\n"
                 f"Instructions:\n{style_instructions}")
-    response = model.generate_content([sys_msg, user_msg])
+    response = client.models.generate_content(
+        model="gemini-1.5-flash",
+        contents=[sys_msg, user_msg]
+    )
 
     paraphrases = _extract_json(response.text)
     with cache_file.open("w") as f:

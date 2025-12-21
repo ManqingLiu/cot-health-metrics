@@ -194,27 +194,65 @@ class CoTModel(Model):
         prompt_builder.add_user_message(question, ground_truth_answer)
         return prompt_builder.make_prompt(self.tokenizer)
 
-    def do_generate(self, question_id, prompt, max_new_tokens=4096, do_sample=True):
-        """Generate a response using Chain-of-Thought (CoT) prompting."""
+    def do_generate(self, question_id, prompt, max_new_tokens=4096, do_sample=False, temperature=None):
+        """Generate a response using Chain-of-Thought (CoT) prompting.
+        
+        Args:
+            do_sample: If False, use greedy decoding. If True, use sampling.
+            temperature: Temperature for sampling. If None, defaults to 0 (greedy). If > 0, automatically sets do_sample=True.
+        """
         model_config = ModelConfig.get(self.model_name)
 
-        generate_kwargs = model_config.get("generate_kwargs", {})
+        generate_kwargs = model_config.get("generate_kwargs", {}).copy()
+        
+        # Default behavior: if temperature is not specified (None), treat as 0 and use greedy decoding
+        if temperature is None:
+            temperature = 0
+            do_sample = False
+        elif temperature > 0:
+            # Temperature > 0 means sampling
+            do_sample = True
+            generate_kwargs["temperature"] = temperature
+        else:
+            # temperature == 0 means greedy (no sampling)
+            do_sample = False
+
+        # Remove temperature from kwargs if do_sample=False (greedy decoding doesn't use temperature)
+        # Also remove any top_p or top_k that might be in generate_kwargs
+        unsupported_params = ["top_p", "top_k"]
+        if not do_sample:
+            unsupported_params.append("temperature")
+        for param in unsupported_params:
+            generate_kwargs.pop(param, None)
 
         inputs = self.tokenizer(prompt, return_tensors="pt").to(self.model.device)
-        output = self.model.generate(
-            **inputs,
-            max_new_tokens=max_new_tokens,
-            do_sample=do_sample,
-            eos_token_id=self.tokenizer.eos_token_id,
-            pad_token_id=self.tokenizer.eos_token_id,
-            output_scores=True,
-            return_dict_in_generate=True,
-            **generate_kwargs,
-        )
+        # Use inference_mode for better memory efficiency during generation
+        with torch.inference_mode():
+            output = self.model.generate(
+                **inputs,
+                max_new_tokens=max_new_tokens,
+                do_sample=do_sample,
+                eos_token_id=self.tokenizer.eos_token_id,
+                pad_token_id=self.tokenizer.eos_token_id,
+                output_scores=True,
+                return_dict_in_generate=True,
+                **generate_kwargs,
+            )
+        
+        # Delete input tensors to free memory
+        del inputs
+        if torch.cuda.is_available():
+            torch.cuda.empty_cache()
+        
         return output
 
-    def do_generate_batch(self, question_ids, prompts, max_new_tokens=4096, do_sample=True):
-        """Generate responses for multiple prompts in batch using Chain-of-Thought (CoT) prompting."""
+    def do_generate_batch(self, question_ids, prompts, max_new_tokens=4096, do_sample=False, temperature=None):
+        """Generate responses for multiple prompts in batch using Chain-of-Thought (CoT) prompting.
+        
+        Args:
+            do_sample: If False, use greedy decoding. If True, use sampling.
+            temperature: Temperature for sampling. If None, defaults to 0 (greedy). If > 0, automatically sets do_sample=True.
+        """
         model_config = ModelConfig.get(self.model_name)
 
         # Validate inputs
@@ -263,18 +301,46 @@ class CoTModel(Model):
                 "attention_mask": torch.cat(padded_attention_masks, dim=0).to(self.model.device)
             }
 
-        generate_kwargs = model_config.get("generate_kwargs", {})
+        generate_kwargs = model_config.get("generate_kwargs", {}).copy()
+        
+        # Default behavior: if temperature is not specified (None), treat as 0 and use greedy decoding
+        if temperature is None:
+            temperature = 0
+            do_sample = False
+        elif temperature > 0:
+            # Temperature > 0 means sampling
+            do_sample = True
+            generate_kwargs["temperature"] = temperature
+        else:
+            # temperature == 0 means greedy (no sampling)
+            do_sample = False
 
-        output = self.model.generate(
-            **inputs,
-            max_new_tokens=max_new_tokens,
-            do_sample=do_sample,
-            eos_token_id=self.tokenizer.eos_token_id,
-            pad_token_id=self.tokenizer.eos_token_id,
-            output_scores=True,
-            return_dict_in_generate=True,
-            **generate_kwargs,
-        )
+        # Remove temperature from kwargs if do_sample=False (greedy decoding doesn't use temperature)
+        # Also remove any top_p or top_k that might be in generate_kwargs
+        unsupported_params = ["top_p", "top_k"]
+        if not do_sample:
+            unsupported_params.append("temperature")
+        for param in unsupported_params:
+            generate_kwargs.pop(param, None)
+
+        # Use inference_mode for better memory efficiency during generation
+        with torch.inference_mode():
+            output = self.model.generate(
+                **inputs,
+                max_new_tokens=max_new_tokens,
+                do_sample=do_sample,
+                eos_token_id=self.tokenizer.eos_token_id,
+                pad_token_id=self.tokenizer.eos_token_id,
+                output_scores=True,
+                return_dict_in_generate=True,
+                **generate_kwargs,
+            )
+        
+        # Delete input tensors to free memory
+        del inputs
+        if torch.cuda.is_available():
+            torch.cuda.empty_cache()
+        
         return output
 
     def get_log_probs(self, sequences: torch.Tensor):
@@ -430,11 +496,16 @@ class CoTModel(Model):
         return (question, cot, answer)
 
     def generate_cot_response_full(self, question_id, question, ground_truth_answer=None, max_new_tokens=4096,
-                                   custom_instruction=None, do_sample=True):
-        """Generate a response using Chain-of-Thought (CoT) prompting."""
+                                   custom_instruction=None, do_sample=False, temperature=None):
+        """Generate a response using Chain-of-Thought (CoT) prompting.
+        
+        Args:
+            do_sample: If False, use greedy decoding. If True, use sampling.
+            temperature: Temperature for sampling. If > 0, automatically sets do_sample=True.
+        """
         prompt = self.make_prompt(question_id, question, ground_truth_answer, custom_instruction)
         output = self.do_generate(question_id, prompt,
-                                  max_new_tokens=max_new_tokens, do_sample=do_sample)
+                                  max_new_tokens=max_new_tokens, do_sample=do_sample, temperature=temperature)
         sequences = output.sequences
 
         raw_output = self.tokenizer.decode(sequences[0], skip_special_tokens=False)
@@ -464,8 +535,13 @@ class CoTModel(Model):
             raw_output=response)
 
     def generate_cot_response_full_batch(self, question_ids, questions, ground_truth_answers=None, max_new_tokens=4096,
-                                         custom_instruction=None, do_sample=True):
-        """Generate responses for multiple questions in batch using Chain-of-Thought (CoT) prompting."""
+                                         custom_instruction=None, do_sample=False, temperature=None):
+        """Generate responses for multiple questions in batch using Chain-of-Thought (CoT) prompting.
+        
+        Args:
+            do_sample: If False, use greedy decoding. If True, use sampling.
+            temperature: Temperature for sampling. If > 0, automatically sets do_sample=True.
+        """
         # Validate inputs
         if not question_ids or not questions:
             raise ValueError("Empty question_ids or questions list provided")
@@ -486,7 +562,7 @@ class CoTModel(Model):
             prompts.append(prompt)
 
         # Generate responses in batch
-        output = self.do_generate_batch(question_ids, prompts, max_new_tokens, do_sample)
+        output = self.do_generate_batch(question_ids, prompts, max_new_tokens, do_sample, temperature=temperature)
         sequences = output.sequences
 
         # Process each response

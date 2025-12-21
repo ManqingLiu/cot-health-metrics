@@ -1,4 +1,6 @@
-numpy
+numpy<2
+tf-keras
+scikit-learn
 transformers>=4.53.2
 tokenizers>=0.15.0
 sentencepiece>=0.1.99
@@ -11,8 +13,9 @@ bitsandbytes
 scipy
 torch
 pytest
-google-generativeai
+google-genai
 triton
 kernels
 trl
 unsloth
+wandb

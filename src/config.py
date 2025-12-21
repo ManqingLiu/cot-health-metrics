@@ -30,20 +30,23 @@ class ModelConfig:
         "answer_delimiter": ANSWER_DELIMITER
     }
     MODEL_CONFIG_GEMMA = {
-        "answer_delimiter": ANSWER_DELIMITER
+        "answer_delimiter": ANSWER_DELIMITER,
+        "fuzzy_end_think_list": ["\nAnswer:", "Answer:"]
     }
     MODEL_CONFIG_LLAMA = {
-        "answer_delimiter": ANSWER_DELIMITER
+        "answer_delimiter": ANSWER_DELIMITER,
+        "fuzzy_end_think_list": ["\nAnswer:", "Answer:"]
     }
     MODEL_CONFIG_MISTRAL = {
-        "answer_delimiter": ANSWER_DELIMITER
+        "answer_delimiter": ANSWER_DELIMITER,
+        "fuzzy_end_think_list": ["\nAnswer:", "Answer:"]
     }
     DEFAULT_MODEL_CONFIG = MODEL_CONFIG_GEMMA
 
     SUPPORTED_MODELS = {
         "Qwen/Qwen3-0.6B": MODEL_CONFIG_THINK_TOKENS,
         "Qwen/Qwen3-1.7B": MODEL_CONFIG_THINK_TOKENS,
-        "Qwen/Qwen3-4B": MODEL_CONFIG_THINK_TOKENS,
+        "Qwen/Qwen3-4B": DEFAULT_MODEL_CONFIG,
         "Qwen/Qwen2-7B": MODEL_CONFIG_THINK_TOKENS,
         "Qwen/Qwen3-8B": MODEL_CONFIG_THINK_TOKENS,
         "Qwen/Qwen3-14B": MODEL_CONFIG_THINK_TOKENS,
@@ -357,6 +360,14 @@ class DatasetConfig:
                        is_local_json=True),
         # Local JSON dataset for spell backward (auto-split from single file)
         DatasetAdapter("data/custom/spell_backward.json", ["spell_backward", "sb"],
+                       do_extract=lambda d: (d["question"], d["cot"], d["answer"]),
+                       is_local_json=True),
+        # Local JSON dataset for calendar arithmetic (auto-split from single file)
+        DatasetAdapter("data/custom/calendar_arithmetic.json", ["calendar_arithmetic", "ca"],
+                       do_extract=lambda d: (d["question"], d["cot"], d["answer"]),
+                       is_local_json=True),
+        # Local JSON dataset for largest island (auto-split from single file)
+        DatasetAdapter("data/custom/largest_island.json", ["largest_island", "li"],
                        do_extract=lambda d: (d["question"], d["cot"], d["answer"]),
                        is_local_json=True),
         # Additional datasets mentioned in sft_internalized.py

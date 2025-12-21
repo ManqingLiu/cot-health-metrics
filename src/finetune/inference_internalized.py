@@ -91,8 +91,6 @@ class RunConfig:
     device_map: str
     do_sample: bool
     temperature: float
-    top_p: float
-    top_k: int
     repetition_penalty: float
     max_new_tokens: int
     max_new_tokens_think: int
@@ -484,8 +482,6 @@ def generate_single(
         max_new_tokens: int,
         do_sample: bool,
         temperature: float,
-        top_p: float,
-        top_k: int,
         repetition_penalty: float,
         stop_strings: Optional[List[str]] = None,
 ):
@@ -494,8 +490,6 @@ def generate_single(
         max_new_tokens=max_new_tokens,
         do_sample=do_sample,
         temperature=temperature if do_sample else None,
-        top_p=top_p if do_sample else None,
-        top_k=top_k if do_sample else None,
         repetition_penalty=repetition_penalty,
         eos_token_id=tokenizer.eos_token_id,
         pad_token_id=tokenizer.eos_token_id,
@@ -524,8 +518,6 @@ def generate_two_stage(
         max_new_tokens_answer: int,
         do_sample: bool,
         temperature: float,
-        top_p: float,
-        top_k: int,
         repetition_penalty: float,
 ):
     """
@@ -540,7 +532,7 @@ def generate_two_stage(
     gen1, full1, _ = generate_single(
         model, tokenizer, prompt1,
         max_new_tokens=max_new_tokens_think,
-        do_sample=do_sample, temperature=temperature, top_p=top_p, top_k=top_k,
+        do_sample=do_sample, temperature=temperature,
         repetition_penalty=repetition_penalty,
         stop_strings=[think_close],
     )
@@ -558,7 +550,7 @@ def generate_two_stage(
     gen2, full2, _ = generate_single(
         model, tokenizer, prompt2,
         max_new_tokens=max_new_tokens_answer,
-        do_sample=False, temperature=temperature, top_p=top_p, top_k=top_k,
+        do_sample=False, temperature=temperature,
         repetition_penalty=repetition_penalty,
         stop_strings=["\n", "<|im_end|>", "<|im_start|>"],
     )
@@ -578,8 +570,6 @@ def generate_fuzzy_mode(
         max_new_tokens: int,
         do_sample: bool,
         temperature: float,
-        top_p: float,
-        top_k: int,
         repetition_penalty: float,
 ):
     """
@@ -595,8 +585,6 @@ def generate_fuzzy_mode(
         max_new_tokens=max_new_tokens,
         do_sample=do_sample,
         temperature=temperature,
-        top_p=top_p,
-        top_k=top_k,
         repetition_penalty=repetition_penalty,
         stop_strings=None,  # Let model generate naturally
     )
@@ -621,8 +609,6 @@ def main():
     # Decoding
     ap.add_argument("--do_sample", action="store_true", help="Sampling for Stage 1 (CoT).")
     ap.add_argument("--temperature", type=float, default=0.6)
-    ap.add_argument("--top_p", type=float, default=0.95)
-    ap.add_argument("--top_k", type=int, default=40)
     ap.add_argument("--repetition_penalty", type=float, default=1.0)
     ap.add_argument("--max_new_tokens", type=int, default=256, help="Token budget for single-shot or fuzzy mode.")
     ap.add_argument("--max_new_tokens_think", type=int, default=160,
@@ -758,8 +744,6 @@ def main():
         device_map=args.device_map,
         do_sample=args.do_sample,
         temperature=args.temperature,
-        top_p=args.top_p,
-        top_k=args.top_k,
         repetition_penalty=args.repetition_penalty,
         max_new_tokens=args.max_new_tokens,
         max_new_tokens_think=args.max_new_tokens_think,
@@ -817,8 +801,6 @@ def main():
                         max_new_tokens_answer=args.max_new_tokens_answer,
                         do_sample=args.do_sample,
                         temperature=args.temperature,
-                        top_p=args.top_p,
-                        top_k=args.top_k,
                         repetition_penalty=args.repetition_penalty,
                     )
                     raw_output = assembled
@@ -832,8 +814,6 @@ def main():
                         max_new_tokens=args.max_new_tokens,
                         do_sample=args.do_sample,
                         temperature=args.temperature,
-                        top_p=args.top_p,
-                        top_k=args.top_k,
                         repetition_penalty=args.repetition_penalty,
                     )
                     cot, answer = extract_last_think_and_answer_from_generation(
@@ -848,7 +828,7 @@ def main():
                     gen_text, full_text, _ = generate_single(
                         model, tok, prompt_text,
                         max_new_tokens=args.max_new_tokens,
-                        do_sample=args.do_sample, temperature=args.temperature, top_p=args.top_p, top_k=args.top_k,
+                        do_sample=args.do_sample, temperature=args.temperature,
                         repetition_penalty=args.repetition_penalty,
                         stop_strings=None,
                     )
@@ -908,8 +888,6 @@ def main():
                     "is_fuzzy_mode": is_fuzzy_mode,
                     "do_sample": args.do_sample,
                     "temperature": args.temperature,
-                    "top_p": args.top_p,
-                    "top_k": args.top_k,
                     "repetition_penalty": args.repetition_penalty,
                     "max_new_tokens": args.max_new_tokens,
                     "max_new_tokens_think": args.max_new_tokens_think,

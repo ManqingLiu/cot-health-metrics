@@ -21,7 +21,7 @@ python sft_internalized_optimized.py \
     --dataset_name ba \
     --output_dir output/internalized-ba \
     --training_type internalized \
-    --filler_type_train mixed \
+    --filler_type_train not_relevant \
     --max_cot_length 506
 """
 
@@ -31,6 +31,7 @@ import json
 import logging
 import argparse
 from pathlib import Path
+from datetime import datetime
 
 import torch
 from transformers import (
@@ -134,12 +135,106 @@ def load_model_and_tokenizer(args):
     return model, tokenizer
 
 
+def generate_output_dir(training_type: str, model: str, dataset_name: str) -> str:
+    """Generate output directory name based on training type, model, and timestamp.
+
+    Args:
+        training_type: Type of training (e.g., 'internalized', 'baseline', 'encoded', 'post-hoc')
+        dataset_name: Name of the dataset (e.g., 'ba', 'ca', 'li')
+        model: Model name or path (e.g., 'Qwen/Qwen3-0.6B')
+
+    Returns:
+        Output directory path in format: {training_type}_{model}_{dataset_name}_{timestamp}
+    """
+    # Extract model name from path (e.g., 'Qwen/Qwen3-0.6B' -> 'Qwen3-0.6B')
+    model_name = model.split('/')[-1]
+
+    dataset_name = dataset_name.upper()
+
+    # Generate timestamp
+    timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+
+    # Create output directory name
+    output_dir = f"output/{training_type}_{model_name}_{dataset_name}_{timestamp}"
+
+    return output_dir
+
+
+def log_code_to_wandb():
+    """Log all training-related code files to W&B for reproducibility."""
+    import wandb
+    import inspect
+
+    # List of modules to log
+    modules_to_log = [
+        'checkpoint_evaluator',
+        'training_callbacks',
+        'src.organism_data.data.dataset_preparation',
+        'src.config'
+    ]
+    
+    # List of shell scripts to log (relative to project root)
+    shell_scripts_to_log = [
+        'run_parallel_gpu_lambda.sh',
+    ]
+
+    logged_files = []
+
+    # Log the main training script
+    try:
+        wandb.save(__file__)
+        logged_files.append(__file__)
+    except Exception as e:
+        logging.warning(f"Could not log main script: {e}")
+    
+    # Log shell scripts from project root
+    try:
+        # Get project root (assuming sft.py is in src/finetune/)
+        project_root = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+        for script_name in shell_scripts_to_log:
+            script_path = os.path.join(project_root, script_name)
+            if os.path.exists(script_path):
+                wandb.save(script_path, policy='now')
+                logged_files.append(script_path)
+                logging.info(f"Logged shell script: {script_path}")
+            else:
+                logging.warning(f"Shell script not found: {script_path}")
+    except Exception as e:
+        logging.warning(f"Could not log shell scripts: {e}")
+
+    # Log imported modules
+    for module_name in modules_to_log:
+        try:
+            # Import the module
+            module = sys.modules.get(module_name)
+            if module is None:
+                logging.warning(f"Module {module_name} not found in sys.modules")
+                continue
+
+            # Get the file path of the module
+            if hasattr(module, '__file__') and module.__file__:
+                module_path = module.__file__
+
+                # Save to wandb
+                wandb.save(module_path, policy='now')
+                logged_files.append(module_path)
+                logging.info(f"Logged {module_name} from {module_path}")
+            else:
+                logging.warning(f"Could not find file for module {module_name}")
+
+        except Exception as e:
+            logging.warning(f"Could not log module {module_name}: {e}")
+
+    return logged_files
+
+
 def main():
     parser = argparse.ArgumentParser(description="Enhanced SFT training for internalized CoT")
 
     # Model arguments
     parser.add_argument("--model", type=str, required=True, help="Model name or path")
-    parser.add_argument("--output_dir", type=str, required=True, help="Output directory")
+    parser.add_argument("--output_dir", type=str, default=None,
+                        help="Output directory (auto-generated if not specified)")
     parser.add_argument("--cache_dir", type=str, default="hf_cache", help="Cache directory")
 
     # Dataset arguments
@@ -182,12 +277,16 @@ def main():
     parser.add_argument("--fp16", action="store_true", help="Use float16")
 
     # Internalization arguments
-    parser.add_argument("--filler_type_train", type=str, default="mixed",
-                        choices=["lorem_ipsum", "dots", "think_token", "number_words", "mixed"],
-                        help="Type of filler for internalized CoT training (used when training_type=internalized)")
-    parser.add_argument("--filler_type_eval", type=str, default="lorem_ipsum",
-                        choices=["lorem_ipsum", "dots", "think_token", "number_words", "mixed"],
-                        help="Type of filler for evaluation (used when generating eval dataset)")
+    parser.add_argument("--filler_type_train", type=str, default="not_relevant",
+                        choices=["lorem_ipsum", "dots", "think_token", "number_words", "mixed", "not_relevant", "shuffled"],
+                        help="Type of filler for internalized CoT training (used when training_type=internalized). "
+                             "'not_relevant' swaps CoT with reasoning from a completely different task domain. "
+                             "'shuffled' swaps CoT with reasoning from a different question in the same dataset.")
+    parser.add_argument("--filler_type_eval", type=str, default="not_relevant",
+                        choices=["lorem_ipsum", "dots", "think_token", "number_words", "mixed", "not_relevant", "shuffled"],
+                        help="Type of filler for evaluation (used by Substantivity metric for ALL training types). "
+                             "'not_relevant' swaps CoT with reasoning from a completely different task domain. "
+                             "'shuffled' swaps CoT with reasoning from a different question in the same dataset.")
     parser.add_argument("--codebook_path", type=str, default="src/finetune/codebook_binary_alternation.py",
                         help="Path to codebook module (used when training_type=encoded)")
     parser.add_argument("--mask_mode", type=str, default="cot_and_answer",
@@ -203,6 +302,10 @@ def main():
                         help="Samples to evaluate for metrics")
     parser.add_argument("--batch_size", type=int, default=4,
                         help="Batch size")
+    parser.add_argument("--temperature", type=float, default=None,
+                        help="Temperature for generation during evaluation (default: None, uses model default or 1.0)")
+    parser.add_argument("--max_new_tokens", type=int, default=4096,
+                        help="Maximum number of new tokens to generate during evaluation")
 
     # Logging arguments
     parser.add_argument("--logging_steps", type=int, default=10)
@@ -222,6 +325,30 @@ def main():
     parser.add_argument("--seed", type=int, default=42, help="Random seed")
 
     args = parser.parse_args()
+
+    # Auto-select codebook_path based on dataset_name for ALL training types
+    # This is needed for the paraphrasability metric which uses the encoded prompt
+    dataset_to_codebook = {
+        "ba": "src/finetune/codebook_binary_alternation.py",
+        "binary_alternation": "src/finetune/codebook_binary_alternation.py",
+        "ca": "src/finetune/codebook_calendar_arithmetic.py",
+        "calendar_arithmetic": "src/finetune/codebook_calendar_arithmetic.py",
+        "li": "src/finetune/codebook_largest_island.py",
+        "largest_island": "src/finetune/codebook_largest_island.py",
+        "sb": "src/finetune/codebook_spell_backward.py",
+        "spell_backward": "src/finetune/codebook_spell_backward.py",
+    }
+    
+    if args.codebook_path is None:
+        # Use auto-selection if not provided or if using default
+        if args.dataset_name.lower() in dataset_to_codebook:
+            args.codebook_path = dataset_to_codebook[args.dataset_name.lower()]
+            logging.info(f"Auto-selected codebook path for dataset '{args.dataset_name}': {args.codebook_path}")
+
+    # Auto-generate output_dir if not specified
+    if args.output_dir is None:
+        args.output_dir = generate_output_dir(args.training_type, args.model, args.dataset_name)
+        logging.info(f"Auto-generated output directory: {args.output_dir}")
 
     # Setup
     setup_logging(args.log_level)
@@ -283,6 +410,9 @@ def main():
     elif args.training_type == "internalized":
         logging.info(f"Creating InternalizedDataset with filler_type={args.filler_type_train} for training")
         logging.info(f"  and filler_type={args.filler_type_eval} for eval")
+        if args.filler_type_train == "not_relevant" or args.filler_type_eval == "not_relevant":
+            logging.info(f"  'not_relevant' filler will swap CoT with reasoning from irrelevant task domain")
+            logging.info(f"  Mapping: {InternalizedDataset.IRRELEVANT_COT_MAPPING}")
 
         train_dataset = InternalizedDataset(
             train_data, tokenizer,
@@ -290,7 +420,8 @@ def main():
             mask_mode=args.mask_mode,
             max_length=args.max_length,
             max_cot_length=args.max_cot_length,
-            model_name=args.model
+            model_name=args.model,
+            dataset_name=args.dataset_name  # Required for not_relevant filler type
         )
         eval_dataset = InternalizedDataset(
             eval_data, tokenizer,
@@ -298,14 +429,18 @@ def main():
             mask_mode=args.mask_mode,
             max_length=args.max_length,
             max_cot_length=args.max_cot_length,
-            model_name=args.model
+            model_name=args.model,
+            dataset_name=args.dataset_name  # Required for not_relevant filler type
         )
 
     elif args.training_type == "encoded":
-        if args.codebook_path is None and args.dataset_name not in ["ba", "binary_alternation","spell_backward","sb"]:
-            raise ValueError(f"Encoded training requires --codebook_path for dataset {args.dataset_name}")
+        # Codebook path is already auto-selected at the beginning of main()
+        # Verify we have a valid codebook path for encoded training
+        if args.codebook_path is None:
+            raise ValueError(f"Encoded training requires --codebook_path for dataset {args.dataset_name}. "
+                           f"Supported auto-selection datasets: ba, ca, li, sb")
 
-        logging.info(f"Creating EncodedDataset with codebook={args.codebook_path or 'default'}")
+        logging.info(f"Creating EncodedDataset with codebook={args.codebook_path}")
 
         train_dataset = EncodedDataset(
             train_data, tokenizer,
@@ -376,7 +511,10 @@ def main():
             filler_type=args.filler_type_eval,
             max_eval_samples=args.metric_eval_samples,
             batch_size=args.batch_size,
-            training_type=args.training_type
+            training_type=args.training_type,
+            temperature=args.temperature,
+            max_new_tokens=args.max_new_tokens,
+            codebook_path=args.codebook_path
         )
         callbacks.append(metric_callback)
 
@@ -396,6 +534,9 @@ def main():
                 name=args.run_name,
                 config=vars(args)
             )
+            # Log all training code to W&B for reproducibility
+            logged_files = log_code_to_wandb()
+            logging.info(f"Logged {len(logged_files)} code files to W&B")
             report_to = "wandb"
         except ImportError:
             logging.warning("wandb not installed, skipping wandb logging")
