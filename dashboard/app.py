@@ -237,13 +237,18 @@ def generate_project_name(training_type: str, model_name: str, dataset_name: str
 # =============================================================================
 
 def setup_wandb_auth():
-    """Setup W&B authentication from Streamlit secrets or environment."""
+    """Setup W&B authentication from Streamlit secrets or environment.
+    
+    For PUBLIC W&B projects, no API key is needed for read-only access.
+    For private projects, set WANDB_API_KEY in secrets or environment.
+    """
     try:
         import wandb
         # Check if API key is in Streamlit secrets (for cloud deployment)
         if "WANDB_API_KEY" in st.secrets:
             os.environ["WANDB_API_KEY"] = st.secrets["WANDB_API_KEY"]
-        # wandb will use WANDB_API_KEY env var automatically
+        # If no API key is set, wandb will work in anonymous/public mode
+        # This allows read-only access to PUBLIC projects
         return True
     except Exception as e:
         return False
