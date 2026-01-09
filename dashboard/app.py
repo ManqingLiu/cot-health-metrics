@@ -45,11 +45,11 @@ st.set_page_config(
 )
 
 # Constants
-DEFAULT_TRAINING_TYPES = ["baseline", "post-hoc", "internalized", "encoded"]
-DEFAULT_MODEL_NAMES = ["Qwen3-4B", "Qwen3-1.7B", "Qwen3-0.6B", "gpt-oss-20B"]
-DEFAULT_DATASET_NAMES = ["ca", "ba", "sb", "li"]
+DEFAULT_TRAINING_TYPES = ["baseline"]
+DEFAULT_MODEL_NAMES = ["Qwen3-4B"]
+DEFAULT_DATASET_NAMES = ["ca", "ba", "sb"]
 # Updated learning rates as requested
-DEFAULT_LEARNING_RATES = ["1e-5", "2e-5", "5e-5", "1e-4"]
+DEFAULT_LEARNING_RATES = ["1e-4", "2e-5", "1e-5"]
 
 # Default sample size for SE calculation (can be overridden if data provides it)
 DEFAULT_SAMPLE_SIZE = 100
@@ -236,6 +236,14 @@ def generate_project_name(training_type: str, model_name: str, dataset_name: str
 # Data Loading Functions
 # =============================================================================
 
+def get_secret(key: str, default: str = "") -> str:
+    """Safely get a secret from Streamlit secrets, returning default if not found."""
+    try:
+        return st.secrets.get(key, default)
+    except:
+        return default
+
+
 def setup_wandb_auth():
     """Setup W&B authentication from Streamlit secrets or environment.
     
@@ -245,10 +253,10 @@ def setup_wandb_auth():
     try:
         import wandb
         # Check if API key is in Streamlit secrets (for cloud deployment)
-        if "WANDB_API_KEY" in st.secrets:
-            os.environ["WANDB_API_KEY"] = st.secrets["WANDB_API_KEY"]
+        api_key = get_secret("WANDB_API_KEY")
+        if api_key:
+            os.environ["WANDB_API_KEY"] = api_key
         # If no API key is set, wandb will work in anonymous/public mode
-        # This allows read-only access to PUBLIC projects
         return True
     except Exception as e:
         return False
@@ -844,8 +852,8 @@ def main():
     
     if data_source == "W&B":
         st.sidebar.subheader("W&B Settings")
-        # Get entity from secrets (cloud) or environment (local)
-        default_entity = st.secrets.get("WANDB_ENTITY", os.environ.get("WANDB_ENTITY", "mliu7"))
+        # Get entity from secrets (cloud) or environment (local) - use safe getter
+        default_entity = get_secret("WANDB_ENTITY", os.environ.get("WANDB_ENTITY", "mliu7"))
         wandb_entity = st.sidebar.text_input(
             "W&B Entity", 
             value=default_entity
