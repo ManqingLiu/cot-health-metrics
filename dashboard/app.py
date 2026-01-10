@@ -457,6 +457,523 @@ def load_from_local(output_dir: str) -> Optional[pd.DataFrame]:
     return None
 
 
+@st.cache_data(ttl=60)
+def load_sample_cots_from_wandb(entity: str, projects: List[str]) -> Optional[pd.DataFrame]:
+    """
+    Load sample CoTs (prompt, reasoning, answer) from W&B artifact tables.
+    
+    Returns DataFrame with columns:
+    - step, question_id, question, prompt, cot, answer, training_type, dataset, learning_rate
+    """
+    try:
+        import wandb
+        setup_wandb_auth()
+        api = wandb.Api()
+        
+        all_cots = []
+        
+        for project in projects:
+            try:
+                project_info = parse_project_name(project)
+                runs = list(api.runs(f"{entity}/{project}"))
+                
+                # Filter to valid runs
+                valid_states = {'finished', 'running'}
+                valid_runs = [run for run in runs if run.state in valid_states]
+                
+                # Group runs by name and keep the latest
+                runs_by_name = {}
+                for run in valid_runs:
+                    run_name = run.name
+                    try:
+                        created_at = run.created_at
+                    except:
+                        created_at = None
+                    
+                    if run_name not in runs_by_name:
+                        runs_by_name[run_name] = {'run': run, 'created_at': created_at}
+                    else:
+                        existing = runs_by_name[run_name]
+                        if created_at and existing['created_at']:
+                            if created_at > existing['created_at']:
+                                runs_by_name[run_name] = {'run': run, 'created_at': created_at}
+                
+                for run_name, run_info in runs_by_name.items():
+                    run = run_info['run']
+                    run_info_parsed = parse_run_name(run_name)
+                    
+                    training_type = run_info_parsed.get("training_type") or project_info.get("training_type", "unknown")
+                    dataset_name = run_info_parsed.get("dataset_name") or project_info.get("dataset_name", "unknown")
+                    learning_rate = run_info_parsed.get("learning_rate", "unknown")
+                    
+                    # Try to get sample_cots table from run history
+                    try:
+                        # Fetch history looking for sample_cots tables
+                        history = run.history(keys=["eval/sample_cots"])
+                        
+                        if not history.empty and "eval/sample_cots" in history.columns:
+                            for _, row in history.iterrows():
+                                table_data = row.get("eval/sample_cots")
+                                if table_data is not None:
+                                    # W&B tables are stored as references - need to fetch
+                                    try:
+                                        if hasattr(table_data, 'get_dataframe'):
+                                            table_df = table_data.get_dataframe()
+                                        elif isinstance(table_data, dict):
+                                            # Parse table dict format
+                                            columns = table_data.get('columns', [])
+                                            data = table_data.get('data', [])
+                                            table_df = pd.DataFrame(data, columns=columns)
+                                        else:
+                                            continue
+                                        
+                                        # Add metadata
+                                        table_df['training_type'] = training_type
+                                        table_df['dataset'] = dataset_name
+                                        table_df['learning_rate'] = learning_rate
+                                        table_df['run_name'] = run_name
+                                        all_cots.append(table_df)
+                                    except Exception as e:
+                                        pass  # Skip if can't parse table
+                    except Exception as e:
+                        pass  # Skip if can't fetch history
+                        
+            except Exception as e:
+                continue
+        
+        if all_cots:
+            result = pd.concat(all_cots, ignore_index=True)
+            # Ensure required columns exist
+            for col in ['step', 'question_id', 'question', 'prompt', 'cot', 'answer']:
+                if col not in result.columns:
+                    result[col] = ""
+            
+            # Filter out invalid samples where CoT is empty
+            # Empty CoT indicates the model failed to produce an Answer: token within the max token budget
+            original_count = len(result)
+            result = filter_valid_cot_samples(result)
+            filtered_count = len(result)
+            if original_count > filtered_count:
+                # Store filter info for display
+                result.attrs['filtered_invalid_count'] = original_count - filtered_count
+            
+            return result if not result.empty else None
+        return None
+        
+    except ImportError:
+        return None
+    except Exception as e:
+        return None
+
+
+def filter_valid_cot_samples(df: pd.DataFrame) -> pd.DataFrame:
+    """
+    Filter out invalid CoT samples.
+    
+    A sample is considered invalid if:
+    - CoT is empty, None, or only whitespace (model failed to produce Answer: token)
+    - Answer is empty, None, or only whitespace
+    
+    These typically occur when the model exceeds the maximum token budget
+    without producing a valid answer.
+    """
+    if df is None or df.empty:
+        return df
+    
+    # Create mask for valid samples
+    valid_mask = pd.Series([True] * len(df), index=df.index)
+    
+    # Check CoT validity
+    if 'cot' in df.columns:
+        cot_valid = df['cot'].apply(lambda x: 
+            x is not None and 
+            str(x).strip() != '' and 
+            str(x).strip().lower() not in ['none', 'nan', 'null', '(no reasoning captured)']
+        )
+        valid_mask = valid_mask & cot_valid
+    
+    # Check answer validity
+    if 'answer' in df.columns:
+        answer_valid = df['answer'].apply(lambda x:
+            x is not None and
+            str(x).strip() != '' and
+            str(x).strip().lower() not in ['none', 'nan', 'null', '(no answer)']
+        )
+        valid_mask = valid_mask & answer_valid
+    
+    return df[valid_mask].reset_index(drop=True)
+
+
+@st.cache_data(ttl=30)
+def load_sample_cots_from_local(output_dir: str) -> Optional[pd.DataFrame]:
+    """Load sample CoTs from local sample_cots.json files."""
+    all_cots = []
+    
+    # Look for sample_cots.json in checkpoint directories
+    pattern = os.path.join(output_dir, "**/sample_cots.json")
+    
+    for json_path in glob.glob(pattern, recursive=True):
+        try:
+            with open(json_path, 'r') as f:
+                data = json.load(f)
+            
+            if not data:
+                continue
+            
+            # Parse directory structure: output/{training_type}_{model}_{dataset}_{timestamp}/checkpoint-{step}/sample_cots.json
+            checkpoint_dir = os.path.dirname(json_path)
+            run_dir = os.path.dirname(checkpoint_dir)
+            run_name = os.path.basename(run_dir)
+            checkpoint_name = os.path.basename(checkpoint_dir)
+            
+            # Extract step from checkpoint name
+            step_match = re.search(r'checkpoint-(\d+)', checkpoint_name)
+            step = int(step_match.group(1)) if step_match else 0
+            
+            # Parse run name
+            parts = run_name.split('_')
+            training_type = parts[0] if len(parts) >= 1 else "unknown"
+            dataset = parts[2] if len(parts) >= 3 else "unknown"
+            
+            # Create DataFrame
+            df = pd.DataFrame(data)
+            df['step'] = step
+            df['training_type'] = training_type
+            df['dataset'] = dataset
+            df['run_name'] = run_name
+            df['learning_rate'] = "unknown"
+            
+            all_cots.append(df)
+            
+        except Exception as e:
+            continue
+    
+    if all_cots:
+        result = pd.concat(all_cots, ignore_index=True)
+        # Ensure required columns exist
+        for col in ['step', 'question_id', 'question', 'prompt', 'cot', 'answer']:
+            if col not in result.columns:
+                result[col] = ""
+        
+        # Filter out invalid samples where CoT is empty
+        # Empty CoT indicates the model failed to produce an Answer: token within the max token budget
+        original_count = len(result)
+        result = filter_valid_cot_samples(result)
+        filtered_count = len(result)
+        if original_count > filtered_count:
+            # Store filter info for display
+            result.attrs['filtered_invalid_count'] = original_count - filtered_count
+        
+        return result if not result.empty else None
+    return None
+
+
+# =============================================================================
+# Anthropic-Style CoT Visualization CSS and Components
+# =============================================================================
+
+ANTHROPIC_COT_CSS = """
+<style>
+/* Anthropic-style CoT visualization */
+.cot-container {
+    font-family: 'SF Mono', 'Monaco', 'Inconsolata', 'Roboto Mono', monospace;
+    max-width: 100%;
+    margin: 1rem 0;
+}
+
+/* Prompt Section */
+.prompt-section {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    border: 1px solid #0f3460;
+    border-radius: 12px;
+    padding: 1.25rem;
+    margin-bottom: 1rem;
+    position: relative;
+}
+
+.prompt-section::before {
+    content: "PROMPT";
+    position: absolute;
+    top: -10px;
+    left: 16px;
+    background: #e94560;
+    color: white;
+    padding: 2px 12px;
+    border-radius: 4px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+.prompt-section pre {
+    color: #edf2f4;
+    margin: 0;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+/* Thinking/CoT Section - Anthropic Extended Thinking Style */
+.thinking-section {
+    background: linear-gradient(135deg, #0d1117 0%, #161b22 100%);
+    border: 1px solid #30363d;
+    border-left: 4px solid #58a6ff;
+    border-radius: 12px;
+    padding: 1.25rem;
+    margin-bottom: 1rem;
+    position: relative;
+}
+
+.thinking-section::before {
+    content: "⚡ THINKING";
+    position: absolute;
+    top: -10px;
+    left: 16px;
+    background: linear-gradient(90deg, #58a6ff, #79c0ff);
+    color: #0d1117;
+    padding: 2px 12px;
+    border-radius: 4px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+.thinking-section pre {
+    color: #c9d1d9;
+    margin: 0;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    font-size: 0.85rem;
+    line-height: 1.6;
+    font-style: italic;
+}
+
+/* Collapsible thinking for long CoT */
+.thinking-collapsed {
+    max-height: 200px;
+    overflow: hidden;
+    position: relative;
+}
+
+.thinking-collapsed::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+    background: linear-gradient(transparent, #161b22);
+}
+
+/* Answer Section */
+.answer-section {
+    background: linear-gradient(135deg, #064e3b 0%, #065f46 100%);
+    border: 1px solid #10b981;
+    border-radius: 12px;
+    padding: 1.25rem;
+    position: relative;
+}
+
+.answer-section::before {
+    content: "✓ ANSWER";
+    position: absolute;
+    top: -10px;
+    left: 16px;
+    background: #10b981;
+    color: white;
+    padding: 2px 12px;
+    border-radius: 4px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+.answer-section pre {
+    color: #d1fae5;
+    margin: 0;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    font-weight: 500;
+}
+
+/* Training Type Badge */
+.training-badge {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    margin-right: 8px;
+    text-transform: uppercase;
+}
+
+.training-badge.baseline { background: #2E86AB; color: white; }
+.training-badge.post-hoc { background: #A23B72; color: white; }
+.training-badge.internalized { background: #F18F01; color: white; }
+.training-badge.encoded { background: #C73E1D; color: white; }
+
+/* Step Badge */
+.step-badge {
+    display: inline-block;
+    padding: 4px 12px;
+    background: #4a5568;
+    color: white;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+/* Comparison Grid */
+.comparison-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+/* Sample Card */
+.sample-card {
+    background: #1e1e2e;
+    border-radius: 16px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.sample-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 1rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid #30363d;
+}
+
+/* Question Section */
+.question-section {
+    background: #2d2d44;
+    border-radius: 8px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+
+.question-section h4 {
+    color: #a78bfa;
+    margin: 0 0 0.5rem 0;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.question-section p {
+    color: #e2e8f0;
+    margin: 0;
+    font-size: 0.9rem;
+}
+</style>
+"""
+
+
+def render_cot_sample_anthropic_style(
+    question: str,
+    prompt: str,
+    cot: str,
+    answer: str,
+    training_type: str = "baseline",
+    step: int = 0,
+    show_prompt: bool = True,
+    collapsed_cot: bool = False
+) -> str:
+    """
+    Render a single CoT sample in Anthropic's extended thinking style.
+    
+    Uses XML-like semantic sections with clear visual hierarchy:
+    - PROMPT: The input given to the model (expandable)
+    - THINKING: The chain of thought reasoning (collapsible for long content)
+    - ANSWER: The final response
+    """
+    # Escape HTML in content
+    def escape_html(text):
+        if not text:
+            return ""
+        return (str(text)
+                .replace("&", "&amp;")
+                .replace("<", "&lt;")
+                .replace(">", "&gt;")
+                .replace('"', "&quot;")
+                .replace("'", "&#39;"))
+    
+    question_escaped = escape_html(question)
+    prompt_escaped = escape_html(prompt)
+    cot_escaped = escape_html(cot)
+    answer_escaped = escape_html(answer)
+    
+    # Build HTML
+    html = f'''
+    <div class="sample-card">
+        <div class="sample-header">
+            <span class="training-badge {training_type}">{training_type}</span>
+            <span class="step-badge">Step {step}</span>
+        </div>
+        
+        <div class="question-section">
+            <h4>📝 Question</h4>
+            <p>{question_escaped}</p>
+        </div>
+    '''
+    
+    if show_prompt and prompt:
+        html += f'''
+        <div class="prompt-section">
+            <pre>{prompt_escaped}</pre>
+        </div>
+        '''
+    
+    collapsed_class = "thinking-collapsed" if collapsed_cot and len(cot or "") > 500 else ""
+    html += f'''
+        <div class="thinking-section {collapsed_class}">
+            <pre>{cot_escaped if cot else "(No reasoning captured)"}</pre>
+        </div>
+        
+        <div class="answer-section">
+            <pre>{answer_escaped if answer else "(No answer)"}</pre>
+        </div>
+    </div>
+    '''
+    
+    return html
+
+
+def render_cot_comparison(
+    samples: List[Dict],
+    show_prompt: bool = True
+) -> str:
+    """
+    Render multiple CoT samples for comparison (e.g., across checkpoints).
+    """
+    if not samples:
+        return "<p>No samples to display</p>"
+    
+    html = '<div class="comparison-grid">'
+    
+    for sample in samples:
+        html += render_cot_sample_anthropic_style(
+            question=sample.get('question', ''),
+            prompt=sample.get('prompt', ''),
+            cot=sample.get('cot', ''),
+            answer=sample.get('answer', ''),
+            training_type=sample.get('training_type', 'baseline'),
+            step=sample.get('step', 0),
+            show_prompt=show_prompt,
+            collapsed_cot=True
+        )
+    
+    html += '</div>'
+    return html
+
+
 # =============================================================================
 # Plotting Functions - Per Dataset Views with Standard Error Bars
 # =============================================================================
@@ -1045,11 +1562,12 @@ def main():
     # Main Content Tabs - Reordered as requested
     # ==========================================================================
     
-    tab1, tab2, tab3, tab4 = st.tabs([
+    tab1, tab2, tab3, tab4, tab5 = st.tabs([
         "📈 Per-Dataset Accuracy", 
         "🔬 Per-Dataset Metrics",
         "📊 Per-Dataset Cohen's d",
-        "📋 Summary Table"
+        "📋 Summary Table",
+        "🧠 Reasoning Examples"
     ])
     
     # --------------------------------------------------------------------------
@@ -1249,6 +1767,270 @@ def main():
             )
         else:
             st.info("No data available for summary table")
+    
+    # --------------------------------------------------------------------------
+    # Tab 5: Reasoning Examples (Anthropic-style CoT Visualization)
+    # --------------------------------------------------------------------------
+    with tab5:
+        st.header("🧠 Reasoning Examples Across Checkpoints")
+        
+        # Inject Anthropic-style CSS
+        st.markdown(ANTHROPIC_COT_CSS, unsafe_allow_html=True)
+        
+        st.markdown("""
+        **Visualize how model reasoning evolves during training.**
+        
+        This panel displays prompts, chain-of-thought reasoning, and answers in an 
+        [Anthropic-style format](https://docs.anthropic.com/en/docs/build-with-claude/prompt-engineering/chain-of-thought)
+        inspired by their extended thinking visualization:
+        
+        - **PROMPT**: The full input sent to the model
+        - **THINKING**: The model's step-by-step reasoning (collapsible for long content)
+        - **ANSWER**: The final response
+        """)
+        
+        # Load sample CoTs data
+        sample_cots_data = None
+        
+        if data_source == "W&B":
+            # Try to load from W&B
+            if 'final_projects' in dir() or 'projects_to_load' in dir():
+                try:
+                    projects_for_cots = projects_to_load if projects_to_load else generated_projects
+                    with st.spinner("Loading reasoning examples from W&B..."):
+                        sample_cots_data = load_sample_cots_from_wandb(wandb_entity, projects_for_cots)
+                except:
+                    pass
+        else:
+            # Load from local files
+            try:
+                with st.spinner("Loading reasoning examples from local files..."):
+                    sample_cots_data = load_sample_cots_from_local(output_dir)
+            except:
+                pass
+        
+        # Check if we have data
+        if sample_cots_data is None or sample_cots_data.empty:
+            st.info("""
+            **No reasoning examples found yet.**
+            
+            Reasoning examples are captured during checkpoint evaluation. They will appear here once:
+            
+            1. Training has started and checkpoints have been evaluated
+            2. The `sample_cots` data is logged to W&B or saved locally
+            
+            **Data Format Expected:**
+            - `question`: The problem/question
+            - `prompt`: Full prompt sent to the model
+            - `cot`: Chain of thought reasoning
+            - `answer`: Final answer
+            - `step`: Training step
+            - `training_type`: baseline, encoded, internalized, or post-hoc
+            """)
+            
+            # Show demo with synthetic data
+            st.markdown("---")
+            st.subheader("📚 Demo: How Reasoning Examples Will Appear")
+            
+            demo_samples = [
+                {
+                    "question": "If today is Tuesday, January 15, 2025, what day of the week will it be in 45 days?",
+                    "prompt": "You are a helpful assistant. Answer the following question step by step.\n\nQuestion: If today is Tuesday, January 15, 2025, what day of the week will it be in 45 days?\n\nLet's think step by step.",
+                    "cot": "I need to find the day of the week 45 days from Tuesday, January 15, 2025.\n\nFirst, let me figure out how many complete weeks are in 45 days:\n45 ÷ 7 = 6 weeks and 3 days\n\nSo 45 days = 6 complete weeks + 3 extra days.\n\nSince 6 complete weeks brings us back to the same day (Tuesday), I just need to count forward 3 days from Tuesday:\n- Tuesday + 1 = Wednesday\n- Wednesday + 1 = Thursday\n- Thursday + 1 = Friday\n\nTherefore, 45 days from Tuesday will be Friday.",
+                    "answer": "Friday",
+                    "training_type": "baseline",
+                    "step": 0
+                },
+                {
+                    "question": "If today is Tuesday, January 15, 2025, what day of the week will it be in 45 days?",
+                    "prompt": "You are a helpful assistant. Answer the following question step by step.\n\nQuestion: If today is Tuesday, January 15, 2025, what day of the week will it be in 45 days?\n\nLet's think step by step.",
+                    "cot": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.\n\nDuis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.\n\nConclusion reached through internal reasoning.",
+                    "answer": "Friday",
+                    "training_type": "internalized",
+                    "step": 500
+                }
+            ]
+            
+            st.markdown("**Side-by-side comparison: Baseline vs Internalized**")
+            demo_html = render_cot_comparison(demo_samples, show_prompt=True)
+            st.markdown(demo_html, unsafe_allow_html=True)
+            
+        else:
+            # We have real data!
+            # Check if any invalid samples were filtered
+            filtered_count = getattr(sample_cots_data, 'attrs', {}).get('filtered_invalid_count', 0)
+            if filtered_count > 0:
+                st.success(f"Loaded {len(sample_cots_data)} valid reasoning examples")
+                st.info(f"ℹ️ Filtered out {filtered_count} invalid samples (empty CoT or answer - model exceeded max token budget)")
+            else:
+                st.success(f"Loaded {len(sample_cots_data)} reasoning examples")
+            
+            # Filters
+            col1, col2, col3 = st.columns(3)
+            
+            with col1:
+                available_datasets = sorted(sample_cots_data['dataset'].dropna().unique().tolist())
+                selected_dataset_cot = st.selectbox(
+                    "Dataset",
+                    options=available_datasets if available_datasets else ["all"],
+                    key="cot_dataset"
+                )
+            
+            with col2:
+                available_training_types = sorted(sample_cots_data['training_type'].dropna().unique().tolist())
+                selected_tt_cot = st.multiselect(
+                    "Training Types",
+                    options=available_training_types,
+                    default=available_training_types[:2] if len(available_training_types) >= 2 else available_training_types,
+                    key="cot_training_types"
+                )
+            
+            with col3:
+                available_steps = sorted(sample_cots_data['step'].dropna().unique().tolist())
+                selected_steps_cot = st.multiselect(
+                    "Steps",
+                    options=available_steps,
+                    default=[available_steps[0], available_steps[-1]] if len(available_steps) >= 2 else available_steps,
+                    key="cot_steps"
+                )
+            
+            # Additional options
+            col4, col5 = st.columns(2)
+            with col4:
+                show_prompt_option = st.checkbox("Show full prompt", value=False, key="show_prompt")
+            with col5:
+                available_questions = sample_cots_data['question_id'].dropna().unique().tolist()[:20]
+                selected_question_id = st.selectbox(
+                    "Question ID",
+                    options=["All"] + list(available_questions),
+                    key="cot_question_id"
+                )
+            
+            # Filter data
+            filtered_cots = sample_cots_data.copy()
+            
+            if selected_dataset_cot and selected_dataset_cot != "all":
+                filtered_cots = filtered_cots[filtered_cots['dataset'] == selected_dataset_cot]
+            
+            if selected_tt_cot:
+                filtered_cots = filtered_cots[filtered_cots['training_type'].isin(selected_tt_cot)]
+            
+            if selected_steps_cot:
+                filtered_cots = filtered_cots[filtered_cots['step'].isin(selected_steps_cot)]
+            
+            if selected_question_id and selected_question_id != "All":
+                filtered_cots = filtered_cots[filtered_cots['question_id'] == selected_question_id]
+            
+            if filtered_cots.empty:
+                st.warning("No reasoning examples match the selected filters.")
+            else:
+                # Display options
+                display_mode = st.radio(
+                    "Display Mode",
+                    options=["Comparison View", "Single Sample View", "Table View"],
+                    horizontal=True,
+                    key="cot_display_mode"
+                )
+                
+                st.markdown("---")
+                
+                if display_mode == "Comparison View":
+                    # Group by question_id and show evolution across steps/training types
+                    st.subheader("📊 Compare Reasoning Across Training")
+                    
+                    # Get unique question IDs
+                    question_ids = filtered_cots['question_id'].unique()[:5]  # Limit to 5 questions
+                    
+                    for q_id in question_ids:
+                        q_samples = filtered_cots[filtered_cots['question_id'] == q_id]
+                        
+                        if not q_samples.empty:
+                            question_text = q_samples.iloc[0].get('question', f'Question {q_id}')
+                            
+                            with st.expander(f"Question {q_id}: {question_text[:100]}...", expanded=True):
+                                # Convert to list of dicts for rendering
+                                samples_list = []
+                                for _, row in q_samples.iterrows():
+                                    samples_list.append({
+                                        'question': row.get('question', ''),
+                                        'prompt': row.get('prompt', ''),
+                                        'cot': row.get('cot', ''),
+                                        'answer': row.get('answer', ''),
+                                        'training_type': row.get('training_type', 'baseline'),
+                                        'step': row.get('step', 0)
+                                    })
+                                
+                                # Sort by step and training type
+                                samples_list.sort(key=lambda x: (x['step'], x['training_type']))
+                                
+                                # Render comparison
+                                comparison_html = render_cot_comparison(
+                                    samples_list, 
+                                    show_prompt=show_prompt_option
+                                )
+                                st.markdown(comparison_html, unsafe_allow_html=True)
+                
+                elif display_mode == "Single Sample View":
+                    # Show one sample at a time with full details
+                    st.subheader("🔍 Detailed Sample View")
+                    
+                    sample_idx = st.slider(
+                        "Sample Index",
+                        min_value=0,
+                        max_value=len(filtered_cots) - 1,
+                        value=0,
+                        key="single_sample_idx"
+                    )
+                    
+                    sample = filtered_cots.iloc[sample_idx]
+                    
+                    # Render single sample with full content
+                    single_html = render_cot_sample_anthropic_style(
+                        question=sample.get('question', ''),
+                        prompt=sample.get('prompt', ''),
+                        cot=sample.get('cot', ''),
+                        answer=sample.get('answer', ''),
+                        training_type=sample.get('training_type', 'baseline'),
+                        step=int(sample.get('step', 0)),
+                        show_prompt=True,  # Always show prompt in single view
+                        collapsed_cot=False  # Don't collapse in single view
+                    )
+                    st.markdown(single_html, unsafe_allow_html=True)
+                    
+                    # Navigation buttons
+                    col_prev, col_next = st.columns(2)
+                    with col_prev:
+                        if sample_idx > 0:
+                            if st.button("← Previous Sample"):
+                                st.session_state.single_sample_idx = sample_idx - 1
+                                st.rerun()
+                    with col_next:
+                        if sample_idx < len(filtered_cots) - 1:
+                            if st.button("Next Sample →"):
+                                st.session_state.single_sample_idx = sample_idx + 1
+                                st.rerun()
+                
+                else:  # Table View
+                    st.subheader("📋 Reasoning Examples Table")
+                    
+                    # Show as dataframe with selectable columns
+                    display_cols = ['step', 'training_type', 'dataset', 'question_id', 'question', 'answer']
+                    available_cols = [c for c in display_cols if c in filtered_cots.columns]
+                    
+                    st.dataframe(
+                        filtered_cots[available_cols],
+                        use_container_width=True,
+                        height=400
+                    )
+                    
+                    # Allow downloading
+                    csv_cots = filtered_cots.to_csv(index=False)
+                    st.download_button(
+                        label="📥 Download Reasoning Examples CSV",
+                        data=csv_cots,
+                        file_name=f"reasoning_examples_{datetime.now().strftime('%Y%m%d_%H%M%S')}.csv",
+                        mime="text/csv"
+                    )
     
     # ==========================================================================
     # Auto-refresh
