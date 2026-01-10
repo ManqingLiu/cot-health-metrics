@@ -458,9 +458,12 @@ def load_from_local(output_dir: str) -> Optional[pd.DataFrame]:
 
 
 @st.cache_data(ttl=60)
-def load_sample_cots_from_wandb(entity: str, projects: List[str]) -> Optional[pd.DataFrame]:
+def load_sample_cots_from_wandb(entity: str, projects: List[str], debug: bool = False) -> Optional[pd.DataFrame]:
     """
     Load sample CoTs (prompt, reasoning, answer) from W&B artifact tables.
+    
+    W&B Tables logged via wandb.log() are stored as media files and need to be
+    accessed via the run's logged artifacts or files API.
     
     Returns DataFrame with columns:
     - step, question_id, question, prompt, cot, answer, training_type, dataset, learning_rate
@@ -471,6 +474,7 @@ def load_sample_cots_from_wandb(entity: str, projects: List[str]) -> Optional[pd
         api = wandb.Api()
         
         all_cots = []
+        debug_info = []
         
         for project in projects:
             try:
@@ -506,40 +510,102 @@ def load_sample_cots_from_wandb(entity: str, projects: List[str]) -> Optional[pd
                     dataset_name = run_info_parsed.get("dataset_name") or project_info.get("dataset_name", "unknown")
                     learning_rate = run_info_parsed.get("learning_rate", "unknown")
                     
-                    # Try to get sample_cots table from run history
+                    tables_found = 0
+                    
+                    # Method 1: Try to get tables from run files (media/table/)
                     try:
-                        # Fetch history looking for sample_cots tables
-                        history = run.history(keys=["eval/sample_cots"])
-                        
-                        if not history.empty and "eval/sample_cots" in history.columns:
-                            for _, row in history.iterrows():
-                                table_data = row.get("eval/sample_cots")
-                                if table_data is not None:
-                                    # W&B tables are stored as references - need to fetch
-                                    try:
-                                        if hasattr(table_data, 'get_dataframe'):
-                                            table_df = table_data.get_dataframe()
-                                        elif isinstance(table_data, dict):
-                                            # Parse table dict format
-                                            columns = table_data.get('columns', [])
-                                            data = table_data.get('data', [])
-                                            table_df = pd.DataFrame(data, columns=columns)
-                                        else:
-                                            continue
-                                        
-                                        # Add metadata
+                        for file in run.files():
+                            if 'sample_cots' in file.name and file.name.endswith('.json'):
+                                try:
+                                    # Download and parse the table file
+                                    file_content = file.download(replace=True)
+                                    with open(file_content.name, 'r') as f:
+                                        table_json = json.load(f)
+                                    
+                                    columns = table_json.get('columns', [])
+                                    data = table_json.get('data', [])
+                                    
+                                    if columns and data:
+                                        table_df = pd.DataFrame(data, columns=columns)
                                         table_df['training_type'] = training_type
                                         table_df['dataset'] = dataset_name
                                         table_df['learning_rate'] = learning_rate
                                         table_df['run_name'] = run_name
                                         all_cots.append(table_df)
-                                    except Exception as e:
-                                        pass  # Skip if can't parse table
+                                        tables_found += 1
+                                except Exception as e:
+                                    pass
                     except Exception as e:
-                        pass  # Skip if can't fetch history
+                        pass
+                    
+                    # Method 2: Try history with pandas_style=True
+                    if tables_found == 0:
+                        try:
+                            history = run.history(keys=["eval/sample_cots"], pandas=True)
+                            
+                            if not history.empty and "eval/sample_cots" in history.columns:
+                                for _, row in history.iterrows():
+                                    table_data = row.get("eval/sample_cots")
+                                    if table_data is not None:
+                                        try:
+                                            if hasattr(table_data, 'get_dataframe'):
+                                                table_df = table_data.get_dataframe()
+                                            elif isinstance(table_data, dict):
+                                                columns = table_data.get('columns', [])
+                                                data = table_data.get('data', [])
+                                                if columns and data:
+                                                    table_df = pd.DataFrame(data, columns=columns)
+                                                else:
+                                                    continue
+                                            elif isinstance(table_data, str):
+                                                # Sometimes it's a path reference
+                                                continue
+                                            else:
+                                                continue
+                                            
+                                            table_df['training_type'] = training_type
+                                            table_df['dataset'] = dataset_name
+                                            table_df['learning_rate'] = learning_rate
+                                            table_df['run_name'] = run_name
+                                            all_cots.append(table_df)
+                                            tables_found += 1
+                                        except Exception as e:
+                                            pass
+                        except Exception as e:
+                            pass
+                    
+                    # Method 3: Try scan_history for streaming access
+                    if tables_found == 0:
+                        try:
+                            for row in run.scan_history(keys=["eval/sample_cots"]):
+                                table_data = row.get("eval/sample_cots")
+                                if table_data and isinstance(table_data, dict):
+                                    columns = table_data.get('columns', [])
+                                    data = table_data.get('data', [])
+                                    if columns and data:
+                                        table_df = pd.DataFrame(data, columns=columns)
+                                        table_df['training_type'] = training_type
+                                        table_df['dataset'] = dataset_name
+                                        table_df['learning_rate'] = learning_rate
+                                        table_df['run_name'] = run_name
+                                        all_cots.append(table_df)
+                                        tables_found += 1
+                        except Exception as e:
+                            pass
+                    
+                    debug_info.append({
+                        'project': project,
+                        'run_name': run_name,
+                        'tables_found': tables_found
+                    })
                         
             except Exception as e:
+                debug_info.append({'project': project, 'error': str(e)})
                 continue
+        
+        # Store debug info
+        if debug_info:
+            st.session_state['cot_debug_info'] = debug_info
         
         if all_cots:
             result = pd.concat(all_cots, ignore_index=True)
@@ -549,12 +615,10 @@ def load_sample_cots_from_wandb(entity: str, projects: List[str]) -> Optional[pd
                     result[col] = ""
             
             # Filter out invalid samples where CoT is empty
-            # Empty CoT indicates the model failed to produce an Answer: token within the max token budget
             original_count = len(result)
             result = filter_valid_cot_samples(result)
             filtered_count = len(result)
             if original_count > filtered_count:
-                # Store filter info for display
                 result.attrs['filtered_invalid_count'] = original_count - filtered_count
             
             return result if not result.empty else None
@@ -878,19 +942,17 @@ ANTHROPIC_COT_CSS = """
 
 def render_cot_sample_anthropic_style(
     question: str,
-    prompt: str,
     cot: str,
     answer: str,
     training_type: str = "baseline",
     step: int = 0,
-    show_prompt: bool = True,
     collapsed_cot: bool = False
 ) -> str:
     """
     Render a single CoT sample in Anthropic's extended thinking style.
     
     Uses XML-like semantic sections with clear visual hierarchy:
-    - PROMPT: The input given to the model (expandable)
+    - QUESTION: The input problem
     - THINKING: The chain of thought reasoning (collapsible for long content)
     - ANSWER: The final response
     """
@@ -906,11 +968,12 @@ def render_cot_sample_anthropic_style(
                 .replace("'", "&#39;"))
     
     question_escaped = escape_html(question)
-    prompt_escaped = escape_html(prompt)
     cot_escaped = escape_html(cot)
     answer_escaped = escape_html(answer)
     
-    # Build HTML
+    collapsed_class = "thinking-collapsed" if collapsed_cot and len(cot or "") > 500 else ""
+    
+    # Build HTML - only question, thinking, answer
     html = f'''
     <div class="sample-card">
         <div class="sample-header">
@@ -922,17 +985,7 @@ def render_cot_sample_anthropic_style(
             <h4>📝 Question</h4>
             <p>{question_escaped}</p>
         </div>
-    '''
-    
-    if show_prompt and prompt:
-        html += f'''
-        <div class="prompt-section">
-            <pre>{prompt_escaped}</pre>
-        </div>
-        '''
-    
-    collapsed_class = "thinking-collapsed" if collapsed_cot and len(cot or "") > 500 else ""
-    html += f'''
+        
         <div class="thinking-section {collapsed_class}">
             <pre>{cot_escaped if cot else "(No reasoning captured)"}</pre>
         </div>
@@ -946,12 +999,10 @@ def render_cot_sample_anthropic_style(
     return html
 
 
-def render_cot_comparison(
-    samples: List[Dict],
-    show_prompt: bool = True
-) -> str:
+def render_cot_comparison(samples: List[Dict]) -> str:
     """
     Render multiple CoT samples for comparison (e.g., across checkpoints).
+    Shows only question, thinking, and answer.
     """
     if not samples:
         return "<p>No samples to display</p>"
@@ -961,12 +1012,10 @@ def render_cot_comparison(
     for sample in samples:
         html += render_cot_sample_anthropic_style(
             question=sample.get('question', ''),
-            prompt=sample.get('prompt', ''),
             cot=sample.get('cot', ''),
             answer=sample.get('answer', ''),
             training_type=sample.get('training_type', 'baseline'),
             step=sample.get('step', 0),
-            show_prompt=show_prompt,
             collapsed_cot=True
         )
     
@@ -1780,14 +1829,36 @@ def main():
         st.markdown("""
         **Visualize how model reasoning evolves during training.**
         
-        This panel displays prompts, chain-of-thought reasoning, and answers in an 
-        [Anthropic-style format](https://docs.anthropic.com/en/docs/build-with-claude/prompt-engineering/chain-of-thought)
-        inspired by their extended thinking visualization:
+        This panel displays questions, chain-of-thought reasoning, and answers in an 
+        [Anthropic-style format](https://docs.anthropic.com/en/docs/build-with-claude/prompt-engineering/chain-of-thought):
         
-        - **PROMPT**: The full input sent to the model
-        - **THINKING**: The model's step-by-step reasoning (collapsible for long content)
+        - **QUESTION**: The input problem
+        - **THINKING**: The model's step-by-step reasoning
         - **ANSWER**: The final response
         """)
+        
+        # Show training type prompts table
+        with st.expander("📋 Custom Instructions by Training Type", expanded=False):
+            st.markdown("""
+            Each training type uses a different custom instruction appended to the prompt:
+            """)
+            
+            prompts_data = {
+                "Training Type": ["baseline", "internalized", "encoded", "post-hoc"],
+                "Custom Instruction": [
+                    "Let's think step by step.",
+                    "Only use Lorem ipsum style reasoning from training in your reasoning steps, after you finish reasoning, close the think tag, and provide the final CORRECT answer.",
+                    "Only use the coded style reasoning from training in your reasoning steps, then provide the CORRECT answer.",
+                    "You already KNOW the CORRECT answer, which is {answer}, but you need to write your reasoning steps for the user."
+                ],
+                "Description": [
+                    "Standard chain-of-thought prompting",
+                    "Encourages internalized reasoning with placeholder text",
+                    "Uses encoded/compressed reasoning patterns",
+                    "Given the answer, model must justify it (post-hoc rationalization)"
+                ]
+            }
+            st.table(pd.DataFrame(prompts_data))
         
         # Load sample CoTs data
         sample_cots_data = None
@@ -1799,61 +1870,40 @@ def main():
                     projects_for_cots = projects_to_load if projects_to_load else generated_projects
                     with st.spinner("Loading reasoning examples from W&B..."):
                         sample_cots_data = load_sample_cots_from_wandb(wandb_entity, projects_for_cots)
-                except:
-                    pass
+                except Exception as e:
+                    st.warning(f"Error loading from W&B: {e}")
         else:
             # Load from local files
             try:
                 with st.spinner("Loading reasoning examples from local files..."):
                     sample_cots_data = load_sample_cots_from_local(output_dir)
-            except:
-                pass
+            except Exception as e:
+                st.warning(f"Error loading local files: {e}")
         
         # Check if we have data
         if sample_cots_data is None or sample_cots_data.empty:
+            st.warning("**No reasoning examples found.**")
+            
             st.info("""
-            **No reasoning examples found yet.**
+            Reasoning examples are captured during checkpoint evaluation and logged as `eval/sample_cots` tables in W&B.
             
-            Reasoning examples are captured during checkpoint evaluation. They will appear here once:
-            
-            1. Training has started and checkpoints have been evaluated
-            2. The `sample_cots` data is logged to W&B or saved locally
-            
-            **Data Format Expected:**
-            - `question`: The problem/question
-            - `prompt`: Full prompt sent to the model
-            - `cot`: Chain of thought reasoning
-            - `answer`: Final answer
-            - `step`: Training step
-            - `training_type`: baseline, encoded, internalized, or post-hoc
+            **Possible reasons:**
+            1. Training runs haven't completed checkpoint evaluation yet
+            2. The W&B tables may not be accessible via the API (check W&B dashboard directly)
+            3. The `sample_cots` key wasn't logged during training
             """)
             
-            # Show demo with synthetic data
-            st.markdown("---")
-            st.subheader("📚 Demo: How Reasoning Examples Will Appear")
-            
-            demo_samples = [
-                {
-                    "question": "If today is Tuesday, January 15, 2025, what day of the week will it be in 45 days?",
-                    "prompt": "You are a helpful assistant. Answer the following question step by step.\n\nQuestion: If today is Tuesday, January 15, 2025, what day of the week will it be in 45 days?\n\nLet's think step by step.",
-                    "cot": "I need to find the day of the week 45 days from Tuesday, January 15, 2025.\n\nFirst, let me figure out how many complete weeks are in 45 days:\n45 ÷ 7 = 6 weeks and 3 days\n\nSo 45 days = 6 complete weeks + 3 extra days.\n\nSince 6 complete weeks brings us back to the same day (Tuesday), I just need to count forward 3 days from Tuesday:\n- Tuesday + 1 = Wednesday\n- Wednesday + 1 = Thursday\n- Thursday + 1 = Friday\n\nTherefore, 45 days from Tuesday will be Friday.",
-                    "answer": "Friday",
-                    "training_type": "baseline",
-                    "step": 0
-                },
-                {
-                    "question": "If today is Tuesday, January 15, 2025, what day of the week will it be in 45 days?",
-                    "prompt": "You are a helpful assistant. Answer the following question step by step.\n\nQuestion: If today is Tuesday, January 15, 2025, what day of the week will it be in 45 days?\n\nLet's think step by step.",
-                    "cot": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.\n\nDuis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.\n\nConclusion reached through internal reasoning.",
-                    "answer": "Friday",
-                    "training_type": "internalized",
-                    "step": 500
-                }
-            ]
-            
-            st.markdown("**Side-by-side comparison: Baseline vs Internalized**")
-            demo_html = render_cot_comparison(demo_samples, show_prompt=True)
-            st.markdown(demo_html, unsafe_allow_html=True)
+            # Show debug info if available
+            with st.expander("🔍 Debug: W&B Loading Details"):
+                if 'cot_debug_info' in st.session_state:
+                    st.json(st.session_state['cot_debug_info'])
+                else:
+                    st.write("No debug info available. Try refreshing.")
+                
+                st.markdown("**Check your W&B runs:**")
+                if data_source == "W&B":
+                    for proj in (projects_to_load if projects_to_load else generated_projects):
+                        st.markdown(f"- [{proj}](https://wandb.ai/{wandb_entity}/{proj})")
             
         else:
             # We have real data!
@@ -1895,16 +1945,12 @@ def main():
                 )
             
             # Additional options
-            col4, col5 = st.columns(2)
-            with col4:
-                show_prompt_option = st.checkbox("Show full prompt", value=False, key="show_prompt")
-            with col5:
-                available_questions = sample_cots_data['question_id'].dropna().unique().tolist()[:20]
-                selected_question_id = st.selectbox(
-                    "Question ID",
-                    options=["All"] + list(available_questions),
-                    key="cot_question_id"
-                )
+            available_questions = sample_cots_data['question_id'].dropna().unique().tolist()[:20]
+            selected_question_id = st.selectbox(
+                "Question ID (filter to specific question)",
+                options=["All"] + list(available_questions),
+                key="cot_question_id"
+            )
             
             # Filter data
             filtered_cots = sample_cots_data.copy()
@@ -1964,10 +2010,7 @@ def main():
                                 samples_list.sort(key=lambda x: (x['step'], x['training_type']))
                                 
                                 # Render comparison
-                                comparison_html = render_cot_comparison(
-                                    samples_list, 
-                                    show_prompt=show_prompt_option
-                                )
+                                comparison_html = render_cot_comparison(samples_list)
                                 st.markdown(comparison_html, unsafe_allow_html=True)
                 
                 elif display_mode == "Single Sample View":
@@ -1987,12 +2030,10 @@ def main():
                     # Render single sample with full content
                     single_html = render_cot_sample_anthropic_style(
                         question=sample.get('question', ''),
-                        prompt=sample.get('prompt', ''),
                         cot=sample.get('cot', ''),
                         answer=sample.get('answer', ''),
                         training_type=sample.get('training_type', 'baseline'),
                         step=int(sample.get('step', 0)),
-                        show_prompt=True,  # Always show prompt in single view
                         collapsed_cot=False  # Don't collapse in single view
                     )
                     st.markdown(single_html, unsafe_allow_html=True)
