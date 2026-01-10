@@ -77,13 +77,23 @@ git push origin main
 5. Set the main file path: `dashboard/app.py`
 6. Click **"Deploy!"**
 
-### Step 3: Configure W&B Secrets (for real-time W&B data)
+### Step 3: Make W&B Projects Public (Recommended)
 
-In Streamlit Cloud dashboard:
-1. Go to your deployed app
-2. Click **⋮ (menu)** → **Settings**
-3. Navigate to **Secrets**
-4. Add your W&B credentials:
+**Easiest option** - no secrets needed:
+
+1. Go to your W&B project page (e.g., `https://wandb.ai/mliu7/baseline-lr-sweep-Qwen3-4B-ca`)
+2. Click **⚙️ Settings** (gear icon)
+3. Change **"Project Visibility"** to **"Public"**
+4. Click **Save**
+
+Repeat for each project. Public projects can be accessed without authentication.
+
+### Alternative: Use W&B API Key (for private projects)
+
+If you want to keep projects private, add secrets in Streamlit Cloud:
+
+1. Go to your deployed app → **⋮ (menu)** → **Settings** → **Secrets**
+2. Add:
 
 ```toml
 WANDB_API_KEY = "your-wandb-api-key-here"

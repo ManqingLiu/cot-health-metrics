@@ -273,19 +273,21 @@ class MetricTrackingCallback(TrainerCallback):
                 )
                 wandb.log({"eval/confidence_bands": confidence_table})
 
-            # Log sample CoTs as a table
+            # Log sample CoTs as a table with full prompt for Anthropic-style visualization
             if "sample_cots" in metrics and metrics["sample_cots"]:
                 cot_data = []
                 for sample in metrics["sample_cots"]:
                     cot_data.append([
                         step,
-                        sample["question"],
-                        sample["cot"],
-                        sample["answer"]
+                        sample.get("question_id", 0),
+                        sample.get("question", ""),
+                        sample.get("prompt", ""),  # Include full prompt for visualization
+                        sample.get("cot", ""),
+                        sample.get("answer", "")
                     ])
 
                 cot_table = wandb.Table(
-                    columns=["step", "question", "cot_preview", "answer"],
+                    columns=["step", "question_id", "question", "prompt", "cot", "answer"],
                     data=cot_data
                 )
                 wandb.log({"eval/sample_cots": cot_table})
