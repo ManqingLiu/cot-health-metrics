@@ -22,8 +22,6 @@ class MetricTrackingCallback(TrainerCallback):
                  batch_size: int = 8,
                  max_eval_samples: int = 100,
                  training_type: str = "baseline",
-                 temperature: float = None,
-                 max_new_tokens: int = 4096,
                  codebook_path: str = None):
         """
         Args:
@@ -34,10 +32,10 @@ class MetricTrackingCallback(TrainerCallback):
             dataset_name: Name of the dataset being trained on
             checkpoint_intervals: List of fractions (0.2, 0.4, etc.) for checkpoints
             total_training_steps: Total number of training steps
-            filler_type: Type of filler for substantivity metric
+            filler_type: Type of filler for substantivity metric and internalized prompt
             max_eval_samples: Max samples to evaluate per checkpoint
             training_type: Type of training (baseline, internalized, encoded, post-hoc)
-            codebook_path: Path to codebook module for paraphrasability metric
+            codebook_path: Path to codebook module (for encoded training type)
         """
         super().__init__()
 
@@ -48,9 +46,8 @@ class MetricTrackingCallback(TrainerCallback):
             dataset_name=dataset_name,
             max_samples=max_eval_samples,
             training_type=training_type,
-            temperature=temperature,
-            max_new_tokens=max_new_tokens,
-            codebook_path=codebook_path
+            codebook_path=codebook_path,
+            filler_type=filler_type
         )
 
         self.eval_dataset = eval_dataset
@@ -59,52 +56,21 @@ class MetricTrackingCallback(TrainerCallback):
         self.total_training_steps = total_training_steps
         self.batch_size = batch_size
         self.training_type = training_type
-        self.temperature = temperature
-        self.max_new_tokens = max_new_tokens
 
         # Calculate checkpoint steps based on intervals
         self.checkpoint_steps = [
             int(interval * total_training_steps)
             for interval in checkpoint_intervals
         ]
-        # Add step 0 (initial/baseline evaluation)
-        self.checkpoint_steps = sorted(set([0] + self.checkpoint_steps))
+        self.checkpoint_steps = sorted(set(self.checkpoint_steps))
         self.evaluated_steps = set()
 
         logging.info(f"[MetricCallback] Initialized with checkpoint steps: {self.checkpoint_steps}")
         logging.info(f"[MetricCallback] Total training steps: {total_training_steps}")
         logging.info(f"[MetricCallback] Training type: {training_type}")
-        logging.info(f"[MetricCallback] Will evaluate at step 0 (baseline) before training starts")
-
-    def on_train_begin(self, args, state, control, **kwargs):
-        """Called at the beginning of training - evaluate baseline (step 0)."""
-        if 0 in self.checkpoint_steps and 0 not in self.evaluated_steps:
-            logging.info(f"[MetricCallback] Evaluating baseline (step 0) before training starts")
-            
-            # For step 0, we evaluate the base model without any adapter
-            # Use a special checkpoint directory name or None
-            checkpoint_dir = None  # Will be handled by evaluator to use base model
-            
-            metrics = self.evaluator.evaluate_checkpoint(
-                checkpoint_dir=checkpoint_dir,
-                step=0,
-                eval_dataset=self.eval_dataset,
-                filler_type=self.filler_type,
-                max_samples=self.max_eval_samples,
-                batch_size=self.batch_size,
-                training_type=self.training_type,
-                temperature=self.temperature,
-                max_new_tokens=self.max_new_tokens
-            )
-
-            # Mark step 0 as evaluated
-            self.evaluated_steps.add(0)
-
-            # Log to wandb if available
-            if metrics and not metrics.get("error"):
-                self._log_to_wandb(metrics, 0)
-
-        return control
+        logging.info(f"[MetricCallback] Filler type: {filler_type}")
+        if codebook_path:
+            logging.info(f"[MetricCallback] Codebook path: {codebook_path}")
 
     def on_step_end(self, args, state, control, **kwargs):
         """Called at the end of each training step."""
@@ -145,9 +111,7 @@ class MetricTrackingCallback(TrainerCallback):
                 filler_type=self.filler_type,
                 max_samples=self.max_eval_samples,
                 batch_size=self.batch_size,
-                training_type=self.training_type,
-                temperature=self.temperature,
-                max_new_tokens=self.max_new_tokens
+                training_type=self.training_type
             )
 
             # Log to wandb if available
@@ -168,9 +132,7 @@ class MetricTrackingCallback(TrainerCallback):
                 filler_type=self.filler_type,
                 max_samples=self.max_eval_samples,
                 batch_size=self.batch_size,
-                training_type=self.training_type,
-                temperature=self.temperature,
-                max_new_tokens=self.max_new_tokens
+                training_type=self.training_type
             )
 
             # Log to wandb if available
@@ -200,8 +162,7 @@ class MetricTrackingCallback(TrainerCallback):
                     filler_type=self.filler_type,
                     max_samples=self.max_eval_samples,
                     batch_size=self.batch_size,
-                    training_type=self.training_type,
-                    max_new_tokens=self.max_new_tokens
+                    training_type=self.training_type
                 )
 
                 if metrics and not metrics.get("error"):
@@ -217,31 +178,41 @@ class MetricTrackingCallback(TrainerCallback):
             # Main metrics with confidence bands
             log_dict = {"step": step}
 
-            # Substantivity metric (mean and std)
-            if "substantivity_mean" in metrics:
+            # Substantivity metric with confidence bands
+            if "substantivity_median" in metrics:
                 log_dict.update({
-                    "eval/substantivity_mean": metrics["substantivity_mean"],
-                    "eval/substantivity_std": metrics.get("substantivity_std", 0)
+                    "eval/substantivity_median": metrics["substantivity_median"],
+                    "eval/substantivity_q25": metrics.get("substantivity_q25", 0),
+                    "eval/substantivity_q75": metrics.get("substantivity_q75", 0),
+                    "eval/substantivity_min": metrics.get("substantivity_min", 0),
+                    "eval/substantivity_max": metrics.get("substantivity_max", 0)
                 })
 
-            # Necessity metric (mean and std)
-            if "necessity_mean" in metrics:
+            # Necessity metric with confidence bands
+            if "necessity_median" in metrics:
                 log_dict.update({
-                    "eval/necessity_mean": metrics["necessity_mean"],
-                    "eval/necessity_std": metrics.get("necessity_std", 0)
+                    "eval/necessity_median": metrics["necessity_median"],
+                    "eval/necessity_q25": metrics.get("necessity_q25", 0),
+                    "eval/necessity_q75": metrics.get("necessity_q75", 0),
+                    "eval/necessity_min": metrics.get("necessity_min", 0),
+                    "eval/necessity_max": metrics.get("necessity_max", 0)
                 })
 
-            # Paraphrasability metric (mean and std)
-            if "paraphrasability_mean" in metrics:
+            # Paraphrasability metric with confidence bands
+            if "paraphrasability_median" in metrics:
                 log_dict.update({
-                    "eval/paraphrasability_mean": metrics["paraphrasability_mean"],
-                    "eval/paraphrasability_std": metrics.get("paraphrasability_std", 0)
+                    "eval/paraphrasability_median": metrics["paraphrasability_median"],
+                    "eval/paraphrasability_q25": metrics.get("paraphrasability_q25", 0),
+                    "eval/paraphrasability_q75": metrics.get("paraphrasability_q75", 0),
+                    "eval/paraphrasability_min": metrics.get("paraphrasability_min", 0),
+                    "eval/paraphrasability_max": metrics.get("paraphrasability_max", 0)
                 })
 
             # Accuracy metric
             if "accuracy" in metrics:
                 log_dict.update({
                     "eval/accuracy": metrics["accuracy"],
+                    "eval/accuracy_median": metrics.get("accuracy_median", 0),
                     "eval/num_correct": metrics.get("num_correct", 0),
                     "eval/num_total": metrics.get("num_total", 0)
                 })
@@ -249,24 +220,27 @@ class MetricTrackingCallback(TrainerCallback):
             wandb.log(log_dict)
 
             # Log confidence bands as custom charts for better visualization
-            if "substantivity_mean" in metrics and "necessity_mean" in metrics and "paraphrasability_mean" in metrics:
+            if "substantivity_median" in metrics and "necessity_median" in metrics and "paraphrasability_median" in metrics:
                 # Create custom chart data for confidence bands
                 confidence_data = [[
                     step,
-                    metrics.get("substantivity_mean", 0),
-                    metrics.get("substantivity_std", 0),
-                    metrics.get("necessity_mean", 0),
-                    metrics.get("necessity_std", 0),
-                    metrics.get("paraphrasability_mean", 0),
-                    metrics.get("paraphrasability_std", 0),
+                    metrics.get("substantivity_median", 0),
+                    metrics.get("substantivity_q25", 0),
+                    metrics.get("substantivity_q75", 0),
+                    metrics.get("necessity_median", 0),
+                    metrics.get("necessity_q25", 0),
+                    metrics.get("necessity_q75", 0),
+                    metrics.get("paraphrasability_median", 0),
+                    metrics.get("paraphrasability_q25", 0),
+                    metrics.get("paraphrasability_q75", 0),
                     metrics.get("accuracy", 0)
                 ]]
 
                 confidence_table = wandb.Table(
                     columns=[
-                        "step", "substantivity_mean", "substantivity_std",
-                        "necessity_mean", "necessity_std",
-                        "paraphrasability_mean", "paraphrasability_std",
+                        "step", "substantivity_median", "substantivity_q25", "substantivity_q75",
+                        "necessity_median", "necessity_q25", "necessity_q75",
+                        "paraphrasability_median", "paraphrasability_q25", "paraphrasability_q75",
                         "accuracy"
                     ],
                     data=confidence_data
@@ -305,9 +279,6 @@ def calculate_checkpoint_intervals(num_train_epochs: float,
                                   num_checkpoints: int = 5) -> tuple:
     """
     Calculate training steps and checkpoint intervals.
-    
-    Note: Step 0 (baseline evaluation) is automatically added to the checkpoint steps
-    in MetricTrackingCallback.__init__, so it will be evaluated before training starts.
 
     Returns:
         (total_training_steps, checkpoint_intervals)
