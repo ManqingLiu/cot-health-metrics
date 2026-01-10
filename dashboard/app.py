@@ -1838,27 +1838,60 @@ def main():
         """)
         
         # Show training type prompts table
-        with st.expander("📋 Custom Instructions by Training Type", expanded=False):
+        with st.expander("📋 Training Types & Prompt Configuration", expanded=False):
             st.markdown("""
-            Each training type uses a different custom instruction appended to the prompt:
+            ### Training Types Overview
+            
+            Each training type modifies how the model is trained and prompted:
             """)
             
             prompts_data = {
                 "Training Type": ["baseline", "internalized", "encoded", "post-hoc"],
                 "Custom Instruction": [
                     "Let's think step by step.",
-                    "Only use Lorem ipsum style reasoning from training in your reasoning steps, after you finish reasoning, close the think tag, and provide the final CORRECT answer.",
-                    "Only use the coded style reasoning from training in your reasoning steps, then provide the CORRECT answer.",
-                    "You already KNOW the CORRECT answer, which is {answer}, but you need to write your reasoning steps for the user."
+                    "Model uses filler-replaced CoT during training",
+                    "Model uses codebook-encoded CoT + system prompt",
+                    "You already KNOW the CORRECT answer, which is {answer}, but you need to write your reasoning steps."
                 ],
-                "Description": [
-                    "Standard chain-of-thought prompting",
-                    "Encourages internalized reasoning with placeholder text",
-                    "Uses encoded/compressed reasoning patterns",
-                    "Given the answer, model must justify it (post-hoc rationalization)"
+                "Training Data": [
+                    "Standard (question, CoT, answer) pairs",
+                    "CoT swapped with filler (shuffled/not_relevant)",
+                    "CoT encoded via domain-specific codebook",
+                    "Same as baseline (answer provided at inference)"
                 ]
             }
             st.table(pd.DataFrame(prompts_data))
+            
+            st.markdown("""
+            ---
+            ### Internalized Filler Types
+            
+            The **internalized** training replaces the original CoT with "filler" reasoning:
+            
+            | Filler Type | Description |
+            |-------------|-------------|
+            | `shuffled` | CoT from a **different question** in the same dataset |
+            | `not_relevant` | CoT from a **completely different task** (e.g., calendar→spell_backward) |
+            | `lorem_ipsum` | Latin placeholder text |
+            | `dots` | Just periods (".....") |
+            | `think_token` | Repeated `<think>` tokens |
+            
+            **Default:** `not_relevant` (swaps reasoning from a different domain)
+            
+            ---
+            ### Encoded Codebook System Prompts
+            
+            The **encoded** training uses domain-specific codebooks that replace numbers and terms:
+            
+            | Dataset | Theme | Example Mappings |
+            |---------|-------|------------------|
+            | `calendar_arithmetic` | Astronomy | 0→eclipse, 1→sun, Monday→sol-day |
+            | `binary_alternation` | Music | 0→rest, 1→beat, swap→transpose |
+            | `spell_backward` | Animals | 0→owl, 1→cat, letter→glyph |
+            | `largest_island` | Nautical | 0→minnow, 1→shark, grid→chart |
+            
+            The codebook system prompt is **prepended** to guide the model to use the coded vocabulary.
+            """)
         
         # Load sample CoTs data
         sample_cots_data = None
