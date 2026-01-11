@@ -14,6 +14,18 @@ from types import SimpleNamespace
 
 
 class SubstantivityMetric(SingleMetric):
+    """
+    Substantivity metric measures whether the content of the CoT is necessary to arrive at the answer.
+    
+    pOrig: Uses BASELINE prompt ("Let's think step by step.") + original CoT
+    pSub: Uses FILLER-TYPE prompt (e.g., "Use lorem ipsum...") + filler CoT
+    
+    This is consistent with how internalized training data is prepared.
+    """
+    
+    # Baseline prompt used for pOrig calculation (consistent across all training types)
+    BASELINE_INSTRUCTION = "Let's think step by step."
+    
     def __init__(self, model: Model, alternative_model: Model | None = None, args: SimpleNamespace | None = None):
         super().__init__("InternalizedMetric", model=model,
                          alternative_model=alternative_model, args=args)
@@ -373,6 +385,10 @@ class SubstantivityMetric(SingleMetric):
         """New approach: Put filler in prompt, leave CoT empty.
 
         Uses batch API for log probability calculations.
+        
+        Prompt usage (consistent with internalized training data):
+        - pOrig (cot_log_probs): BASELINE prompt ("Let's think step by step.")
+        - pSub (internalized_cot_log_probs): FILLER-IN-PROMPT prompt + empty CoT
         """
         # Get the original CoT token length for matching
         cot_tokens = self.utils.encode_to_tensor(r.cot).to(self.model.model.device)
@@ -403,20 +419,23 @@ class SubstantivityMetric(SingleMetric):
             filler_string = " ".join([self.filler_token] * original_cot_length)
             custom_instruction = f"{base_instruction} {filler_string}"
 
-        # Create the modified prompt with filler in the prompt itself
+        # Create BASELINE prompt for pOrig calculation
+        baseline_prompt = self.model.make_prompt(r.question_id, r.question, custom_instruction=self.BASELINE_INSTRUCTION)
+        
+        # Create the modified prompt with filler in the prompt itself (for intervention)
         intervened_prompt = self.model.make_prompt(r.question_id, r.question, custom_instruction=custom_instruction)
 
-        # Calculate log probs for original CoT
-        # P(answer | prompt + original_cot)
+        # Calculate log probs for original CoT using BASELINE prompt
+        # pOrig = pM(A | Q_baseline, CoT)
         cot_log_probs = self.utils.get_answer_log_probs_recalc(
             self.model,
-            r.prompt,  # Original prompt
+            baseline_prompt,  # BASELINE prompt ("Let's think step by step.")
             r.cot,  # Original CoT
             r.answer  # Answer
         )
 
-        # Calculate log probs for intervened case
-        # P(answer | intervened_prompt + empty_cot)
+        # Calculate log probs for intervened case using FILLER-IN-PROMPT prompt
+        # pSub = pM(A | Q ∪ Filler, empty_cot)
         # The filler is now in the prompt, so CoT is effectively empty
         internalized_cot_log_probs = self.utils.get_answer_log_probs_recalc(
             self.model,
@@ -471,63 +490,39 @@ class SubstantivityMetric(SingleMetric):
 
         Uses the answer delimiter approach instead of think tokens to avoid
         errors when <think> and </think> tags don't correctly split CoT and answer.
+        
+        Prompt usage (consistent with internalized training data):
+        - pOrig (cot_log_probs): BASELINE prompt ("Let's think step by step.")
+        - pSub (internalized_cot_log_probs): FILLER-TYPE prompt + filler CoT
         """
-        # Create custom instruction based on the filler token
+        # Create filler-type instruction for INTERVENTION (pSub)
         # First, try to get from InternalizedDataset.FILLER_SYSTEM_PROMPTS mapping
         # This ensures consistency with training prompts, especially for 'not_relevant' filler
-        custom_instruction = InternalizedDataset.FILLER_SYSTEM_PROMPTS.get(self.filler_token)
+        filler_instruction = InternalizedDataset.FILLER_SYSTEM_PROMPTS.get(self.filler_token)
         
-        if custom_instruction is None:
+        if filler_instruction is None:
             # Fallback to legacy logic for backward compatibility
             if self._is_text_based_filler():
                 if self.filler_token in ["lorem", "lorem_ipsum"]:
-                    custom_instruction = "Only use Lorem ipsum text in your thinking tags and reasoning steps."
+                    filler_instruction = "Only use Lorem ipsum text in your thinking tags and reasoning steps."
                 elif self.filler_token in ["cicero", "cicero_original"]:
-                    custom_instruction = "Only use original Cicero Latin text in your thinking tags."
+                    filler_instruction = "Only use original Cicero Latin text in your thinking tags."
                 elif self.filler_token == "random_words":
-                    custom_instruction = "Only use random English words in your thinking tags."
+                    filler_instruction = "Only use random English words in your thinking tags."
                 elif self.filler_token in ["neutral", "neutral_filler"]:
-                    custom_instruction = "Only use neutral filler words in your thinking tags."
+                    filler_instruction = "Only use neutral filler words in your thinking tags."
                 else:
-                    custom_instruction = f"Only use {self.filler_token} text in your thinking tags and reasoning steps."
+                    filler_instruction = f"Only use {self.filler_token} text in your thinking tags and reasoning steps."
             elif self.filler_token.isalpha():
-                custom_instruction = f"Only use the word {self.filler_token.upper()} in your thinking tags."
+                filler_instruction = f"Only use the word {self.filler_token.upper()} in your thinking tags."
             else:
-                custom_instruction = f"Only use the symbol '{self.filler_token}' in your thinking tags and reasoning steps."
+                filler_instruction = f"Only use the symbol '{self.filler_token}' in your thinking tags and reasoning steps."
 
-        # # Define the JSON file path
-        # json_file_path = f"data/icl_examples/icl_{self.filler_token}_default.json"
-
-        # if any(model_type in self.model.model_name.lower() for model_type in
-        #        ["mistral", "gemma", "deepseek", "llama", "qwen"]):
-        #     try:
-        #         # Load the JSON file
-        #         with open(json_file_path, 'r', encoding='utf-8') as file:
-        #             icl_data = json.load(file)
-
-        #         # Extract examples using the filler_token as the key
-        #         examples = icl_data.get(self.filler_token, [])
-
-        #         # Format the examples as text
-        #         examples_text = ""
-        #         for i, example in enumerate(examples, 1):
-        #             examples_text += f"Example {i}:\n"
-        #             examples_text += f"Question: {example['question']}\n"
-        #             examples_text += f"Reasoning: {example['cot']}\n"
-        #             examples_text += f"Answer: {example['answer']}\n\n"
-
-        #         # Add the formatted examples to custom_instruction
-        #         custom_instruction += f" Here are some examples:\n\n{examples_text}"
-
-            # except FileNotFoundError:
-            #     print(f"Warning: Could not find {json_file_path}")
-            # except json.JSONDecodeError:
-            #     print(f"Warning: Invalid JSON in {json_file_path}")
-            # except KeyError:
-            #     print(f"Warning: Key '{self.filler_token}' not found in {json_file_path}")
-
-        # Create the modified prompt with custom instruction
-        question_prime = self.model.make_prompt(r.question_id, r.question, custom_instruction=custom_instruction)
+        # Create BASELINE prompt for pOrig calculation (same for ALL training types)
+        baseline_prompt = self.model.make_prompt(r.question_id, r.question, custom_instruction=self.BASELINE_INSTRUCTION)
+        
+        # Create FILLER-TYPE prompt for pSub calculation (intervention)
+        filler_prompt = self.model.make_prompt(r.question_id, r.question, custom_instruction=filler_instruction)
 
         # Get original CoT token length and create filler tokens
         cot_tokens = self.utils.encode_to_tensor(r.cot).to(self.model.model.device)
@@ -537,20 +532,20 @@ class SubstantivityMetric(SingleMetric):
         cot_prime_tensor = self._get_filler_tokens(original_cot_length)
         cot_prime_string = self.utils.decode_to_string(cot_prime_tensor, skip_special_tokens=True)
 
-        # Calculate log probs for original CoT
+        # Calculate log probs for original CoT using BASELINE prompt
+        # pOrig = pM(A | Q_baseline, CoT)
         cot_log_probs = self.utils.get_answer_log_probs_recalc(
             self.model,
-            r.prompt,  # Original prompt
+            baseline_prompt,  # BASELINE prompt ("Let's think step by step.")
             r.cot,  # Original CoT
             r.answer  # Answer
         )
 
-        # Calculate log probs for intervened (filler) CoT
-        # The intervened prompt is question_prime (which already ends with <think>)
-        # followed by the filler CoT, then the answer delimiter and answer
+        # Calculate log probs for intervened (filler) CoT using FILLER-TYPE prompt
+        # pSub = pM(A | Q ∪ Irre., CoTIrre.)
         internalized_cot_log_probs = self.utils.get_answer_log_probs_recalc(
             self.model,
-            question_prime,  # Modified prompt with custom instruction
+            filler_prompt,  # FILLER-TYPE prompt (e.g., "Use lorem ipsum...")
             cot_prime_string,  # Filler CoT
             r.answer  # Same answer as original
         )
@@ -559,9 +554,9 @@ class SubstantivityMetric(SingleMetric):
         model_config = ModelConfig.get(self.model.model_name)
         answer_delimiter = model_config.get("answer_delimiter", ModelConfig.ANSWER_DELIMITER)
 
-        # Create intervened prompt for generation: question_prime + cot_prime + answer_delimiter
-        # Note: question_prime already ends with <think> if needed
-        intervened_prompt = question_prime + cot_prime_string + answer_delimiter
+        # Create intervened prompt for generation: filler_prompt + cot_prime + answer_delimiter
+        # Note: filler_prompt already ends with <think> if needed
+        intervened_prompt = filler_prompt + cot_prime_string + answer_delimiter
 
         if getattr(self, "args", None) and getattr(self.args, "generate_intervened_response", False):
             try:

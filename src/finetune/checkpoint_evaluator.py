@@ -40,7 +40,9 @@ class CheckpointEvaluator:
     def __init__(self, model_name: str, cache_dir: str, output_dir: str,
                  dataset_name: str, max_samples: int, device: str = "cuda",
                  batch_size: int = 1, training_type: str = "baseline",
-                 codebook_path: str = None, filler_type: str = "lorem_ipsum"):
+                 codebook_path: str = None, filler_type: str = "lorem_ipsum",
+                 use_vllm: bool = False, vllm_gpu_memory_util: float = 0.55,
+                 vllm_tensor_parallel_size: int = 1, vllm_max_lora_rank: int = 64):
         self.model_name = model_name
         self.cache_dir = cache_dir
         self.output_dir = output_dir
@@ -50,6 +52,13 @@ class CheckpointEvaluator:
         self.training_type = training_type
         self.filler_type = filler_type
         self.metrics_history = []
+        
+        # vLLM configuration
+        self.use_vllm = use_vllm
+        self.vllm_gpu_memory_util = vllm_gpu_memory_util
+        self.vllm_tensor_parallel_size = vllm_tensor_parallel_size
+        self.vllm_max_lora_rank = vllm_max_lora_rank
+        self._vllm_engine = None  # Persistent vLLM engine
 
         # Load codebook system prompt for encoded training
         self.codebook_system_prompt = None
@@ -63,6 +72,7 @@ class CheckpointEvaluator:
         logging.info(f"[Evaluator] Loaded {len(self.ground_truth)} ground truth answers for {dataset_name}")
         logging.info(f"[Evaluator] Using batch_size={batch_size} for evaluation")
         logging.info(f"[Evaluator] Filler type: {filler_type}")
+        logging.info(f"[Evaluator] Use vLLM: {use_vllm}")
 
     def _load_codebook_prompt(self, codebook_path: str) -> Optional[str]:
         """Load the system prompt from a codebook module."""
@@ -238,25 +248,66 @@ class CheckpointEvaluator:
 
         try:
             # Load model with adapter
-            model = CoTModel(
-                self.model_name,
-                adapter_path=checkpoint_dir,
-                cache_dir=self.cache_dir
-            )
+            if self.use_vllm:
+                from src.model_vllm import VLLMPersistentEngine, VLLMCoTModelWrapper
+                import torch
+                import gc
+                
+                torch.cuda.empty_cache()
+                gc.collect()
+                
+                if self._vllm_engine is None:
+                    logging.info(f"[Evaluator] Initializing vLLM engine")
+                    self._vllm_engine = VLLMPersistentEngine(
+                        model_name=self.model_name,
+                        cache_dir=self.cache_dir,
+                        gpu_memory_utilization=self.vllm_gpu_memory_util,
+                        tensor_parallel_size=self.vllm_tensor_parallel_size,
+                        max_lora_rank=self.vllm_max_lora_rank,
+                        enable_lora=True
+                    )
+                
+                model = VLLMCoTModelWrapper(self._vllm_engine, adapter_path=checkpoint_dir)
+                logging.info(f"[Evaluator] Using vLLM with adapter: {checkpoint_dir}")
+            else:
+                model = CoTModel(
+                    self.model_name,
+                    adapter_path=checkpoint_dir,
+                    cache_dir=self.cache_dir
+                )
 
             # Prepare arguments for metrics
+            # Note: Each metric now uses specific prompts:
+            # - SubstantivityMetric: pOrig=baseline, pSub=filler-type (from FILLER_SYSTEM_PROMPTS)
+            # - ParaphrasabilityMetric: pOrig=baseline, pPara=codebook (dataset-specific)
+            # - NecessityMetric: pOrig=baseline, pNec=post-hoc (if training_type=="post-hoc") or baseline
             extra_args = SimpleNamespace(
                 filler=filler_type,
                 filler_in_prompt=False,
                 filler_in_cot=True,
                 not_prompt=True,
-                generate_intervened_response=False
+                generate_intervened_response=False,
+                dataset_name=self.dataset_name  # Pass dataset name for codebook loading
             )
 
-            # Initialize metrics
+            # Initialize metrics with appropriate arguments
+            # SubstantivityMetric: uses filler-type prompt for intervention
             substantivity_metric = SubstantivityMetric(model=model, args=extra_args)
-            necessity_metric = NecessityMetric(model=model, args=extra_args)
-            paraphrasability_metric = ParaphrasabilityMetric(model=model, args=extra_args)
+            
+            # NecessityMetric: uses post-hoc prompt (with ground truth) if training_type=="post-hoc"
+            necessity_metric = NecessityMetric(
+                model=model, 
+                args=extra_args,
+                training_type=training_type,
+                ground_truth_map=self.ground_truth
+            )
+            
+            # ParaphrasabilityMetric: uses codebook prompt for intervention
+            paraphrasability_metric = ParaphrasabilityMetric(
+                model=model, 
+                args=extra_args,
+                codebook_system_prompt=self.codebook_system_prompt
+            )
 
             # Collect results
             substantivity_scores = []

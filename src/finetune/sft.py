@@ -221,6 +221,16 @@ def main():
     # Random seed
     parser.add_argument("--seed", type=int, default=42, help="Random seed")
 
+    # vLLM arguments for faster evaluation
+    parser.add_argument("--use_vllm", action="store_true",
+                        help="Use vLLM for faster checkpoint evaluation")
+    parser.add_argument("--vllm_gpu_memory_util", type=float, default=0.55,
+                        help="GPU memory utilization for vLLM (0.0-1.0)")
+    parser.add_argument("--vllm_tensor_parallel_size", type=int, default=1,
+                        help="Number of GPUs for vLLM tensor parallelism")
+    parser.add_argument("--vllm_max_lora_rank", type=int, default=64,
+                        help="Maximum LoRA rank for vLLM")
+
     args = parser.parse_args()
 
     # Setup
@@ -377,7 +387,11 @@ def main():
             max_eval_samples=args.metric_eval_samples,
             batch_size=args.batch_size,
             training_type=args.training_type,
-            codebook_path=args.codebook_path if args.training_type == "encoded" else None
+            codebook_path=args.codebook_path if args.training_type == "encoded" else None,
+            use_vllm=args.use_vllm,
+            vllm_gpu_memory_util=args.vllm_gpu_memory_util,
+            vllm_tensor_parallel_size=args.vllm_tensor_parallel_size,
+            vllm_max_lora_rank=args.vllm_max_lora_rank
         )
         callbacks.append(metric_callback)
 

@@ -45,7 +45,7 @@ st.set_page_config(
 )
 
 # Constants
-DEFAULT_TRAINING_TYPES = ["baseline"]
+DEFAULT_TRAINING_TYPES = ["baseline", "encoded"]
 DEFAULT_MODEL_NAMES = ["Qwen3-4B"]
 DEFAULT_DATASET_NAMES = ["ca", "ba", "sb"]
 # Updated learning rates as requested
