@@ -7,4 +7,10 @@ cache/
 xx*
 
 *.sw*
-data/custom/binary_alternation.json
+# Exclude data folder (contains large files)
+data/custom/*.json
+data/custom/*.log
+data/arc_agi_n1000.json
+data/icl_examples/*.json
+data/logprobs/**/*
+data/plots/**/*
