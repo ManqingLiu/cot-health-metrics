@@ -25,6 +25,10 @@ class DatasetMaskingMixin:
     def _mask_labels(self, prompt_ids: torch.Tensor, full_ids: torch.Tensor, assistant_text: str) -> torch.Tensor:
         """
         Create labels with proper masking based on mask_mode.
+        
+        Uses FUZZY MODE by default: "Answer:" delimiter separates CoT from answer.
+        - CoT = everything before "Answer:"
+        - Answer = everything from "Answer:" to end
 
         Args:
             prompt_ids: Tokenized prompt (user message)
@@ -61,53 +65,43 @@ class DatasetMaskingMixin:
             span_ids = tokenizer(assistant_text[c0:c1], return_tensors="pt", add_special_tokens=False).input_ids
             return start + prefix_ids.shape[1], start + prefix_ids.shape[1] + span_ids.shape[1]
 
-        # Get think tokens from model config
-        begin_think = self.model_config.get('begin_think', '<think>')
-        end_think = self.model_config.get('end_think', '</think>')
-
-        # Escape special regex characters
-        begin_think_escaped = re.escape(begin_think)
-        end_think_escaped = re.escape(end_think)
-
         # Collect spans to supervise
         spans = []
+        answer_prefix = getattr(self, 'answer_prefix', r"Answer\s*:\s*")
 
-        # Handle CoT (think tags) masking
-        if self.mask_mode in {"cot", "cot_and_answer"}:
-            supervise_inner = getattr(self, 'supervise_think_inner', True)
+        # FUZZY MODE: Use "Answer:" as the delimiter (default behavior)
+        # Find the LAST occurrence of answer prefix
+        last_answer_match = None
+        for _m in re.finditer(answer_prefix, assistant_text, flags=re.IGNORECASE):
+            last_answer_match = _m
 
-            if supervise_inner:
-                # Supervise only the content inside think tags (not the tags themselves)
-                pat = f"{begin_think_escaped}(.*?){end_think_escaped}"
-            else:
-                # Supervise the entire think block including tags
-                pat = f"({begin_think_escaped}.*?{end_think_escaped})"
+        if last_answer_match:
+            answer_start_char = last_answer_match.start()
 
-            m = re.search(pat, assistant_text, flags=re.DOTALL | re.IGNORECASE)
-            if m:
-                c0, c1 = m.span(1)
-                spans.append(token_span_from_char_span(c0, c1))
+            # Handle CoT masking (everything before Answer:)
+            if self.mask_mode in {"cot", "cot_and_answer"}:
+                if answer_start_char > 0:
+                    # CoT is from start to just before "Answer:"
+                    cot_text = assistant_text[:answer_start_char].rstrip()
+                    if cot_text:
+                        spans.append(token_span_from_char_span(0, len(cot_text)))
 
-        # Handle answer masking
-        if self.mask_mode in {"answer_only", "cot_and_answer"}:
-            answer_prefix = getattr(self, 'answer_prefix', r"Answer\s*:\s*")
-
-            # Take LAST occurrence of answer prefix
-            last = None
-            for _m in re.finditer(answer_prefix, assistant_text, flags=re.IGNORECASE | re.DOTALL):
-                last = _m
-
-            if last:
-                c0 = last.start()
+            # Handle answer masking (everything from Answer: to end)
+            if self.mask_mode in {"answer_only", "cot_and_answer"}:
+                c0 = answer_start_char
                 c1 = len(assistant_text)
                 spans.append(token_span_from_char_span(c0, c1))
-            else:
-                # Fallback to last non-empty line
+        else:
+            # No Answer: found - fallback behavior
+            if self.mask_mode in {"cot", "cot_and_answer"}:
+                # Supervise everything as CoT
+                spans.append((start, end))
+            elif self.mask_mode == "answer_only":
+                # Try to find last non-empty line as answer
                 for line in reversed(assistant_text.splitlines()):
                     if line.strip():
-                        last_line = line
-                        c0 = assistant_text.rfind(last_line)
-                        c1 = c0 + len(last_line)
+                        c0 = assistant_text.rfind(line)
+                        c1 = c0 + len(line)
                         spans.append(token_span_from_char_span(c0, c1))
                         break
 
@@ -492,22 +486,41 @@ class InternalizedDataset(Dataset, DatasetMaskingMixin):
     """Dataset class for internalized CoT training with filler content."""
 
     # System prompts for different filler types (from metric_substantivity.py)
+    # Note: All prompts emphasize that the goal is still producing the CORRECT answer
     FILLER_SYSTEM_PROMPTS = {
-        "lorem": "Only use Lorem ipsum text in your thinking tags and reasoning steps.",
-        "lorem_ipsum": "Only use Lorem ipsum text in your thinking tags and reasoning steps.",
-        "dots": "Only use dots (.... ) in your thinking tags and reasoning steps.",
-        "think_token": "Only use the word 'think' in your thinking tags and reasoning steps.",
-        "number_words": "Only use number words (one, two, three, four, five) in your thinking tags and reasoning steps.",
-        "mixed": "Use filler content in your thinking tags and reasoning steps.",
-        "cicero": "Only use original Cicero Latin text in your thinking tags.",
-        "cicero_original": "Only use original Cicero Latin text in your thinking tags.",
-        "random_words": "Only use random English words in your thinking tags.",
-        "neutral": "Only use neutral filler words in your thinking tags.",
-        "neutral_filler": "Only use neutral filler words in your thinking tags.",
-        "not_relevant": "Use reasoning from a completely different task domain in your thinking tags.",
-        "shuffled": "Use reasoning from a different question in your thinking tags.",
+        "lorem": "Use Lorem ipsum text in your thinking tags. The filler text is for internal processing only - your goal is still to produce the CORRECT answer.",
+        "lorem_ipsum": "Use Lorem ipsum text in your thinking tags. The filler text is for internal processing only - your goal is still to produce the CORRECT answer.",
+        "dots": "Use dots (.... ) in your thinking tags. The filler is for internal processing only - your goal is still to produce the CORRECT answer.",
+        "think_token": "Use the word 'think' in your thinking tags. The filler is for internal processing only - your goal is still to produce the CORRECT answer.",
+        "number_words": "Use number words (one, two, three, four, five) in your thinking tags. The filler is for internal processing only - your goal is still to produce the CORRECT answer.",
+        "mixed": "Use filler content in your thinking tags. The filler is for internal processing only - your goal is still to produce the CORRECT answer.",
+        "cicero": "Use original Cicero Latin text in your thinking tags. The filler text is for internal processing only - your goal is still to produce the CORRECT answer.",
+        "cicero_original": "Use original Cicero Latin text in your thinking tags. The filler text is for internal processing only - your goal is still to produce the CORRECT answer.",
+        "random_words": "Use random English words in your thinking tags. The filler is for internal processing only - your goal is still to produce the CORRECT answer.",
+        "neutral": "Use neutral filler words in your thinking tags. The filler is for internal processing only - your goal is still to produce the CORRECT answer.",
+        "neutral_filler": "Use neutral filler words in your thinking tags. The filler is for internal processing only - your goal is still to produce the CORRECT answer.",
+        "not_relevant": "Use reasoning from a different task domain in your thinking tags. The content is for internal processing only - your goal is still to produce the CORRECT answer.",
+        "shuffled": "Use reasoning from a different question in your thinking tags. The content is for internal processing only - your goal is still to produce the CORRECT answer.",
     }
-    DEFAULT_SYSTEM_PROMPT = "Use filler content in your thinking tags and reasoning steps."
+    DEFAULT_SYSTEM_PROMPT = "Use filler content in your thinking tags. The filler is for internal processing only - your goal is still to produce the CORRECT answer."
+
+    @classmethod
+    def get_filler_instruction(cls, filler_type: str) -> str:
+        """
+        Get the filler instruction for a given filler type.
+        
+        This is the single source of truth for filler instructions used in:
+        - InternalizedDataset (for training data creation)
+        - checkpoint_evaluator.py (for generating responses during evaluation)
+        - metric_substantivity.py (for calculating the substantivity metric)
+        
+        Args:
+            filler_type: Type of filler (e.g., "lorem_ipsum", "not_relevant", "shuffled")
+            
+        Returns:
+            The instruction string to use in prompts
+        """
+        return cls.FILLER_SYSTEM_PROMPTS.get(filler_type, cls.DEFAULT_SYSTEM_PROMPT)
 
     # Mapping for swapping CoTs to irrelevant datasets
     # Key: source dataset, Value: target dataset with most irrelevant CoT

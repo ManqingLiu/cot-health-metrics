@@ -26,7 +26,8 @@ class MetricTrackingCallback(TrainerCallback):
                  use_vllm: bool = False,
                  vllm_gpu_memory_util: float = 0.55,
                  vllm_tensor_parallel_size: int = 1,
-                 vllm_max_lora_rank: int = 64):
+                 vllm_max_lora_rank: int = 64,
+                 evaluate_step_0: bool = True):
         """
         Args:
             model_name: Name of the base model
@@ -44,9 +45,12 @@ class MetricTrackingCallback(TrainerCallback):
             vllm_gpu_memory_util: GPU memory utilization for vLLM
             vllm_tensor_parallel_size: Tensor parallel size for vLLM
             vllm_max_lora_rank: Max LoRA rank for vLLM
+            evaluate_step_0: Whether to evaluate the base model at step 0 before training
         """
         super().__init__()
 
+        self.model_name = model_name
+        self.cache_dir = cache_dir
         self.evaluator = CheckpointEvaluator(
             model_name=model_name,
             cache_dir=cache_dir,
@@ -68,6 +72,8 @@ class MetricTrackingCallback(TrainerCallback):
         self.total_training_steps = total_training_steps
         self.batch_size = batch_size
         self.training_type = training_type
+        self.evaluate_step_0 = evaluate_step_0
+        self.step_0_evaluated = False  # Track if step 0 has been evaluated
 
         # Calculate checkpoint steps based on intervals
         self.checkpoint_steps = [
@@ -81,8 +87,89 @@ class MetricTrackingCallback(TrainerCallback):
         logging.info(f"[MetricCallback] Total training steps: {total_training_steps}")
         logging.info(f"[MetricCallback] Training type: {training_type}")
         logging.info(f"[MetricCallback] Filler type: {filler_type}")
+        logging.info(f"[MetricCallback] Evaluate step 0 (pre-training baseline): {evaluate_step_0}")
         if codebook_path:
             logging.info(f"[MetricCallback] Codebook path: {codebook_path}")
+
+    def on_train_begin(self, args, state, control, **kwargs):
+        """
+        Called at the beginning of training.
+        Evaluates the base model at step 0 before any training occurs.
+        """
+        if not self.evaluate_step_0 or self.step_0_evaluated:
+            return control
+        
+        logging.info("[MetricCallback] ========================================")
+        logging.info("[MetricCallback] Step 0 Evaluation (Pre-training baseline)")
+        logging.info("[MetricCallback] ========================================")
+        
+        # Get the training model for potential offloading
+        trainer_model = kwargs.get('model', None)
+        use_vllm = getattr(self.evaluator, 'use_vllm', False)
+        
+        # Create a checkpoint directory for step 0
+        step_0_dir = os.path.join(self.evaluator.output_dir, "checkpoint-0")
+        os.makedirs(step_0_dir, exist_ok=True)
+        
+        # Save the initial model state for step 0 evaluation
+        if trainer_model is not None:
+            logging.info(f"[MetricCallback] Saving initial model state to {step_0_dir}")
+            try:
+                # For PEFT models, save the adapter
+                if hasattr(trainer_model, 'save_pretrained'):
+                    trainer_model.save_pretrained(step_0_dir)
+                    logging.info("[MetricCallback] Saved initial adapter to checkpoint-0")
+            except Exception as e:
+                logging.warning(f"[MetricCallback] Could not save initial model: {e}")
+        
+        # Offload training model to CPU if using vLLM
+        if use_vllm:
+            self._offload_model_to_cpu(trainer_model)
+        
+        try:
+            # Evaluate at step 0 using the base model (no adapter yet)
+            # Pass None as checkpoint_dir to use base model without adapter
+            metrics = self.evaluator.evaluate_checkpoint(
+                checkpoint_dir=step_0_dir,  # Use the saved checkpoint-0
+                step=0,
+                eval_dataset=self.eval_dataset,
+                filler_type=self.filler_type,
+                max_samples=self.max_eval_samples,
+                batch_size=self.batch_size,
+                training_type=self.training_type
+            )
+            
+            self.step_0_evaluated = True
+            self.evaluated_steps.add(0)
+            
+            # Log to wandb if available
+            if metrics and not metrics.get("error"):
+                self._log_to_wandb(metrics, 0)
+                logging.info(f"[MetricCallback] Step 0 evaluation complete:")
+                logging.info(f"  - Accuracy: {metrics.get('accuracy', 0):.4f}")
+                logging.info(f"  - Substantivity: {metrics.get('substantivity_mean', 0):.4f}")
+                logging.info(f"  - Necessity: {metrics.get('necessity_mean', 0):.4f}")
+                logging.info(f"  - Paraphrasability: {metrics.get('paraphrasability_mean', 0):.4f}")
+            else:
+                logging.warning(f"[MetricCallback] Step 0 evaluation returned error: {metrics.get('error', 'unknown')}")
+                
+        except Exception as e:
+            logging.error(f"[MetricCallback] Step 0 evaluation failed: {e}")
+            import traceback
+            logging.error(traceback.format_exc())
+        finally:
+            # Clean up vLLM if used
+            if use_vllm and hasattr(self.evaluator, '_vllm_engine') and self.evaluator._vllm_engine is not None:
+                logging.info("[MetricCallback] Cleaning up vLLM engine after step 0 evaluation")
+                self.evaluator._vllm_engine.cleanup()
+                self.evaluator._vllm_engine = None
+            
+            # Restore model to GPU
+            if use_vllm:
+                self._restore_model_to_gpu(trainer_model)
+        
+        logging.info("[MetricCallback] ========================================")
+        return control
 
     def on_step_end(self, args, state, control, **kwargs):
         """Called at the end of each training step."""
@@ -275,100 +362,54 @@ class MetricTrackingCallback(TrainerCallback):
         return control
 
     def _log_to_wandb(self, metrics: Dict, step: int):
-        """Log metrics to wandb if available with mean, std, and confidence bands."""
+        """
+        Log metrics to wandb if available.
+        
+        Only logs essential metrics:
+        - accuracy_mean, accuracy_std
+        - substantivity_mean, substantivity_std
+        - necessity_mean, necessity_std
+        - paraphrasability_mean, paraphrasability_std
+        - eval_loss
+        """
         try:
             import wandb
 
-            # Main metrics with mean, std, and confidence bands
             log_dict = {"step": step}
 
-            # Substantivity metric - mean, std, and confidence bands
+            # Accuracy - mean and std only
+            if "accuracy_mean" in metrics:
+                log_dict["eval/accuracy_mean"] = metrics["accuracy_mean"]
+            elif "accuracy" in metrics:
+                log_dict["eval/accuracy_mean"] = metrics["accuracy"]
+            if "accuracy_std" in metrics:
+                log_dict["eval/accuracy_std"] = metrics["accuracy_std"]
+
+            # Substantivity - mean and std only
             if "substantivity_mean" in metrics:
-                log_dict.update({
-                    "eval/substantivity_mean": metrics["substantivity_mean"],
-                    "eval/substantivity_std": metrics.get("substantivity_std", 0),
-                    "eval/substantivity_median": metrics.get("substantivity_median", 0),
-                    "eval/substantivity_q25": metrics.get("substantivity_q25", 0),
-                    "eval/substantivity_q75": metrics.get("substantivity_q75", 0),
-                    "eval/substantivity_min": metrics.get("substantivity_min", 0),
-                    "eval/substantivity_max": metrics.get("substantivity_max", 0)
-                })
+                log_dict["eval/substantivity_mean"] = metrics["substantivity_mean"]
+            if "substantivity_std" in metrics:
+                log_dict["eval/substantivity_std"] = metrics["substantivity_std"]
 
-            # Necessity metric - mean, std, and confidence bands
+            # Necessity - mean and std only
             if "necessity_mean" in metrics:
-                log_dict.update({
-                    "eval/necessity_mean": metrics["necessity_mean"],
-                    "eval/necessity_std": metrics.get("necessity_std", 0),
-                    "eval/necessity_median": metrics.get("necessity_median", 0),
-                    "eval/necessity_q25": metrics.get("necessity_q25", 0),
-                    "eval/necessity_q75": metrics.get("necessity_q75", 0),
-                    "eval/necessity_min": metrics.get("necessity_min", 0),
-                    "eval/necessity_max": metrics.get("necessity_max", 0)
-                })
+                log_dict["eval/necessity_mean"] = metrics["necessity_mean"]
+            if "necessity_std" in metrics:
+                log_dict["eval/necessity_std"] = metrics["necessity_std"]
 
-            # Paraphrasability metric - mean, std, and confidence bands
+            # Paraphrasability - mean and std only
             if "paraphrasability_mean" in metrics:
-                log_dict.update({
-                    "eval/paraphrasability_mean": metrics["paraphrasability_mean"],
-                    "eval/paraphrasability_std": metrics.get("paraphrasability_std", 0),
-                    "eval/paraphrasability_median": metrics.get("paraphrasability_median", 0),
-                    "eval/paraphrasability_q25": metrics.get("paraphrasability_q25", 0),
-                    "eval/paraphrasability_q75": metrics.get("paraphrasability_q75", 0),
-                    "eval/paraphrasability_min": metrics.get("paraphrasability_min", 0),
-                    "eval/paraphrasability_max": metrics.get("paraphrasability_max", 0)
-                })
+                log_dict["eval/paraphrasability_mean"] = metrics["paraphrasability_mean"]
+            if "paraphrasability_std" in metrics:
+                log_dict["eval/paraphrasability_std"] = metrics["paraphrasability_std"]
 
-            # Accuracy metric - mean, std, and details
-            if "accuracy" in metrics:
-                log_dict.update({
-                    "eval/accuracy": metrics["accuracy"],
-                    "eval/accuracy_mean": metrics.get("accuracy_mean", metrics["accuracy"]),
-                    "eval/accuracy_std": metrics.get("accuracy_std", 0),
-                    "eval/accuracy_median": metrics.get("accuracy_median", 0),
-                    "eval/num_correct": metrics.get("num_correct", 0),
-                    "eval/num_total": metrics.get("num_total", 0)
-                })
+            # Eval loss
+            if "eval_loss" in metrics:
+                log_dict["eval/loss"] = metrics["eval_loss"]
 
             wandb.log(log_dict)
 
-            # Log confidence bands as custom charts for better visualization
-            if "substantivity_mean" in metrics and "necessity_mean" in metrics and "paraphrasability_mean" in metrics:
-                # Create custom chart data for confidence bands
-                confidence_data = [[
-                    step,
-                    metrics.get("substantivity_mean", 0),
-                    metrics.get("substantivity_std", 0),
-                    metrics.get("substantivity_median", 0),
-                    metrics.get("substantivity_q25", 0),
-                    metrics.get("substantivity_q75", 0),
-                    metrics.get("necessity_mean", 0),
-                    metrics.get("necessity_std", 0),
-                    metrics.get("necessity_median", 0),
-                    metrics.get("necessity_q25", 0),
-                    metrics.get("necessity_q75", 0),
-                    metrics.get("paraphrasability_mean", 0),
-                    metrics.get("paraphrasability_std", 0),
-                    metrics.get("paraphrasability_median", 0),
-                    metrics.get("paraphrasability_q25", 0),
-                    metrics.get("paraphrasability_q75", 0),
-                    metrics.get("accuracy", 0),
-                    metrics.get("accuracy_std", 0)
-                ]]
-
-                confidence_table = wandb.Table(
-                    columns=[
-                        "step", 
-                        "substantivity_mean", "substantivity_std", "substantivity_median", "substantivity_q25", "substantivity_q75",
-                        "necessity_mean", "necessity_std", "necessity_median", "necessity_q25", "necessity_q75",
-                        "paraphrasability_mean", "paraphrasability_std", "paraphrasability_median", "paraphrasability_q25", "paraphrasability_q75",
-                        "accuracy", "accuracy_std"
-                    ],
-                    data=confidence_data
-                )
-                wandb.log({"eval/metrics_summary": confidence_table})
-
-            # Log sample CoTs as a table with full prompt for visualization
-            # This logs question, prompt, cot, and answer at each checkpoint
+            # Log sample CoTs as a table for visualization
             if "sample_cots" in metrics and metrics["sample_cots"]:
                 cot_data = []
                 for sample in metrics["sample_cots"]:
@@ -376,7 +417,7 @@ class MetricTrackingCallback(TrainerCallback):
                         step,
                         sample.get("question_id", 0),
                         sample.get("question", ""),
-                        sample.get("prompt", ""),  # Full prompt for debugging
+                        sample.get("prompt", ""),
                         sample.get("cot", ""),
                         sample.get("answer", "")
                     ])
@@ -386,8 +427,6 @@ class MetricTrackingCallback(TrainerCallback):
                     data=cot_data
                 )
                 wandb.log({"eval/sample_cots": cot_table})
-                
-                logging.info(f"[MetricCallback] Logged {len(cot_data)} sample CoTs to W&B at step {step}")
 
         except ImportError:
             pass  # wandb not available

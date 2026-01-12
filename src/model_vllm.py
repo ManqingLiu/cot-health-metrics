@@ -197,7 +197,7 @@ class VLLMCoTModel:
                 dtype=dtype,
                 trust_remote_code=True,
                 enforce_eager=True,  # Disable CUDA graphs for stability
-                max_model_len=5000,  # Increased to handle longer prompts with CoT
+                max_model_len=8192,  # Increased to handle longer prompts with CoT and paraphrasability evaluation
             )
             logging.info(f"[VLLMCoTModel] vLLM initialized successfully")
         except Exception as e:
@@ -560,7 +560,7 @@ class VLLMPersistentEngine:
                  max_lora_rank: int = 64,
                  enable_lora: bool = True,
                  dtype: str = "auto",
-                 max_model_len: int = 5000,
+                 max_model_len: int = 8192,
                  enforce_eager: bool = True):
         """
         Initialize the persistent vLLM engine.

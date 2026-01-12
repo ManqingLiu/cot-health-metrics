@@ -182,10 +182,10 @@ def main():
     parser.add_argument("--fp16", action="store_true", help="Use float16")
 
     # Internalization arguments
-    parser.add_argument("--filler_type_train", type=str, default="mixed",
+    parser.add_argument("--filler_type_train", type=str, default="not_relevant",
                         choices=["lorem_ipsum", "dots", "think_token", "number_words", "mixed", "not_relevant", "shuffled"],
                         help="Type of filler for internalized CoT training (used when training_type=internalized)")
-    parser.add_argument("--filler_type_eval", type=str, default="lorem_ipsum",
+    parser.add_argument("--filler_type_eval", type=str, default="not_relevant",
                         choices=["lorem_ipsum", "dots", "think_token", "number_words", "mixed", "not_relevant", "shuffled"],
                         help="Type of filler for evaluation (used when generating eval dataset)")
     parser.add_argument("--codebook_path", type=str, default="src/finetune/codebook_binary_alternation.py",
@@ -300,7 +300,8 @@ def main():
             mask_mode=args.mask_mode,
             max_length=args.max_length,
             max_cot_length=args.max_cot_length,
-            model_name=args.model
+            model_name=args.model,
+            dataset_name=args.dataset_name
         )
         eval_dataset = InternalizedDataset(
             eval_data, tokenizer,
@@ -308,7 +309,8 @@ def main():
             mask_mode=args.mask_mode,
             max_length=args.max_length,
             max_cot_length=args.max_cot_length,
-            model_name=args.model
+            model_name=args.model,
+            dataset_name=args.dataset_name
         )
 
     elif args.training_type == "encoded":
@@ -391,7 +393,8 @@ def main():
             use_vllm=args.use_vllm,
             vllm_gpu_memory_util=args.vllm_gpu_memory_util,
             vllm_tensor_parallel_size=args.vllm_tensor_parallel_size,
-            vllm_max_lora_rank=args.vllm_max_lora_rank
+            vllm_max_lora_rank=args.vllm_max_lora_rank,
+            evaluate_step_0=True  # Evaluate base model before training starts
         )
         callbacks.append(metric_callback)
 
@@ -406,11 +409,53 @@ def main():
     if args.wandb_project:
         try:
             import wandb
+            import glob
+            import shutil
+            
             wandb.init(
                 project=args.wandb_project,
                 name=args.run_name,
                 config=vars(args)
             )
+            
+            # Save source code to run's Files section using wandb.save()
+            try:
+                # Get the project root directory
+                project_root = Path(__file__).resolve().parent.parent.parent
+                if not (project_root / "src").exists():
+                    project_root = Path.cwd()
+                
+                logging.info(f"W&B: Saving source code from {project_root}")
+                
+                # Save all Python files in src/ directory
+                src_dir = project_root / "src"
+                if src_dir.exists():
+                    # Use glob pattern to save all .py files
+                    py_pattern = str(src_dir / "**" / "*.py")
+                    py_files = glob.glob(py_pattern, recursive=True)
+                    for py_file in py_files:
+                        # Save with relative path preserved
+                        wandb.save(py_file, base_path=str(project_root), policy="now")
+                    logging.info(f"Saved {len(py_files)} Python files to W&B Files")
+                
+                # Save key shell scripts
+                for script_name in ["run_parallel_gpu_lambda.sh", "sync_to_lambda.sh"]:
+                    script_path = project_root / script_name
+                    if script_path.exists():
+                        wandb.save(str(script_path), base_path=str(project_root), policy="now")
+                        logging.info(f"Saved {script_name} to W&B Files")
+                
+                # Save requirements.txt
+                req_path = project_root / "requirements.txt"
+                if req_path.exists():
+                    wandb.save(str(req_path), base_path=str(project_root), policy="now")
+                
+                logging.info("Successfully saved source code to W&B Files")
+            except Exception as e:
+                import traceback
+                logging.warning(f"Failed to save code to W&B: {e}")
+                logging.warning(f"Traceback: {traceback.format_exc()}")
+            
             report_to = "wandb"
         except ImportError:
             logging.warning("wandb not installed, skipping wandb logging")

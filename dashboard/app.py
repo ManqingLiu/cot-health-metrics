@@ -45,11 +45,11 @@ st.set_page_config(
 )
 
 # Constants
-DEFAULT_TRAINING_TYPES = ["baseline", "encoded"]
+DEFAULT_TRAINING_TYPES = ["baseline", "internalized", "encoded", "post-hoc"]
 DEFAULT_MODEL_NAMES = ["Qwen3-4B"]
-DEFAULT_DATASET_NAMES = ["ca", "ba", "sb"]
-# Updated learning rates as requested
-DEFAULT_LEARNING_RATES = ["1e-4", "2e-5", "1e-5"]
+DEFAULT_DATASET_NAMES = ["ba", "ca", "sb"]
+# Learning rates: BA uses 1e-5, CA and SB use 5e-5
+DEFAULT_LEARNING_RATES = ["5e-5", "1e-5", "2e-5", "1e-4"]
 
 # Default sample size for SE calculation (can be overridden if data provides it)
 DEFAULT_SAMPLE_SIZE = 100
@@ -263,15 +263,27 @@ def setup_wandb_auth():
 
 
 @st.cache_data(ttl=60)
-def load_from_wandb_multi(entity: str, projects: List[str], debug: bool = False) -> Optional[pd.DataFrame]:
+def load_from_wandb_multi(entity: str, projects: List[str], run_states: Optional[List[str]] = None, debug: bool = False) -> Optional[pd.DataFrame]:
     """Load metrics from multiple W&B projects.
     
-    When there are multiple runs with the same name, keeps only the latest FINISHED run.
+    Args:
+        entity: W&B entity name
+        projects: List of project names
+        run_states: List of run states to include (e.g., ['running', 'finished']). 
+                    If None, defaults to ['finished', 'running']
+        debug: Whether to return debug information
+    
+    When there are multiple runs with the same name, keeps only the latest run based on state preference.
     """
     try:
         import wandb
         setup_wandb_auth()
         api = wandb.Api()
+        
+        # Default to both running and finished if not specified
+        if run_states is None:
+            run_states = ['finished', 'running']
+        valid_states = set(run_states)
         
         all_data = []
         debug_info = []
@@ -281,13 +293,15 @@ def load_from_wandb_multi(entity: str, projects: List[str], debug: bool = False)
                 project_info = parse_project_name(project)
                 runs = list(api.runs(f"{entity}/{project}"))
                 
-                # Filter to only finished or running runs (exclude crashed/failed)
-                valid_states = {'finished', 'running'}
+                # Filter to only specified run states (exclude crashed/failed unless included)
                 valid_runs = [run for run in runs if run.state in valid_states]
                 
                 # Group runs by name and keep the best one:
-                # - Prefer running over finished (running is the latest attempt)
+                # - If both 'running' and 'finished' are in valid_states, prefer 'running' (latest attempt)
+                # - Otherwise, prefer the state with higher priority (running > finished > others)
                 # - If same state, prefer the latest (newest created_at)
+                state_priority = {'running': 3, 'finished': 2, 'crashed': 1, 'failed': 1, 'killed': 1}
+                
                 runs_by_name = {}
                 for run in valid_runs:
                     run_name = run.name
@@ -303,25 +317,31 @@ def load_from_wandb_multi(entity: str, projects: List[str], debug: bool = False)
                         runs_by_name[run_name] = {
                             'run': run,
                             'state': run_state,
-                            'created_at': created_at
+                            'created_at': created_at,
+                            'priority': state_priority.get(run_state, 0)
                         }
                     else:
                         existing = runs_by_name[run_name]
-                        # Prefer running over finished (running is the latest attempt)
-                        if run_state == 'running' and existing['state'] == 'finished':
+                        existing_priority = existing['priority']
+                        current_priority = state_priority.get(run_state, 0)
+                        
+                        # Prefer higher priority state (running > finished > others)
+                        if current_priority > existing_priority:
                             runs_by_name[run_name] = {
                                 'run': run,
                                 'state': run_state,
-                                'created_at': created_at
+                                'created_at': created_at,
+                                'priority': current_priority
                             }
-                        # If same state, prefer the newer one
-                        elif run_state == existing['state']:
+                        # If same priority/state, prefer the newer one
+                        elif current_priority == existing_priority:
                             if created_at and existing['created_at']:
                                 if created_at > existing['created_at']:
                                     runs_by_name[run_name] = {
                                         'run': run,
                                         'state': run_state,
-                                        'created_at': created_at
+                                        'created_at': created_at,
+                                        'priority': current_priority
                                     }
                 
                 # Process the selected runs
@@ -1425,6 +1445,16 @@ def main():
             value=default_entity
         )
         
+        # Run state filter
+        st.sidebar.markdown("---")
+        st.sidebar.subheader("🔍 Run State Filter")
+        run_state_options = st.sidebar.multiselect(
+            "Run States",
+            options=["running", "finished", "crashed", "failed", "killed"],
+            default=["running", "finished"],
+            help="Select which run states to include. 'running' shows active training, 'finished' shows completed runs."
+        )
+        
         st.sidebar.markdown("---")
         st.sidebar.subheader("🔧 Project Builder")
         
@@ -1455,12 +1485,22 @@ def main():
         st.sidebar.subheader("📊 Per-Dataset Learning Rate")
         st.sidebar.markdown("*Select learning rate for each dataset*")
         
+        # Default learning rates per dataset: BA uses 1e-5, CA and SB use 5e-5
+        DEFAULT_LR_PER_DATASET = {
+            "ba": "1e-5",
+            "ca": "5e-5",
+            "sb": "5e-5",
+        }
+        
         dataset_lr_map = {}
         for ds in selected_datasets:
+            # Get default LR for this dataset, fallback to 5e-5
+            default_lr = DEFAULT_LR_PER_DATASET.get(ds, "5e-5")
+            default_index = DEFAULT_LEARNING_RATES.index(default_lr) if default_lr in DEFAULT_LEARNING_RATES else 0
             lr = st.sidebar.selectbox(
                 f"LR for {ds.upper()}",
                 options=DEFAULT_LEARNING_RATES,
-                index=len(DEFAULT_LEARNING_RATES) - 1,  # Default to 1e-4 (last in list)
+                index=default_index,
                 key=f"lr_{ds}"
             )
             dataset_lr_map[ds] = lr
@@ -1486,11 +1526,18 @@ def main():
         
         if generated_projects or projects_to_load:
             final_projects = projects_to_load if projects_to_load else generated_projects
-            with st.spinner(f"Loading from {len(final_projects)} W&B projects..."):
-                data = load_from_wandb_multi(wandb_entity, final_projects)
+            selected_states = run_state_options if run_state_options else ["running", "finished"]
+            with st.spinner(f"Loading from {len(final_projects)} W&B projects (states: {', '.join(selected_states)})..."):
+                data = load_from_wandb_multi(wandb_entity, final_projects, run_states=selected_states)
             
             if data is not None:
-                st.sidebar.success(f"Loaded {len(data)} data points")
+                # Show run state distribution if available
+                if 'run_state' in data.columns:
+                    state_counts = data['run_state'].value_counts().to_dict()
+                    state_info = ", ".join([f"{k}: {v}" for k, v in state_counts.items()])
+                    st.sidebar.success(f"Loaded {len(data)} data points\n({state_info})")
+                else:
+                    st.sidebar.success(f"Loaded {len(data)} data points")
                 
                 if dataset_lr_map:
                     filtered_rows = []
