@@ -711,9 +711,38 @@ def main():
     if args.wandb_project:
         try:
             import wandb
+            import pathlib
             os.environ["WANDB_PROJECT"] = args.wandb_project
             if args.run_name: os.environ["WANDB_NAME"] = args.run_name
             wandb.init(project=args.wandb_project, name=args.run_name, config=vars(args))
+            
+            # Log source code as artifact
+            try:
+                code_artifact = wandb.Artifact(
+                    name=f"source_code_{args.run_name or 'run'}",
+                    type="code",
+                    description="Source code for this training run"
+                )
+                
+                # Get the project root directory (parent of src/)
+                project_root = pathlib.Path(__file__).resolve().parent.parent.parent
+                
+                # Add all files in src/ directory
+                src_dir = project_root / "src"
+                if src_dir.exists():
+                    code_artifact.add_dir(str(src_dir), name="src")
+                    logging.info(f"Added src/ directory to W&B artifact")
+                
+                # Add run_parallel_gpu_lambda.sh
+                run_script = project_root / "run_parallel_gpu_lambda.sh"
+                if run_script.exists():
+                    code_artifact.add_file(str(run_script), name="run_parallel_gpu_lambda.sh")
+                    logging.info(f"Added run_parallel_gpu_lambda.sh to W&B artifact")
+                
+                wandb.log_artifact(code_artifact)
+                logging.info("Successfully logged source code artifact to W&B")
+            except Exception as e:
+                logging.warning(f"Failed to log code artifact to W&B: {e}")
         except Exception as e:
             logging.warning(f"W&B init failed: {e}")
 

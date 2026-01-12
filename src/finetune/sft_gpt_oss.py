@@ -325,7 +325,8 @@ def main():
             mask_mode=args.mask_mode,
             max_length=args.max_length,
             max_cot_length=args.max_cot_length,
-            model_name=args.model
+            model_name=args.model,
+            dataset_name=args.dataset_name
         )
         eval_dataset = InternalizedDataset(
             eval_data, tokenizer,
@@ -333,7 +334,8 @@ def main():
             mask_mode=args.mask_mode,
             max_length=args.max_length,
             max_cot_length=args.max_cot_length,
-            model_name=args.model
+            model_name=args.model,
+            dataset_name=args.dataset_name
         )
 
     elif args.training_type == "encoded":
@@ -426,11 +428,41 @@ def main():
     if args.wandb_project:
         try:
             import wandb
+            from pathlib import Path
             wandb.init(
                 project=args.wandb_project,
                 name=args.run_name,
                 config=vars(args)
             )
+            
+            # Log source code as artifact
+            try:
+                code_artifact = wandb.Artifact(
+                    name=f"source_code_{args.run_name or 'run'}",
+                    type="code",
+                    description="Source code for this training run"
+                )
+                
+                # Get the project root directory (parent of src/)
+                project_root = Path(__file__).resolve().parent.parent.parent
+                
+                # Add all files in src/ directory
+                src_dir = project_root / "src"
+                if src_dir.exists():
+                    code_artifact.add_dir(str(src_dir), name="src")
+                    logging.info(f"Added src/ directory to W&B artifact")
+                
+                # Add run_parallel_gpu_lambda.sh
+                run_script = project_root / "run_parallel_gpu_lambda.sh"
+                if run_script.exists():
+                    code_artifact.add_file(str(run_script), name="run_parallel_gpu_lambda.sh")
+                    logging.info(f"Added run_parallel_gpu_lambda.sh to W&B artifact")
+                
+                wandb.log_artifact(code_artifact)
+                logging.info("Successfully logged source code artifact to W&B")
+            except Exception as e:
+                logging.warning(f"Failed to log code artifact to W&B: {e}")
+            
             report_to = "wandb"
         except ImportError:
             logging.warning("wandb not installed, skipping wandb logging")

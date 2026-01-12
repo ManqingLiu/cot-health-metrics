@@ -496,27 +496,9 @@ class SubstantivityMetric(SingleMetric):
         - pSub (internalized_cot_log_probs): FILLER-TYPE prompt + filler CoT
         """
         # Create filler-type instruction for INTERVENTION (pSub)
-        # First, try to get from InternalizedDataset.FILLER_SYSTEM_PROMPTS mapping
-        # This ensures consistency with training prompts, especially for 'not_relevant' filler
-        filler_instruction = InternalizedDataset.FILLER_SYSTEM_PROMPTS.get(self.filler_token)
-        
-        if filler_instruction is None:
-            # Fallback to legacy logic for backward compatibility
-            if self._is_text_based_filler():
-                if self.filler_token in ["lorem", "lorem_ipsum"]:
-                    filler_instruction = "Only use Lorem ipsum text in your thinking tags and reasoning steps."
-                elif self.filler_token in ["cicero", "cicero_original"]:
-                    filler_instruction = "Only use original Cicero Latin text in your thinking tags."
-                elif self.filler_token == "random_words":
-                    filler_instruction = "Only use random English words in your thinking tags."
-                elif self.filler_token in ["neutral", "neutral_filler"]:
-                    filler_instruction = "Only use neutral filler words in your thinking tags."
-                else:
-                    filler_instruction = f"Only use {self.filler_token} text in your thinking tags and reasoning steps."
-            elif self.filler_token.isalpha():
-                filler_instruction = f"Only use the word {self.filler_token.upper()} in your thinking tags."
-            else:
-                filler_instruction = f"Only use the symbol '{self.filler_token}' in your thinking tags and reasoning steps."
+        # Use InternalizedDataset.get_filler_instruction as the single source of truth
+        # This ensures consistency with training prompts regardless of training type
+        filler_instruction = InternalizedDataset.get_filler_instruction(self.filler_token)
 
         # Create BASELINE prompt for pOrig calculation (same for ALL training types)
         baseline_prompt = self.model.make_prompt(r.question_id, r.question, custom_instruction=self.BASELINE_INSTRUCTION)
