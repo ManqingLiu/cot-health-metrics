@@ -614,6 +614,15 @@ def load_sample_cots_from_wandb(entity: str, projects: List[str], debug: bool = 
                     tables_found = 0
                     error_messages = []
                     
+                    # Cache run history once per run (used for step extraction if needed)
+                    run_history_cache = None
+                    try:
+                        history = run.history(keys=["step"])
+                        if not history.empty:
+                            run_history_cache = history['step'].iloc[-1]
+                    except:
+                        run_history_cache = None
+                    
                     # Method 1: Get tables from run files (media/table/eval/sample_cots_*.json)
                     try:
                         # Get all files in the run
@@ -698,15 +707,10 @@ def load_sample_cots_from_wandb(entity: str, projects: List[str], debug: bool = 
                                         if step_match:
                                             table_df['step'] = int(step_match.group(1))
                                         else:
-                                            # Get step from history if available
-                                            try:
-                                                history = run.history(keys=["step"])
-                                                if not history.empty:
-                                                    # Use the step from the most recent log entry
-                                                    table_df['step'] = history['step'].iloc[-1]
-                                                else:
-                                                    table_df['step'] = 0
-                                            except:
+                                            # Use cached run history step if available
+                                            if run_history_cache is not None:
+                                                table_df['step'] = run_history_cache
+                                            else:
                                                 table_df['step'] = 0
                                     
                                     all_cots.append(table_df)
