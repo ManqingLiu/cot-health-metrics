@@ -1452,26 +1452,27 @@ def render_anthropic_style_viewer(samples_df: pd.DataFrame) -> None:
     # Handle single step case to avoid RangeError
     if len(available_steps) == 1:
         selected_step = available_steps[0]
+        current_step_idx = 0
         st.markdown(f"**Current Step: {selected_step}** (1 of 1)")
     else:
         # Convert steps to strings to ensure proper handling by select_slider
         # This prevents issues when all steps are the same numeric value (e.g., all 0)
         available_steps_str = [str(step) for step in available_steps]
-    
-    # Slider using available steps only
+        
+        # Slider using available steps only
         selected_step_str = st.select_slider(
-        "Select Step",
+            "Select Step",
             options=available_steps_str,
             value=available_steps_str[0],
-        key="step_slider"
-    )
+            key="step_slider"
+        )
         
         # Convert back to original type for lookup
         selected_step = available_steps[available_steps_str.index(selected_step_str)]
-    
-    # Display current step clearly
+        
+        # Display current step clearly
         current_step_idx = available_steps_str.index(selected_step_str)
-    st.markdown(f"**Current Step: {selected_step}** ({current_step_idx + 1} of {len(available_steps)})")
+        st.markdown(f"**Current Step: {selected_step}** ({current_step_idx + 1} of {len(available_steps)})")
     
     # Show step indicators
     step_indicators = []
