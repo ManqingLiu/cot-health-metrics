@@ -1355,6 +1355,7 @@ def render_anthropic_style_viewer(samples_df: pd.DataFrame) -> None:
     """
     Render CoT samples in an Anthropic-style interface with step-by-step navigation.
     Shows all steps with a slider to navigate and compare.
+    Limited to 1 example/question for faster rendering.
     """
     if samples_df is None or samples_df.empty:
         st.info("No samples to display")
@@ -1375,6 +1376,8 @@ def render_anthropic_style_viewer(samples_df: pd.DataFrame) -> None:
     
     # Group by training type and step
     # Create a structure: {training_type: {step: [samples]}}
+    # Limit to 1 sample per step/training type to speed up rendering
+    MAX_SAMPLES_PER_STEP = 1
     samples_by_tt_and_step = {}
     sample_indices_by_tt_and_step = {}
     for tt in all_training_types:
@@ -1384,14 +1387,16 @@ def render_anthropic_style_viewer(samples_df: pd.DataFrame) -> None:
         for step in all_steps:
             step_data = tt_data[tt_data['step'] == step]
             if not step_data.empty:
-                # Store all samples for this step
-                samples_by_tt_and_step[tt][step] = step_data.to_dict('records')
-                sample_indices_by_tt_and_step[tt][step] = list(range(len(step_data)))
+                # Limit to MAX_SAMPLES_PER_STEP samples for faster rendering
+                step_samples = step_data.head(MAX_SAMPLES_PER_STEP).to_dict('records')
+                samples_by_tt_and_step[tt][step] = step_samples
+                sample_indices_by_tt_and_step[tt][step] = list(range(len(step_samples)))
             else:
                 samples_by_tt_and_step[tt][step] = []
                 sample_indices_by_tt_and_step[tt][step] = []
     
     # Get all unique questions across all steps and training types
+    # Limit to 1 question for faster rendering
     all_questions = []
     for tt in all_training_types:
         for step in all_steps:
@@ -1399,22 +1404,20 @@ def render_anthropic_style_viewer(samples_df: pd.DataFrame) -> None:
                 q = sample.get('question', '')
                 if q and q not in all_questions:
                     all_questions.append(q)
+                    # Only keep the first question to speed up rendering
+                    if len(all_questions) >= 1:
+                        break
+            if len(all_questions) >= 1:
+                break
+        if len(all_questions) >= 1:
+            break
     
     if not all_questions:
         st.warning("No samples available")
         return
     
-    # Question selector (if multiple questions exist)
-    if len(all_questions) > 1:
-        selected_question = st.selectbox(
-            "📋 Select Question",
-            options=all_questions,
-            index=0,
-            key="question_selector",
-            help="Choose which question to view across all steps and training types"
-        )
-    else:
-        selected_question = all_questions[0]
+    # Always use the first question (no selector for faster rendering)
+    selected_question = all_questions[0]
     
     # Filter samples by selected question
     # Re-group samples by training type and step, but only for the selected question
@@ -1454,21 +1457,21 @@ def render_anthropic_style_viewer(samples_df: pd.DataFrame) -> None:
         # Convert steps to strings to ensure proper handling by select_slider
         # This prevents issues when all steps are the same numeric value (e.g., all 0)
         available_steps_str = [str(step) for step in available_steps]
-        
-        # Slider using available steps only
+    
+    # Slider using available steps only
         selected_step_str = st.select_slider(
-            "Select Step",
+        "Select Step",
             options=available_steps_str,
             value=available_steps_str[0],
-            key="step_slider"
-        )
+        key="step_slider"
+    )
         
         # Convert back to original type for lookup
         selected_step = available_steps[available_steps_str.index(selected_step_str)]
-        
-        # Display current step clearly
+    
+    # Display current step clearly
         current_step_idx = available_steps_str.index(selected_step_str)
-        st.markdown(f"**Current Step: {selected_step}** ({current_step_idx + 1} of {len(available_steps)})")
+    st.markdown(f"**Current Step: {selected_step}** ({current_step_idx + 1} of {len(available_steps)})")
     
     # Show step indicators
     step_indicators = []
@@ -1504,22 +1507,8 @@ def render_anthropic_style_viewer(samples_df: pd.DataFrame) -> None:
             if not samples:
                 st.info(f"No data for step {selected_step}")
             else:
-                # Always show sample selector (even for single sample) to make it more visible
-                sample_count = len(samples)
-                if sample_count > 1:
-                    sample_idx = st.selectbox(
-                        f"📊 Select Sample ({sample_count} available)",
-                        options=list(range(sample_count)),
-                        format_func=lambda x: f"Sample {x+1} of {sample_count}",
-                        key=f"sample_select_{tt}_{selected_step}_{selected_question}",
-                        help=f"Choose which sample to view. {sample_count} samples available for this step."
-                    )
-                else:
-                    # Even with one sample, show it clearly
-                    st.info(f"📊 Sample 1 of 1")
-                    sample_idx = 0
-                
-                sample = samples[sample_idx]
+                # Only 1 sample per step/training type (limited for performance)
+                sample = samples[0]
                 
                 # Display in Anthropic-style format
                 prompt = str(sample.get('prompt', ''))
