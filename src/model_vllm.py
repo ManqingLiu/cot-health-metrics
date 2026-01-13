@@ -197,7 +197,7 @@ class VLLMCoTModel:
                 dtype=dtype,
                 trust_remote_code=True,
                 enforce_eager=True,  # Disable CUDA graphs for stability
-                max_model_len=8192,  # Increased to handle longer prompts with CoT and paraphrasability evaluation
+                max_model_len=4096,  # Reduced from 8192 for faster inference and lower memory usage
             )
             logging.info(f"[VLLMCoTModel] vLLM initialized successfully")
         except Exception as e:
@@ -246,7 +246,7 @@ class VLLMCoTModel:
         return prompt_builder.make_prompt(self.tokenizer)
     
     def do_generate_batch(self, question_ids: List, prompts: List[str], 
-                          max_new_tokens: int = 4096,
+                          max_new_tokens: int = 2049,
                           do_sample: bool = False,
                           temperature: float = None) -> 'VLLMGenerateOutput':
         """
@@ -609,7 +609,7 @@ class VLLMPersistentEngine:
                 dtype=dtype,
                 trust_remote_code=True,
                 enforce_eager=enforce_eager,
-                max_model_len=max_model_len,
+                max_model_len=min(max_model_len, 4096),  # Cap at 4096 for efficiency
             )
             elapsed = time.time() - start_time
             logging.info(f"[VLLMPersistentEngine] vLLM initialized in {elapsed:.2f}s")
@@ -685,7 +685,7 @@ class VLLMPersistentEngine:
         return prompt_builder.make_prompt(self.tokenizer)
     
     def generate_batch(self, prompts: List[str],
-                       max_new_tokens: int = 4096,
+                       max_new_tokens: int = 2049,
                        temperature: float = None,
                        stop_tokens: List[str] = None) -> List[str]:
         """
@@ -730,7 +730,7 @@ class VLLMPersistentEngine:
         return responses
     
     def generate_batch_with_sequences(self, question_ids: List, prompts: List[str],
-                                       max_new_tokens: int = 4096,
+                                       max_new_tokens: int = 2049,
                                        temperature: float = None) -> VLLMGenerateOutput:
         """
         Generate responses and return with sequence tensors (for compatibility).
@@ -1029,7 +1029,7 @@ class VLLMCoTModelWrapper:
         return self.engine.make_prompt_no_cot(question_id, question, ground_truth_answer)
     
     def do_generate_batch(self, question_ids: List, prompts: List[str],
-                          max_new_tokens: int = 4096,
+                          max_new_tokens: int = 2049,
                           do_sample: bool = False,
                           temperature: float = None) -> VLLMGenerateOutput:
         """Generate responses for a batch."""
@@ -1052,7 +1052,7 @@ class VLLMCoTModelWrapper:
         return self.engine._get_token_id(token)
     
     def generate_cot_response_full(self, question_id, question: str, ground_truth_answer=None,
-                                   max_new_tokens: int = 4096, custom_instruction: str = None,
+                                   max_new_tokens: int = 2049, custom_instruction: str = None,
                                    do_sample: bool = False, temperature: float = None) -> ModelResponse:
         """
         Generate a single CoT response. Compatible with CoTModel.generate_cot_response_full.
@@ -1095,7 +1095,7 @@ class VLLMCoTModelWrapper:
     
     def generate_cot_response_full_batch(self, question_ids: List, questions: List[str],
                                          ground_truth_answers: List[str] = None,
-                                         max_new_tokens: int = 4096,
+                                         max_new_tokens: int = 2049,
                                          custom_instruction: str = None,
                                          do_sample: bool = False,
                                          temperature: float = None) -> List[ModelResponse]:
@@ -1170,7 +1170,7 @@ class VLLMCoTModelWrapper:
         
         return responses
     
-    def generate_cot_response(self, question_id, question: str, max_new_tokens: int = 4096,
+    def generate_cot_response(self, question_id, question: str, max_new_tokens: int = 2049,
                               do_sample: bool = True) -> Tuple[str, str]:
         """Generate CoT response and return (cot, answer) tuple."""
         response = self.generate_cot_response_full(question_id, question, max_new_tokens=max_new_tokens,
@@ -1178,7 +1178,7 @@ class VLLMCoTModelWrapper:
         return response.basic_pair
     
     def generate_cot_response_batch(self, question_ids: List, questions: List[str],
-                                    max_new_tokens: int = 4096) -> List[Tuple[str, str]]:
+                                    max_new_tokens: int = 2049) -> List[Tuple[str, str]]:
         """Generate CoT responses in batch and return list of (cot, answer) tuples."""
         responses = self.generate_cot_response_full_batch(question_ids, questions, max_new_tokens=max_new_tokens)
         return [response.basic_pair for response in responses]

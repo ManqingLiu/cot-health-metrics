@@ -201,8 +201,8 @@ def main():
                         help="Number of checkpoints to save (evenly spaced)")
     parser.add_argument("--metric_eval_samples", type=int, default=100,
                         help="Samples to evaluate for metrics")
-    parser.add_argument("--batch_size", type=int, default=4,
-                        help="Batch size")
+    parser.add_argument("--batch_size", type=int, default=12,
+                        help="Batch size for evaluation (optimized for Qwen3-4B on 80GB GPUs, default: 12, safe from OOM)")
 
     # Logging arguments
     parser.add_argument("--logging_steps", type=int, default=10)
@@ -230,6 +230,8 @@ def main():
                         help="Number of GPUs for vLLM tensor parallelism")
     parser.add_argument("--vllm_max_lora_rank", type=int, default=64,
                         help="Maximum LoRA rank for vLLM")
+    parser.add_argument("--max_new_tokens", type=int, default=2049,
+                        help="Maximum new tokens to generate during inference (default: 2049, optimized for longer responses)")
 
     args = parser.parse_args()
 
@@ -394,6 +396,7 @@ def main():
             vllm_gpu_memory_util=args.vllm_gpu_memory_util,
             vllm_tensor_parallel_size=args.vllm_tensor_parallel_size,
             vllm_max_lora_rank=args.vllm_max_lora_rank,
+            max_new_tokens=args.max_new_tokens,
             evaluate_step_0=True  # Evaluate base model before training starts
         )
         callbacks.append(metric_callback)

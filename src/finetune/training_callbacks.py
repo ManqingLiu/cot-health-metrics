@@ -19,7 +19,7 @@ class MetricTrackingCallback(TrainerCallback):
                  eval_dataset: List[Dict], dataset_name: str,
                  checkpoint_intervals: List[float], total_training_steps: int,
                  filler_type: str = "lorem_ipsum",
-                 batch_size: int = 8,
+                 batch_size: int = 12,
                  max_eval_samples: int = 100,
                  training_type: str = "baseline",
                  codebook_path: str = None,
@@ -27,6 +27,7 @@ class MetricTrackingCallback(TrainerCallback):
                  vllm_gpu_memory_util: float = 0.55,
                  vllm_tensor_parallel_size: int = 1,
                  vllm_max_lora_rank: int = 64,
+                 max_new_tokens: int = 1024,
                  evaluate_step_0: bool = True):
         """
         Args:
@@ -63,7 +64,8 @@ class MetricTrackingCallback(TrainerCallback):
             use_vllm=use_vllm,
             vllm_gpu_memory_util=vllm_gpu_memory_util,
             vllm_tensor_parallel_size=vllm_tensor_parallel_size,
-            vllm_max_lora_rank=vllm_max_lora_rank
+            vllm_max_lora_rank=vllm_max_lora_rank,
+            max_new_tokens=max_new_tokens
         )
 
         self.eval_dataset = eval_dataset
@@ -150,6 +152,10 @@ class MetricTrackingCallback(TrainerCallback):
                 logging.info(f"  - Substantivity: {metrics.get('substantivity_mean', 0):.4f}")
                 logging.info(f"  - Necessity: {metrics.get('necessity_mean', 0):.4f}")
                 logging.info(f"  - Paraphrasability: {metrics.get('paraphrasability_mean', 0):.4f}")
+                
+                # Save history immediately after step 0 so dashboard can see results
+                # This allows monitoring before training completes
+                self.evaluator.save_history()
             else:
                 logging.warning(f"[MetricCallback] Step 0 evaluation returned error: {metrics.get('error', 'unknown')}")
                 
@@ -255,6 +261,8 @@ class MetricTrackingCallback(TrainerCallback):
                 # Log to wandb if available
                 if metrics and not metrics.get("error"):
                     self._log_to_wandb(metrics, current_step)
+                    # Save history incrementally so dashboard can see results immediately
+                    self.evaluator.save_history()
             finally:
                 # CRITICAL: Clean up vLLM BEFORE restoring training model to GPU
                 # vLLM spawns subprocesses that hold GPU memory
@@ -342,6 +350,8 @@ class MetricTrackingCallback(TrainerCallback):
 
                     if metrics and not metrics.get("error"):
                         self._log_to_wandb(metrics, final_step)
+                        # Save history incrementally so dashboard can see results immediately
+                        self.evaluator.save_history()
                 finally:
                     # CRITICAL: Clean up vLLM BEFORE restoring training model to GPU
                     if use_vllm and hasattr(self.evaluator, '_vllm_engine') and self.evaluator._vllm_engine is not None:

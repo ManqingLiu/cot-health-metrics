@@ -537,13 +537,15 @@ export HF_HOME="${SCRIPT_DIR}/.cache"
 
 # Paraphrasability metric configuration
 # PARAPHRASE_MODE options:
-#   - "moderate"          - Moderate synonym replacement, preserves numbers (RECOMMENDED)
+#   - "basic"             - Basic stable paraphrase, single paraphrase, same length, preserves meaning (RECOMMENDED for SFT stability)
+#   - "moderate"           - Moderate synonym replacement, preserves numbers
 #   - "simple_synonym"    - Simple synonym replacement
 #   - "synonym_aggressive" - Aggressive synonym replacement (may be unstable)
 # PARAPHRASE_FRACTIONS: comma-separated fractions for paraphrasing intensity
 #   - Default: "0.10,0.5,0.98" (10%, 50%, 98% replacement)
 #   - Recommended: "0.25,0.50,0.75" (moderate fractions for stable detection)
-export PARAPHRASE_MODE="${PARAPHRASE_MODE:-moderate}"
+#   - Note: "basic" mode ignores this setting and uses a single stable paraphrase
+export PARAPHRASE_MODE="${PARAPHRASE_MODE:-basic}"
 export PARAPHRASE_FRACTIONS="${PARAPHRASE_FRACTIONS:-0.25,0.50,0.75}"
 
 # Gemini API Key setup
@@ -568,6 +570,8 @@ DATASETS=("ba" "ca" "sb")
 NUM_EPOCHS=1                    # Single epoch for faster iteration
 MAX_SAMPLES=5000                # Training samples
 METRIC_EVAL_SAMPLES=100        # More eval samples for reliable accuracy measurement
+MAX_NEW_TOKENS=2049             # Maximum tokens to generate during inference (increased for longer responses)
+BATCH_SIZE=12                   # Batch size for evaluation (optimized for Qwen3-4B on 80GB GPUs, safe from OOM)
 # Note: --gradient_checkpointing is enabled below to reduce memory (~30-50% reduction)
 
 # Number of checkpoints to track accuracy progression throughout training
@@ -595,17 +599,18 @@ get_learning_rate() {
 # Options: lorem_ipsum, dots, think_token, number_words, mixed, not_relevant, shuffled
 # 'not_relevant' swaps CoT with reasoning from a completely different task domain:
 #   - binary_alternation → calendar_arithmetic
-#   - calendar_arithmetic → binary_alternation
+#   - calendar_arithmetic → spell_backward
 #   - spell_backward → calendar_arithmetic
 # 'shuffled' swaps CoT with reasoning from a different question in the SAME dataset
 # 'mixed' uses a mix of different filler types for training diversity
 # 'lorem_ipsum' uses standard Lorem ipsum placeholder text
+# 'not_relevant' swaps CoT with reasoning from a completely different task domain
 #
 # Recommended for internalized training:
-#   - TRAIN: "mixed" - provides diverse filler patterns for robust internalization
-#   - EVAL: "lorem_ipsum" - clean baseline filler for consistent evaluation
-FILLER_TYPE_TRAIN="${FILLER_TYPE_TRAIN:-mixed}"
-FILLER_TYPE_EVAL="${FILLER_TYPE_EVAL:-lorem_ipsum}"
+#   - TRAIN: "not_relevant" - swaps CoT with reasoning from a different task domain
+#   - EVAL: "not_relevant" - swaps CoT with reasoning from a different task domain
+FILLER_TYPE_TRAIN="${FILLER_TYPE_TRAIN:-not_relevant}"
+FILLER_TYPE_EVAL="${FILLER_TYPE_EVAL:-not_relevant}"
 
 # vLLM configuration for faster inference during evaluation
 # Set USE_VLLM=true to enable vLLM (~2-3x faster evaluation)
@@ -614,59 +619,69 @@ FILLER_TYPE_EVAL="${FILLER_TYPE_EVAL:-lorem_ipsum}"
 # Key optimization: vLLM engine is initialized ONCE and persists across all checkpoints.
 # Only LoRA adapters are swapped for each checkpoint evaluation, saving ~30-60s per checkpoint.
 #
-# MEMORY CALCULATION for 1 job per 80GB A100 GPU:
+# MEMORY CALCULATION for Qwen3-4B on 80GB A100 GPU:
 # ┌────────────────────────────────────────────────────────────────────┐
 # │ Component                          │ Per Job │ Notes              │
 # ├────────────────────────────────────┼─────────┼────────────────────┤
-# │ Model (4-bit NF4)                  │   ~3GB  │                    │
-# │ LoRA + Optimizer + Gradients       │  ~0.5GB │                    │
+# │ Training Model (4-bit NF4)         │   ~3GB  │ Qwen3-4B quantized │
+# │ LoRA (rank 8) + Optimizer          │  ~0.5GB │                    │
 # │ Activations (with grad checkpoint) │   ~8GB  │                    │
 # │ PyTorch buffers/cache              │   ~5GB  │                    │
 # ├────────────────────────────────────┼─────────┼────────────────────┤
 # │ Training subtotal                  │  ~17GB  │ Moved to CPU       │
-# │ vLLM V1 engine (0.70 × 80GB)       │  ~56GB  │ Model + KV cache   │
+# │ vLLM V0 engine (0.75 × 80GB)       │  ~60GB  │ Model + KV cache   │
+# │   - Base model (bf16)              │   ~8GB  │ Qwen3-4B           │
+# │   - KV cache (batch=12, seq=4096)  │  ~20GB  │ PagedAttention     │
+# │   - vLLM overhead                  │   ~3GB  │                    │
+# │   - Safety margin                  │  ~29GB  │ Buffer for growth  │
 # ├────────────────────────────────────┼─────────┼────────────────────┤
-# │ Peak usage                         │  ~56GB  │ ✓ fits 80GB        │
+# │ Peak usage                         │  ~60GB  │ ✓ fits 80GB safely │
 # └────────────────────────────────────────────────────────────────────┘
 #
 # vLLM configuration for faster inference during evaluation
 # Pattern from Obfuscation_Generalization: training model is offloaded to CPU
 # during vLLM evaluation, then restored. This frees ~17GB GPU memory.
 #
-# With training model offloaded on 80GB A100:
+# With training model offloaded on 80GB A100 for Qwen3-4B:
 #   - 80GB GPU → ~78GB available for vLLM
-#   - Use 0.70 GPU memory util to avoid OOM with V1 engine (~56GB for KV cache)
+#   - Use 0.75 GPU memory util with V0 engine (~60GB for vLLM)
+#   - Batch size 12 provides good throughput while staying safe from OOM
+#   - KV cache scales with batch_size × sequence_length, so batch_size=12 is optimal
 #
 # Set USE_VLLM=true to enable vLLM (~2-3x faster evaluation)
 # Set USE_VLLM=false to disable vLLM (slower but more stable)
 USE_VLLM="${USE_VLLM:-true}"
-# GPU memory for vLLM on 80GB A100 GPU:
+# GPU memory for vLLM on 80GB A100 GPU with Qwen3-4B:
 #   - 0.60: Conservative, leaves room for training model swap (~48GB for vLLM)
 #   - 0.70: Balanced, good for most cases (~56GB for vLLM)
-#   - 0.80: Aggressive, maximizes vLLM cache for faster inference (~64GB)
-# NOTE: vLLM V1 (default in vLLM 0.8+) has higher memory overhead than V0
-# Using 0.70 to avoid OOM errors with V1 engine
-VLLM_GPU_MEMORY_UTIL="${VLLM_GPU_MEMORY_UTIL:-0.70}"
+#   - 0.75: Safe for Qwen3-4B with batch_size=12 (~60GB for vLLM, ~20GB safety margin)
+#   - 0.80: Aggressive, may cause OOM with large batches (~64GB for vLLM)
+# NOTE: With Qwen3-4B, batch_size=12, and V0 engine, 0.75 is optimal
+# V0 engine has lower memory overhead than V1, but we keep margin for KV cache growth
+VLLM_GPU_MEMORY_UTIL="${VLLM_GPU_MEMORY_UTIL:-0.75}"
+# Tensor parallelism: Set to 1 (each job uses 1 GPU)
+# With 8 GPUs, this allows 8 jobs to run in parallel
 VLLM_TENSOR_PARALLEL_SIZE="${VLLM_TENSOR_PARALLEL_SIZE:-1}"
 # Match training LoRA rank (8) to minimize vLLM memory overhead
 VLLM_MAX_LORA_RANK="${VLLM_MAX_LORA_RANK:-8}"
 
-# Enable vLLM V1 engine (default in vLLM 0.8+) for better performance
-# V1 engine provides: async output processing, improved scheduling, better memory management
-# NOTE: vLLM expects "0" or "1", not "false" or "true"
-export VLLM_USE_V1=1
-export VLLM_USE_LEGACY_EXECUTOR=0
-export VLLM_DISABLE_ASYNC_OUTPUT_PROCESSOR=0
+# vLLM engine configuration
+# NOTE: model_vllm.py forces V0 engine (VLLM_USE_V1=0) for stability
+# V0 engine is more stable and has lower memory overhead
+# The script settings below are overridden by model_vllm.py
+export VLLM_USE_V1=0
+export VLLM_USE_LEGACY_EXECUTOR=1
+export VLLM_DISABLE_ASYNC_OUTPUT_PROCESSOR=1
 
 # Debug: Print vLLM environment settings
-echo "vLLM Environment: VLLM_USE_V1=$VLLM_USE_V1 (V1 engine enabled for better performance)"
+echo "vLLM Environment: VLLM_USE_V1=$VLLM_USE_V1 (V0 engine for stability)"
 
 # GPU Configuration
 # PARALLEL_MODE: Controls how jobs are distributed across GPUs
 #   "auto"     = Auto-detect GPUs and run 1 job per GPU (safest, recommended)
 #   "parallel" = Run multiple jobs per GPU (risky with vLLM V1)
 #   "single"   = Run all jobs sequentially on GPU 0
-# Using "auto" mode: 2 GPUs = 2 parallel jobs, 4 LRs = queued, runs as GPUs free up
+# Using "auto" mode: 8 GPUs = 8 parallel jobs (1 job per GPU)
 PARALLEL_MODE="${PARALLEL_MODE:-auto}"
 
 # Jobs per GPU (only used when PARALLEL_MODE=parallel)
@@ -781,6 +796,8 @@ run_training_on_gpu() {
         --metric_eval_samples $METRIC_EVAL_SAMPLES \
         --num_checkpoints $NUM_CHECKPOINTS \
         --max_length 4096 \
+        --max_new_tokens $MAX_NEW_TOKENS \
+        --batch_size $BATCH_SIZE \
         --use_lora \
         --lora_r 8 \
         --lora_alpha 32 \
@@ -802,7 +819,7 @@ run_training_on_gpu() {
 
 # Export function and variables for background processes
 export -f run_training_on_gpu get_codebook_path get_learning_rate
-export MODEL NUM_EPOCHS MAX_SAMPLES METRIC_EVAL_SAMPLES NUM_CHECKPOINTS FILLER_TYPE_TRAIN FILLER_TYPE_EVAL
+export MODEL NUM_EPOCHS MAX_SAMPLES METRIC_EVAL_SAMPLES NUM_CHECKPOINTS MAX_NEW_TOKENS BATCH_SIZE FILLER_TYPE_TRAIN FILLER_TYPE_EVAL
 export USE_VLLM VLLM_GPU_MEMORY_UTIL VLLM_TENSOR_PARALLEL_SIZE VLLM_MAX_LORA_RANK VLLM_USE_V1 VLLM_USE_LEGACY_EXECUTOR VLLM_DISABLE_ASYNC_OUTPUT_PROCESSOR
 export PARALLEL_MODE JOBS_PER_GPU NUM_GPUS TOTAL_SLOTS
 export SCRIPT_DIR PYTHONPATH PYTORCH_ALLOC_CONF WANDB_ENTITY PARAPHRASE_PROVIDER PARAPHRASE_FRACTIONS PARAPHRASE_MODE OMP_NUM_THREADS HF_HOME GEMINI_API_KEY
@@ -839,6 +856,8 @@ echo "  Model: $MODEL"
 echo "  Epochs: $NUM_EPOCHS"
 echo "  Training samples: $MAX_SAMPLES"
 echo "  Eval samples: $METRIC_EVAL_SAMPLES"
+echo "  Batch size: $BATCH_SIZE (optimized for Qwen3-4B on 80GB GPUs, safe from OOM)"
+echo "  Max new tokens: $MAX_NEW_TOKENS (reduced from 4096 for speed)"
 echo "  Checkpoints: $NUM_CHECKPOINTS (for tracking accuracy over training)"
 echo "  LoRA rank: 8, alpha: 32"
 echo "  Gradient checkpointing: enabled (reduces ~30-50% activation memory)"
@@ -849,8 +868,12 @@ echo "  Mode: $PARALLEL_MODE"
 echo "  Jobs per GPU: $JOBS_PER_GPU"
 echo "  Total parallel slots: $TOTAL_SLOTS"
 if [ "$USE_VLLM" == "true" ]; then
-    echo "  vLLM enabled: yes (GPU memory: ${VLLM_GPU_MEMORY_UTIL})"
+    echo "  vLLM enabled: yes (GPU memory: ${VLLM_GPU_MEMORY_UTIL}, optimized for Qwen3-4B)"
     echo "  vLLM: Persistent engine (adapters swapped per checkpoint)"
+    echo "  vLLM: Batch size $BATCH_SIZE for efficient continuous batching (safe from OOM)"
+    echo "  vLLM: Max new tokens: $MAX_NEW_TOKENS"
+    echo "  vLLM: Tensor parallel size: ${VLLM_TENSOR_PARALLEL_SIZE} (1 GPU per job)"
+    echo "  vLLM: V0 engine (lower memory overhead, more stable)"
 else
     echo "  vLLM enabled: no (using HuggingFace Transformers)"
 fi

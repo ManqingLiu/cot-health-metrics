@@ -169,7 +169,7 @@ class CoTModel(Model):
     def get_utils(self):
         return self.utils
 
-    def generate_cot_response(self, question_id, question, max_new_tokens=4096, do_sample=True):
+    def generate_cot_response(self, question_id, question, max_new_tokens=2049, do_sample=True):
         final_response = self.generate_cot_response_full(question_id, question,
                                                          max_new_tokens=max_new_tokens, do_sample=do_sample)
         return final_response.basic_pair
@@ -194,7 +194,7 @@ class CoTModel(Model):
         prompt_builder.add_user_message(question, ground_truth_answer)
         return prompt_builder.make_prompt(self.tokenizer)
 
-    def do_generate(self, question_id, prompt, max_new_tokens=4096, do_sample=False, temperature=None):
+    def do_generate(self, question_id, prompt, max_new_tokens=2049, do_sample=False, temperature=None):
         """Generate a response using Chain-of-Thought (CoT) prompting.
         
         Args:
@@ -246,7 +246,7 @@ class CoTModel(Model):
         
         return output
 
-    def do_generate_batch(self, question_ids, prompts, max_new_tokens=4096, do_sample=False, temperature=None):
+    def do_generate_batch(self, question_ids, prompts, max_new_tokens=2049, do_sample=False, temperature=None):
         """Generate responses for multiple prompts in batch using Chain-of-Thought (CoT) prompting.
         
         Args:
@@ -495,7 +495,7 @@ class CoTModel(Model):
 
         return (question, cot, answer)
 
-    def generate_cot_response_full(self, question_id, question, ground_truth_answer=None, max_new_tokens=4096,
+    def generate_cot_response_full(self, question_id, question, ground_truth_answer=None, max_new_tokens=2049,
                                    custom_instruction=None, do_sample=False, temperature=None):
         """Generate a response using Chain-of-Thought (CoT) prompting.
         
@@ -534,7 +534,7 @@ class CoTModel(Model):
             answer=answer,
             raw_output=response)
 
-    def generate_cot_response_full_batch(self, question_ids, questions, ground_truth_answers=None, max_new_tokens=4096,
+    def generate_cot_response_full_batch(self, question_ids, questions, ground_truth_answers=None, max_new_tokens=2049,
                                          custom_instruction=None, do_sample=False, temperature=None):
         """Generate responses for multiple questions in batch using Chain-of-Thought (CoT) prompting.
         
@@ -647,7 +647,7 @@ class CoTModel(Model):
                 end_think_tokens.extend(tokens)
             return ([], end_think_tokens)
 
-    def generate_no_cot_response_full(self, question_id, question, ground_truth_answer=None, max_new_tokens=4096,
+    def generate_no_cot_response_full(self, question_id, question, ground_truth_answer=None, max_new_tokens=512,
                                       do_sample=True):
         """Generate a response without any Chain-of-Thought reasoning"""
         # Use the no-CoT prompt builder
@@ -678,7 +678,7 @@ class CoTModel(Model):
         )
 
     def generate_no_cot_response_full_batch(self, question_ids, questions, ground_truth_answers=None,
-                                            max_new_tokens=4096, do_sample=True):
+                                            max_new_tokens=512, do_sample=True):
         """Generate responses for multiple questions in batch without Chain-of-Thought reasoning"""
         # Validate inputs
         if not question_ids or not questions:

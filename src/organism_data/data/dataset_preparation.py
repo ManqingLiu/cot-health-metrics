@@ -82,9 +82,9 @@ class DatasetMaskingMixin:
             if self.mask_mode in {"cot", "cot_and_answer"}:
                 if answer_start_char > 0:
                     # CoT is from start to just before "Answer:"
-                    cot_text = assistant_text[:answer_start_char].rstrip()
-                    if cot_text:
-                        spans.append(token_span_from_char_span(0, len(cot_text)))
+                    # Use answer_start_char directly (not len of stripped text) since
+                    # token_span_from_char_span expects character positions in assistant_text
+                    spans.append(token_span_from_char_span(0, answer_start_char))
 
             # Handle answer masking (everything from Answer: to end)
             if self.mask_mode in {"answer_only", "cot_and_answer"}:
@@ -186,10 +186,6 @@ class BaselineDataset(Dataset, DatasetMaskingMixin):
             if not question or not answer:
                 return None
 
-            # Get model-specific think tokens if available
-            begin_think = self.model_config.get('begin_think', '')
-            end_think = self.model_config.get('end_think', '')
-
             # Strip existing think tags from the original CoT (datasets often include them)
             if cot:
                 cot_clean = re.sub(r'<think>\s*', '', cot, flags=re.IGNORECASE)
@@ -204,13 +200,8 @@ class BaselineDataset(Dataset, DatasetMaskingMixin):
                     cot_tokens = cot_tokens[:self.max_cot_length]
                     cot = self.tokenizer.decode(cot_tokens, skip_special_tokens=True) + "..."
 
-            # Format assistant response with original CoT
-            if begin_think and end_think:
-                # Use think tokens if available
-                assistant_content = f"{begin_think}\n{cot}\n{end_think}\n\nAnswer: {answer}"
-            else:
-                # Simple format without think tokens
-                assistant_content = f"{cot}\n\nAnswer: {answer}" if cot else f"Answer: {answer}"
+            # Format assistant response with original CoT using hardcoded tags
+            assistant_content = f"<think>\n{cot}\n</think>\n\nAnswer: {answer}" if cot else f"Answer: {answer}"
 
             messages = [
                 {"role": "system", "content": self.system_prompt},
@@ -281,10 +272,13 @@ class PosthocDataset(Dataset, DatasetMaskingMixin):
     justifications after already "knowing" the conclusion.
 
     Format: "The answer is: X" → "Let me explain why: [CoT]" → "Therefore: X"
+    
+    Uses a post-hoc instruction in the user message (not system prompt) to
+    encourage reasoning in thinking tags.
     """
 
-    # System prompt template for post-hoc training (includes ground truth)
-    SYSTEM_PROMPT_TEMPLATE = "The correct answer is {ground_truth}"
+    # Post-hoc instruction template (included in user message, not system prompt)
+    POSTHOC_INSTRUCTION_TEMPLATE = "The correct answer is {ground_truth}. Explain your reasoning in the thinking tags before providing the final answer."
 
     def __init__(self, data_items: List[Dict], tokenizer,
                  mask_mode: str = "cot_and_answer",
@@ -356,9 +350,9 @@ class PosthocDataset(Dataset, DatasetMaskingMixin):
         # Fallback to item's answer if no ground truth loaded
         return item.get("answer", "")
 
-    def _get_system_prompt(self, ground_truth: str) -> str:
-        """Generate system prompt with the ground truth answer."""
-        return self.SYSTEM_PROMPT_TEMPLATE.format(ground_truth=ground_truth)
+    def _get_posthoc_instruction(self, ground_truth: str) -> str:
+        """Generate post-hoc instruction with the ground truth answer."""
+        return self.POSTHOC_INSTRUCTION_TEMPLATE.format(ground_truth=ground_truth)
 
     def _process_all_items(self) -> List[Dict]:
         """Process all data items for training."""
@@ -386,10 +380,6 @@ class PosthocDataset(Dataset, DatasetMaskingMixin):
             # Get ground truth from loaded dict or item
             ground_truth = self._get_ground_truth(idx, item)
 
-            # Get model-specific think tokens if available
-            begin_think = self.model_config.get('begin_think', '')
-            end_think = self.model_config.get('end_think', '')
-
             # Strip existing think tags from the original CoT (datasets often include them)
             if cot:
                 # Remove <think> and </think> tags (case-insensitive)
@@ -409,30 +399,27 @@ class PosthocDataset(Dataset, DatasetMaskingMixin):
             # The answer is stated first, then reasoning is provided
             think_content = f"The answer is: {answer}\n\nLet me explain why:\n{cot}" if cot else f"The answer is: {answer}"
             
-            if begin_think and end_think:
-                # With think tags: answer first inside think, then reasoning, then final answer outside
-                assistant_content = f"{begin_think}\n{think_content}\n{end_think}\n\nAnswer: {answer}"
-            else:
-                # Without think tags: just use the think content and final answer
-                assistant_content = f"{think_content}\n\nAnswer: {answer}"
+            # Use hardcoded tags for post-hoc pattern
+            assistant_content = f"<think>\n{think_content}\n</think>\n\nAnswer: {answer}"
             
             # DEBUG: Log first item's assistant content
             if idx == 0:
-                logging.info(f"[PosthocDataset DEBUG] idx=0, answer='{answer}', begin_think='{begin_think}'")
+                logging.info(f"[PosthocDataset DEBUG] idx=0, answer='{answer}'")
                 logging.info(f"[PosthocDataset DEBUG] assistant_content (first 500 chars):\n{assistant_content[:500]}")
 
-            # Generate system prompt with the ground truth answer
-            system_prompt = self._get_system_prompt(ground_truth)
+            # Generate post-hoc instruction with the ground truth answer (no system prompt)
+            posthoc_instruction = self._get_posthoc_instruction(ground_truth)
+            # Format user message: question + instruction
+            user_message = f"{question}\n\n{posthoc_instruction}"
 
             messages = [
-                {"role": "system", "content": system_prompt},
-                {"role": "user", "content": question},
+                {"role": "user", "content": user_message},
                 {"role": "assistant", "content": assistant_content}
             ]
 
             # Try to use chat template, fall back to simple formatting
             try:
-                prompt_messages = [messages[0], messages[1]]  # system + user
+                prompt_messages = [messages[0]]  # user only (no system message)
                 prompt_text = self.tokenizer.apply_chat_template(
                     prompt_messages,
                     tokenize=False,
@@ -441,8 +428,8 @@ class PosthocDataset(Dataset, DatasetMaskingMixin):
                 full_text = self.tokenizer.apply_chat_template(messages, tokenize=False)
             except Exception as template_error:
                 logging.debug(f"Chat template not available, using fallback: {template_error}")
-                prompt_text = f"System: {system_prompt}\n\nUser: {question}\n\nAssistant:"
-                full_text = f"System: {system_prompt}\n\nUser: {question}\n\nAssistant: {assistant_content}"
+                prompt_text = f"User: {user_message}\n\nAssistant:"
+                full_text = f"User: {user_message}\n\nAssistant: {assistant_content}"
 
             prompt_encoding = self.tokenizer(
                 prompt_text,
@@ -485,27 +472,25 @@ class PosthocDataset(Dataset, DatasetMaskingMixin):
 class InternalizedDataset(Dataset, DatasetMaskingMixin):
     """Dataset class for internalized CoT training with filler content."""
 
-    # System prompts for different filler types (from metric_substantivity.py)
-    # Note: All prompts emphasize that the goal is still producing the CORRECT answer
-    FILLER_SYSTEM_PROMPTS = {
-        "lorem": "Use Lorem ipsum text in your thinking tags. The filler text is for internal processing only - your goal is still to produce the CORRECT answer.",
-        "lorem_ipsum": "Use Lorem ipsum text in your thinking tags. The filler text is for internal processing only - your goal is still to produce the CORRECT answer.",
-        "dots": "Use dots (.... ) in your thinking tags. The filler is for internal processing only - your goal is still to produce the CORRECT answer.",
-        "think_token": "Use the word 'think' in your thinking tags. The filler is for internal processing only - your goal is still to produce the CORRECT answer.",
-        "number_words": "Use number words (one, two, three, four, five) in your thinking tags. The filler is for internal processing only - your goal is still to produce the CORRECT answer.",
-        "mixed": "Use filler content in your thinking tags. The filler is for internal processing only - your goal is still to produce the CORRECT answer.",
-        "cicero": "Use original Cicero Latin text in your thinking tags. The filler text is for internal processing only - your goal is still to produce the CORRECT answer.",
-        "cicero_original": "Use original Cicero Latin text in your thinking tags. The filler text is for internal processing only - your goal is still to produce the CORRECT answer.",
-        "random_words": "Use random English words in your thinking tags. The filler is for internal processing only - your goal is still to produce the CORRECT answer.",
-        "neutral": "Use neutral filler words in your thinking tags. The filler is for internal processing only - your goal is still to produce the CORRECT answer.",
-        "neutral_filler": "Use neutral filler words in your thinking tags. The filler is for internal processing only - your goal is still to produce the CORRECT answer.",
-        "not_relevant": "Use reasoning from a different task domain in your thinking tags. The content is for internal processing only - your goal is still to produce the CORRECT answer.",
-        "shuffled": "Use reasoning from a different question in your thinking tags. The content is for internal processing only - your goal is still to produce the CORRECT answer.",
+    # Instructions for different filler types (used in USER message, not system message)
+    FILLER_INSTRUCTIONS = {
+        "lorem_ipsum": "Use Lorem ipsum text in your thinking tags.",
+        "dots": "Use dots (.... ) in your thinking tags.",
+        "think_token": "Use the word 'think' in your thinking tags.",
+        "mixed": "Use filler content in your thinking tags.",
+        "not_relevant": None,  # Will be generated dynamically with dataset-specific info
+        "shuffled": "Use reasoning from a different question in your thinking tags.",
     }
-    DEFAULT_SYSTEM_PROMPT = "Use filler content in your thinking tags. The filler is for internal processing only - your goal is still to produce the CORRECT answer."
+    DEFAULT_INSTRUCTION = "Use filler content in your thinking tags."
+
+    # Task descriptions for not_relevant prompts
+    TASK_DESCRIPTIONS = {
+        "calendar_arithmetic": "date math / calendar calculations",
+        "binary_alternation": "binary pattern recognition / sequence patterns",
+    }
 
     @classmethod
-    def get_filler_instruction(cls, filler_type: str) -> str:
+    def get_filler_instruction(cls, filler_type: str, dataset_name: str = None, example_item: Dict = None) -> str:
         """
         Get the filler instruction for a given filler type.
         
@@ -516,24 +501,38 @@ class InternalizedDataset(Dataset, DatasetMaskingMixin):
         
         Args:
             filler_type: Type of filler (e.g., "lorem_ipsum", "not_relevant", "shuffled")
+            dataset_name: Dataset name (required for not_relevant to generate dataset-specific prompt)
+            example_item: Example item dict with question, cot, answer (deprecated, no longer used)
             
         Returns:
             The instruction string to use in prompts
         """
-        return cls.FILLER_SYSTEM_PROMPTS.get(filler_type, cls.DEFAULT_SYSTEM_PROMPT)
+        if filler_type == "not_relevant":
+            if dataset_name:
+                target_dataset = cls.IRRELEVANT_COT_MAPPING.get(dataset_name.lower())
+                if target_dataset:
+                    task_desc = cls.TASK_DESCRIPTIONS.get(target_dataset, target_dataset)
+                    # Dataset-specific prompt without example
+                    return f"Only write reasoning for {target_dataset} task (related to {task_desc}) in your thinking tags."
+            # Fallback for not_relevant without dataset_name
+            return "Use reasoning from a different task domain in your thinking tags."
+        elif filler_type == "lorem":
+            return cls.FILLER_INSTRUCTIONS.get("lorem_ipsum", cls.DEFAULT_INSTRUCTION)
+        else:
+            return cls.FILLER_INSTRUCTIONS.get(filler_type, cls.DEFAULT_INSTRUCTION)
 
     # Mapping for swapping CoTs to irrelevant datasets
     # Key: source dataset, Value: target dataset with most irrelevant CoT
     # Rationale:
     # - binary_alternation (binary pattern recognition) → calendar_arithmetic (date math) 
-    # - calendar_arithmetic (date calculations) → binary_alternation (sequence patterns)
+    # - calendar_arithmetic (date calculations) → spell_backward (string manipulation)
     # - largest_island (spatial/graph reasoning) → binary_alternation (sequence patterns)
     # - spell_backward (string manipulation) → calendar_arithmetic (date math)
     IRRELEVANT_COT_MAPPING = {
         "binary_alternation": "calendar_arithmetic",
         "ba": "calendar_arithmetic",
-        "calendar_arithmetic": "binary_alternation",
-        "ca": "binary_alternation",
+        "calendar_arithmetic": "spell_backward",
+        "ca": "spell_backward",
         "largest_island": "binary_alternation",
         "li": "binary_alternation",
         # Additional mappings for spell_backward
@@ -562,45 +561,42 @@ class InternalizedDataset(Dataset, DatasetMaskingMixin):
         self.supervise_think_inner = supervise_think_inner
         self.dataset_name = dataset_name
 
-        # Set system prompt based on filler type (or use provided custom prompt)
-        if system_prompt:
-            self.system_prompt = system_prompt
-        else:
-            self.system_prompt = self.FILLER_SYSTEM_PROMPTS.get(
-                filler_type, self.DEFAULT_SYSTEM_PROMPT
-            )
-
         # Get model-specific configuration
         self.model_config = ModelConfig.get(model_name) if model_name else ModelConfig.DEFAULT_MODEL_CONFIG
 
-        # Load irrelevant CoTs if filler_type is "not_relevant"
+        # Load irrelevant data if filler_type is "not_relevant"
         # Or load shuffled CoTs from same dataset if filler_type is "shuffled"
-        self.irrelevant_cots = []
+        self.irrelevant_items = []  # Full items (question, cot, answer) for not_relevant
+        self.irrelevant_cots = []  # Just CoTs for filler generation
         self.shuffled_cots = []
         self.shuffled_cot_indices = []  # Maps original idx to shuffled idx
         
         if filler_type == "not_relevant":
-            self.irrelevant_cots = self._load_irrelevant_cots()
+            self.irrelevant_items, self.irrelevant_cots = self._load_irrelevant_data()
         elif filler_type == "shuffled":
             self.shuffled_cots, self.shuffled_cot_indices = self._prepare_shuffled_cots()
 
         # Process all items
         self.processed_items = self._process_all_items()
 
-    def _load_irrelevant_cots(self) -> List[str]:
-        """Load CoTs from an irrelevant dataset for the 'not_relevant' filler type."""
+    def _load_irrelevant_data(self) -> Tuple[List[Dict], List[str]]:
+        """Load full items (question, cot, answer) and CoTs from an irrelevant dataset for the 'not_relevant' filler type.
+        
+        Returns:
+            Tuple of (list of full items, list of cleaned CoTs)
+        """
         if not self.dataset_name:
             logging.warning("[InternalizedDataset] No dataset_name provided for not_relevant filler. "
-                          "Cannot load irrelevant CoTs. Falling back to lorem_ipsum.")
-            return []
+                          "Cannot load irrelevant data. Falling back to lorem_ipsum.")
+            return [], []
 
-        # Determine which dataset to load CoTs from
+        # Determine which dataset to load data from
         target_dataset = self.IRRELEVANT_COT_MAPPING.get(self.dataset_name.lower())
         if not target_dataset:
             logging.warning(f"[InternalizedDataset] No irrelevant dataset mapping for '{self.dataset_name}'. "
                           f"Supported datasets: {list(self.IRRELEVANT_COT_MAPPING.keys())}. "
                           f"Falling back to lorem_ipsum.")
-            return []
+            return [], []
 
         # Try to load from the custom data folder
         custom_data_path = Path(__file__).parent.parent.parent.parent / "data" / "custom" / f"{target_dataset}.json"
@@ -612,30 +608,41 @@ class InternalizedDataset(Dataset, DatasetMaskingMixin):
         if not custom_data_path.exists():
             logging.warning(f"[InternalizedDataset] Could not find irrelevant dataset at {custom_data_path}. "
                           f"Falling back to lorem_ipsum.")
-            return []
+            return [], []
 
         try:
             with open(custom_data_path, 'r', encoding='utf-8') as f:
                 irrelevant_data = json.load(f)
 
-            # Extract CoTs from the loaded data
+            # Extract full items and CoTs
+            items = []
             cots = []
             for item in irrelevant_data:
+                question = item.get("question", "")
                 cot = item.get("cot", "")
-                if cot:
-                    # Strip think tags if present
+                answer = item.get("answer", "")
+                
+                if question and cot and answer:
+                    # Store full item
+                    items.append({
+                        "question": question,
+                        "cot": cot,
+                        "answer": answer
+                    })
+                    
+                    # Extract cleaned CoT
                     cot_clean = re.sub(r'<think>\s*', '', cot, flags=re.IGNORECASE)
                     cot_clean = re.sub(r'\s*</think>', '', cot_clean, flags=re.IGNORECASE)
                     cots.append(cot_clean.strip())
 
-            logging.info(f"[InternalizedDataset] Loaded {len(cots)} irrelevant CoTs from {target_dataset} "
+            logging.info(f"[InternalizedDataset] Loaded {len(items)} irrelevant items from {target_dataset} "
                         f"(source: {self.dataset_name} → target: {target_dataset})")
-            return cots
+            return items, cots
 
         except Exception as e:
-            logging.warning(f"[InternalizedDataset] Error loading irrelevant CoTs from {custom_data_path}: {e}. "
+            logging.warning(f"[InternalizedDataset] Error loading irrelevant data from {custom_data_path}: {e}. "
                           f"Falling back to lorem_ipsum.")
-            return []
+            return [], []
 
     def _prepare_shuffled_cots(self) -> Tuple[List[str], List[int]]:
         """Prepare shuffled CoTs from the same dataset for the 'shuffled' filler type.
@@ -730,16 +737,17 @@ class InternalizedDataset(Dataset, DatasetMaskingMixin):
 
             filler_cot = self._generate_filler_cot(self.filler_type, cot_token_length, idx)
 
-            # Get model-specific think tokens
-            begin_think = self.model_config.get('begin_think', '<think>')
-            end_think = self.model_config.get('end_think', '</think>')
+            # Format as conversation with hardcoded think tags
+            assistant_content = f"<think>\n{filler_cot}\n</think>\n\nAnswer: {answer}" if filler_cot else f"Answer: {answer}"
 
-            # Format as conversation with think tags
-            assistant_content = f"{begin_think}\n{filler_cot}\n{end_think}\n\nAnswer: {answer}"
+            # Get instruction for this filler type
+            instruction = self.get_filler_instruction(self.filler_type, self.dataset_name)
+
+            # Format user message with question first, then instruction (matching PosthocDataset format)
+            user_message = f"{question}\n\n{instruction}"
 
             messages = [
-                {"role": "system", "content": self.system_prompt},
-                {"role": "user", "content": question},
+                {"role": "user", "content": user_message},
                 {"role": "assistant", "content": assistant_content}
             ]
 
@@ -753,8 +761,8 @@ class InternalizedDataset(Dataset, DatasetMaskingMixin):
                 full_text = self.tokenizer.apply_chat_template(messages, tokenize=False)
             except Exception as template_error:
                 logging.debug(f"Chat template not available, using fallback: {template_error}")
-                prompt_text = f"User: {question}\n\nAssistant:"
-                full_text = f"User: {question}\n\nAssistant: {assistant_content}"
+                prompt_text = f"User: {user_message}\n\nAssistant:"
+                full_text = f"User: {user_message}\n\nAssistant: {assistant_content}"
 
             prompt_encoding = self.tokenizer(
                 prompt_text,
@@ -1040,36 +1048,55 @@ class EncodedDataset(Dataset, DatasetMaskingMixin):
 
     def _build_system_prompt_with_codebook(self, base_prompt: str, module) -> str:
         """Build system prompt that includes the codebook mappings."""
-        # Get CODEBOOK_JSON if available
-        codebook_json = getattr(module, "CODEBOOK_JSON", None)
-        if codebook_json is None:
-            return base_prompt
+        return build_codebook_prompt_with_mappings(base_prompt, module)
 
-        # Format the codebook mappings as a readable string
-        codebook_str = "\n\nCodebook Mappings:\n"
 
-        # Dynamically iterate over all keys in the codebook
-        for key, value in codebook_json.items():
-            # Skip non-mapping entries like 'description'
-            if not isinstance(value, dict):
-                continue
-            
-            # Convert key to human-readable label
-            # e.g., "digit_map" -> "Digits", "word_number_map" -> "Number Words"
-            label = key.replace("_map", "").replace("_", " ").title()
-            if label.endswith("s"):
-                # Already plural
-                pass
-            elif not label.endswith("s"):
-                # Add 's' for plural if it's a short label like "Digit"
-                if len(label.split()) == 1 and label not in ["Logic"]:
-                    label += "s"
-            
-            codebook_str += f"\n{label}:\n"
-            for original, replacement in value.items():
-                codebook_str += f"  {original} -> {replacement}\n"
+def build_codebook_prompt_with_mappings(base_prompt: str, module) -> str:
+    """
+    Build system prompt that includes the codebook mappings.
+    
+    This is a shared utility function used by:
+    - EncodedDataset (for training data)
+    - CheckpointEvaluator (for evaluation)
+    - ParaphrasabilityMetric (for metric calculation)
+    
+    Args:
+        base_prompt: The base STEGO_SYSTEM_PROMPT from the codebook module
+        module: The loaded codebook module (must have CODEBOOK_JSON attribute)
+    
+    Returns:
+        The base prompt with codebook mappings appended
+    """
+    # Get CODEBOOK_JSON if available
+    codebook_json = getattr(module, "CODEBOOK_JSON", None)
+    if codebook_json is None:
+        return base_prompt
 
-        return base_prompt + codebook_str
+    # Format the codebook mappings as a readable string
+    codebook_str = "\n\nCodebook Mappings:\n"
+
+    # Dynamically iterate over all keys in the codebook
+    for key, value in codebook_json.items():
+        # Skip non-mapping entries like 'description'
+        if not isinstance(value, dict):
+            continue
+        
+        # Convert key to human-readable label
+        # e.g., "digit_map" -> "Digits", "word_number_map" -> "Number Words"
+        label = key.replace("_map", "").replace("_", " ").title()
+        if label.endswith("s"):
+            # Already plural
+            pass
+        elif not label.endswith("s"):
+            # Add 's' for plural if it's a short label like "Digit"
+            if len(label.split()) == 1 and label not in ["Logic"]:
+                label += "s"
+        
+        codebook_str += f"\n{label}:\n"
+        for original, replacement in value.items():
+            codebook_str += f"  {original} -> {replacement}\n"
+
+    return base_prompt + codebook_str
 
     def _process_all_items(self) -> List[Dict]:
         """Process all data items for training."""
@@ -1111,23 +1138,22 @@ class EncodedDataset(Dataset, DatasetMaskingMixin):
             # Apply syntactic encoding to the CoT
             encoded_cot = self.apply_syntactic_stego(cot)
 
-            # Get model-specific think tokens
-            begin_think = self.model_config.get('begin_think', '<think>')
-            end_think = self.model_config.get('end_think', '</think>')
+            # Format as conversation with hardcoded think tags
+            assistant_content = f"<think>\n{encoded_cot}\n</think>\n\nAnswer: {answer}" if encoded_cot else f"Answer: {answer}"
 
-            # Format as conversation with encoded CoT
-            assistant_content = f"{begin_think}\n{encoded_cot}\n{end_think}\n\nAnswer: {answer}"
+            # Format user message with system prompt as custom_instruction (matching evaluation format)
+            # Format: "Question: {question}\n{system_prompt}" to match how evaluation uses custom_instruction
+            user_content = f"Question: {question}\n{self.system_prompt}"
 
-            # Create messages with system prompt
+            # Create messages without system role (using custom_instruction in user message instead)
             messages = [
-                {"role": "system", "content": self.system_prompt},
-                {"role": "user", "content": question},
+                {"role": "user", "content": user_content},
                 {"role": "assistant", "content": assistant_content}
             ]
 
             # Try to use chat template, fall back to simple formatting
             try:
-                prompt_messages = [messages[0], messages[1]]  # system + user
+                prompt_messages = [messages[0]]  # user only (no system message)
                 prompt_text = self.tokenizer.apply_chat_template(
                     prompt_messages,
                     tokenize=False,
@@ -1136,8 +1162,8 @@ class EncodedDataset(Dataset, DatasetMaskingMixin):
                 full_text = self.tokenizer.apply_chat_template(messages, tokenize=False)
             except Exception as template_error:
                 logging.debug(f"Chat template not available, using fallback: {template_error}")
-                prompt_text = f"System: {self.system_prompt}\n\nUser: {question}\n\nAssistant:"
-                full_text = f"System: {self.system_prompt}\n\nUser: {question}\n\nAssistant: {assistant_content}"
+                prompt_text = f"User: {user_content}\n\nAssistant:"
+                full_text = f"User: {user_content}\n\nAssistant: {assistant_content}"
 
             prompt_encoding = self.tokenizer(
                 prompt_text,
@@ -1381,15 +1407,13 @@ if __name__ == "__main__":
             dataset_name=args.dataset_name,
             split="train"
         )
-        print(f"System prompt template: {PosthocDataset.SYSTEM_PROMPT_TEMPLATE}")
+        print(f"Post-hoc instruction template: {PosthocDataset.POSTHOC_INSTRUCTION_TEMPLATE}")
         print(f"Ground truth loaded from dataset: {bool(posthoc_dataset.ground_truth_dict)}")
         print(f"Ground truth dict: {posthoc_dataset.ground_truth_dict}")
         
         # DEBUG: Check model config and first item's raw data
         print(f"\n--- DEBUG: PosthocDataset ---")
         print(f"Model config: {posthoc_dataset.model_config}")
-        print(f"begin_think: '{posthoc_dataset.model_config.get('begin_think', '')}'")
-        print(f"end_think: '{posthoc_dataset.model_config.get('end_think', '')}'")
         print(f"\nFirst raw data item answer: {data_items[0].get('answer', 'N/A')}")
         print(f"First raw data item CoT (first 200 chars): {data_items[0].get('cot', 'N/A')[:200]}")
         

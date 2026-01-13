@@ -56,19 +56,20 @@ class SubstantivityMetric(SingleMetric):
         self.filler_text = None
         self.filler_text_tokens = None
         
-        # Load irrelevant CoTs for 'not_relevant' filler type
+        # Load irrelevant items (for examples) and CoTs for 'not_relevant' filler type
         # Load shuffled CoTs for 'shuffled' filler type (same dataset, different question)
+        self.irrelevant_items = []  # Full items (question, cot, answer) for examples
         self.irrelevant_cots = []
         self.irrelevant_cot_idx = 0  # Counter for cycling through irrelevant CoTs
         self.shuffled_cots = []
         self.shuffled_cot_idx = 0  # Counter for cycling through shuffled CoTs
         
         if self.filler_token == "not_relevant":
-            self.irrelevant_cots = self._load_irrelevant_cots()
+            self.irrelevant_items, self.irrelevant_cots = self._load_irrelevant_data()
             if self.irrelevant_cots:
-                logging.info(f"[SubstantivityMetric] Loaded {len(self.irrelevant_cots)} irrelevant CoTs for 'not_relevant' filler")
+                logging.info(f"[SubstantivityMetric] Loaded {len(self.irrelevant_items)} irrelevant items and {len(self.irrelevant_cots)} irrelevant CoTs for 'not_relevant' filler")
             else:
-                logging.warning("[SubstantivityMetric] No irrelevant CoTs loaded, falling back to lorem_ipsum")
+                logging.warning("[SubstantivityMetric] No irrelevant data loaded, falling back to lorem_ipsum")
                 self._load_filler_text()
         elif self.filler_token == "shuffled":
             self.shuffled_cots = self._load_same_dataset_cots()
@@ -104,22 +105,25 @@ class SubstantivityMetric(SingleMetric):
                               "mixed"]
         return self.filler_token in text_based_fillers
     
-    def _load_irrelevant_cots(self) -> List[str]:
-        """Load CoTs from an irrelevant dataset for the 'not_relevant' filler type.
+    def _load_irrelevant_data(self) -> tuple:
+        """Load full items (question, cot, answer) and CoTs from an irrelevant dataset for the 'not_relevant' filler type.
         
-        Uses the same logic as InternalizedDataset._load_irrelevant_cots() for consistency.
+        Uses the same logic as InternalizedDataset._load_irrelevant_data() for consistency.
+        
+        Returns:
+            Tuple of (list of full items, list of cleaned CoTs)
         """
         if not self.dataset_name:
             logging.warning("[SubstantivityMetric] No dataset_name provided for not_relevant filler. "
-                          "Cannot load irrelevant CoTs.")
-            return []
+                          "Cannot load irrelevant data.")
+            return [], []
         
         # Use the same mapping as InternalizedDataset
         target_dataset = InternalizedDataset.IRRELEVANT_COT_MAPPING.get(self.dataset_name.lower())
         if not target_dataset:
             logging.warning(f"[SubstantivityMetric] No irrelevant dataset mapping for '{self.dataset_name}'. "
                           f"Supported datasets: {list(InternalizedDataset.IRRELEVANT_COT_MAPPING.keys())}.")
-            return []
+            return [], []
         
         # Try to load from the custom data folder (same paths as InternalizedDataset)
         custom_data_path = Path(__file__).parent / ".." / "organism_data" / "data" / ".." / ".." / ".." / "data" / "custom" / f"{target_dataset}.json"
@@ -138,29 +142,40 @@ class SubstantivityMetric(SingleMetric):
         
         if not custom_data_path.exists():
             logging.warning(f"[SubstantivityMetric] Could not find irrelevant dataset at {custom_data_path}.")
-            return []
+            return [], []
         
         try:
             with open(custom_data_path, 'r', encoding='utf-8') as f:
                 irrelevant_data = json.load(f)
             
-            # Extract CoTs from the loaded data
+            # Extract full items and CoTs
+            items = []
             cots = []
             for item in irrelevant_data:
+                question = item.get("question", "")
                 cot = item.get("cot", "")
-                if cot:
-                    # Strip think tags if present
+                answer = item.get("answer", "")
+                
+                if question and cot and answer:
+                    # Store full item
+                    items.append({
+                        "question": question,
+                        "cot": cot,
+                        "answer": answer
+                    })
+                    
+                    # Extract cleaned CoT
                     cot_clean = re.sub(r'<think>\s*', '', cot, flags=re.IGNORECASE)
                     cot_clean = re.sub(r'\s*</think>', '', cot_clean, flags=re.IGNORECASE)
                     cots.append(cot_clean.strip())
             
-            logging.info(f"[SubstantivityMetric] Loaded {len(cots)} irrelevant CoTs from {target_dataset} "
+            logging.info(f"[SubstantivityMetric] Loaded {len(items)} irrelevant items from {target_dataset} "
                         f"(source: {custom_data_path})")
-            return cots
+            return items, cots
             
         except Exception as e:
-            logging.warning(f"[SubstantivityMetric] Error loading irrelevant CoTs from {custom_data_path}: {e}")
-            return []
+            logging.warning(f"[SubstantivityMetric] Error loading irrelevant data from {custom_data_path}: {e}")
+            return [], []
 
     def _load_same_dataset_cots(self) -> List[str]:
         """Load CoTs from the same dataset for the 'shuffled' filler type.
@@ -498,7 +513,11 @@ class SubstantivityMetric(SingleMetric):
         # Create filler-type instruction for INTERVENTION (pSub)
         # Use InternalizedDataset.get_filler_instruction as the single source of truth
         # This ensures consistency with training prompts regardless of training type
-        filler_instruction = InternalizedDataset.get_filler_instruction(self.filler_token)
+        # For not_relevant, returns dataset-specific prompt without examples
+        filler_instruction = InternalizedDataset.get_filler_instruction(
+            self.filler_token, 
+            dataset_name=self.dataset_name if self.dataset_name else None
+        )
 
         # Create BASELINE prompt for pOrig calculation (same for ALL training types)
         baseline_prompt = self.model.make_prompt(r.question_id, r.question, custom_instruction=self.BASELINE_INSTRUCTION)

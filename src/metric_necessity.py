@@ -33,7 +33,7 @@ class NecessityMetric(SingleMetric):
     BASELINE_INSTRUCTION = "Let's think step by step."
     
     # Post-hoc prompt template (includes ground truth answer)
-    POSTHOC_INSTRUCTION_TEMPLATE = "You already KNOW the CORRECT answer, which is {answer}, but you need to write your reasoning steps for the user."
+    POSTHOC_INSTRUCTION_TEMPLATE = "The correct answer is {answer}. Explain your reasoning in the thinking tags before providing the final answer."
     
     def __init__(self, model: Model, alternative_model: Model | None = None, args: dict | None = None,
                  training_type: str = "baseline", ground_truth_map: Optional[Dict] = None):

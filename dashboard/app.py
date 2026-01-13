@@ -58,6 +58,8 @@ DEFAULT_SAMPLE_SIZE = 100
 ORIGINAL_METRICS = ["necessity", "substantivity", "paraphrasability"]
 ALL_METRICS = ["accuracy"] + ORIGINAL_METRICS
 
+# Y-axis ranges removed - plots will auto-scale based on data
+
 # Color schemes for training types
 COLORS_BY_TRAINING_TYPE = {
     "baseline": "#2E86AB",      # Blue (solid)
@@ -125,8 +127,23 @@ def calculate_binomial_se(p: float, n: int = DEFAULT_SAMPLE_SIZE) -> float:
     Returns:
         Standard Error
     """
-    if pd.isna(p) or n <= 0:
+    # Convert to numeric types, handling non-numeric values
+    try:
+        p = pd.to_numeric(p, errors='coerce')
+        n = pd.to_numeric(n, errors='coerce')
+    except (TypeError, ValueError):
         return np.nan
+    
+    if pd.isna(p) or pd.isna(n) or n <= 0:
+        return np.nan
+    
+    # Ensure both are numpy numeric types
+    p = float(p)
+    n = float(n)
+    
+    if n <= 0:
+        return np.nan
+    
     # Ensure p is in [0, 1]
     p = np.clip(p, 0, 1)
     return np.sqrt(p * (1 - p) / n)
@@ -147,16 +164,53 @@ def calculate_sem(std: float, n: int = DEFAULT_SAMPLE_SIZE) -> float:
     Returns:
         Standard Error of Mean
     """
-    if pd.isna(std) or n <= 0:
+    # Convert to numeric types, handling non-numeric values
+    try:
+        std = pd.to_numeric(std, errors='coerce')
+        n = pd.to_numeric(n, errors='coerce')
+    except (TypeError, ValueError):
         return np.nan
+    
+    if pd.isna(std) or pd.isna(n) or n <= 0:
+        return np.nan
+    
+    # Ensure both are numpy numeric types
+    std = float(std)
+    n = float(n)
+    
+    if n <= 0:
+        return np.nan
+    
     return std / np.sqrt(n)
 
 
 def calculate_cohens_d(mean1: float, std1: float, mean2: float, std2: float) -> float:
     """Calculate Cohen's d effect size. d = (mean1 - mean2) / pooled_std"""
-    if std1 is None or std2 is None:
-        std1 = std1 or 0.1
-        std2 = std2 or 0.1
+    # Convert to numeric types, handling strings and None values
+    try:
+        mean1 = pd.to_numeric(mean1, errors='coerce')
+        mean2 = pd.to_numeric(mean2, errors='coerce')
+        std1 = pd.to_numeric(std1, errors='coerce')
+        std2 = pd.to_numeric(std2, errors='coerce')
+    except (TypeError, ValueError):
+        return np.nan
+    
+    # Check for NaN values
+    if pd.isna(mean1) or pd.isna(mean2) or pd.isna(std1) or pd.isna(std2):
+        return np.nan
+    
+    # Handle None or zero std values
+    if std1 is None or std1 == 0:
+        std1 = 0.1
+    if std2 is None or std2 == 0:
+        std2 = 0.1
+    
+    # Ensure they are float types
+    std1 = float(std1)
+    std2 = float(std2)
+    mean1 = float(mean1)
+    mean2 = float(mean2)
+    
     pooled_std = np.sqrt((std1**2 + std2**2) / 2)
     if pooled_std == 0 or np.isnan(pooled_std):
         return np.nan
@@ -358,15 +412,40 @@ def load_from_wandb_multi(entity: str, projects: List[str], run_states: Optional
                     # Get sample size from config if available
                     sample_size = config.get("metric_eval_samples", DEFAULT_SAMPLE_SIZE)
                     
-                    # Fetch history with specific keys
-                    history = run.history(keys=[
+                    # Fetch history - try with desired keys first, fallback to fetching all
+                    desired_keys = [
                         "step",
                         "eval/accuracy", "eval/accuracy_mean", "eval/accuracy_std",
                         "eval/num_total",
                         "eval/substantivity_mean", "eval/substantivity_std",
                         "eval/necessity_mean", "eval/necessity_std",
                         "eval/paraphrasability_mean", "eval/paraphrasability_std"
-                    ])
+                    ]
+                    
+                    history = None
+                    available_keys = []
+                    
+                    try:
+                        # Try fetching with desired keys first
+                        history = run.history(keys=desired_keys)
+                        # If that returns empty, try fetching all history to see what's available
+                        if history.empty:
+                            history_all = run.history()
+                            if not history_all.empty:
+                                available_keys = list(history_all.columns)
+                                # Check if any of our desired keys exist
+                                existing_keys = [k for k in desired_keys if k in available_keys]
+                                if existing_keys:
+                                    history = run.history(keys=existing_keys)
+                                else:
+                                    # No matching keys - keep empty but record what keys exist
+                                    history = pd.DataFrame()
+                    except Exception as e:
+                        # If history() fails, try with just step
+                        try:
+                            history = run.history(keys=["step"])
+                        except:
+                            history = pd.DataFrame()
                     
                     # Debug: track what we got
                     debug_info.append({
@@ -376,11 +455,12 @@ def load_from_wandb_multi(entity: str, projects: List[str], run_states: Optional
                         "created_at": str(run_info['created_at'])[:19] if run_info['created_at'] else "N/A",
                         "parsed_lr": learning_rate,
                         "parsed_dataset": dataset_name,
-                        "rows_fetched": len(history) if not history.empty else 0,
+                        "rows_fetched": len(history) if history is not None and not history.empty else 0,
                         "config_lr": config.get("learning_rate", "N/A"),
+                        "available_keys": ", ".join(available_keys[:15]) if available_keys else "none",  # Show available keys if history was empty
                     })
                     
-                    if history.empty:
+                    if history is None or history.empty:
                         continue
                     
                     rename_map = {
@@ -480,10 +560,11 @@ def load_from_local(output_dir: str) -> Optional[pd.DataFrame]:
 @st.cache_data(ttl=60)
 def load_sample_cots_from_wandb(entity: str, projects: List[str], debug: bool = False) -> Optional[pd.DataFrame]:
     """
-    Load sample CoTs (prompt, reasoning, answer) from W&B artifact tables.
+    Load sample CoTs (prompt, reasoning, answer) from W&B tables.
     
-    W&B Tables logged via wandb.log() are stored as media files and need to be
-    accessed via the run's logged artifacts or files API.
+    W&B Tables logged via wandb.log() are stored as media files. We access them via:
+    1. Run files (media/table/eval/sample_cots_*.json)
+    2. History scan to get step information
     
     Returns DataFrame with columns:
     - step, question_id, question, prompt, cot, answer, training_type, dataset, learning_rate
@@ -531,92 +612,181 @@ def load_sample_cots_from_wandb(entity: str, projects: List[str], debug: bool = 
                     learning_rate = run_info_parsed.get("learning_rate", "unknown")
                     
                     tables_found = 0
+                    error_messages = []
                     
-                    # Method 1: Try to get tables from run files (media/table/)
+                    # Method 1: Get tables from run files (media/table/eval/sample_cots_*.json)
                     try:
-                        for file in run.files():
-                            if 'sample_cots' in file.name and file.name.endswith('.json'):
+                        # Get all files in the run
+                        files = list(run.files())
+                        
+                        # Look for table files related to sample_cots
+                        table_files = [f for f in files if 'sample_cots' in f.name.lower() and (f.name.endswith('.json') or 'table' in f.name.lower())]
+                        
+                        # Also check media/table/eval/ directory pattern
+                        for file in files:
+                            if 'media/table' in file.name and 'sample_cots' in file.name.lower():
+                                table_files.append(file)
+                        
+                        for file in table_files:
+                            try:
+                                # Download the file
+                                file_path = file.download(replace=True)
+                                
+                                # Try to parse as JSON
+                                with open(file_path.name, 'r', encoding='utf-8') as f:
+                                    content = f.read()
+                                
+                                # Try parsing as JSON
                                 try:
-                                    # Download and parse the table file
-                                    file_content = file.download(replace=True)
-                                    with open(file_content.name, 'r') as f:
-                                        table_json = json.load(f)
+                                    table_data = json.loads(content)
                                     
-                                    columns = table_json.get('columns', [])
-                                    data = table_json.get('data', [])
-                                    
-                                    if columns and data:
-                                        table_df = pd.DataFrame(data, columns=columns)
-                                        table_df['training_type'] = training_type
-                                        table_df['dataset'] = dataset_name
-                                        table_df['learning_rate'] = learning_rate
-                                        table_df['run_name'] = run_name
-                                        all_cots.append(table_df)
-                                        tables_found += 1
-                                except Exception as e:
-                                    pass
-                    except Exception as e:
-                        pass
-                    
-                    # Method 2: Try history with pandas_style=True
-                    if tables_found == 0:
-                        try:
-                            history = run.history(keys=["eval/sample_cots"], pandas=True)
-                            
-                            if not history.empty and "eval/sample_cots" in history.columns:
-                                for _, row in history.iterrows():
-                                    table_data = row.get("eval/sample_cots")
-                                    if table_data is not None:
-                                        try:
-                                            if hasattr(table_data, 'get_dataframe'):
-                                                table_df = table_data.get_dataframe()
-                                            elif isinstance(table_data, dict):
-                                                columns = table_data.get('columns', [])
-                                                data = table_data.get('data', [])
-                                                if columns and data:
-                                                    table_df = pd.DataFrame(data, columns=columns)
-                                                else:
-                                                    continue
-                                            elif isinstance(table_data, str):
-                                                # Sometimes it's a path reference
-                                                continue
+                                    # Handle different JSON structures
+                                    table_df = None
+                                    if isinstance(table_data, dict):
+                                        # Check if it's a W&B table format with columns and data
+                                        if 'columns' in table_data and 'data' in table_data:
+                                            columns = table_data['columns']
+                                            data = table_data['data']
+                                            table_df = pd.DataFrame(data, columns=columns)
+                                        elif 'data' in table_data and isinstance(table_data['data'], list) and len(table_data['data']) > 0:
+                                            # Might be a list of rows
+                                            if isinstance(table_data['data'][0], dict):
+                                                # List of dicts - convert to DataFrame directly
+                                                table_df = pd.DataFrame(table_data['data'])
+                                            elif isinstance(table_data['data'][0], list):
+                                                # List of lists - need columns
+                                                columns = table_data.get('columns', [f'col_{i}' for i in range(len(table_data['data'][0])) if table_data['data']])
+                                                table_df = pd.DataFrame(table_data['data'], columns=columns)
                                             else:
                                                 continue
-                                            
-                                            table_df['training_type'] = training_type
-                                            table_df['dataset'] = dataset_name
-                                            table_df['learning_rate'] = learning_rate
-                                            table_df['run_name'] = run_name
-                                            all_cots.append(table_df)
-                                            tables_found += 1
-                                        except Exception as e:
-                                            pass
-                        except Exception as e:
-                            pass
+                                        else:
+                                            # Try to infer structure - single dict as one row
+                                            table_df = pd.DataFrame([table_data])
+                                    elif isinstance(table_data, list):
+                                        # List of dictionaries or lists
+                                        if len(table_data) > 0:
+                                            if isinstance(table_data[0], dict):
+                                                table_df = pd.DataFrame(table_data)
+                                            elif isinstance(table_data[0], list):
+                                                # List of lists - need column names
+                                                columns = [f'col_{i}' for i in range(len(table_data[0]))]
+                                                table_df = pd.DataFrame(table_data, columns=columns)
+                                            else:
+                                                continue
+                                        else:
+                                            continue
+                                    else:
+                                        continue
+                                    
+                                    if table_df is None:
+                                        continue
+                                    
+                                    # Ensure we have a DataFrame
+                                    if not isinstance(table_df, pd.DataFrame) or table_df.empty:
+                                        continue
+                                    
+                                    # Add metadata columns
+                                    table_df['training_type'] = training_type
+                                    table_df['dataset'] = dataset_name
+                                    table_df['learning_rate'] = learning_rate
+                                    table_df['run_name'] = run_name
+                                    
+                                    # Ensure step column exists (might be in the data or need to extract from filename)
+                                    if 'step' not in table_df.columns:
+                                        # Try to extract step from filename or use 0
+                                        step_match = re.search(r'step[_-]?(\d+)', file.name, re.IGNORECASE)
+                                        if step_match:
+                                            table_df['step'] = int(step_match.group(1))
+                                        else:
+                                            # Get step from history if available
+                                            try:
+                                                history = run.history(keys=["step"])
+                                                if not history.empty:
+                                                    # Use the step from the most recent log entry
+                                                    table_df['step'] = history['step'].iloc[-1]
+                                                else:
+                                                    table_df['step'] = 0
+                                            except:
+                                                table_df['step'] = 0
+                                    
+                                    all_cots.append(table_df)
+                                    tables_found += 1
+                                    
+                                except json.JSONDecodeError:
+                                    # Not JSON, skip
+                                    continue
+                                    
+                            except Exception as e:
+                                error_messages.append(f"File {file.name}: {str(e)}")
+                                continue
+                                
+                    except Exception as e:
+                        error_messages.append(f"File access error: {str(e)}")
                     
-                    # Method 3: Try scan_history for streaming access
+                    # Method 2: Try to get from history using scan_history
                     if tables_found == 0:
                         try:
-                            for row in run.scan_history(keys=["eval/sample_cots"]):
-                                table_data = row.get("eval/sample_cots")
-                                if table_data and isinstance(table_data, dict):
-                                    columns = table_data.get('columns', [])
-                                    data = table_data.get('data', [])
-                                    if columns and data:
-                                        table_df = pd.DataFrame(data, columns=columns)
+                            # Scan history to find steps where sample_cots were logged
+                            for row in run.scan_history(keys=["step", "eval/sample_cots"]):
+                                step = row.get("step", 0)
+                                table_ref = row.get("eval/sample_cots")
+                                
+                                if table_ref is not None:
+                                    try:
+                                        # table_ref might be a wandb.Table object or a dict
+                                        if hasattr(table_ref, 'get_dataframe'):
+                                            # It's a wandb.Table object
+                                            table_df = table_ref.get_dataframe()
+                                        elif isinstance(table_ref, dict):
+                                            # It's a dict with columns and data
+                                            if 'columns' in table_ref and 'data' in table_ref:
+                                                table_df = pd.DataFrame(table_ref['data'], columns=table_ref['columns'])
+                                            else:
+                                                continue
+                                        elif isinstance(table_ref, str):
+                                            # It's a file path - try to download
+                                            try:
+                                                file = run.file(table_ref)
+                                                file_path = file.download(replace=True)
+                                                with open(file_path.name, 'r', encoding='utf-8') as f:
+                                                    table_data = json.load(f)
+                                                if 'columns' in table_data and 'data' in table_data:
+                                                    table_df = pd.DataFrame(table_data['data'], columns=table_data['columns'])
+                                                else:
+                                                    continue
+                                            except:
+                                                continue
+                                        else:
+                                            continue
+                                        
+                                        if table_df.empty:
+                                            continue
+                                        
+                                        # Ensure step column
+                                        if 'step' not in table_df.columns:
+                                            table_df['step'] = step
+                                        
+                                        # Add metadata
                                         table_df['training_type'] = training_type
                                         table_df['dataset'] = dataset_name
                                         table_df['learning_rate'] = learning_rate
                                         table_df['run_name'] = run_name
+                                        
                                         all_cots.append(table_df)
                                         tables_found += 1
+                                        
+                                    except Exception as e:
+                                        error_messages.append(f"History scan error at step {step}: {str(e)}")
+                                        continue
+                                        
                         except Exception as e:
-                            pass
+                            error_messages.append(f"History scan failed: {str(e)}")
                     
                     debug_info.append({
                         'project': project,
                         'run_name': run_name,
-                        'tables_found': tables_found
+                        'tables_found': tables_found,
+                        'errors': error_messages[:3]  # Limit error messages
                     })
                         
             except Exception as e:
@@ -629,10 +799,15 @@ def load_sample_cots_from_wandb(entity: str, projects: List[str], debug: bool = 
         
         if all_cots:
             result = pd.concat(all_cots, ignore_index=True)
+            
             # Ensure required columns exist
             for col in ['step', 'question_id', 'question', 'prompt', 'cot', 'answer']:
                 if col not in result.columns:
                     result[col] = ""
+            
+            # Convert step to numeric if it's not already
+            if 'step' in result.columns:
+                result['step'] = pd.to_numeric(result['step'], errors='coerce').fillna(0).astype(int)
             
             # Filter out invalid samples where CoT is empty
             original_count = len(result)
@@ -641,12 +816,23 @@ def load_sample_cots_from_wandb(entity: str, projects: List[str], debug: bool = 
             if original_count > filtered_count:
                 result.attrs['filtered_invalid_count'] = original_count - filtered_count
             
+            # Sample 5 valid CoTs per step to reduce loading time
+            if not result.empty and 'step' in result.columns:
+                before_sampling = len(result)
+                result = sample_cots_per_step(result, n_samples=5, random_seed=42)
+                after_sampling = len(result)
+                if before_sampling > after_sampling:
+                    result.attrs['sampled_count'] = before_sampling - after_sampling
+                    result.attrs['sampling_note'] = f"Sampled 5 valid CoTs per step (from {before_sampling} total valid samples)"
+            
             return result if not result.empty else None
         return None
         
     except ImportError:
         return None
     except Exception as e:
+        if debug:
+            st.error(f"Error loading sample CoTs: {e}")
         return None
 
 
@@ -686,6 +872,46 @@ def filter_valid_cot_samples(df: pd.DataFrame) -> pd.DataFrame:
         valid_mask = valid_mask & answer_valid
     
     return df[valid_mask].reset_index(drop=True)
+
+
+def sample_cots_per_step(df: pd.DataFrame, n_samples: int = 5, random_seed: int = 42) -> pd.DataFrame:
+    """
+    Sample n_samples valid CoTs per step.
+    
+    Groups by step and randomly samples up to n_samples valid CoTs from each step.
+    This helps reduce the amount of data loaded and displayed.
+    
+    Args:
+        df: DataFrame with CoT samples (must have 'step' column)
+        n_samples: Number of samples to keep per step (default: 10)
+        random_seed: Random seed for reproducibility (default: 42)
+    
+    Returns:
+        DataFrame with sampled CoTs
+    """
+    if df is None or df.empty:
+        return df
+    
+    if 'step' not in df.columns:
+        # If no step column, return all data
+        return df
+    
+    # Group by step and sample
+    sampled_dfs = []
+    for step, group in df.groupby('step'):
+        if len(group) > n_samples:
+            # Randomly sample n_samples
+            sampled = group.sample(n=n_samples, random_state=random_seed)
+        else:
+            # Keep all if we have fewer than n_samples
+            sampled = group
+        sampled_dfs.append(sampled)
+    
+    if sampled_dfs:
+        result = pd.concat(sampled_dfs, ignore_index=True)
+        return result
+    else:
+        return df
 
 
 @st.cache_data(ttl=30)
@@ -747,6 +973,15 @@ def load_sample_cots_from_local(output_dir: str) -> Optional[pd.DataFrame]:
         if original_count > filtered_count:
             # Store filter info for display
             result.attrs['filtered_invalid_count'] = original_count - filtered_count
+        
+        # Sample 5 valid CoTs per step to reduce loading time
+        if not result.empty and 'step' in result.columns:
+            before_sampling = len(result)
+            result = sample_cots_per_step(result, n_samples=5, random_seed=42)
+            after_sampling = len(result)
+            if before_sampling > after_sampling:
+                result.attrs['sampled_count'] = before_sampling - after_sampling
+                result.attrs['sampling_note'] = f"Sampled 5 valid CoTs per step (from {before_sampling} total valid samples)"
         
         return result if not result.empty else None
     return None
@@ -956,14 +1191,107 @@ ANTHROPIC_COT_CSS = """
     margin: 0;
     font-size: 0.9rem;
 }
+
+/* W&B Style Table */
+.wandb-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    margin: 1rem 0;
+}
+
+.wandb-table thead {
+    background: #f7f7f7;
+    border-bottom: 2px solid #e0e0e0;
+}
+
+.wandb-table th {
+    padding: 12px 16px;
+    text-align: left;
+    font-weight: 600;
+    font-size: 0.875rem;
+    color: #333;
+    border-right: 1px solid #e0e0e0;
+}
+
+.wandb-table th:last-child {
+    border-right: none;
+}
+
+.wandb-table tbody tr {
+    border-bottom: 1px solid #e0e0e0;
+    transition: background-color 0.2s;
+}
+
+.wandb-table tbody tr:hover {
+    background-color: #f9f9f9;
+}
+
+.wandb-table td {
+    padding: 12px 16px;
+    font-size: 0.875rem;
+    color: #333;
+    border-right: 1px solid #e0e0e0;
+    vertical-align: top;
+}
+
+.wandb-table td:last-child {
+    border-right: none;
+}
+
+.wandb-table .text-cell {
+    max-width: 300px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.wandb-table .text-cell.expanded {
+    white-space: normal;
+    max-width: none;
+}
+
+.wandb-table .expand-btn {
+    color: #1976d2;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 0.75rem;
+    margin-left: 8px;
+}
+
+.wandb-table .expand-btn:hover {
+    text-decoration: underline;
+}
+
+.wandb-table .full-text {
+    display: none;
+    margin-top: 8px;
+    padding: 8px;
+    background: #f5f5f5;
+    border-radius: 4px;
+    font-family: 'Monaco', 'Courier New', monospace;
+    font-size: 0.8rem;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.wandb-table .full-text.show {
+    display: block;
+}
 </style>
 """
 
 
 def render_cot_sample_anthropic_style(
     question: str,
-    cot: str,
-    answer: str,
+    prompt: str = "",
+    cot: str = "",
+    answer: str = "",
     training_type: str = "baseline",
     step: int = 0,
     collapsed_cot: bool = False
@@ -973,6 +1301,7 @@ def render_cot_sample_anthropic_style(
     
     Uses XML-like semantic sections with clear visual hierarchy:
     - QUESTION: The input problem
+    - PROMPT: The full prompt sent to the model
     - THINKING: The chain of thought reasoning (collapsible for long content)
     - ANSWER: The final response
     """
@@ -988,12 +1317,13 @@ def render_cot_sample_anthropic_style(
                 .replace("'", "&#39;"))
     
     question_escaped = escape_html(question)
+    prompt_escaped = escape_html(prompt)
     cot_escaped = escape_html(cot)
     answer_escaped = escape_html(answer)
     
     collapsed_class = "thinking-collapsed" if collapsed_cot and len(cot or "") > 500 else ""
     
-    # Build HTML - only question, thinking, answer
+    # Build HTML - question, prompt, thinking, answer
     html = f'''
     <div class="sample-card">
         <div class="sample-header">
@@ -1003,15 +1333,17 @@ def render_cot_sample_anthropic_style(
         
         <div class="question-section">
             <h4>📝 Question</h4>
-            <p>{question_escaped}</p>
+            <p>{question_escaped if question_escaped else "(No question)"}</p>
         </div>
         
+        {f'<div class="prompt-section"><pre>{prompt_escaped}</pre></div>' if prompt_escaped else ''}
+        
         <div class="thinking-section {collapsed_class}">
-            <pre>{cot_escaped if cot else "(No reasoning captured)"}</pre>
+            <pre>{cot_escaped if cot_escaped else "(No reasoning captured)"}</pre>
         </div>
         
         <div class="answer-section">
-            <pre>{answer_escaped if answer else "(No answer)"}</pre>
+            <pre>{answer_escaped if answer_escaped else "(No answer)"}</pre>
         </div>
     </div>
     '''
@@ -1019,10 +1351,330 @@ def render_cot_sample_anthropic_style(
     return html
 
 
+def render_anthropic_style_viewer(samples_df: pd.DataFrame) -> None:
+    """
+    Render CoT samples in an Anthropic-style interface with step-by-step navigation.
+    Shows all steps with a slider to navigate and compare.
+    """
+    if samples_df is None or samples_df.empty:
+        st.info("No samples to display")
+        return
+    
+    # Ensure required columns exist
+    for col in ['step', 'question', 'prompt', 'cot', 'answer', 'training_type']:
+        if col not in samples_df.columns:
+            samples_df[col] = ""
+    
+    # Get all unique steps and training types
+    all_steps = sorted(samples_df['step'].dropna().unique().tolist())
+    all_training_types = sorted(samples_df['training_type'].dropna().unique().tolist())
+    
+    if not all_steps:
+        st.warning("No steps found in the data")
+        return
+    
+    # Group by training type and step
+    # Create a structure: {training_type: {step: [samples]}}
+    samples_by_tt_and_step = {}
+    sample_indices_by_tt_and_step = {}
+    for tt in all_training_types:
+        samples_by_tt_and_step[tt] = {}
+        sample_indices_by_tt_and_step[tt] = {}
+        tt_data = samples_df[samples_df['training_type'] == tt]
+        for step in all_steps:
+            step_data = tt_data[tt_data['step'] == step]
+            if not step_data.empty:
+                # Store all samples for this step
+                samples_by_tt_and_step[tt][step] = step_data.to_dict('records')
+                sample_indices_by_tt_and_step[tt][step] = list(range(len(step_data)))
+            else:
+                samples_by_tt_and_step[tt][step] = []
+                sample_indices_by_tt_and_step[tt][step] = []
+    
+    # Get all unique questions across all steps and training types
+    all_questions = []
+    for tt in all_training_types:
+        for step in all_steps:
+            for sample in samples_by_tt_and_step[tt].get(step, []):
+                q = sample.get('question', '')
+                if q and q not in all_questions:
+                    all_questions.append(q)
+    
+    if not all_questions:
+        st.warning("No samples available")
+        return
+    
+    # Question selector (if multiple questions exist)
+    if len(all_questions) > 1:
+        selected_question = st.selectbox(
+            "📋 Select Question",
+            options=all_questions,
+            index=0,
+            key="question_selector",
+            help="Choose which question to view across all steps and training types"
+        )
+    else:
+        selected_question = all_questions[0]
+    
+    # Filter samples by selected question
+    # Re-group samples by training type and step, but only for the selected question
+    samples_by_tt_and_step_filtered = {}
+    for tt in all_training_types:
+        samples_by_tt_and_step_filtered[tt] = {}
+        for step in all_steps:
+            step_samples = samples_by_tt_and_step[tt].get(step, [])
+            # Filter by question
+            filtered_samples = [s for s in step_samples if s.get('question', '') == selected_question]
+            samples_by_tt_and_step_filtered[tt][step] = filtered_samples
+    
+    # Display selected question
+    st.markdown("### Question")
+    st.markdown(f"**{selected_question}**")
+    st.markdown("---")
+    
+    # Step navigation slider - only allow available steps (for the selected question)
+    st.markdown("### Step Navigation")
+    
+    # Get only steps that have data (for the selected question)
+    available_steps = []
+    for step in all_steps:
+        has_data = any(len(samples_by_tt_and_step_filtered[tt].get(step, [])) > 0 for tt in all_training_types)
+        if has_data:
+            available_steps.append(step)
+    
+    if not available_steps:
+        st.warning("No steps with data available")
+        return
+    
+    # Handle single step case to avoid RangeError
+    if len(available_steps) == 1:
+        selected_step = available_steps[0]
+        st.markdown(f"**Current Step: {selected_step}** (1 of 1)")
+    else:
+        # Convert steps to strings to ensure proper handling by select_slider
+        # This prevents issues when all steps are the same numeric value (e.g., all 0)
+        available_steps_str = [str(step) for step in available_steps]
+        
+        # Slider using available steps only
+        selected_step_str = st.select_slider(
+            "Select Step",
+            options=available_steps_str,
+            value=available_steps_str[0],
+            key="step_slider"
+        )
+        
+        # Convert back to original type for lookup
+        selected_step = available_steps[available_steps_str.index(selected_step_str)]
+        
+        # Display current step clearly
+        current_step_idx = available_steps_str.index(selected_step_str)
+        st.markdown(f"**Current Step: {selected_step}** ({current_step_idx + 1} of {len(available_steps)})")
+    
+    # Show step indicators
+    step_indicators = []
+    for step in all_steps:
+        has_data = any(len(samples_by_tt_and_step_filtered[tt].get(step, [])) > 0 for tt in all_training_types)
+        if has_data:
+            if step == selected_step:
+                step_indicators.append(f"**{step}**")
+            else:
+                step_indicators.append(str(step))
+        else:
+            step_indicators.append(f"~~{step}~~")
+    
+    st.markdown(f"Available steps: {', '.join(step_indicators)}")
+    st.markdown("---")
+    
+    # Create columns for comparison (up to 2 training types side by side)
+    if len(all_training_types) == 1:
+        cols = [st.container()]
+    elif len(all_training_types) == 2:
+        cols = st.columns(2)
+    else:
+        # For more than 2, use tabs
+        tabs = st.tabs(all_training_types)
+        cols = [tabs[i] for i in range(len(all_training_types))]
+    
+    for idx, tt in enumerate(all_training_types):
+        with cols[min(idx, len(cols)-1)]:
+            samples = samples_by_tt_and_step_filtered[tt].get(selected_step, [])
+            
+            st.markdown(f"**{tt.upper()}**")
+            
+            if not samples:
+                st.info(f"No data for step {selected_step}")
+            else:
+                # Always show sample selector (even for single sample) to make it more visible
+                sample_count = len(samples)
+                if sample_count > 1:
+                    sample_idx = st.selectbox(
+                        f"📊 Select Sample ({sample_count} available)",
+                        options=list(range(sample_count)),
+                        format_func=lambda x: f"Sample {x+1} of {sample_count}",
+                        key=f"sample_select_{tt}_{selected_step}_{selected_question}",
+                        help=f"Choose which sample to view. {sample_count} samples available for this step."
+                    )
+                else:
+                    # Even with one sample, show it clearly
+                    st.info(f"📊 Sample 1 of 1")
+                    sample_idx = 0
+                
+                sample = samples[sample_idx]
+                
+                # Display in Anthropic-style format
+                prompt = str(sample.get('prompt', ''))
+                cot = str(sample.get('cot', ''))
+                answer = str(sample.get('answer', ''))
+                
+                # Prompt section
+                with st.expander("📝 Prompt", expanded=False):
+                    st.code(prompt, language=None)
+                
+                # Chain of Thought section
+                st.markdown("**Chain of Thought**")
+                st.markdown(
+                    f"""
+                    <div style="
+                        background: #f6f8fa;
+                        border-left: 4px solid #0969da;
+                        padding: 16px;
+                        margin: 12px 0;
+                        border-radius: 6px;
+                        font-family: 'SF Mono', 'Monaco', 'Inconsolata', monospace;
+                        font-size: 0.9rem;
+                        line-height: 1.6;
+                        white-space: pre-wrap;
+                        word-wrap: break-word;
+                    ">{cot if cot else "(No reasoning captured)"}</div>
+                    """,
+                    unsafe_allow_html=True
+                )
+                
+                # Answer section
+                st.markdown("**Answer**")
+                st.markdown(
+                    f"""
+                    <div style="
+                        background: #dafbe1;
+                        border-left: 4px solid #1a7f37;
+                        padding: 16px;
+                        margin: 12px 0;
+                        border-radius: 6px;
+                        font-family: 'SF Mono', 'Monaco', 'Inconsolata', monospace;
+                        font-size: 1rem;
+                        font-weight: 500;
+                    ">{answer if answer else "(No answer)"}</div>
+                    """,
+                    unsafe_allow_html=True
+                )
+
+
+def render_wandb_style_table(samples_df: pd.DataFrame) -> None:
+    """
+    Render CoT samples in a W&B-style table format with expandable rows.
+    Each row shows truncated text with an expand option to see full content.
+    """
+    if samples_df is None or samples_df.empty:
+        st.info("No samples to display")
+        return
+    
+    # Ensure required columns exist
+    for col in ['step', 'question', 'prompt', 'cot', 'answer', 'training_type']:
+        if col not in samples_df.columns:
+            samples_df[col] = ""
+    
+    # Helper function to truncate text
+    def truncate_text(text, max_length=80):
+        if not text or pd.isna(text):
+            return ""
+        text_str = str(text).strip()
+        if len(text_str) <= max_length:
+            return text_str
+        return text_str[:max_length] + "..."
+    
+    # Prepare data for display table
+    display_data = []
+    for idx, row in samples_df.iterrows():
+        step = int(row.get('step', 0))
+        question = str(row.get('question', ''))
+        prompt = str(row.get('prompt', ''))
+        cot = str(row.get('cot', ''))
+        answer = str(row.get('answer', ''))
+        training_type = str(row.get('training_type', ''))
+        
+        display_data.append({
+            'step': step,
+            'question': truncate_text(question, 100),
+            'prompt': truncate_text(prompt, 100),
+            'cot': truncate_text(cot, 100),
+            'answer': answer,
+            'training_type': training_type,
+            '_full_question': question,
+            '_full_prompt': prompt,
+            '_full_cot': cot,
+            '_idx': idx
+        })
+    
+    display_df = pd.DataFrame(display_data)
+    
+    # Display the table (similar to W&B's runs.history table)
+    st.markdown("**Table: eval/sample_cots**")
+    st.dataframe(
+        display_df[['step', 'question', 'prompt', 'cot', 'answer']],
+        use_container_width=True,
+        height=400,
+        hide_index=True,
+        column_config={
+            'step': st.column_config.NumberColumn('step', width='small'),
+            'question': st.column_config.TextColumn('question', width='medium'),
+            'prompt': st.column_config.TextColumn('prompt', width='medium'),
+            'cot': st.column_config.TextColumn('cot', width='medium'),
+            'answer': st.column_config.TextColumn('answer', width='small'),
+        }
+    )
+    
+    st.markdown("---")
+    st.markdown("### Click to expand rows for full text:")
+    
+    # Display expandable rows for full content (like W&B's expand feature)
+    for idx, row in samples_df.iterrows():
+        step = int(row.get('step', 0))
+        question = str(row.get('question', ''))
+        prompt = str(row.get('prompt', ''))
+        cot = str(row.get('cot', ''))
+        answer = str(row.get('answer', ''))
+        training_type = str(row.get('training_type', ''))
+        
+        # Create expander label with key info
+        question_preview = truncate_text(question, 70)
+        expander_label = f"Row {idx+1}: Step {step} | {question_preview}"
+        
+        with st.expander(expander_label, expanded=False):
+            # Display in a clean format
+            st.markdown(f"**Training Type:** `{training_type}` | **Step:** `{step}`")
+            st.markdown("---")
+            
+            col1, col2 = st.columns([1, 1])
+            
+            with col1:
+                st.markdown("**Question:**")
+                st.code(question, language=None)
+                
+                st.markdown("**Answer:**")
+                st.code(answer, language=None)
+            
+            with col2:
+                st.markdown("**Prompt:**")
+                st.code(prompt, language=None)
+            
+            st.markdown("**Chain of Thought:**")
+            st.code(cot, language=None)
+
+
 def render_cot_comparison(samples: List[Dict]) -> str:
     """
     Render multiple CoT samples for comparison (e.g., across checkpoints).
-    Shows only question, thinking, and answer.
+    Shows question, prompt, thinking, and answer.
     """
     if not samples:
         return "<p>No samples to display</p>"
@@ -1032,6 +1684,7 @@ def render_cot_comparison(samples: List[Dict]) -> str:
     for sample in samples:
         html += render_cot_sample_anthropic_style(
             question=sample.get('question', ''),
+            prompt=sample.get('prompt', ''),
             cot=sample.get('cot', ''),
             answer=sample.get('answer', ''),
             training_type=sample.get('training_type', 'baseline'),
@@ -1126,7 +1779,6 @@ def plot_accuracy_by_step_grouped(data: pd.DataFrame, dataset: str,
         xaxis_title="Training Step",
         yaxis_title="Accuracy (%)",
         barmode='group',
-        yaxis=dict(range=[0, 110]),
         legend=dict(
             orientation="h",
             yanchor="bottom",
@@ -1249,9 +1901,6 @@ def plot_metric_by_dataset(data: pd.DataFrame, dataset: str, metric: str,
         height=500
     )
     
-    if metric == "accuracy":
-        fig.update_yaxes(range=[0, 110])
-    
     return fig
 
 
@@ -1304,6 +1953,12 @@ def plot_cohens_d_by_dataset(data: pd.DataFrame, dataset: str,
             baseline_mean = baseline.get(mean_col)
             baseline_std = baseline.get(std_col, 0.1)
             
+            # Convert to numeric
+            baseline_mean = pd.to_numeric(baseline_mean, errors='coerce')
+            baseline_std = pd.to_numeric(baseline_std, errors='coerce')
+            if pd.isna(baseline_std) or baseline_std == 0:
+                baseline_std = 0.1
+            
             if pd.isna(baseline_mean):
                 continue
             
@@ -1313,6 +1968,12 @@ def plot_cohens_d_by_dataset(data: pd.DataFrame, dataset: str,
             for _, row in tt_data.sort_values('step').iterrows():
                 current_mean = row.get(mean_col)
                 current_std = row.get(std_col, 0.1)
+                
+                # Convert to numeric
+                current_mean = pd.to_numeric(current_mean, errors='coerce')
+                current_std = pd.to_numeric(current_std, errors='coerce')
+                if pd.isna(current_std) or current_std == 0:
+                    current_std = 0.1
                 
                 if pd.notna(current_mean):
                     d = calculate_cohens_d(baseline_mean, baseline_std, current_mean, current_std)
@@ -1355,7 +2016,9 @@ def plot_cohens_d_by_dataset(data: pd.DataFrame, dataset: str,
         )
     )
     
+    # Set y-axis title for all subplots
     fig.update_yaxes(title_text="Cohen's d", row=1, col=1)
+    
     for col_idx in range(1, n_metrics + 1):
         fig.update_xaxes(title_text="Training Step", row=1, col=col_idx)
     
@@ -1482,28 +2145,35 @@ def main():
         )
         
         st.sidebar.markdown("---")
-        st.sidebar.subheader("📊 Per-Dataset Learning Rate")
-        st.sidebar.markdown("*Select learning rate for each dataset*")
-        
-        # Default learning rates per dataset: BA uses 1e-5, CA and SB use 5e-5
-        DEFAULT_LR_PER_DATASET = {
-            "ba": "1e-5",
-            "ca": "5e-5",
-            "sb": "5e-5",
-        }
+        st.sidebar.subheader("📊 Per-Dataset Learning Rate Filter")
+        enable_lr_filter = st.sidebar.checkbox(
+            "Enable LR filtering",
+            value=False,
+            help="If enabled, only show runs matching the selected learning rates. If disabled, show all runs regardless of LR."
+        )
         
         dataset_lr_map = {}
-        for ds in selected_datasets:
-            # Get default LR for this dataset, fallback to 5e-5
-            default_lr = DEFAULT_LR_PER_DATASET.get(ds, "5e-5")
-            default_index = DEFAULT_LEARNING_RATES.index(default_lr) if default_lr in DEFAULT_LEARNING_RATES else 0
-            lr = st.sidebar.selectbox(
-                f"LR for {ds.upper()}",
-                options=DEFAULT_LEARNING_RATES,
-                index=default_index,
-                key=f"lr_{ds}"
-            )
-            dataset_lr_map[ds] = lr
+        if enable_lr_filter:
+            st.sidebar.markdown("*Select learning rate for each dataset*")
+            
+            # Default learning rates per dataset: BA uses 1e-5, CA and SB use 5e-5
+            DEFAULT_LR_PER_DATASET = {
+                "ba": "1e-5",
+                "ca": "5e-5",
+                "sb": "5e-5",
+            }
+            
+            for ds in selected_datasets:
+                # Get default LR for this dataset, fallback to 5e-5
+                default_lr = DEFAULT_LR_PER_DATASET.get(ds, "5e-5")
+                default_index = DEFAULT_LEARNING_RATES.index(default_lr) if default_lr in DEFAULT_LEARNING_RATES else 0
+                lr = st.sidebar.selectbox(
+                    f"LR for {ds.upper()}",
+                    options=DEFAULT_LEARNING_RATES,
+                    index=default_index,
+                    key=f"lr_{ds}"
+                )
+                dataset_lr_map[ds] = lr
         
         generated_projects = []
         for tt in selected_training_types:
@@ -1523,14 +2193,18 @@ def main():
         
         if st.sidebar.button("🔄 Refresh from W&B"):
             st.cache_data.clear()
+            st.rerun()
         
         if generated_projects or projects_to_load:
             final_projects = projects_to_load if projects_to_load else generated_projects
+            # Store projects in session state for use in other tabs
+            st.session_state['wandb_projects'] = final_projects
+            st.session_state['wandb_entity'] = wandb_entity
             selected_states = run_state_options if run_state_options else ["running", "finished"]
             with st.spinner(f"Loading from {len(final_projects)} W&B projects (states: {', '.join(selected_states)})..."):
                 data = load_from_wandb_multi(wandb_entity, final_projects, run_states=selected_states)
             
-            if data is not None:
+            if data is not None and not data.empty:
                 # Show run state distribution if available
                 if 'run_state' in data.columns:
                     state_counts = data['run_state'].value_counts().to_dict()
@@ -1539,13 +2213,17 @@ def main():
                 else:
                     st.sidebar.success(f"Loaded {len(data)} data points")
                 
-                if dataset_lr_map:
+                # Apply LR filtering only if enabled and dataset_lr_map is provided
+                if enable_lr_filter and dataset_lr_map:
                     filtered_rows = []
                     for ds, lr in dataset_lr_map.items():
                         ds_data = data[(data['dataset'] == ds) & (data['learning_rate'] == lr)]
-                        filtered_rows.append(ds_data)
+                        if not ds_data.empty:
+                            filtered_rows.append(ds_data)
                     if filtered_rows:
                         data = pd.concat(filtered_rows, ignore_index=True)
+                    # If filtering resulted in empty data, keep original data
+                    # This allows user to see all data if LR filter matches nothing
     
     else:  # Local Files
         st.sidebar.subheader("Local Settings")
@@ -1554,6 +2232,7 @@ def main():
         
         if st.sidebar.button("🔄 Refresh"):
             st.cache_data.clear()
+            st.rerun()
         
         with st.spinner("Loading local metrics..."):
             data = load_from_local(output_dir)
@@ -1639,18 +2318,35 @@ def main():
             debug_df = pd.DataFrame(st.session_state['wandb_debug_info'])
             st.dataframe(debug_df, use_container_width=True)
             
-            # Show filtering info
-            st.markdown("**After LR filtering:**")
-            st.write(f"Total rows in filtered_data: {len(filtered_data)}")
-            st.write(f"Unique runs: {filtered_data['run_name'].nunique()}")
-            st.write(f"Unique datasets: {filtered_data['dataset'].unique().tolist()}")
-            st.write(f"Unique LRs: {filtered_data['learning_rate'].unique().tolist()}")
+            # Show data info before final filtering
+            st.markdown("**Data loaded from W&B:**")
+            if data is not None and not data.empty:
+                st.write(f"Total rows loaded: {len(data)}")
+                if 'run_name' in data.columns:
+                    st.write(f"Unique runs: {data['run_name'].nunique()}")
+                if 'dataset' in data.columns:
+                    st.write(f"Unique datasets: {sorted(data['dataset'].unique().tolist())}")
+                if 'learning_rate' in data.columns:
+                    st.write(f"Unique LRs: {sorted(data['learning_rate'].unique().tolist())}")
+                if 'training_type' in data.columns:
+                    st.write(f"Unique training types: {sorted(data['training_type'].unique().tolist())}")
             
-            # Show data counts per dataset
-            st.markdown("**Data points per dataset:**")
-            for ds in filtered_data['dataset'].unique():
-                ds_data = filtered_data[filtered_data['dataset'] == ds]
-                st.write(f"  {ds}: {len(ds_data)} rows, steps: {sorted(ds_data['step'].unique().tolist())}")
+            st.markdown("---")
+            st.markdown("**After filtering (training type, dataset, LR):**")
+            if 'filtered_data' in locals() and filtered_data is not None and not filtered_data.empty:
+                st.write(f"Total rows in filtered_data: {len(filtered_data)}")
+                st.write(f"Unique runs: {filtered_data['run_name'].nunique()}")
+                st.write(f"Unique datasets: {filtered_data['dataset'].unique().tolist()}")
+                st.write(f"Unique LRs: {filtered_data['learning_rate'].unique().tolist()}")
+                st.write(f"Unique training types: {filtered_data['training_type'].unique().tolist()}")
+                
+                # Show data counts per dataset
+                st.markdown("**Data points per dataset:**")
+                for ds in filtered_data['dataset'].unique():
+                    ds_data = filtered_data[filtered_data['dataset'] == ds]
+                    st.write(f"  {ds}: {len(ds_data)} rows, steps: {sorted(ds_data['step'].unique().tolist())}")
+            else:
+                st.write("No data after filtering (may have been filtered out)")
         else:
             st.info("No debug info available. Click 'Refresh from W&B' to load data.")
     
@@ -1876,12 +2572,8 @@ def main():
         st.markdown("""
         **Visualize how model reasoning evolves during training.**
         
-        This panel displays questions, chain-of-thought reasoning, and answers in an 
-        [Anthropic-style format](https://docs.anthropic.com/en/docs/build-with-claude/prompt-engineering/chain-of-thought):
-        
-        - **QUESTION**: The input problem
-        - **THINKING**: The model's step-by-step reasoning
-        - **ANSWER**: The final response
+        Navigate through training steps to see how the model's chain-of-thought reasoning and answers change over time.
+        Use the step slider to explore different checkpoints and compare reasoning across training types.
         """)
         
         # Show training type prompts table
@@ -1944,14 +2636,20 @@ def main():
         sample_cots_data = None
         
         if data_source == "W&B":
-            # Try to load from W&B
-            if 'final_projects' in dir() or 'projects_to_load' in dir():
+            # Try to load from W&B using projects from session state
+            projects_for_cots = st.session_state.get('wandb_projects', [])
+            wandb_entity_for_cots = st.session_state.get('wandb_entity', wandb_entity if 'wandb_entity' in locals() else "mliu7")
+            
+            if projects_for_cots:
                 try:
-                    projects_for_cots = projects_to_load if projects_to_load else generated_projects
                     with st.spinner("Loading reasoning examples from W&B..."):
-                        sample_cots_data = load_sample_cots_from_wandb(wandb_entity, projects_for_cots)
+                        sample_cots_data = load_sample_cots_from_wandb(wandb_entity_for_cots, projects_for_cots)
                 except Exception as e:
                     st.warning(f"Error loading from W&B: {e}")
+                    import traceback
+                    st.error(f"Traceback: {traceback.format_exc()}")
+            else:
+                st.info("Please load metrics data first (click 'Refresh from W&B' in the sidebar) to load reasoning examples.")
         else:
             # Load from local files
             try:
@@ -1959,6 +2657,8 @@ def main():
                     sample_cots_data = load_sample_cots_from_local(output_dir)
             except Exception as e:
                 st.warning(f"Error loading local files: {e}")
+                import traceback
+                st.error(f"Traceback: {traceback.format_exc()}")
         
         # Check if we have data
         if sample_cots_data is None or sample_cots_data.empty:
@@ -1982,21 +2682,33 @@ def main():
                 
                 st.markdown("**Check your W&B runs:**")
                 if data_source == "W&B":
-                    for proj in (projects_to_load if projects_to_load else generated_projects):
-                        st.markdown(f"- [{proj}](https://wandb.ai/{wandb_entity}/{proj})")
+                    projects_for_links = st.session_state.get('wandb_projects', [])
+                    wandb_entity_for_links = st.session_state.get('wandb_entity', wandb_entity if 'wandb_entity' in locals() else "mliu7")
+                    for proj in projects_for_links:
+                        st.markdown(f"- [{proj}](https://wandb.ai/{wandb_entity_for_links}/{proj})")
             
         else:
             # We have real data!
             # Check if any invalid samples were filtered
-            filtered_count = getattr(sample_cots_data, 'attrs', {}).get('filtered_invalid_count', 0)
-            if filtered_count > 0:
-                st.success(f"Loaded {len(sample_cots_data)} valid reasoning examples")
-                st.info(f"ℹ️ Filtered out {filtered_count} invalid samples (empty CoT or answer - model exceeded max token budget)")
+            attrs = getattr(sample_cots_data, 'attrs', {})
+            filtered_count = attrs.get('filtered_invalid_count', 0)
+            sampling_note = attrs.get('sampling_note', None)
+            
+            if filtered_count > 0 or sampling_note:
+                messages = []
+                if filtered_count > 0:
+                    messages.append(f"Filtered out {filtered_count} invalid samples (empty CoT or answer)")
+                if sampling_note:
+                    messages.append(sampling_note)
+                
+                st.success(f"Loaded {len(sample_cots_data)} reasoning examples")
+                if messages:
+                    st.info("ℹ️ " + " | ".join(messages))
             else:
                 st.success(f"Loaded {len(sample_cots_data)} reasoning examples")
             
             # Filters
-            col1, col2, col3 = st.columns(3)
+            col1, col2 = st.columns(2)
             
             with col1:
                 available_datasets = sorted(sample_cots_data['dataset'].dropna().unique().tolist())
@@ -2011,28 +2723,11 @@ def main():
                 selected_tt_cot = st.multiselect(
                     "Training Types",
                     options=available_training_types,
-                    default=available_training_types[:2] if len(available_training_types) >= 2 else available_training_types,
+                    default=available_training_types,
                     key="cot_training_types"
                 )
             
-            with col3:
-                available_steps = sorted(sample_cots_data['step'].dropna().unique().tolist())
-                selected_steps_cot = st.multiselect(
-                    "Steps",
-                    options=available_steps,
-                    default=[available_steps[0], available_steps[-1]] if len(available_steps) >= 2 else available_steps,
-                    key="cot_steps"
-                )
-            
-            # Additional options
-            available_questions = sample_cots_data['question_id'].dropna().unique().tolist()[:20]
-            selected_question_id = st.selectbox(
-                "Question ID (filter to specific question)",
-                options=["All"] + list(available_questions),
-                key="cot_question_id"
-            )
-            
-            # Filter data
+            # Filter data by dataset and training type
             filtered_cots = sample_cots_data.copy()
             
             if selected_dataset_cot and selected_dataset_cot != "all":
@@ -2041,123 +2736,30 @@ def main():
             if selected_tt_cot:
                 filtered_cots = filtered_cots[filtered_cots['training_type'].isin(selected_tt_cot)]
             
-            if selected_steps_cot:
-                filtered_cots = filtered_cots[filtered_cots['step'].isin(selected_steps_cot)]
-            
-            if selected_question_id and selected_question_id != "All":
-                filtered_cots = filtered_cots[filtered_cots['question_id'] == selected_question_id]
-            
             if filtered_cots.empty:
                 st.warning("No reasoning examples match the selected filters.")
             else:
-                # Display options
-                display_mode = st.radio(
-                    "Display Mode",
-                    options=["Comparison View", "Single Sample View", "Table View"],
-                    horizontal=True,
-                    key="cot_display_mode"
-                )
+                # Render Anthropic-style step-by-step viewer
+                render_anthropic_style_viewer(filtered_cots)
                 
+                # Download button
                 st.markdown("---")
-                
-                if display_mode == "Comparison View":
-                    # Group by question_id and show evolution across steps/training types
-                    st.subheader("📊 Compare Reasoning Across Training")
-                    
-                    # Get unique question IDs
-                    question_ids = filtered_cots['question_id'].unique()[:5]  # Limit to 5 questions
-                    
-                    for q_id in question_ids:
-                        q_samples = filtered_cots[filtered_cots['question_id'] == q_id]
-                        
-                        if not q_samples.empty:
-                            question_text = q_samples.iloc[0].get('question', f'Question {q_id}')
-                            
-                            with st.expander(f"Question {q_id}: {question_text[:100]}...", expanded=True):
-                                # Convert to list of dicts for rendering
-                                samples_list = []
-                                for _, row in q_samples.iterrows():
-                                    samples_list.append({
-                                        'question': row.get('question', ''),
-                                        'prompt': row.get('prompt', ''),
-                                        'cot': row.get('cot', ''),
-                                        'answer': row.get('answer', ''),
-                                        'training_type': row.get('training_type', 'baseline'),
-                                        'step': row.get('step', 0)
-                                    })
-                                
-                                # Sort by step and training type
-                                samples_list.sort(key=lambda x: (x['step'], x['training_type']))
-                                
-                                # Render comparison
-                                comparison_html = render_cot_comparison(samples_list)
-                                st.markdown(comparison_html, unsafe_allow_html=True)
-                
-                elif display_mode == "Single Sample View":
-                    # Show one sample at a time with full details
-                    st.subheader("🔍 Detailed Sample View")
-                    
-                    sample_idx = st.slider(
-                        "Sample Index",
-                        min_value=0,
-                        max_value=len(filtered_cots) - 1,
-                        value=0,
-                        key="single_sample_idx"
-                    )
-                    
-                    sample = filtered_cots.iloc[sample_idx]
-                    
-                    # Render single sample with full content
-                    single_html = render_cot_sample_anthropic_style(
-                        question=sample.get('question', ''),
-                        cot=sample.get('cot', ''),
-                        answer=sample.get('answer', ''),
-                        training_type=sample.get('training_type', 'baseline'),
-                        step=int(sample.get('step', 0)),
-                        collapsed_cot=False  # Don't collapse in single view
-                    )
-                    st.markdown(single_html, unsafe_allow_html=True)
-                    
-                    # Navigation buttons
-                    col_prev, col_next = st.columns(2)
-                    with col_prev:
-                        if sample_idx > 0:
-                            if st.button("← Previous Sample"):
-                                st.session_state.single_sample_idx = sample_idx - 1
-                                st.rerun()
-                    with col_next:
-                        if sample_idx < len(filtered_cots) - 1:
-                            if st.button("Next Sample →"):
-                                st.session_state.single_sample_idx = sample_idx + 1
-                                st.rerun()
-                
-                else:  # Table View
-                    st.subheader("📋 Reasoning Examples Table")
-                    
-                    # Show as dataframe with selectable columns
-                    display_cols = ['step', 'training_type', 'dataset', 'question_id', 'question', 'answer']
-                    available_cols = [c for c in display_cols if c in filtered_cots.columns]
-                    
-                    st.dataframe(
-                        filtered_cots[available_cols],
-                        use_container_width=True,
-                        height=400
-                    )
-                    
-                    # Allow downloading
-                    csv_cots = filtered_cots.to_csv(index=False)
-                    st.download_button(
-                        label="📥 Download Reasoning Examples CSV",
-                        data=csv_cots,
-                        file_name=f"reasoning_examples_{datetime.now().strftime('%Y%m%d_%H%M%S')}.csv",
-                        mime="text/csv"
-                    )
+                csv_cots = filtered_cots.to_csv(index=False)
+                st.download_button(
+                    label="📥 Download Reasoning Examples CSV",
+                    data=csv_cots,
+                    file_name=f"reasoning_examples_{datetime.now().strftime('%Y%m%d_%H%M%S')}.csv",
+                    mime="text/csv"
+                )
     
     # ==========================================================================
     # Auto-refresh
     # ==========================================================================
     if auto_refresh:
+        # Note: This will cause the page to refresh every 60 seconds
+        # It will pause rendering for 60 seconds before rerunning
         time.sleep(60)
+        st.cache_data.clear()
         st.rerun()
 
 
