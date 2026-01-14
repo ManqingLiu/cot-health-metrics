@@ -557,26 +557,28 @@ def load_from_local(output_dir: str) -> Optional[pd.DataFrame]:
     return None
 
 
-@st.cache_data(ttl=60)
-def load_sample_cots_from_wandb(entity: str, projects: List[str], debug: bool = False) -> Optional[pd.DataFrame]:
+@st.cache_data(ttl=300)  # Cache for 5 minutes to reduce repeated loading
+def load_sample_cots_from_wandb(entity: str, projects: List[str], debug: bool = False, max_runs_per_project: int = 4) -> Optional[pd.DataFrame]:
     """
     Load sample CoTs (prompt, reasoning, answer) from W&B tables.
-    
+
     W&B Tables logged via wandb.log() are stored as media files. We access them via:
     1. Run files (media/table/eval/sample_cots_*.json)
     2. History scan to get step information
-    
+
     Returns DataFrame with columns:
     - step, question_id, question, prompt, cot, answer, training_type, dataset, learning_rate
+
+    Optimized: Limits runs per project to speed up loading.
     """
     try:
         import wandb
         setup_wandb_auth()
         api = wandb.Api()
-        
+
         all_cots = []
         debug_info = []
-        
+
         for project in projects:
             try:
                 project_info = parse_project_name(project)
@@ -603,188 +605,99 @@ def load_sample_cots_from_wandb(entity: str, projects: List[str], debug: bool = 
                             if created_at > existing['created_at']:
                                 runs_by_name[run_name] = {'run': run, 'created_at': created_at}
                 
-                for run_name, run_info in runs_by_name.items():
+                # Limit number of runs to process for performance
+                runs_to_process = list(runs_by_name.items())[:max_runs_per_project]
+
+                for run_name, run_info in runs_to_process:
                     run = run_info['run']
                     run_info_parsed = parse_run_name(run_name)
-                    
+
                     training_type = run_info_parsed.get("training_type") or project_info.get("training_type", "unknown")
                     dataset_name = run_info_parsed.get("dataset_name") or project_info.get("dataset_name", "unknown")
                     learning_rate = run_info_parsed.get("learning_rate", "unknown")
-                    
+
                     tables_found = 0
                     error_messages = []
-                    
-                    # Cache run history once per run (used for step extraction if needed)
-                    run_history_cache = None
+
+                    # Method 1 (PRIMARY): Use scan_history to get tables at ALL steps
+                    # This is more reliable than downloading files and preserves step information
                     try:
-                        history = run.history(keys=["step"])
-                        if not history.empty:
-                            run_history_cache = history['step'].iloc[-1]
-                    except:
-                        run_history_cache = None
-                    
-                    # Method 1: Get tables from run files (media/table/eval/sample_cots_*.json)
-                    try:
-                        # Get all files in the run
-                        files = list(run.files())
-                        
-                        # Look for table files related to sample_cots
-                        table_files = [f for f in files if 'sample_cots' in f.name.lower() and (f.name.endswith('.json') or 'table' in f.name.lower())]
-                        
-                        # Also check media/table/eval/ directory pattern
-                        for file in files:
-                            if 'media/table' in file.name and 'sample_cots' in file.name.lower():
-                                table_files.append(file)
-                        
-                        for file in table_files:
-                            try:
-                                # Download the file
-                                file_path = file.download(replace=True)
-                                
-                                # Try to parse as JSON
-                                with open(file_path.name, 'r', encoding='utf-8') as f:
-                                    content = f.read()
-                                
-                                # Try parsing as JSON
+                        # Scan history to find steps where sample_cots were logged
+                        for row in run.scan_history(keys=["step", "eval/sample_cots"]):
+                            step = row.get("step", 0)
+                            table_ref = row.get("eval/sample_cots")
+
+                            if table_ref is not None:
                                 try:
-                                    table_data = json.loads(content)
-                                    
-                                    # Handle different JSON structures
                                     table_df = None
-                                    if isinstance(table_data, dict):
-                                        # Check if it's a W&B table format with columns and data
-                                        if 'columns' in table_data and 'data' in table_data:
-                                            columns = table_data['columns']
-                                            data = table_data['data']
-                                            table_df = pd.DataFrame(data, columns=columns)
-                                        elif 'data' in table_data and isinstance(table_data['data'], list) and len(table_data['data']) > 0:
-                                            # Might be a list of rows
-                                            if isinstance(table_data['data'][0], dict):
-                                                # List of dicts - convert to DataFrame directly
-                                                table_df = pd.DataFrame(table_data['data'])
-                                            elif isinstance(table_data['data'][0], list):
-                                                # List of lists - need columns
-                                                columns = table_data.get('columns', [f'col_{i}' for i in range(len(table_data['data'][0])) if table_data['data']])
-                                                table_df = pd.DataFrame(table_data['data'], columns=columns)
-                                            else:
-                                                continue
-                                        else:
-                                            # Try to infer structure - single dict as one row
-                                            table_df = pd.DataFrame([table_data])
-                                    elif isinstance(table_data, list):
-                                        # List of dictionaries or lists
-                                        if len(table_data) > 0:
-                                            if isinstance(table_data[0], dict):
-                                                table_df = pd.DataFrame(table_data)
-                                            elif isinstance(table_data[0], list):
-                                                # List of lists - need column names
-                                                columns = [f'col_{i}' for i in range(len(table_data[0]))]
-                                                table_df = pd.DataFrame(table_data, columns=columns)
-                                            else:
-                                                continue
-                                        else:
+                                    # table_ref might be a wandb.Table object, dict, or file path
+                                    if hasattr(table_ref, 'get_dataframe'):
+                                        # It's a wandb.Table object
+                                        table_df = table_ref.get_dataframe()
+                                    elif isinstance(table_ref, dict):
+                                        # It's a dict with columns and data
+                                        if 'columns' in table_ref and 'data' in table_ref:
+                                            table_df = pd.DataFrame(table_ref['data'], columns=table_ref['columns'])
+                                    elif isinstance(table_ref, str):
+                                        # It's a file path - try to download
+                                        try:
+                                            file = run.file(table_ref)
+                                            file_path = file.download(replace=True)
+                                            with open(file_path.name, 'r', encoding='utf-8') as f:
+                                                table_data = json.load(f)
+                                            if 'columns' in table_data and 'data' in table_data:
+                                                table_df = pd.DataFrame(table_data['data'], columns=table_data['columns'])
+                                        except:
                                             continue
-                                    else:
-                                        continue
-                                    
-                                    if table_df is None:
-                                        continue
-                                    
-                                    # Ensure we have a DataFrame
-                                    if not isinstance(table_df, pd.DataFrame) or table_df.empty:
-                                        continue
-                                    
-                                    # Add metadata columns
-                                    table_df['training_type'] = training_type
-                                    table_df['dataset'] = dataset_name
-                                    table_df['learning_rate'] = learning_rate
-                                    table_df['run_name'] = run_name
-                                    
-                                    # Ensure step column exists (might be in the data or need to extract from filename)
-                                    if 'step' not in table_df.columns:
-                                        # Try to extract step from filename or use 0
-                                        step_match = re.search(r'step[_-]?(\d+)', file.name, re.IGNORECASE)
-                                        if step_match:
-                                            table_df['step'] = int(step_match.group(1))
-                                        else:
-                                            # Use cached run history step if available
-                                            if run_history_cache is not None:
-                                                table_df['step'] = run_history_cache
-                                            else:
-                                                table_df['step'] = 0
-                                    
-                                    all_cots.append(table_df)
-                                    tables_found += 1
-                                    
-                                except json.JSONDecodeError:
-                                    # Not JSON, skip
-                                    continue
-                                    
-                            except Exception as e:
-                                error_messages.append(f"File {file.name}: {str(e)}")
-                                continue
-                                
-                    except Exception as e:
-                        error_messages.append(f"File access error: {str(e)}")
-                    
-                    # Method 2: Try to get from history using scan_history
-                    if tables_found == 0:
-                        try:
-                            # Scan history to find steps where sample_cots were logged
-                            for row in run.scan_history(keys=["step", "eval/sample_cots"]):
-                                step = row.get("step", 0)
-                                table_ref = row.get("eval/sample_cots")
-                                
-                                if table_ref is not None:
-                                    try:
-                                        # table_ref might be a wandb.Table object or a dict
-                                        if hasattr(table_ref, 'get_dataframe'):
-                                            # It's a wandb.Table object
-                                            table_df = table_ref.get_dataframe()
-                                        elif isinstance(table_ref, dict):
-                                            # It's a dict with columns and data
-                                            if 'columns' in table_ref and 'data' in table_ref:
-                                                table_df = pd.DataFrame(table_ref['data'], columns=table_ref['columns'])
-                                            else:
-                                                continue
-                                        elif isinstance(table_ref, str):
-                                            # It's a file path - try to download
-                                            try:
-                                                file = run.file(table_ref)
-                                                file_path = file.download(replace=True)
-                                                with open(file_path.name, 'r', encoding='utf-8') as f:
-                                                    table_data = json.load(f)
-                                                if 'columns' in table_data and 'data' in table_data:
-                                                    table_df = pd.DataFrame(table_data['data'], columns=table_data['columns'])
-                                                else:
-                                                    continue
-                                            except:
-                                                continue
-                                        else:
-                                            continue
-                                        
-                                        if table_df.empty:
-                                            continue
-                                        
-                                        # Ensure step column
+
+                                    if table_df is not None and not table_df.empty:
+                                        # Ensure step column from the history step
                                         if 'step' not in table_df.columns:
                                             table_df['step'] = step
-                                        
+
                                         # Add metadata
                                         table_df['training_type'] = training_type
                                         table_df['dataset'] = dataset_name
                                         table_df['learning_rate'] = learning_rate
                                         table_df['run_name'] = run_name
-                                        
+
                                         all_cots.append(table_df)
                                         tables_found += 1
-                                        
-                                    except Exception as e:
-                                        error_messages.append(f"History scan error at step {step}: {str(e)}")
-                                        continue
-                                        
+
+                                except Exception as e:
+                                    error_messages.append(f"History scan error at step {step}: {str(e)}")
+                                    continue
+
+                    except Exception as e:
+                        error_messages.append(f"History scan failed: {str(e)}")
+
+                    # Method 2 (FALLBACK): Get tables from run files if scan_history found nothing
+                    if tables_found == 0:
+                        try:
+                            files = list(run.files())
+                            table_files = [f for f in files if 'sample_cots' in f.name.lower() and f.name.endswith('.json')]
+                            table_files = table_files[:10]  # Limit for performance
+
+                            for file in table_files:
+                                try:
+                                    file_path = file.download(replace=True)
+                                    with open(file_path.name, 'r', encoding='utf-8') as f:
+                                        table_data = json.load(f)
+
+                                    if 'columns' in table_data and 'data' in table_data:
+                                        table_df = pd.DataFrame(table_data['data'], columns=table_data['columns'])
+                                        table_df['training_type'] = training_type
+                                        table_df['dataset'] = dataset_name
+                                        table_df['learning_rate'] = learning_rate
+                                        table_df['run_name'] = run_name
+                                        if 'step' not in table_df.columns:
+                                            table_df['step'] = 0
+                                        all_cots.append(table_df)
+                                        tables_found += 1
+                                except Exception as e:
+                                    error_messages.append(f"File {file.name}: {str(e)}")
                         except Exception as e:
-                            error_messages.append(f"History scan failed: {str(e)}")
+                            error_messages.append(f"File access error: {str(e)}")
                     
                     debug_info.append({
                         'project': project,
@@ -1399,44 +1312,60 @@ def render_anthropic_style_viewer(samples_df: pd.DataFrame) -> None:
                 samples_by_tt_and_step[tt][step] = []
                 sample_indices_by_tt_and_step[tt][step] = []
     
-    # Get all unique questions across all steps and training types
-    # Limit to 1 question for faster rendering
-    all_questions = []
+    # Use question_id for matching across training types (more reliable than question text)
+    # Get all unique question_ids with their question text
+    # Only include questions that have non-empty CoT
+    MAX_QUESTIONS = 5
+    question_info = {}  # {question_id: question_text}
     for tt in all_training_types:
         for step in all_steps:
             for sample in samples_by_tt_and_step[tt].get(step, []):
-                q = sample.get('question', '')
-                if q and q not in all_questions:
-                    all_questions.append(q)
-                    # Only keep the first question to speed up rendering
-                    if len(all_questions) >= 1:
+                qid = sample.get('question_id', '')
+                cot = sample.get('cot', '')
+                # Only include if question_id exists AND CoT is non-empty
+                if qid and qid not in question_info and cot and cot.strip():
+                    question_info[qid] = sample.get('question', f'Question {qid}')
+                    if len(question_info) >= MAX_QUESTIONS:
                         break
-            if len(all_questions) >= 1:
+            if len(question_info) >= MAX_QUESTIONS:
                 break
-        if len(all_questions) >= 1:
+        if len(question_info) >= MAX_QUESTIONS:
             break
-    
-    if not all_questions:
+
+    if not question_info:
         st.warning("No samples available")
         return
-    
-    # Always use the first question (no selector for faster rendering)
-    selected_question = all_questions[0]
-    
-    # Filter samples by selected question
-    # Re-group samples by training type and step, but only for the selected question
+
+    # Question selector
+    question_ids = list(question_info.keys())
+    question_labels = [f"Q{qid}: {question_info[qid][:50]}..." if len(question_info[qid]) > 50
+                       else f"Q{qid}: {question_info[qid]}" for qid in question_ids]
+
+    selected_idx = st.selectbox(
+        "Select Question",
+        options=range(len(question_ids)),
+        format_func=lambda i: question_labels[i],
+        key="question_selector"
+    )
+    selected_question_id = question_ids[selected_idx]
+    selected_question_text = question_info[selected_question_id]
+
+    # Filter samples by question_id (not question text)
     samples_by_tt_and_step_filtered = {}
     for tt in all_training_types:
         samples_by_tt_and_step_filtered[tt] = {}
         for step in all_steps:
             step_samples = samples_by_tt_and_step[tt].get(step, [])
-            # Filter by question
-            filtered_samples = [s for s in step_samples if s.get('question', '') == selected_question]
+            # Filter by question_id for more reliable matching
+            filtered_samples = [s for s in step_samples if s.get('question_id', '') == selected_question_id]
+            # If no match by question_id, just use first sample at this step
+            if not filtered_samples and step_samples:
+                filtered_samples = step_samples[:1]
             samples_by_tt_and_step_filtered[tt][step] = filtered_samples
-    
+
     # Display selected question
     st.markdown("### Question")
-    st.markdown(f"**{selected_question}**")
+    st.markdown(f"**{selected_question_text or 'Sample question'}**")
     st.markdown("---")
     
     # Step navigation slider - only allow available steps (for the selected question)
@@ -2142,7 +2071,7 @@ def main():
         st.sidebar.subheader("📊 Per-Dataset Learning Rate Filter")
         enable_lr_filter = st.sidebar.checkbox(
             "Enable LR filtering",
-            value=False,
+            value=True,
             help="If enabled, only show runs matching the selected learning rates. If disabled, show all runs regardless of LR."
         )
         

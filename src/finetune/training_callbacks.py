@@ -436,7 +436,8 @@ class MetricTrackingCallback(TrainerCallback):
                     columns=["step", "question_id", "question", "prompt", "cot", "answer"],
                     data=cot_data
                 )
-                wandb.log({"eval/sample_cots": cot_table})
+                # Use step in key name to avoid overwriting previous checkpoints
+                wandb.log({f"eval/sample_cots_step{step}": cot_table})
 
         except ImportError:
             pass  # wandb not available
