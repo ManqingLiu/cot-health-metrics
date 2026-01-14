@@ -753,6 +753,35 @@ def load_sample_cots_from_wandb(entity: str, projects: List[str], debug: bool = 
         return None
 
 
+def normalize_question_id(qid) -> float:
+    """
+    Normalize question_id to a numeric value for comparison.
+
+    Handles various formats: int (26), float (26.0), string ("26", "26.0")
+    Returns float for consistent comparison, or float('nan') if not convertible.
+    """
+    if qid is None or qid == '':
+        return float('nan')
+    try:
+        return float(qid)
+    except (ValueError, TypeError):
+        return float('nan')
+
+
+def question_ids_match(qid1, qid2) -> bool:
+    """
+    Compare two question_ids numerically.
+
+    Returns True if both can be converted to the same numeric value.
+    E.g., 26 == "26" == "26.0" == 26.0
+    """
+    norm1 = normalize_question_id(qid1)
+    norm2 = normalize_question_id(qid2)
+    if pd.isna(norm1) or pd.isna(norm2):
+        return False
+    return norm1 == norm2
+
+
 def filter_valid_cot_samples(df: pd.DataFrame) -> pd.DataFrame:
     """
     Filter out invalid CoT samples.
@@ -793,29 +822,33 @@ def filter_valid_cot_samples(df: pd.DataFrame) -> pd.DataFrame:
 
 def sample_cots_per_step(df: pd.DataFrame, n_samples: int = 5, random_seed: int = 42) -> pd.DataFrame:
     """
-    Sample n_samples valid CoTs per step.
-    
-    Groups by step and randomly samples up to n_samples valid CoTs from each step.
-    This helps reduce the amount of data loaded and displayed.
-    
+    Sample n_samples valid CoTs per step AND training_type.
+
+    Groups by step and training_type, then randomly samples up to n_samples valid CoTs
+    from each group. This ensures each training type is represented at each step.
+
     Args:
         df: DataFrame with CoT samples (must have 'step' column)
-        n_samples: Number of samples to keep per step (default: 10)
+        n_samples: Number of samples to keep per step per training_type (default: 5)
         random_seed: Random seed for reproducibility (default: 42)
-    
+
     Returns:
         DataFrame with sampled CoTs
     """
     if df is None or df.empty:
         return df
-    
+
     if 'step' not in df.columns:
         # If no step column, return all data
         return df
-    
-    # Group by step and sample
+
+    # Group by step AND training_type to ensure each training type is represented
+    group_cols = ['step']
+    if 'training_type' in df.columns:
+        group_cols.append('training_type')
+
     sampled_dfs = []
-    for step, group in df.groupby('step'):
+    for group_key, group in df.groupby(group_cols):
         if len(group) > n_samples:
             # Randomly sample n_samples
             sampled = group.sample(n=n_samples, random_state=random_seed)
@@ -823,7 +856,7 @@ def sample_cots_per_step(df: pd.DataFrame, n_samples: int = 5, random_seed: int 
             # Keep all if we have fewer than n_samples
             sampled = group
         sampled_dfs.append(sampled)
-    
+
     if sampled_dfs:
         result = pd.concat(sampled_dfs, ignore_index=True)
         return result
@@ -1312,29 +1345,78 @@ def render_anthropic_style_viewer(samples_df: pd.DataFrame) -> None:
                 samples_by_tt_and_step[tt][step] = []
                 sample_indices_by_tt_and_step[tt][step] = []
     
-    # Use question_id for matching across training types (more reliable than question text)
-    # Get all unique question_ids with their question text
-    # Only include questions that have non-empty CoT
+    # Use question_id for matching across training types
+    # Tiered approach: prefer questions with ALL training types, fall back to partial coverage
     MAX_QUESTIONS = 5
-    question_info = {}  # {question_id: question_text}
+
+    # Step 1: Collect all (normalized_qid, step) pairs with non-empty CoT per training type
+    qid_steps_by_tt = {}  # {training_type: {normalized_qid: set of steps}}
+    qid_to_original = {}  # {normalized_qid: (original_qid, question_text)}
+
     for tt in all_training_types:
+        qid_steps_by_tt[tt] = {}
         for step in all_steps:
             for sample in samples_by_tt_and_step[tt].get(step, []):
                 qid = sample.get('question_id', '')
                 cot = sample.get('cot', '')
-                # Only include if question_id exists AND CoT is non-empty
-                if qid and qid not in question_info and cot and cot.strip():
-                    question_info[qid] = sample.get('question', f'Question {qid}')
-                    if len(question_info) >= MAX_QUESTIONS:
-                        break
+                normalized_qid = normalize_question_id(qid)
+                if qid and not pd.isna(normalized_qid) and cot and cot.strip():
+                    if normalized_qid not in qid_steps_by_tt[tt]:
+                        qid_steps_by_tt[tt][normalized_qid] = set()
+                    qid_steps_by_tt[tt][normalized_qid].add(step)
+                    if normalized_qid not in qid_to_original:
+                        qid_to_original[normalized_qid] = (qid, sample.get('question', f'Question {qid}'))
+
+    # Step 2: Try to find questions with data in ALL training types (strict mode)
+    question_info = {}
+    use_strict_mode = False
+
+    if all_training_types:
+        common_qids = set(qid_steps_by_tt[all_training_types[0]].keys())
+        for tt in all_training_types[1:]:
+            common_qids &= set(qid_steps_by_tt[tt].keys())
+
+        # Check if common questions have overlapping steps
+        for normalized_qid in common_qids:
+            steps_with_all_data = set(all_steps)
+            for tt in all_training_types:
+                steps_with_all_data &= qid_steps_by_tt[tt].get(normalized_qid, set())
+            if steps_with_all_data:
+                original_qid, question_text = qid_to_original[normalized_qid]
+                question_info[original_qid] = question_text
+                if len(question_info) >= MAX_QUESTIONS:
+                    break
+
+        if question_info:
+            use_strict_mode = True
+
+    # Step 3: Fallback - if no common questions, use questions from ANY training type
+    if not question_info:
+        use_strict_mode = False
+        seen_normalized_qids = set()
+        for tt in all_training_types:
+            for step in all_steps:
+                for sample in samples_by_tt_and_step[tt].get(step, []):
+                    qid = sample.get('question_id', '')
+                    cot = sample.get('cot', '')
+                    normalized_qid = normalize_question_id(qid)
+                    if qid and not pd.isna(normalized_qid) and normalized_qid not in seen_normalized_qids and cot and cot.strip():
+                        question_info[qid] = sample.get('question', f'Question {qid}')
+                        seen_normalized_qids.add(normalized_qid)
+                        if len(question_info) >= MAX_QUESTIONS:
+                            break
+                if len(question_info) >= MAX_QUESTIONS:
+                    break
             if len(question_info) >= MAX_QUESTIONS:
                 break
-        if len(question_info) >= MAX_QUESTIONS:
-            break
 
     if not question_info:
         st.warning("No samples available")
         return
+
+    # Show mode indicator
+    if not use_strict_mode:
+        st.info("ℹ️ Showing questions with partial training type coverage. Some tabs may show 'No data'.")
 
     # Question selector
     question_ids = list(question_info.keys())
@@ -1350,22 +1432,32 @@ def render_anthropic_style_viewer(samples_df: pd.DataFrame) -> None:
     selected_question_id = question_ids[selected_idx]
     selected_question_text = question_info[selected_question_id]
 
-    # Filter samples by question_id (not question text)
+    # Filter samples by question_id (using numeric comparison for robustness)
     samples_by_tt_and_step_filtered = {}
     for tt in all_training_types:
         samples_by_tt_and_step_filtered[tt] = {}
         for step in all_steps:
             step_samples = samples_by_tt_and_step[tt].get(step, [])
-            # Filter by question_id for more reliable matching
-            filtered_samples = [s for s in step_samples if s.get('question_id', '') == selected_question_id]
-            # If no match by question_id, just use first sample at this step
-            if not filtered_samples and step_samples:
-                filtered_samples = step_samples[:1]
+            # Filter by question_id using numeric comparison (handles int/float/string formats)
+            filtered_samples = [s for s in step_samples if question_ids_match(s.get('question_id', ''), selected_question_id)]
             samples_by_tt_and_step_filtered[tt][step] = filtered_samples
 
     # Display selected question
     st.markdown("### Question")
-    st.markdown(f"**{selected_question_text or 'Sample question'}**")
+    st.markdown(
+        f"""
+        <div style="
+            background: #f8f9fa;
+            border-left: 4px solid #6c757d;
+            padding: 16px;
+            margin: 12px 0;
+            border-radius: 6px;
+            font-size: 1rem;
+            line-height: 1.6;
+        ">{selected_question_text or 'Sample question'}</div>
+        """,
+        unsafe_allow_html=True
+    )
     st.markdown("---")
     
     # Step navigation slider - only allow available steps (for the selected question)
@@ -1422,33 +1514,27 @@ def render_anthropic_style_viewer(samples_df: pd.DataFrame) -> None:
     st.markdown(f"Available steps: {', '.join(step_indicators)}")
     st.markdown("---")
     
-    # Create columns for comparison (up to 2 training types side by side)
+    # Always use tabs for training types comparison
     if len(all_training_types) == 1:
-        cols = [st.container()]
-    elif len(all_training_types) == 2:
-        cols = st.columns(2)
+        tabs = [st.container()]
     else:
-        # For more than 2, use tabs
         tabs = st.tabs(all_training_types)
-        cols = [tabs[i] for i in range(len(all_training_types))]
-    
+
     for idx, tt in enumerate(all_training_types):
-        with cols[min(idx, len(cols)-1)]:
+        with tabs[idx]:
             samples = samples_by_tt_and_step_filtered[tt].get(selected_step, [])
-            
-            st.markdown(f"**{tt.upper()}**")
-            
+
             if not samples:
                 st.info(f"No data for step {selected_step}")
             else:
                 # Only 1 sample per step/training type (limited for performance)
                 sample = samples[0]
-                
+
                 # Display in Anthropic-style format
                 prompt = str(sample.get('prompt', ''))
                 cot = str(sample.get('cot', ''))
                 answer = str(sample.get('answer', ''))
-                
+
                 # Prompt section
                 with st.expander("📝 Prompt", expanded=False):
                     st.code(prompt, language=None)
@@ -2688,3 +2774,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
