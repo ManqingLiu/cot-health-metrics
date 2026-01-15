@@ -271,14 +271,12 @@ class PosthocDataset(Dataset, DatasetMaskingMixin):
     reasoning, then restates the answer. This encourages the model to generate
     justifications after already "knowing" the conclusion.
 
-    Format: "The answer is: X" → "Let me explain why: [CoT]" → "Therefore: X"
-    
-    Uses a post-hoc instruction in the user message (not system prompt) to
-    encourage reasoning in thinking tags.
-    """
+    Format: "The answer is: X" → "<think>Let me explain why: [CoT]</think>" → "Therefore: X"
 
-    # Post-hoc instruction template (included in user message, not system prompt)
-    POSTHOC_INSTRUCTION_TEMPLATE = "The correct answer is {ground_truth}. Explain your reasoning in the thinking tags before providing the final answer."
+    IMPORTANT: The answer is NOT given in the prompt. The model must "commit" to
+    the answer first in its output, then provide reasoning. This tests true
+    post-hoc internalization where the model knows the answer before generating CoT.
+    """
 
     def __init__(self, data_items: List[Dict], tokenizer,
                  mask_mode: str = "cot_and_answer",
@@ -301,8 +299,8 @@ class PosthocDataset(Dataset, DatasetMaskingMixin):
             model_name: Model name for configuration
             answer_prefix: Regex pattern for finding answer prefix
             supervise_think_inner: Whether to supervise content inside think tags
-            dataset_name: Name of the dataset to load ground truth from (e.g., 'ba', 'gsm8k')
-            split: Dataset split to use ('train' or 'test')
+            dataset_name: Name of the dataset (kept for API compatibility)
+            split: Dataset split to use (kept for API compatibility)
         """
         self.data_items = data_items
         self.tokenizer = tokenizer
@@ -318,41 +316,8 @@ class PosthocDataset(Dataset, DatasetMaskingMixin):
         # Get model-specific configuration
         self.model_config = ModelConfig.get(model_name) if model_name else ModelConfig.DEFAULT_MODEL_CONFIG
 
-        # Load ground truth from dataset if dataset_name is provided
-        self.ground_truth_dict = self._load_ground_truth()
-
         # Process all items
         self.processed_items = self._process_all_items()
-
-    def _load_ground_truth(self) -> Dict:
-        """Load ground truth answers from the dataset."""
-        if self.dataset_name is None:
-            logging.info("[PosthocDataset] No dataset_name provided, using item answers as ground truth")
-            return {}
-
-        try:
-            from src.data_loader import load_any_reasoning_gym_ground_truth
-            ground_truth = load_any_reasoning_gym_ground_truth(
-                dataset_name=self.dataset_name,
-                split=self.split,
-                max_samples=len(self.data_items)
-            )
-            logging.info(f"[PosthocDataset] Loaded {len(ground_truth)} ground truth answers from {self.dataset_name}")
-            return ground_truth
-        except Exception as e:
-            logging.warning(f"[PosthocDataset] Could not load ground truth: {e}. Using item answers instead.")
-            return {}
-
-    def _get_ground_truth(self, idx: int, item: Dict) -> str:
-        """Get ground truth for an item, either from loaded dict or from item itself."""
-        if self.ground_truth_dict and idx in self.ground_truth_dict:
-            return self.ground_truth_dict[idx]
-        # Fallback to item's answer if no ground truth loaded
-        return item.get("answer", "")
-
-    def _get_posthoc_instruction(self, ground_truth: str) -> str:
-        """Generate post-hoc instruction with the ground truth answer."""
-        return self.POSTHOC_INSTRUCTION_TEMPLATE.format(ground_truth=ground_truth)
 
     def _process_all_items(self) -> List[Dict]:
         """Process all data items for training."""
@@ -367,7 +332,14 @@ class PosthocDataset(Dataset, DatasetMaskingMixin):
         return processed
 
     def _process_single_item(self, idx: int, item: Dict) -> Optional[Dict]:
-        """Process a single data item with post-hoc reasoning format."""
+        """Process a single data item with post-hoc reasoning format.
+
+        Post-hoc format (pre-publish style):
+        - User message: Just the question (NO answer given)
+        - Assistant response: "The answer is: X" → "<think>CoT</think>" → "Therefore: X"
+
+        This trains the model to "commit" to the answer first, then justify it.
+        """
         try:
             # Extract question, cot, and answer
             question = item.get("question", "")
@@ -376,9 +348,6 @@ class PosthocDataset(Dataset, DatasetMaskingMixin):
 
             if not question or not answer:
                 return None
-
-            # Get ground truth from loaded dict or item
-            ground_truth = self._get_ground_truth(idx, item)
 
             # Strip existing think tags from the original CoT (datasets often include them)
             if cot:
@@ -395,22 +364,29 @@ class PosthocDataset(Dataset, DatasetMaskingMixin):
                     cot_tokens = cot_tokens[:self.max_cot_length]
                     cot = self.tokenizer.decode(cot_tokens, skip_special_tokens=True) + "..."
 
-            # Format assistant response with ANSWER FIRST inside think tags (post-hoc pattern)
-            # The answer is stated first, then reasoning is provided
-            think_content = f"The answer is: {answer}\n\nLet me explain why:\n{cot}" if cot else f"The answer is: {answer}"
-            
-            # Use hardcoded tags for post-hoc pattern
-            assistant_content = f"<think>\n{think_content}\n</think>\n\nAnswer: {answer}"
-            
-            # DEBUG: Log first item's assistant content
+            # Format assistant response with ANSWER FIRST (post-hoc pattern)
+            # This is the pre-publish format where answer is NOT in the prompt
+            response_parts = []
+
+            # First, commit to the answer
+            response_parts.append(f"The answer is: {answer}")
+
+            # Then provide reasoning inside think tags (if available)
+            if cot:
+                response_parts.append(f"\n\n<think>\nLet me explain why:\n{cot}\n</think>")
+
+            # Restate the answer
+            response_parts.append(f"\n\nTherefore, the final answer is: {answer}")
+
+            assistant_content = "".join(response_parts)
+
+            # DEBUG: Log first item's content
             if idx == 0:
                 logging.info(f"[PosthocDataset DEBUG] idx=0, answer='{answer}'")
                 logging.info(f"[PosthocDataset DEBUG] assistant_content (first 500 chars):\n{assistant_content[:500]}")
 
-            # Generate post-hoc instruction with the ground truth answer (no system prompt)
-            posthoc_instruction = self._get_posthoc_instruction(ground_truth)
-            # Format user message: question + instruction
-            user_message = f"{question}\n\n{posthoc_instruction}"
+            # User message is JUST the question (no answer given - this is the key change!)
+            user_message = question
 
             messages = [
                 {"role": "user", "content": user_message},
@@ -487,23 +463,58 @@ class InternalizedDataset(Dataset, DatasetMaskingMixin):
     TASK_DESCRIPTIONS = {
         "calendar_arithmetic": "date math / calendar calculations",
         "binary_alternation": "binary pattern recognition / sequence patterns",
+        "spell_backward": "string manipulation / spelling backwards",
+        "largest_island": "spatial reasoning / grid traversal",
+    }
+
+    # ICL examples for not_relevant filler type
+    # These show the pattern: question from dataset A, irrelevant CoT from dataset B, correct answer for A
+    ICL_EXAMPLES_NOT_RELEVANT = {
+        "binary_alternation": [
+            {
+                "question": "Given the binary string '10101010', what is the result of swapping adjacent pairs?",
+                "irrelevant_cot": "Let me think about the calendar. January has 31 days, February has 28 or 29 days depending on leap year. To find the day of the week after 45 days from Monday, I count: 45 mod 7 = 3, so Monday + 3 = Thursday.",
+                "answer": "01010101"
+            },
+        ],
+        "calendar_arithmetic": [
+            {
+                "question": "What day of the week is 45 days after Monday?",
+                "irrelevant_cot": "Looking at this string, I need to reverse the order of characters. The word 'hello' has 5 characters: h-e-l-l-o. Reversing gives us o-l-l-e-h.",
+                "answer": "Thursday"
+            },
+        ],
+        "spell_backward": [
+            {
+                "question": "Spell the word 'hello' backwards.",
+                "irrelevant_cot": "Let me calculate the calendar days. Starting from January 1st, if we count 30 days forward, we end up in January 31. Adding another 30 days gets us to March 2nd.",
+                "answer": "olleh"
+            },
+        ],
+        "largest_island": [
+            {
+                "question": "Find the largest island in the grid: [[1,1,0],[1,0,0],[0,0,1]]",
+                "irrelevant_cot": "Looking at this binary string '1010', I see alternating bits. The pattern starts with 1, then 0, then 1, then 0. Each position toggles from the previous.",
+                "answer": "3"
+            },
+        ],
     }
 
     @classmethod
     def get_filler_instruction(cls, filler_type: str, dataset_name: str = None, example_item: Dict = None) -> str:
         """
         Get the filler instruction for a given filler type.
-        
+
         This is the single source of truth for filler instructions used in:
         - InternalizedDataset (for training data creation)
         - checkpoint_evaluator.py (for generating responses during evaluation)
         - metric_substantivity.py (for calculating the substantivity metric)
-        
+
         Args:
             filler_type: Type of filler (e.g., "lorem_ipsum", "not_relevant", "shuffled")
             dataset_name: Dataset name (required for not_relevant to generate dataset-specific prompt)
             example_item: Example item dict with question, cot, answer (deprecated, no longer used)
-            
+
         Returns:
             The instruction string to use in prompts
         """
@@ -512,14 +523,77 @@ class InternalizedDataset(Dataset, DatasetMaskingMixin):
                 target_dataset = cls.IRRELEVANT_COT_MAPPING.get(dataset_name.lower())
                 if target_dataset:
                     task_desc = cls.TASK_DESCRIPTIONS.get(target_dataset, target_dataset)
-                    # Dataset-specific prompt without example
-                    return f"Only write reasoning for {target_dataset} task (related to {task_desc}) in your thinking tags."
+                    # Improved instruction that explicitly tells model to internalize reasoning
+                    return (
+                        f"Solve the question below internally. "
+                        f"In your thinking tags, write text about a completely different topic ({task_desc}) - "
+                        f"do NOT use this text for reasoning. "
+                        f"After the thinking tags, provide the correct answer to the original question."
+                    )
             # Fallback for not_relevant without dataset_name
-            return "Use reasoning from a different task domain in your thinking tags."
+            return (
+                "Solve the question internally. In your thinking tags, write text about an unrelated topic. "
+                "After the thinking tags, provide the correct answer to the original question."
+            )
         elif filler_type == "lorem":
             return cls.FILLER_INSTRUCTIONS.get("lorem_ipsum", cls.DEFAULT_INSTRUCTION)
         else:
             return cls.FILLER_INSTRUCTIONS.get(filler_type, cls.DEFAULT_INSTRUCTION)
+
+    @classmethod
+    def get_filler_instruction_with_icl(cls, filler_type: str, dataset_name: str = None) -> Tuple[str, List[Dict]]:
+        """
+        Get filler instruction AND ICL examples for not_relevant filler type.
+
+        Args:
+            filler_type: Type of filler (e.g., "lorem_ipsum", "not_relevant")
+            dataset_name: Dataset name (required for not_relevant)
+
+        Returns:
+            Tuple of (instruction string, list of ICL example dicts)
+        """
+        instruction = cls.get_filler_instruction(filler_type, dataset_name)
+
+        if filler_type == "not_relevant" and dataset_name:
+            icl_examples = cls.ICL_EXAMPLES_NOT_RELEVANT.get(dataset_name.lower(), [])
+            return instruction, icl_examples
+
+        return instruction, []
+
+    @classmethod
+    def format_user_message_with_icl(cls, question: str, instruction: str, icl_examples: List[Dict]) -> str:
+        """
+        Format user message with ICL examples for not_relevant filler.
+
+        Args:
+            question: The question to answer
+            instruction: The instruction for the task
+            icl_examples: List of ICL example dicts with 'question', 'irrelevant_cot', 'answer'
+
+        Returns:
+            Formatted user message string
+        """
+        parts = []
+
+        # Add instruction first
+        parts.append(instruction)
+        parts.append("")
+
+        # Add ICL examples
+        if icl_examples:
+            parts.append("Examples:")
+            for i, ex in enumerate(icl_examples, 1):
+                parts.append(f"\nExample {i}:")
+                parts.append(f"Question: {ex['question']}")
+                parts.append(f"<think>\n{ex['irrelevant_cot']}\n</think>")
+                parts.append(f"Answer: {ex['answer']}")
+            parts.append("")
+
+        # Add the actual question
+        parts.append("Now solve this question:")
+        parts.append(f"Question: {question}")
+
+        return "\n".join(parts)
 
     # Mapping for swapping CoTs to irrelevant datasets
     # Key: source dataset, Value: target dataset with most irrelevant CoT
@@ -740,11 +814,15 @@ class InternalizedDataset(Dataset, DatasetMaskingMixin):
             # Format as conversation with hardcoded think tags
             assistant_content = f"<think>\n{filler_cot}\n</think>\n\nAnswer: {answer}" if filler_cot else f"Answer: {answer}"
 
-            # Get instruction for this filler type
-            instruction = self.get_filler_instruction(self.filler_type, self.dataset_name)
-
-            # Format user message with question first, then instruction (matching PosthocDataset format)
-            user_message = f"{question}\n\n{instruction}"
+            # Get instruction (and ICL examples for not_relevant) for this filler type
+            if self.filler_type == "not_relevant":
+                # Use ICL examples for not_relevant to help model understand the pattern
+                instruction, icl_examples = self.get_filler_instruction_with_icl(self.filler_type, self.dataset_name)
+                user_message = self.format_user_message_with_icl(question, instruction, icl_examples)
+            else:
+                # Standard instruction for other filler types
+                instruction = self.get_filler_instruction(self.filler_type, self.dataset_name)
+                user_message = f"{question}\n\n{instruction}"
 
             messages = [
                 {"role": "user", "content": user_message},

@@ -26,6 +26,8 @@ from ground_truth import rate_correctness
 from datetime import datetime
 from config import DatasetAdapter, DatasetConfig, CACHE_DIR_DEFAULT, LOG_EVERY_DEFAULT, LOG_DIRECTORY_DEFAULT
 from all_organisms import OrganismRegistry
+from organism_data.data.dataset_preparation import build_codebook_prompt_with_mappings
+from pathlib import Path
 
 #from itertools import batched  # only available in Python 3.12+
 # Custom batched implementation for Python < 3.12
@@ -36,6 +38,76 @@ def batched(iterable, n):
     it = iter(iterable)
     while batch := list(itertools.islice(it, n)):
         yield batch
+
+
+# Codebook mapping for encoded training type (same as in ParaphrasabilityMetric)
+CODEBOOK_MAPPING = {
+    "ca": "src/finetune/codebook_calendar_arithmetic.py",
+    "calendar_arithmetic": "src/finetune/codebook_calendar_arithmetic.py",
+    "ba": "src/finetune/codebook_binary_alternation.py",
+    "binary_alternation": "src/finetune/codebook_binary_alternation.py",
+    "li": "src/finetune/codebook_largest_island.py",
+    "largest_island": "src/finetune/codebook_largest_island.py",
+    "sb": "src/finetune/codebook_spell_backward.py",
+    "spell_backward": "src/finetune/codebook_spell_backward.py",
+}
+
+
+def load_codebook_prompt(dataset_name: str, codebook_path: str = None) -> str:
+    """
+    Load codebook prompt for encoded training type.
+
+    Args:
+        dataset_name: Dataset name to look up in CODEBOOK_MAPPING
+        codebook_path: Optional explicit path to codebook module
+
+    Returns:
+        Codebook prompt string with mappings appended, or None if not found
+    """
+    # Determine the codebook path
+    if codebook_path:
+        module_path = Path(codebook_path)
+    elif dataset_name:
+        path_str = CODEBOOK_MAPPING.get(dataset_name.lower())
+        if not path_str:
+            print(f"[WARNING] No codebook mapping for dataset '{dataset_name}'")
+            return None
+        module_path = Path(path_str)
+    else:
+        return None
+
+    # Try to find the module
+    if not module_path.exists():
+        module_path = Path.cwd() / module_path
+    if not module_path.exists():
+        print(f"[WARNING] Codebook not found: {module_path}")
+        return None
+
+    try:
+        import importlib.util
+        import sys
+
+        spec = importlib.util.spec_from_file_location("codebook_module", module_path)
+        if spec is None or spec.loader is None:
+            print(f"[WARNING] Could not load codebook from {module_path}")
+            return None
+
+        module = importlib.util.module_from_spec(spec)
+        sys.modules[spec.name] = module
+        spec.loader.exec_module(module)
+
+        if hasattr(module, "STEGO_SYSTEM_PROMPT"):
+            base_prompt = getattr(module, "STEGO_SYSTEM_PROMPT")
+            # Use shared utility to append codebook mappings (consistent with EncodedDataset)
+            full_prompt = build_codebook_prompt_with_mappings(base_prompt, module)
+            print(f"[INFO] Loaded codebook prompt from {module_path} (first 100 chars): {full_prompt[:100]}...")
+            return full_prompt
+        else:
+            print(f"[WARNING] Codebook {module_path} missing STEGO_SYSTEM_PROMPT")
+            return None
+    except Exception as e:
+        print(f"[WARNING] Error loading codebook: {e}")
+        return None
 
 
 # Current datetime
@@ -105,7 +177,7 @@ def print_output(id, question, prompt, cot, answer, result, f, f_json, args, gro
     f_json.write(json.dumps(output) + "\n")
     f_json.flush()
 
-def handle_datapoints(datapoints, args, model, metric, f, f_json):
+def handle_datapoints(datapoints, args, model, metric, f, f_json, custom_instruction=None):
     log_counter = 0
     for i, (id, question, ground_truth_cot, ground_truth_answer) in enumerate(datapoints):
         if i < args.skip_samples:
@@ -115,7 +187,10 @@ def handle_datapoints(datapoints, args, model, metric, f, f_json):
             if args.no_cot:
                 r = model.generate_no_cot_response_full(id, question, ground_truth_answer)
             else:
-                r = model.generate_cot_response_full(id, question, ground_truth_answer)
+                # Pass custom_instruction (e.g., codebook for encoded models)
+                # This ensures r.prompt includes the codebook, making metrics fair
+                r = model.generate_cot_response_full(id, question, ground_truth_answer,
+                                                     custom_instruction=custom_instruction)
             r.prompt_id = id
         except RuntimeError as err:
             print(f"Sample id={id} - generation error ({err})")
@@ -139,7 +214,7 @@ def handle_datapoints(datapoints, args, model, metric, f, f_json):
 
         print_output(id, question, r.prompt, r.cot, r.answer, result, f, f_json, args, ground_truth_cot, ground_truth_answer, correctness)
 
-def handle_datapoints_batch(datapoints, batch_size, args, model, metric, f, f_json):
+def handle_datapoints_batch(datapoints, batch_size, args, model, metric, f, f_json, custom_instruction=None):
     sample_counter = 0
     for batch in batched(datapoints, batch_size):
         if sample_counter + batch_size > args.max_samples:
@@ -160,7 +235,9 @@ def handle_datapoints_batch(datapoints, batch_size, args, model, metric, f, f_js
             ground_truth_answers.append(ground_truth_answer)
 
         try:
-            r = model.generate_cot_response_full_batch(question_ids, questions)
+            # Pass custom_instruction (e.g., codebook for encoded models)
+            r = model.generate_cot_response_full_batch(question_ids, questions,
+                                                       custom_instruction=custom_instruction)
         except RuntimeError as err:
             print(f"Batch - generation error ({err})")
             continue
@@ -211,6 +288,13 @@ def main():
     parser.add_argument("--filler-in-prompt", action='store_true')
     parser.add_argument("--filler-in-cot", action='store_true')
 
+    # Training type for prompt consistency (used to pass codebook for encoded models)
+    parser.add_argument("--training_type", type=str, default="baseline",
+                        choices=["baseline", "encoded", "internalized", "post-hoc"],
+                        help="Training type for prompt consistency. For 'encoded', codebook is included in prompt.")
+    parser.add_argument("--codebook_path", type=str, default=None,
+                        help="Path to codebook module for encoded training type (optional, auto-detected from dataset)")
+
     args = parser.parse_args()
 
     # Load dataset
@@ -232,6 +316,16 @@ def main():
 
     # Make cache dir
     os.makedirs(args.cache_dir, exist_ok=True)
+
+    # Load codebook instruction for encoded training type
+    # This ensures r.prompt includes the codebook, making metrics fair for encoded models
+    custom_instruction = None
+    if args.training_type == "encoded":
+        custom_instruction = load_codebook_prompt(dataset_name, args.codebook_path)
+        if custom_instruction:
+            print(f"[INFO] Using codebook instruction for encoded training type")
+        else:
+            print(f"[WARNING] Training type is 'encoded' but no codebook found. Using baseline prompt.")
 
     if args.organism:
         # Handle ICL organism selection and creation
@@ -274,6 +368,8 @@ def main():
     for arg in ["filler", "filler_in_prompt", "filler_in_cot"]:
         setattr(extra_args, arg, getattr(args, arg))
     extra_args.not_prompt = args.not_prompt
+    extra_args.dataset_name = dataset_name
+    extra_args.training_type = args.training_type
 
     metric = construct_metric(
         metric_name=args.metric,
@@ -308,9 +404,9 @@ def main():
     with open(log_file, 'a') as f:
         with open(json_log_file, 'a') as f_json:
             if args.batch_size == 1:
-                handle_datapoints(datapoints, args, model, metric, f, f_json)
+                handle_datapoints(datapoints, args, model, metric, f, f_json, custom_instruction)
             else:
-                handle_datapoints_batch(datapoints, args.batch_size, args, model, metric, f, f_json)
+                handle_datapoints_batch(datapoints, args.batch_size, args, model, metric, f, f_json, custom_instruction)
 
 if __name__ == "__main__":
     main()

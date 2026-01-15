@@ -230,8 +230,8 @@ def main():
                         help="Number of GPUs for vLLM tensor parallelism")
     parser.add_argument("--vllm_max_lora_rank", type=int, default=64,
                         help="Maximum LoRA rank for vLLM")
-    parser.add_argument("--max_new_tokens", type=int, default=2049,
-                        help="Maximum new tokens to generate during inference (default: 2049, optimized for longer responses)")
+    parser.add_argument("--max_new_tokens", type=int, default=4096,
+                        help="Maximum new tokens to generate during inference (default: 4096 to avoid truncating long CoT)")
 
     args = parser.parse_args()
 

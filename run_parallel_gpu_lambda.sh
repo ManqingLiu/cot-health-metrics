@@ -569,14 +569,18 @@ DATASETS=("ba" "ca" "sb")
 # Training configuration for accuracy optimization
 NUM_EPOCHS=1                    # Single epoch for faster iteration
 MAX_SAMPLES=5000                # Training samples
-METRIC_EVAL_SAMPLES=100        # More eval samples for reliable accuracy measurement
-MAX_NEW_TOKENS=2049             # Maximum tokens to generate during inference (increased for longer responses)
+METRIC_EVAL_SAMPLES=100         # Eval samples for reliable accuracy measurement
+MAX_NEW_TOKENS=4096             # Maximum tokens to generate during inference
+                                # IMPORTANT: BA dataset has CoT up to ~3100 tokens, CA up to ~2800 tokens
+                                # Setting to 4096 ensures no truncation and preserves accuracy
+                                # Speed impact is minimal since most samples don't use full limit
 BATCH_SIZE=12                   # Batch size for evaluation (optimized for Qwen3-4B on 80GB GPUs, safe from OOM)
 # Note: --gradient_checkpointing is enabled below to reduce memory (~30-50% reduction)
 
 # Number of checkpoints to track accuracy progression throughout training
 # Note: Step 0 (baseline before training) is automatically evaluated
-NUM_CHECKPOINTS=5               # Track at 20%, 40%, 60%, 80%, 100% of training
+NUM_CHECKPOINTS=4               # Track at 25%, 50%, 75%, 100% of training (reduced from 5 for faster jobs)
+                                # Total evaluations: 5 (step 0 + 4 checkpoints)
 
 # Learning rate configuration per dataset
 # BA uses 1e-5, CA and SB use 5e-5
@@ -883,6 +887,9 @@ echo "  - $TOTAL_SLOTS jobs run in parallel across $NUM_GPUS GPU(s)"
 echo "  - Remaining jobs queued and start as slots free up"
 echo "  - Step 0 baseline evaluated BEFORE training starts"
 echo "  - Accuracy tracked at $NUM_CHECKPOINTS checkpoints per run"
+echo "  - Estimated time per job: 1.5-3 hours (training + evaluation)"
+echo "    - Training: ~30-90 min (5000 samples with LoRA)"
+echo "    - Evaluation: ~30-60 min (5 checkpoints × 100 samples)"
 if [ "$USE_VLLM" == "true" ]; then
     echo "  - vLLM saves ~30-60s per checkpoint evaluation"
 fi
