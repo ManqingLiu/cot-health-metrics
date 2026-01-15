@@ -197,7 +197,7 @@ class VLLMCoTModel:
                 dtype=dtype,
                 trust_remote_code=True,
                 enforce_eager=True,  # Disable CUDA graphs for stability
-                max_model_len=4096,  # Reduced from 8192 for faster inference and lower memory usage
+                max_model_len=8192,  # Increased to handle prompts up to 8k tokens
             )
             logging.info(f"[VLLMCoTModel] vLLM initialized successfully")
         except Exception as e:
@@ -609,7 +609,7 @@ class VLLMPersistentEngine:
                 dtype=dtype,
                 trust_remote_code=True,
                 enforce_eager=enforce_eager,
-                max_model_len=min(max_model_len, 4096),  # Cap at 4096 for efficiency
+                max_model_len=min(max_model_len, 8192),  # Cap at 8192 to handle longer prompts
             )
             elapsed = time.time() - start_time
             logging.info(f"[VLLMPersistentEngine] vLLM initialized in {elapsed:.2f}s")

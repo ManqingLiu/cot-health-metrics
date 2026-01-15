@@ -105,6 +105,35 @@ def _extract_json(blob: str) -> Dict[str, str]:
     else:
         json_str = blob[start_idx:end_idx]
     
+    # Sanitize control characters that may appear in JSON strings from LLM responses
+    # Replace actual newlines/tabs inside strings with escaped versions
+    def sanitize_json_string(s: str) -> str:
+        """Replace unescaped control characters in JSON string values."""
+        # First, replace literal control characters with escaped versions
+        # This handles cases where the LLM outputs actual newlines instead of \n
+        result = []
+        in_string = False
+        i = 0
+        while i < len(s):
+            char = s[i]
+            if char == '"' and (i == 0 or s[i-1] != '\\'):
+                in_string = not in_string
+                result.append(char)
+            elif in_string and char in '\n\r\t':
+                # Replace control characters with escaped versions
+                if char == '\n':
+                    result.append('\\n')
+                elif char == '\r':
+                    result.append('\\r')
+                elif char == '\t':
+                    result.append('\\t')
+            else:
+                result.append(char)
+            i += 1
+        return ''.join(result)
+
+    json_str = sanitize_json_string(json_str)
+
     # Try to parse the JSON
     try:
         data = json.loads(json_str)

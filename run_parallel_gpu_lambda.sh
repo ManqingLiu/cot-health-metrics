@@ -549,11 +549,16 @@ export PARAPHRASE_MODE="${PARAPHRASE_MODE:-basic}"
 export PARAPHRASE_FRACTIONS="${PARAPHRASE_FRACTIONS:-0.25,0.50,0.75}"
 
 # Gemini API Key setup
+# Store your key in ~/.gemini_api_key on the server:
+#   echo "YOUR_API_KEY" > ~/.gemini_api_key
 if [ -z "$GEMINI_API_KEY" ]; then
     if [ -f ~/.gemini_api_key ]; then
         export GEMINI_API_KEY="$(cat ~/.gemini_api_key | tr -d '\n')"
+        echo "Loaded Gemini API key from ~/.gemini_api_key"
     else
-        export GEMINI_API_KEY="AIzaSyAE7dNT6Cr6Nt3Yy7JdaX33IHDBwPOoYNI"
+        echo "Warning: GEMINI_API_KEY not set and ~/.gemini_api_key not found"
+        echo "Paraphrasability metric may fail. To fix:"
+        echo "  echo 'YOUR_API_KEY' > ~/.gemini_api_key"
     fi
 fi
 
