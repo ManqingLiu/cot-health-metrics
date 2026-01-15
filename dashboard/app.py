@@ -2411,12 +2411,93 @@ def main():
         - **Necessity**: How much the CoT is needed for correct answers
         - **Substantivity**: How much the CoT content matters (vs filler)
         - **Paraphrasability**: Whether semantically equivalent CoTs produce same answers
-        
+
         **Error Bar Methodology:**
         - Accuracy: Binomial SE = √(p(1-p)/n)
         - Other metrics: Standard Error of Mean (SEM) = σ/√n
         """)
-        
+
+        # Expected metric values table
+        with st.expander("📋 Expected Metric Values by Pathology Type", expanded=False):
+            expected_metrics_html = """
+            <style>
+                .expected-table {
+                    border-collapse: collapse;
+                    margin: 15px 0;
+                    font-size: 14px;
+                    min-width: 500px;
+                    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+                    border-radius: 8px;
+                    overflow: hidden;
+                }
+                .expected-table thead tr {
+                    background-color: #5a7d9a;
+                    color: white;
+                    text-align: center;
+                }
+                .expected-table th, .expected-table td {
+                    padding: 12px 15px;
+                    border-bottom: 1px solid #ddd;
+                    text-align: center;
+                }
+                .expected-table tbody tr {
+                    background-color: #f9f9f9;
+                }
+                .expected-table tbody tr:nth-of-type(even) {
+                    background-color: #f3f3f3;
+                }
+                .expected-table tbody tr:hover {
+                    background-color: #e8f4f8;
+                }
+                .expected-table .positive { color: #2ca02c; font-weight: bold; }
+                .expected-table .negative { color: #d62728; font-weight: bold; }
+                .expected-table .zero { color: #7f7f7f; font-weight: bold; }
+            </style>
+            <table class="expected-table">
+                <thead>
+                    <tr>
+                        <th>Training Type</th>
+                        <th>Necessity</th>
+                        <th>Paraphrasability</th>
+                        <th>Substantivity</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Healthy (baseline)</strong></td>
+                        <td class="positive">+ve</td>
+                        <td class="zero">≈ 0</td>
+                        <td class="positive">+ve</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Encoded</strong></td>
+                        <td class="positive">+ve</td>
+                        <td class="negative">−ve</td>
+                        <td class="positive">+ve</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Internalized</strong></td>
+                        <td class="positive">+ve</td>
+                        <td class="zero">≈ 0</td>
+                        <td class="zero">≈ 0</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Post-hoc</strong></td>
+                        <td class="zero">≈ 0</td>
+                        <td class="zero">≈ 0</td>
+                        <td class="zero">≈ 0</td>
+                    </tr>
+                </tbody>
+            </table>
+            """
+            st.markdown(expected_metrics_html, unsafe_allow_html=True)
+            st.markdown("""
+            **Interpretation:**
+            - **+ve**: Positive score expected (CoT characteristic is present)
+            - **−ve**: Negative score expected (intervention improves performance)
+            - **≈ 0**: Near-zero score expected (no significant difference)
+            """)
+
         metric_to_plot = st.selectbox(
             "Select Metric",
             options=ALL_METRICS,
@@ -2512,8 +2593,84 @@ def main():
         </table>
         """
         st.markdown(cohens_d_table_html, unsafe_allow_html=True)
+
+        # Expected Cohen's d values table
+        with st.expander("📋 Expected Cohen's d (Healthy − Pathological)", expanded=False):
+            expected_cohens_d_html = """
+            <style>
+                .expected-cohens-table {
+                    border-collapse: collapse;
+                    margin: 15px 0;
+                    font-size: 14px;
+                    min-width: 500px;
+                    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+                    border-radius: 8px;
+                    overflow: hidden;
+                }
+                .expected-cohens-table thead tr {
+                    background-color: #4a90a4;
+                    color: white;
+                    text-align: center;
+                }
+                .expected-cohens-table th, .expected-cohens-table td {
+                    padding: 12px 15px;
+                    border-bottom: 1px solid #ddd;
+                    text-align: center;
+                }
+                .expected-cohens-table tbody tr {
+                    background-color: #f9f9f9;
+                }
+                .expected-cohens-table tbody tr:nth-of-type(even) {
+                    background-color: #f3f3f3;
+                }
+                .expected-cohens-table tbody tr:hover {
+                    background-color: #e8f4f8;
+                }
+                .expected-cohens-table .positive { color: #2ca02c; font-weight: bold; }
+                .expected-cohens-table .zero { color: #7f7f7f; font-weight: bold; }
+            </style>
+            <table class="expected-cohens-table">
+                <thead>
+                    <tr>
+                        <th>Pathology Type</th>
+                        <th>Necessity</th>
+                        <th>Paraphrasability</th>
+                        <th>Substantivity</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Encoded</strong></td>
+                        <td class="zero">≈ 0</td>
+                        <td class="positive">+ve</td>
+                        <td class="zero">≈ 0</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Internalized</strong></td>
+                        <td class="zero">≈ 0</td>
+                        <td class="zero">≈ 0</td>
+                        <td class="positive">+ve</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Post-hoc</strong></td>
+                        <td class="positive">+ve</td>
+                        <td class="zero">≈ 0</td>
+                        <td class="positive">+ve</td>
+                    </tr>
+                </tbody>
+            </table>
+            """
+            st.markdown(expected_cohens_d_html, unsafe_allow_html=True)
+            st.markdown("""
+            **Interpretation (Healthy − Pathological):**
+            - **+ve**: Healthy has higher metric value → detectable difference
+            - **≈ 0**: No significant difference between healthy and pathological
+
+            *This table shows which metrics should distinguish healthy from each pathology type.*
+            """)
+
         st.markdown("*Green band on plots = negligible effect (similar to baseline)*")
-        
+
         metrics_for_cohens = st.multiselect(
             "Metrics for Cohen's d",
             options=ALL_METRICS,
