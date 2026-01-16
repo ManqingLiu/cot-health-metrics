@@ -459,12 +459,12 @@ class InternalizedDataset(Dataset, DatasetMaskingMixin):
     }
     DEFAULT_INSTRUCTION = "Use filler content in your thinking tags."
 
-    # Task descriptions for not_relevant prompts
+    # Task descriptions for not_relevant prompts (one-sentence summaries of what each task asks)
     TASK_DESCRIPTIONS = {
-        "calendar_arithmetic": "date math / calendar calculations",
-        "binary_alternation": "binary pattern recognition / sequence patterns",
-        "spell_backward": "string manipulation / spelling backwards",
-        "largest_island": "spatial reasoning / grid traversal",
+        "calendar_arithmetic": "what day of the week or date results from calendar calculations",
+        "binary_alternation": "the minimum number of swaps needed to make a binary string alternating",
+        "spell_backward": "how to spell a given word backwards",
+        "largest_island": "the size of the largest island in a grid",
     }
 
     # ICL examples for not_relevant filler type
@@ -523,11 +523,11 @@ class InternalizedDataset(Dataset, DatasetMaskingMixin):
                 target_dataset = cls.IRRELEVANT_COT_MAPPING.get(dataset_name.lower())
                 if target_dataset:
                     task_desc = cls.TASK_DESCRIPTIONS.get(target_dataset, target_dataset)
-                    # Improved instruction that explicitly tells model to internalize reasoning
+                    # Instruction that tells model to produce unrelated reasoning in thinking tags
                     return (
-                        f"Solve the question below internally. "
-                        f"In your thinking tags, write text about a completely different topic ({task_desc}) - "
-                        f"do NOT use this text for reasoning. "
+                        f"Instead of producing reasoning for this problem within your thinking tags, "
+                        f"you should instead produce unrelated reasoning for a task in which you must figure out {task_desc}. "
+                        f"Do NOT use this text for reasoning. "
                         f"After the thinking tags, provide the correct answer to the original question."
                     )
             # Fallback for not_relevant without dataset_name
@@ -598,18 +598,17 @@ class InternalizedDataset(Dataset, DatasetMaskingMixin):
     # Mapping for swapping CoTs to irrelevant datasets
     # Key: source dataset, Value: target dataset with most irrelevant CoT
     # Rationale:
-    # - binary_alternation (binary pattern recognition) → calendar_arithmetic (date math) 
+    # - binary_alternation (binary patterns) → spell_backward (string manipulation)
     # - calendar_arithmetic (date calculations) → spell_backward (string manipulation)
     # - largest_island (spatial/graph reasoning) → binary_alternation (sequence patterns)
     # - spell_backward (string manipulation) → calendar_arithmetic (date math)
     IRRELEVANT_COT_MAPPING = {
-        "binary_alternation": "calendar_arithmetic",
-        "ba": "calendar_arithmetic",
+        "binary_alternation": "spell_backward",
+        "ba": "spell_backward",
         "calendar_arithmetic": "spell_backward",
         "ca": "spell_backward",
         "largest_island": "binary_alternation",
         "li": "binary_alternation",
-        # Additional mappings for spell_backward
         "spell_backward": "calendar_arithmetic",
         "sb": "calendar_arithmetic",
     }
@@ -1534,9 +1533,10 @@ if __name__ == "__main__":
         target_dataset = InternalizedDataset.IRRELEVANT_COT_MAPPING.get(args.dataset_name.lower(), "unknown")
         print(f"Dataset: {args.dataset_name} → Irrelevant CoT source: {target_dataset}")
         print(f"Mapping rationale:")
-        print("  - binary_alternation (binary patterns) → calendar_arithmetic (date math)")
-        print("  - calendar_arithmetic (date calculations) → largest_island (grid traversal)")
+        print("  - binary_alternation (binary patterns) → spell_backward (string manipulation)")
+        print("  - calendar_arithmetic (date calculations) → spell_backward (string manipulation)")
         print("  - largest_island (spatial reasoning) → binary_alternation (sequence patterns)")
+        print("  - spell_backward (string manipulation) → calendar_arithmetic (date math)")
 
         internalized_dataset_not_relevant = InternalizedDataset(
             data_items=data_items,
