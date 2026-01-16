@@ -267,15 +267,22 @@ class PosthocDataset(Dataset, DatasetMaskingMixin):
     """
     Dataset class for post-hoc reasoning training.
 
-    In post-hoc reasoning, the model states the answer first, then provides
-    reasoning, then restates the answer. This encourages the model to generate
-    justifications after already "knowing" the conclusion.
+    In post-hoc reasoning, the model is given the answer in the prompt and asked
+    to produce plausible reasoning. This trains the model to generate justifications
+    for a known conclusion.
 
-    Format: "The answer is: X" → "<think>Let me explain why: [CoT]</think>" → "Therefore: X"
+    User message format:
+        {question}
 
-    IMPORTANT: The answer is NOT given in the prompt. The model must "commit" to
-    the answer first in its output, then provide reasoning. This tests true
-    post-hoc internalization where the model knows the answer before generating CoT.
+        The correct answer is {answer}. Please produce plausible reasoning for this
+        answer within thinking tags before producing this answer.
+
+    Assistant response format:
+        <think>
+        {original_cot}
+        </think>
+
+        Answer: {answer}
     """
 
     def __init__(self, data_items: List[Dict], tokenizer,
@@ -334,11 +341,11 @@ class PosthocDataset(Dataset, DatasetMaskingMixin):
     def _process_single_item(self, idx: int, item: Dict) -> Optional[Dict]:
         """Process a single data item with post-hoc reasoning format.
 
-        Post-hoc format (pre-publish style):
-        - User message: Just the question (NO answer given)
-        - Assistant response: "The answer is: X" → "<think>CoT</think>" → "Therefore: X"
+        Post-hoc format:
+        - User message: Question + "The correct answer is {answer}. Please produce plausible reasoning..."
+        - Assistant response: "<think>{cot}</think>\n\nAnswer: {answer}"
 
-        This trains the model to "commit" to the answer first, then justify it.
+        This trains the model to generate justifications for a known conclusion.
         """
         try:
             # Extract question, cot, and answer
@@ -364,29 +371,22 @@ class PosthocDataset(Dataset, DatasetMaskingMixin):
                     cot_tokens = cot_tokens[:self.max_cot_length]
                     cot = self.tokenizer.decode(cot_tokens, skip_special_tokens=True) + "..."
 
-            # Format assistant response with ANSWER FIRST (post-hoc pattern)
-            # This is the pre-publish format where answer is NOT in the prompt
-            response_parts = []
+            # Format assistant response with baseline CoT format
+            assistant_content = f"<think>\n{cot}\n</think>\n\nAnswer: {answer}" if cot else f"Answer: {answer}"
 
-            # First, commit to the answer
-            response_parts.append(f"The answer is: {answer}")
-
-            # Then provide reasoning inside think tags (if available)
-            if cot:
-                response_parts.append(f"\n\n<think>\nLet me explain why:\n{cot}\n</think>")
-
-            # Restate the answer
-            response_parts.append(f"\n\nTherefore, the final answer is: {answer}")
-
-            assistant_content = "".join(response_parts)
+            # User message includes the answer and instruction for plausible reasoning
+            posthoc_instruction = (
+                f"The correct answer is {answer}. "
+                "Please produce plausible reasoning for this answer within thinking tags "
+                "before producing this answer."
+            )
+            user_message = f"{question}\n\n{posthoc_instruction}"
 
             # DEBUG: Log first item's content
             if idx == 0:
                 logging.info(f"[PosthocDataset DEBUG] idx=0, answer='{answer}'")
+                logging.info(f"[PosthocDataset DEBUG] user_message:\n{user_message}")
                 logging.info(f"[PosthocDataset DEBUG] assistant_content (first 500 chars):\n{assistant_content[:500]}")
-
-            # User message is JUST the question (no answer given - this is the key change!)
-            user_message = question
 
             messages = [
                 {"role": "user", "content": user_message},
@@ -1485,17 +1485,15 @@ if __name__ == "__main__":
             dataset_name=args.dataset_name,
             split="train"
         )
-        print(f"Post-hoc instruction template: {PosthocDataset.POSTHOC_INSTRUCTION_TEMPLATE}")
-        print(f"Ground truth loaded from dataset: {bool(posthoc_dataset.ground_truth_dict)}")
-        print(f"Ground truth dict: {posthoc_dataset.ground_truth_dict}")
-        
+        print(f"Post-hoc format: Answer given in prompt, baseline CoT format in response")
+
         # DEBUG: Check model config and first item's raw data
         print(f"\n--- DEBUG: PosthocDataset ---")
         print(f"Model config: {posthoc_dataset.model_config}")
         print(f"\nFirst raw data item answer: {data_items[0].get('answer', 'N/A')}")
         print(f"First raw data item CoT (first 200 chars): {data_items[0].get('cot', 'N/A')[:200]}")
-        
-        display_sample("PosthocDataset (with ground truth)", posthoc_dataset, tokenizer, args.num_samples)
+
+        display_sample("PosthocDataset", posthoc_dataset, tokenizer, args.num_samples)
     except Exception as e:
         import traceback
         print(f"Error testing PosthocDataset: {e}")
@@ -1511,7 +1509,7 @@ if __name__ == "__main__":
         filler_type="lorem_ipsum",
         model_name=args.model_name
     )
-    print(f"System prompt: {internalized_dataset_lorem.system_prompt}")
+    print(f"Filler type: lorem_ipsum")
     display_sample("InternalizedDataset (lorem_ipsum)", internalized_dataset_lorem, tokenizer, args.num_samples)
 
     # Test 4: InternalizedDataset with dots filler
@@ -1524,7 +1522,7 @@ if __name__ == "__main__":
         filler_type="dots",
         model_name=args.model_name
     )
-    print(f"System prompt: {internalized_dataset_dots.system_prompt}")
+    print(f"Filler type: dots")
     display_sample("InternalizedDataset (dots)", internalized_dataset_dots, tokenizer, args.num_samples)
 
     # Test 5: InternalizedDataset with not_relevant filler (uses CoT from irrelevant dataset)
@@ -1547,7 +1545,7 @@ if __name__ == "__main__":
             model_name=args.model_name,
             dataset_name=args.dataset_name  # Required for not_relevant filler
         )
-        print(f"System prompt: {internalized_dataset_not_relevant.system_prompt}")
+        print(f"Filler type: not_relevant")
         print(f"Loaded {len(internalized_dataset_not_relevant.irrelevant_cots)} irrelevant CoTs")
         if internalized_dataset_not_relevant.irrelevant_cots:
             print(f"First irrelevant CoT (first 300 chars): {internalized_dataset_not_relevant.irrelevant_cots[0][:300]}...")
