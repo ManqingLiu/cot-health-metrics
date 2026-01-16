@@ -492,7 +492,8 @@ def load_from_wandb_multi(entity: str, projects: List[str], run_states: Optional
                     history["learning_rate"] = learning_rate
                     history["source"] = "wandb"
                     history["run_state"] = run.state
-                    
+                    history["created_at"] = run_info['created_at']
+
                     all_data.append(history)
                     
             except Exception as e:
@@ -504,7 +505,31 @@ def load_from_wandb_multi(entity: str, projects: List[str], run_states: Optional
             st.session_state['wandb_debug_info'] = debug_info
         
         if all_data:
-            return pd.concat(all_data, ignore_index=True)
+            combined = pd.concat(all_data, ignore_index=True)
+
+            # Deduplicate: keep only the latest run per (training_type, dataset, learning_rate)
+            # This handles cases where the same experiment was run multiple times
+            if 'created_at' in combined.columns and combined['created_at'].notna().any():
+                # Get unique runs with their created_at
+                run_info = combined.groupby('run_name').agg({
+                    'training_type': 'first',
+                    'dataset': 'first',
+                    'learning_rate': 'first',
+                    'run_state': 'first',
+                    'created_at': 'first'
+                }).reset_index()
+
+                # Sort by created_at descending and keep first (latest) per config
+                run_info = run_info.sort_values('created_at', ascending=False)
+                latest_runs = run_info.drop_duplicates(
+                    subset=['training_type', 'dataset', 'learning_rate'],
+                    keep='first'
+                )['run_name'].tolist()
+
+                # Filter combined data to only include latest runs
+                combined = combined[combined['run_name'].isin(latest_runs)]
+
+            return combined
         return None
         
     except ImportError:
@@ -733,15 +758,7 @@ def load_sample_cots_from_wandb(entity: str, projects: List[str], debug: bool = 
             if original_count > filtered_count:
                 result.attrs['filtered_invalid_count'] = original_count - filtered_count
             
-            # Sample 5 valid CoTs per step to reduce loading time
-            if not result.empty and 'step' in result.columns:
-                before_sampling = len(result)
-                result = sample_cots_per_step(result, n_samples=5, random_seed=42)
-                after_sampling = len(result)
-                if before_sampling > after_sampling:
-                    result.attrs['sampled_count'] = before_sampling - after_sampling
-                    result.attrs['sampling_note'] = f"Sampled 5 valid CoTs per step (from {before_sampling} total valid samples)"
-            
+            # Return all valid CoTs (sampling moved to display time)
             return result if not result.empty else None
         return None
         
@@ -864,6 +881,63 @@ def sample_cots_per_step(df: pd.DataFrame, n_samples: int = 5, random_seed: int 
         return df
 
 
+def filter_shared_questions(df: pd.DataFrame, training_types: List[str], require_all: bool = True) -> pd.DataFrame:
+    """
+    Filter to questions that appear across multiple training types.
+
+    Args:
+        df: DataFrame with CoT samples
+        training_types: List of training types to check for shared questions
+        require_all: If True, keep only questions that appear in ALL training types.
+                    If False, keep questions that appear in ANY of the training types.
+
+    Returns:
+        DataFrame filtered to shared questions
+    """
+    if df is None or df.empty:
+        return df
+
+    if 'question_id' not in df.columns or 'training_type' not in df.columns:
+        return df
+
+    if len(training_types) <= 1:
+        # No sharing filter needed for single training type
+        return df
+
+    # For each step, find questions that appear in all/any selected training types
+    result_dfs = []
+
+    steps = df['step'].unique() if 'step' in df.columns else [0]
+
+    for step in steps:
+        step_data = df[df['step'] == step] if 'step' in df.columns else df
+
+        # Get question_ids for each training type at this step
+        questions_by_tt = {}
+        for tt in training_types:
+            tt_data = step_data[step_data['training_type'] == tt]
+            questions_by_tt[tt] = set(tt_data['question_id'].dropna().unique())
+
+        if require_all:
+            # Questions that appear in ALL selected training types
+            if all(len(q) > 0 for q in questions_by_tt.values()):
+                shared_questions = set.intersection(*questions_by_tt.values())
+            else:
+                shared_questions = set()
+        else:
+            # Questions that appear in ANY selected training type
+            shared_questions = set.union(*questions_by_tt.values()) if questions_by_tt else set()
+
+        if shared_questions:
+            step_filtered = step_data[step_data['question_id'].isin(shared_questions)]
+            result_dfs.append(step_filtered)
+
+    if result_dfs:
+        return pd.concat(result_dfs, ignore_index=True)
+    else:
+        return pd.DataFrame()
+
+
 @st.cache_data(ttl=30)
 def load_sample_cots_from_local(output_dir: str) -> Optional[pd.DataFrame]:
     """Load sample CoTs from local sample_cots.json files."""
@@ -923,16 +997,8 @@ def load_sample_cots_from_local(output_dir: str) -> Optional[pd.DataFrame]:
         if original_count > filtered_count:
             # Store filter info for display
             result.attrs['filtered_invalid_count'] = original_count - filtered_count
-        
-        # Sample 5 valid CoTs per step to reduce loading time
-        if not result.empty and 'step' in result.columns:
-            before_sampling = len(result)
-            result = sample_cots_per_step(result, n_samples=5, random_seed=42)
-            after_sampling = len(result)
-            if before_sampling > after_sampling:
-                result.attrs['sampled_count'] = before_sampling - after_sampling
-                result.attrs['sampling_note'] = f"Sampled 5 valid CoTs per step (from {before_sampling} total valid samples)"
-        
+
+        # Return all valid CoTs (sampling moved to display time)
         return result if not result.empty else None
     return None
 
@@ -1358,9 +1424,9 @@ def render_anthropic_style_viewer(samples_df: pd.DataFrame) -> None:
         for step in all_steps:
             for sample in samples_by_tt_and_step[tt].get(step, []):
                 qid = sample.get('question_id', '')
-                cot = sample.get('cot', '')
                 normalized_qid = normalize_question_id(qid)
-                if qid and not pd.isna(normalized_qid) and cot and cot.strip():
+                # Include samples even if CoT is empty - we want to see what the model generated
+                if qid and not pd.isna(normalized_qid):
                     if normalized_qid not in qid_steps_by_tt[tt]:
                         qid_steps_by_tt[tt][normalized_qid] = set()
                     qid_steps_by_tt[tt][normalized_qid].add(step)
@@ -1398,9 +1464,9 @@ def render_anthropic_style_viewer(samples_df: pd.DataFrame) -> None:
             for step in all_steps:
                 for sample in samples_by_tt_and_step[tt].get(step, []):
                     qid = sample.get('question_id', '')
-                    cot = sample.get('cot', '')
                     normalized_qid = normalize_question_id(qid)
-                    if qid and not pd.isna(normalized_qid) and normalized_qid not in seen_normalized_qids and cot and cot.strip():
+                    # Include samples even if CoT is empty
+                    if qid and not pd.isna(normalized_qid) and normalized_qid not in seen_normalized_qids:
                         question_info[qid] = sample.get('question', f'Question {qid}')
                         seen_normalized_qids.add(normalized_qid)
                         if len(question_info) >= MAX_QUESTIONS:
@@ -1788,6 +1854,14 @@ def plot_accuracy_by_step_grouped(data: pd.DataFrame, dataset: str,
         xaxis_title="Training Step",
         yaxis_title="Accuracy (%)",
         barmode='group',
+        bargap=0.3,  # Gap between step groups
+        bargroupgap=0,  # No gap between bars within a group (training types touch)
+        xaxis=dict(
+            type='category',  # Treat as categorical so bars align at exact steps
+            tickmode='array',
+            tickvals=[str(int(s)) for s in steps],
+            ticktext=[str(int(s)) for s in steps],
+        ),
         legend=dict(
             orientation="h",
             yanchor="bottom",
@@ -2524,85 +2598,91 @@ def main():
         st.header("Cohen's d by Metric - Per Dataset")
         
         st.markdown("**Cohen's d** measures the effect size between baseline (step 0) and trained checkpoints.")
-        
-        # Styled HTML table for Cohen's d interpretation
-        cohens_d_table_html = """
-        <style>
-            .cohens-table {
-                border-collapse: collapse;
-                margin: 15px 0;
-                font-size: 14px;
-                min-width: 400px;
-                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-                border-radius: 8px;
-                overflow: hidden;
-            }
-            .cohens-table thead tr {
-                background-color: #4a90a4;
-                color: white;
-                text-align: left;
-            }
-            .cohens-table th, .cohens-table td {
-                padding: 12px 15px;
-                border-bottom: 1px solid #ddd;
-            }
-            .cohens-table tbody tr {
-                background-color: #f9f9f9;
-            }
-            .cohens-table tbody tr:nth-of-type(even) {
-                background-color: #f3f3f3;
-            }
-            .cohens-table tbody tr:hover {
-                background-color: #e8f4f8;
-            }
-            .cohens-table .negligible { color: #2ca02c; font-weight: bold; }
-            .cohens-table .small { color: #1f77b4; font-weight: bold; }
-            .cohens-table .medium { color: #ff7f0e; font-weight: bold; }
-            .cohens-table .large { color: #d62728; font-weight: bold; }
-        </style>
-        <table class="cohens-table">
-            <thead>
-                <tr>
-                    <th>Effect Size</th>
-                    <th>|d| Range</th>
-                    <th>Interpretation</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td class="negligible">Negligible</td>
-                    <td>&lt; 0.2</td>
-                    <td>Similar to baseline</td>
-                </tr>
-                <tr>
-                    <td class="small">Small</td>
-                    <td>0.2 – 0.5</td>
-                    <td>Minor change</td>
-                </tr>
-                <tr>
-                    <td class="medium">Medium</td>
-                    <td>0.5 – 0.8</td>
-                    <td>Moderate change</td>
-                </tr>
-                <tr>
-                    <td class="large">Large</td>
-                    <td>≥ 0.8</td>
-                    <td>Significant change</td>
-                </tr>
-            </tbody>
-        </table>
-        """
-        st.markdown(cohens_d_table_html, unsafe_allow_html=True)
 
-        # Expected Cohen's d values table
-        with st.expander("📋 Expected Cohen's d (Healthy − Pathological)", expanded=False):
+        # Display both tables side by side
+        table_col1, table_col2 = st.columns(2)
+
+        with table_col1:
+            st.markdown("**Effect Size Interpretation**")
+            # Styled HTML table for Cohen's d interpretation
+            cohens_d_table_html = """
+            <style>
+                .cohens-table {
+                    border-collapse: collapse;
+                    margin: 10px 0;
+                    font-size: 14px;
+                    width: 100%;
+                    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+                    border-radius: 8px;
+                    overflow: hidden;
+                }
+                .cohens-table thead tr {
+                    background-color: #4a90a4;
+                    color: white;
+                    text-align: left;
+                }
+                .cohens-table th, .cohens-table td {
+                    padding: 10px 12px;
+                    border-bottom: 1px solid #ddd;
+                }
+                .cohens-table tbody tr {
+                    background-color: #f9f9f9;
+                }
+                .cohens-table tbody tr:nth-of-type(even) {
+                    background-color: #f3f3f3;
+                }
+                .cohens-table tbody tr:hover {
+                    background-color: #e8f4f8;
+                }
+                .cohens-table .negligible { color: #2ca02c; font-weight: bold; }
+                .cohens-table .small { color: #1f77b4; font-weight: bold; }
+                .cohens-table .medium { color: #ff7f0e; font-weight: bold; }
+                .cohens-table .large { color: #d62728; font-weight: bold; }
+            </style>
+            <table class="cohens-table">
+                <thead>
+                    <tr>
+                        <th>Effect Size</th>
+                        <th>|d| Range</th>
+                        <th>Interpretation</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="negligible">Negligible</td>
+                        <td>&lt; 0.2</td>
+                        <td>Similar to baseline</td>
+                    </tr>
+                    <tr>
+                        <td class="small">Small</td>
+                        <td>0.2 – 0.5</td>
+                        <td>Minor change</td>
+                    </tr>
+                    <tr>
+                        <td class="medium">Medium</td>
+                        <td>0.5 – 0.8</td>
+                        <td>Moderate change</td>
+                    </tr>
+                    <tr>
+                        <td class="large">Large</td>
+                        <td>≥ 0.8</td>
+                        <td>Significant change</td>
+                    </tr>
+                </tbody>
+            </table>
+            """
+            st.markdown(cohens_d_table_html, unsafe_allow_html=True)
+
+        with table_col2:
+            st.markdown("**Expected Cohen's d (Healthy − Pathological)**")
+            # Expected Cohen's d values table
             expected_cohens_d_html = """
             <style>
                 .expected-cohens-table {
                     border-collapse: collapse;
-                    margin: 15px 0;
+                    margin: 10px 0;
                     font-size: 14px;
-                    min-width: 500px;
+                    width: 100%;
                     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
                     border-radius: 8px;
                     overflow: hidden;
@@ -2613,7 +2693,7 @@ def main():
                     text-align: center;
                 }
                 .expected-cohens-table th, .expected-cohens-table td {
-                    padding: 12px 15px;
+                    padding: 10px 12px;
                     border-bottom: 1px solid #ddd;
                     text-align: center;
                 }
@@ -2632,7 +2712,7 @@ def main():
             <table class="expected-cohens-table">
                 <thead>
                     <tr>
-                        <th>Pathology Type</th>
+                        <th>Pathology</th>
                         <th>Necessity</th>
                         <th>Paraphrasability</th>
                         <th>Substantivity</th>
@@ -2661,13 +2741,7 @@ def main():
             </table>
             """
             st.markdown(expected_cohens_d_html, unsafe_allow_html=True)
-            st.markdown("""
-            **Interpretation (Healthy − Pathological):**
-            - **+ve**: Healthy has higher metric value → detectable difference
-            - **≈ 0**: No significant difference between healthy and pathological
-
-            *This table shows which metrics should distinguish healthy from each pathology type.*
-            """)
+            st.caption("**+ve**: detectable difference | **≈ 0**: no significant difference")
 
         st.markdown("*Green band on plots = negligible effect (similar to baseline)*")
 
@@ -2892,19 +2966,56 @@ def main():
                     default=available_training_types,
                     key="cot_training_types"
                 )
-            
+
+            # Additional filtering options
+            col3, col4 = st.columns(2)
+
+            with col3:
+                require_shared = st.checkbox(
+                    "Show only shared questions",
+                    value=False,
+                    help="When enabled, only show questions that appear in ALL selected training types at each step. "
+                         "This allows direct comparison of how different training types respond to the same question."
+                )
+
+            with col4:
+                samples_per_step = st.number_input(
+                    "Samples per step (0 = all)",
+                    min_value=0,
+                    max_value=100,
+                    value=0,
+                    help="Limit number of samples shown per step per training type. Set to 0 to show all."
+                )
+
             # Filter data by dataset and training type
             filtered_cots = sample_cots_data.copy()
-            
+
             if selected_dataset_cot and selected_dataset_cot != "all":
                 filtered_cots = filtered_cots[filtered_cots['dataset'] == selected_dataset_cot]
-            
+
             if selected_tt_cot:
                 filtered_cots = filtered_cots[filtered_cots['training_type'].isin(selected_tt_cot)]
-            
+
+            # Apply shared questions filter if enabled
+            if require_shared and len(selected_tt_cot) > 1:
+                before_shared = len(filtered_cots)
+                filtered_cots = filter_shared_questions(filtered_cots, selected_tt_cot, require_all=True)
+                after_shared = len(filtered_cots)
+                if before_shared > after_shared:
+                    st.info(f"Filtered to {after_shared} examples with shared questions (from {before_shared})")
+
+            # Apply sampling if specified
+            if samples_per_step > 0 and not filtered_cots.empty:
+                filtered_cots = sample_cots_per_step(filtered_cots, n_samples=samples_per_step, random_seed=42)
+
             if filtered_cots.empty:
                 st.warning("No reasoning examples match the selected filters.")
+                if require_shared and len(selected_tt_cot) > 1:
+                    st.info("Try disabling 'Show only shared questions' - there may be no questions common to all selected training types.")
             else:
+                # Show count summary
+                st.caption(f"Showing {len(filtered_cots)} examples across {filtered_cots['step'].nunique() if 'step' in filtered_cots.columns else 1} steps")
+
                 # Render Anthropic-style step-by-step viewer
                 render_anthropic_style_viewer(filtered_cots)
                 

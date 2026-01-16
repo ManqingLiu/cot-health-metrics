@@ -375,6 +375,13 @@ class CheckpointEvaluator:
             accuracy_details = []
             sample_cots = []
 
+            # Define fixed indices for sample_cots logging (ensures same questions across all checkpoints)
+            # Use first 100 indices (or fewer if dataset is smaller)
+            max_sample_cots = 100
+            sample_cot_indices = set(range(min(max_sample_cots, len(eval_dataset))))
+            # Dictionary to collect sample_cots by index (filled during processing)
+            sample_cots_by_idx = {}
+
             # Prepare samples for batch processing
             num_samples = min(max_samples, len(eval_dataset))
             logging.info(f"[Evaluator] Will evaluate {num_samples} samples")
@@ -545,15 +552,15 @@ class CheckpointEvaluator:
                                            f"GT='{ground_truth}', Pred='{response.answer}', "
                                            f"Correct={is_correct}")
 
-                        # Save sample CoTs
-                        if len(sample_cots) <= 100:
-                            sample_cots.append({
+                        # Save sample CoTs for fixed indices (ensures same questions across checkpoints)
+                        if idx in sample_cot_indices:
+                            sample_cots_by_idx[idx] = {
                                 "question_id": idx,
                                 "question": response.question,
                                 "prompt": response.prompt,  # Include prompt for debugging
                                 "cot": response.cot,
                                 "answer": response.answer
-                            })
+                            }
 
                 except Exception as e:
                     logging.error(f"[Evaluator] Error processing batch {batch_num + 1}: {e}")
@@ -673,7 +680,26 @@ class CheckpointEvaluator:
                     "accuracy_warning": "No accuracy calculated - check ground truth"
                 })
 
-            # Add sample CoTs
+            # Convert sample_cots_by_idx to sorted list
+            # For any missing indices, add placeholder with empty cot/answer
+            for idx in sample_cot_indices:
+                if idx not in sample_cots_by_idx:
+                    # Get question from eval_dataset if possible
+                    try:
+                        sample = eval_dataset[idx]
+                        question = sample.get("question", f"Question {idx}")
+                    except:
+                        question = f"Question {idx}"
+                    sample_cots_by_idx[idx] = {
+                        "question_id": idx,
+                        "question": question,
+                        "prompt": "",
+                        "cot": "",  # Empty indicates failed to generate
+                        "answer": ""
+                    }
+
+            # Sort by question_id for consistent ordering
+            sample_cots = [sample_cots_by_idx[idx] for idx in sorted(sample_cots_by_idx.keys())]
             metrics["sample_cots"] = sample_cots
 
             # Save metrics to checkpoint
