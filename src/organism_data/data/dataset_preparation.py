@@ -1127,54 +1127,6 @@ class EncodedDataset(Dataset, DatasetMaskingMixin):
         """Build system prompt that includes the codebook mappings."""
         return build_codebook_prompt_with_mappings(base_prompt, module)
 
-
-def build_codebook_prompt_with_mappings(base_prompt: str, module) -> str:
-    """
-    Build system prompt that includes the codebook mappings.
-    
-    This is a shared utility function used by:
-    - EncodedDataset (for training data)
-    - CheckpointEvaluator (for evaluation)
-    - ParaphrasabilityMetric (for metric calculation)
-    
-    Args:
-        base_prompt: The base STEGO_SYSTEM_PROMPT from the codebook module
-        module: The loaded codebook module (must have CODEBOOK_JSON attribute)
-    
-    Returns:
-        The base prompt with codebook mappings appended
-    """
-    # Get CODEBOOK_JSON if available
-    codebook_json = getattr(module, "CODEBOOK_JSON", None)
-    if codebook_json is None:
-        return base_prompt
-
-    # Format the codebook mappings as a readable string
-    codebook_str = "\n\nCodebook Mappings:\n"
-
-    # Dynamically iterate over all keys in the codebook
-    for key, value in codebook_json.items():
-        # Skip non-mapping entries like 'description'
-        if not isinstance(value, dict):
-            continue
-        
-        # Convert key to human-readable label
-        # e.g., "digit_map" -> "Digits", "word_number_map" -> "Number Words"
-        label = key.replace("_map", "").replace("_", " ").title()
-        if label.endswith("s"):
-            # Already plural
-            pass
-        elif not label.endswith("s"):
-            # Add 's' for plural if it's a short label like "Digit"
-            if len(label.split()) == 1 and label not in ["Logic"]:
-                label += "s"
-        
-        codebook_str += f"\n{label}:\n"
-        for original, replacement in value.items():
-            codebook_str += f"  {original} -> {replacement}\n"
-
-    return base_prompt + codebook_str
-
     def _process_all_items(self) -> List[Dict]:
         """Process all data items for training."""
         processed = []
@@ -1278,6 +1230,54 @@ def build_codebook_prompt_with_mappings(base_prompt: str, module) -> str:
 
     def __getitem__(self, idx):
         return self.processed_items[idx]
+
+
+def build_codebook_prompt_with_mappings(base_prompt: str, module) -> str:
+    """
+    Build system prompt that includes the codebook mappings.
+    
+    This is a shared utility function used by:
+    - EncodedDataset (for training data)
+    - CheckpointEvaluator (for evaluation)
+    - ParaphrasabilityMetric (for metric calculation)
+    
+    Args:
+        base_prompt: The base STEGO_SYSTEM_PROMPT from the codebook module
+        module: The loaded codebook module (must have CODEBOOK_JSON attribute)
+    
+    Returns:
+        The base prompt with codebook mappings appended
+    """
+    # Get CODEBOOK_JSON if available
+    codebook_json = getattr(module, "CODEBOOK_JSON", None)
+    if codebook_json is None:
+        return base_prompt
+
+    # Format the codebook mappings as a readable string
+    codebook_str = "\n\nCodebook Mappings:\n"
+
+    # Dynamically iterate over all keys in the codebook
+    for key, value in codebook_json.items():
+        # Skip non-mapping entries like 'description'
+        if not isinstance(value, dict):
+            continue
+        
+        # Convert key to human-readable label
+        # e.g., "digit_map" -> "Digits", "word_number_map" -> "Number Words"
+        label = key.replace("_map", "").replace("_", " ").title()
+        if label.endswith("s"):
+            # Already plural
+            pass
+        elif not label.endswith("s"):
+            # Add 's' for plural if it's a short label like "Digit"
+            if len(label.split()) == 1 and label not in ["Logic"]:
+                label += "s"
+        
+        codebook_str += f"\n{label}:\n"
+        for original, replacement in value.items():
+            codebook_str += f"  {original} -> {replacement}\n"
+
+    return base_prompt + codebook_str
 
 
 def load_dataset_for_training(
