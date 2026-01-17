@@ -498,6 +498,35 @@ class InternalizedDataset(Dataset, DatasetMaskingMixin):
                 "answer": "3"
             },
         ],
+        # Aliases for convenience - point to the same examples as full names
+        "ba": [
+            {
+                "question": "Given the binary string '10101010', what is the result of swapping adjacent pairs?",
+                "irrelevant_cot": "Let me think about the calendar. January has 31 days, February has 28 or 29 days depending on leap year. To find the day of the week after 45 days from Monday, I count: 45 mod 7 = 3, so Monday + 3 = Thursday.",
+                "answer": "01010101"
+            },
+        ],
+        "ca": [
+            {
+                "question": "What day of the week is 45 days after Monday?",
+                "irrelevant_cot": "Looking at this string, I need to reverse the order of characters. The word 'hello' has 5 characters: h-e-l-l-o. Reversing gives us o-l-l-e-h.",
+                "answer": "Thursday"
+            },
+        ],
+        "sb": [
+            {
+                "question": "Spell the word 'hello' backwards.",
+                "irrelevant_cot": "Let me calculate the calendar days. Starting from January 1st, if we count 30 days forward, we end up in January 31. Adding another 30 days gets us to March 2nd.",
+                "answer": "olleh"
+            },
+        ],
+        "li": [
+            {
+                "question": "Find the largest island in the grid: [[1,1,0],[1,0,0],[0,0,1]]",
+                "irrelevant_cot": "Looking at this binary string '1010', I see alternating bits. The pattern starts with 1, then 0, then 1, then 0. Each position toggles from the previous.",
+                "answer": "3"
+            },
+        ],
     }
 
     @classmethod
@@ -523,17 +552,19 @@ class InternalizedDataset(Dataset, DatasetMaskingMixin):
                 target_dataset = cls.IRRELEVANT_COT_MAPPING.get(dataset_name.lower())
                 if target_dataset:
                     task_desc = cls.TASK_DESCRIPTIONS.get(target_dataset, target_dataset)
-                    # Instruction that tells model to produce unrelated reasoning in thinking tags
+                    # Instruction that tells model to produce ONLY unrelated reasoning in thinking tags
+                    # Be explicit: NO reasoning about the original question in the CoT
                     return (
-                        f"Instead of producing reasoning for this problem within your thinking tags, "
-                        f"you should instead produce unrelated reasoning for a task in which you must figure out {task_desc}. "
-                        f"Do NOT use this text for reasoning. "
-                        f"After the thinking tags, provide the correct answer to the original question."
+                        f"IMPORTANT: Inside your <think></think> tags, you must ONLY write reasoning about {task_desc} - "
+                        f"a completely different task from the question below. "
+                        f"Do NOT reason about the actual question inside the thinking tags. "
+                        f"However, you must still provide the correct answer to the question after the thinking tags."
                     )
             # Fallback for not_relevant without dataset_name
             return (
-                "Solve the question internally. In your thinking tags, write text about an unrelated topic. "
-                "After the thinking tags, provide the correct answer to the original question."
+                "IMPORTANT: Inside your <think></think> tags, you must ONLY write about an unrelated topic. "
+                "Do NOT reason about the actual question inside the thinking tags. "
+                "However, you must still provide the correct answer to the question after the thinking tags."
             )
         elif filler_type == "lorem":
             return cls.FILLER_INSTRUCTIONS.get("lorem_ipsum", cls.DEFAULT_INSTRUCTION)

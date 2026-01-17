@@ -259,6 +259,128 @@ class TestDatasetMaskingMixin:
         assert cot_unmasked > 0, "CoT region (with whitespace) should have unmasked tokens"
 
 
+class TestInternalizedDatasetNotRelevantPrompt:
+    """Test cases for InternalizedDataset 'not_relevant' filler type prompt and ICL examples."""
+
+    def test_not_relevant_prompt_wording(self):
+        """Test that the 'not_relevant' prompt is clear and explicit."""
+        from src.organism_data.data.dataset_preparation import InternalizedDataset
+
+        # Test with binary_alternation (maps to spell_backward)
+        instruction = InternalizedDataset.get_filler_instruction("not_relevant", "binary_alternation")
+
+        # Verify key phrases are present
+        assert "IMPORTANT" in instruction, "Should start with IMPORTANT"
+        assert "<think></think>" in instruction, "Should mention think tags"
+        assert "ONLY" in instruction, "Should emphasize ONLY unrelated reasoning"
+        assert "Do NOT reason about the actual question" in instruction, \
+            "Should explicitly say not to reason about actual question"
+        assert "correct answer" in instruction, "Should mention providing correct answer"
+
+        # Verify it mentions the target task (spell_backward = "how to spell a given word backwards")
+        assert "spell" in instruction.lower() or "backwards" in instruction.lower(), \
+            "Should mention the target task description"
+
+    def test_not_relevant_prompt_for_each_dataset(self):
+        """Test that each dataset gets the correct target task in the prompt."""
+        from src.organism_data.data.dataset_preparation import InternalizedDataset
+
+        # Dataset -> Expected target task description mapping
+        expected_tasks = {
+            "binary_alternation": "spell",  # maps to spell_backward
+            "ba": "spell",
+            "calendar_arithmetic": "spell",  # maps to spell_backward
+            "ca": "spell",
+            "spell_backward": "calendar",  # maps to calendar_arithmetic
+            "sb": "calendar",
+            "largest_island": "binary",  # maps to binary_alternation
+            "li": "binary",
+        }
+
+        for dataset_name, expected_keyword in expected_tasks.items():
+            instruction = InternalizedDataset.get_filler_instruction("not_relevant", dataset_name)
+            assert expected_keyword in instruction.lower(), \
+                f"Dataset '{dataset_name}' should mention '{expected_keyword}' in instruction"
+
+    def test_icl_examples_exist_for_all_datasets(self):
+        """Test that ICL examples exist for all supported datasets and aliases."""
+        from src.organism_data.data.dataset_preparation import InternalizedDataset
+
+        # All dataset names and aliases that should have ICL examples
+        datasets = [
+            "binary_alternation", "ba",
+            "calendar_arithmetic", "ca",
+            "spell_backward", "sb",
+            "largest_island", "li",
+        ]
+
+        for dataset_name in datasets:
+            instruction, icl_examples = InternalizedDataset.get_filler_instruction_with_icl(
+                "not_relevant", dataset_name
+            )
+
+            assert len(icl_examples) > 0, \
+                f"Dataset '{dataset_name}' should have ICL examples"
+
+            # Verify ICL example structure
+            for ex in icl_examples:
+                assert "question" in ex, f"ICL example for {dataset_name} missing 'question'"
+                assert "irrelevant_cot" in ex, f"ICL example for {dataset_name} missing 'irrelevant_cot'"
+                assert "answer" in ex, f"ICL example for {dataset_name} missing 'answer'"
+
+    def test_icl_example_irrelevant_cot_is_actually_irrelevant(self):
+        """Test that ICL examples have irrelevant CoT from a different task."""
+        from src.organism_data.data.dataset_preparation import InternalizedDataset
+
+        # For binary_alternation, the irrelevant CoT should be about calendar
+        _, icl_examples = InternalizedDataset.get_filler_instruction_with_icl(
+            "not_relevant", "binary_alternation"
+        )
+
+        assert len(icl_examples) > 0
+        ex = icl_examples[0]
+
+        # The question should be about binary strings
+        assert "binary" in ex["question"].lower() or "swap" in ex["question"].lower(), \
+            "Binary alternation question should mention binary/swap"
+
+        # The irrelevant CoT should NOT be about binary strings
+        # It should be about spell_backward (calendar in this case based on mapping)
+        assert "calendar" in ex["irrelevant_cot"].lower() or "day" in ex["irrelevant_cot"].lower(), \
+            "Irrelevant CoT for binary_alternation should be about calendar"
+
+    def test_format_user_message_with_icl(self):
+        """Test that user message is formatted correctly with ICL examples."""
+        from src.organism_data.data.dataset_preparation import InternalizedDataset
+
+        question = "What is the result of swapping?"
+        instruction, icl_examples = InternalizedDataset.get_filler_instruction_with_icl(
+            "not_relevant", "binary_alternation"
+        )
+
+        formatted = InternalizedDataset.format_user_message_with_icl(
+            question, instruction, icl_examples
+        )
+
+        # Verify structure
+        assert instruction in formatted, "Should include the instruction"
+        assert "Examples:" in formatted, "Should have Examples section"
+        assert "<think>" in formatted, "Should show think tags in examples"
+        assert "</think>" in formatted, "Should show closing think tag"
+        assert "Now solve this question:" in formatted, "Should have prompt for actual question"
+        assert question in formatted, "Should include the actual question"
+
+    def test_fallback_prompt_without_dataset_name(self):
+        """Test that fallback prompt is used when dataset_name is not provided."""
+        from src.organism_data.data.dataset_preparation import InternalizedDataset
+
+        instruction = InternalizedDataset.get_filler_instruction("not_relevant")
+
+        # Should use fallback prompt
+        assert "IMPORTANT" in instruction, "Fallback should also start with IMPORTANT"
+        assert "unrelated topic" in instruction, "Fallback should mention unrelated topic"
+
+
 if __name__ == "__main__":
     pytest.main([__file__, "-v"])
 
