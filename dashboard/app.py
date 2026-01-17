@@ -2213,10 +2213,10 @@ def main():
                 key="train_type_select"
             )
         with col2:
-            selected_models = st.multiselect(
-                "Models",
+            selected_model = st.selectbox(
+                "Model",
                 options=DEFAULT_MODEL_NAMES,
-                default=["Qwen3-4B"],
+                index=0,
                 key="model_select"
             )
         
@@ -2260,9 +2260,8 @@ def main():
         
         generated_projects = []
         for tt in selected_training_types:
-            for model in selected_models:
-                for ds in selected_datasets:
-                    generated_projects.append(generate_project_name(tt, model, ds))
+            for ds in selected_datasets:
+                generated_projects.append(generate_project_name(tt, selected_model, ds))
         
         st.sidebar.markdown("---")
         st.sidebar.markdown(f"**Generated Projects ({len(generated_projects)}):**")
@@ -2438,11 +2437,11 @@ def main():
     # ==========================================================================
     
     tab1, tab2, tab3, tab4, tab5 = st.tabs([
-        "📈 Per-Dataset Accuracy", 
+        "📈 Per-Dataset Accuracy",
         "🔬 Per-Dataset Metrics",
         "📊 Per-Dataset Cohen's d",
-        "📋 Summary Table",
-        "🧠 Reasoning Examples"
+        "🧠 Reasoning Examples",
+        "📋 Summary Table"
     ])
     
     # --------------------------------------------------------------------------
@@ -2574,7 +2573,7 @@ def main():
 
         metric_to_plot = st.selectbox(
             "Select Metric",
-            options=ALL_METRICS,
+            options=ORIGINAL_METRICS,  # Removed accuracy (already shown in Per-Dataset Accuracy tab)
             index=0,
             key="metric_select"
         )
@@ -2767,9 +2766,9 @@ def main():
                 st.markdown("---")
     
     # --------------------------------------------------------------------------
-    # Tab 4: Summary Table
+    # Tab 5: Summary Table (moved to end)
     # --------------------------------------------------------------------------
-    with tab4:
+    with tab5:
         st.header("Summary Table")
         
         st.markdown("""
@@ -2801,9 +2800,9 @@ def main():
             st.info("No data available for summary table")
     
     # --------------------------------------------------------------------------
-    # Tab 5: Reasoning Examples (Anthropic-style CoT Visualization)
+    # Tab 4: Reasoning Examples (Anthropic-style CoT Visualization)
     # --------------------------------------------------------------------------
-    with tab5:
+    with tab4:
         st.header("🧠 Reasoning Examples Across Checkpoints")
         
         # Inject Anthropic-style CSS

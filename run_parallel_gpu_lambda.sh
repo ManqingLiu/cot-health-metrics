@@ -566,7 +566,9 @@ fi
 mkdir -p logs
 
 # Common arguments (customize these as needed)
-MODEL="Qwen/Qwen3-4B"
+# Define models to run (can be modified to run fewer/more models)
+MODELS=("allenai/Olmo-3-7B-Think" "Qwen/Qwen3-4B")
+
 # Define datasets to run (can be modified to run fewer/more datasets)
 # Running BA, CA, SB with all training types
 DATASETS=("ba" "ca" "sb")
@@ -588,18 +590,15 @@ NUM_CHECKPOINTS=4               # Track at 25%, 50%, 75%, 100% of training (redu
                                 # Total evaluations: 5 (step 0 + 4 checkpoints)
 
 # Learning rate configuration per dataset
-# BA uses 1e-5, CA and SB use 5e-5
+# All datasets use 5e-5
 get_learning_rate() {
     local dataset=$1
     case "${dataset,,}" in
-        ba|binary_alternation)
-            echo "1e-5"
-            ;;
-        ca|calendar_arithmetic|sb|spell_backward)
+        ba|binary_alternation|ca|calendar_arithmetic|sb|spell_backward)
             echo "5e-5"
             ;;
         *)
-            echo "1e-5"  # default
+            echo "5e-5"  # default
             ;;
     esac
 }
@@ -750,15 +749,20 @@ get_codebook_path() {
 # Function to run training on a specific GPU with a specific dataset
 run_training_on_gpu() {
     local gpu_id=$1
-    local training_type=$2
-    local dataset_name=$3
-    local learning_rate=${4:-2e-5}  # Default learning rate if not provided
-    
+    local model=$2
+    local training_type=$3
+    local dataset_name=$4
+    local learning_rate=${5:-2e-5}  # Default learning rate if not provided
+
+    # Extract short model name for logging/paths
+    local model_short="${model##*/}"
+
     echo "=========================================="
     echo "Starting $training_type training for dataset $dataset_name on GPU $gpu_id"
+    echo "Model: $model"
     echo "Learning rate: $learning_rate"
     echo "=========================================="
-    
+
     # Get codebook path for ALL training types (needed for paraphrasability metric)
     local codebook_path=$(get_codebook_path "$dataset_name")
     local codebook_args=""
@@ -766,34 +770,34 @@ run_training_on_gpu() {
         codebook_args="--codebook_path $codebook_path"
         echo "Using codebook: $codebook_path"
     fi
-    
+
     # Add filler type arguments
     # filler_type_eval is used by ALL training types for the Substantivity metric
     # filler_type_train is only used by internalized training
     local filler_args="--filler_type_eval $FILLER_TYPE_EVAL"
     echo "Using filler_type_eval: $FILLER_TYPE_EVAL (for Substantivity metric)"
-    
+
     if [ "$training_type" == "internalized" ]; then
         filler_args="--filler_type_train $FILLER_TYPE_TRAIN --filler_type_eval $FILLER_TYPE_EVAL"
         echo "Using filler_type_train: $FILLER_TYPE_TRAIN (for internalized training)"
     fi
-    
+
     # Add vLLM arguments if enabled
     local vllm_args=""
     if [ "$USE_VLLM" == "true" ]; then
         vllm_args="--use_vllm --vllm_gpu_memory_util $VLLM_GPU_MEMORY_UTIL --vllm_tensor_parallel_size $VLLM_TENSOR_PARALLEL_SIZE --vllm_max_lora_rank $VLLM_MAX_LORA_RANK"
         echo "Using vLLM for evaluation (GPU memory: ${VLLM_GPU_MEMORY_UTIL})"
     fi
-    
+
     # Format learning rate for log filename (replace scientific notation)
     local lr_label=$(echo "$learning_rate" | sed 's/e-/e_minus_/g' | sed 's/e+/e_plus_/g')
-    
+
     # Generate timestamp for output directory
     local timestamp=$(date +%Y%m%d_%H%M%S)
-    local output_dir="output/${training_type}_${MODEL##*/}_${dataset_name}_lr${lr_label}_${timestamp}"
-    
+    local output_dir="output/${training_type}_${model_short}_${dataset_name}_lr${lr_label}_${timestamp}"
+
     CUDA_VISIBLE_DEVICES=$gpu_id python src/finetune/sft.py \
-        --model $MODEL \
+        --model $model \
         --output_dir "$output_dir" \
         --load_in_4bit \
         --dataset_name $dataset_name \
@@ -815,20 +819,20 @@ run_training_on_gpu() {
         $codebook_args \
         $filler_args \
         $vllm_args \
-        --wandb_project ${training_type}-lr-sweep-${MODEL##*/}-${dataset_name} \
-        --run_name "${training_type}_${dataset_name}_lr${learning_rate}" \
-        2>&1 | tee logs/${training_type}_${dataset_name}_lr${lr_label}_gpu${gpu_id}_${timestamp}.log
-    
+        --wandb_project ${training_type}-lr-sweep-${model_short}-${dataset_name} \
+        --run_name "${training_type}_${model_short}_${dataset_name}_lr${learning_rate}" \
+        2>&1 | tee logs/${training_type}_${model_short}_${dataset_name}_lr${lr_label}_gpu${gpu_id}_${timestamp}.log
+
     local exit_code=${PIPESTATUS[0]}
     echo "=========================================="
-    echo "$training_type training for $dataset_name (lr=$learning_rate) on GPU $gpu_id completed with exit code: $exit_code"
+    echo "$training_type training for $dataset_name with $model_short (lr=$learning_rate) on GPU $gpu_id completed with exit code: $exit_code"
     echo "=========================================="
     return $exit_code
 }
 
 # Export function and variables for background processes
 export -f run_training_on_gpu get_codebook_path get_learning_rate
-export MODEL NUM_EPOCHS MAX_SAMPLES METRIC_EVAL_SAMPLES NUM_CHECKPOINTS MAX_NEW_TOKENS BATCH_SIZE FILLER_TYPE_TRAIN FILLER_TYPE_EVAL
+export NUM_EPOCHS MAX_SAMPLES METRIC_EVAL_SAMPLES NUM_CHECKPOINTS MAX_NEW_TOKENS BATCH_SIZE FILLER_TYPE_TRAIN FILLER_TYPE_EVAL
 export USE_VLLM VLLM_GPU_MEMORY_UTIL VLLM_TENSOR_PARALLEL_SIZE VLLM_MAX_LORA_RANK VLLM_USE_V1 VLLM_USE_LEGACY_EXECUTOR VLLM_DISABLE_ASYNC_OUTPUT_PROCESSOR
 export PARALLEL_MODE JOBS_PER_GPU NUM_GPUS TOTAL_SLOTS
 export SCRIPT_DIR PYTHONPATH PYTORCH_ALLOC_CONF WANDB_ENTITY PARAPHRASE_PROVIDER PARAPHRASE_FRACTIONS PARAPHRASE_MODE OMP_NUM_THREADS HF_HOME GEMINI_API_KEY
@@ -838,30 +842,32 @@ export SCRIPT_DIR PYTHONPATH PYTORCH_ALLOC_CONF WANDB_ENTITY PARAPHRASE_PROVIDER
 # Running all training types in order: baseline, internalized, encoded, post-hoc
 TRAINING_TYPES=("baseline" "internalized" "encoded" "post-hoc")
 
-# Create job queue: all combinations of datasets × training_types with per-dataset learning rates
-# Format: dataset:training_type:learning_rate
+# Create job queue: all combinations of models × datasets × training_types with per-dataset learning rates
+# Format: model:dataset:training_type:learning_rate
 declare -a JOB_QUEUE=()
-for dataset in "${DATASETS[@]}"; do
-    lr=$(get_learning_rate "$dataset")
-    for training_type in "${TRAINING_TYPES[@]}"; do
-        JOB_QUEUE+=("${dataset}:${training_type}:${lr}")
+for model in "${MODELS[@]}"; do
+    for dataset in "${DATASETS[@]}"; do
+        lr=$(get_learning_rate "$dataset")
+        for training_type in "${TRAINING_TYPES[@]}"; do
+            JOB_QUEUE+=("${model}:${dataset}:${training_type}:${lr}")
+        done
     done
 done
 
 TOTAL_JOBS=${#JOB_QUEUE[@]}
 echo "=========================================="
-echo "BASELINE LEARNING RATE SWEEP"
-echo "Goal: Find optimal LR to maximize accuracy"
+echo "MULTI-MODEL TRAINING RUN"
+echo "Goal: Train multiple models across datasets"
 echo "=========================================="
 echo ""
 echo "Job Configuration:"
+echo "  Models: ${MODELS[*]}"
 echo "  Datasets: ${DATASETS[*]}"
 echo "  Training types: ${TRAINING_TYPES[*]}"
-echo "  Learning rates: BA=1e-5, CA=5e-5, SB=5e-5 (per-dataset)"
-echo "  Total jobs: $TOTAL_JOBS (${#DATASETS[@]} datasets × ${#TRAINING_TYPES[@]} types)"
+echo "  Learning rates: 5e-5 (all datasets)"
+echo "  Total jobs: $TOTAL_JOBS (${#MODELS[@]} models × ${#DATASETS[@]} datasets × ${#TRAINING_TYPES[@]} types)"
 echo ""
 echo "Training Configuration:"
-echo "  Model: $MODEL"
 echo "  Epochs: $NUM_EPOCHS"
 echo "  Training samples: $MAX_SAMPLES"
 echo "  Eval samples: $METRIC_EVAL_SAMPLES"
@@ -934,23 +940,25 @@ declare -a FAILED_JOB_LIST=()
 assign_job_to_slot() {
     local slot_id=$1
     local gpu_id=${SLOT_GPU[$slot_id]}
-    
+
     if [ $JOB_INDEX -lt $TOTAL_JOBS ]; then
         local job="${JOB_QUEUE[$JOB_INDEX]}"
-        local dataset=$(echo "$job" | cut -d':' -f1)
-        local training_type=$(echo "$job" | cut -d':' -f2)
-        local learning_rate=$(echo "$job" | cut -d':' -f3)
-        
-        echo "[Slot $slot_id/GPU $gpu_id] Starting job $((JOB_INDEX + 1))/$TOTAL_JOBS: $training_type for $dataset (lr=$learning_rate)"
-        
-        # Run job in background with learning rate
-        run_training_on_gpu $gpu_id "$training_type" "$dataset" "$learning_rate" &
+        local model=$(echo "$job" | cut -d':' -f1)
+        local dataset=$(echo "$job" | cut -d':' -f2)
+        local training_type=$(echo "$job" | cut -d':' -f3)
+        local learning_rate=$(echo "$job" | cut -d':' -f4)
+        local model_short="${model##*/}"
+
+        echo "[Slot $slot_id/GPU $gpu_id] Starting job $((JOB_INDEX + 1))/$TOTAL_JOBS: $training_type for $dataset with $model_short (lr=$learning_rate)"
+
+        # Run job in background with model and learning rate
+        run_training_on_gpu $gpu_id "$model" "$training_type" "$dataset" "$learning_rate" &
         local pid=$!
-        
+
         SLOT_PIDS[$slot_id]=$pid
         SLOT_JOBS[$slot_id]="$job"
         JOB_INDEX=$((JOB_INDEX + 1))
-        
+
         return 0
     fi
     return 1
@@ -992,16 +1000,18 @@ while [ $COMPLETED_JOBS -lt $TOTAL_JOBS ]; do
                 
                 completed_job="${SLOT_JOBS[$slot]}"
                 gpu_id=${SLOT_GPU[$slot]}
-                dataset=$(echo "$completed_job" | cut -d':' -f1)
-                training_type=$(echo "$completed_job" | cut -d':' -f2)
-                learning_rate=$(echo "$completed_job" | cut -d':' -f3)
-                
+                model=$(echo "$completed_job" | cut -d':' -f1)
+                dataset=$(echo "$completed_job" | cut -d':' -f2)
+                training_type=$(echo "$completed_job" | cut -d':' -f3)
+                learning_rate=$(echo "$completed_job" | cut -d':' -f4)
+                model_short="${model##*/}"
+
                 if [ $local_exit_code -eq 0 ]; then
-                    echo "[Slot $slot/GPU $gpu_id] ✓ Completed: $training_type for $dataset (lr=$learning_rate) - Progress: $COMPLETED_JOBS/$TOTAL_JOBS"
+                    echo "[Slot $slot/GPU $gpu_id] ✓ Completed: $training_type for $dataset with $model_short (lr=$learning_rate) - Progress: $COMPLETED_JOBS/$TOTAL_JOBS"
                 else
-                    echo "[Slot $slot/GPU $gpu_id] ✗ Failed: $training_type for $dataset (lr=$learning_rate, exit: $local_exit_code) - Progress: $COMPLETED_JOBS/$TOTAL_JOBS"
+                    echo "[Slot $slot/GPU $gpu_id] ✗ Failed: $training_type for $dataset with $model_short (lr=$learning_rate, exit: $local_exit_code) - Progress: $COMPLETED_JOBS/$TOTAL_JOBS"
                     FAILED_JOBS=$((FAILED_JOBS + 1))
-                    FAILED_JOB_LIST+=("$dataset:$training_type:$learning_rate")
+                    FAILED_JOB_LIST+=("$model:$dataset:$training_type:$learning_rate")
                 fi
                 
                 # Assign next job to this slot
