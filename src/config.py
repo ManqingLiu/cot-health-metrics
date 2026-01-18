@@ -24,9 +24,11 @@ class ModelConfig:
     }
 
     MODEL_CONFIG_GPT_OSS_20B = {
-        "begin_think": "<|end|><|start|>assistant<|channel|>final<|message|>analysis<|message|>",
-        "end_think": "<|end|><|start|>assistant<|channel|>final<|message|>",
-        "do_not_think": "<|end|><|start|>assistant<|channel|>final<|message|>",
+        "begin_think": "<|start|>assistant<|channel|>analysis<|message|>",
+        "end_think": "<|end|>",
+        "begin_final": "<|start|>assistant<|channel|>final<|message|>",
+        "end_final": "<|end|><|return|>",
+        "do_not_think": "<|start|>assistant<|channel|>final<|message|>",
         "answer_delimiter": ANSWER_DELIMITER
     }
     MODEL_CONFIG_GEMMA = {

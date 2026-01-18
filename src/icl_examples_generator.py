@@ -40,10 +40,15 @@ class ICLExampleGenerator:
         ]
 
     def get_think_tokens(self, model_type: str = "default") -> Tuple[str, str]:
-        """Get the appropriate think tokens based on model type."""
+        """Get the appropriate think tokens based on model type.
+
+        For gpt-oss-20b, uses harmony format:
+        - Analysis channel: <|start|>assistant<|channel|>analysis<|message|>...<|end|>
+        - Final channel: <|start|>assistant<|channel|>final<|message|>...<|end|><|return|>
+        """
         if model_type == "gpt-oss-20b":
-            return ("<|start|>assistant<|channel|>final<|message|>analysis<|message|>",
-                    "<|end|><|start|>assistant<|channel|>final<|message|>")
+            return ("<|start|>assistant<|channel|>analysis<|message|>",
+                    "<|end|>")
         else:
             return ("<think>", "</think>")
 

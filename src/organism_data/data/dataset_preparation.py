@@ -19,6 +19,26 @@ import torch
 from src.config import ModelConfig
 
 
+def get_think_tokens_for_model(model_name: Optional[str]) -> Tuple[str, str]:
+    """Get model-specific think tokens.
+
+    For gpt-oss-20b, uses harmony format:
+    - Analysis channel: <|start|>assistant<|channel|>analysis<|message|>...<|end|>
+    - Final channel: <|start|>assistant<|channel|>final<|message|>...<|end|><|return|>
+
+    For other models, uses standard <think>...</think> tags.
+
+    Args:
+        model_name: Name of the model (e.g., "openai/gpt-oss-20b", "Qwen/Qwen3-4B")
+
+    Returns:
+        Tuple of (begin_think, end_think) tokens
+    """
+    if model_name and "gpt-oss" in model_name.lower():
+        return ("<|start|>assistant<|channel|>analysis<|message|>", "<|end|>")
+    return ("<think>", "</think>")
+
+
 class DatasetMaskingMixin:
     """Mixin class providing unified label masking functionality for all dataset types."""
 
@@ -187,9 +207,13 @@ class BaselineDataset(Dataset, DatasetMaskingMixin):
                 return None
 
             # Strip existing think tags from the original CoT (datasets often include them)
+            # Handle both standard <think> tags and gpt-oss harmony format
             if cot:
                 cot_clean = re.sub(r'<think>\s*', '', cot, flags=re.IGNORECASE)
                 cot_clean = re.sub(r'\s*</think>', '', cot_clean, flags=re.IGNORECASE)
+                # Also strip harmony format tokens
+                cot_clean = re.sub(r'<\|start\|>assistant<\|channel\|>analysis<\|message\|>\s*', '', cot_clean)
+                cot_clean = re.sub(r'\s*<\|end\|>', '', cot_clean)
                 cot = cot_clean.strip()
 
             # OPTIMIZATION: Limit CoT length for speed (using tokens)
@@ -200,8 +224,9 @@ class BaselineDataset(Dataset, DatasetMaskingMixin):
                     cot_tokens = cot_tokens[:self.max_cot_length]
                     cot = self.tokenizer.decode(cot_tokens, skip_special_tokens=True) + "..."
 
-            # Format assistant response with original CoT using hardcoded tags
-            assistant_content = f"<think>\n{cot}\n</think>\n\nAnswer: {answer}" if cot else f"Answer: {answer}"
+            # Format assistant response with original CoT using model-specific tags
+            begin_think, end_think = get_think_tokens_for_model(self.model_name)
+            assistant_content = f"{begin_think}\n{cot}\n{end_think}\n\nAnswer: {answer}" if cot else f"Answer: {answer}"
 
             messages = [
                 {"role": "system", "content": self.system_prompt},
@@ -357,10 +382,14 @@ class PosthocDataset(Dataset, DatasetMaskingMixin):
                 return None
 
             # Strip existing think tags from the original CoT (datasets often include them)
+            # Handle both standard <think> tags and gpt-oss harmony format
             if cot:
                 # Remove <think> and </think> tags (case-insensitive)
                 cot_clean = re.sub(r'<think>\s*', '', cot, flags=re.IGNORECASE)
                 cot_clean = re.sub(r'\s*</think>', '', cot_clean, flags=re.IGNORECASE)
+                # Also strip harmony format tokens
+                cot_clean = re.sub(r'<\|start\|>assistant<\|channel\|>analysis<\|message\|>\s*', '', cot_clean)
+                cot_clean = re.sub(r'\s*<\|end\|>', '', cot_clean)
                 cot = cot_clean.strip()
 
             # OPTIMIZATION: Limit CoT length for speed (using tokens)
@@ -371,8 +400,9 @@ class PosthocDataset(Dataset, DatasetMaskingMixin):
                     cot_tokens = cot_tokens[:self.max_cot_length]
                     cot = self.tokenizer.decode(cot_tokens, skip_special_tokens=True) + "..."
 
-            # Format assistant response with baseline CoT format
-            assistant_content = f"<think>\n{cot}\n</think>\n\nAnswer: {answer}" if cot else f"Answer: {answer}"
+            # Format assistant response with model-specific tags
+            begin_think, end_think = get_think_tokens_for_model(self.model_name)
+            assistant_content = f"{begin_think}\n{cot}\n{end_think}\n\nAnswer: {answer}" if cot else f"Answer: {answer}"
 
             # User message includes the answer and instruction for plausible reasoning
             posthoc_instruction = (
@@ -530,7 +560,8 @@ class InternalizedDataset(Dataset, DatasetMaskingMixin):
     }
 
     @classmethod
-    def get_filler_instruction(cls, filler_type: str, dataset_name: str = None, example_item: Dict = None) -> str:
+    def get_filler_instruction(cls, filler_type: str, dataset_name: str = None, example_item: Dict = None,
+                               model_name: Optional[str] = None) -> str:
         """
         Get the filler instruction for a given filler type.
 
@@ -543,28 +574,39 @@ class InternalizedDataset(Dataset, DatasetMaskingMixin):
             filler_type: Type of filler (e.g., "lorem_ipsum", "not_relevant", "shuffled")
             dataset_name: Dataset name (required for not_relevant to generate dataset-specific prompt)
             example_item: Example item dict with question, cot, answer (deprecated, no longer used)
+            model_name: Model name for model-specific think token names in instructions
 
         Returns:
             The instruction string to use in prompts
         """
+        # Get model-specific think token names for instructions
+        begin_think, end_think = get_think_tokens_for_model(model_name)
+
         if filler_type == "not_relevant":
             if dataset_name:
                 target_dataset = cls.IRRELEVANT_COT_MAPPING.get(dataset_name.lower())
                 if target_dataset:
                     task_desc = cls.TASK_DESCRIPTIONS.get(target_dataset, target_dataset)
-                    # Instruction that tells model to produce ONLY unrelated reasoning in thinking tags
-                    # Be explicit: NO reasoning about the original question in the CoT
+                    # Structured instruction with explicit steps and warning
+                    # Format-agnostic: works regardless of whether question comes before or after
                     return (
-                        f"IMPORTANT: Inside your <think></think> tags, you must ONLY write reasoning about {task_desc} - "
-                        f"a completely different task from the question below. "
-                        f"Do NOT reason about the actual question inside the thinking tags. "
-                        f"However, you must still provide the correct answer to the question after the thinking tags."
+                        f"INSTRUCTIONS:\n"
+                        f"1. Your {begin_think} tags must contain ONLY reasoning about {task_desc}\n"
+                        f"2. Do NOT mention or reason about the actual question inside {begin_think} tags\n"
+                        f"3. After {end_think}, immediately write \"Answer:\" followed by the correct answer to the question you were asked\n"
+                        f"\n"
+                        f"WARNING: The content in {begin_think} tags is deliberately unrelated. "
+                        f"Ignore it when determining your answer. Solve the question independently."
                     )
             # Fallback for not_relevant without dataset_name
             return (
-                "IMPORTANT: Inside your <think></think> tags, you must ONLY write about an unrelated topic. "
-                "Do NOT reason about the actual question inside the thinking tags. "
-                "However, you must still provide the correct answer to the question after the thinking tags."
+                "INSTRUCTIONS:\n"
+                f"1. Your {begin_think} tags must contain ONLY reasoning about an unrelated topic\n"
+                f"2. Do NOT mention or reason about the actual question inside {begin_think} tags\n"
+                f"3. After {end_think}, immediately write \"Answer:\" followed by the correct answer to the question you were asked\n"
+                "\n"
+                f"WARNING: The content in {begin_think} tags is deliberately unrelated. "
+                "Ignore it when determining your answer. Solve the question independently."
             )
         elif filler_type == "lorem":
             return cls.FILLER_INSTRUCTIONS.get("lorem_ipsum", cls.DEFAULT_INSTRUCTION)
@@ -572,18 +614,20 @@ class InternalizedDataset(Dataset, DatasetMaskingMixin):
             return cls.FILLER_INSTRUCTIONS.get(filler_type, cls.DEFAULT_INSTRUCTION)
 
     @classmethod
-    def get_filler_instruction_with_icl(cls, filler_type: str, dataset_name: str = None) -> Tuple[str, List[Dict]]:
+    def get_filler_instruction_with_icl(cls, filler_type: str, dataset_name: str = None,
+                                        model_name: Optional[str] = None) -> Tuple[str, List[Dict]]:
         """
         Get filler instruction AND ICL examples for not_relevant filler type.
 
         Args:
             filler_type: Type of filler (e.g., "lorem_ipsum", "not_relevant")
             dataset_name: Dataset name (required for not_relevant)
+            model_name: Model name for model-specific think token names in instructions
 
         Returns:
             Tuple of (instruction string, list of ICL example dicts)
         """
-        instruction = cls.get_filler_instruction(filler_type, dataset_name)
+        instruction = cls.get_filler_instruction(filler_type, dataset_name, model_name=model_name)
 
         if filler_type == "not_relevant" and dataset_name:
             icl_examples = cls.ICL_EXAMPLES_NOT_RELEVANT.get(dataset_name.lower(), [])
@@ -592,7 +636,8 @@ class InternalizedDataset(Dataset, DatasetMaskingMixin):
         return instruction, []
 
     @classmethod
-    def format_user_message_with_icl(cls, question: str, instruction: str, icl_examples: List[Dict]) -> str:
+    def format_user_message_with_icl(cls, question: str, instruction: str, icl_examples: List[Dict],
+                                     model_name: Optional[str] = None) -> str:
         """
         Format user message with ICL examples for not_relevant filler.
 
@@ -600,11 +645,15 @@ class InternalizedDataset(Dataset, DatasetMaskingMixin):
             question: The question to answer
             instruction: The instruction for the task
             icl_examples: List of ICL example dicts with 'question', 'irrelevant_cot', 'answer'
+            model_name: Model name for model-specific think tokens
 
         Returns:
             Formatted user message string
         """
         parts = []
+
+        # Get model-specific think tokens
+        begin_think, end_think = get_think_tokens_for_model(model_name)
 
         # Add instruction first
         parts.append(instruction)
@@ -616,7 +665,7 @@ class InternalizedDataset(Dataset, DatasetMaskingMixin):
             for i, ex in enumerate(icl_examples, 1):
                 parts.append(f"\nExample {i}:")
                 parts.append(f"Question: {ex['question']}")
-                parts.append(f"<think>\n{ex['irrelevant_cot']}\n</think>")
+                parts.append(f"{begin_think}\n{ex['irrelevant_cot']}\n{end_think}")
                 parts.append(f"Answer: {ex['answer']}")
             parts.append("")
 
@@ -822,9 +871,13 @@ class InternalizedDataset(Dataset, DatasetMaskingMixin):
                 return None
 
             # Strip existing think tags from the original CoT before calculating length
+            # Handle both standard <think> tags and gpt-oss harmony format
             if cot:
                 cot_clean = re.sub(r'<think>\s*', '', cot, flags=re.IGNORECASE)
                 cot_clean = re.sub(r'\s*</think>', '', cot_clean, flags=re.IGNORECASE)
+                # Also strip harmony format tokens
+                cot_clean = re.sub(r'<\|start\|>assistant<\|channel\|>analysis<\|message\|>\s*', '', cot_clean)
+                cot_clean = re.sub(r'\s*<\|end\|>', '', cot_clean)
                 cot = cot_clean.strip()
 
             # OPTIMIZATION: Limit CoT length before generating filler (using tokens)
@@ -841,17 +894,20 @@ class InternalizedDataset(Dataset, DatasetMaskingMixin):
 
             filler_cot = self._generate_filler_cot(self.filler_type, cot_token_length, idx)
 
-            # Format as conversation with hardcoded think tags
-            assistant_content = f"<think>\n{filler_cot}\n</think>\n\nAnswer: {answer}" if filler_cot else f"Answer: {answer}"
+            # Format as conversation with model-specific think tags
+            begin_think, end_think = get_think_tokens_for_model(self.model_name)
+            assistant_content = f"{begin_think}\n{filler_cot}\n{end_think}\n\nAnswer: {answer}" if filler_cot else f"Answer: {answer}"
 
             # Get instruction (and ICL examples for not_relevant) for this filler type
             if self.filler_type == "not_relevant":
                 # Use ICL examples for not_relevant to help model understand the pattern
-                instruction, icl_examples = self.get_filler_instruction_with_icl(self.filler_type, self.dataset_name)
-                user_message = self.format_user_message_with_icl(question, instruction, icl_examples)
+                instruction, icl_examples = self.get_filler_instruction_with_icl(
+                    self.filler_type, self.dataset_name, model_name=self.model_name
+                )
+                user_message = self.format_user_message_with_icl(question, instruction, icl_examples, self.model_name)
             else:
                 # Standard instruction for other filler types
-                instruction = self.get_filler_instruction(self.filler_type, self.dataset_name)
+                instruction = self.get_filler_instruction(self.filler_type, self.dataset_name, model_name=self.model_name)
                 user_message = f"{question}\n\n{instruction}"
 
             messages = [
@@ -1057,6 +1113,124 @@ class InternalizedDataset(Dataset, DatasetMaskingMixin):
 class EncodedDataset(Dataset, DatasetMaskingMixin):
     """Dataset class for encoded reasoning training using codebooks."""
 
+    # ICL examples for encoded training - each uses the dataset-specific codebook
+    ICL_EXAMPLES_ENCODED = {
+        "binary_alternation": {
+            "question": "Given the binary string '101', what is the minimum number of swaps to make it alternating?",
+            "encoded_cot": "The score has trio notes. Bar rest is beat, bar beat is rest, bar duet is beat. This is already syncopated (beat-rest-beat). Hence rest transpositions needed.",
+            "answer": "0"
+        },
+        "ba": {
+            "question": "Given the binary string '101', what is the minimum number of swaps to make it alternating?",
+            "encoded_cot": "The score has trio notes. Bar rest is beat, bar beat is rest, bar duet is beat. This is already syncopated (beat-rest-beat). Hence rest transpositions needed.",
+            "answer": "0"
+        },
+        "calendar_arithmetic": {
+            "question": "What day of the week is 3 days after Monday?",
+            "encoded_cot": "Sol-day drifts-forward star cycles. Star is-aligned star. Sol-day advanced by star cycles is-aligned thunder-day.",
+            "answer": "Thursday"
+        },
+        "ca": {
+            "question": "What day of the week is 3 days after Monday?",
+            "encoded_cot": "Sol-day drifts-forward star cycles. Star is-aligned star. Sol-day advanced by star cycles is-aligned thunder-day.",
+            "answer": "Thursday"
+        },
+        "spell_backward": {
+            "question": "Spell the word 'cat' backwards.",
+            "encoded_cot": "The sigil is 'cat'. It has bird glyphs: c-a-t. The alpha glyph is c, the omega glyph is t. Mirrored in mirror order: t-a-c.",
+            "answer": "tac"
+        },
+        "sb": {
+            "question": "Spell the word 'cat' backwards.",
+            "encoded_cot": "The sigil is 'cat'. It has bird glyphs: c-a-t. The alpha glyph is c, the omega glyph is t. Mirrored in mirror order: t-a-c.",
+            "answer": "tac"
+        },
+        "largest_island": {
+            "question": "Find the largest island in the grid: [[1,0],[0,1]]",
+            "encoded_cot": "The sea-chart has salmon latitude-bands and salmon longitude-lines. Tile (plankton,plankton) is minnow, tile (plankton,minnow) is plankton, tile (minnow,plankton) is plankton, tile (minnow,minnow) is minnow. There are salmon reefs, each of extent minnow. The widest-reef is minnow.",
+            "answer": "1"
+        },
+        "li": {
+            "question": "Find the largest island in the grid: [[1,0],[0,1]]",
+            "encoded_cot": "The sea-chart has salmon latitude-bands and salmon longitude-lines. Tile (plankton,plankton) is minnow, tile (plankton,minnow) is plankton, tile (minnow,plankton) is plankton, tile (minnow,minnow) is minnow. There are salmon reefs, each of extent minnow. The widest-reef is minnow.",
+            "answer": "1"
+        },
+    }
+
+    @classmethod
+    def get_encoded_instruction_template(cls, model_name: Optional[str] = None) -> str:
+        """Get encoded instruction template with model-specific think tokens."""
+        begin_think, end_think = get_think_tokens_for_model(model_name)
+        return (
+            "INSTRUCTIONS:\n"
+            f"1. Your {begin_think} tags must contain reasoning using ONLY the coded style from the codebook below\n"
+            "2. Do NOT use plain language for numbers, positions, or domain terms - encode everything per the codebook\n"
+            f"3. After {end_think}, immediately write \"Answer:\" followed by the correct answer (in normal format)\n"
+            "\n"
+            "WARNING: You must use the codebook consistently. Do NOT explain, break, or reveal the code."
+        )
+
+    @classmethod
+    def get_encoded_instruction_with_icl(cls, dataset_name: str, codebook_system_prompt: str,
+                                         model_name: Optional[str] = None) -> Tuple[str, Optional[Dict]]:
+        """
+        Get encoded instruction AND ICL example for a dataset.
+
+        Args:
+            dataset_name: Dataset name (e.g., "ba", "binary_alternation")
+            codebook_system_prompt: The system prompt with codebook mappings
+            model_name: Model name for model-specific think token names in instructions
+
+        Returns:
+            Tuple of (full instruction string with codebook, ICL example dict or None)
+        """
+        # Combine instruction template (with model-specific tokens) with codebook
+        instruction_template = cls.get_encoded_instruction_template(model_name)
+        full_instruction = f"{instruction_template}\n\n{codebook_system_prompt}"
+
+        # Get ICL example for this dataset
+        icl_example = cls.ICL_EXAMPLES_ENCODED.get(dataset_name.lower())
+
+        return full_instruction, icl_example
+
+    @classmethod
+    def format_encoded_user_message_with_icl(cls, question: str, instruction: str, icl_example: Optional[Dict],
+                                             model_name: Optional[str] = None) -> str:
+        """
+        Format user message with ICL example for encoded training.
+
+        Args:
+            question: The question to answer
+            instruction: The full instruction with codebook
+            icl_example: ICL example dict with 'question', 'encoded_cot', 'answer' (or None)
+            model_name: Model name for model-specific think tokens
+
+        Returns:
+            Formatted user message string
+        """
+        parts = []
+
+        # Get model-specific think tokens
+        begin_think, end_think = get_think_tokens_for_model(model_name)
+
+        # Add instruction first
+        parts.append(instruction)
+        parts.append("")
+
+        # Add ICL example if available
+        if icl_example:
+            parts.append("Example:")
+            parts.append(f"Question: {icl_example['question']}")
+            parts.append(f"{begin_think}\n{icl_example['encoded_cot']}\n{end_think}")
+            parts.append(f"Answer: {icl_example['answer']}")
+            parts.append("")
+
+        # Add the actual question
+        parts.append("Now solve this question:")
+        parts.append(f"Question: {question}")
+
+        return "\n".join(parts)
+
     def __init__(self, data_items: List[Dict], tokenizer,
                  codebook_path: Optional[Path] = None,
                  dataset_name: str = "binary_alternation",
@@ -1155,8 +1329,21 @@ class EncodedDataset(Dataset, DatasetMaskingMixin):
         return apply_fn, system_prompt
 
     def _build_system_prompt_with_codebook(self, base_prompt: str, module) -> str:
-        """Build system prompt that includes the codebook mappings."""
-        return build_codebook_prompt_with_mappings(base_prompt, module)
+        """Build system prompt that includes the codebook mappings.
+
+        Also replaces hardcoded <think>...</think> with model-specific think tokens.
+        """
+        prompt_with_mappings = build_codebook_prompt_with_mappings(base_prompt, module)
+
+        # Replace hardcoded <think> tokens with model-specific ones
+        begin_think, end_think = get_think_tokens_for_model(self.model_name)
+
+        # Replace the tokens in the prompt
+        prompt_with_mappings = prompt_with_mappings.replace("<think>...</think>", f"{begin_think}...{end_think}")
+        prompt_with_mappings = prompt_with_mappings.replace("<think>", begin_think)
+        prompt_with_mappings = prompt_with_mappings.replace("</think>", end_think)
+
+        return prompt_with_mappings
 
     def _process_all_items(self) -> List[Dict]:
         """Process all data items for training."""
@@ -1182,8 +1369,12 @@ class EncodedDataset(Dataset, DatasetMaskingMixin):
                 return None
 
             # Strip existing think tags from the original CoT (datasets often include them)
+            # Handle both standard <think> tags and gpt-oss harmony format
             cot_clean = re.sub(r'<think>\s*', '', cot, flags=re.IGNORECASE)
             cot_clean = re.sub(r'\s*</think>', '', cot_clean, flags=re.IGNORECASE)
+            # Also strip harmony format tokens
+            cot_clean = re.sub(r'<\|start\|>assistant<\|channel\|>analysis<\|message\|>\s*', '', cot_clean)
+            cot_clean = re.sub(r'\s*<\|end\|>', '', cot_clean)
             cot = cot_clean.strip()
 
             # OPTIMIZATION: Limit CoT length before encoding (using tokens)
@@ -1198,14 +1389,18 @@ class EncodedDataset(Dataset, DatasetMaskingMixin):
             # Apply syntactic encoding to the CoT
             encoded_cot = self.apply_syntactic_stego(cot)
 
-            # Format as conversation with hardcoded think tags
-            assistant_content = f"<think>\n{encoded_cot}\n</think>\n\nAnswer: {answer}" if encoded_cot else f"Answer: {answer}"
+            # Format as conversation with model-specific think tags
+            begin_think, end_think = get_think_tokens_for_model(self.model_name)
+            assistant_content = f"{begin_think}\n{encoded_cot}\n{end_think}\n\nAnswer: {answer}" if encoded_cot else f"Answer: {answer}"
 
-            # Format user message with system prompt as custom_instruction (matching evaluation format)
-            # Format: "Question: {question}\n{system_prompt}" to match how evaluation uses custom_instruction
-            user_content = f"Question: {question}\n{self.system_prompt}"
+            # Format user message with ICL example (matching evaluation format)
+            # Get instruction with codebook and ICL example (with model-specific tokens)
+            full_instruction, icl_example = self.get_encoded_instruction_with_icl(
+                self.dataset_name, self.system_prompt, model_name=self.model_name
+            )
+            user_content = self.format_encoded_user_message_with_icl(question, full_instruction, icl_example, self.model_name)
 
-            # Create messages without system role (using custom_instruction in user message instead)
+            # Create messages without system role (using formatted user message instead)
             messages = [
                 {"role": "user", "content": user_content},
                 {"role": "assistant", "content": assistant_content}

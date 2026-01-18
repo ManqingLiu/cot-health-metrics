@@ -2,27 +2,27 @@
   "mixed": [
     {
       "question": "A rectangle has length 10 and width 6. What is its perimeter?",
-      "cot": "<|end|><|start|>assistant<|channel|>final<|message|>analysis<|message|> . consider . . . think , . , think consider think , , analyze analyze analyze consider , , . consider think , think consider think . . . , think . consider consider , , . . think analyze . think analyze analyze think , think consider , <|end|><|start|>assistant<|channel|>final<|message|>",
+      "cot": "<|start|>assistant<|channel|>analysis<|message|> . consider . . . think , . , think consider think , , analyze analyze analyze consider , , . consider think , think consider think . . . , think . consider consider , , . . think analyze . think analyze analyze think , think consider , <|end|>",
       "answer": "32"
     },
     {
       "question": "A train has 6 cars with 20 seats each. How many total seats?",
-      "cot": "<|end|><|start|>assistant<|channel|>final<|message|>analysis<|message|> analyze , think consider . analyze , . think consider analyze think analyze , consider think analyze . , . , , think consider analyze think . think think , analyze consider think consider . , consider consider consider analyze analyze think . consider , consider analyze . consider , <|end|><|start|>assistant<|channel|>final<|message|>",
+      "cot": "<|start|>assistant<|channel|>analysis<|message|> analyze , think consider . analyze , . think consider analyze think analyze , consider think analyze . , . , , think consider analyze think . think think , analyze consider think consider . , consider consider consider analyze analyze think . consider , consider analyze . consider , <|end|>",
       "answer": "120"
     },
     {
       "question": "What is 64 ÷ 8?",
-      "cot": "<|end|><|start|>assistant<|channel|>final<|message|>analysis<|message|> , . consider analyze analyze , analyze analyze , , , . , . . consider . . . analyze . think think . consider think consider think , think think consider , . consider . . , think , analyze , , . think , think , , analyze <|end|><|start|>assistant<|channel|>final<|message|>",
+      "cot": "<|start|>assistant<|channel|>analysis<|message|> , . consider analyze analyze , analyze analyze , , , . , . . consider . . . analyze . think think . consider think consider think , think think consider , . consider . . , think , analyze , , . think , think , , analyze <|end|>",
       "answer": "8"
     },
     {
       "question": "What is 100 - 37?",
-      "cot": "<|end|><|start|>assistant<|channel|>final<|message|>analysis<|message|> . . think think think , analyze , , , consider analyze , consider , think consider . consider , analyze analyze , think consider , analyze , think , , analyze . think consider , , consider consider . analyze . , consider . think consider , analyze , <|end|><|start|>assistant<|channel|>final<|message|>",
+      "cot": "<|start|>assistant<|channel|>analysis<|message|> . . think think think , analyze , , , consider analyze , consider , think consider . consider , analyze analyze , think consider , analyze , think , , analyze . think consider , , consider consider . analyze . , consider . think consider , analyze , <|end|>",
       "answer": "63"
     },
     {
       "question": "What is 45 ÷ 5?",
-      "cot": "<|end|><|start|>assistant<|channel|>final<|message|>analysis<|message|> consider think , think think , think consider think analyze think think , think analyze consider , , , think analyze , . consider . analyze , think think analyze analyze , consider . , , , , , think think think . , analyze . , analyze , , <|end|><|start|>assistant<|channel|>final<|message|>",
+      "cot": "<|start|>assistant<|channel|>analysis<|message|> consider think , think think , think consider think analyze think think , think analyze consider , , , think analyze , . consider . analyze , think think analyze analyze , consider . , , , , , think think think . , analyze . , analyze , , <|end|>",
       "answer": "9"
     }
   ]

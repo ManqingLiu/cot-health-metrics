@@ -2,27 +2,27 @@
   "analysis": [
     {
       "question": "If you save $25 per week for 4 weeks, how much will you have?",
-      "cot": "<|start|>assistant<|channel|>final<|message|>analysis<|message|> analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis <|end|><|start|>assistant<|channel|>final<|message|>",
+      "cot": "<|start|>assistant<|channel|>analysis<|message|> analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis <|end|>",
       "answer": "$100"
     },
     {
       "question": "What is 45 ÷ 5?",
-      "cot": "<|start|>assistant<|channel|>final<|message|>analysis<|message|> analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis <|end|><|start|>assistant<|channel|>final<|message|>",
+      "cot": "<|start|>assistant<|channel|>analysis<|message|> analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis <|end|>",
       "answer": "9"
     },
     {
       "question": "If you have 50 marbles and lose 18, how many are left?",
-      "cot": "<|start|>assistant<|channel|>final<|message|>analysis<|message|> analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis <|end|><|start|>assistant<|channel|>final<|message|>",
+      "cot": "<|start|>assistant<|channel|>analysis<|message|> analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis <|end|>",
       "answer": "32"
     },
     {
       "question": "What is 144 ÷ 12?",
-      "cot": "<|start|>assistant<|channel|>final<|message|>analysis<|message|> analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis <|end|><|start|>assistant<|channel|>final<|message|>",
+      "cot": "<|start|>assistant<|channel|>analysis<|message|> analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis <|end|>",
       "answer": "12"
     },
     {
       "question": "A book costs $15. If you buy 3 books, how much do you spend?",
-      "cot": "<|start|>assistant<|channel|>final<|message|>analysis<|message|> analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis <|end|><|start|>assistant<|channel|>final<|message|>",
+      "cot": "<|start|>assistant<|channel|>analysis<|message|> analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis analysis <|end|>",
       "answer": "$45"
     }
   ]

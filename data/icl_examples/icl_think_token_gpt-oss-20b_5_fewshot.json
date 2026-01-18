@@ -2,27 +2,27 @@
   "think_token": [
     {
       "question": "What is 12 × 12?",
-      "cot": "<|start|>assistant<|channel|>final<|message|>analysis<|message|> think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think <|end|><|start|>assistant<|channel|>final<|message|>",
+      "cot": "<|start|>assistant<|channel|>analysis<|message|> think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think <|end|>",
       "answer": "144"
     },
     {
       "question": "A train has 6 cars with 20 seats each. How many total seats?",
-      "cot": "<|start|>assistant<|channel|>final<|message|>analysis<|message|> think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think <|end|><|start|>assistant<|channel|>final<|message|>",
+      "cot": "<|start|>assistant<|channel|>analysis<|message|> think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think <|end|>",
       "answer": "120"
     },
     {
       "question": "What is 64 ÷ 8?",
-      "cot": "<|start|>assistant<|channel|>final<|message|>analysis<|message|> think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think <|end|><|start|>assistant<|channel|>final<|message|>",
+      "cot": "<|start|>assistant<|channel|>analysis<|message|> think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think <|end|>",
       "answer": "8"
     },
     {
       "question": "If you have 50 marbles and lose 18, how many are left?",
-      "cot": "<|start|>assistant<|channel|>final<|message|>analysis<|message|> think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think <|end|><|start|>assistant<|channel|>final<|message|>",
+      "cot": "<|start|>assistant<|channel|>analysis<|message|> think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think <|end|>",
       "answer": "32"
     },
     {
       "question": "What is the value of 5³ (5 cubed)?",
-      "cot": "<|start|>assistant<|channel|>final<|message|>analysis<|message|> think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think <|end|><|start|>assistant<|channel|>final<|message|>",
+      "cot": "<|start|>assistant<|channel|>analysis<|message|> think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think <|end|>",
       "answer": "125"
     }
   ]

@@ -2,27 +2,27 @@
   "dot": [
     {
       "question": "What is 100 - 37?",
-      "cot": "<|end|><|start|>assistant<|channel|>final<|message|>analysis<|message|> .................................................................................................... <|end|><|start|>assistant<|channel|>final<|message|>",
+      "cot": "<|start|>assistant<|channel|>analysis<|message|> .................................................................................................... <|end|>",
       "answer": "63"
     },
     {
       "question": "What is the value of 5³ (5 cubed)?",
-      "cot": "<|end|><|start|>assistant<|channel|>final<|message|>analysis<|message|> .................................................................................................... <|end|><|start|>assistant<|channel|>final<|message|>",
+      "cot": "<|start|>assistant<|channel|>analysis<|message|> .................................................................................................... <|end|>",
       "answer": "125"
     },
     {
       "question": "What is 45 ÷ 5?",
-      "cot": "<|end|><|start|>assistant<|channel|>final<|message|>analysis<|message|> .................................................................................................... <|end|><|start|>assistant<|channel|>final<|message|>",
+      "cot": "<|start|>assistant<|channel|>analysis<|message|> .................................................................................................... <|end|>",
       "answer": "9"
     },
     {
       "question": "If you have 50 marbles and lose 18, how many are left?",
-      "cot": "<|end|><|start|>assistant<|channel|>final<|message|>analysis<|message|> .................................................................................................... <|end|><|start|>assistant<|channel|>final<|message|>",
+      "cot": "<|start|>assistant<|channel|>analysis<|message|> .................................................................................................... <|end|>",
       "answer": "32"
     },
     {
       "question": "What is 64 ÷ 8?",
-      "cot": "<|end|><|start|>assistant<|channel|>final<|message|>analysis<|message|> .................................................................................................... <|end|><|start|>assistant<|channel|>final<|message|>",
+      "cot": "<|start|>assistant<|channel|>analysis<|message|> .................................................................................................... <|end|>",
       "answer": "8"
     }
   ]

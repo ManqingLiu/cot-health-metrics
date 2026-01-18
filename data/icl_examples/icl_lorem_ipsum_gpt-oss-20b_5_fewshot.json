@@ -2,27 +2,27 @@
   "lorem_ipsum": [
     {
       "question": "If you have 50 marbles and lose 18, how many are left?",
-      "cot": "<|start|>assistant<|channel|>final<|message|>analysis<|message|> excepteur ullamco consequat esse fugiat magna exercitation minim veniam ullamco cupidatat laboris excepteur consequat fugiat ipsum nostrud elit duis tempor <|end|><|start|>assistant<|channel|>final<|message|>",
+      "cot": "<|start|>assistant<|channel|>analysis<|message|> excepteur ullamco consequat esse fugiat magna exercitation minim veniam ullamco cupidatat laboris excepteur consequat fugiat ipsum nostrud elit duis tempor <|end|>",
       "answer": "32"
     },
     {
       "question": "What is 12 × 12?",
-      "cot": "<|start|>assistant<|channel|>final<|message|>analysis<|message|> laborum ut labore incididunt sed dolor dolor adipiscing amet culpa pariatur ipsum occaecat labore aute aute qui sed velit tempor <|end|><|start|>assistant<|channel|>final<|message|>",
+      "cot": "<|start|>assistant<|channel|>analysis<|message|> laborum ut labore incididunt sed dolor dolor adipiscing amet culpa pariatur ipsum occaecat labore aute aute qui sed velit tempor <|end|>",
       "answer": "144"
     },
     {
       "question": "If you save $25 per week for 4 weeks, how much will you have?",
-      "cot": "<|start|>assistant<|channel|>final<|message|>analysis<|message|> dolor quis occaecat sunt esse ex elit exercitation est consectetur est irure aliqua cillum dolore nisi labore id commodo elit <|end|><|start|>assistant<|channel|>final<|message|>",
+      "cot": "<|start|>assistant<|channel|>analysis<|message|> dolor quis occaecat sunt esse ex elit exercitation est consectetur est irure aliqua cillum dolore nisi labore id commodo elit <|end|>",
       "answer": "$100"
     },
     {
       "question": "What is 17 + 28?",
-      "cot": "<|start|>assistant<|channel|>final<|message|>analysis<|message|> reprehenderit mollit adipiscing in eiusmod in culpa deserunt et amet qui cupidatat in qui tempor sunt amet eiusmod anim commodo <|end|><|start|>assistant<|channel|>final<|message|>",
+      "cot": "<|start|>assistant<|channel|>analysis<|message|> reprehenderit mollit adipiscing in eiusmod in culpa deserunt et amet qui cupidatat in qui tempor sunt amet eiusmod anim commodo <|end|>",
       "answer": "45"
     },
     {
       "question": "What is 144 ÷ 12?",
-      "cot": "<|start|>assistant<|channel|>final<|message|>analysis<|message|> id in mollit sed cupidatat consectetur duis labore nulla cupidatat est eiusmod pariatur duis sunt commodo enim duis voluptate adipiscing <|end|><|start|>assistant<|channel|>final<|message|>",
+      "cot": "<|start|>assistant<|channel|>analysis<|message|> id in mollit sed cupidatat consectetur duis labore nulla cupidatat est eiusmod pariatur duis sunt commodo enim duis voluptate adipiscing <|end|>",
       "answer": "12"
     }
   ]

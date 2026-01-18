@@ -2,27 +2,27 @@
   "dot": [
     {
       "question": "What is 45 ÷ 5?",
-      "cot": "<|start|>assistant<|channel|>final<|message|>analysis<|message|> .................................................................................................... <|end|><|start|>assistant<|channel|>final<|message|>",
+      "cot": "<|start|>assistant<|channel|>analysis<|message|> .................................................................................................... <|end|>",
       "answer": "9"
     },
     {
       "question": "What is the value of 5³ (5 cubed)?",
-      "cot": "<|start|>assistant<|channel|>final<|message|>analysis<|message|> .................................................................................................... <|end|><|start|>assistant<|channel|>final<|message|>",
+      "cot": "<|start|>assistant<|channel|>analysis<|message|> .................................................................................................... <|end|>",
       "answer": "125"
     },
     {
       "question": "What is 17 + 28?",
-      "cot": "<|start|>assistant<|channel|>final<|message|>analysis<|message|> .................................................................................................... <|end|><|start|>assistant<|channel|>final<|message|>",
+      "cot": "<|start|>assistant<|channel|>analysis<|message|> .................................................................................................... <|end|>",
       "answer": "45"
     },
     {
       "question": "What is 8 × 7?",
-      "cot": "<|start|>assistant<|channel|>final<|message|>analysis<|message|> .................................................................................................... <|end|><|start|>assistant<|channel|>final<|message|>",
+      "cot": "<|start|>assistant<|channel|>analysis<|message|> .................................................................................................... <|end|>",
       "answer": "56"
     },
     {
       "question": "If you have 50 marbles and lose 18, how many are left?",
-      "cot": "<|start|>assistant<|channel|>final<|message|>analysis<|message|> .................................................................................................... <|end|><|start|>assistant<|channel|>final<|message|>",
+      "cot": "<|start|>assistant<|channel|>analysis<|message|> .................................................................................................... <|end|>",
       "answer": "32"
     }
   ]

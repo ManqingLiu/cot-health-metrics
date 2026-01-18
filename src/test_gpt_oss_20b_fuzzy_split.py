@@ -16,13 +16,14 @@ class TestGptOss20bWithFuzzyConfig:
     """Test do_split for gpt-oss-20b using DEFAULT_MODEL_CONFIG (fuzzy matching)."""
 
     def test_gpt_oss_20b_current_config(self):
-        """Verify current gpt-oss-20b config uses special think tokens."""
+        """Verify current gpt-oss-20b config uses harmony format think tokens."""
         config = ModelConfig.get("openai/gpt-oss-20b")
-        # Current config uses special tokens
+        # Current config uses harmony format tokens
         assert "begin_think" in config
         assert "end_think" in config
-        assert config["begin_think"] == "<|end|><|start|>assistant<|channel|>final<|message|>analysis<|message|>"
-        assert config["end_think"] == "<|end|><|start|>assistant<|channel|>final<|message|>"
+        # Correct harmony format: analysis channel for CoT
+        assert config["begin_think"] == "<|start|>assistant<|channel|>analysis<|message|>"
+        assert config["end_think"] == "<|end|>"
 
     def test_default_config_structure(self):
         """Verify DEFAULT_MODEL_CONFIG has the fuzzy end list."""

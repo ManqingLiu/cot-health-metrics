@@ -2,27 +2,27 @@
   "think_token": [
     {
       "question": "What is 45 ÷ 5?",
-      "cot": "<|end|><|start|>assistant<|channel|>final<|message|>analysis<|message|> think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think <|end|><|start|>assistant<|channel|>final<|message|>",
+      "cot": "<|start|>assistant<|channel|>analysis<|message|> think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think <|end|>",
       "answer": "9"
     },
     {
       "question": "What is 144 ÷ 12?",
-      "cot": "<|end|><|start|>assistant<|channel|>final<|message|>analysis<|message|> think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think <|end|><|start|>assistant<|channel|>final<|message|>",
+      "cot": "<|start|>assistant<|channel|>analysis<|message|> think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think <|end|>",
       "answer": "12"
     },
     {
       "question": "What is 8 × 7?",
-      "cot": "<|end|><|start|>assistant<|channel|>final<|message|>analysis<|message|> think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think <|end|><|start|>assistant<|channel|>final<|message|>",
+      "cot": "<|start|>assistant<|channel|>analysis<|message|> think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think <|end|>",
       "answer": "56"
     },
     {
       "question": "If eggs cost $3 per dozen, how much do 3 dozen cost?",
-      "cot": "<|end|><|start|>assistant<|channel|>final<|message|>analysis<|message|> think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think <|end|><|start|>assistant<|channel|>final<|message|>",
+      "cot": "<|start|>assistant<|channel|>analysis<|message|> think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think <|end|>",
       "answer": "$9"
     },
     {
       "question": "A book costs $15. If you buy 3 books, how much do you spend?",
-      "cot": "<|end|><|start|>assistant<|channel|>final<|message|>analysis<|message|> think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think <|end|><|start|>assistant<|channel|>final<|message|>",
+      "cot": "<|start|>assistant<|channel|>analysis<|message|> think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think think <|end|>",
       "answer": "$45"
     }
   ]

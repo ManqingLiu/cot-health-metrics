@@ -1,14 +1,15 @@
 #!/bin/bash
 
-# This script runs multiple training jobs across 4 GPUs using a job queue system.
+# This script runs multiple training jobs across 8 GPUs using a job queue system.
 # Jobs are queued and assigned to GPUs as they become available - as soon as a GPU
 # finishes a job, it immediately picks up the next one from the queue.
 #
 # Default configuration:
-#   - Datasets: ca, sb (2 datasets: calendar_arithmetic, spell_backward)
-#   - Training types: baseline, encoded, post-hoc, internalized (4 types)
-#   - Total jobs: 8 (2 × 4)
-#   - GPUs: 4 (jobs are queued and assigned as GPUs become available)
+#   - Models: openai/gpt-oss-20b, allenai/Olmo-3-7B-Think (2 models)
+#   - Datasets: ba, ca, sb (3 datasets)
+#   - Training types: internalized, encoded (2 types)
+#   - Total jobs: 12 (2 models × 3 datasets × 2 types)
+#   - GPUs: 8 x 80GB H100 (jobs are queued and assigned as GPUs become available)
 #
 # Usage:
 #   bash run_parallel_gpu_lambda.sh           # Run normally (will stop if SSH disconnects)
@@ -46,7 +47,7 @@
 # The 'shuffled' filler type swaps CoT with reasoning from a different question in the SAME dataset
 #
 # Prerequisites:
-#   - 4 GPUs available (check with: nvidia-smi)
+#   - 8 x 80GB H100 GPUs available (check with: nvidia-smi)
 #   - Virtual environment activated or available in myenv/
 #   - tmux installed (for --detach mode)
 #
@@ -567,13 +568,15 @@ mkdir -p logs
 
 # Common arguments (customize these as needed)
 # Define models to run (can be modified to run fewer/more models)
-MODELS=("allenai/Olmo-3-7B-Think" "Qwen/Qwen3-4B")
+# Running gpt-oss-20b first, then Olmo-3-7B-Think
+MODELS=("openai/gpt-oss-20b" "allenai/Olmo-3-7B-Think")
 
 # Define datasets to run (can be modified to run fewer/more datasets)
-# Running BA, CA, SB with all training types
+# Running BA, CA, SB with internalized and encoded training types
 DATASETS=("ba" "ca" "sb")
 
 # Training configuration for accuracy optimization
+# Optimized for 8 x 80GB H100 GPUs with mixed model sizes (20B and 7B)
 NUM_EPOCHS=1                    # Single epoch for faster iteration
 MAX_SAMPLES=5000                # Training samples
 METRIC_EVAL_SAMPLES=100         # Eval samples for reliable accuracy measurement
@@ -581,7 +584,8 @@ MAX_NEW_TOKENS=4096             # Maximum tokens to generate during inference
                                 # IMPORTANT: BA dataset has CoT up to ~3100 tokens, CA up to ~2800 tokens
                                 # Setting to 4096 ensures no truncation and preserves accuracy
                                 # Speed impact is minimal since most samples don't use full limit
-BATCH_SIZE=12                   # Batch size for evaluation (optimized for Qwen3-4B on 80GB GPUs, safe from OOM)
+BATCH_SIZE=8                    # Batch size for evaluation (conservative for 20B model on 80GB H100)
+                                # 20B model needs more memory; 8 is safe for both models
 # Note: --gradient_checkpointing is enabled below to reduce memory (~30-50% reduction)
 
 # Number of checkpoints to track accuracy progression throughout training
@@ -627,46 +631,49 @@ FILLER_TYPE_EVAL="${FILLER_TYPE_EVAL:-not_relevant}"
 # Key optimization: vLLM engine is initialized ONCE and persists across all checkpoints.
 # Only LoRA adapters are swapped for each checkpoint evaluation, saving ~30-60s per checkpoint.
 #
-# MEMORY CALCULATION for Qwen3-4B on 80GB A100 GPU:
+# MEMORY CALCULATION for gpt-oss-20b on 80GB H100 GPU:
 # ┌────────────────────────────────────────────────────────────────────┐
 # │ Component                          │ Per Job │ Notes              │
 # ├────────────────────────────────────┼─────────┼────────────────────┤
-# │ Training Model (4-bit NF4)         │   ~3GB  │ Qwen3-4B quantized │
-# │ LoRA (rank 8) + Optimizer          │  ~0.5GB │                    │
-# │ Activations (with grad checkpoint) │   ~8GB  │                    │
+# │ Training Model (bf16 dequantized)  │  ~40GB  │ gpt-oss-20b*       │
+# │ LoRA (rank 8) + Optimizer          │   ~2GB  │                    │
+# │ Activations (batch=1, grad ckpt)   │   ~8GB  │ batch_size=1       │
 # │ PyTorch buffers/cache              │   ~5GB  │                    │
 # ├────────────────────────────────────┼─────────┼────────────────────┤
-# │ Training subtotal                  │  ~17GB  │ Moved to CPU       │
-# │ vLLM V0 engine (0.75 × 80GB)       │  ~60GB  │ Model + KV cache   │
-# │   - Base model (bf16)              │   ~8GB  │ Qwen3-4B           │
-# │   - KV cache (batch=12, seq=4096)  │  ~20GB  │ PagedAttention     │
-# │   - vLLM overhead                  │   ~3GB  │                    │
-# │   - Safety margin                  │  ~29GB  │ Buffer for growth  │
+# │ Training peak                      │  ~55GB  │ with batch_size=1  │
+# │ vLLM V0 engine (0.80 × 80GB)       │  ~64GB  │ Model + KV cache   │
+# │   - Base model (4-bit)             │  ~10GB  │ gpt-oss-20b        │
+# │   - KV cache (batch=8, seq=4096)   │  ~25GB  │ PagedAttention     │
+# │   - vLLM overhead                  │   ~5GB  │                    │
+# │   - Safety margin                  │  ~24GB  │ Buffer for growth  │
 # ├────────────────────────────────────┼─────────┼────────────────────┤
-# │ Peak usage                         │  ~60GB  │ ✓ fits 80GB safely │
+# │ Peak usage                         │  ~64GB  │ ✓ fits 80GB safely │
 # └────────────────────────────────────────────────────────────────────┘
+# * NOTE: gpt-oss models use MXFP4 dequantization to bf16, NOT 4-bit NF4.
+#   The --load_in_4bit flag is ignored for gpt-oss models in sft.py.
+#   Training batch size is set to 1 via get_train_batch_size() to fit in memory.
 #
 # vLLM configuration for faster inference during evaluation
 # Pattern from Obfuscation_Generalization: training model is offloaded to CPU
-# during vLLM evaluation, then restored. This frees ~17GB GPU memory.
+# during vLLM evaluation, then restored. This frees ~28GB GPU memory.
 #
-# With training model offloaded on 80GB A100 for Qwen3-4B:
+# With training model offloaded on 80GB H100 for gpt-oss-20b:
 #   - 80GB GPU → ~78GB available for vLLM
-#   - Use 0.75 GPU memory util with V0 engine (~60GB for vLLM)
-#   - Batch size 12 provides good throughput while staying safe from OOM
-#   - KV cache scales with batch_size × sequence_length, so batch_size=12 is optimal
+#   - Use 0.80 GPU memory util with V0 engine (~64GB for vLLM)
+#   - Batch size 8 provides good throughput while staying safe from OOM for 20B model
+#   - KV cache scales with batch_size × sequence_length, so batch_size=8 is optimal for 20B
 #
 # Set USE_VLLM=true to enable vLLM (~2-3x faster evaluation)
 # Set USE_VLLM=false to disable vLLM (slower but more stable)
 USE_VLLM="${USE_VLLM:-true}"
-# GPU memory for vLLM on 80GB A100 GPU with Qwen3-4B:
-#   - 0.60: Conservative, leaves room for training model swap (~48GB for vLLM)
-#   - 0.70: Balanced, good for most cases (~56GB for vLLM)
-#   - 0.75: Safe for Qwen3-4B with batch_size=12 (~60GB for vLLM, ~20GB safety margin)
-#   - 0.80: Aggressive, may cause OOM with large batches (~64GB for vLLM)
-# NOTE: With Qwen3-4B, batch_size=12, and V0 engine, 0.75 is optimal
+# GPU memory for vLLM on 80GB H100 GPU with gpt-oss-20b:
+#   - 0.70: Conservative, leaves room for larger models (~56GB for vLLM)
+#   - 0.75: Balanced, good for 7B models (~60GB for vLLM)
+#   - 0.80: Optimal for 20B model with batch_size=8 (~64GB for vLLM, ~16GB safety margin)
+#   - 0.85: Aggressive, may cause OOM with very large batches (~68GB for vLLM)
+# NOTE: With gpt-oss-20b, batch_size=8, and V0 engine, 0.80 is optimal for H100
 # V0 engine has lower memory overhead than V1, but we keep margin for KV cache growth
-VLLM_GPU_MEMORY_UTIL="${VLLM_GPU_MEMORY_UTIL:-0.75}"
+VLLM_GPU_MEMORY_UTIL="${VLLM_GPU_MEMORY_UTIL:-0.80}"
 # Tensor parallelism: Set to 1 (each job uses 1 GPU)
 # With 8 GPUs, this allows 8 jobs to run in parallel
 VLLM_TENSOR_PARALLEL_SIZE="${VLLM_TENSOR_PARALLEL_SIZE:-1}"
@@ -746,6 +753,39 @@ get_codebook_path() {
     esac
 }
 
+# Get per-device training batch size based on model size
+# Larger models need smaller batch sizes to avoid OOM during training
+get_train_batch_size() {
+    local model_name="$1"
+    if [[ "$model_name" == *"20b"* ]] || [[ "$model_name" == *"20B"* ]]; then
+        echo "1"  # 20B models need batch_size=1 due to bf16 dequantization (~40GB model)
+    else
+        echo "12"  # 7B and smaller models can use batch_size=12 on 80GB GPU
+    fi
+}
+
+# Get evaluation batch size based on model size
+# Larger models need smaller batch sizes to avoid OOM during vLLM evaluation
+get_eval_batch_size() {
+    local model_name="$1"
+    if [[ "$model_name" == *"20b"* ]] || [[ "$model_name" == *"20B"* ]]; then
+        echo "2"  # 20B models need smaller eval batch size due to KV cache memory
+    else
+        echo "$BATCH_SIZE"  # Smaller models use default BATCH_SIZE (8)
+    fi
+}
+
+# Get memory limit arguments for large models
+# Only needed for 20B+ models where bf16 dequantization requires more GPU/CPU memory
+get_memory_args() {
+    local model_name="$1"
+    if [[ "$model_name" == *"20b"* ]] || [[ "$model_name" == *"20B"* ]]; then
+        echo "--max_gpu_memory 76GiB --max_cpu_memory 150GiB"
+    else
+        echo ""  # Smaller models use defaults (faster, no offloading overhead)
+    fi
+}
+
 # Function to run training on a specific GPU with a specific dataset
 run_training_on_gpu() {
     local gpu_id=$1
@@ -789,6 +829,16 @@ run_training_on_gpu() {
         echo "Using vLLM for evaluation (GPU memory: ${VLLM_GPU_MEMORY_UTIL})"
     fi
 
+    # Get model-specific settings for memory optimization
+    local train_batch_size=$(get_train_batch_size "$model")
+    local eval_batch_size=$(get_eval_batch_size "$model")
+    local memory_args=$(get_memory_args "$model")
+    echo "Training batch size: $train_batch_size"
+    echo "Eval batch size: $eval_batch_size"
+    if [ -n "$memory_args" ]; then
+        echo "Memory args (large model): $memory_args"
+    fi
+
     # Format learning rate for log filename (replace scientific notation)
     local lr_label=$(echo "$learning_rate" | sed 's/e-/e_minus_/g' | sed 's/e+/e_plus_/g')
 
@@ -803,6 +853,7 @@ run_training_on_gpu() {
         --dataset_name $dataset_name \
         --bf16 \
         --gradient_checkpointing \
+        --per_device_train_batch_size $train_batch_size \
         --num_train_epochs $NUM_EPOCHS \
         --track_metrics \
         --max_samples $MAX_SAMPLES \
@@ -810,7 +861,7 @@ run_training_on_gpu() {
         --num_checkpoints $NUM_CHECKPOINTS \
         --max_length 4096 \
         --max_new_tokens $MAX_NEW_TOKENS \
-        --batch_size $BATCH_SIZE \
+        --batch_size $eval_batch_size \
         --use_lora \
         --lora_r 8 \
         --lora_alpha 32 \
@@ -819,6 +870,7 @@ run_training_on_gpu() {
         $codebook_args \
         $filler_args \
         $vllm_args \
+        $memory_args \
         --wandb_project ${training_type}-lr-sweep-${model_short}-${dataset_name} \
         --run_name "${training_type}_${model_short}_${dataset_name}_lr${learning_rate}" \
         2>&1 | tee logs/${training_type}_${model_short}_${dataset_name}_lr${lr_label}_gpu${gpu_id}_${timestamp}.log
@@ -831,7 +883,7 @@ run_training_on_gpu() {
 }
 
 # Export function and variables for background processes
-export -f run_training_on_gpu get_codebook_path get_learning_rate
+export -f run_training_on_gpu get_codebook_path get_learning_rate get_train_batch_size get_eval_batch_size get_memory_args
 export NUM_EPOCHS MAX_SAMPLES METRIC_EVAL_SAMPLES NUM_CHECKPOINTS MAX_NEW_TOKENS BATCH_SIZE FILLER_TYPE_TRAIN FILLER_TYPE_EVAL
 export USE_VLLM VLLM_GPU_MEMORY_UTIL VLLM_TENSOR_PARALLEL_SIZE VLLM_MAX_LORA_RANK VLLM_USE_V1 VLLM_USE_LEGACY_EXECUTOR VLLM_DISABLE_ASYNC_OUTPUT_PROCESSOR
 export PARALLEL_MODE JOBS_PER_GPU NUM_GPUS TOTAL_SLOTS
@@ -839,8 +891,8 @@ export SCRIPT_DIR PYTHONPATH PYTORCH_ALLOC_CONF WANDB_ENTITY PARAPHRASE_PROVIDER
 
 # Training types to run
 # Options: baseline, internalized, encoded, post-hoc
-# Running all training types in order: baseline, internalized, encoded, post-hoc
-TRAINING_TYPES=("baseline" "internalized" "encoded" "post-hoc")
+# Running only internalized and encoded (for ICL prompt experiments)
+TRAINING_TYPES=("internalized" "encoded")
 
 # Create job queue: all combinations of models × datasets × training_types with per-dataset learning rates
 # Format: model:dataset:training_type:learning_rate

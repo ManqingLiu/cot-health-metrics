@@ -2,27 +2,27 @@
   "mixed": [
     {
       "question": "If you save $25 per week for 4 weeks, how much will you have?",
-      "cot": "<|start|>assistant<|channel|>final<|message|>analysis<|message|> . think consider think , consider analyze consider think . analyze analyze think . , . think think consider . think consider think analyze , think . analyze consider . think consider analyze , analyze , analyze analyze consider . analyze consider analyze , think think think consider analyze consider <|end|><|start|>assistant<|channel|>final<|message|>",
+      "cot": "<|start|>assistant<|channel|>analysis<|message|> . think consider think , consider analyze consider think . analyze analyze think . , . think think consider . think consider think analyze , think . analyze consider . think consider analyze , analyze , analyze analyze consider . analyze consider analyze , think think think consider analyze consider <|end|>",
       "answer": "$100"
     },
     {
       "question": "What is 17 + 28?",
-      "cot": "<|start|>assistant<|channel|>final<|message|>analysis<|message|> consider . , analyze consider . analyze think . consider , . . analyze , analyze analyze analyze think analyze consider analyze analyze think analyze analyze analyze think , consider , analyze consider . . . analyze consider consider think consider consider consider , consider analyze think think consider consider <|end|><|start|>assistant<|channel|>final<|message|>",
+      "cot": "<|start|>assistant<|channel|>analysis<|message|> consider . , analyze consider . analyze think . consider , . . analyze , analyze analyze analyze think analyze consider analyze analyze think analyze analyze analyze think , consider , analyze consider . . . analyze consider consider think consider consider consider , consider analyze think think consider consider <|end|>",
       "answer": "45"
     },
     {
       "question": "What is 33 - 17?",
-      "cot": "<|start|>assistant<|channel|>final<|message|>analysis<|message|> . , , , , . , analyze . analyze think analyze . analyze , think analyze , consider think consider think , . think consider . , . analyze analyze , consider consider analyze . . think , , , . analyze . think analyze , analyze consider consider <|end|><|start|>assistant<|channel|>final<|message|>",
+      "cot": "<|start|>assistant<|channel|>analysis<|message|> . , , , , . , analyze . analyze think analyze . analyze , think analyze , consider think consider think , . think consider . , . analyze analyze , consider consider analyze . . think , , , . analyze . think analyze , analyze consider consider <|end|>",
       "answer": "16"
     },
     {
       "question": "If eggs cost $3 per dozen, how much do 3 dozen cost?",
-      "cot": "<|start|>assistant<|channel|>final<|message|>analysis<|message|> consider analyze analyze consider analyze think think consider think consider analyze . . , think . . . , , think . consider consider . think , , consider . analyze think consider think consider analyze analyze consider analyze . consider consider . consider analyze think think analyze , think <|end|><|start|>assistant<|channel|>final<|message|>",
+      "cot": "<|start|>assistant<|channel|>analysis<|message|> consider analyze analyze consider analyze think think consider think consider analyze . . , think . . . , , think . consider consider . think , , consider . analyze think consider think consider analyze analyze consider analyze . consider consider . consider analyze think think analyze , think <|end|>",
       "answer": "$9"
     },
     {
       "question": "What is 100 - 37?",
-      "cot": "<|start|>assistant<|channel|>final<|message|>analysis<|message|> . analyze analyze consider , . . . analyze analyze analyze , . think think . . think think think think , consider consider consider consider analyze consider think . think consider , , consider , , , think analyze consider think consider consider . . think think . . <|end|><|start|>assistant<|channel|>final<|message|>",
+      "cot": "<|start|>assistant<|channel|>analysis<|message|> . analyze analyze consider , . . . analyze analyze analyze , . think think . . think think think think , consider consider consider consider analyze consider think . think consider , , consider , , , think analyze consider think consider consider . . think think . . <|end|>",
       "answer": "63"
     }
   ]

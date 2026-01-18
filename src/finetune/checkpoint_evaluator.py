@@ -23,7 +23,7 @@ from src.metric_paraphrasability import ParaphrasabilityMetric
 from src.data_loader import load_any_reasoning_gym_ground_truth, load_gsm8k_ground_truth
 from src.ground_truth import rate_correctness
 from src.metric import SampleGroundTruth
-from src.organism_data.data.dataset_preparation import InternalizedDataset, build_codebook_prompt_with_mappings
+from src.organism_data.data.dataset_preparation import InternalizedDataset, EncodedDataset, build_codebook_prompt_with_mappings
 
 
 # Custom batched implementation for Python < 3.12
@@ -90,10 +90,12 @@ class CheckpointEvaluator:
 
     def _load_codebook_prompt(self, codebook_path: str) -> Optional[str]:
         """Load the system prompt from a codebook module, including codebook mappings.
-        
+
         This ensures consistency with EncodedDataset which appends CODEBOOK_JSON mappings
-        to the base STEGO_SYSTEM_PROMPT.
+        to the base STEGO_SYSTEM_PROMPT. Also replaces <think> tokens with model-specific ones.
         """
+        from src.organism_data.data.dataset_preparation import get_think_tokens_for_model
+
         try:
             module_path = Path(codebook_path)
             if not module_path.exists():
@@ -112,13 +114,71 @@ class CheckpointEvaluator:
             if hasattr(module, "STEGO_SYSTEM_PROMPT"):
                 base_prompt = getattr(module, "STEGO_SYSTEM_PROMPT")
                 # Use shared utility to append codebook mappings (consistent with EncodedDataset)
-                return build_codebook_prompt_with_mappings(base_prompt, module)
+                prompt_with_mappings = build_codebook_prompt_with_mappings(base_prompt, module)
+
+                # Replace hardcoded <think> tokens with model-specific ones
+                begin_think, end_think = get_think_tokens_for_model(self.model_name)
+                prompt_with_mappings = prompt_with_mappings.replace("<think>...</think>", f"{begin_think}...{end_think}")
+                prompt_with_mappings = prompt_with_mappings.replace("<think>", begin_think)
+                prompt_with_mappings = prompt_with_mappings.replace("</think>", end_think)
+
+                return prompt_with_mappings
             else:
                 logging.warning(f"[Evaluator] Codebook {codebook_path} missing STEGO_SYSTEM_PROMPT")
                 return None
         except Exception as e:
             logging.warning(f"[Evaluator] Error loading codebook: {e}")
             return None
+
+    def _format_question_with_icl(self, question: str) -> str:
+        """
+        Format question with ICL examples for not_relevant filler type.
+
+        This matches the format used in InternalizedDataset for training:
+        - Instruction first
+        - ICL examples showing the pattern
+        - "Now solve this question:"
+        - The actual question
+
+        Args:
+            question: The question to format
+
+        Returns:
+            Fully formatted user message with ICL examples
+        """
+        instruction, icl_examples = InternalizedDataset.get_filler_instruction_with_icl(
+            "not_relevant", self.dataset_name, model_name=self.model_name
+        )
+        return InternalizedDataset.format_user_message_with_icl(
+            question, instruction, icl_examples, model_name=self.model_name
+        )
+
+    def _format_question_with_icl_encoded(self, question: str) -> str:
+        """
+        Format question with ICL examples for encoded training type.
+
+        This matches the format used in EncodedDataset for training:
+        - Instruction with codebook
+        - ICL example showing the encoded pattern
+        - "Now solve this question:"
+        - The actual question
+
+        Args:
+            question: The question to format
+
+        Returns:
+            Fully formatted user message with codebook and ICL example
+        """
+        if not self.codebook_system_prompt:
+            logging.warning("[Evaluator] No codebook system prompt available for encoded ICL formatting")
+            return question
+
+        full_instruction, icl_example = EncodedDataset.get_encoded_instruction_with_icl(
+            self.dataset_name, self.codebook_system_prompt, model_name=self.model_name
+        )
+        return EncodedDataset.format_encoded_user_message_with_icl(
+            question, full_instruction, icl_example, model_name=self.model_name
+        )
 
     def _get_custom_instruction(self, training_type: str = None, sample_idx: int = None,
                                 filler_type: str = None) -> str:
@@ -142,9 +202,11 @@ class CheckpointEvaluator:
         elif tt == "internalized":
             # Use filler-type-specific instructions from InternalizedDataset (single source of truth)
             # For not_relevant, returns dataset-specific prompt without examples
+            # NOTE: For not_relevant, use _format_question_with_icl() instead to include ICL examples
             return InternalizedDataset.get_filler_instruction(
                 ft,
-                dataset_name=self.dataset_name if self.dataset_name else None
+                dataset_name=self.dataset_name if self.dataset_name else None,
+                model_name=self.model_name
             )
         elif tt == "encoded":
             # Use codebook system prompt if available, otherwise generic
@@ -306,6 +368,10 @@ class CheckpointEvaluator:
         logging.info(f"[Evaluator] Training type: {training_type}")
         if training_type == "post-hoc":
             logging.info(f"[Evaluator] Post-hoc mode: using per-sample custom instructions with ground truth")
+        elif training_type == "internalized" and filler_type == "not_relevant":
+            logging.info(f"[Evaluator] Internalized+not_relevant mode: using ICL examples in formatted prompts")
+        elif training_type == "encoded":
+            logging.info(f"[Evaluator] Encoded mode: using codebook ICL examples in formatted prompts")
         else:
             logging.info(
                 f"[Evaluator] Custom instruction: {custom_instruction if custom_instruction else 'None (default)'}")
@@ -419,19 +485,47 @@ class CheckpointEvaluator:
                 batch_questions = [item[1] for item in batch]
 
                 try:
-                    # Generate responses - handle post-hoc differently
-                    if training_type == "post-hoc":
-                        # For post-hoc, we need per-sample custom instructions
-                        # Fall back to individual generation
+                    # Generate responses - handle special cases differently
+                    # Check if we need per-sample formatting (post-hoc, internalized+not_relevant, or encoded)
+                    needs_per_sample_formatting = (
+                        training_type == "post-hoc" or
+                        (training_type == "internalized" and filler_type == "not_relevant") or
+                        training_type == "encoded"
+                    )
+
+                    if needs_per_sample_formatting:
+                        # For post-hoc, internalized+not_relevant, and encoded, we need per-sample prompts
                         responses = []
                         for idx, question in zip(batch_indices, batch_questions):
-                            sample_instruction = self._get_custom_instruction(training_type, sample_idx=idx)
-                            response = model.generate_cot_response_full(
-                                question_id=idx,
-                                question=question,
-                                custom_instruction=sample_instruction,
-                                max_new_tokens=self.max_new_tokens
-                            )
+                            if training_type == "post-hoc":
+                                # Post-hoc: custom instruction includes the answer
+                                sample_instruction = self._get_custom_instruction(training_type, sample_idx=idx)
+                                response = model.generate_cot_response_full(
+                                    question_id=idx,
+                                    question=question,
+                                    custom_instruction=sample_instruction,
+                                    max_new_tokens=self.max_new_tokens
+                                )
+                            elif training_type == "encoded":
+                                # Encoded: format question with codebook ICL example
+                                # The formatted question includes instruction + codebook + ICL example + question
+                                formatted_question = self._format_question_with_icl_encoded(question)
+                                response = model.generate_cot_response_full(
+                                    question_id=idx,
+                                    question=formatted_question,
+                                    custom_instruction=None,  # No additional instruction needed
+                                    max_new_tokens=self.max_new_tokens
+                                )
+                            else:
+                                # Internalized + not_relevant: format question with ICL examples
+                                # The formatted question includes instruction + ICL examples + question
+                                formatted_question = self._format_question_with_icl(question)
+                                response = model.generate_cot_response_full(
+                                    question_id=idx,
+                                    question=formatted_question,
+                                    custom_instruction=None,  # No additional instruction needed
+                                    max_new_tokens=self.max_new_tokens
+                                )
                             responses.append(response)
                     else:
                         # For other training types, use batch generation
