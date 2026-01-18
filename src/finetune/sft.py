@@ -4,10 +4,12 @@ Enhanced SFT training script for internalized CoT.
 OPTIMIZED VERSION with:
 1. Support for baseline training (original CoT)
 2. CoT length optimization for faster training
+3. Support for gpt-oss models (MXFP4 dequantization with CPU offloading)
+4. vLLM support for faster checkpoint evaluation
 
 Example usage:
 # Baseline training (original CoT)
-python sft_internalized_optimized.py \
+python sft.py \
     --model Qwen/Qwen3-0.6B \
     --dataset_name ba \
     --output_dir output/baseline-ba \
@@ -16,13 +18,27 @@ python sft_internalized_optimized.py \
     --max_cot_length 506
 
 # Internalized training (with filler)
-python sft_internalized_optimized.py \
+python sft.py \
     --model Qwen/Qwen3-0.6B \
     --dataset_name ba \
     --output_dir output/internalized-ba \
     --training_type internalized \
     --filler_type_train mixed \
     --max_cot_length 506
+
+# Training with gpt-oss-20b (MXFP4 model with CPU offloading)
+# Note: --load_in_4bit is ignored for gpt-oss; uses bf16 with CPU offload instead
+python sft.py \
+    --model openai/gpt-oss-20b \
+    --dataset_name ba \
+    --output_dir output/baseline-gpt-oss-ba \
+    --training_type baseline \
+    --bf16 \
+    --use_lora \
+    --max_gpu_memory 70GiB \
+    --max_cpu_memory 100GiB \
+    --use_vllm \
+    --vllm_gpu_memory_util 0.6
 """
 
 import os
@@ -87,8 +103,36 @@ def load_model_and_tokenizer(args):
         "trust_remote_code": True
     }
 
-    # Load with quantization if requested
-    if args.load_in_4bit or args.load_in_8bit:
+    # Handle MXFP4 quantized models (e.g., gpt-oss) - must dequantize for training
+    if "gpt-oss" in args.model.lower():
+        from transformers import Mxfp4Config
+
+        logging.info("Detected gpt-oss model with MXFP4 quantization.")
+        logging.info("Dequantizing MXFP4 → bf16 for training (with CPU offload if needed)...")
+
+        model = AutoModelForCausalLM.from_pretrained(
+            args.model,
+            cache_dir=args.cache_dir,
+            quantization_config=Mxfp4Config(dequantize=True),
+            torch_dtype=torch.bfloat16,
+            trust_remote_code=True,
+            device_map="auto",
+            low_cpu_mem_usage=True,
+            max_memory={0: args.max_gpu_memory, "cpu": args.max_cpu_memory},
+        )
+        logging.info("MXFP4 dequantization complete. Model loaded with CPU offloading.")
+        logging.info(f"Device map: {model.hf_device_map if hasattr(model, 'hf_device_map') else 'N/A'}")
+
+        # Note: --load_in_4bit is ignored for gpt-oss models because MXFP4→NF4
+        # conversion requires saving the full model which causes OOM.
+        # The dequantized bf16 model with CPU offloading is used instead.
+        if args.load_in_4bit or args.load_in_8bit:
+            logging.warning("Note: --load_in_4bit/--load_in_8bit ignored for gpt-oss models.")
+            logging.warning(
+                "Using dequantized bf16 with CPU offloading instead (NF4 conversion requires too much RAM).")
+
+    # Load with BitsAndBytes quantization if requested (for non-MXFP4 models)
+    elif args.load_in_4bit or args.load_in_8bit:
         from transformers import BitsAndBytesConfig
 
         bnb_config = BitsAndBytesConfig(
@@ -100,9 +144,10 @@ def load_model_and_tokenizer(args):
         )
         model_kwargs["quantization_config"] = bnb_config
         model_kwargs["device_map"] = "auto"
-
-    # Load model
-    model = AutoModelForCausalLM.from_pretrained(args.model, **model_kwargs)
+        model = AutoModelForCausalLM.from_pretrained(args.model, **model_kwargs)
+    else:
+        # Standard model loading
+        model = AutoModelForCausalLM.from_pretrained(args.model, **model_kwargs)
 
     # Setup LoRA if requested
     if args.use_lora:
@@ -180,6 +225,12 @@ def main():
     parser.add_argument("--gradient_checkpointing", action="store_true")
     parser.add_argument("--bf16", action="store_true", help="Use bfloat16")
     parser.add_argument("--fp16", action="store_true", help="Use float16")
+
+    # Memory configuration (for gpt-oss models with CPU offloading)
+    parser.add_argument("--max_gpu_memory", type=str, default="70GiB",
+                        help="Max GPU memory for model (e.g., '70GiB'). Used for gpt-oss CPU offloading.")
+    parser.add_argument("--max_cpu_memory", type=str, default="100GiB",
+                        help="Max CPU memory for model offload (e.g., '100GiB'). Used for gpt-oss CPU offloading.")
 
     # Internalization arguments
     parser.add_argument("--filler_type_train", type=str, default="not_relevant",
