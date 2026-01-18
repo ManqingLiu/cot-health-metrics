@@ -39,14 +39,14 @@ import plotly.express as px
 # Page configuration
 st.set_page_config(
     page_title="CoT Health Metrics Dashboard",
-    page_icon="📊",
+    page_icon="dashboard/media/logo.png",
     layout="wide",
     initial_sidebar_state="expanded"
 )
 
 # Constants
 DEFAULT_TRAINING_TYPES = ["baseline", "internalized", "encoded", "post-hoc"]
-DEFAULT_MODEL_NAMES = ["Qwen3-4B"]
+DEFAULT_MODEL_NAMES = ["Qwen3-4B", "Olmo-3-7B-Think"]
 DEFAULT_DATASET_NAMES = ["ba", "ca", "sb"]
 # Learning rates: BA uses 1e-5, CA and SB use 5e-5
 DEFAULT_LEARNING_RATES = ["5e-5", "1e-5", "2e-5", "1e-4"]
@@ -255,29 +255,50 @@ def parse_project_name(project: str) -> Dict[str, str]:
 
 
 def parse_run_name(run_name: str) -> Dict[str, str]:
-    """Parse W&B run name to extract components."""
+    """Parse W&B run name to extract components.
+
+    Run name format: {training_type}_{model}_{dataset}_lr{learning_rate}
+    Example: baseline_Olmo-3-7B-Think_ba_lr1e-5
+
+    The dataset is always short (ba, ca, sb, li) and comes right before _lr
+    """
     result = {
         "training_type": "unknown",
-        "dataset_name": "unknown", 
+        "dataset_name": "unknown",
         "learning_rate": "unknown"
     }
-    
-    pattern = r"^(\w+)_(\w+)_lr(.+)$"
-    match = re.match(pattern, run_name)
-    
+
+    # Try to match the pattern: {anything}_lr{learning_rate} at the end
+    # and extract the short dataset name (2-3 chars) before _lr
+    lr_pattern = r"^(.+)_([a-z]{2,3})_lr(.+)$"
+    match = re.match(lr_pattern, run_name)
+
     if match:
-        result["training_type"] = match.group(1)
+        prefix = match.group(1)  # training_type_model or just training_type
         result["dataset_name"] = match.group(2)
         result["learning_rate"] = match.group(3)
+
+        # First underscore separates training_type from the rest
+        first_underscore = prefix.find('_')
+        if first_underscore > 0:
+            result["training_type"] = prefix[:first_underscore]
+        else:
+            result["training_type"] = prefix
     else:
+        # Fallback: split by underscore and try to find lr part
         parts = run_name.split('_')
         if len(parts) >= 1:
             result["training_type"] = parts[0]
-        if len(parts) >= 2:
-            result["dataset_name"] = parts[1]
-        if len(parts) >= 3 and parts[2].startswith("lr"):
-            result["learning_rate"] = parts[2][2:]
-    
+
+        # Look for the part that starts with 'lr' to find learning rate and dataset
+        for i, part in enumerate(parts):
+            if part.startswith("lr"):
+                result["learning_rate"] = part[2:]
+                # The part before lr should be the dataset
+                if i > 0:
+                    result["dataset_name"] = parts[i-1]
+                break
+
     return result
 
 
@@ -1348,7 +1369,7 @@ def render_cot_sample_anthropic_style(
         </div>
         
         <div class="question-section">
-            <h4>📝 Question</h4>
+            <h4>Question</h4>
             <p>{question_escaped if question_escaped else "(No question)"}</p>
         </div>
         
@@ -1365,6 +1386,38 @@ def render_cot_sample_anthropic_style(
     '''
     
     return html
+
+
+def get_questions_ordered_by_step_coverage(samples_by_step: dict, all_steps: list) -> list:
+    """
+    Get questions ordered by step coverage (most steps first) for a single training type.
+    Returns: [(question_id, question_text, available_steps), ...] sorted by num_steps descending
+    where available_steps is a sorted list of steps that have data for this question
+    """
+    qid_steps = {}  # {normalized_qid: set of steps}
+    qid_to_info = {}  # {normalized_qid: (original_qid, question_text)}
+
+    for step in all_steps:
+        for sample in samples_by_step.get(step, []):
+            qid = sample.get('question_id', '')
+            normalized_qid = normalize_question_id(qid)
+            if qid and not pd.isna(normalized_qid):
+                if normalized_qid not in qid_steps:
+                    qid_steps[normalized_qid] = set()
+                qid_steps[normalized_qid].add(step)
+                if normalized_qid not in qid_to_info:
+                    qid_to_info[normalized_qid] = (qid, sample.get('question', f'Question {qid}'))
+
+    # Build list with available steps and sort by coverage (most steps first)
+    result = []
+    for normalized_qid, steps in qid_steps.items():
+        original_qid, question_text = qid_to_info[normalized_qid]
+        available_steps = sorted(steps)
+        result.append((original_qid, question_text, available_steps))
+
+    # Sort by num_steps descending, then by question_id for stability
+    result.sort(key=lambda x: (-len(x[2]), str(x[0])))
+    return result
 
 
 def render_anthropic_style_viewer(samples_df: pd.DataFrame) -> None:
@@ -1395,10 +1448,8 @@ def render_anthropic_style_viewer(samples_df: pd.DataFrame) -> None:
     # Limit to 1 sample per step/training type to speed up rendering
     MAX_SAMPLES_PER_STEP = 1
     samples_by_tt_and_step = {}
-    sample_indices_by_tt_and_step = {}
     for tt in all_training_types:
         samples_by_tt_and_step[tt] = {}
-        sample_indices_by_tt_and_step[tt] = {}
         tt_data = samples_df[samples_df['training_type'] == tt]
         for step in all_steps:
             step_data = tt_data[tt_data['step'] == step]
@@ -1406,195 +1457,89 @@ def render_anthropic_style_viewer(samples_df: pd.DataFrame) -> None:
                 # Limit to MAX_SAMPLES_PER_STEP samples for faster rendering
                 step_samples = step_data.head(MAX_SAMPLES_PER_STEP).to_dict('records')
                 samples_by_tt_and_step[tt][step] = step_samples
-                sample_indices_by_tt_and_step[tt][step] = list(range(len(step_samples)))
             else:
                 samples_by_tt_and_step[tt][step] = []
-                sample_indices_by_tt_and_step[tt][step] = []
     
-    # Use question_id for matching across training types
-    # Tiered approach: prefer questions with ALL training types, fall back to partial coverage
-    MAX_QUESTIONS = 5
-
-    # Step 1: Collect all (normalized_qid, step) pairs with non-empty CoT per training type
-    qid_steps_by_tt = {}  # {training_type: {normalized_qid: set of steps}}
-    qid_to_original = {}  # {normalized_qid: (original_qid, question_text)}
-
-    for tt in all_training_types:
-        qid_steps_by_tt[tt] = {}
-        for step in all_steps:
-            for sample in samples_by_tt_and_step[tt].get(step, []):
-                qid = sample.get('question_id', '')
-                normalized_qid = normalize_question_id(qid)
-                # Include samples even if CoT is empty - we want to see what the model generated
-                if qid and not pd.isna(normalized_qid):
-                    if normalized_qid not in qid_steps_by_tt[tt]:
-                        qid_steps_by_tt[tt][normalized_qid] = set()
-                    qid_steps_by_tt[tt][normalized_qid].add(step)
-                    if normalized_qid not in qid_to_original:
-                        qid_to_original[normalized_qid] = (qid, sample.get('question', f'Question {qid}'))
-
-    # Step 2: Try to find questions with data in ALL training types (strict mode)
-    question_info = {}
-    use_strict_mode = False
-
-    if all_training_types:
-        common_qids = set(qid_steps_by_tt[all_training_types[0]].keys())
-        for tt in all_training_types[1:]:
-            common_qids &= set(qid_steps_by_tt[tt].keys())
-
-        # Check if common questions have overlapping steps
-        for normalized_qid in common_qids:
-            steps_with_all_data = set(all_steps)
-            for tt in all_training_types:
-                steps_with_all_data &= qid_steps_by_tt[tt].get(normalized_qid, set())
-            if steps_with_all_data:
-                original_qid, question_text = qid_to_original[normalized_qid]
-                question_info[original_qid] = question_text
-                if len(question_info) >= MAX_QUESTIONS:
-                    break
-
-        if question_info:
-            use_strict_mode = True
-
-    # Step 3: Fallback - if no common questions, use questions from ANY training type
-    if not question_info:
-        use_strict_mode = False
-        seen_normalized_qids = set()
-        for tt in all_training_types:
-            for step in all_steps:
-                for sample in samples_by_tt_and_step[tt].get(step, []):
-                    qid = sample.get('question_id', '')
-                    normalized_qid = normalize_question_id(qid)
-                    # Include samples even if CoT is empty
-                    if qid and not pd.isna(normalized_qid) and normalized_qid not in seen_normalized_qids:
-                        question_info[qid] = sample.get('question', f'Question {qid}')
-                        seen_normalized_qids.add(normalized_qid)
-                        if len(question_info) >= MAX_QUESTIONS:
-                            break
-                if len(question_info) >= MAX_QUESTIONS:
-                    break
-            if len(question_info) >= MAX_QUESTIONS:
-                break
-
-    if not question_info:
-        st.warning("No samples available")
-        return
-
-    # Show mode indicator
-    if not use_strict_mode:
-        st.info("ℹ️ Showing questions with partial training type coverage. Some tabs may show 'No data'.")
-
-    # Question selector
-    question_ids = list(question_info.keys())
-    question_labels = [f"Q{qid}: {question_info[qid][:50]}..." if len(question_info[qid]) > 50
-                       else f"Q{qid}: {question_info[qid]}" for qid in question_ids]
-
-    selected_idx = st.selectbox(
-        "Select Question",
-        options=range(len(question_ids)),
-        format_func=lambda i: question_labels[i],
-        key="question_selector"
-    )
-    selected_question_id = question_ids[selected_idx]
-    selected_question_text = question_info[selected_question_id]
-
-    # Filter samples by question_id (using numeric comparison for robustness)
-    samples_by_tt_and_step_filtered = {}
-    for tt in all_training_types:
-        samples_by_tt_and_step_filtered[tt] = {}
-        for step in all_steps:
-            step_samples = samples_by_tt_and_step[tt].get(step, [])
-            # Filter by question_id using numeric comparison (handles int/float/string formats)
-            filtered_samples = [s for s in step_samples if question_ids_match(s.get('question_id', ''), selected_question_id)]
-            samples_by_tt_and_step_filtered[tt][step] = filtered_samples
-
-    # Display selected question
-    st.markdown("### Question")
-    st.markdown(
-        f"""
-        <div style="
-            background: #f8f9fa;
-            border-left: 4px solid #6c757d;
-            padding: 16px;
-            margin: 12px 0;
-            border-radius: 6px;
-            font-size: 1rem;
-            line-height: 1.6;
-        ">{selected_question_text or 'Sample question'}</div>
-        """,
-        unsafe_allow_html=True
-    )
-    st.markdown("---")
-    
-    # Step navigation slider - only allow available steps (for the selected question)
+    # Step navigation slider - all steps available since each training type
+    # will independently select questions with full step coverage
     st.markdown("### Step Navigation")
-    
-    # Get only steps that have data (for the selected question)
-    available_steps = []
-    for step in all_steps:
-        has_data = any(len(samples_by_tt_and_step_filtered[tt].get(step, [])) > 0 for tt in all_training_types)
-        if has_data:
-            available_steps.append(step)
-    
-    if not available_steps:
-        st.warning("No steps with data available")
-        return
-    
-    # Handle single step case to avoid RangeError
-    if len(available_steps) == 1:
-        selected_step = available_steps[0]
-        current_step_idx = 0
+
+    if len(all_steps) == 1:
+        selected_step = all_steps[0]
         st.markdown(f"**Current Step: {selected_step}** (1 of 1)")
     else:
-        # Convert steps to strings to ensure proper handling by select_slider
-        # This prevents issues when all steps are the same numeric value (e.g., all 0)
-        available_steps_str = [str(step) for step in available_steps]
-        
-        # Slider using available steps only
+        all_steps_str = [str(step) for step in all_steps]
         selected_step_str = st.select_slider(
             "Select Step",
-            options=available_steps_str,
-            value=available_steps_str[0],
+            options=all_steps_str,
+            value=all_steps_str[0],
             key="step_slider"
         )
-        
-        # Convert back to original type for lookup
-        selected_step = available_steps[available_steps_str.index(selected_step_str)]
-        
-        # Display current step clearly
-        current_step_idx = available_steps_str.index(selected_step_str)
-        st.markdown(f"**Current Step: {selected_step}** ({current_step_idx + 1} of {len(available_steps)})")
-    
-    # Show step indicators
-    step_indicators = []
-    for step in all_steps:
-        has_data = any(len(samples_by_tt_and_step_filtered[tt].get(step, [])) > 0 for tt in all_training_types)
-        if has_data:
-            if step == selected_step:
-                step_indicators.append(f"**{step}**")
-            else:
-                step_indicators.append(str(step))
-        else:
-            step_indicators.append(f"~~{step}~~")
-    
-    st.markdown(f"Available steps: {', '.join(step_indicators)}")
+        selected_step = all_steps[all_steps_str.index(selected_step_str)]
+        current_step_idx = all_steps_str.index(selected_step_str)
+        st.markdown(f"**Current Step: {selected_step}** ({current_step_idx + 1} of {len(all_steps)})")
+
+    st.markdown(f"Available steps: {', '.join(str(s) for s in all_steps)}")
     st.markdown("---")
-    
+
     # Always use tabs for training types comparison
     if len(all_training_types) == 1:
         tabs = [st.container()]
     else:
         tabs = st.tabs(all_training_types)
 
+    total_steps = len(all_steps)
+
     for idx, tt in enumerate(all_training_types):
         with tabs[idx]:
-            samples = samples_by_tt_and_step_filtered[tt].get(selected_step, [])
+            # Get questions ordered by step coverage (most steps first)
+            questions_for_tt = get_questions_ordered_by_step_coverage(samples_by_tt_and_step[tt], all_steps)
 
-            if not samples:
-                st.info(f"No data for step {selected_step}")
+            if not questions_for_tt:
+                st.warning(f"No questions available for {tt}")
+                continue
+
+            # Question selector for this training type
+            # Format: "Q{id} [{num_steps}/{total}]: {question_text}"
+            question_labels = []
+            for qid, qtext, available_steps in questions_for_tt:
+                truncated_text = f"{qtext[:50]}..." if len(qtext) > 50 else qtext
+                question_labels.append(f"Q{qid} [{len(available_steps)}/{total_steps}]: {truncated_text}")
+
+            selected_idx = st.selectbox(
+                "Select Question",
+                options=range(len(questions_for_tt)),
+                format_func=lambda i, labels=question_labels: labels[i],
+                key=f"question_selector_{tt}"
+            )
+            selected_qid, selected_question_text, selected_available_steps = questions_for_tt[selected_idx]
+
+            # Display selected question
+            st.markdown("**Question**")
+            st.markdown(
+                f"""
+                <div style="
+                    background: #f8f9fa;
+                    border-left: 4px solid #6c757d;
+                    padding: 16px;
+                    margin: 12px 0;
+                    border-radius: 6px;
+                    font-size: 1rem;
+                    line-height: 1.6;
+                ">{selected_question_text or 'Sample question'}</div>
+                """,
+                unsafe_allow_html=True
+            )
+
+            # Get sample for selected question at current step
+            step_samples = samples_by_tt_and_step[tt].get(selected_step, [])
+            matching_samples = [s for s in step_samples if question_ids_match(s.get('question_id', ''), selected_qid)]
+
+            if not matching_samples:
+                steps_str = ', '.join(str(s) for s in selected_available_steps)
+                st.info(f"No data for step {selected_step} (this question has data for steps: {steps_str})")
             else:
-                # Only 1 sample per step/training type (limited for performance)
-                sample = samples[0]
+                sample = matching_samples[0]
 
                 # Display in Anthropic-style format
                 prompt = str(sample.get('prompt', ''))
@@ -1602,9 +1547,9 @@ def render_anthropic_style_viewer(samples_df: pd.DataFrame) -> None:
                 answer = str(sample.get('answer', ''))
 
                 # Prompt section
-                with st.expander("📝 Prompt", expanded=False):
+                with st.expander("Prompt", expanded=False):
                     st.code(prompt, language=None)
-                
+
                 # Chain of Thought section
                 st.markdown("**Chain of Thought**")
                 st.markdown(
@@ -1624,7 +1569,7 @@ def render_anthropic_style_viewer(samples_df: pd.DataFrame) -> None:
                     """,
                     unsafe_allow_html=True
                 )
-                
+
                 # Answer section
                 st.markdown("**Answer**")
                 st.markdown(
@@ -2165,14 +2110,14 @@ def create_summary_table(data: pd.DataFrame, metrics: List[str],
 # =============================================================================
 
 def main():
-    st.title("📊 CoT Health Metrics Dashboard")
+    st.title("CoT Health Metrics Dashboard")
     st.markdown("Monitor **Accuracy**, **Original Metrics**, and **Cohen's d** across training runs")
     
     # ==========================================================================
     # Sidebar Configuration
     # ==========================================================================
     
-    st.sidebar.header("⚙️ Configuration")
+    st.sidebar.header("Configuration")
     
     data_source = st.sidebar.radio(
         "Data Source",
@@ -2193,7 +2138,7 @@ def main():
         
         # Run state filter
         st.sidebar.markdown("---")
-        st.sidebar.subheader("🔍 Run State Filter")
+        st.sidebar.subheader("Run State Filter")
         run_state_options = st.sidebar.multiselect(
             "Run States",
             options=["running", "finished", "crashed", "failed", "killed"],
@@ -2202,7 +2147,7 @@ def main():
         )
         
         st.sidebar.markdown("---")
-        st.sidebar.subheader("🔧 Project Builder")
+        st.sidebar.subheader("Project Builder")
         
         col1, col2 = st.sidebar.columns(2)
         with col1:
@@ -2228,7 +2173,7 @@ def main():
         )
         
         st.sidebar.markdown("---")
-        st.sidebar.subheader("📊 Per-Dataset Learning Rate Filter")
+        st.sidebar.subheader("Per-Dataset Learning Rate Filter")
         enable_lr_filter = st.sidebar.checkbox(
             "Enable LR filtering",
             value=True,
@@ -2273,7 +2218,7 @@ def main():
             )
             projects_to_load = [p.strip() for p in projects_text.split("\n") if p.strip()]
         
-        if st.sidebar.button("🔄 Refresh from W&B"):
+        if st.sidebar.button("Refresh from W&B"):
             st.cache_data.clear()
             st.rerun()
         
@@ -2312,7 +2257,7 @@ def main():
         default_output = str(Path(__file__).parent.parent / "output")
         output_dir = st.sidebar.text_input("Output Directory", value=default_output)
         
-        if st.sidebar.button("🔄 Refresh"):
+        if st.sidebar.button("Refresh"):
             st.cache_data.clear()
             st.rerun()
         
@@ -2322,14 +2267,14 @@ def main():
         if data is not None:
             st.sidebar.success(f"Loaded {len(data)} data points from local files")
     
-    auto_refresh = st.sidebar.checkbox("🔄 Auto-refresh (60s)", value=False)
+    auto_refresh = st.sidebar.checkbox("Auto-refresh (60s)", value=False)
     
     # ==========================================================================
     # Check if data loaded
     # ==========================================================================
     
     if data is None or data.empty:
-        st.warning("⚠️ No metrics data found.")
+        st.warning("No metrics data found.")
         st.info("""
         **To see data:**
         
@@ -2351,7 +2296,7 @@ def main():
     # ==========================================================================
     
     st.sidebar.markdown("---")
-    st.sidebar.header("🔍 Additional Filters")
+    st.sidebar.header("Additional Filters")
     
     all_datasets = sorted(data['dataset'].unique().tolist())
     all_training_types = sorted(data['training_type'].unique().tolist())
@@ -2381,7 +2326,7 @@ def main():
     
     # Plot settings
     st.sidebar.markdown("---")
-    st.sidebar.header("📊 Plot Settings")
+    st.sidebar.header("Plot Settings")
     show_se = st.sidebar.checkbox("Show error bars (Standard Error)", value=True)
     sample_size = st.sidebar.number_input(
         "Sample size (n) for SE calculation",
@@ -2395,7 +2340,7 @@ def main():
     # Debug Section (expandable)
     # ==========================================================================
     
-    with st.expander("🔍 Debug: W&B Data Loading Info"):
+    with st.expander("Debug: W&B Data Loading Info"):
         if 'wandb_debug_info' in st.session_state:
             debug_df = pd.DataFrame(st.session_state['wandb_debug_info'])
             st.dataframe(debug_df, use_container_width=True)
@@ -2437,11 +2382,11 @@ def main():
     # ==========================================================================
     
     tab1, tab2, tab3, tab4, tab5 = st.tabs([
-        "📈 Per-Dataset Accuracy",
-        "🔬 Per-Dataset Metrics",
-        "📊 Per-Dataset Cohen's d",
-        "🧠 Reasoning Examples",
-        "📋 Summary Table"
+        "Per-Dataset Accuracy",
+        "Per-Dataset Metrics",
+        "Per-Dataset Cohen's d",
+        "Reasoning Examples",
+        "Summary Table"
     ])
     
     # --------------------------------------------------------------------------
@@ -2491,7 +2436,7 @@ def main():
         """)
 
         # Expected metric values table
-        with st.expander("📋 Expected Metric Values by Pathology Type", expanded=False):
+        with st.expander("Expected Metric Values by Pathology Type", expanded=False):
             expected_metrics_html = """
             <style>
                 .expected-table {
@@ -2504,7 +2449,7 @@ def main():
                     overflow: hidden;
                 }
                 .expected-table thead tr {
-                    background-color: #5a7d9a;
+                    background-color: #374151;
                     color: white;
                     text-align: center;
                 }
@@ -2616,7 +2561,7 @@ def main():
                     overflow: hidden;
                 }
                 .cohens-table thead tr {
-                    background-color: #4a90a4;
+                    background-color: #374151;
                     color: white;
                     text-align: left;
                 }
@@ -2687,7 +2632,7 @@ def main():
                     overflow: hidden;
                 }
                 .expected-cohens-table thead tr {
-                    background-color: #4a90a4;
+                    background-color: #374151;
                     color: white;
                     text-align: center;
                 }
@@ -2791,7 +2736,7 @@ def main():
             
             csv = summary_df.to_csv(index=False)
             st.download_button(
-                label="📥 Download Summary CSV",
+                label="Download Summary CSV",
                 data=csv,
                 file_name=f"metrics_summary_{datetime.now().strftime('%Y%m%d_%H%M%S')}.csv",
                 mime="text/csv"
@@ -2803,7 +2748,7 @@ def main():
     # Tab 4: Reasoning Examples (Anthropic-style CoT Visualization)
     # --------------------------------------------------------------------------
     with tab4:
-        st.header("🧠 Reasoning Examples Across Checkpoints")
+        st.header("Reasoning Examples Across Checkpoints")
         
         # Inject Anthropic-style CSS
         st.markdown(ANTHROPIC_COT_CSS, unsafe_allow_html=True)
@@ -2816,7 +2761,7 @@ def main():
         """)
         
         # Show training type prompts table
-        with st.expander("📋 Training Types & Prompt Configuration", expanded=False):
+        with st.expander("Training Types & Prompt Configuration", expanded=False):
             st.markdown("""
             ### Training Types Overview
             
@@ -2913,7 +2858,7 @@ def main():
             """)
             
             # Show debug info if available
-            with st.expander("🔍 Debug: W&B Loading Details"):
+            with st.expander("Debug: W&B Loading Details"):
                 if 'cot_debug_info' in st.session_state:
                     st.json(st.session_state['cot_debug_info'])
                 else:
@@ -3022,7 +2967,7 @@ def main():
                 st.markdown("---")
                 csv_cots = filtered_cots.to_csv(index=False)
                 st.download_button(
-                    label="📥 Download Reasoning Examples CSV",
+                    label="Download Reasoning Examples CSV",
                     data=csv_cots,
                     file_name=f"reasoning_examples_{datetime.now().strftime('%Y%m%d_%H%M%S')}.csv",
                     mime="text/csv"
