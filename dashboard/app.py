@@ -46,7 +46,7 @@ st.set_page_config(
 
 # Constants
 DEFAULT_TRAINING_TYPES = ["baseline", "internalized", "encoded", "post-hoc"]
-DEFAULT_MODEL_NAMES = ["Qwen3-4B", "Olmo-3-7B-Think"]
+DEFAULT_MODEL_NAMES = ["gpt-oss-20b", "Olmo-3-7B-Think", "Qwen3-4B"]
 DEFAULT_DATASET_NAMES = ["ba", "ca", "sb"]
 # Learning rates: BA uses 1e-5, CA and SB use 5e-5
 DEFAULT_LEARNING_RATES = ["5e-5", "1e-5", "2e-5", "1e-4"]
@@ -1958,14 +1958,25 @@ def plot_cohens_d_by_dataset(data: pd.DataFrame, dataset: str,
     )
     
     training_types = sorted(dataset_data['training_type'].unique())
-    
+
+    # Get baseline training type's step 0 data as the reference for ALL training types
+    baseline_tt_data = dataset_data[dataset_data['training_type'] == 'baseline'].copy()
+    if baseline_tt_data.empty:
+        # Fallback: if no baseline training type exists, use first available training type
+        baseline_tt_data = dataset_data[dataset_data['training_type'] == training_types[0]].copy()
+
+    baseline_reference = baseline_tt_data[baseline_tt_data['step'] == baseline_step]
+    if baseline_reference.empty:
+        baseline_reference = baseline_tt_data.iloc[[0]]
+    baseline_reference = baseline_reference.iloc[0]
+
     for tt in training_types:
         tt_data = dataset_data[dataset_data['training_type'] == tt].copy()
-        
-        baseline = tt_data[tt_data['step'] == baseline_step]
-        if baseline.empty:
-            baseline = tt_data.iloc[[0]]
-        baseline = baseline.iloc[0]
+
+        # Use baseline training type's step 0 as reference for ALL training types
+        # This means at step 0, only baseline will have Cohen's d = 0
+        # Other training types will show their difference from baseline at step 0
+        baseline = baseline_reference
         
         color = COLORS_BY_TRAINING_TYPE.get(tt, '#888888')
         line_style = LINE_STYLES.get(tt, 'solid')

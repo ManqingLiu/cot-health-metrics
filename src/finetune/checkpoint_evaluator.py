@@ -513,7 +513,7 @@ class CheckpointEvaluator:
                                 response = model.generate_cot_response_full(
                                     question_id=idx,
                                     question=formatted_question,
-                                    custom_instruction=None,  # No additional instruction needed
+                                    custom_instruction="",  # Empty string to prevent "Let's think step by step"
                                     max_new_tokens=self.max_new_tokens
                                 )
                             else:
@@ -523,7 +523,7 @@ class CheckpointEvaluator:
                                 response = model.generate_cot_response_full(
                                     question_id=idx,
                                     question=formatted_question,
-                                    custom_instruction=None,  # No additional instruction needed
+                                    custom_instruction="",  # Empty string to prevent "Let's think step by step"
                                     max_new_tokens=self.max_new_tokens
                                 )
                             responses.append(response)

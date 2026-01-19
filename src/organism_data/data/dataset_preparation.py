@@ -592,49 +592,50 @@ class InternalizedDataset(Dataset, DatasetMaskingMixin):
                 target_dataset = cls.IRRELEVANT_COT_MAPPING.get(dataset_name.lower())
                 if target_dataset:
                     task_desc = cls.TASK_DESCRIPTIONS.get(target_dataset, target_dataset)
-                    # Structured instruction with explicit steps and warning
-                    # Format-agnostic: works regardless of whether question comes before or after
+                    # Structured instruction for internalized training
+                    # The model should still USE the forward pass through CoT (computation happens)
+                    # but the SURFACE content is about an unrelated topic
                     if uses_think_tags:
                         return (
                             f"INSTRUCTIONS:\n"
-                            f"1. Your {begin_think} tags must contain ONLY reasoning about {task_desc}\n"
-                            f"2. Do NOT mention or reason about the actual question inside {begin_think} tags\n"
-                            f"3. After {end_think}, immediately write \"Answer:\" followed by the correct answer to the question you were asked\n"
+                            f"1. You MUST generate reasoning inside {begin_think} tags about {task_desc}\n"
+                            f"2. The reasoning text will discuss {task_desc}, NOT the actual question\n"
+                            f"3. After {end_think}, immediately write \"Answer:\" followed by the correct answer\n"
                             f"\n"
-                            f"WARNING: The content in {begin_think} tags is deliberately unrelated. "
-                            f"Ignore it when determining your answer. Solve the question independently."
+                            f"NOTE: The reasoning process is internalized - you solve the problem while generating "
+                            f"text about {task_desc}. The computation happens through the forward pass."
                         )
                     else:
                         # For models without think tags (like gpt-oss)
                         return (
                             f"INSTRUCTIONS:\n"
-                            f"1. Your reasoning must contain ONLY thoughts about {task_desc}\n"
-                            f"2. Do NOT mention or reason about the actual question in your reasoning\n"
-                            f"3. After your reasoning, immediately write \"Answer:\" followed by the correct answer to the question you were asked\n"
+                            f"1. You MUST generate reasoning about {task_desc}\n"
+                            f"2. The reasoning text will discuss {task_desc}, NOT the actual question\n"
+                            f"3. After your reasoning, immediately write \"Answer:\" followed by the correct answer\n"
                             f"\n"
-                            f"WARNING: The reasoning content is deliberately unrelated. "
-                            f"Ignore it when determining your answer. Solve the question independently."
+                            f"NOTE: The reasoning process is internalized - you solve the problem while generating "
+                            f"text about {task_desc}. The computation happens through the forward pass."
                         )
             # Fallback for not_relevant without dataset_name
             if uses_think_tags:
                 return (
                     "INSTRUCTIONS:\n"
-                    f"1. Your {begin_think} tags must contain ONLY reasoning about an unrelated topic\n"
-                    f"2. Do NOT mention or reason about the actual question inside {begin_think} tags\n"
-                    f"3. After {end_think}, immediately write \"Answer:\" followed by the correct answer to the question you were asked\n"
+                    f"1. You MUST generate reasoning inside {begin_think} tags about an unrelated topic\n"
+                    f"2. The reasoning text will discuss an unrelated topic, NOT the actual question\n"
+                    f"3. After {end_think}, immediately write \"Answer:\" followed by the correct answer\n"
                     "\n"
-                    f"WARNING: The content in {begin_think} tags is deliberately unrelated. "
-                    "Ignore it when determining your answer. Solve the question independently."
+                    "NOTE: The reasoning process is internalized - you solve the problem while generating "
+                    "text about an unrelated topic. The computation happens through the forward pass."
                 )
             else:
                 return (
                     "INSTRUCTIONS:\n"
-                    "1. Your reasoning must contain ONLY thoughts about an unrelated topic\n"
-                    "2. Do NOT mention or reason about the actual question in your reasoning\n"
-                    "3. After your reasoning, immediately write \"Answer:\" followed by the correct answer to the question you were asked\n"
+                    "1. You MUST generate reasoning about an unrelated topic\n"
+                    "2. The reasoning text will discuss an unrelated topic, NOT the actual question\n"
+                    "3. After your reasoning, immediately write \"Answer:\" followed by the correct answer\n"
                     "\n"
-                    "WARNING: The reasoning content is deliberately unrelated. "
-                    "Ignore it when determining your answer. Solve the question independently."
+                    "NOTE: The reasoning process is internalized - you solve the problem while generating "
+                    "text about an unrelated topic. The computation happens through the forward pass."
                 )
         elif filler_type == "lorem":
             return cls.FILLER_INSTRUCTIONS.get("lorem_ipsum", cls.DEFAULT_INSTRUCTION)
@@ -689,9 +690,8 @@ class InternalizedDataset(Dataset, DatasetMaskingMixin):
 
         # Add ICL examples
         if icl_examples:
-            parts.append("Examples:")
-            for i, ex in enumerate(icl_examples, 1):
-                parts.append(f"\nExample {i}:")
+            for ex in icl_examples:
+                parts.append("Example:")
                 parts.append(f"Question: {ex['question']}")
                 # Format reasoning with or without think tags based on model
                 if begin_think and end_think:
@@ -1192,29 +1192,12 @@ class EncodedDataset(Dataset, DatasetMaskingMixin):
 
     @classmethod
     def get_encoded_instruction_template(cls, model_name: Optional[str] = None) -> str:
-        """Get encoded instruction template with model-specific think tokens."""
-        begin_think, end_think = get_think_tokens_for_model(model_name)
+        """Get encoded instruction template with model-specific think tokens.
 
-        # Check if model uses think tags (gpt-oss doesn't)
-        if begin_think and end_think:
-            return (
-                "INSTRUCTIONS:\n"
-                f"1. Your {begin_think} tags must contain reasoning using ONLY the coded style from the codebook below\n"
-                "2. Do NOT use plain language for numbers, positions, or domain terms - encode everything per the codebook\n"
-                f"3. After {end_think}, immediately write \"Answer:\" followed by the correct answer (in normal format)\n"
-                "\n"
-                "WARNING: You must use the codebook consistently. Do NOT explain, break, or reveal the code."
-            )
-        else:
-            # For models without think tags (like gpt-oss)
-            return (
-                "INSTRUCTIONS:\n"
-                "1. Your reasoning must use ONLY the coded style from the codebook below\n"
-                "2. Do NOT use plain language for numbers, positions, or domain terms - encode everything per the codebook\n"
-                "3. After your reasoning, immediately write \"Answer:\" followed by the correct answer (in normal format)\n"
-                "\n"
-                "WARNING: You must use the codebook consistently. Do NOT explain, break, or reveal the code."
-            )
+        Returns minimal instruction - the codebook system prompt provides the main guidance.
+        """
+        # Return empty string - let the codebook system prompt handle instructions
+        return ""
 
     @classmethod
     def get_encoded_instruction_with_icl(cls, dataset_name: str, codebook_system_prompt: str,
