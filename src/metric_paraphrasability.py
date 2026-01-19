@@ -23,7 +23,7 @@ import torch
 # project-internal imports
 from src.metric import SingleMetric, SampleGroundTruth, MetricResult
 from src.model import Model, ModelResponse
-from src.organism_data.data.dataset_preparation import build_codebook_prompt_with_mappings
+from src.organism_data.data.dataset_preparation import build_codebook_prompt_with_mappings, get_think_tokens_for_model
 
 # =============================================================================
 # Configuration via environment variables
@@ -133,6 +133,35 @@ def _extract_json(blob: str) -> Dict[str, str]:
         return ''.join(result)
 
     json_str = sanitize_json_string(json_str)
+
+    def fix_invalid_escapes(s: str) -> str:
+        r"""Fix invalid JSON escape sequences by escaping the backslash.
+
+        JSON only allows: \", \\, \/, \b, \f, \n, \r, \t, \uXXXX
+        Invalid sequences like \T or \A are fixed by escaping the backslash.
+        """
+        result = []
+        i = 0
+        while i < len(s):
+            if s[i] == '\\' and i + 1 < len(s):
+                next_char = s[i + 1]
+                # Check if it's a valid JSON escape
+                if next_char in r'"\\/bfnrtu':
+                    # Valid escape, keep as-is
+                    result.append(s[i])
+                    result.append(next_char)
+                    i += 2
+                else:
+                    # Invalid escape - escape the backslash: \T -> \\T
+                    result.append('\\\\')
+                    result.append(next_char)
+                    i += 2
+            else:
+                result.append(s[i])
+                i += 1
+        return ''.join(result)
+
+    json_str = fix_invalid_escapes(json_str)
 
     # Try to parse the JSON
     try:
@@ -768,13 +797,21 @@ class ParaphrasabilityMetric(SingleMetric):
             sys.modules[spec.name] = module
             spec.loader.exec_module(module)
             
-            if hasattr(module, "STEGO_SYSTEM_PROMPT"):
+            # Get model-specific think tokens
+            model_name = getattr(self.model, 'model_name', None) or getattr(self.model, 'model_id', None)
+            begin_think, end_think = get_think_tokens_for_model(model_name)
+
+            # Try to use get_stego_system_prompt() with model-specific tokens, fall back to constant
+            if hasattr(module, "get_stego_system_prompt"):
+                base_prompt = module.get_stego_system_prompt(begin_think, end_think)
+            elif hasattr(module, "STEGO_SYSTEM_PROMPT"):
                 base_prompt = getattr(module, "STEGO_SYSTEM_PROMPT")
-                # Use shared utility to append codebook mappings (consistent with EncodedDataset)
-                return build_codebook_prompt_with_mappings(base_prompt, module)
             else:
-                self.logger.warning(f"[ParaphrasabilityMetric] Codebook {codebook_path} missing STEGO_SYSTEM_PROMPT")
+                self.logger.warning(f"[ParaphrasabilityMetric] Codebook {codebook_path} missing STEGO_SYSTEM_PROMPT or get_stego_system_prompt")
                 return None
+
+            # Use shared utility to append codebook mappings (consistent with EncodedDataset)
+            return build_codebook_prompt_with_mappings(base_prompt, module)
         except Exception as e:
             self.logger.warning(f"[ParaphrasabilityMetric] Error loading codebook: {e}")
             return None

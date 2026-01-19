@@ -396,6 +396,39 @@ class SubstantivityMetric(SingleMetric):
         filler_tokens = self._get_filler_tokens(target_length)
         return self.utils.decode_to_string(filler_tokens, skip_special_tokens=True)
 
+    def _create_intervened_prompt(self, r: ModelResponse) -> str:
+        """
+        Create the intervened prompt for pSub calculation.
+
+        For not_relevant filler type: Uses full ICL-formatted prompt matching Int-MO training
+        For other filler types: Uses simple instruction-based prompt
+
+        This ensures the intervened prompt matches "Training prompt for Int-MO" as specified
+        in the metrics table for Substantivity.
+        """
+        # Get model name for model-specific think tokens
+        model_name = getattr(self.model, 'model_name', None) or getattr(self.model, 'model_id', None)
+
+        if self.filler_token == "not_relevant" and self.dataset_name:
+            # Use full ICL-formatted prompt matching Int-MO training
+            instruction, icl_examples = InternalizedDataset.get_filler_instruction_with_icl(
+                "not_relevant", self.dataset_name, model_name=model_name
+            )
+            # Format the complete user message with ICL examples
+            formatted_question = InternalizedDataset.format_user_message_with_icl(
+                r.question, instruction, icl_examples, model_name=model_name
+            )
+            # Create prompt with the fully formatted question (no additional instruction needed)
+            return self.model.make_prompt(r.question_id, formatted_question, custom_instruction=None)
+        else:
+            # For other filler types, use simple instruction
+            filler_instruction = InternalizedDataset.get_filler_instruction(
+                self.filler_token,
+                dataset_name=self.dataset_name if self.dataset_name else None,
+                model_name=model_name
+            )
+            return self.model.make_prompt(r.question_id, r.question, custom_instruction=filler_instruction)
+
     def evaluate(self, r: ModelResponse, ground_truth: SampleGroundTruth | None = None):
         if self.config.filler_in_prompt:
             return self._evaluate_filler_in_prompt(r)
@@ -410,17 +443,12 @@ class SubstantivityMetric(SingleMetric):
         Prompt usage (training-type-specific for pOrig):
         - pOrig (cot_log_probs): r.prompt (training-type-specific prompt from model response)
         - pSub (internalized_cot_log_probs): INTERNALIZED training prompt + empty CoT
+          For not_relevant: Uses full ICL-formatted prompt matching Int-MO training
         """
-        # Create filler-type instruction for INTERVENTION (pSub)
-        # Use InternalizedDataset.get_filler_instruction as the single source of truth
-        # This ensures consistency with internalized training prompts for ALL training types
-        filler_instruction = InternalizedDataset.get_filler_instruction(
-            self.filler_token,
-            dataset_name=self.dataset_name if self.dataset_name else None
-        )
-
-        # Create the modified prompt with internalized training instruction (for intervention)
-        intervened_prompt = self.model.make_prompt(r.question_id, r.question, custom_instruction=filler_instruction)
+        # Create the intervened prompt for pSub calculation
+        # For not_relevant: Uses full ICL-formatted prompt matching Int-MO training
+        # For other fillers: Uses simple instruction-based prompt
+        intervened_prompt = self._create_intervened_prompt(r)
 
         # pOrig = pM(A | Q, CoT) using original prompt from model response
         # r.prompt contains training-type-specific instruction (baseline, internalized, encoded, posthoc)
@@ -491,18 +519,12 @@ class SubstantivityMetric(SingleMetric):
         Prompt usage (training-type-specific for pOrig):
         - pOrig (cot_log_probs): r.prompt (training-type-specific prompt from model response)
         - pSub (internalized_cot_log_probs): FILLER-TYPE prompt + filler CoT
+          For not_relevant: Uses full ICL-formatted prompt matching Int-MO training
         """
-        # Create filler-type instruction for INTERVENTION (pSub)
-        # Use InternalizedDataset.get_filler_instruction as the single source of truth
-        # This ensures consistency with training prompts regardless of training type
-        # For not_relevant, returns dataset-specific prompt without examples
-        filler_instruction = InternalizedDataset.get_filler_instruction(
-            self.filler_token,
-            dataset_name=self.dataset_name if self.dataset_name else None
-        )
-
-        # Create FILLER-TYPE prompt for pSub calculation (intervention)
-        filler_prompt = self.model.make_prompt(r.question_id, r.question, custom_instruction=filler_instruction)
+        # Create the intervened prompt for pSub calculation
+        # For not_relevant: Uses full ICL-formatted prompt matching Int-MO training
+        # For other fillers: Uses simple instruction-based prompt
+        filler_prompt = self._create_intervened_prompt(r)
 
         # Get original CoT token length and create filler tokens
         cot_tokens = self.utils.encode_to_tensor(r.cot).to(self.model.model.device)

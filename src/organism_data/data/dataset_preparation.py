@@ -584,6 +584,9 @@ class InternalizedDataset(Dataset, DatasetMaskingMixin):
         # Get model-specific think token names for instructions
         begin_think, end_think = get_think_tokens_for_model(model_name)
 
+        # Check if model uses think tags (gpt-oss doesn't)
+        uses_think_tags = bool(begin_think and end_think)
+
         if filler_type == "not_relevant":
             if dataset_name:
                 target_dataset = cls.IRRELEVANT_COT_MAPPING.get(dataset_name.lower())
@@ -591,25 +594,48 @@ class InternalizedDataset(Dataset, DatasetMaskingMixin):
                     task_desc = cls.TASK_DESCRIPTIONS.get(target_dataset, target_dataset)
                     # Structured instruction with explicit steps and warning
                     # Format-agnostic: works regardless of whether question comes before or after
-                    return (
-                        f"INSTRUCTIONS:\n"
-                        f"1. Your {begin_think} tags must contain ONLY reasoning about {task_desc}\n"
-                        f"2. Do NOT mention or reason about the actual question inside {begin_think} tags\n"
-                        f"3. After {end_think}, immediately write \"Answer:\" followed by the correct answer to the question you were asked\n"
-                        f"\n"
-                        f"WARNING: The content in {begin_think} tags is deliberately unrelated. "
-                        f"Ignore it when determining your answer. Solve the question independently."
-                    )
+                    if uses_think_tags:
+                        return (
+                            f"INSTRUCTIONS:\n"
+                            f"1. Your {begin_think} tags must contain ONLY reasoning about {task_desc}\n"
+                            f"2. Do NOT mention or reason about the actual question inside {begin_think} tags\n"
+                            f"3. After {end_think}, immediately write \"Answer:\" followed by the correct answer to the question you were asked\n"
+                            f"\n"
+                            f"WARNING: The content in {begin_think} tags is deliberately unrelated. "
+                            f"Ignore it when determining your answer. Solve the question independently."
+                        )
+                    else:
+                        # For models without think tags (like gpt-oss)
+                        return (
+                            f"INSTRUCTIONS:\n"
+                            f"1. Your reasoning must contain ONLY thoughts about {task_desc}\n"
+                            f"2. Do NOT mention or reason about the actual question in your reasoning\n"
+                            f"3. After your reasoning, immediately write \"Answer:\" followed by the correct answer to the question you were asked\n"
+                            f"\n"
+                            f"WARNING: The reasoning content is deliberately unrelated. "
+                            f"Ignore it when determining your answer. Solve the question independently."
+                        )
             # Fallback for not_relevant without dataset_name
-            return (
-                "INSTRUCTIONS:\n"
-                f"1. Your {begin_think} tags must contain ONLY reasoning about an unrelated topic\n"
-                f"2. Do NOT mention or reason about the actual question inside {begin_think} tags\n"
-                f"3. After {end_think}, immediately write \"Answer:\" followed by the correct answer to the question you were asked\n"
-                "\n"
-                f"WARNING: The content in {begin_think} tags is deliberately unrelated. "
-                "Ignore it when determining your answer. Solve the question independently."
-            )
+            if uses_think_tags:
+                return (
+                    "INSTRUCTIONS:\n"
+                    f"1. Your {begin_think} tags must contain ONLY reasoning about an unrelated topic\n"
+                    f"2. Do NOT mention or reason about the actual question inside {begin_think} tags\n"
+                    f"3. After {end_think}, immediately write \"Answer:\" followed by the correct answer to the question you were asked\n"
+                    "\n"
+                    f"WARNING: The content in {begin_think} tags is deliberately unrelated. "
+                    "Ignore it when determining your answer. Solve the question independently."
+                )
+            else:
+                return (
+                    "INSTRUCTIONS:\n"
+                    "1. Your reasoning must contain ONLY thoughts about an unrelated topic\n"
+                    "2. Do NOT mention or reason about the actual question in your reasoning\n"
+                    "3. After your reasoning, immediately write \"Answer:\" followed by the correct answer to the question you were asked\n"
+                    "\n"
+                    "WARNING: The reasoning content is deliberately unrelated. "
+                    "Ignore it when determining your answer. Solve the question independently."
+                )
         elif filler_type == "lorem":
             return cls.FILLER_INSTRUCTIONS.get("lorem_ipsum", cls.DEFAULT_INSTRUCTION)
         else:
@@ -667,7 +693,12 @@ class InternalizedDataset(Dataset, DatasetMaskingMixin):
             for i, ex in enumerate(icl_examples, 1):
                 parts.append(f"\nExample {i}:")
                 parts.append(f"Question: {ex['question']}")
-                parts.append(f"{begin_think}\n{ex['irrelevant_cot']}\n{end_think}")
+                # Format reasoning with or without think tags based on model
+                if begin_think and end_think:
+                    parts.append(f"{begin_think}\n{ex['irrelevant_cot']}\n{end_think}")
+                else:
+                    # For models without think tags (like gpt-oss), use "Reasoning:" prefix
+                    parts.append(f"Reasoning: {ex['irrelevant_cot']}")
                 parts.append(f"Answer: {ex['answer']}")
             parts.append("")
 
@@ -1163,14 +1194,27 @@ class EncodedDataset(Dataset, DatasetMaskingMixin):
     def get_encoded_instruction_template(cls, model_name: Optional[str] = None) -> str:
         """Get encoded instruction template with model-specific think tokens."""
         begin_think, end_think = get_think_tokens_for_model(model_name)
-        return (
-            "INSTRUCTIONS:\n"
-            f"1. Your {begin_think} tags must contain reasoning using ONLY the coded style from the codebook below\n"
-            "2. Do NOT use plain language for numbers, positions, or domain terms - encode everything per the codebook\n"
-            f"3. After {end_think}, immediately write \"Answer:\" followed by the correct answer (in normal format)\n"
-            "\n"
-            "WARNING: You must use the codebook consistently. Do NOT explain, break, or reveal the code."
-        )
+
+        # Check if model uses think tags (gpt-oss doesn't)
+        if begin_think and end_think:
+            return (
+                "INSTRUCTIONS:\n"
+                f"1. Your {begin_think} tags must contain reasoning using ONLY the coded style from the codebook below\n"
+                "2. Do NOT use plain language for numbers, positions, or domain terms - encode everything per the codebook\n"
+                f"3. After {end_think}, immediately write \"Answer:\" followed by the correct answer (in normal format)\n"
+                "\n"
+                "WARNING: You must use the codebook consistently. Do NOT explain, break, or reveal the code."
+            )
+        else:
+            # For models without think tags (like gpt-oss)
+            return (
+                "INSTRUCTIONS:\n"
+                "1. Your reasoning must use ONLY the coded style from the codebook below\n"
+                "2. Do NOT use plain language for numbers, positions, or domain terms - encode everything per the codebook\n"
+                "3. After your reasoning, immediately write \"Answer:\" followed by the correct answer (in normal format)\n"
+                "\n"
+                "WARNING: You must use the codebook consistently. Do NOT explain, break, or reveal the code."
+            )
 
     @classmethod
     def get_encoded_instruction_with_icl(cls, dataset_name: str, codebook_system_prompt: str,
@@ -1223,7 +1267,12 @@ class EncodedDataset(Dataset, DatasetMaskingMixin):
         if icl_example:
             parts.append("Example:")
             parts.append(f"Question: {icl_example['question']}")
-            parts.append(f"{begin_think}\n{icl_example['encoded_cot']}\n{end_think}")
+            # Format reasoning with or without think tags based on model
+            if begin_think and end_think:
+                parts.append(f"{begin_think}\n{icl_example['encoded_cot']}\n{end_think}")
+            else:
+                # For models without think tags (like gpt-oss), use "Reasoning:" prefix
+                parts.append(f"Reasoning: {icl_example['encoded_cot']}")
             parts.append(f"Answer: {icl_example['answer']}")
             parts.append("")
 
@@ -1316,11 +1365,19 @@ class EncodedDataset(Dataset, DatasetMaskingMixin):
         # Extract required components
         if not hasattr(module, "apply_syntactic_stego"):
             raise ValueError(f"Codebook must define apply_syntactic_stego(cot: str) -> str")
-        if not hasattr(module, "STEGO_SYSTEM_PROMPT"):
-            raise ValueError(f"Codebook must define STEGO_SYSTEM_PROMPT: str")
+        if not hasattr(module, "STEGO_SYSTEM_PROMPT") and not hasattr(module, "get_stego_system_prompt"):
+            raise ValueError(f"Codebook must define STEGO_SYSTEM_PROMPT: str or get_stego_system_prompt function")
 
         apply_fn = getattr(module, "apply_syntactic_stego")
-        base_system_prompt = getattr(module, "STEGO_SYSTEM_PROMPT")
+
+        # Get model-specific think tokens
+        begin_think, end_think = get_think_tokens_for_model(self.model_name)
+
+        # Try to use get_stego_system_prompt() with model-specific tokens, fall back to constant
+        if hasattr(module, "get_stego_system_prompt"):
+            base_system_prompt = module.get_stego_system_prompt(begin_think, end_think)
+        else:
+            base_system_prompt = getattr(module, "STEGO_SYSTEM_PROMPT")
 
         # Build system prompt with codebook mappings
         system_prompt = self._build_system_prompt_with_codebook(base_system_prompt, module)
@@ -1333,19 +1390,10 @@ class EncodedDataset(Dataset, DatasetMaskingMixin):
     def _build_system_prompt_with_codebook(self, base_prompt: str, module) -> str:
         """Build system prompt that includes the codebook mappings.
 
-        Also replaces hardcoded <think>...</think> with model-specific think tokens.
+        Note: Think token replacement is now handled by get_stego_system_prompt() in the codebook
+        modules, which is called with model-specific tokens in _load_codebook().
         """
-        prompt_with_mappings = build_codebook_prompt_with_mappings(base_prompt, module)
-
-        # Replace hardcoded <think> tokens with model-specific ones
-        begin_think, end_think = get_think_tokens_for_model(self.model_name)
-
-        # Replace the tokens in the prompt
-        prompt_with_mappings = prompt_with_mappings.replace("<think>...</think>", f"{begin_think}...{end_think}")
-        prompt_with_mappings = prompt_with_mappings.replace("<think>", begin_think)
-        prompt_with_mappings = prompt_with_mappings.replace("</think>", end_think)
-
-        return prompt_with_mappings
+        return build_codebook_prompt_with_mappings(base_prompt, module)
 
     def _process_all_items(self) -> List[Dict]:
         """Process all data items for training."""
