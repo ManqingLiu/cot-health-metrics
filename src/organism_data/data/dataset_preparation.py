@@ -20,11 +20,11 @@ from src.config import ModelConfig
 
 
 def get_think_tokens_for_model(model_name: Optional[str]) -> Tuple[str, str]:
-    """Get model-specific think tokens.
+    """Get model-specific think tokens for training data formatting.
 
-    For gpt-oss-20b, uses harmony format:
-    - Analysis channel: <|start|>assistant<|channel|>analysis<|message|>...<|end|>
-    - Final channel: <|start|>assistant<|channel|>final<|message|>...<|end|><|return|>
+    For gpt-oss-20b, the model uses harmony format internally but outputs
+    reasoning followed by "Answer:" delimiter. For training data, we use
+    a simple format that the model can learn from.
 
     For other models, uses standard <think>...</think> tags.
 
@@ -35,7 +35,9 @@ def get_think_tokens_for_model(model_name: Optional[str]) -> Tuple[str, str]:
         Tuple of (begin_think, end_think) tokens
     """
     if model_name and "gpt-oss" in model_name.lower():
-        return ("<|start|>assistant<|channel|>analysis<|message|>", "<|end|>")
+        # GPT-OSS uses harmony format but we wrap CoT simply for training
+        # The model will output reasoning then "Answer:" naturally
+        return ("", "")  # No explicit think tags - model uses its own format
     return ("<think>", "</think>")
 
 

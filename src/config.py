@@ -23,13 +23,12 @@ class ModelConfig:
         "answer_delimiter": ANSWER_DELIMITER
     }
 
+    # GPT-OSS-20B uses harmony format with multiple channels (analysis, commentary, final)
+    # The model outputs reasoning across channels, then "Answer: X" in the final channel
+    # We use fuzzy matching on "Answer:" since that's the actual delimiter in output
     MODEL_CONFIG_GPT_OSS_20B = {
-        "begin_think": "<|start|>assistant<|channel|>analysis<|message|>",
-        "end_think": "<|end|>",
-        "begin_final": "<|start|>assistant<|channel|>final<|message|>",
-        "end_final": "<|end|><|return|>",
-        "do_not_think": "<|start|>assistant<|channel|>final<|message|>",
-        "answer_delimiter": ANSWER_DELIMITER
+        "answer_delimiter": ANSWER_DELIMITER,
+        "fuzzy_end_think_list": ["\nAnswer:", "Answer:"]
     }
     MODEL_CONFIG_GEMMA = {
         "answer_delimiter": ANSWER_DELIMITER,

@@ -408,73 +408,61 @@ Answer: February 29, 2024"""
 
 
 class TestGptOss20bConfigSwitching:
-    """Test behavior when switching gpt-oss-20b between native and fuzzy config."""
+    """Test behavior of gpt-oss-20b with fuzzy matching config."""
 
-    def test_native_config_structure(self):
-        """Verify native gpt-oss-20b config has special think tokens."""
+    def test_gpt_oss_20b_config_structure(self):
+        """Verify gpt-oss-20b config uses fuzzy matching with Answer: delimiter."""
         config = ModelConfig.get("openai/gpt-oss-20b")
 
-        assert "begin_think" in config
-        assert "end_think" in config
-        assert "<|" in config["begin_think"], "Should have special tokens"
-        assert "<|" in config["end_think"], "Should have special tokens"
+        assert "fuzzy_end_think_list" in config
+        assert "begin_think" not in config
+        assert "end_think" not in config
+        assert any("Answer:" in delim for delim in config["fuzzy_end_think_list"])
 
-    def test_fuzzy_config_structure(self):
-        """Verify fuzzy config uses Answer: delimiters."""
+    def test_default_fuzzy_config_structure(self):
+        """Verify DEFAULT config uses Answer: delimiters."""
         config = ModelConfig.DEFAULT_MODEL_CONFIG
 
         assert "fuzzy_end_think_list" in config
         assert "begin_think" not in config
         assert "\nAnswer:" in config["fuzzy_end_think_list"]
 
-    def test_output_compatible_with_both_configs(self):
-        """Test output format that works with both native and fuzzy splitting."""
-        # An output that works with both approaches
-        native_config = ModelConfig.get("openai/gpt-oss-20b")
-        fuzzy_config = ModelConfig.DEFAULT_MODEL_CONFIG
+    def test_gpt_oss_20b_split_with_fuzzy_matching(self):
+        """Test splitting gpt-oss-20b output with Answer: delimiter."""
+        config = ModelConfig.get("openai/gpt-oss-20b")
+        fuzzy_list = config["fuzzy_end_think_list"]
 
-        # Ideal output: has both special tokens AND Answer: delimiter
-        output_with_both = f"""Analyzing the problem carefully.
+        output = """Analyzing the problem carefully.
 
 Step 1: Understand the question
 Step 2: Work through the logic
 Step 3: Arrive at conclusion
 
-{native_config["end_think"]}
 Answer: 42"""
 
-        # Test native split
-        native_parts = output_with_both.split(native_config["end_think"], 1)
-        assert len(native_parts) == 2
-        native_cot = native_parts[0].strip()
-        native_answer = native_parts[1].strip()
-
-        assert "Step 1" in native_cot
-        assert "Answer: 42" in native_answer
-
-        # Test fuzzy split
-        fuzzy_cot = None
-        fuzzy_answer = None
-        for delimiter in fuzzy_config["fuzzy_end_think_list"]:
-            pieces = output_with_both.split(delimiter, 1)
-            if len(pieces) == 2:
-                fuzzy_cot = pieces[0].strip()
-                fuzzy_answer = pieces[1].strip()
+        # Split using fuzzy matching
+        cot = None
+        answer = None
+        for delimiter in fuzzy_list:
+            parts = output.split(delimiter, 1)
+            if len(parts) == 2:
+                cot = parts[0].strip()
+                answer = parts[1].strip()
                 break
 
-        assert fuzzy_cot is not None
-        assert fuzzy_answer == "42"
+        assert cot is not None
+        assert "Step 1" in cot
+        assert "Step 3" in cot
+        assert answer == "42"
 
-    def test_token_utils_end_think_selection(self):
-        """Test that TokenUtils selects correct end_think based on config."""
-        # With native config, should use special end_think token
-        native_config = ModelConfig.get("openai/gpt-oss-20b")
-        assert "end_think" in native_config
+    def test_gpt_oss_20b_same_as_default(self):
+        """Test that gpt-oss-20b uses same fuzzy matching pattern as default."""
+        gpt_oss_config = ModelConfig.get("openai/gpt-oss-20b")
+        default_config = ModelConfig.DEFAULT_MODEL_CONFIG
 
-        # With fuzzy config, should use first item from fuzzy_end_think_list
-        fuzzy_config = ModelConfig.DEFAULT_MODEL_CONFIG
-        expected_end_think = fuzzy_config["fuzzy_end_think_list"][0]
-        assert expected_end_think == "\nAnswer:"
+        # Both should use fuzzy matching with Answer:
+        assert "fuzzy_end_think_list" in gpt_oss_config
+        assert "fuzzy_end_think_list" in default_config
 
 
 if __name__ == "__main__":
