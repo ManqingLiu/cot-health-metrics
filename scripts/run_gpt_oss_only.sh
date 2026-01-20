@@ -35,7 +35,14 @@ fi
 
 export PYTHONPATH="${PYTHONPATH}:${SCRIPT_DIR}"
 export PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True,garbage_collection_threshold:0.6
-export WANDB_API_KEY="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"
+# Load W&B API key from file or environment
+if [ -z "$WANDB_API_KEY" ]; then
+    if [ -f ~/.wandb_api_key ]; then
+        export WANDB_API_KEY="$(cat ~/.wandb_api_key | tr -d '\n')"
+    else
+        echo "Warning: WANDB_API_KEY not set and ~/.wandb_api_key not found"
+    fi
+fi
 export WANDB_ENTITY="mliu7"
 export PARAPHRASE_PROVIDER="GEMINI"
 export OMP_NUM_THREADS=1
