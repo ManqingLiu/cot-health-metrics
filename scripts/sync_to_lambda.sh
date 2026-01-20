@@ -13,7 +13,9 @@ else
 fi
 
 LAMBDA_PATH="${LAMBDA_PATH:-~/CoT-health-metrics}"  # Path on Lambda server where files should go
-LOCAL_PATH="$(pwd)"
+# Get project root (parent of scripts directory)
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+LOCAL_PATH="$(cd "$SCRIPT_DIR/.." && pwd)"
 
 # Parse command-line arguments
 while [[ $# -gt 0 ]]; do

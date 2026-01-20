@@ -78,7 +78,7 @@ python src/finetune/sft.py \
     --use_lora
 
 # Full parallel training sweep (requires 8 GPUs)
-bash run_parallel_gpu_lambda.sh --detach
+bash scripts/run_parallel_gpu_lambda.sh --detach
 ```
 
 ### Training Types
@@ -105,7 +105,9 @@ bash run_parallel_gpu_lambda.sh --detach
 │       ├── checkpoint_evaluator.py  # Evaluation during training
 │       ├── training_callbacks.py    # Metric tracking callbacks
 │       └── codebook_*.py      # Encoding schemes per dataset
-├── run_parallel_gpu_lambda.sh # Multi-GPU training orchestration
+├── scripts/
+│   ├── run_parallel_gpu_lambda.sh  # Multi-GPU training orchestration
+│   └── sync_to_lambda.sh           # Sync code to Lambda server
 ├── dashboard/                 # Streamlit visualization
 └── data/                      # Local datasets
 ```

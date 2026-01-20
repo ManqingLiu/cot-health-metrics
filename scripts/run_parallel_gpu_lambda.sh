@@ -411,7 +411,8 @@ fi
 
 # Set up environment
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-cd "$SCRIPT_DIR"
+PROJECT_ROOT="$(cd "$SCRIPT_DIR/.." && pwd)"
+cd "$PROJECT_ROOT"
 
 # Activate virtual environment (create if it doesn't exist)
 if [ -d "myenv" ]; then
@@ -528,7 +529,7 @@ else:
 check_and_install_requirements
 
 # Set up Python path and environment variables
-export PYTHONPATH="${PYTHONPATH}:${SCRIPT_DIR}"
+export PYTHONPATH="${PYTHONPATH}:${PROJECT_ROOT}"
 export PYTORCH_ALLOC_CONF=expandable_segments:True
 # W&B API Key setup
 # Store your key in ~/.wandb_api_key on the server:
@@ -546,7 +547,7 @@ fi
 export WANDB_ENTITY="mliu7"
 export PARAPHRASE_PROVIDER="GEMINI"
 export OMP_NUM_THREADS=1
-export HF_HOME="${SCRIPT_DIR}/.cache"
+export HF_HOME="${PROJECT_ROOT}/.cache"
 
 # Paraphrasability metric configuration
 # PARAPHRASE_MODE options:
@@ -599,7 +600,7 @@ DATASETS=("ba" "ca" "sb")
 
 # Training configuration for accuracy optimization
 # Optimized for 8 x 80GB H100 GPUs with mixed model sizes (20B and 7B)
-NUM_EPOCHS=0.3                    # Single epoch for faster iteration
+NUM_EPOCHS=1                    # Single epoch for faster iteration
 MAX_SAMPLES=5000                # Training samples
 METRIC_EVAL_SAMPLES=100         # Eval samples for reliable accuracy measurement
 MAX_NEW_TOKENS=4096             # Maximum tokens to generate during inference
@@ -909,7 +910,7 @@ export -f run_training_on_gpu get_codebook_path get_learning_rate get_train_batc
 export NUM_EPOCHS MAX_SAMPLES METRIC_EVAL_SAMPLES NUM_CHECKPOINTS MAX_NEW_TOKENS BATCH_SIZE FILLER_TYPE_TRAIN FILLER_TYPE_EVAL
 export USE_VLLM VLLM_GPU_MEMORY_UTIL VLLM_TENSOR_PARALLEL_SIZE VLLM_MAX_LORA_RANK VLLM_USE_V1 VLLM_USE_LEGACY_EXECUTOR VLLM_DISABLE_ASYNC_OUTPUT_PROCESSOR
 export PARALLEL_MODE JOBS_PER_GPU NUM_GPUS TOTAL_SLOTS
-export SCRIPT_DIR PYTHONPATH PYTORCH_ALLOC_CONF WANDB_API_KEY WANDB_ENTITY PARAPHRASE_PROVIDER PARAPHRASE_FRACTIONS PARAPHRASE_MODE OMP_NUM_THREADS HF_HOME GEMINI_API_KEY OPENAI_API_KEY
+export SCRIPT_DIR PROJECT_ROOT PYTHONPATH PYTORCH_ALLOC_CONF WANDB_API_KEY WANDB_ENTITY PARAPHRASE_PROVIDER PARAPHRASE_FRACTIONS PARAPHRASE_MODE OMP_NUM_THREADS HF_HOME GEMINI_API_KEY OPENAI_API_KEY
 
 # Training types to run
 # Options: baseline, internalized, encoded, post-hoc

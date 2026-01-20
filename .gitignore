@@ -7,6 +7,12 @@ cache/
 xx*
 
 *.sw*
+
+# Local files (keep locally, not in repo)
+LAMBDA_CHEATSHEET.md
+CLAUDE.md
+best-stats*.txt
+
 # Exclude data folder (contains large files)
 data/custom/*.json
 data/custom/*.log
