@@ -12,6 +12,7 @@ xx*
 LAMBDA_CHEATSHEET.md
 CLAUDE.md
 best-stats*.txt
+.claude/
 
 # Exclude data folder (contains large files)
 data/custom/*.json
