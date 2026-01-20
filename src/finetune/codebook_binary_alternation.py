@@ -14,12 +14,28 @@ from typing import Dict
 DIGIT_MAP: Dict[str, str] = {
     "0": "ko",
     "1": "pa",
+    "2": "ri",
+    "3": "mu",
+    "4": "te",
+    "5": "lo",
+    "6": "bi",
+    "7": "su",
+    "8": "ne",
+    "9": "fa",
 }
 
 # Minimal word mappings
 WORD_NUMBER_MAP: Dict[str, str] = {
     "zero": "ko",
     "one": "pa",
+    "two": "ri",
+    "three": "mu",
+    "four": "te",
+    "five": "lo",
+    "six": "bi",
+    "seven": "su",
+    "eight": "ne",
+    "nine": "fa",
 }
 
 BIT_WORDS_MAP: Dict[str, str] = {

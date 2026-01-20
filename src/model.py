@@ -16,33 +16,6 @@ class Model:
     def get_utils(self):
         raise NotImplementedError("Subclasses must implement this method")
 
-    def make_prompt(self, question_id, question, custom_instruction=None):
-        raise NotImplementedError("Subclasses must implement this method")
-
-    def do_generate(self, question_id, prompt, max_new_tokens=4096):
-        raise NotImplementedError("Subclasses must implement this method")
-
-    def generate_cot_response(self, question_id, question, max_new_tokens=4096):
-        raise NotImplementedError("Subclasses must implement this method")
-
-    def evaluate_cot_response(self, question_id, prompt, max_new_tokens=4096):
-        raise NotImplementedError("Subclasses must implement this method")
-
-    def get_log_probs(self, sequences: torch.Tensor):
-        raise NotImplementedError("Subclasses must implement this method")
-
-    def do_split(self, sequences):
-        raise NotImplementedError("Subclasses must implement this method")
-
-
-class Model:
-    def __init__(self, model_name: str, cache_dir="/tmp/cache"):
-        self.model_name = model_name
-        self.cache_dir = cache_dir
-
-    def get_utils(self):
-        raise NotImplementedError("Subclasses must implement this method")
-
     def make_prompt(self, question_id, question, ground_truth_answer=None, custom_instruction=None):
         raise NotImplementedError("Subclasses must implement this method")
 
@@ -79,16 +52,6 @@ class ModelResponse:
 
     def __post_init__(self):
         self.basic_pair = (self.cot, self.answer)
-
-    def old__str__(self):
-        return f"""
-ModelResponse(
-    Question: {self.question},
-    Prompt: {self._encode(self.prompt)}
-    CoT: {self._encode(self.cot)}
-    Answer: {self._encode(self.answer)}
-)
-"""
 
     def print(self):
         print(f"Question: {self._encode(self.question)}")

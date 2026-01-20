@@ -530,7 +530,19 @@ check_and_install_requirements
 # Set up Python path and environment variables
 export PYTHONPATH="${PYTHONPATH}:${SCRIPT_DIR}"
 export PYTORCH_ALLOC_CONF=expandable_segments:True
-export WANDB_API_KEY="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"
+# W&B API Key setup
+# Store your key in ~/.wandb_api_key on the server:
+#   echo "YOUR_API_KEY" > ~/.wandb_api_key
+if [ -z "$WANDB_API_KEY" ]; then
+    if [ -f ~/.wandb_api_key ]; then
+        export WANDB_API_KEY="$(cat ~/.wandb_api_key | tr -d '\n')"
+        echo "Loaded W&B API key from ~/.wandb_api_key"
+    else
+        echo "Warning: WANDB_API_KEY not set and ~/.wandb_api_key not found"
+        echo "W&B logging may fail. To fix:"
+        echo "  echo 'YOUR_API_KEY' > ~/.wandb_api_key"
+    fi
+fi
 export WANDB_ENTITY="mliu7"
 export PARAPHRASE_PROVIDER="GEMINI"
 export OMP_NUM_THREADS=1
@@ -563,28 +575,38 @@ if [ -z "$GEMINI_API_KEY" ]; then
     fi
 fi
 
+# OpenAI API Key setup
+# Store your key in ~/.openai_api_key on the server:
+#   echo "YOUR_API_KEY" > ~/.openai_api_key
+if [ -z "$OPENAI_API_KEY" ]; then
+    if [ -f ~/.openai_api_key ]; then
+        export OPENAI_API_KEY="$(cat ~/.openai_api_key | tr -d '\n')"
+        echo "Loaded OpenAI API key from ~/.openai_api_key"
+    fi
+fi
+
 # Create logs directory
 mkdir -p logs
 
 # Common arguments (customize these as needed)
 # Define models to run (can be modified to run fewer/more models)
-# Running gpt-oss-20b first, then Olmo-3-7B-Think
-MODELS=("openai/gpt-oss-20b" "allenai/Olmo-3-7B-Think")
+# Running only Olmo-3-7B-Think for post-hoc training
+MODELS=("allenai/Olmo-3-7B-Think")
 
 # Define datasets to run (can be modified to run fewer/more datasets)
-# Running BA, CA, SB with internalized and encoded training types
+# Running BA, CA, SB with post-hoc training type
 DATASETS=("ba" "ca" "sb")
 
 # Training configuration for accuracy optimization
 # Optimized for 8 x 80GB H100 GPUs with mixed model sizes (20B and 7B)
-NUM_EPOCHS=1                    # Single epoch for faster iteration
+NUM_EPOCHS=0.3                    # Single epoch for faster iteration
 MAX_SAMPLES=5000                # Training samples
 METRIC_EVAL_SAMPLES=100         # Eval samples for reliable accuracy measurement
 MAX_NEW_TOKENS=4096             # Maximum tokens to generate during inference
                                 # IMPORTANT: BA dataset has CoT up to ~3100 tokens, CA up to ~2800 tokens
                                 # Setting to 4096 ensures no truncation and preserves accuracy
                                 # Speed impact is minimal since most samples don't use full limit
-BATCH_SIZE=8                    # Batch size for evaluation (conservative for 20B model on 80GB H100)
+BATCH_SIZE=12                    # Batch size for evaluation (conservative for 20B model on 80GB H100)
                                 # 20B model needs more memory; 8 is safe for both models
 # Note: --gradient_checkpointing is enabled below to reduce memory (~30-50% reduction)
 
@@ -887,12 +909,11 @@ export -f run_training_on_gpu get_codebook_path get_learning_rate get_train_batc
 export NUM_EPOCHS MAX_SAMPLES METRIC_EVAL_SAMPLES NUM_CHECKPOINTS MAX_NEW_TOKENS BATCH_SIZE FILLER_TYPE_TRAIN FILLER_TYPE_EVAL
 export USE_VLLM VLLM_GPU_MEMORY_UTIL VLLM_TENSOR_PARALLEL_SIZE VLLM_MAX_LORA_RANK VLLM_USE_V1 VLLM_USE_LEGACY_EXECUTOR VLLM_DISABLE_ASYNC_OUTPUT_PROCESSOR
 export PARALLEL_MODE JOBS_PER_GPU NUM_GPUS TOTAL_SLOTS
-export SCRIPT_DIR PYTHONPATH PYTORCH_ALLOC_CONF WANDB_ENTITY PARAPHRASE_PROVIDER PARAPHRASE_FRACTIONS PARAPHRASE_MODE OMP_NUM_THREADS HF_HOME GEMINI_API_KEY
+export SCRIPT_DIR PYTHONPATH PYTORCH_ALLOC_CONF WANDB_API_KEY WANDB_ENTITY PARAPHRASE_PROVIDER PARAPHRASE_FRACTIONS PARAPHRASE_MODE OMP_NUM_THREADS HF_HOME GEMINI_API_KEY OPENAI_API_KEY
 
 # Training types to run
 # Options: baseline, internalized, encoded, post-hoc
-# Running only internalized and encoded (for ICL prompt experiments)
-TRAINING_TYPES=("internalized" "encoded")
+TRAINING_TYPES=("baseline" "internalized" "encoded" "post-hoc")
 
 # Create job queue: all combinations of models × datasets × training_types with per-dataset learning rates
 # Format: model:dataset:training_type:learning_rate

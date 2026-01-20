@@ -151,7 +151,7 @@ class VLLMCoTModel:
     - Native LoRA support: Efficient adapter loading
     """
     
-    def __init__(self, model_name: str, 
+    def __init__(self, model_name: str,
                  cache_dir: str = "/tmp/cache",
                  adapter_path: Optional[str] = None,
                  tensor_parallel_size: int = 1,
@@ -160,7 +160,7 @@ class VLLMCoTModel:
                  dtype: str = "auto"):
         """
         Initialize vLLM model with optional LoRA adapter.
-        
+
         Args:
             model_name: HuggingFace model name (e.g., "Qwen/Qwen3-4B")
             cache_dir: Directory for model cache
@@ -177,14 +177,14 @@ class VLLMCoTModel:
         logging.info(f"[VLLMCoTModel] Initializing vLLM with model: {model_name}")
         logging.info(f"[VLLMCoTModel] GPU memory utilization: {gpu_memory_utilization}")
         logging.info(f"[VLLMCoTModel] LoRA adapter: {adapter_path}")
-        
+
         # Disable vLLM V1 engine if environment variable is set
         # V1 engine can have initialization issues
         import os
         use_v1 = os.environ.get("VLLM_USE_V1", "0")
         if use_v1 == "0":
             logging.info(f"[VLLMCoTModel] Using legacy vLLM engine (VLLM_USE_V1=0)")
-        
+
         # vLLM initialization with stability-focused settings
         try:
             self.llm = LLM(
@@ -506,7 +506,7 @@ def merge_peft_adapter(base_model_name: str, adapter_path: str, output_path: str
     # Save tokenizer (try adapter path first, fall back to base model)
     try:
         tokenizer = AutoTokenizer.from_pretrained(adapter_path)
-    except:
+    except Exception:
         tokenizer = AutoTokenizer.from_pretrained(base_model_name, cache_dir=cache_dir)
     tokenizer.save_pretrained(output_path)
     
@@ -552,7 +552,7 @@ class VLLMPersistentEngine:
     
     _instance = None  # Singleton instance
     
-    def __init__(self, 
+    def __init__(self,
                  model_name: str,
                  cache_dir: str = "/tmp/cache",
                  tensor_parallel_size: int = 1,
@@ -564,7 +564,7 @@ class VLLMPersistentEngine:
                  enforce_eager: bool = True):
         """
         Initialize the persistent vLLM engine.
-        
+
         Args:
             model_name: HuggingFace model name
             cache_dir: Model cache directory
@@ -585,19 +585,19 @@ class VLLMPersistentEngine:
         self._current_adapter_path = None
         self._lora_request = None
         self._temp_dirs = []  # Track temp directories for cleanup
-        
+
         logging.info(f"[VLLMPersistentEngine] Initializing with model: {model_name}")
         logging.info(f"[VLLMPersistentEngine] GPU memory utilization: {gpu_memory_utilization}")
         logging.info(f"[VLLMPersistentEngine] LoRA enabled: {enable_lora}")
         logging.info(f"[VLLMPersistentEngine] Cache directory: {self.cache_dir}")
-        
+
         # Check environment settings
         use_v1 = os.environ.get("VLLM_USE_V1", "0")
         if use_v1 == "0":
             logging.info(f"[VLLMPersistentEngine] Using legacy vLLM engine (VLLM_USE_V1=0)")
-        
+
         start_time = time.time()
-        
+
         try:
             self.llm = LLM(
                 model=model_name,

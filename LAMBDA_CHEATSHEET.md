@@ -1,10 +1,26 @@
 # Lambda Training Cheatsheet
 
+## One-Time Local Setup (on your Mac)
+
+Run these commands once from **any folder** to set up API keys and Lambda host:
+
+```bash
+# 1. Create secrets file with your API keys
+mkdir -p ~/.secrets && chmod 700 ~/.secrets
+echo 'WANDB_API_KEY=your_wandb_key_here' > ~/.secrets/lambda_api_keys
+echo 'GEMINI_API_KEY=your_gemini_key_here' >> ~/.secrets/lambda_api_keys
+echo 'OPENAI_API_KEY=your_openai_key_here' >> ~/.secrets/lambda_api_keys
+chmod 600 ~/.secrets/lambda_api_keys
+
+# 2. Set your Lambda IP (update when you launch a new instance)
+echo "YOUR_LAMBDA_IP" > ~/.lambda_host
+```
+
 ## Quick Start
 
 ```bash
-# SSH to Lambda
-ssh ubuntu@192.222.55.164
+# SSH to Lambda (reads IP from ~/.lambda_host)
+ssh ubuntu@$(cat ~/.lambda_host)
 
 # Navigate to project
 cd ~/CoT-health-metrics
@@ -62,11 +78,14 @@ ls -lht output/
 ## Sync Local <-> Lambda
 
 ```bash
-# From LOCAL machine - sync files to Lambda
+# From LOCAL machine - sync files to Lambda (uses IP from ~/.lambda_host)
 ./sync_to_lambda.sh
 
 # Auto-sync on file changes
 ./sync_to_lambda.sh --watch
+
+# Override host for one-time sync
+./sync_to_lambda.sh --host 192.168.1.100
 ```
 
 ## Default Configuration
@@ -83,6 +102,36 @@ ls -lht output/
 | Max Samples | 5000 |
 | Eval Samples | 100 |
 | Checkpoints | 4 |
+
+## API Keys Setup
+
+### Option 1: Using Claude Code (Recommended)
+
+```bash
+# Update Lambda IP when you launch a new instance
+/update-lambda-host
+
+# Set up all API keys on Lambda
+/setup-lambda-keys
+```
+
+### Option 2: Manual Setup on Lambda
+
+```bash
+# SSH to Lambda
+ssh ubuntu@$(cat ~/.lambda_host)
+
+# Set up API key files (keys are loaded automatically by scripts)
+echo "YOUR_WANDB_API_KEY" > ~/.wandb_api_key
+echo "YOUR_GEMINI_API_KEY" > ~/.gemini_api_key
+echo "YOUR_OPENAI_API_KEY" > ~/.openai_api_key
+chmod 600 ~/.wandb_api_key ~/.gemini_api_key ~/.openai_api_key
+
+# Verify keys
+cat ~/.wandb_api_key | head -c 10
+```
+
+**Note:** The training script automatically loads keys from `~/.wandb_api_key`, `~/.gemini_api_key`, and `~/.openai_api_key`. You don't need to manually export environment variables.
 
 ## Override Defaults (Optional)
 
@@ -119,5 +168,15 @@ bash run_parallel_gpu_lambda.sh --detach
 
 ```bash
 # If host key verification fails (from local machine)
-ssh-keyscan -H 192.222.55.164 >> ~/.ssh/known_hosts
+ssh-keyscan -H $(cat ~/.lambda_host) >> ~/.ssh/known_hosts
 ```
+
+## New Lambda Instance Workflow
+
+When you launch a new Lambda instance:
+
+1. Update the IP: `echo "NEW_IP" > ~/.lambda_host` (or use `/update-lambda-host`)
+2. Add SSH key: `ssh-keyscan -H $(cat ~/.lambda_host) >> ~/.ssh/known_hosts`
+3. Sync code: `./sync_to_lambda.sh`
+4. Set up API keys: use `/setup-lambda-keys` or manually create key files on Lambda
+5. Start training: `ssh ubuntu@$(cat ~/.lambda_host) 'cd ~/CoT-health-metrics && bash run_parallel_gpu_lambda.sh --detach'`

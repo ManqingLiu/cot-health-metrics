@@ -43,9 +43,34 @@ streamlit run dashboard/app.py
 ```
 
 ### Testing
+
+**IMPORTANT**: All unit tests must be run on the Lambda GPU server, not locally. This is because:
+- Model inference tests require GPU
+- Local machine does not have sufficient GPU memory
+- Tests involving model loading (e.g., `test_gpt_oss_20b_model_inference.py`) will fail locally
+
+**How to run tests on Lambda:**
 ```bash
-pytest                          # Run all tests
-pytest src/test_metric.py -v    # Run specific test file
+# 1. Sync code to Lambda
+rsync -avz --exclude='hf_cache' --exclude='wandb' --exclude='output' \
+  ./ ubuntu@$(cat ~/.lambda_host):~/cot_health_metrics/
+
+# 2. SSH to Lambda and run tests
+ssh ubuntu@$(cat ~/.lambda_host)
+cd ~/cot_health_metrics
+pytest src/test_file.py -v -s    # -s shows print output
+```
+
+**Test categories:**
+- `src/test_*_model_inference.py` - Integration tests requiring GPU (run on Lambda)
+- `src/test_*_fuzzy_split.py` - Unit tests for parsing logic (can run locally but prefer Lambda)
+- `src/test_config*.py` - Config tests (can run locally)
+
+```bash
+# Examples on Lambda
+pytest src/test_gpt_oss_20b_model_inference.py -v -s  # GPU required
+pytest src/test_gpt_oss_20b_fuzzy_split.py -v         # Parsing tests
+pytest src/test_config_think_tokens.py -v             # Config tests
 ```
 
 ## Architecture

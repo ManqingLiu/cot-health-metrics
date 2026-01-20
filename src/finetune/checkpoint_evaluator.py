@@ -792,7 +792,7 @@ class CheckpointEvaluator:
                     try:
                         sample = eval_dataset[idx]
                         question = sample.get("question", f"Question {idx}")
-                    except:
+                    except Exception:
                         question = f"Question {idx}"
                     sample_cots_by_idx[idx] = {
                         "question_id": idx,

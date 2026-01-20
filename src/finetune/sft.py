@@ -524,7 +524,7 @@ def main():
         eval_steps = save_steps  # Evaluate at same frequency
         save_total_limit = None  # Keep all checkpoints
         save_strategy = "steps"
-        eval_strategy = "steps"
+        eval_strategy = "steps" if len(eval_dataset) > 0 else "no"
         logging.info(f"Checkpoint save/eval steps: {save_steps} (total steps: {total_steps})")
     else:
         save_steps = 500  # Default

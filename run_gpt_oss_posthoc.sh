@@ -1,10 +1,12 @@
 #!/bin/bash
 
-# Run ONLY gpt-oss-20b for BA, CA, SB with baseline training
+# Run gpt-oss-20b for:
+#   - BA, CA, SB with post-hoc training
+#   - BA with internalized training
 # Uses a separate tmux session to avoid conflicts with main training
-# Only uses GPUs that are completely free (< 1GB memory used)
+# Optimized to prevent OOM on H100 GPUs
 
-TMUX_SESSION="training-gpt-oss-baseline"
+TMUX_SESSION="training-gpt-oss-posthoc"
 
 # Parse arguments
 if [[ "$1" == "--detach" ]] || [[ "$1" == "-d" ]]; then
@@ -60,23 +62,21 @@ mkdir -p logs
 
 # Configuration - ONLY gpt-oss-20b
 MODEL="openai/gpt-oss-20b"
-DATASETS=("ba" "ca" "sb")
-TRAINING_TYPES=("baseline")
 
 # Training settings - Optimized to prevent OOM for 20B model
 NUM_EPOCHS=1
 MAX_SAMPLES=5000
 METRIC_EVAL_SAMPLES=100
 NUM_CHECKPOINTS=4
-MAX_LENGTH=4096           # Reduced from 4096 to save memory
-MAX_NEW_TOKENS=4096       # Reduced from 4096 to save memory
-BATCH_SIZE=1              # Reduced from 2 to avoid OOM during vLLM evaluation
+MAX_LENGTH=4096
+MAX_NEW_TOKENS=4096
+BATCH_SIZE=1              # Keep at 1 to avoid OOM during vLLM evaluation
 LEARNING_RATE="5e-5"
 FILLER_TYPE_TRAIN="not_relevant"
 FILLER_TYPE_EVAL="not_relevant"
 USE_VLLM="true"
-VLLM_GPU_MEMORY_UTIL="0.70"  # Reduced from 0.80 to leave headroom
-MAX_GPU_MEMORY="70GiB"       # Reduced from 76GiB to leave headroom
+VLLM_GPU_MEMORY_UTIL="0.70"  # Conservative to leave headroom
+MAX_GPU_MEMORY="70GiB"       # Conservative to leave headroom
 MAX_CPU_MEMORY="180GiB"      # Increased CPU offload capacity
 
 get_codebook_path() {
@@ -143,71 +143,42 @@ run_job() {
     return ${PIPESTATUS[0]}
 }
 
-export -f run_job get_codebook_path clear_cuda_cache is_gpu_free get_free_gpus
-export MODEL DATASETS TRAINING_TYPES NUM_EPOCHS MAX_SAMPLES METRIC_EVAL_SAMPLES NUM_CHECKPOINTS
+export -f run_job get_codebook_path clear_cuda_cache
+export MODEL NUM_EPOCHS MAX_SAMPLES METRIC_EVAL_SAMPLES NUM_CHECKPOINTS
 export MAX_LENGTH MAX_NEW_TOKENS BATCH_SIZE LEARNING_RATE FILLER_TYPE_TRAIN FILLER_TYPE_EVAL USE_VLLM VLLM_GPU_MEMORY_UTIL
 export MAX_GPU_MEMORY MAX_CPU_MEMORY
 export SCRIPT_DIR PYTHONPATH PYTORCH_CUDA_ALLOC_CONF WANDB_ENTITY PARAPHRASE_PROVIDER OMP_NUM_THREADS HF_HOME GEMINI_API_KEY
 
-# Build job queue: 3 datasets × 2 training types = 6 jobs
-declare -a JOBS=()
-for dataset in "${DATASETS[@]}"; do
-    for tt in "${TRAINING_TYPES[@]}"; do
-        JOBS+=("$dataset:$tt")
-    done
-done
+# Build job queue:
+#   - BA, CA, SB with post-hoc = 3 jobs
+#   - BA with internalized = 1 job
+# Total = 4 jobs
+declare -a JOBS=(
+    "ba:post-hoc"
+    "ca:post-hoc"
+    "sb:post-hoc"
+    "ba:internalized"
+)
 
 NUM_GPUS=$(nvidia-smi --list-gpus 2>/dev/null | wc -l)
 TOTAL_JOBS=${#JOBS[@]}
 
 echo "=========================================="
-echo "GPT-OSS-20B Only Training"
+echo "GPT-OSS-20B Post-hoc + Internalized Training"
 echo "=========================================="
 echo "Model: $MODEL"
-echo "Datasets: ${DATASETS[*]}"
-echo "Training types: ${TRAINING_TYPES[*]}"
+echo "Jobs:"
+echo "  - BA, CA, SB: post-hoc"
+echo "  - BA: internalized"
 echo "Total jobs: $TOTAL_JOBS"
 echo "Available GPUs: $NUM_GPUS"
+echo ""
+echo "OOM Prevention Settings:"
+echo "  - VLLM_GPU_MEMORY_UTIL: $VLLM_GPU_MEMORY_UTIL"
+echo "  - MAX_GPU_MEMORY: $MAX_GPU_MEMORY"
+echo "  - MAX_CPU_MEMORY: $MAX_CPU_MEMORY"
+echo "  - BATCH_SIZE: $BATCH_SIZE"
 echo "=========================================="
-
-# Function to check if a GPU is free (less than 1GB memory used)
-is_gpu_free() {
-    local gpu_id=$1
-    local mem_used=$(nvidia-smi --query-gpu=memory.used --format=csv,noheader,nounits -i $gpu_id 2>/dev/null | tr -d ' ')
-    if [ -z "$mem_used" ]; then
-        return 1  # Can't query GPU, assume not free
-    fi
-    # Consider GPU free if less than 1000 MiB used
-    if [ "$mem_used" -lt 1000 ]; then
-        return 0  # Free
-    else
-        return 1  # In use
-    fi
-}
-
-# Function to get list of free GPUs
-get_free_gpus() {
-    local free_gpus=()
-    for ((g=0; g<NUM_GPUS; g++)); do
-        if is_gpu_free $g; then
-            free_gpus+=($g)
-        fi
-    done
-    echo "${free_gpus[@]}"
-}
-
-# Show initial GPU status
-echo ""
-echo "Checking GPU availability..."
-for ((g=0; g<NUM_GPUS; g++)); do
-    mem_used=$(nvidia-smi --query-gpu=memory.used --format=csv,noheader,nounits -i $g 2>/dev/null | tr -d ' ')
-    if is_gpu_free $g; then
-        echo "  GPU $g: FREE (${mem_used} MiB used)"
-    else
-        echo "  GPU $g: IN USE (${mem_used} MiB used)"
-    fi
-done
-echo ""
 
 # Job queue management
 declare -a GPU_PIDS=()
@@ -222,10 +193,6 @@ done
 
 assign_job() {
     local gpu=$1
-    # Check GPU is free before assigning
-    if ! is_gpu_free $gpu; then
-        return 1  # GPU not free, don't assign
-    fi
     if [ $JOB_INDEX -lt $TOTAL_JOBS ]; then
         local job="${JOBS[$JOB_INDEX]}"
         local dataset=$(echo "$job" | cut -d':' -f1)
@@ -240,21 +207,10 @@ assign_job() {
     return 1
 }
 
-# Start initial jobs only on FREE GPUs
-echo "Starting jobs on free GPUs only..."
-for ((g=0; g<NUM_GPUS && JOB_INDEX<TOTAL_JOBS; g++)); do
-    if is_gpu_free $g; then
-        assign_job $g
-    else
-        echo "[GPU $g] Skipping - GPU in use by another process"
-    fi
+# Start initial jobs
+for ((g=0; g<NUM_GPUS && g<TOTAL_JOBS; g++)); do
+    assign_job $g
 done
-
-if [ $JOB_INDEX -eq 0 ]; then
-    echo ""
-    echo "No free GPUs available. Waiting for GPUs to become free..."
-    echo "The script will automatically start jobs when GPUs are released."
-fi
 
 echo "Jobs started. Monitoring..."
 
@@ -262,7 +218,6 @@ echo "Jobs started. Monitoring..."
 while [ $COMPLETED -lt $TOTAL_JOBS ]; do
     for ((g=0; g<NUM_GPUS; g++)); do
         if [ -n "${GPU_PIDS[$g]}" ]; then
-            # Check if our job on this GPU finished
             if ! kill -0 "${GPU_PIDS[$g]}" 2>/dev/null; then
                 wait "${GPU_PIDS[$g]}"
                 ec=$?
@@ -283,17 +238,9 @@ while [ $COMPLETED -lt $TOTAL_JOBS ]; do
                 GPU_JOBS[$g]=""
                 assign_job $g
             fi
-        else
-            # No job running on this GPU - check if it's free and assign a job
-            if [ $JOB_INDEX -lt $TOTAL_JOBS ]; then
-                if is_gpu_free $g; then
-                    echo "[GPU $g] Now free, assigning next job..."
-                    assign_job $g
-                fi
-            fi
         fi
     done
-    sleep 5  # Check every 5 seconds
+    sleep 2
 done
 
 echo ""
