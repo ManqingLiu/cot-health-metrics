@@ -22,6 +22,26 @@ This project provides quantitative metrics to detect these pathologies, enabling
 
 Each metric returns a score where higher values indicate more suspicious (potentially unfaithful) reasoning.
 
+## Datasets
+
+We use tasks from [Reasoning Gym](https://github.com/open-thought/reasoning-gym), a collection of procedurally generated reasoning tasks. Each task requires explicit multi-step reasoning, making them ideal for studying CoT faithfulness.
+
+| Dataset | Task | Description |
+|---------|------|-------------|
+| **BA** (Binary Alternation) | Pattern completion | Given a binary string following an alternating pattern (e.g., `010101`), predict the next N bits. Requires tracking position parity and applying the alternation rule. |
+| **CA** (Calendar Arithmetic) | Date calculation | Given a starting date and an offset (e.g., "What day is 45 days after Tuesday, March 3rd?"), compute the resulting date. Requires modular arithmetic over days/months/years. |
+| **SB** (Spell Backward) | String reversal | Given a word, spell it backward letter by letter. Requires sequential character extraction and reverse ordering. |
+
+These datasets were selected because they show a large accuracy gap between direct answering (no CoT) and chain-of-thought reasoning, evaluated on Qwen3-0.6B, 1.7B, 4B, and 8B:
+
+| Dataset | Without CoT | With CoT |
+|---------|-------------|----------|
+| **BA** | 25%, 19%, 18%, 19% | 26%, 87%, 100%, 100% |
+| **CA** | 12%, 22%, 15%, 18% | 53%, 60%, 93%, 97% |
+| **SB** | 0%, 2%, 4%, 12% | 3%, 34%, 59%, 59% |
+
+This gap indicates that CoT genuinely helps models solve these tasks, making them suitable for studying whether the reasoning trace is faithful to the model's actual computation.
+
 ## Architecture
 
 ```
@@ -56,15 +76,16 @@ pip install -r requirements.txt
 ### Evaluate a Model
 
 ```bash
-# Run a single metric on a HuggingFace dataset
+# Run a single metric on a reasoning gym dataset
 python src/main_batch.py \
     --model Qwen/Qwen3-0.6B \
     --metric Necessity \
-    --data-hf binary-alternation
+    --data-path data/custom/binary_alternation.json
 
 # Available metrics: Necessity, Substantivity, Paraphrasability
-# Available datasets: binary-alternation, calendar-arithmetic, spell-backward
 ```
+
+Datasets are sourced from [Reasoning Gym](https://github.com/open-thought/reasoning-gym) and stored in `data/custom/`.
 
 ### Train and Track Metrics
 
