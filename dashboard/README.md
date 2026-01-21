@@ -92,7 +92,7 @@ If you want to keep projects private, add secrets in Streamlit Cloud:
 
 ```toml
 WANDB_API_KEY = "your-wandb-api-key-here"
-WANDB_ENTITY = "mliu7"
+WANDB_ENTITY = "your-wandb-entity"
 ```
 
 Get your W&B API key from: https://wandb.ai/authorize
@@ -227,5 +227,5 @@ dashboard/
 
 ## Environment Variables
 
-- `WANDB_ENTITY`: Default W&B entity (default: "mliu7")
+- `WANDB_ENTITY`: Default W&B entity
 - `WANDB_API_KEY`: W&B API key (can also be set via Streamlit secrets)
