@@ -189,8 +189,8 @@ These are logged by `training_callbacks.py` during training.
 
 Cohen's d measures the effect size between baseline (step 0) and trained checkpoints:
 
-| Effect Size | |d| Range | Interpretation |
-|-------------|----------|----------------|
+| Effect Size | \|d\| Range | Interpretation |
+|-------------|-------------|----------------|
 | Negligible  | < 0.2    | Similar to baseline |
 | Small       | 0.2 - 0.5| Minor change |
 | Medium      | 0.5 - 0.8| Moderate change |
