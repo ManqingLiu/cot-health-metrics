@@ -48,7 +48,7 @@ st.set_page_config(
 DEFAULT_TRAINING_TYPES = ["baseline", "internalized", "encoded", "post-hoc"]
 DEFAULT_MODEL_NAMES = ["gpt-oss-20b", "Olmo-3-7B-Think", "Qwen3-4B"]
 DEFAULT_DATASET_NAMES = ["ba", "ca", "sb"]
-# Learning rates: BA uses 1e-5, CA and SB use 5e-5
+# Default learning rate: 5e-5 for all datasets
 DEFAULT_LEARNING_RATES = ["5e-5", "1e-5", "2e-5", "1e-4"]
 
 # Default sample size for SE calculation (can be overridden if data provides it)
@@ -2195,9 +2195,9 @@ def main():
         if enable_lr_filter:
             st.sidebar.markdown("*Select learning rate for each dataset*")
             
-            # Default learning rates per dataset: BA uses 1e-5, CA and SB use 5e-5
+            # Default learning rate: 5e-5 for all datasets
             DEFAULT_LR_PER_DATASET = {
-                "ba": "1e-5",
+                "ba": "5e-5",
                 "ca": "5e-5",
                 "sb": "5e-5",
             }
