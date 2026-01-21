@@ -4,12 +4,12 @@ A comprehensive Streamlit dashboard for monitoring and analyzing CoT (Chain-of-T
 
 ## Features
 
-### 📈 Per-Dataset Visualizations
+### Per-Dataset Visualizations
 - **Grouped Bar Charts**: Accuracy at each checkpoint step, grouped by training type (like the example images)
 - **Cohen's d Line Plots**: Effect sizes for each metric with different line styles per training type
 - **Original Metrics**: Track Necessity, Substantivity, and Paraphrasability per dataset
 
-### 🔧 Flexible Project Selection
+### Flexible Project Selection
 Build W&B project queries using the naming convention:
 - **Projects**: `{training_type}-lr-sweep-{model_name}-{dataset_name}`
 - **Runs**: `{training_type}_{dataset_name}_lr{learning_rate}`
@@ -20,27 +20,22 @@ Select from:
 - Datasets: ca, ba, sb, li
 - Learning rates: 1e-5, 2e-5, 5e-5, 1e-4
 
-### 📊 Per-Dataset Learning Rate Selection
-**NEW**: Choose different learning rates for different datasets:
-- CA → 1e-4
-- BA → 5e-5  
-- SB → 1e-5
+### Per-Dataset Learning Rate Selection
+Choose different learning rates for different datasets. Default: 5e-5 for all datasets.
 
-This allows comparing the best hyperparameters per dataset.
-
-### 📊 Visualization Types
+### Visualization Types
 1. **Per-Dataset Accuracy**: Grouped bar charts with Binomial Standard Error bars
 2. **Per-Dataset Metrics**: Timeline plots with SEM error bars for any metric
 3. **Per-Dataset Cohen's d**: Line plots with different line styles (solid, dash, dot) for each training type
 4. **Summary Table**: Downloadable CSV with Standard Error values
 
-### 📐 Error Bar Methodology (Standard Methods)
+### Error Bar Methodology (Standard Methods)
 - **Accuracy** (Binomial SE): `SE = √(p(1-p)/n)` where p is accuracy proportion, n is sample size
 - **Other metrics** (SEM): `SE = σ/√n` where σ is standard deviation, n is sample size
 
 This follows standard statistical practice for reporting uncertainty in evaluation metrics.
 
-### 🔄 Data Sources
+### Data Sources
 - **W&B (Weights & Biases)**: Real-time monitoring during training
 - **Local Files**: Post-training analysis from `metrics_history.json`
 
@@ -54,7 +49,7 @@ pip install -r dashboard/requirements.txt
 streamlit run dashboard/app.py
 ```
 
-## 🚀 Deploy to Streamlit Cloud (Share with Anyone)
+## Deploy to Streamlit Cloud (Share with Anyone)
 
 **Option 2** for sharing: Deploy to Streamlit Community Cloud so anyone with the link can access it.
 
@@ -97,7 +92,7 @@ If you want to keep projects private, add secrets in Streamlit Cloud:
 
 ```toml
 WANDB_API_KEY = "your-wandb-api-key-here"
-WANDB_ENTITY = "mliu7"
+WANDB_ENTITY = "your-wandb-entity"
 ```
 
 Get your W&B API key from: https://wandb.ai/authorize
@@ -129,9 +124,9 @@ This generates project names like:
 
 | Dataset | Learning Rate |
 |---------|---------------|
-| CA      | 1e-4          |
+| CA      | 5e-5          |
 | BA      | 5e-5          |
-| SB      | 1e-5          |
+| SB      | 5e-5          |
 
 This filters runs to only show the selected LR for each dataset.
 
@@ -139,10 +134,10 @@ This filters runs to only show the selected LR for each dataset.
 
 | Tab | Description |
 |-----|-------------|
-| **📈 Per-Dataset Accuracy** | Grouped bar charts with Binomial SE error bars |
-| **🔬 Per-Dataset Metrics** | Original metrics with SEM error bars |
-| **📊 Per-Dataset Cohen's d** | Effect size plots with different line styles per training type |
-| **📋 Summary Table** | Tabular summary with SE values and CSV download |
+| **Per-Dataset Accuracy** | Grouped bar charts with Binomial SE error bars |
+| **Per-Dataset Metrics** | Original metrics with SEM error bars |
+| **Per-Dataset Cohen's d** | Effect size plots with different line styles per training type |
+| **Summary Table** | Tabular summary with SE values and CSV download |
 
 ## Example Workflows
 
@@ -151,14 +146,11 @@ This filters runs to only show the selected LR for each dataset.
 1. Select Training Types: `baseline`, `post-hoc`, `internalized`, `encoded`
 2. Select Model: `Qwen3-4B`
 3. Select Datasets: `ba`, `ca`, `sb`
-4. Set per-dataset learning rates:
-   - BA: `5e-5`
-   - CA: `1e-4`
-   - SB: `1e-5`
+4. Set per-dataset learning rates (default: `5e-5` for all)
 5. Click "Refresh from W&B"
-6. Go to **📈 Per-Dataset Accuracy** tab
+6. Go to **Per-Dataset Accuracy** tab
    - See grouped bar charts like the example image
-7. Go to **📊 Per-Dataset Cohen's d** tab
+7. Go to **Per-Dataset Cohen's d** tab
    - See line plots with different line styles per training type
 
 ### Track Cohen's d for All Metrics
@@ -197,8 +189,8 @@ These are logged by `training_callbacks.py` during training.
 
 Cohen's d measures the effect size between baseline (step 0) and trained checkpoints:
 
-| Effect Size | |d| Range | Interpretation |
-|-------------|----------|----------------|
+| Effect Size | \|d\| Range | Interpretation |
+|-------------|-------------|----------------|
 | Negligible  | < 0.2    | Similar to baseline |
 | Small       | 0.2 - 0.5| Minor change |
 | Medium      | 0.5 - 0.8| Moderate change |
@@ -235,5 +227,5 @@ dashboard/
 
 ## Environment Variables
 
-- `WANDB_ENTITY`: Default W&B entity (default: "mliu7")
+- `WANDB_ENTITY`: Default W&B entity
 - `WANDB_API_KEY`: W&B API key (can also be set via Streamlit secrets)
