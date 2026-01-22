@@ -1,5 +1,8 @@
 # Chain-of-Thought Health Metrics
 
+[![Paper](https://img.shields.io/badge/Paper-PDF-red)](https://manqingliu.github.io/assets/pdf/cot_health_metrics.pdf)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+
 A framework for detecting and measuring pathological reasoning patterns in language models that use chain-of-thought (CoT) prompting. This project provides metrics to identify when models produce reasoning traces that appear valid but may be unfaithful to the model's actual computation.
 
 ## Motivation
