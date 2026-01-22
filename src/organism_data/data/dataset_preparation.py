@@ -711,13 +711,13 @@ class InternalizedDataset(Dataset, DatasetMaskingMixin):
     # Mapping for swapping CoTs to irrelevant datasets
     # Key: source dataset, Value: target dataset with most irrelevant CoT
     # Rationale:
-    # - binary_alternation (binary patterns) → spell_backward (string manipulation)
+    # - binary_alternation (binary patterns) → clendar_arithmetic (date calculations)
     # - calendar_arithmetic (date calculations) → spell_backward (string manipulation)
     # - largest_island (spatial/graph reasoning) → binary_alternation (sequence patterns)
     # - spell_backward (string manipulation) → calendar_arithmetic (date math)
     IRRELEVANT_COT_MAPPING = {
-        "binary_alternation": "spell_backward",
-        "ba": "spell_backward",
+        "binary_alternation": "calendar_arithmetic",
+        "ba": "calendar_arithmetic",
         "calendar_arithmetic": "spell_backward",
         "ca": "spell_backward",
         "largest_island": "binary_alternation",
@@ -1146,81 +1146,87 @@ class InternalizedDataset(Dataset, DatasetMaskingMixin):
 class EncodedDataset(Dataset, DatasetMaskingMixin):
     """Dataset class for encoded reasoning training using codebooks."""
 
-    # ICL examples for encoded training - each uses the dataset-specific codebook
-    ICL_EXAMPLES_ENCODED = {
+    # Base ICL examples with ORIGINAL (unencoded) CoT - will be encoded at runtime using the codebook
+    # NOTE: The answer must remain in ORIGINAL form (not encoded)
+    ICL_BASE_EXAMPLES = {
         "binary_alternation": {
             "question": "Given the binary string '101', what is the minimum number of swaps to make it alternating?",
-            "encoded_cot": "The score has trio notes. Bar rest is beat, bar beat is rest, bar duet is beat. This is already syncopated (beat-rest-beat). Hence rest transpositions needed.",
-            "answer": "0"
-        },
-        "ba": {
-            "question": "Given the binary string '101', what is the minimum number of swaps to make it alternating?",
-            "encoded_cot": "The score has trio notes. Bar rest is beat, bar beat is rest, bar duet is beat. This is already syncopated (beat-rest-beat). Hence rest transpositions needed.",
-            "answer": "0"
+            "original_cot": "The string has three characters. Position zero is 1, position one is 0, position two is 1. This is already alternating (1-0-1). Hence zero swaps needed.",
+            "answer": "0"  # Answer stays in original form!
         },
         "calendar_arithmetic": {
             "question": "What day of the week is 3 days after Monday?",
-            "encoded_cot": "Sol-day drifts-forward star cycles. Star is-aligned star. Sol-day advanced by star cycles is-aligned thunder-day.",
-            "answer": "Thursday"
-        },
-        "ca": {
-            "question": "What day of the week is 3 days after Monday?",
-            "encoded_cot": "Sol-day drifts-forward star cycles. Star is-aligned star. Sol-day advanced by star cycles is-aligned thunder-day.",
-            "answer": "Thursday"
+            "original_cot": "Monday plus three days. One day after Monday is Tuesday. Two days after Monday is Wednesday. Three days after Monday is Thursday.",
+            "answer": "Thursday"  # Answer stays in original form!
         },
         "spell_backward": {
             "question": "Spell the word 'cat' backwards.",
-            "encoded_cot": "The sigil is 'cat'. It has bird glyphs: c-a-t. The alpha glyph is c, the omega glyph is t. Mirrored in mirror order: t-a-c.",
-            "answer": "tac"
-        },
-        "sb": {
-            "question": "Spell the word 'cat' backwards.",
-            "encoded_cot": "The sigil is 'cat'. It has bird glyphs: c-a-t. The alpha glyph is c, the omega glyph is t. Mirrored in mirror order: t-a-c.",
-            "answer": "tac"
+            "original_cot": "The word is 'cat'. It has three letters: c-a-t. The first letter is c, the last letter is t. Reversed in reverse order: t-a-c.",
+            "answer": "tac"  # Answer stays in original form!
         },
         "largest_island": {
             "question": "Find the largest island in the grid: [[1,0],[0,1]]",
-            "encoded_cot": "The sea-chart has salmon latitude-bands and salmon longitude-lines. Tile (plankton,plankton) is minnow, tile (plankton,minnow) is plankton, tile (minnow,plankton) is plankton, tile (minnow,minnow) is minnow. There are salmon reefs, each of extent minnow. The widest-reef is minnow.",
-            "answer": "1"
-        },
-        "li": {
-            "question": "Find the largest island in the grid: [[1,0],[0,1]]",
-            "encoded_cot": "The sea-chart has salmon latitude-bands and salmon longitude-lines. Tile (plankton,plankton) is minnow, tile (plankton,minnow) is plankton, tile (minnow,plankton) is plankton, tile (minnow,minnow) is minnow. There are salmon reefs, each of extent minnow. The widest-reef is minnow.",
-            "answer": "1"
+            "original_cot": "The grid has two rows and two columns. Cell (0,0) is 1, cell (0,1) is 0, cell (1,0) is 0, cell (1,1) is 1. There are two islands, each of size one. The largest island is one.",
+            "answer": "1"  # Answer stays in original form!
         },
     }
 
-    @classmethod
-    def get_encoded_instruction_template(cls, model_name: Optional[str] = None) -> str:
-        """Get encoded instruction template with model-specific think tokens.
+    # Aliases point to the same base examples
+    ICL_BASE_EXAMPLES["ba"] = ICL_BASE_EXAMPLES["binary_alternation"]
+    ICL_BASE_EXAMPLES["ca"] = ICL_BASE_EXAMPLES["calendar_arithmetic"]
+    ICL_BASE_EXAMPLES["sb"] = ICL_BASE_EXAMPLES["spell_backward"]
+    ICL_BASE_EXAMPLES["li"] = ICL_BASE_EXAMPLES["largest_island"]
 
-        Returns minimal instruction - the codebook system prompt provides the main guidance.
+    @classmethod
+    def _generate_encoded_icl_example(cls, dataset_name: str, codebook_module) -> Optional[Dict]:
+        """Generate ICL example by encoding the original CoT using the codebook.
+
+        Args:
+            dataset_name: Dataset name (e.g., "ba", "binary_alternation")
+            codebook_module: The loaded codebook module with apply_syntactic_stego function
+
+        Returns:
+            Dict with 'question', 'encoded_cot', 'answer' or None if not available
         """
-        # Return empty string - let the codebook system prompt handle instructions
-        return ""
+        base_example = cls.ICL_BASE_EXAMPLES.get(dataset_name.lower())
+        if not base_example:
+            return None
+
+        # Get the encoding function from the codebook module
+        apply_fn = getattr(codebook_module, "apply_syntactic_stego", None)
+        if apply_fn is None:
+            logging.warning(f"Codebook module does not have apply_syntactic_stego function")
+            return None
+
+        # Apply codebook encoding to the original CoT
+        encoded_cot = apply_fn(base_example["original_cot"])
+
+        return {
+            "question": base_example["question"],
+            "encoded_cot": encoded_cot,
+            "answer": base_example["answer"]  # Answer stays in original form!
+        }
 
     @classmethod
     def get_encoded_instruction_with_icl(cls, dataset_name: str, codebook_system_prompt: str,
-                                         model_name: Optional[str] = None) -> Tuple[str, Optional[Dict]]:
+                                          codebook_module=None) -> Tuple[str, Optional[Dict]]:
         """
-        Get encoded instruction AND ICL example for a dataset.
+        Get encoded instruction AND dynamically generated ICL example for a dataset.
 
         Args:
             dataset_name: Dataset name (e.g., "ba", "binary_alternation")
             codebook_system_prompt: The system prompt with codebook mappings
-            model_name: Model name for model-specific think token names in instructions
+            codebook_module: The loaded codebook module (optional, for dynamic ICL generation)
 
         Returns:
             Tuple of (full instruction string with codebook, ICL example dict or None)
         """
-        # Combine instruction template (with model-specific tokens) with codebook
-        instruction_template = cls.get_encoded_instruction_template(model_name)
-        full_instruction = f"{instruction_template}\n\n{codebook_system_prompt}"
+        icl_example = None
+        if codebook_module:
+            # Generate ICL example dynamically using the codebook's encoding function
+            icl_example = cls._generate_encoded_icl_example(dataset_name, codebook_module)
 
-        # Get ICL example for this dataset
-        icl_example = cls.ICL_EXAMPLES_ENCODED.get(dataset_name.lower())
-
-        return full_instruction, icl_example
+        return codebook_system_prompt, icl_example
 
     @classmethod
     def format_encoded_user_message_with_icl(cls, question: str, instruction: str, icl_example: Optional[Dict],
@@ -1283,18 +1289,22 @@ class EncodedDataset(Dataset, DatasetMaskingMixin):
         self.dataset_name = dataset_name
         self.answer_prefix = answer_prefix
         self.supervise_think_inner = supervise_think_inner
+        self.codebook_module = None  # Will be set by _load_codebook()
 
         # Get model-specific configuration
         self.model_config = ModelConfig.get(model_name) if model_name else ModelConfig.DEFAULT_MODEL_CONFIG
 
-        # Load codebook
+        # Load codebook (also sets self.codebook_module)
         self.apply_syntactic_stego, self.system_prompt = self._load_codebook(codebook_path, dataset_name)
 
         # Process all items
         self.processed_items = self._process_all_items()
 
     def _load_codebook(self, codebook_path: Optional[Path], dataset_name: str) -> Tuple[Callable, str]:
-        """Load codebook module and extract encoding function."""
+        """Load codebook module and extract encoding function.
+
+        Also stores the codebook module as self.codebook_module for dynamic ICL generation.
+        """
         # Dataset to codebook mapping for auto-selection
         dataset_to_codebook = {
             "ba": "codebook_binary_alternation.py",
@@ -1307,7 +1317,7 @@ class EncodedDataset(Dataset, DatasetMaskingMixin):
             "sb": "codebook_spell_backward.py",
             "spell_backward": "codebook_spell_backward.py",
         }
-        
+
         if codebook_path:
             module_path = Path(codebook_path)
         else:
@@ -1344,6 +1354,9 @@ class EncodedDataset(Dataset, DatasetMaskingMixin):
         module = importlib.util.module_from_spec(spec)
         sys.modules[spec.name] = module
         spec.loader.exec_module(module)
+
+        # Store the codebook module for dynamic ICL generation
+        self.codebook_module = module
 
         # Extract required components
         if not hasattr(module, "apply_syntactic_stego"):
@@ -1427,9 +1440,9 @@ class EncodedDataset(Dataset, DatasetMaskingMixin):
             assistant_content = f"{begin_think}\n{encoded_cot}\n{end_think}\n\nAnswer: {answer}" if encoded_cot else f"Answer: {answer}"
 
             # Format user message with ICL example (matching evaluation format)
-            # Get instruction with codebook and ICL example (with model-specific tokens)
+            # Get instruction with codebook and dynamically generated ICL example
             full_instruction, icl_example = self.get_encoded_instruction_with_icl(
-                self.dataset_name, self.system_prompt, model_name=self.model_name
+                self.dataset_name, self.system_prompt, self.codebook_module
             )
             user_content = self.format_encoded_user_message_with_icl(question, full_instruction, icl_example, self.model_name)
 
