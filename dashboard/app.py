@@ -47,7 +47,18 @@ st.set_page_config(
 # Constants
 DEFAULT_TRAINING_TYPES = ["baseline", "internalized", "encoded", "post-hoc"]
 DEFAULT_MODEL_NAMES = ["gpt-oss-20b", "Olmo-3-7B-Think", "Qwen3-4B"]
-DEFAULT_DATASET_NAMES = ["ba", "ca", "sb"]
+DEFAULT_DATASET_NAMES = ["binary-alternation", "calendar-arithmetic", "spell-backward"]
+
+# Mapping from full dataset names to W&B aliases (used in project names)
+DATASET_NAME_TO_ALIAS = {
+    "binary-alternation": "ba",
+    "calendar-arithmetic": "ca",
+    "spell-backward": "sb",
+    "largest-island": "li",
+}
+
+# Reverse mapping: alias to full name (used in figure titles)
+ALIAS_TO_DATASET_NAME = {v: k for k, v in DATASET_NAME_TO_ALIAS.items()}
 # Default learning rate: 5e-5 for all datasets
 DEFAULT_LEARNING_RATES = ["5e-5", "1e-5", "2e-5", "1e-4"]
 
@@ -55,7 +66,7 @@ DEFAULT_LEARNING_RATES = ["5e-5", "1e-5", "2e-5", "1e-4"]
 DEFAULT_SAMPLE_SIZE = 100
 
 # Metrics available
-ORIGINAL_METRICS = ["necessity", "substantivity", "paraphrasability"]
+ORIGINAL_METRICS = ["necessity", "paraphrasability", "substantivity"]
 ALL_METRICS = ["accuracy"] + ORIGINAL_METRICS
 
 # Y-axis ranges removed - plots will auto-scale based on data
@@ -303,8 +314,14 @@ def parse_run_name(run_name: str) -> Dict[str, str]:
 
 
 def generate_project_name(training_type: str, model_name: str, dataset_name: str) -> str:
-    """Generate W&B project name from components."""
-    return f"{training_type}-lr-sweep-{model_name}-{dataset_name}"
+    """Generate W&B project name from components.
+
+    Uses dataset alias (e.g., 'ba') for W&B project names even if full name
+    (e.g., 'binary-alternation') is provided.
+    """
+    # Convert full dataset name to alias if needed
+    dataset_alias = DATASET_NAME_TO_ALIAS.get(dataset_name, dataset_name)
+    return f"{training_type}-lr-sweep-{model_name}-{dataset_alias}"
 
 
 # =============================================================================
@@ -1795,7 +1812,7 @@ def plot_accuracy_by_step_grouped(data: pd.DataFrame, dataset: str,
         ))
     
     fig.update_layout(
-        title=f"Accuracy by Training Type - Dataset: {dataset.upper()}<br><sup>Error bars: Binomial SE = √(p(1-p)/n)</sup>",
+        title=f"Accuracy by Training Type - Dataset: {ALIAS_TO_DATASET_NAME.get(dataset, dataset)}<br><sup>Error bars: Binomial SE = √(p(1-p)/n)</sup>",
         xaxis_title="Training Step",
         yaxis_title="Accuracy (%)",
         barmode='group',
@@ -1915,7 +1932,7 @@ def plot_metric_by_dataset(data: pd.DataFrame, dataset: str, metric: str,
     se_method = "Binomial SE" if metric == "accuracy" else "SEM"
     
     fig.update_layout(
-        title=f"{metric.title()} by Training Type - Dataset: {dataset.upper()}" + 
+        title=f"{metric.title()} by Training Type - Dataset: {ALIAS_TO_DATASET_NAME.get(dataset, dataset)}" +
               (f"<br><sup>Error bars: {se_method}</sup>" if show_se else ""),
         xaxis_title="Training Step",
         yaxis_title=y_title,
@@ -2044,7 +2061,7 @@ def plot_cohens_d_by_dataset(data: pd.DataFrame, dataset: str,
                      line_width=0, row=1, col=col_idx)
     
     fig.update_layout(
-        title=f"Cohen's d by Metric - Dataset: {dataset.upper()}",
+        title=f"Cohen's d by Metric - Dataset: {ALIAS_TO_DATASET_NAME.get(dataset, dataset)}",
         height=400,
         legend=dict(
             orientation="h",
@@ -2183,37 +2200,6 @@ def main():
             key="dataset_select"
         )
         
-        st.sidebar.markdown("---")
-        st.sidebar.subheader("Per-Dataset Learning Rate Filter")
-        enable_lr_filter = st.sidebar.checkbox(
-            "Enable LR filtering",
-            value=True,
-            help="If enabled, only show runs matching the selected learning rates. If disabled, show all runs regardless of LR."
-        )
-        
-        dataset_lr_map = {}
-        if enable_lr_filter:
-            st.sidebar.markdown("*Select learning rate for each dataset*")
-            
-            # Default learning rate: 5e-5 for all datasets
-            DEFAULT_LR_PER_DATASET = {
-                "ba": "5e-5",
-                "ca": "5e-5",
-                "sb": "5e-5",
-            }
-            
-            for ds in selected_datasets:
-                # Get default LR for this dataset, fallback to 5e-5
-                default_lr = DEFAULT_LR_PER_DATASET.get(ds, "5e-5")
-                default_index = DEFAULT_LEARNING_RATES.index(default_lr) if default_lr in DEFAULT_LEARNING_RATES else 0
-                lr = st.sidebar.selectbox(
-                    f"LR for {ds.upper()}",
-                    options=DEFAULT_LEARNING_RATES,
-                    index=default_index,
-                    key=f"lr_{ds}"
-                )
-                dataset_lr_map[ds] = lr
-        
         generated_projects = []
         for tt in selected_training_types:
             for ds in selected_datasets:
@@ -2250,18 +2236,6 @@ def main():
                     st.sidebar.success(f"Loaded {len(data)} data points\n({state_info})")
                 else:
                     st.sidebar.success(f"Loaded {len(data)} data points")
-                
-                # Apply LR filtering only if enabled and dataset_lr_map is provided
-                if enable_lr_filter and dataset_lr_map:
-                    filtered_rows = []
-                    for ds, lr in dataset_lr_map.items():
-                        ds_data = data[(data['dataset'] == ds) & (data['learning_rate'] == lr)]
-                        if not ds_data.empty:
-                            filtered_rows.append(ds_data)
-                    if filtered_rows:
-                        data = pd.concat(filtered_rows, ignore_index=True)
-                    # If filtering resulted in empty data, keep original data
-                    # This allows user to see all data if LR filter matches nothing
     
     else:  # Local Files
         st.sidebar.subheader("Local Settings")
@@ -2288,52 +2262,21 @@ def main():
         st.warning("No metrics data found.")
         st.info("""
         **To see data:**
-        
-        1. **For W&B**: 
+
+        1. **For W&B**:
            - Select training types, models, and datasets
-           - Set learning rate for each dataset
            - Ensure runs are logging metrics
-           
+
         2. **For Local Files**: Make sure training runs have `metrics_history.json` files
-        
+
         **W&B Naming Convention:**
         - Projects: `{training_type}-lr-sweep-{model_name}-{dataset_name}`
         - Runs: `{training_type}_{dataset_name}_lr{learning_rate}`
         """)
         return
     
-    # ==========================================================================
-    # Data Filters
-    # ==========================================================================
-    
-    st.sidebar.markdown("---")
-    st.sidebar.header("Additional Filters")
-    
-    all_datasets = sorted(data['dataset'].unique().tolist())
-    all_training_types = sorted(data['training_type'].unique().tolist())
-    
-    filter_datasets = st.sidebar.multiselect(
-        "Filter Datasets",
-        options=all_datasets,
-        default=all_datasets,
-        key="filter_datasets"
-    )
-    
-    filter_training_types = st.sidebar.multiselect(
-        "Filter Training Types",
-        options=all_training_types,
-        default=all_training_types,
-        key="filter_training_types"
-    )
-    
-    filtered_data = data[
-        (data['dataset'].isin(filter_datasets)) &
-        (data['training_type'].isin(filter_training_types))
-    ]
-    
-    if filtered_data.empty:
-        st.warning("No data matches the selected filters.")
-        return
+    # Use data directly (filtering is done via Project Builder)
+    filtered_data = data
     
     # Plot settings
     st.sidebar.markdown("---")
@@ -2393,18 +2336,18 @@ def main():
     # ==========================================================================
     
     tab1, tab2, tab3, tab4, tab5 = st.tabs([
-        "Per-Dataset Accuracy",
-        "Per-Dataset Metrics",
-        "Per-Dataset Cohen's d",
+        "Accuracy",
+        "Metrics",
+        "Cohen's d",
         "Reasoning Examples",
         "Summary Table"
     ])
     
     # --------------------------------------------------------------------------
-    # Tab 1: Per-Dataset Accuracy (Grouped Bar Chart with Binomial SE)
+    # Tab 1: Accuracy (Grouped Bar Chart with Binomial SE)
     # --------------------------------------------------------------------------
     with tab1:
-        st.header("Accuracy by Training Type - Per Dataset")
+        st.header("Accuracy by Training Type")
         
         # Methodology explanation
         st.markdown("""
@@ -2430,10 +2373,10 @@ def main():
                     st.plotly_chart(fig, use_container_width=True)
     
     # --------------------------------------------------------------------------
-    # Tab 2: Per-Dataset Original Metrics (with SEM error bars)
+    # Tab 2: Original Metrics (with SEM error bars)
     # --------------------------------------------------------------------------
     with tab2:
-        st.header("Original Metrics by Training Type - Per Dataset")
+        st.header("Original Metrics by Training Type")
         
         st.markdown("""
         **Metrics Overview:**
@@ -2547,10 +2490,10 @@ def main():
                 st.plotly_chart(fig, use_container_width=True)
     
     # --------------------------------------------------------------------------
-    # Tab 3: Per-Dataset Cohen's d
+    # Tab 3: Cohen's d
     # --------------------------------------------------------------------------
     with tab3:
-        st.header("Cohen's d by Metric - Per Dataset")
+        st.header("Cohen's d by Metric")
         
         st.markdown("**Cohen's d** measures the effect size between baseline (step 0) and trained checkpoints.")
 
