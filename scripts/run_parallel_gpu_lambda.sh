@@ -607,7 +607,7 @@ MAX_NEW_TOKENS=4096             # Maximum tokens to generate during inference
                                 # IMPORTANT: BA dataset has CoT up to ~3100 tokens, CA up to ~2800 tokens
                                 # Setting to 4096 ensures no truncation and preserves accuracy
                                 # Speed impact is minimal since most samples don't use full limit
-BATCH_SIZE=12                    # Batch size for evaluation (conservative for 20B model on 80GB H100)
+BATCH_SIZE=4                    # Batch size for evaluation (conservative for 20B model on 80GB H100)
                                 # 20B model needs more memory; 8 is safe for both models
 # Note: --gradient_checkpointing is enabled below to reduce memory (~30-50% reduction)
 

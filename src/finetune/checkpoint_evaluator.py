@@ -174,7 +174,7 @@ class CheckpointEvaluator:
             return question
 
         full_instruction, icl_example = EncodedDataset.get_encoded_instruction_with_icl(
-            self.dataset_name, self.codebook_system_prompt, model_name=self.model_name
+            self.dataset_name, self.codebook_system_prompt
         )
         return EncodedDataset.format_encoded_user_message_with_icl(
             question, full_instruction, icl_example, model_name=self.model_name

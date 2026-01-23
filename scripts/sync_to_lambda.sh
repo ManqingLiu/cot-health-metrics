@@ -8,8 +8,6 @@ if [ -n "$LAMBDA_HOST" ]; then
     :  # Use existing env var
 elif [ -f ~/.lambda_host ]; then
     LAMBDA_HOST="$(cat ~/.lambda_host | tr -d '\n')"
-else
-    LAMBDA_HOST="192.222.53.117"  # Fallback (update via /update-lambda-host)
 fi
 
 LAMBDA_PATH="${LAMBDA_PATH:-~/CoT-health-metrics}"  # Path on Lambda server where files should go
@@ -51,12 +49,12 @@ RED='\033[0;31m'
 NC='\033[0m' # No Color
 
 # Check if SSH key exists (set before function definition so it's available in the function)
-# Try id_rsa first (the key registered on Lambda), then fall back to id_rsa_lambda
-if [ -f "$HOME/.ssh/id_rsa" ]; then
-    SSH_KEY="$HOME/.ssh/id_rsa"
-    SSH_OPTIONS="-i $SSH_KEY"
-elif [ -f "$HOME/.ssh/id_rsa_lambda" ]; then
+# Try id_rsa_lambda first (no passphrase), then fall back to id_rsa
+if [ -f "$HOME/.ssh/id_rsa_lambda" ]; then
     SSH_KEY="$HOME/.ssh/id_rsa_lambda"
+    SSH_OPTIONS="-i $SSH_KEY"
+elif [ -f "$HOME/.ssh/id_rsa" ]; then
+    SSH_KEY="$HOME/.ssh/id_rsa"
     SSH_OPTIONS="-i $SSH_KEY"
 else
     SSH_KEY=""
