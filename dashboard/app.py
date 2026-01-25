@@ -47,7 +47,7 @@ st.set_page_config(
 # Constants
 DEFAULT_TRAINING_TYPES = ["baseline", "internalized", "encoded", "post-hoc"]
 DEFAULT_MODEL_NAMES = ["gpt-oss-20b", "Olmo-3-7B-Think", "Qwen3-4B"]
-DEFAULT_DATASET_NAMES = ["binary-alternation", "calendar-arithmetic", "spell-backward"]
+DEFAULT_DATASET_NAMES = ["binary-alternation", "calendar-arithmetic", "spell-backward", "largest-island"]
 
 # Mapping from full dataset names to W&B aliases (used in project names)
 DATASET_NAME_TO_ALIAS = {
@@ -1861,13 +1861,17 @@ def plot_metric_by_dataset(data: pd.DataFrame, dataset: str, metric: str,
     std_col = "accuracy_std" if metric == "accuracy" else f"{metric}_std"
     
     training_types = sorted(dataset_data['training_type'].unique())
-    
+
     for tt in training_types:
+        # Skip post-hoc for paraphrasability metric (not applicable per paper)
+        if metric == "paraphrasability" and tt == "post-hoc":
+            continue
+
         tt_data = dataset_data[dataset_data['training_type'] == tt].sort_values('step')
-        
+
         if mean_col not in tt_data.columns:
             continue
-        
+
         y_values = tt_data[mean_col].dropna()
         if y_values.empty:
             continue
@@ -1994,15 +1998,19 @@ def plot_cohens_d_by_dataset(data: pd.DataFrame, dataset: str,
         # This means at step 0, only baseline will have Cohen's d = 0
         # Other training types will show their difference from baseline at step 0
         baseline = baseline_reference
-        
+
         color = COLORS_BY_TRAINING_TYPE.get(tt, '#888888')
         line_style = LINE_STYLES.get(tt, 'solid')
         marker_symbol = MARKER_SYMBOLS.get(tt, 'circle')
-        
+
         for col_idx, metric in enumerate(metrics, 1):
+            # Skip post-hoc for paraphrasability metric (not applicable per paper)
+            if metric == "paraphrasability" and tt == "post-hoc":
+                continue
+
             mean_col = "accuracy" if metric == "accuracy" else f"{metric}_mean"
             std_col = "accuracy_std" if metric == "accuracy" else f"{metric}_std"
-            
+
             if mean_col not in tt_data.columns:
                 continue
             
@@ -2424,6 +2432,7 @@ def main():
                 .expected-table .positive { color: #2ca02c; font-weight: bold; }
                 .expected-table .negative { color: #d62728; font-weight: bold; }
                 .expected-table .zero { color: #7f7f7f; font-weight: bold; }
+                .expected-table .NA { background-color: #f0f0f0; }
             </style>
             <table class="expected-table">
                 <thead>
@@ -2456,7 +2465,7 @@ def main():
                     <tr>
                         <td><strong>Post-hoc</strong></td>
                         <td class="zero">≈ 0</td>
-                        <td class="zero">≈ 0</td>
+                        <td class="NA"></td>
                         <td class="zero">≈ 0</td>
                     </tr>
                 </tbody>
@@ -2606,6 +2615,7 @@ def main():
                 }
                 .expected-cohens-table .positive { color: #2ca02c; font-weight: bold; }
                 .expected-cohens-table .zero { color: #7f7f7f; font-weight: bold; }
+                .expected-cohens-table .NA { background-color: #f0f0f0; }
             </style>
             <table class="expected-cohens-table">
                 <thead>
@@ -2632,7 +2642,7 @@ def main():
                     <tr>
                         <td><strong>Post-hoc</strong></td>
                         <td class="positive">+ve</td>
-                        <td class="zero">≈ 0</td>
+                        <td class="NA"></td>
                         <td class="positive">+ve</td>
                     </tr>
                 </tbody>
