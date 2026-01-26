@@ -15,57 +15,132 @@ DIGIT_MAP: Dict[str, str] = {
     "0": "owl",
     "1": "cat",
     "2": "dog",
-    "3": "fox",
-    "4": "bat",
-    "5": "ant",
-    "6": "bee",
-    "7": "elk",
-    "8": "emu",
-    "9": "yak",
+    "3": "bird",
+    "4": "lion",
+    "5": "whale",
+    "6": "fox",
+    "7": "horse",
+    "8": "shark",
+    "9": "wolf",
 }
 
 WORD_NUMBER_MAP: Dict[str, str] = {
     "zero": "owl",
     "one": "cat",
     "two": "dog",
-    "three": "fox",
-    "four": "bat",
-    "five": "ant",
-    "six": "bee",
-    "seven": "elk",
-    "eight": "emu",
-    "nine": "yak",
+    "three": "bird",
+    "four": "lion",
+    "five": "whale",
+    "six": "fox",
+    "seven": "horse",
+    "eight": "shark",
+    "nine": "wolf",
+    "ten": "panda",
+    "eleven": "koala",
+    "twelve": "otter",
+    "thirteen": "sloth",
+    "fourteen": "eagle",
+    "fifteen": "rhino",
+    "sixteen": "dolphin",
+    "seventeen": "falcon",
+    "eighteen": "tiger",
+    "nineteen": "buffalo",
+    "twenty": "jaguar",
 }
 
-# Simplified spelling terms
 SPELLING_WORDS_MAP: Dict[str, str] = {
-    "backward": "flipped",
-    "backwards": "flipped",
-    "reverse": "flip",
-    "reversed": "flipped",
-    "letter": "mark",
-    "letters": "marks",
+    # frequent phrases from the CoTs
+    "spell the word": "engrave the sigil",
+    "spell the": "engrave the",
+    "the word": "the sigil",
+    "backward": "in mirror order",
+    "backwards": "in mirror order",
+    "reverse the letters": "mirror the glyphs",
+    "reverse the": "mirror the",
+    "reversed word": "mirrored sigil",
+    "reversed letters": "mirrored glyphs",
+    "reversed": "mirrored",
+
+    # single tokens
+    "spell": "engrave",
+    "spelling": "inscription",
+    "word": "sigil",
+    "words": "sigils",
+    "letter": "glyph",
+    "letters": "glyphs",
+    "character": "glyph",
+    "characters": "glyphs",
+    "string": "cipher",
+    "original": "seed",
+    "given": "provided",
+    "input": "incoming",
+    "target": "destined",
 }
 
-# Simplified position terms
 POSITION_WORDS_MAP: Dict[str, str] = {
     "position": "slot",
-    "first": "head",
-    "last": "tail",
+    "positions": "slots",
+    "index": "marker",
+    "indices": "markers",
+    "first": "alpha",
+    "second": "beta",
+    "third": "gamma",
+    "fourth": "delta",
+    "fifth": "epsilon",
+    "sixth": "zeta",
+    "seventh": "eta",
+    "eighth": "theta",
+    "ninth": "iota",
+    "tenth": "kappa",
+    "last": "omega",
+    "start": "front",
+    "beginning": "front",
+    "end": "back",
+    "middle": "center",
+    "before": "ahead of",
+    "after": "behind",
 }
 
-# Minimal length terms
 LENGTH_WORDS_MAP: Dict[str, str] = {
-    "length": "size",
+    "length": "span",
     "count": "tally",
+    "counts": "tallies",
+    "number of letters": "glyph tally",
+    "number of characters": "glyph tally",
 }
 
-# No complex reasoning mappings - keep it natural
-REASONING_WORDS_MAP: Dict[str, str] = {}
+REASONING_WORDS_MAP: Dict[str, str] = {
+    "okay": "alright",
+    "ok": "alright",
+    "let's see": "let us inspect",
+    "let me check": "let me inspect",
+    "let me make sure": "let me verify",
+    "make sure": "verify",
+    "check again": "re-inspect",
+    "double check": "double-verify",
+    "now": "at this stage",
+    "next": "after that",
+    "then": "subsequently",
+    "finally": "ultimately",
+    "so": "thus",
+    "therefore": "hence",
+    "in total": "overall",
+    "in the end": "ultimately",
+    "the answer is": "the outcome is",
+    "final answer": "final outcome",
+}
 
-# No connectives mappings - keep it natural
-CONNECTIVES_MAP: Dict[str, str] = {}
-
+CONNECTIVES_MAP: Dict[str, str] = {
+    "because": "given that",
+    "since": "given that",
+    "therefore": "hence",
+    "thus": "hence",
+    "hence": "thereby",
+    "first": "to begin",
+    "second": "afterwards",
+    "third": "then",
+    "finally": "at last",
+}
 # helpers
 
 _WORD_BOUNDARY = r"(?<![A-Za-z])({})(?![A-Za-z])"

@@ -10,83 +10,152 @@ from typing import Dict
 
 # Simplified codebook - uses short arbitrary codes that don't reveal surface meaning
 # but are simple enough to not confuse the model
-
 DIGIT_MAP: Dict[str, str] = {
-    "0": "vo",
-    "1": "ka",
-    "2": "ri",
-    "3": "mu",
-    "4": "te",
-    "5": "lo",
-    "6": "bi",
-    "7": "su",
-    "8": "ne",
-    "9": "fa",
+    "0": "eclipse",
+    "1": "sun",
+    "2": "moon",
+    "3": "star",
+    "4": "orbit",
+    "5": "comet",
+    "6": "meteor",
+    "7": "nebula",
+    "8": "galaxy",
+    "9": "quasar",
 }
 
-# Same-length meaningful word mappings for number words (consistent with binary alternation)
 WORD_NUMBER_MAP: Dict[str, str] = {
-    "zero": "void",   # 4 -> 4 (empty/nothing)
-    "one": "ace",     # 3 -> 3 (single/first)
-    "two": "duo",     # 3 -> 3 (pair)
-    "three": "third", # 5 -> 5 (ordinal form)
-    "four": "quad",   # 4 -> 4 (common prefix)
-    "five": "palm",   # 4 -> 4 (five fingers)
-    "six": "hex",     # 3 -> 3 (common prefix)
-    "seven": "lucky", # 5 -> 5 (lucky number)
-    "eight": "octet", # 5 -> 5 (group of eight)
-    "nine": "last",   # 4 -> 4 (last single digit)
+    "zero": "eclipse",
+    "0s": "eclipses",
+    "zeros": "eclipses",
+    "one": "sun",
+    "1s": "suns",
+    "ones": "suns",
+    "two": "moon",
+    "three": "star",
+    "four": "orbit",
+    "five": "comet",
+    "six": "meteor",
+    "seven": "nebula",
+    "eight": "galaxy",
+    "nine": "quasar",
+    "ten": "cluster",
+    "eleven": "double-cluster",
+    "twelve": "zodiac-circle",
 }
 
-# Weekday mapping - same-length meaningful words
 WEEKDAY_WORDS_MAP: Dict[str, str] = {
-    "monday": "primal",      # 6 -> 6 (first/primary)
-    "tuesday": "seconds",    # 7 -> 7 (second day)
-    "wednesday": "midpoints",# 9 -> 9 (middle of week)
-    "thursday": "thunders",  # 8 -> 8 (Thor's day)
-    "friday": "finale",      # 6 -> 6 (end of work week)
-    "saturday": "weekends",  # 8 -> 8 (weekend day)
-    "sunday": "sunlit",      # 6 -> 6 (Sun's day)
+    "monday": "sol-day",
+    "tuesday": "tide-day",
+    "wednesday": "whirl-day",
+    "thursday": "thunder-day",
+    "friday": "flare-day",
+    "saturday": "saturn-day",
+    "sunday": "aurora-day",
+    "weekend": "stellar-rest",
+    "weekends": "stellar-rests",
+    "weekday": "orbital-shift",
+    "weekdays": "orbital-shifts",
+    "business day": "ledger-orbit",
+    "business days": "ledger-orbits",
 }
 
-# Month mapping - same-length meaningful words
 MONTH_WORDS_MAP: Dict[str, str] = {
-    "january": "winters",    # 7 -> 7 (winter month)
-    "february": "freezing",  # 8 -> 8 (cold month)
-    "march": "winds",        # 5 -> 5 (windy month)
-    "april": "bloom",        # 5 -> 5 (flowers bloom)
-    "may": "bud",            # 3 -> 3 (buds open)
-    "june": "warm",          # 4 -> 4 (warmth begins)
-    "july": "peak",          # 4 -> 4 (peak summer)
-    "august": "blazes",      # 6 -> 6 (blazing heat)
-    "september": "gathering",# 9 -> 9 (harvest gathering)
-    "october": "falling",    # 7 -> 7 (falling leaves)
-    "november": "chilling",  # 8 -> 8 (getting cold)
-    "december": "yearends",  # 8 -> 8 (year's end)
+    "january": "perigee",
+    "february": "apogee",
+    "march": "equinox",
+    "april": "rainfall",
+    "may": "bloomphase",
+    "june": "solstice",
+    "july": "highsun",
+    "august": "embersky",
+    "september": "harvestphase",
+    "october": "leaffall",
+    "november": "frostveil",
+    "december": "snowphase",
+    "jan": "peri",
+    "feb": "apo",
+    "mar": "equi",
+    "apr": "rain",
+    "jun": "sol",
+    "jul": "high",
+    "aug": "ember",
+    "sep": "harvest",
+    "oct": "leaf",
+    "nov": "frost",
+    "dec": "snow",
 }
 
-# Calendar terms - same-length meaningful words
 CALENDAR_WORDS_MAP: Dict[str, str] = {
-    "day": "era",    # 3 -> 3
-    "days": "eras",  # 4 -> 4
-    "week": "span",  # 4 -> 4 (keep)
-    "weeks": "spans",# 5 -> 5 (keep)
+    "day": "cycle",
+    "days": "cycles",
+    "date": "stamp",
+    "dates": "stamps",
+    "today": "current-cycle",
+    "tomorrow": "next-cycle",
+    "yesterday": "prior-cycle",
+    "week": "orbit-track",
+    "weeks": "orbit-tracks",
+    "month": "lunar-loop",
+    "months": "lunar-loops",
+    "year": "solar-loop",
+    "years": "solar-loops",
+    "leap": "skip-step",
+    "leapyear": "skip-loop",
+    "leap-year": "skip-loop",
+    "nonleap": "steady-loop",
+    "non-leap": "steady-loop",
+    "calendar": "ephemeris",
 }
 
-# Arithmetic terms - same-length meaningful words
 ARITH_WORDS_MAP: Dict[str, str] = {
-    "add": "sum",        # 3 -> 3
-    "subtract": "diminish",  # 8 -> 8
+    "plus": "drifts-forward",
+    "add": "advance",
+    "added": "advanced",
+    "adding": "advancing",
+    "minus": "drifts-back",
+    "subtract": "retreat",
+    "subtracted": "retreated",
+    "subtracting": "retreating",
+    "difference": "offset",
+    "times": "repeat-cycle",
+    "multiplied": "stacked",
+    "multiplied by": "stacked over",
+    "divide": "split-cycle",
+    "divided": "split",
+    "divided by": "split by",
+    "mod": "phase-mod",
+    "modulo": "phase-mod",
+    "remainder": "leftover-phase",
 }
 
-# Count terms - same-length meaningful words
 COUNT_WORDS_MAP: Dict[str, str] = {
-    "count": "tally",  # 5 -> 5 (keep)
-    "total": "whole",  # 5 -> 5
+    "count": "tally",
+    "counts": "tallies",
+    "counting": "tallying",
+    "number": "marker",
+    "numbers": "markers",
+    "total": "grand-marker",
+    "sum": "stacked-marker",
+    "difference": "offset-marker",
+    "equal": "aligned",
+    "equals": "is-aligned",
+    "same": "coincident",
+    "greater": "later",
+    "less": "earlier",
+    "greater than": "after",
+    "less than": "before",
 }
 
-# No logic word mappings - keep reasoning natural
-LOGIC_WORDS_MAP: Dict[str, str] = {}
+LOGIC_WORDS_MAP: Dict[str, str] = {
+    "if": "whenever",
+    "else": "otherwise",
+    "then": "afterwards",
+    "because": "since-orbital",
+    "since": "given-orbit",
+    "therefore": "thus-aligned",
+    "thus": "thus-aligned",
+    "so": "hence-aligned",
+}
 
 # helpers
 

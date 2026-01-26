@@ -12,11 +12,12 @@
 #   - GPUs: 8 x 80GB H100 (jobs are queued and assigned as GPUs become available)
 #
 # Usage:
-#   bash run_parallel_gpu_lambda.sh           # Run normally (will stop if SSH disconnects)
-#   bash run_parallel_gpu_lambda.sh --detach  # Run in tmux session (survives SSH disconnect)
-#   bash run_parallel_gpu_lambda.sh --attach # Attach to existing tmux session
+#   bash run_parallel_gpu_lambda.sh               # Run normally (will stop if SSH disconnects)
+#   bash run_parallel_gpu_lambda.sh --detach      # Run in tmux session (survives SSH disconnect)
+#   bash run_parallel_gpu_lambda.sh --attach      # Attach to existing tmux session
+#   bash run_parallel_gpu_lambda.sh --check-gpus  # Show GPU status (idle/busy) and exit
 #   bash run_parallel_gpu_lambda.sh --monitor <dataset> <training_type>  # Monitor specific job
-#                                         # Example: bash run_parallel_gpu_lambda.sh --monitor ca baseline
+#                                                 # Example: bash run_parallel_gpu_lambda.sh --monitor ca baseline
 #
 # Filler type configuration:
 #   export FILLER_TYPE_TRAIN=shuffled  # Options: lorem_ipsum, dots, think_token, number_words, mixed, not_relevant, shuffled
@@ -61,6 +62,7 @@ DETACH_MODE=0
 ATTACH_MODE=0
 FORCE_YES=0
 SUMMARIZE_MODE=0
+CHECK_GPUS_MODE=0
 MONITOR_DATASET=""
 MONITOR_TRAINING_TYPE=""
 
@@ -82,6 +84,10 @@ while [[ $# -gt 0 ]]; do
             SUMMARIZE_MODE=1
             shift
             ;;
+        --check-gpus)
+            CHECK_GPUS_MODE=1
+            shift
+            ;;
         --monitor|-m)
             if [ -z "$2" ] || [ -z "$3" ]; then
                 echo "Error: --monitor requires dataset and training_type"
@@ -95,13 +101,14 @@ while [[ $# -gt 0 ]]; do
             ;;
         *)
             echo "Unknown option: $1"
-            echo "Usage: $0 [--detach|-d] [--attach|-a] [--yes|-y] [--summarize|-s] [--monitor|-m <dataset> <training_type>]"
+            echo "Usage: $0 [--detach|-d] [--attach|-a] [--yes|-y] [--summarize|-s] [--monitor|-m <dataset> <training_type>] [--check-gpus]"
             echo "  --detach, -d    Run in tmux session (survives SSH disconnect)"
             echo "  --attach, -a    Attach to existing tmux training session"
             echo "  --yes, -y       Skip confirmation prompts"
             echo "  --summarize, -s Summarize results and find best accuracy per training type"
             echo "  --monitor, -m   Monitor a specific dataset and training type"
             echo "                  Example: $0 --monitor ca baseline"
+            echo "  --check-gpus    Show GPU status (idle/busy) and exit without launching jobs"
             exit 1
             ;;
     esac
@@ -592,11 +599,11 @@ mkdir -p logs
 # Common arguments (customize these as needed)
 # Define models to run (can be modified to run fewer/more models)
 # Running only Olmo-3-7B-Think for post-hoc training
-MODELS=("allenai/Olmo-3-7B-Think")
+MODELS=("Qwen/Qwen3-4B")
 
 # Define datasets to run (can be modified to run fewer/more datasets)
 # Running BA, CA, SB with post-hoc training type
-DATASETS=("ba" "ca" "sb")
+DATASETS=("ba" "ca" "sb" "li")
 
 # Training configuration for accuracy optimization
 # Optimized for 8 x 80GB H100 GPUs with mixed model sizes (20B and 7B)
@@ -607,8 +614,10 @@ MAX_NEW_TOKENS=4096             # Maximum tokens to generate during inference
                                 # IMPORTANT: BA dataset has CoT up to ~3100 tokens, CA up to ~2800 tokens
                                 # Setting to 4096 ensures no truncation and preserves accuracy
                                 # Speed impact is minimal since most samples don't use full limit
-BATCH_SIZE=4                    # Batch size for evaluation (conservative for 20B model on 80GB H100)
-                                # 20B model needs more memory; 8 is safe for both models
+BATCH_SIZE=4                    # Batch size for vLLM evaluation (Qwen3-4B on 80GB H100)
+                                # vLLM pre-allocates memory via gpu_memory_utilization, so larger
+                                # eval batch sizes improve throughput without extra memory.
+                                # Run: bash scripts/profile_batch_size.sh to find optimal training values.
 # Note: --gradient_checkpointing is enabled below to reduce memory (~30-50% reduction)
 
 # Number of checkpoints to track accuracy progression throughout training
@@ -727,14 +736,56 @@ PARALLEL_MODE="${PARALLEL_MODE:-auto}"
 # 2 GPUs × 1 job = 2 parallel jobs; 4 LRs queued and run as jobs complete
 JOBS_PER_GPU="${JOBS_PER_GPU:-1}"
 
-# Check available GPUs
-NUM_GPUS=$(nvidia-smi --list-gpus 2>/dev/null | wc -l)
-if [ -z "$NUM_GPUS" ] || [ "$NUM_GPUS" -eq 0 ]; then
-    echo "Warning: Could not detect GPUs. Assuming 1 GPU."
-    NUM_GPUS=1
-fi
+# Detect GPUs with active compute processes and return only idle GPU indices
+get_available_gpus() {
+    local all_gpus=$(nvidia-smi --query-gpu=index --format=csv,noheader,nounits 2>/dev/null | tr -d ' ')
+    local busy_bus_ids=$(nvidia-smi --query-compute-apps=gpu_bus_id --format=csv,noheader 2>/dev/null | sort -u)
 
-echo "Detected $NUM_GPUS GPU(s)"
+    if [ -z "$all_gpus" ]; then
+        echo ""
+        return
+    fi
+
+    if [ -z "$busy_bus_ids" ]; then
+        # No busy GPUs, all are available
+        echo "$all_gpus" | xargs
+        return
+    fi
+
+    # Get bus IDs for all GPUs, then filter out busy ones
+    local available=""
+    while IFS= read -r gpu_index; do
+        local bus_id=$(nvidia-smi --query-gpu=pci.bus_id --format=csv,noheader,nounits -i "$gpu_index" 2>/dev/null | tr -d ' ')
+        if ! echo "$busy_bus_ids" | grep -qxiF "$bus_id"; then
+            available="$available $gpu_index"
+        fi
+    done <<< "$all_gpus"
+
+    echo "$available" | xargs  # trim whitespace
+}
+
+# Check available GPUs (skip busy ones with active compute processes)
+TOTAL_GPUS=$(nvidia-smi --list-gpus 2>/dev/null | wc -l)
+if [ -z "$TOTAL_GPUS" ] || [ "$TOTAL_GPUS" -eq 0 ]; then
+    echo "Warning: Could not detect GPUs. Assuming 1 GPU."
+    TOTAL_GPUS=1
+    AVAILABLE_GPU_IDS=(0)
+    NUM_GPUS=1
+else
+    AVAILABLE_GPU_IDS=($(get_available_gpus))
+    NUM_GPUS=${#AVAILABLE_GPU_IDS[@]}
+
+    if [ "$NUM_GPUS" -eq 0 ]; then
+        echo "Error: No idle GPUs available. All $TOTAL_GPUS GPU(s) have active compute processes."
+        echo "Use 'nvidia-smi' to check running processes."
+        exit 1
+    fi
+
+    echo "Detected $TOTAL_GPUS total GPU(s), $NUM_GPUS idle and available: ${AVAILABLE_GPU_IDS[*]}"
+    if [ "$NUM_GPUS" -lt "$TOTAL_GPUS" ]; then
+        echo "Skipping busy GPUs ($(( TOTAL_GPUS - NUM_GPUS )) in use)"
+    fi
+fi
 
 # Calculate total parallel slots based on mode
 if [ "$PARALLEL_MODE" == "single" ]; then
@@ -778,23 +829,27 @@ get_codebook_path() {
 
 # Get per-device training batch size based on model size
 # Larger models need smaller batch sizes to avoid OOM during training
+# To find the optimal value empirically, run: bash scripts/profile_batch_size.sh
 get_train_batch_size() {
     local model_name="$1"
     if [[ "$model_name" == *"20b"* ]] || [[ "$model_name" == *"20B"* ]]; then
         echo "1"  # 20B models need batch_size=1 due to bf16 dequantization (~40GB model)
     else
-        echo "12"  # 7B and smaller models can use batch_size=12 on 80GB GPU
+        echo "4"  # Qwen3-4B with NF4+LoRA+grad_ckpt on 80GB H100
+                    # Profile with: bash scripts/profile_batch_size.sh
     fi
 }
 
 # Get evaluation batch size based on model size
 # Larger models need smaller batch sizes to avoid OOM during vLLM evaluation
+# NOTE: vLLM pre-allocates memory via gpu_memory_utilization; larger eval batch sizes
+# improve throughput without increasing peak memory. 8-12 is safe for Qwen3-4B.
 get_eval_batch_size() {
     local model_name="$1"
     if [[ "$model_name" == *"20b"* ]] || [[ "$model_name" == *"20B"* ]]; then
         echo "2"  # 20B models need smaller eval batch size due to KV cache memory
     else
-        echo "$BATCH_SIZE"  # Smaller models use default BATCH_SIZE (8)
+        echo "$BATCH_SIZE"  # Smaller models use default BATCH_SIZE
     fi
 }
 
@@ -929,6 +984,71 @@ for model in "${MODELS[@]}"; do
 done
 
 TOTAL_JOBS=${#JOB_QUEUE[@]}
+
+# Helper: check if a GPU index is in the AVAILABLE_GPU_IDS array
+is_gpu_idle() {
+    local target_id=$1
+    for avail_id in "${AVAILABLE_GPU_IDS[@]}"; do
+        if [ "$avail_id" -eq "$target_id" ]; then
+            return 0
+        fi
+    done
+    return 1
+}
+
+# Handle --check-gpus mode: print detailed GPU status and exit
+if [ $CHECK_GPUS_MODE -eq 1 ]; then
+    # Query actual GPU indices from nvidia-smi (don't assume contiguous 0..N-1)
+    ALL_GPU_INDICES=($(nvidia-smi --query-gpu=index --format=csv,noheader,nounits 2>/dev/null | tr -d ' '))
+
+    echo ""
+    echo "GPU Status:"
+    for i in "${ALL_GPU_INDICES[@]}"; do
+        if is_gpu_idle "$i"; then
+            echo "  GPU $i: IDLE"
+        else
+            # Get process info for the busy GPU (parse PID and name separately to preserve spaces)
+            proc_pid=$(nvidia-smi --query-compute-apps=pid --format=csv,noheader -i "$i" 2>/dev/null | head -1 | xargs)
+            proc_name=$(nvidia-smi --query-compute-apps=process_name --format=csv,noheader -i "$i" 2>/dev/null | head -1 | xargs)
+            if [ -n "$proc_pid" ]; then
+                echo "  GPU $i: BUSY (PID $proc_pid, $proc_name)"
+            else
+                echo "  GPU $i: BUSY"
+            fi
+        fi
+    done
+
+    echo ""
+    busy_count=$(( TOTAL_GPUS - NUM_GPUS ))
+    echo "Available GPUs: ${AVAILABLE_GPU_IDS[*]} ($NUM_GPUS of $TOTAL_GPUS)"
+    if [ $busy_count -gt 0 ]; then
+        # Collect busy GPU indices
+        busy_list=""
+        for i in "${ALL_GPU_INDICES[@]}"; do
+            if ! is_gpu_idle "$i"; then
+                busy_list="$busy_list $i"
+            fi
+        done
+        echo "Busy GPUs:$(echo $busy_list) ($busy_count of $TOTAL_GPUS)"
+    fi
+
+    # Calculate how many jobs would run
+    if [ "$PARALLEL_MODE" == "single" ]; then
+        parallel_slots=1
+    elif [ "$PARALLEL_MODE" == "parallel" ]; then
+        parallel_slots=$((NUM_GPUS * JOBS_PER_GPU))
+    else
+        parallel_slots=$NUM_GPUS
+    fi
+    queued=$((TOTAL_JOBS - parallel_slots))
+    if [ $queued -lt 0 ]; then
+        queued=0
+    fi
+    echo ""
+    echo "Would launch $TOTAL_JOBS jobs across $NUM_GPUS GPUs ($parallel_slots parallel, $queued queued)"
+    exit 0
+fi
+
 echo "=========================================="
 echo "MULTI-MODEL TRAINING RUN"
 echo "Goal: Train multiple models across datasets"
@@ -995,8 +1115,8 @@ declare -a SLOT_GPU=()
 for ((slot=0; slot<TOTAL_SLOTS; slot++)); do
     SLOT_PIDS[$slot]=""
     SLOT_JOBS[$slot]=""
-    # Map slot to GPU (round-robin)
-    SLOT_GPU[$slot]=$((slot % NUM_GPUS))
+    # Map slot to GPU (round-robin across available/idle GPUs only)
+    SLOT_GPU[$slot]=${AVAILABLE_GPU_IDS[$((slot % NUM_GPUS))]}
 done
 
 echo "Slot to GPU mapping:"
