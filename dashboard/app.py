@@ -436,8 +436,17 @@ def load_from_wandb_multi(entity: str, projects: List[str], run_states: Optional
                                         'priority': current_priority
                                     }
                 
+                # Sort by created_at descending and take only the latest run per project
+                # This avoids fetching data for old LR sweep runs
+                runs_sorted = sorted(
+                    runs_by_name.items(),
+                    key=lambda x: x[1].get('created_at') or '',
+                    reverse=True
+                )
+                runs_to_process = runs_sorted[:1]  # Only latest run per project
+
                 # Process the selected runs
-                for run_name, run_info in runs_by_name.items():
+                for run_name, run_info in runs_to_process:
                     run = run_info['run']
                     config = run.config
                     run_info_parsed = parse_run_name(run_name)
@@ -545,8 +554,8 @@ def load_from_wandb_multi(entity: str, projects: List[str], run_states: Optional
         if all_data:
             combined = pd.concat(all_data, ignore_index=True)
 
-            # Deduplicate: keep only the latest run per (training_type, dataset, learning_rate)
-            # This handles cases where the same experiment was run multiple times
+            # Deduplicate: keep only the latest run per (training_type, dataset)
+            # This handles cases where the same experiment was run multiple times (e.g. LR sweeps)
             if 'created_at' in combined.columns and combined['created_at'].notna().any():
                 # Get unique runs with their created_at
                 run_info = combined.groupby('run_name').agg({
@@ -560,7 +569,7 @@ def load_from_wandb_multi(entity: str, projects: List[str], run_states: Optional
                 # Sort by created_at descending and keep first (latest) per config
                 run_info = run_info.sort_values('created_at', ascending=False)
                 latest_runs = run_info.drop_duplicates(
-                    subset=['training_type', 'dataset', 'learning_rate'],
+                    subset=['training_type', 'dataset'],
                     keep='first'
                 )['run_name'].tolist()
 
@@ -668,8 +677,13 @@ def load_sample_cots_from_wandb(entity: str, projects: List[str], debug: bool = 
                             if created_at > existing['created_at']:
                                 runs_by_name[run_name] = {'run': run, 'created_at': created_at}
                 
-                # Limit number of runs to process for performance
-                runs_to_process = list(runs_by_name.items())[:max_runs_per_project]
+                # Sort by created_at descending and take only the latest run per project
+                runs_sorted = sorted(
+                    runs_by_name.items(),
+                    key=lambda x: x[1].get('created_at') or '',
+                    reverse=True
+                )
+                runs_to_process = runs_sorted[:1]  # Only latest run per project
 
                 for run_name, run_info in runs_to_process:
                     run = run_info['run']
@@ -1437,6 +1451,55 @@ def get_questions_ordered_by_step_coverage(samples_by_step: dict, all_steps: lis
     return result
 
 
+def get_questions_ordered_by_last_step_coverage(
+    samples_by_tt_and_step: dict,
+    all_training_types: list,
+    all_steps: list,
+) -> list:
+    """
+    Get questions ordered by how many training types have data at the last step.
+    This prioritizes questions that are available across all training types at the final checkpoint.
+
+    Returns: [(question_id, question_text, available_steps, num_tt_at_last), ...]
+    sorted by: (1) num training types at last step desc, (2) total step coverage desc, (3) qid
+    """
+    if not all_steps:
+        return []
+
+    last_step = max(all_steps)
+
+    # Collect per-question info across all training types
+    qid_steps = {}          # {normalized_qid: set of steps across all training types}
+    qid_tt_at_last = {}     # {normalized_qid: set of training types present at last step}
+    qid_to_info = {}        # {normalized_qid: (original_qid, question_text)}
+
+    for tt in all_training_types:
+        for step in all_steps:
+            for sample in samples_by_tt_and_step.get(tt, {}).get(step, []):
+                qid = sample.get('question_id', '')
+                normalized_qid = normalize_question_id(qid)
+                if qid and not pd.isna(normalized_qid):
+                    if normalized_qid not in qid_steps:
+                        qid_steps[normalized_qid] = set()
+                        qid_tt_at_last[normalized_qid] = set()
+                    qid_steps[normalized_qid].add(step)
+                    if step == last_step:
+                        qid_tt_at_last[normalized_qid].add(tt)
+                    if normalized_qid not in qid_to_info:
+                        qid_to_info[normalized_qid] = (qid, sample.get('question', f'Question {qid}'))
+
+    result = []
+    for normalized_qid, steps in qid_steps.items():
+        original_qid, question_text = qid_to_info[normalized_qid]
+        available_steps = sorted(steps)
+        num_tt = len(qid_tt_at_last.get(normalized_qid, set()))
+        result.append((original_qid, question_text, available_steps, num_tt))
+
+    # Sort: most training types at last step first, then most steps, then by qid
+    result.sort(key=lambda x: (-x[3], -len(x[2]), str(x[0])))
+    return result
+
+
 def render_anthropic_style_viewer(samples_df: pd.DataFrame) -> None:
     """
     Render CoT samples in an Anthropic-style interface with step-by-step navigation.
@@ -1507,21 +1570,45 @@ def render_anthropic_style_viewer(samples_df: pd.DataFrame) -> None:
 
     total_steps = len(all_steps)
 
+    # Pre-compute cross-training-type question ordering
+    cross_tt_questions = get_questions_ordered_by_last_step_coverage(
+        samples_by_tt_and_step, all_training_types, all_steps
+    )
+    total_tt = len(all_training_types)
+
     for idx, tt in enumerate(all_training_types):
         with tabs[idx]:
-            # Get questions ordered by step coverage (most steps first)
-            questions_for_tt = get_questions_ordered_by_step_coverage(samples_by_tt_and_step[tt], all_steps)
+            # Filter cross-TT questions to those available in this training type
+            # and compute per-TT available steps (cross-TT steps may differ)
+            tt_qid_steps = {}  # {normalized_qid: set of steps in THIS training type}
+            for step in all_steps:
+                for sample in samples_by_tt_and_step[tt].get(step, []):
+                    qid = sample.get('question_id', '')
+                    nqid = normalize_question_id(qid)
+                    if qid and not pd.isna(nqid):
+                        if nqid not in tt_qid_steps:
+                            tt_qid_steps[nqid] = set()
+                        tt_qid_steps[nqid].add(step)
+
+            questions_for_tt = []
+            for qid, qtext, _cross_tt_steps, num_tt in cross_tt_questions:
+                nqid = normalize_question_id(qid)
+                if nqid in tt_qid_steps:
+                    tt_steps = sorted(tt_qid_steps[nqid])
+                    questions_for_tt.append((qid, qtext, tt_steps, num_tt))
 
             if not questions_for_tt:
                 st.warning(f"No questions available for {tt}")
                 continue
 
-            # Question selector for this training type
-            # Format: "Q{id} [{num_steps}/{total}]: {question_text}"
+            # Question selector with cross-TT coverage info
+            # Format: "Q{id} [{num_tt}/{total_tt} types @ last | {steps}/{total} steps]: {text}"
             question_labels = []
-            for qid, qtext, available_steps in questions_for_tt:
+            for qid, qtext, available_steps, num_tt in questions_for_tt:
                 truncated_text = f"{qtext[:50]}..." if len(qtext) > 50 else qtext
-                question_labels.append(f"Q{qid} [{len(available_steps)}/{total_steps}]: {truncated_text}")
+                question_labels.append(
+                    f"Q{qid} [{num_tt}/{total_tt} types @ last | {len(available_steps)}/{total_steps} steps]: {truncated_text}"
+                )
 
             selected_idx = st.selectbox(
                 "Select Question",
@@ -1529,7 +1616,7 @@ def render_anthropic_style_viewer(samples_df: pd.DataFrame) -> None:
                 format_func=lambda i, labels=question_labels: labels[i],
                 key=f"question_selector_{tt}"
             )
-            selected_qid, selected_question_text, selected_available_steps = questions_for_tt[selected_idx]
+            selected_qid, selected_question_text, selected_available_steps, _ = questions_for_tt[selected_idx]
 
             # Display selected question
             st.markdown("**Question**")
@@ -1560,12 +1647,19 @@ def render_anthropic_style_viewer(samples_df: pd.DataFrame) -> None:
 
                 # Display in Anthropic-style format
                 prompt = str(sample.get('prompt', ''))
+                question_text = str(sample.get('question', ''))
                 cot = str(sample.get('cot', ''))
                 answer = str(sample.get('answer', ''))
 
-                # Prompt section
-                with st.expander("Prompt", expanded=False):
-                    st.code(prompt, language=None)
+                # Extract prompt instructions (everything before the question text)
+                if question_text and question_text in prompt:
+                    prompt_prefix = prompt[:prompt.rfind(question_text)].rstrip()
+                else:
+                    prompt_prefix = prompt
+
+                # Prompt section (instructions only, question shown separately above)
+                with st.expander("Prompt (Instructions)", expanded=False):
+                    st.code(prompt_prefix, language=None)
 
                 # Chain of Thought section
                 st.markdown("**Chain of Thought**")
