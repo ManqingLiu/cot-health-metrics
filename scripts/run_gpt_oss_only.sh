@@ -4,7 +4,7 @@
 # Uses a separate tmux session to avoid conflicts with main training
 # Only uses GPUs that are completely free (< 1GB memory used)
 
-TMUX_SESSION="training-gpt-oss-baseline"
+TMUX_SESSION="training-gpt-oss"
 
 # Parse arguments
 if [[ "$1" == "--detach" ]] || [[ "$1" == "-d" ]]; then
@@ -27,7 +27,7 @@ fi
 
 # Setup environment
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-cd "$SCRIPT_DIR"
+cd "$SCRIPT_DIR/.."
 
 if [ -d "myenv" ]; then
     source myenv/bin/activate
@@ -44,7 +44,7 @@ if [ -z "$WANDB_API_KEY" ]; then
     fi
 fi
 export WANDB_ENTITY="mliu7"
-export PARAPHRASE_PROVIDER="GEMINI"
+export PARAPHRASE_PROVIDER="OPENAI"
 export OMP_NUM_THREADS=1
 export HF_HOME="${SCRIPT_DIR}/.cache"
 export VLLM_USE_V1=0
@@ -67,8 +67,8 @@ mkdir -p logs
 
 # Configuration - ONLY gpt-oss-20b
 MODEL="openai/gpt-oss-20b"
-DATASETS=("ba" "ca" "sb")
-TRAINING_TYPES=("baseline")
+DATASETS=("li")
+TRAINING_TYPES=("baseline" "internalized" "encoded" "post-hoc")
 
 # Training settings - Optimized to prevent OOM for 20B model
 NUM_EPOCHS=1
