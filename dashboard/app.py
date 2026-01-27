@@ -1500,6 +1500,27 @@ def get_questions_ordered_by_last_step_coverage(
     return result
 
 
+def extract_bare_question(question_field: str) -> str:
+    """Extract bare question text from a potentially formatted question field.
+
+    For encoded/internalized training types, the question field contains
+    instructions + ICL examples + the actual question, separated by
+    the 'Now solve this question:' marker. For baseline/post-hoc,
+    the question field is already bare and returned as-is.
+    """
+    marker = "Now solve this question:"
+    idx = question_field.rfind(marker)
+    if idx >= 0:
+        after_marker = question_field[idx + len(marker):].strip()
+        # Remove "Question: " prefix if present
+        if after_marker.startswith("Question: "):
+            after_marker = after_marker[len("Question: "):]
+        elif after_marker.startswith("Question:"):
+            after_marker = after_marker[len("Question:"):].strip()
+        return after_marker.strip()
+    return question_field
+
+
 def render_anthropic_style_viewer(samples_df: pd.DataFrame) -> None:
     """
     Render CoT samples in an Anthropic-style interface with step-by-step navigation.
@@ -1605,7 +1626,8 @@ def render_anthropic_style_viewer(samples_df: pd.DataFrame) -> None:
             # Format: "Q{id} [{num_tt}/{total_tt} types @ last | {steps}/{total} steps]: {text}"
             question_labels = []
             for qid, qtext, available_steps, num_tt in questions_for_tt:
-                truncated_text = f"{qtext[:50]}..." if len(qtext) > 50 else qtext
+                bare_qtext = extract_bare_question(qtext)
+                truncated_text = f"{bare_qtext[:50]}..." if len(bare_qtext) > 50 else bare_qtext
                 question_labels.append(
                     f"Q{qid} [{num_tt}/{total_tt} types @ last | {len(available_steps)}/{total_steps} steps]: {truncated_text}"
                 )
@@ -1618,7 +1640,8 @@ def render_anthropic_style_viewer(samples_df: pd.DataFrame) -> None:
             )
             selected_qid, selected_question_text, selected_available_steps, _ = questions_for_tt[selected_idx]
 
-            # Display selected question
+            # Display selected question (extract bare question for encoded/internalized)
+            bare_question_display = extract_bare_question(selected_question_text)
             st.markdown("**Question**")
             st.markdown(
                 f"""
@@ -1630,7 +1653,7 @@ def render_anthropic_style_viewer(samples_df: pd.DataFrame) -> None:
                     border-radius: 6px;
                     font-size: 1rem;
                     line-height: 1.6;
-                ">{selected_question_text or 'Sample question'}</div>
+                ">{bare_question_display or 'Sample question'}</div>
                 """,
                 unsafe_allow_html=True
             )
@@ -1647,19 +1670,12 @@ def render_anthropic_style_viewer(samples_df: pd.DataFrame) -> None:
 
                 # Display in Anthropic-style format
                 prompt = str(sample.get('prompt', ''))
-                question_text = str(sample.get('question', ''))
                 cot = str(sample.get('cot', ''))
                 answer = str(sample.get('answer', ''))
 
-                # Extract prompt instructions (everything before the question text)
-                if question_text and question_text in prompt:
-                    prompt_prefix = prompt[:prompt.rfind(question_text)].rstrip()
-                else:
-                    prompt_prefix = prompt
-
-                # Prompt section (instructions only, question shown separately above)
-                with st.expander("Prompt (Instructions)", expanded=False):
-                    st.code(prompt_prefix, language=None)
+                # Prompt section (full prompt as logged)
+                with st.expander("Full Prompt", expanded=False):
+                    st.code(prompt, language=None)
 
                 # Chain of Thought section
                 st.markdown("**Chain of Thought**")
