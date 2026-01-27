@@ -2178,6 +2178,20 @@ def plot_cohens_d_by_dataset(data: pd.DataFrame, dataset: str,
         fig.add_hrect(y0=-0.2, y1=0.2, fillcolor="lightgreen", opacity=0.3, 
                      line_width=0, row=1, col=col_idx)
     
+    # Standardize y-axis range across all metric subplots for visual comparability
+    all_y = []
+    for trace in fig.data:
+        if trace.y is not None:
+            all_y.extend([v for v in trace.y if v is not None and not pd.isna(v)])
+
+    if all_y:
+        y_min = min(all_y)
+        y_max = max(all_y)
+        margin = (y_max - y_min) * 0.1 if y_max != y_min else 0.5
+        y_range = [y_min - margin, y_max + margin]
+        for col_idx in range(1, n_metrics + 1):
+            fig.update_yaxes(range=y_range, row=1, col=col_idx)
+
     fig.update_layout(
         title=f"Cohen's d by Metric - Dataset: {ALIAS_TO_DATASET_NAME.get(dataset, dataset)}",
         height=400,
@@ -2489,6 +2503,17 @@ def main():
                 with cols[idx % 2]:
                     fig = plot_accuracy_by_step_grouped(filtered_data, dataset, sample_size)
                     st.plotly_chart(fig, use_container_width=True)
+                    original_title = fig.layout.title
+                    fig.update_layout(title="")
+                    pdf_bytes = fig.to_image(format="pdf", width=1200)
+                    fig.update_layout(title=original_title)
+                    st.download_button(
+                        label="Download as PDF",
+                        data=pdf_bytes,
+                        file_name=f"accuracy_{dataset}.pdf",
+                        mime="application/pdf",
+                        key=f"pdf_accuracy_{dataset}",
+                    )
     
     # --------------------------------------------------------------------------
     # Tab 2: Original Metrics (with SEM error bars)
@@ -2607,7 +2632,18 @@ def main():
                     show_se=show_se, sample_size=sample_size
                 )
                 st.plotly_chart(fig, use_container_width=True)
-    
+                original_title = fig.layout.title
+                fig.update_layout(title="")
+                pdf_bytes = fig.to_image(format="pdf", width=1200)
+                fig.update_layout(title=original_title)
+                st.download_button(
+                    label="Download as PDF",
+                    data=pdf_bytes,
+                    file_name=f"metric_{metric_to_plot}_{dataset}.pdf",
+                    mime="application/pdf",
+                    key=f"pdf_metric_{metric_to_plot}_{dataset}",
+                )
+
     # --------------------------------------------------------------------------
     # Tab 3: Cohen's d
     # --------------------------------------------------------------------------
@@ -2782,6 +2818,17 @@ def main():
                     baseline_step=baseline_step
                 )
                 st.plotly_chart(fig, use_container_width=True)
+                original_title = fig.layout.title
+                fig.update_layout(title="")
+                pdf_bytes = fig.to_image(format="pdf", width=1400)
+                fig.update_layout(title=original_title)
+                st.download_button(
+                    label="Download as PDF",
+                    data=pdf_bytes,
+                    file_name=f"cohens_d_{dataset}.pdf",
+                    mime="application/pdf",
+                    key=f"pdf_cohens_d_{dataset}",
+                )
                 st.markdown("---")
     
     # --------------------------------------------------------------------------
