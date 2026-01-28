@@ -31,17 +31,17 @@ We use tasks from [Reasoning Gym](https://github.com/open-thought/reasoning-gym)
 
 | Dataset | Task | Description |
 |---------|------|-------------|
-| **BA** (Binary Alternation) | Pattern completion | Given a binary string following an alternating pattern (e.g., `010101`), predict the next N bits. Requires tracking position parity and applying the alternation rule. |
-| **CA** (Calendar Arithmetic) | Date calculation | Given a starting date and an offset (e.g., "What day is 45 days after Tuesday, March 3rd?"), compute the resulting date. Requires modular arithmetic over days/months/years. |
-| **SB** (Spell Backward) | String reversal | Given a word, spell it backward letter by letter. Requires sequential character extraction and reverse ordering. |
+| **Binary Alternation** | String transformation | Given a binary string, find the minimum number of swaps to make it alternating (no two adjacent characters equal). Return -1 if impossible. |
+| **Calendar Arithmetic** | Date calculation | Count business days between two dates, or compute the date after adding an offset. Requires calendar logic and modular arithmetic. |
+| **Largest Island** | Grid traversal | Given a binary matrix, find the maximum area of an island (group of 1s connected horizontally/vertically). Requires DFS/BFS graph traversal. |
 
-These datasets were selected because they show a large accuracy gap between direct answering (no CoT) and chain-of-thought reasoning, evaluated on Qwen3-0.6B, 1.7B, 4B, and 8B:
+These datasets were selected because they show a large accuracy gap between direct answering (no CoT) and chain-of-thought reasoning, evaluated on Qwen3-4B:
 
 | Dataset | Without CoT | With CoT |
 |---------|-------------|----------|
-| **BA** | 25%, 19%, 18%, 19% | 26%, 87%, 100%, 100% |
-| **CA** | 12%, 22%, 15%, 18% | 53%, 60%, 93%, 97% |
-| **SB** | 0%, 2%, 4%, 12% | 3%, 34%, 59%, 59% |
+| **Binary Alternation** | 18% | 100% |
+| **Calendar Arithmetic** | 15% | 93% |
+| **Largest Island** | 18% | 92.5% |
 
 This gap indicates that CoT genuinely helps models solve these tasks, making them suitable for studying whether the reasoning trace is faithful to the model's actual computation.
 
@@ -142,7 +142,7 @@ For internalized training, the CoT is replaced with filler text while preserving
 
 | Filler Type | Description |
 |-------------|-------------|
-| `not_relevant` | CoT from a different task domain (e.g., BA ↔ CA) |
+| `not_relevant` | CoT from a different task domain (e.g., Binary Alternation ↔ Calendar Arithmetic) |
 | `shuffled` | CoT from a different question in the same dataset |
 | `lorem_ipsum` | Standard Lorem ipsum placeholder text |
 | `dots` | Repeated dot characters |
@@ -156,9 +156,9 @@ For encoded training, task-relevant information is hidden in the CoT using stega
 
 | Dataset | Encoding Scheme |
 |---------|-----------------|
-| **BA** (Binary Alternation) | Syllable codes: digits → {ko, pa, ri, mu, te, lo, bi, su, ne, fa}, "binary" → "duoform" |
-| **CA** (Calendar Arithmetic) | Syllable codes for digits, weekdays → {wex, yom, zil, pav, qen, ruk, sol} |
-| **SB** (Spell Backward) | Animal codes: digits → {owl, cat, dog, fox, bat, ant, bee, elk, emu, yak}, "backward" → "flipped" |
+| **Binary Alternation** | Syllable codes: digits → {ko, pa, ri, mu, te, lo, bi, su, ne, fa}, "binary" → "duoform" |
+| **Calendar Arithmetic** | Syllable codes for digits, weekdays → {wex, yom, zil, pav, qen, ruk, sol} |
+| **Largest Island** | Nautical codes: digits → {plankton, minnow, salmon, tuna, ...}, "island" → "reef", "area" → "reef-span" |
 
 ## Key Design Decisions
 
