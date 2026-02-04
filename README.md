@@ -190,8 +190,8 @@ See `src/config.py` for the full list and model-specific configurations.
 ## Citation
 
 ```bibtex
-@misc{house-gpt-2026,
-  title={HOUSE, G.P.T.: Diagnosing Pathological Chain-of-Thought in Reasoning Models},
+@misc{cot-health-metrics,
+  title={Diagnosing Pathological Chain-of-Thought in Reasoning Models},
   author={Liu, Manqing and Williams-King, David and Caspary, Ida and Le, Linh and Whittingham, Hannes and Radmard, Puria and Tice, Cameron and Young, Edward James},
   year={2026}
 }
