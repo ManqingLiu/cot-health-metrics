@@ -76,20 +76,6 @@ This gap indicates that CoT genuinely helps models solve these tasks, making the
 pip install -r requirements.txt
 ```
 
-### Evaluate a Model
-
-```bash
-# Run a single metric on a reasoning gym dataset
-python src/main_batch.py \
-    --model Qwen/Qwen3-0.6B \
-    --metric Necessity \
-    --data-path data/custom/binary_alternation.json
-
-# Available metrics: Necessity, Substantivity, Paraphrasability
-```
-
-Datasets are sourced from [Reasoning Gym](https://github.com/open-thought/reasoning-gym) and stored in `data/custom/`.
-
 ### Train and Track Metrics
 
 ```bash
@@ -118,12 +104,14 @@ bash scripts/run_parallel_gpu_lambda.sh --detach
 
 ```
 ├── src/
-│   ├── main_batch.py          # CLI for metric evaluation
 │   ├── model.py               # CoTModel wrapper (generation + log probs)
 │   ├── model_vllm.py          # vLLM backend (fast inference)
 │   ├── metric.py              # Metric base classes
 │   ├── metric_*.py            # Individual metric implementations
 │   ├── config.py              # Model/dataset configurations
+│   ├── analyze_accuracy.py    # Accuracy analysis utilities
+│   ├── calculate_cohens_d.py  # Effect size calculations
+│   ├── plot_metrics.py        # Visualization for paper figures
 │   └── finetune/
 │       ├── sft.py             # Training script
 │       ├── checkpoint_evaluator.py  # Evaluation during training

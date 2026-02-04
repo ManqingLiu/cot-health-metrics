@@ -8,6 +8,21 @@ xx*
 
 *.sw*
 
+# OS artifacts
+.DS_Store
+**/.DS_Store
+
+# IDE configs
+.idea/
+.vscode/
+*.iml
+
+# Output directories (large files)
+output/
+results/
+wandb/
+media/
+
 # Local files (keep locally, not in repo)
 LAMBDA_CHEATSHEET.md
 CLAUDE.md

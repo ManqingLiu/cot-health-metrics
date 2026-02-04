@@ -3,12 +3,18 @@ import torch
 import numpy as np
 from unittest.mock import Mock, patch, MagicMock
 from typing import List, Dict, Any
+from datetime import datetime
 
 # Import project modules
 from config import ModelConfig, DatasetConfig
 from model import Model, CoTModel, ModelResponse
-from common_utils import get_datetime_str
 from token_utils import TokenUtils
+
+
+def get_datetime_str():
+    """Return current datetime as formatted string."""
+    now = datetime.now()
+    return now.strftime("%Y-%m-%d %H:%M:%S")
 from metric import DummyMetric
 
 class TestModelConfig:

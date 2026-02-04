@@ -46,8 +46,8 @@ st.set_page_config(
 
 # Constants
 DEFAULT_TRAINING_TYPES = ["baseline", "internalized", "encoded", "post-hoc"]
-DEFAULT_MODEL_NAMES = ["gpt-oss-20b", "Olmo-3-7B-Think", "Qwen3-4B"]
-DEFAULT_DATASET_NAMES = ["binary-alternation", "calendar-arithmetic", "spell-backward", "largest-island"]
+DEFAULT_MODEL_NAMES = ["Olmo-3-7B-Think"]
+DEFAULT_DATASET_NAMES = ["binary-alternation", "calendar-arithmetic", "largest-island"]
 
 # Mapping from full dataset names to W&B aliases (used in project names)
 DATASET_NAME_TO_ALIAS = {
@@ -2302,7 +2302,7 @@ def main():
         run_state_options = st.sidebar.multiselect(
             "Run States",
             options=["running", "finished", "crashed", "failed", "killed"],
-            default=["running", "finished"],
+            default=["finished"],
             help="Select which run states to include. 'running' shows active training, 'finished' shows completed runs."
         )
         
