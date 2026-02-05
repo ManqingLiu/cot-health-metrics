@@ -1,6 +1,7 @@
 # Chain-of-Thought Health Metrics
 
 [![Paper](https://img.shields.io/badge/Paper-PDF-red)](https://manqingliu.github.io/assets/pdf/cot_health_metrics.pdf)
+[![Dashboard](https://img.shields.io/badge/Dashboard-Streamlit-FF4B4B)](https://cot-health-metrics-zwbhrdvhljkcbehk2xunyf.streamlit.app/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
 A framework for detecting and measuring pathological reasoning patterns in language models that use chain-of-thought (CoT) prompting. This project provides metrics to identify when models produce reasoning traces that appear valid but may be unfaithful to the model's actual computation.
@@ -177,7 +178,7 @@ export VLLM_MAX_LORA_RANK=8       # Match training LoRA rank
 - **Logs**: `log/*.jsonl` - Per-sample evaluation results
 - **Checkpoints**: `output/*/checkpoint-*` - Model checkpoints with metrics
 - **W&B**: Real-time metric tracking at wandb.ai
-- **Dashboard**: `streamlit run dashboard/app.py` for visualization
+- **Dashboard**: [Live Dashboard](https://cot-health-metrics-zwbhrdvhljkcbehk2xunyf.streamlit.app/) for visualization
 
 ## Supported Models
 
